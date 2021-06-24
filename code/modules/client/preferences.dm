@@ -95,7 +95,7 @@ datum/preferences
 
 /datum/preferences/proc/migrate_legacy_preferences()
 	// We make some assumptions here:
-	// - all relevant savefiles were version 17, which covers anything saved from 2018+ 
+	// - all relevant savefiles were version 17, which covers anything saved from 2018+
 	// - legacy saves were only made on the "torch" map ~mloc | В нашем случае не только "Факел" ~bear1ake
 	// - a maximum of 40 slots were used
 
@@ -205,6 +205,9 @@ datum/preferences
 		load_character(text2num(href_list["changeslot"]))
 		sanitize_preferences()
 		close_load_dialog(usr)
+
+		if (winget(usr, "preferences_browser", "is-visible") == "true")
+			open_setup_window(usr)
 
 		if (istype(client.mob, /mob/new_player))
 			var/mob/new_player/M = client.mob

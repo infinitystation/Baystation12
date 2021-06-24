@@ -27,3 +27,18 @@
 	// A person cannot wear this helmet when there is something on their face. ~ SidVeld
 	if(H.wear_mask)
 		return 0
+
+/obj/item/clothing/head/helmet/tactical/screllhelmet
+	name = "skrellian combat helmet"
+	desc = "An advanced skrellian helmet designed for work in special operations. Looks reliable."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "heroh"
+	item_state = "heroh"
+	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
+	species_restricted = list(SPECIES_SKRELL)
+	trade_blacklisted = TRUE
+
+/obj/item/custkit/screllhelmet
+	name = "skrellian helmet customization kit"
+	input = /obj/item/clothing/head/helmet/tactical
+	output = /obj/item/clothing/head/helmet/tactical/screllhelmet

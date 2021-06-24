@@ -455,6 +455,7 @@
 	yo = null
 	xo = null
 	var/result = 0 //To pass the message back to the gun.
+	var/atom/hit_thing
 
 /obj/item/projectile/test/Bump(atom/A as mob|obj|turf|area, forced=0)
 	if(A == firer || istype(A, /mob/living/exosuit) && get_turf(A) == get_turf(firer))
@@ -464,6 +465,7 @@
 		return
 	if(istype(A, /mob/living) || istype(A, /obj/vehicle))
 		result = 2 //We hit someone, return 1!
+		hit_thing = A
 		return
 	result = 1
 	return
@@ -482,7 +484,9 @@
 
 /obj/item/projectile/test/Process(var/turf/targloc)
 	while(src) //Loop on through!
-		if(result)
+		if(result > 1)
+			return hit_thing
+		else if (result)
 			return (result - 1)
 		if((!( targloc ) || loc == targloc))
 			targloc = locate(min(max(x + xo, 1), world.maxx), min(max(y + yo, 1), world.maxy), z) //Finding the target turf at map edge

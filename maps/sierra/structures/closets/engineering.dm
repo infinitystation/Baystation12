@@ -33,7 +33,8 @@
 		/obj/item/device/multitool/multimeter,
 		/obj/item/storage/box/secret_project_disks,
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng)),
-		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/eng, /obj/item/storage/backpack/messenger/engi))
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/eng, /obj/item/storage/backpack/messenger/engi)),
+		/obj/item/device/radio
 	)
 
 /obj/structure/closet/secure_closet/engineering_senior
@@ -58,7 +59,8 @@
 		/obj/item/device/megaphone,
 		/obj/item/clothing/gloves/insulated,
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng)),
-		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/eng, /obj/item/storage/backpack/messenger/engi))
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/eng, /obj/item/storage/backpack/messenger/engi)),
+		/obj/item/device/radio
 	)
 
 /obj/structure/closet/secure_closet/engineering_sierra
@@ -80,8 +82,30 @@
 		/obj/item/taperoll/atmos,
 		/obj/item/clothing/gloves/insulated,
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng)),
-		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/eng, /obj/item/storage/backpack/messenger/engi))
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/eng, /obj/item/storage/backpack/messenger/engi)),
+		/obj/item/device/radio
 	)
+
+/obj/structure/closet/secure_closet/engineering_sierra/junior
+	name = " junior engineer's locker"
+	req_access = list(access_engine)
+	closet_appearance = /decl/closet_appearance/secure_closet/engineering
+
+/obj/structure/closet/secure_closet/engineering_sierra/junior/WillContain()
+	return list(
+		/obj/item/clothing/accessory/storage/brown_vest,
+		/obj/item/storage/belt/utility/full,
+		/obj/item/device/radio/headset/headset_eng,
+		/obj/item/device/radio/headset/headset_eng/alt,
+		/obj/item/clothing/suit/storage/hazardvest,
+		/obj/item/clothing/mask/gas/alt,
+		/obj/item/clothing/glasses/meson,
+		/obj/item/taperoll/engineering,
+		/obj/item/device/flashlight/upgraded,
+		/obj/item/taperoll/atmos,
+		/obj/item/clothing/gloves/insulated,
+		/obj/item/storage/backpack/satchel/eng,
+		/obj/item/device/radio)
 
 /obj/structure/closet/secure_closet/atmos_sierra
 	name = "atmospherics equipment locker"

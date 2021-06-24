@@ -137,7 +137,7 @@
 	if(iscarbon(L))
 		if(istype(L,/mob/living/carbon/human))
 			slab_type = /obj/item/reagent_containers/food/snacks/meat/human
-			if(L.isMonkey())
+			if(L.is_species(SPECIES_MONKEY))
 				slab_type = /obj/item/reagent_containers/food/snacks/meat/monkey
 		var/obj/item/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
 		new_meat.name = "[slab_name] [new_meat.name]"
@@ -149,4 +149,3 @@
 			C.adjustBruteLoss(45)
 		else
 			C.gib()
-

@@ -100,6 +100,10 @@
 	remake_Hud()
 	ability_master.open_ability_master()
 //[/INF]
+
+	if(machine)
+		machine.on_user_login(src)
+
 	//set macro to normal incase it was overriden (like cyborg currently does)
 //INF	winset(src, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#d3b5b5")
 

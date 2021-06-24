@@ -410,7 +410,7 @@
 /area/medical/sleeper
 	name = "First Deck - Infirmary - Emergency Treatment Center"
 	icon_state = "exam_room"
-	req_access = list(access_medical_equip)
+	req_access = list(list(access_medical_equip, access_field_med))
 
 /area/medical/surgery
 	name = "First Deck - Infirmary - Operating Theatre"

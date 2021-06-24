@@ -608,7 +608,7 @@
 	},
 /obj/structure/table/steel_reinforced,
 /obj/machinery/photocopier/faxmachine{
-	department = "Bridge"
+	department = "Captain's reserve fax"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
@@ -2892,7 +2892,7 @@
 /area/medical/backstorage)
 "afK" = (
 /turf/simulated/wall/prepainted,
-/area/medical/sleeper)
+/area/medical/backstorage)
 "afL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -4857,7 +4857,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/sleeper)
+/area/medical/locker)
 "ajf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -8966,7 +8966,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/grey,
 /turf/simulated/floor/tiled/white/monotile,
-/area/hallway/infirmary)
+/area/medical/sleeper)
 "apc" = (
 /obj/effect/floor_decal/floordetail/edgedrain,
 /obj/structure/cable/cyan{
@@ -10013,7 +10013,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/monotile,
-/area/hallway/infirmary)
+/area/medical/sleeper)
 "aqJ" = (
 /obj/effect/floor_decal/borderfloorwhite/corner{
 	dir = 8
@@ -10633,7 +10633,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/hallway/infirmary)
+/area/medical/sleeper)
 "arW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -23789,7 +23789,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/mob/living/simple_animal/corgi/Ian,
+/mob/living/simple_animal/friendly/corgi/Ian,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -32185,6 +32185,16 @@
 	name = "Telecoms Blast Door";
 	pixel_y = -20
 	},
+/obj/structure/table/rack,
+/obj/item/stock_parts/keyboard,
+/obj/item/stock_parts/keyboard,
+/obj/item/stock_parts/keyboard,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/console_screen,
+/obj/item/stock_parts/power/apc/buildable,
+/obj/item/stock_parts/power/apc/buildable,
+/obj/item/stock_parts/power/apc/buildable,
 /turf/simulated/floor/tiled/techmaint,
 /area/tcommsat/storage)
 "aYh" = (
@@ -38546,12 +38556,13 @@
 /area/crew_quarters/heads/office/iaa)
 "dEW" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/bed/chair/padded/blue{
-	dir = 8
-	},
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
+/obj/machinery/sleeper/survival_pod{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/infirmary)
 "dGl" = (
@@ -40048,12 +40059,13 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/bed/chair/padded/blue{
-	dir = 8
-	},
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
+/obj/machinery/sleeper/survival_pod{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/infirmary)
 "knM" = (
@@ -40320,7 +40332,9 @@
 	},
 /obj/machinery/power/smes/buildable/preset{
 	_fully_charged = 1;
+	_input_maxed = 1;
 	_input_on = 1;
+	_output_maxed = 1;
 	_output_on = 1
 	},
 /obj/structure/cable/yellow{
@@ -40620,7 +40634,9 @@
 	},
 /obj/machinery/power/smes/buildable/preset{
 	_fully_charged = 1;
+	_input_maxed = 1;
 	_input_on = 1;
+	_output_maxed = 1;
 	_output_on = 1
 	},
 /obj/structure/cable/yellow{
@@ -41479,7 +41495,7 @@
 	pixel_y = -6;
 	req_access = list("ACCESS_MEDICAL")
 	},
-/mob/living/simple_animal/cat/fluff/Runtime,
+/mob/living/simple_animal/friendly/cat/fluff/Runtime,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -63970,8 +63986,8 @@ acX
 adP
 enY
 abu
-abu
-abu
+aeG
+aeG
 aeG
 afB
 alj
@@ -64174,7 +64190,7 @@ enY
 aeH
 afE
 afM
-afK
+abu
 akj
 alk
 amq
@@ -64578,7 +64594,7 @@ enY
 afC
 sqo
 afP
-afK
+abu
 akl
 all
 amx
@@ -64780,7 +64796,7 @@ enY
 afD
 sqo
 agk
-afK
+abu
 kRC
 alm
 xyk
@@ -64982,7 +64998,7 @@ enY
 amm
 alh
 agl
-afK
+abu
 hFe
 aln
 agD
@@ -65184,7 +65200,7 @@ enY
 abu
 afL
 abu
-afK
+abu
 ako
 aln
 aFo

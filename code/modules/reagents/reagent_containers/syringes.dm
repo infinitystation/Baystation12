@@ -212,7 +212,7 @@
 		syringestab(target, user)
 		return
 
-	if(!reagents.total_volume)
+	if(!reagents?.total_volume)
 		to_chat(user, "<span class='notice'>The syringe is empty.</span>")
 		mode = SYRINGE_DRAW
 		return

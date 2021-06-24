@@ -44,7 +44,7 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define isclient(A) istype(A, /client)
 
-#define iscorgi(A) istype(A, /mob/living/simple_animal/corgi)
+#define iscorgi(A) istype(A, /mob/living/simple_animal/friendly/corgi)
 
 #define is_drone(A) istype(A, /mob/living/silicon/robot/drone)
 
@@ -58,7 +58,7 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define isliving(A) istype(A, /mob/living)
 
-#define ismouse(A) istype(A, /mob/living/simple_animal/mouse)
+#define ismouse(A) istype(A, /mob/living/simple_animal/friendly/mouse)
 
 #define isnewplayer(A) istype(A, /mob/new_player)
 
@@ -100,11 +100,7 @@ var/const/NEGATIVE_INFINITY = -1#INF // win: -1.#INF, lin: -inf
 
 #define isPlunger(A) istype(A, /obj/item/clothing/mask/plunger) || istype(A, /obj/item/device/plunger/robot)
 
-/proc/isspecies(A, B)
-	if(!iscarbon(A))
-		return FALSE
-	var/mob/living/carbon/C = A
-	return C.species?.name == B
+#define isadmin(X) (check_rights(R_ADMIN, 0, (X)) != 0)
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
 

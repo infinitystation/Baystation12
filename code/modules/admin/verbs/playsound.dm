@@ -16,6 +16,7 @@ var/list/sounds_cache = list()
 
 	sounds_cache += S
 	var/volume = 100
+	var/override = FALSE
 
 	while (TRUE)
 		volume = input(src, "Sound volume (0 - 100)", "Volume", volume) as null|num
@@ -39,9 +40,16 @@ var/list/sounds_cache = list()
 	if(alert("Song: [S].\nVolume: [vol]%.", "Confirmation request" ,"Play", "Cancel") == "Cancel")
 		return
 
+	// [inf]
+	if(check_rights(R_PERMISSIONS))
+		if(alert("Override sound prefs", "Prefs override", "HELL YES", "HELL NO") == "HELL YES")
+			log_and_message_admins("override to play [S]")
+			override = TRUE
+	// [/inf]
+
 	log_and_message_admins("played sound [S]")
 	for(var/mob/M in GLOB.player_list)
-		if(M.get_preference_value(/datum/client_preference/play_admin_midis) == GLOB.PREF_YES)
+		if((M.get_preference_value(/datum/client_preference/play_admin_midis) == GLOB.PREF_YES) || override)
 			sound_to(M, uploaded_sound)
 
 	SSstatistics.add_field_details("admin_verb","PGS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

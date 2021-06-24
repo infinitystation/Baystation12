@@ -97,7 +97,7 @@
 	economic_power = 6
 	minimal_player_age = 10
 	ideal_character_age = 25
-	alt_titles = list()
+	alt_titles = list("Junior Guard")
 
 	skill_points = 20
 
@@ -140,7 +140,7 @@
 	economic_power = 3
 	ideal_character_age = 21
 	selection_color = "#601c1c"
-	alt_titles = list("Junior Guard")
+	alt_titles = list("Security Recruit")
 
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,

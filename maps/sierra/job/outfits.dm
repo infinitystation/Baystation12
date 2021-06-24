@@ -52,9 +52,7 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 
 /decl/hierarchy/outfit/job/sierra/crew/command/captain/New()
 	..()
-	backpack_overrides[/decl/backpack_outfit/backpack] = /obj/item/storage/backpack/captain
-	backpack_overrides[/decl/backpack_outfit/satchel] = /obj/item/storage/backpack/satchel/cap
-	backpack_overrides[/decl/backpack_outfit/messenger_bag] = /obj/item/storage/backpack/messenger/com
+	BACKPACK_OVERRIDE_COMMAND
 
 /decl/hierarchy/outfit/job/sierra/crew/command/hop
 	name = OUTFIT_JOB_NAME("Head of Personnel - Sierra")
@@ -63,6 +61,10 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = list(/obj/item/card/id/sierra/silver)
 //	pda_type = /obj/item/modular_computer/pda/heads/hop
+
+/decl/hierarchy/outfit/job/sierra/crew/command/hop/New()
+	..()
+	BACKPACK_OVERRIDE_COMMAND
 
 /decl/hierarchy/outfit/job/sierra/crew/research/rd
 	name = OUTFIT_JOB_NAME("Research Director - Sierra")
@@ -175,6 +177,10 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	uniform = /obj/item/clothing/under/rank/dispatch
 	shoes = /obj/item/clothing/shoes/brown
 	id_types = list(/obj/item/card/id/sierra/crew/engineering/comms)
+
+/decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/trainee
+	name = OUTFIT_JOB_NAME("Engineer Trainee - Sierra")
+	id_types = list(/obj/item/card/id/sierra/crew/engineering/trainee)
 
 	////////////
 	//SECURITY//
@@ -548,4 +554,3 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 /decl/hierarchy/outfit/job/sierra/ert/leader
 	name = OUTFIT_JOB_NAME("ERT Leader - Sierra")
 	head = /obj/item/clothing/head/beret/centcom/captain
-
