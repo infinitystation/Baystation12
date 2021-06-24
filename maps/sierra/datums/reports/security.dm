@@ -75,8 +75,8 @@
 	add_field(/datum/report_field/date, "Дата утверждения")
 	add_field(/datum/report_field/time, "Время утверждения")
 	add_field(/datum/report_field/pencode_text, "Описание патрулей", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Сменные позывные. Для синего кода и выше.")
-	add_field(/datum/report_field/pencode_text, "Описание сменных позывных", required = 1)
+	add_field(/datum/report_field/text_label/instruction, "Экстренные группы. Для синего кода и выше.")
+	add_field(/datum/report_field/pencode_text, "Описание экстренных групп", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "Для патрулирующего. Проведите полный осмотр назначенной палубы, включая тех. туннели.\
 	Отвечайте на вызовы с других палуб только при приказе. Вы ответственны за безопасность на закрепленной за вами палубе.")
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
