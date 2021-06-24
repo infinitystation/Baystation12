@@ -3845,6 +3845,7 @@
 #include "infinity\customs\sad_ninja_sid.dm"
 #include "infinity\customs\sallyvadordomold.dm"
 #include "infinity\customs\sarov.dm"
+#include "infinity\customs\shraken.dm"
 #include "infinity\customs\sidveld.dm"
 #include "infinity\customs\sivuha.dm"
 #include "infinity\customs\sprites_kits.dm"

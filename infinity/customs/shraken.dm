@@ -49,8 +49,8 @@
 	icon = 'infinity/icons/obj/guns/AK105.dmi'
 	wielded_item_state = "AK105-wielded-f"
 	item_icons = list(
-		slot_r_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_r-hand.dmi',
-		slot_l_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_l-hand.dmi',
+		slot_r_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_r_hand.dmi',
+		slot_l_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_l_hand.dmi',
 		)
 	trade_blacklisted = TRUE
 	mag_insert_sound = 'sound/weapons/guns/interaction/ltrifle_magin.ogg'
