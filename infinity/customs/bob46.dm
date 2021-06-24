@@ -5,12 +5,12 @@
 	icon_state = "gas_mask"
 	item_state = "gas_mask_face"
 	item_icons = list(
-    	slot_l_hand_str = CUSTOM_ITEM_MOB,
-    	slot_r_hand_str = CUSTOM_ITEM_MOB,
-    	slot_wear_mask_str = CUSTOM_ITEM_MOB
- 	)
+		slot_l_hand_str = CUSTOM_ITEM_MOB,
+		slot_r_hand_str = CUSTOM_ITEM_MOB,
+		slot_wear_mask_str = CUSTOM_ITEM_MOB
+	)
 	item_state_slots = list(
-    	slot_l_hand_str = "gas_mask_lh",
-    	slot_r_hand_str = "gas_mask_rh"
- 	)
+		slot_l_hand_str = "gas_mask_lh",
+		slot_r_hand_str = "gas_mask_rh"
+	)
 	trade_blacklisted = TRUE
