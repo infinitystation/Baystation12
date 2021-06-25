@@ -5,7 +5,7 @@
 	icon_state = "kekcrowbar"
 	item_state = "kekcrowbar"
 	item_icons = list(slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
-                      slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT)
+						slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT)
 	matter = list(MATERIAL_GOLD = 200)
 	trade_blacklisted = TRUE
 /obj/item/crowbar/kek/attack_self(mob/user)
