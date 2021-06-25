@@ -3852,6 +3852,7 @@
 #include "infinity\customs\stange_pill.dm"
 #include "infinity\customs\taushai.dm"
 #include "infinity\customs\thehero13.dm"
+#include "infinity\customs\thekekman.dm"
 #include "infinity\customs\tools.dm"
 #include "infinity\customs\true_gentleman.dm"
 #include "infinity\customs\unchi_turtleneck.dm"
