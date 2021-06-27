@@ -1,0 +1,5 @@
+author: SidVeld
+delete-after: true
+changes:
+  - bugfix: 'Наёмники: Лидер Наёмников снова знает код от бомбы. Чтобы узнать - используйте
+      "Check Notes" во вкладке "IC"'

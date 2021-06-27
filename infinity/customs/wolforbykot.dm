@@ -1,20 +1,20 @@
-/obj/item/clothing/suit/armor/pcarrier/medium/nt/wolforbykot
+/obj/item/clothing/suit/armor/pcarrier/tactical/wolforbykot
 	name = "old army overcoat"
 	desc = "An old Gaian Conflict-era GCC shocktroop coat. \
 			Worn, but well-maintained, with armor plates woven in at vital points. \
 			Straps with bright-red identification marks sit at the shoulders, \
 			and a two-headed eagle spreads its gilded wings across the wearer's back."
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical)
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB,
 					  slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
 					  slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT)
 	icon_state = "kegancoat"
 	item_state = "kegancoat"
-	starting_accessories = list()
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/head/helmet/wolforbykot
+/obj/item/clothing/head/helmet/tactical/wolforbykot
 	name = "GSFH-2"
 	desc = "Closed helmet harking back to times of bloody war, a fearful visage of foreign special forces. \
 			Contains an IFF-enabled HUD, but an obvious shot mark on the right side of the plating has long \
@@ -64,7 +64,7 @@
 
 /obj/item/clothingbag/wolforbykot/New()
 	..()
-	new /obj/item/clothing/head/helmet/wolforbykot(src)
-	new /obj/item/clothing/suit/armor/pcarrier/medium/nt/wolforbykot(src)
+	new /obj/item/clothing/head/helmet/tactical/wolforbykot(src)
+	new /obj/item/clothing/suit/armor/pcarrier/tactical/wolforbykot(src)
 	new /obj/item/clothing/gloves/thick/duty/wolforbykot(src)
 	new /obj/item/storage/backpack/wolforbykot(src)
