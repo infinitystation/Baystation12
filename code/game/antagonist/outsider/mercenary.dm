@@ -79,8 +79,8 @@ GLOBAL_DATUM_INIT(mercs, /datum/antagonist/mercenary, new)
 		player.equip_to_slot_or_del(leader, slot_head)
 		var/obj/item/paper/roles_nuclear/paper = new(get_turf(player))
 		player.put_in_hands(paper)
-		var/obj/machinery/nuclearbomb/nuke = locate(/obj/machinery/nuclearbomb/station) in world
-		player.StoreMemory("<b>Код для активации устройства самоуничтожения Сьерры:</b> [nuke.r_code]", /decl/memory_options/system)
+		var/obj/machinery/nuclearbomb/nuke = locate(/obj/machinery/nuclearbomb/station) in SSmachines.machinery
+		player.StoreMemory("<b>Код для активации устройства самоуничтожения [GLOB.using_map.full_name]:</b> [nuke.r_code]", /decl/memory_options/system)
 	else
 		var/obj/item/device/radio/uplink/U = new(get_turf(player), player.mind, 0)
 		player.put_in_hands(U)
