@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/monkeycube/lizard
 	name = "lizard cube"
-	monkey_type = /mob/living/simple_animal/friendly/lizard 
+	monkey_type = /mob/living/simple_animal/friendly/lizard
 
 /obj/item/reagent_containers/food/snacks/monkeycube/mouse
 	name = "mouse cube"
