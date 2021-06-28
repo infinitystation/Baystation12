@@ -1,3 +1,6 @@
+/datum/design/item/mining
+	category_items = "Mining"
+
 /datum/design/item/mining/AssembleDesignName()
 	..()
 	name = "Mining equipment design ([item_name])"

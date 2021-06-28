@@ -1,3 +1,6 @@
+/datum/design/item/disk
+	category_items = "Data"
+
 /datum/design/item/disk/AssembleDesignName()
 	..()
 	name = "Storage disk ([item_name])"

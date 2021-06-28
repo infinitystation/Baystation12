@@ -1,3 +1,6 @@
+/datum/design/item/smes_coil
+	category_items = "Engineering"
+
 /datum/design/item/smes_coil/AssembleDesignName()
 	..()
 	name = "Superconductive magnetic coil ([item_name])"

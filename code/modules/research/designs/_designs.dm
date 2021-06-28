@@ -30,6 +30,7 @@ other types of metals and chemistry for reagents).
 	var/build_path = null			//The path of the object that gets created.
 	var/time = 10					//How many ticks it requires to build
 	var/category = null 			//Primarily used for Mech Fabricators, but can be used for anything.
+	var/category_items = null 		//Primarily used for Protolathe design grouping
 	var/sort_string = "ZZZZZ"		//Sorting order
 	var/skill_fail_chance
 

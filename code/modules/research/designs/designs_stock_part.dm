@@ -1,5 +1,6 @@
 /datum/design/item/stock_part
 	build_type = PROTOLATHE
+	category_items = "Stock Parts"
 
 /datum/design/item/stock_part/AssembleDesignName()
 	..()

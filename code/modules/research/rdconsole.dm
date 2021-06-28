@@ -61,6 +61,8 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	var/obj/machinery/r_n_d/circuit_imprinter/linked_imprinter = null	//Linked Circuit Imprinter
 
 	var/screen = 1.0	//Which screen is currently showing.
+	var/category_lathe = null // Which item category is chosen on Protolathe
+	var/category_imprinter = null // Which item category is chosen on Circuit Imprinter
 	var/id = 0			//ID of the computer (for server restrictions).
 	var/sync = 1		//If sync = 0, it doesn't show up on Server Control Console
 	var/can_analyze = TRUE //If the console is allowed to use destructive analyzers
@@ -168,6 +170,9 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	if(href_list["menu"]) //Switches menu screens. Converts a sent text string into a number. Saves a LOT of code.
 		screen = text2num(href_list["menu"])
 		. = TOPIC_REFRESH
+
+		category_lathe = href_list["category_lathe"]
+		category_imprinter = href_list["category_imprinter"]
 
 	else if(href_list["updt_tech"]) //Update the research holder with information from the technology disk.
 		. = TOPIC_REFRESH
@@ -525,6 +530,8 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	user.set_machine(src)
 	var/dat = list()
 	var/final_dat = list()
+	var/category_items_list_lathe = list()
+	var/category_items_list_imprinter = list()
 	var/operator_device_skill = user.get_skill_value(SKILL_DEVICES)
 	files.RefreshResearch()
 	switch(screen) //A quick check to make sure you get the right screen when a device is disconnected.
@@ -738,32 +745,58 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			dat += "Protolathe Menu:<BR><BR>"
 			dat += "<B>Material Amount:</B> [linked_lathe.TotalMaterials()] cm<sup>3</sup> (MAX: [linked_lathe.max_material_storage])<BR>"
 			dat += "<B>Chemical Volume:</B> [linked_lathe.reagents.total_volume] (MAX: [linked_lathe.reagents.maximum_volume])<HR>"
-			dat += "<UL>"
+			dat += "Categories:"
 			var/protolathe_bonus = list(2, 1.5, 1, 0.9, 0.8)[operator_device_skill]
+			var/cat_dat = list()
+			if(category_lathe != null)
+				cat_dat += " <A href='?src=\ref[src];menu=3.1'>\[All\]</A> "
+			else
+				cat_dat += " <B>\[All\]</B> "
 			for(var/datum/design/D in files.known_designs)
 				if(!D.build_path || !(D.build_type & PROTOLATHE))
 					continue
+				if(D.category_items == null)
+					D.category_items = "Unsorted"
+				if(!(D.category_items in category_items_list_lathe))
+					category_items_list_lathe += D.category_items
+					var/category_items_name = D.category_items
+					if(!(user.skill_check(SKILL_DEVICES, SKILL_BASIC)))
+						category_items_name = corrupt_text(category_items_name)
+
+					if(category_lathe != D.category_items)
+						cat_dat += " <A href='?src=\ref[src];menu=3.1;category_lathe=[D.category_items]'>\[[category_items_name]\]</A> "
+					else
+						cat_dat += " <B>\[[category_items_name]\]</B> "
 				var/temp_dat
-				var/name_dat = D.name
-				for(var/M in D.materials)
-					temp_dat += ", [round(D.materials[M]*linked_lathe.mat_efficiency * protolathe_bonus)] [CallMaterialName(M)]"
-				for(var/T in D.chemicals)
-					temp_dat += ", [round(D.chemicals[T]*linked_lathe.mat_efficiency * protolathe_bonus)] [CallReagentName(T)]"
-				if(temp_dat)
-					temp_dat = " \[[copytext(temp_dat, 3)]\]"
-				if(!(user.skill_check(SKILL_DEVICES, SKILL_BASIC)))
-					temp_dat = corrupt_text(temp_dat)
-					name_dat = corrupt_text(name_dat)
-				if(linked_lathe.canBuild(D, protolathe_bonus))
-					final_dat += "<LI><B><A href='?src=\ref[src];build=[D.id]'>[name_dat]</A></B>[temp_dat]"
-				else
-					final_dat += "<LI><B>[name_dat]</B>[temp_dat]"
+				if(category_lathe == D.category_items || category_lathe == null)
+					var/name_dat = D.name
+					for(var/M in D.materials)
+						temp_dat += ", [round(D.materials[M]*linked_lathe.mat_efficiency * protolathe_bonus)] [CallMaterialName(M)]"
+					for(var/T in D.chemicals)
+						temp_dat += ", [round(D.chemicals[T]*linked_lathe.mat_efficiency * protolathe_bonus)] [CallReagentName(T)]"
+					if(temp_dat)
+						temp_dat = " \[[copytext(temp_dat, 3)]\]"
+					if(!(user.skill_check(SKILL_DEVICES, SKILL_BASIC)))
+						temp_dat = corrupt_text(temp_dat)
+						name_dat = corrupt_text(name_dat)
+					if(linked_lathe.canBuild(D, protolathe_bonus))
+						final_dat += "<LI><B><A href='?src=\ref[src];build=[D.id]'>[name_dat]</A></B>[temp_dat]"
+					else
+						final_dat += "<LI><B>[name_dat]</B>[temp_dat]"
 
-			if(user.skill_check(SKILL_DEVICES, SKILL_ADEPT))
-				dat += final_dat
+			var/category_lathe_temp = category_lathe
+			if(!user.skill_check(SKILL_DEVICES, SKILL_ADEPT))
+				cat_dat = shuffle(cat_dat)
+				final_dat = shuffle(final_dat)
+				category_lathe_temp = corrupt_text(category_lathe)
+			dat += cat_dat
+			dat += "<HR>"
+			if(category_lathe != null)
+				dat += "<center><h4>[category_lathe_temp]</h4></center>"
 			else
-				dat += shuffle(final_dat)
-
+				dat += "<center><h4>All</h4></center>"
+			dat += "<UL>"
+			dat += final_dat
 			dat += "</UL>"
 
 		if(3.2) //Protolathe Material Storage Sub-menu
@@ -841,28 +874,58 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			dat += "Circuit Imprinter Menu:<BR><BR>"
 			dat += "Material Amount: [linked_imprinter.TotalMaterials()] cm<sup>3</sup><BR>"
 			dat += "Chemical Volume: [linked_imprinter.reagents.total_volume]<HR>"
-			dat += "<UL>"
+			dat += "Categories:"
 			var/circuit_imprinter_bonus = list(1.5, 1, 0.9, 0.8, 0.75)[operator_device_skill]
+			var/cat_dat = list()
+			if(category_imprinter != null)
+				cat_dat += " <A href='?src=\ref[src];menu=4.1'>\[All\]</A> "
+			else
+				cat_dat += " <B>\[All\]</B> "
 			for(var/datum/design/D in files.known_designs)
 				if(!D.build_path || !(D.build_type & IMPRINTER))
 					continue
+				if(D.category_items == null)
+					D.category_items = "Unsorted"
+				if(!(D.category_items in category_items_list_imprinter))
+					category_items_list_imprinter += D.category_items
+					var/category_items_name = D.category_items
+					if(!(user.skill_check(SKILL_DEVICES, SKILL_BASIC)))
+						category_items_name = corrupt_text(category_items_name)
+
+					if(category_imprinter != D.category_items)
+						cat_dat += " <A href='?src=\ref[src];menu=4.1;category_imprinter=[D.category_items]'>\[[category_items_name]\]</A> "
+					else
+						cat_dat += " <B>\[[category_items_name]\]</B> "
 				var/temp_dat
-				for(var/M in D.materials)
-					temp_dat += ", [round(D.materials[M]*linked_imprinter.mat_efficiency * circuit_imprinter_bonus)] [CallMaterialName(M)]"
-				for(var/T in D.chemicals)
-					temp_dat += ", [round(D.chemicals[T]*linked_imprinter.mat_efficiency * circuit_imprinter_bonus)] [CallReagentName(T)]"
-				if(temp_dat)
-					temp_dat = " \[[copytext(temp_dat,3)]\]"
-				if(linked_imprinter.canBuild(D, circuit_imprinter_bonus))
-					final_dat += "<LI><B><A href='?src=\ref[src];imprint=[D.id]'>[D.name]</A></B>[temp_dat]"
-				else
-					final_dat += "<LI><B>[D.name]</B>[temp_dat]"
+				if(category_imprinter == D.category_items || category_imprinter == null)
+					var/name_dat = D.name
+					for(var/M in D.materials)
+						temp_dat += ", [round(D.materials[M]*linked_imprinter.mat_efficiency * circuit_imprinter_bonus)] [CallMaterialName(M)]"
+					for(var/T in D.chemicals)
+						temp_dat += ", [round(D.chemicals[T]*linked_imprinter.mat_efficiency * circuit_imprinter_bonus)] [CallReagentName(T)]"
+					if(temp_dat)
+						temp_dat = " \[[copytext(temp_dat,3)]\]"
+					if(!(user.skill_check(SKILL_DEVICES, SKILL_BASIC)))
+						temp_dat = corrupt_text(temp_dat)
+						name_dat = corrupt_text(name_dat)
+					if(linked_imprinter.canBuild(D, circuit_imprinter_bonus))
+						final_dat += "<LI><B><A href='?src=\ref[src];imprint=[D.id]'>[name_dat]</A></B>[temp_dat]"
+					else
+						final_dat += "<LI><B>[name_dat]</B>[temp_dat]"
 
-			if(user.skill_check(SKILL_DEVICES, SKILL_BASIC))
-				dat += final_dat
+			var/category_imprinter_temp = category_imprinter
+			if(!user.skill_check(SKILL_DEVICES, SKILL_BASIC))
+				cat_dat = shuffle(cat_dat)
+				final_dat = shuffle(final_dat)
+				category_imprinter_temp = corrupt_text(category_imprinter)
+			dat += cat_dat
+			dat += "<HR>"
+			if(category_imprinter != null)
+				dat += "<center><h4>[category_imprinter_temp]</h4></center>"
 			else
-				dat += shuffle(final_dat)
-
+				dat += "<center><h4>All</h4></center>"
+			dat += "<UL>"
+			dat += final_dat
 			dat += "</UL>"
 
 		if(4.2)

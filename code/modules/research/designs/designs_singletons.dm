@@ -1,3 +1,6 @@
+/datum/design/item/encryptionkey
+	category_items = "Tools and Devices"
+
 /datum/design/item/encryptionkey/AssembleDesignName()
 	..()
 	name = "Encryption key design ([item_name])"
@@ -10,6 +13,9 @@
 	materials = list(MATERIAL_STEEL = 300, MATERIAL_GLASS = 300)
 	build_path = /obj/item/device/encryptionkey/binary
 	sort_string = "VASAA"
+
+/datum/design/item/camouflage
+	category_items = "Tools and Devices"
 
 /datum/design/item/camouflage/AssembleDesignName()
 	..()
@@ -31,6 +37,7 @@
 	req_tech = list(TECH_MATERIAL = 3, TECH_POWER = 2)
 	materials = list(MATERIAL_PLASTIC = 350)
 	build_path = /obj/item/storage/box/freezer
+	category_items = "Tools and Devices"
 
 /datum/design/item/advmop
 	name = "Advanced Mop"
@@ -39,6 +46,7 @@
 	req_tech = list(TECH_ENGINEERING = 4, TECH_MATERIAL = 4, TECH_POWER = 3)
 	materials = list(MATERIAL_ALUMINIUM = 2500, MATERIAL_STEEL = 500, MATERIAL_PLASTIC = 200)
 	build_path = /obj/item/mop/advanced
+	category_items = "Tools and Devices"
 
 /datum/design/blutrash
 	name = "Trashbag of Holding"
@@ -47,6 +55,7 @@
 	req_tech = list(TECH_BLUESPACE = 5, TECH_MATERIAL = 6)
 	materials = list(MATERIAL_PLASTIC = 5000, MATERIAL_GOLD = 1500, MATERIAL_URANIUM = 250, MATERIAL_PHORON = 1500)
 	build_path = /obj/item/storage/bag/trash/bluespace
+	category_items = "Tools and Devices"
 
 /datum/design/item/holosign
 	name = "Holographic Sign Projector"
@@ -55,6 +64,7 @@
 	req_tech = list(TECH_ENGINEERING = 5, TECH_BLUESPACE = 4, TECH_POWER = 4)
 	materials = list(MATERIAL_STEEL = 2000, MATERIAL_GLASS = 1000)
 	build_path = /obj/item/holosign_creator
+	category_items = "Tools and Devices"
 
 /datum/design/item/party
 	name = "Uncertified module: PRTY"
@@ -73,3 +83,4 @@
 	req_tech = list(TECH_MAGNET = 2, TECH_BIO = 2)
 	materials = list(MATERIAL_STEEL = 200, MATERIAL_GLASS = 100, MATERIAL_PLASTIC = 150)
 	build_path = /obj/item/device/scanner/plant
+	category_items = "Tools and Devices"

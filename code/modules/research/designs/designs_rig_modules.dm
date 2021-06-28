@@ -1,4 +1,7 @@
 //Sidenote; Try to keep a requirement of 5 engineering for each, but keep the rest as similiar to it's original as possible.
+/datum/design/item/rig
+	category_items = "RIG Modules"
+
 /datum/design/item/rig/AssembleDesignName()
 	..()
 	name = "RIG module ([item_name])"
@@ -11,6 +14,7 @@
 	materials = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 5000)
 	build_path = /obj/item/device/integrated_circuit_printer
 	sort_string = "WCLAC"
+	category_items = "Tools and Devices"
 
 /datum/design/item/integrated_printer_upgrade_advanced
 	name = "Integrated Circuit Printer Upgrade Disk"
@@ -20,6 +24,7 @@
 	materials = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 10000)
 	build_path = /obj/item/disk/integrated_circuit/upgrade/advanced
 	sort_string = "WCLAD"
+	category_items = "Data"
 
 /datum/design/item/integrated_printer_upgrade_clone
 	name = "Integrated Circuit Printer Clone Disk"
@@ -29,3 +34,4 @@
 	materials = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 10000)
 	build_path = /obj/item/disk/integrated_circuit/upgrade/clone
 	sort_string = "WCLAE"
+	category_items = "Data"

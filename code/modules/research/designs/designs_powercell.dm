@@ -2,6 +2,7 @@
 	build_type = PROTOLATHE | MECHFAB
 	category = "Misc"
 	materials = list(MATERIAL_STEEL = 700, MATERIAL_GLASS = 50, MATERIAL_PLASTIC = 20)
+	category_items = "Power"
 
 /datum/design/item/powercell/AssembleDesignName()
 	name = "Power cell model ([item_name])"

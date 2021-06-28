@@ -1,5 +1,6 @@
 /datum/design/item/hud
 	materials = list(MATERIAL_ALUMINIUM = 50, MATERIAL_GLASS = 50)
+	category_items = "HUD Optical"
 
 /datum/design/item/hud/AssembleDesignName()
 	..()
@@ -29,6 +30,9 @@
 	build_path = /obj/item/clothing/glasses/hud/janitor
 	sort_string = "GAAAC"
 
+/datum/design/item/optical
+	category_items = "HUD Optical"
+	
 /datum/design/item/optical/AssembleDesignName()
 	..()
 	name = "Optical glasses design ([item_name])"

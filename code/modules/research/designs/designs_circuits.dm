@@ -26,6 +26,8 @@
 	req_tech = list(TECH_DATA = 1)
 	build_path = /obj/item/stock_parts/circuitboard/arcade/battle
 	sort_string = "MAAAA"
+	category_items = "Misc. Machinery"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/oriontrail
 	name = "orion trail arcade machine"
@@ -33,18 +35,21 @@
 	req_tech = list(TECH_DATA = 1)
 	build_path = /obj/item/stock_parts/circuitboard/arcade/orion_trail
 	sort_string = "MABAA"
+	category_items = "Misc. Machinery"
 
 /datum/design/circuit/prisonmanage
 	name = "prisoner management console"
 	id = "prisonmanage"
 	build_path = /obj/item/stock_parts/circuitboard/prisoner
 	sort_string = "DACAA"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/operating
 	name = "patient monitoring console"
 	id = "operating"
 	build_path = /obj/item/stock_parts/circuitboard/operating
 	sort_string = "FACAA"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/optable
 	name = "operating table"
@@ -52,6 +57,7 @@
 	req_tech = list(TECH_ENGINEERING = 1, TECH_BIO = 3, TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/optable
 	sort_string = "FACAB"
+	category_items = "Medical Machinery"
 
 /datum/design/circuit/bodyscanner
 	name = "body scanner"
@@ -59,6 +65,7 @@
 	req_tech = list(TECH_ENGINEERING = 2, TECH_BIO = 4, TECH_DATA = 4)
 	build_path = /obj/item/stock_parts/circuitboard/bodyscanner
 	sort_string = "FACAC"
+	category_items = "Medical Machinery"
 
 /datum/design/circuit/body_scanconsole
 	name = "body scanner console"
@@ -66,6 +73,7 @@
 	req_tech = list(TECH_ENGINEERING = 2, TECH_BIO = 4, TECH_DATA = 4)
 	build_path = /obj/item/stock_parts/circuitboard/body_scanconsole
 	sort_string = "FACAD"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/sleeper
 	name = "sleeper"
@@ -73,6 +81,7 @@
 	req_tech = list(TECH_ENGINEERING = 3, TECH_BIO = 5, TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/sleeper
 	sort_string = "FACAE"
+	category_items = "Medical Machinery"
 
 /datum/design/circuit/cryo_cell
 	name = "cryo cell"
@@ -80,6 +89,7 @@
 	req_tech = list(TECH_ENGINEERING = 3, TECH_BIO = 5, TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/cryo_cell
 	sort_string = "FACAF"
+	category_items = "Medical Machinery"
 
 /datum/design/circuit/crewconsole
 	name = "crew monitoring console"
@@ -87,6 +97,7 @@
 	req_tech = list(TECH_DATA = 3, TECH_MAGNET = 2, TECH_BIO = 2)
 	build_path = /obj/item/stock_parts/circuitboard/crew
 	sort_string = "FAGAI"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/body_scan_display
 	name = "body scanner display"
@@ -94,6 +105,7 @@
 	req_tech = list(TECH_BIO = 2, TECH_DATA = 2)
 	build_path = /obj/item/stock_parts/circuitboard/body_scanconsole/display
 	sort_string = "FACAJ"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/bioprinter
 	name = "bioprinter"
@@ -101,6 +113,7 @@
 	req_tech = list(TECH_ENGINEERING = 1, TECH_BIO = 3, TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/bioprinter
 	sort_string = "FAGAK"
+	category_items = "Medical Machinery"
 
 /datum/design/circuit/roboprinter
 	name = "prosthetic organ fabricator"
@@ -108,6 +121,7 @@
 	req_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/roboprinter
 	sort_string = "FAGAM"
+	category_items = "Medical Machinery"
 
 /datum/design/circuit/teleconsole
 	name = "teleporter control console"
@@ -115,6 +129,7 @@
 	req_tech = list(TECH_DATA = 3, TECH_BLUESPACE = 5)
 	build_path = /obj/item/stock_parts/circuitboard/teleporter
 	sort_string = "HAAAA"
+	category_items = "Teleportation Machinery"
 
 /datum/design/circuit/robocontrol
 	name = "robotics control console"
@@ -122,6 +137,7 @@
 	req_tech = list(TECH_DATA = 4)
 	build_path = /obj/item/stock_parts/circuitboard/robotics
 	sort_string = "HAAAB"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/rdconsole
 	name = "R&D control console"
@@ -129,6 +145,7 @@
 	req_tech = list(TECH_DATA = 4)
 	build_path = /obj/item/stock_parts/circuitboard/rdconsole
 	sort_string = "HAAAE"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/comm_monitor
 	name = "telecommunications monitoring console"
@@ -136,13 +153,15 @@
 	req_tech = list(TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/comm_monitor
 	sort_string = "HAACA"
-
+	category_items = "Computer Boards"
+	
 /datum/design/circuit/comm_server
 	name = "telecommunications server monitoring console"
 	id = "comm_server"
 	req_tech = list(TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/comm_server
 	sort_string = "HAACB"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/message_monitor
 	name = "messaging monitor console"
@@ -150,18 +169,21 @@
 	req_tech = list(TECH_DATA = 5)
 	build_path = /obj/item/stock_parts/circuitboard/message_monitor
 	sort_string = "HAACD"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/guestpass
 	name = "guest pass terminal"
 	id = "guestpass"
 	build_path = /obj/item/stock_parts/circuitboard/guestpass
 	sort_string = "HAACE"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/accounts
 	name = "account database terminal"
 	id = "accounts"
 	build_path = /obj/item/stock_parts/circuitboard/account_database
 	sort_string = "HAACF"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/holo
 	name = "holodeck control console"
@@ -169,6 +191,7 @@
 	build_path = /obj/item/stock_parts/circuitboard/holodeckcontrol
 	req_tech = list(TECH_DATA = 2, TECH_BLUESPACE = 2)
 	sort_string = "HAACG"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/aiupload
 	name = "AI upload console"
@@ -176,6 +199,7 @@
 	req_tech = list(TECH_DATA = 4)
 	build_path = /obj/item/stock_parts/circuitboard/aiupload
 	sort_string = "HAABA"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/borgupload
 	name = "cyborg upload console"
@@ -183,6 +207,7 @@
 	req_tech = list(TECH_DATA = 4)
 	build_path = /obj/item/stock_parts/circuitboard/borgupload
 	sort_string = "HAABB"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/cryopodcontrol
 	name = "cryogenic oversight console"
@@ -190,6 +215,7 @@
 	req_tech = list(TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/cryopodcontrol
 	sort_string = "HAABC"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/robot_storage
 	name = "robotic storage control"
@@ -197,6 +223,7 @@
 	req_tech = list(TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/robotstoragecontrol
 	sort_string = "HAABD"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/destructive_analyzer
 	name = "destructive analyzer"
@@ -204,6 +231,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_MAGNET = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/destructive_analyzer
 	sort_string = "HABAA"
+	category_items = "Research Machinery"
 
 /datum/design/circuit/protolathe
 	name = "protolathe"
@@ -211,6 +239,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/protolathe
 	sort_string = "HABAB"
+	category_items = "Research Machinery"
 
 /datum/design/circuit/circuit_imprinter
 	name = "circuit imprinter"
@@ -218,6 +247,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/circuit_imprinter
 	sort_string = "HABAC"
+	category_items = "Research Machinery"
 
 /datum/design/circuit/autolathe
 	name = "autolathe board"
@@ -225,6 +255,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/autolathe
 	sort_string = "HABAD"
+	category_items = "Research Machinery"
 
 /datum/design/circuit/replicator
 	name = "replicator board"
@@ -232,6 +263,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 3, TECH_BIO = 3)
 	build_path = /obj/item/stock_parts/circuitboard/replicator
 	sort_string = "HABAE"
+	category_items = "Misc. Machinery"
 
 /datum/design/circuit/microlathe
 	name = "microlathe board"
@@ -239,6 +271,7 @@
 	req_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/autolathe/micro
 	sort_string = "HABAF"
+	category_items = "Research Machinery"
 
 /datum/design/circuit/mining_console
 	name = "mining console board"
@@ -246,6 +279,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/mineral_processing
 	sort_string = "HABAG"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/mining_processor
 	name = "mining processor board"
@@ -253,6 +287,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/mining_processor
 	sort_string = "HABAH"
+	category_items = "Mining Machinery"
 
 /datum/design/circuit/mining_unloader
 	name = "ore unloader board"
@@ -260,6 +295,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/mining_unloader
 	sort_string = "HABAI"
+	category_items = "Mining Machinery"
 
 /datum/design/circuit/mining_stacker
 	name = "sheet stacker board"
@@ -267,6 +303,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/mining_stacker
 	sort_string = "HABAJ"
+	category_items = "Mining Machinery"
 
 /datum/design/circuit/suspension_gen
 	name = "suspension generator"
@@ -274,6 +311,7 @@
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3, TECH_MAGNET = 4)
 	build_path = /obj/item/stock_parts/circuitboard/suspension_gen
 	sort_string = "HABAK"
+	category_items = "Mining Machinery"
 
 /datum/design/circuit/rdservercontrol
 	name = "R&D server control console"
@@ -281,6 +319,7 @@
 	req_tech = list(TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/rdservercontrol
 	sort_string = "HABBA"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/rdserver
 	name = "R&D server"
@@ -288,6 +327,7 @@
 	req_tech = list(TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/rdserver
 	sort_string = "HABBB"
+	category_items = "Research Machinery"
 
 /datum/design/circuit/mechfab
 	name = "exosuit fabricator"
@@ -295,6 +335,7 @@
 	req_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 3)
 	build_path = /obj/item/stock_parts/circuitboard/mechfab
 	sort_string = "HABAE"
+	category_items = "Research Machinery"
 
 /datum/design/circuit/mech_recharger
 	name = "mech recharger"
@@ -302,6 +343,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_POWER = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/mech_recharger
 	sort_string = "HACAA"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/recharge_station
 	name = "cyborg recharge station"
@@ -309,18 +351,21 @@
 	req_tech = list(TECH_DATA = 3, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/recharge_station
 	sort_string = "HACAC"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/atmosalerts
 	name = "atmosphere alert console"
 	id = "atmosalerts"
 	build_path = /obj/item/stock_parts/circuitboard/atmos_alert
 	sort_string = "JAAAA"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/air_management
 	name = "atmosphere monitoring console"
 	id = "air_management"
 	build_path = /obj/item/stock_parts/circuitboard/air_management
 	sort_string = "JAAAB"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/rcon_console
 	name = "RCON remote control console"
@@ -328,6 +373,7 @@
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3, TECH_POWER = 5)
 	build_path = /obj/item/stock_parts/circuitboard/rcon_console
 	sort_string = "JAAAC"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/dronecontrol
 	name = "drone control console"
@@ -335,30 +381,35 @@
 	req_tech = list(TECH_DATA = 4)
 	build_path = /obj/item/stock_parts/circuitboard/drone_control
 	sort_string = "JAAAD"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/powermonitor
 	name = "power monitoring console"
 	id = "powermonitor"
 	build_path = /obj/item/stock_parts/circuitboard/powermonitor
 	sort_string = "JAAAE"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/solarcontrol
 	name = "solar control console"
 	id = "solarcontrol"
 	build_path = /obj/item/stock_parts/circuitboard/solar_control
 	sort_string = "JAAAF"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/supermatter_control
 	name = "core monitoring console"
 	id = "supermatter_control"
 	build_path = /obj/item/stock_parts/circuitboard/air_management/supermatter_core
 	sort_string = "JAAAG"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/injector
 	name = "injector control console"
 	id = "injector"
 	build_path = /obj/item/stock_parts/circuitboard/air_management/injector_control
 	sort_string = "JAAAH"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/pacman
 	name = "PACMAN-type generator"
@@ -366,6 +417,7 @@
 	req_tech = list(TECH_DATA = 3, TECH_PHORON = 3, TECH_POWER = 3, TECH_ENGINEERING = 3)
 	build_path = /obj/item/stock_parts/circuitboard/pacman
 	sort_string = "JBAAA"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/superpacman
 	name = "SUPERPACMAN-type generator"
@@ -373,6 +425,7 @@
 	req_tech = list(TECH_DATA = 3, TECH_POWER = 4, TECH_ENGINEERING = 4)
 	build_path = /obj/item/stock_parts/circuitboard/pacman/super
 	sort_string = "JBAAB"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/mrspacman
 	name = "MRSPACMAN-type generator"
@@ -380,6 +433,7 @@
 	req_tech = list(TECH_DATA = 3, TECH_POWER = 5, TECH_ENGINEERING = 5)
 	build_path = /obj/item/stock_parts/circuitboard/pacman/mrs
 	sort_string = "JBAAC"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/pacmanpotato
 	name = "PTTO-3 nuclear generator"
@@ -387,6 +441,7 @@
 	req_tech = list(TECH_DATA = 3, TECH_POWER = 5, TECH_ENGINEERING = 4, TECH_ESOTERIC = 4)
 	build_path = /obj/item/stock_parts/circuitboard/pacman/super/potato
 	sort_string = "JBAAD"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/pacmanreactor
 	name = "ICRER-2 nuclear generator"
@@ -394,6 +449,7 @@
 	req_tech = list(TECH_DATA = 4, TECH_POWER = 5, TECH_ENGINEERING = 5)
 	build_path = /obj/item/stock_parts/circuitboard/pacman/super/potato/reactor
 	sort_string = "JBAAE"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/batteryrack
 	name = "cell rack PSU"
@@ -401,6 +457,7 @@
 	req_tech = list(TECH_POWER = 3, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/batteryrack
 	sort_string = "JBABA"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/smes_cell
 	name = "'SMES' superconductive magnetic energy storage"
@@ -409,12 +466,14 @@
 	req_tech = list(TECH_POWER = 7, TECH_ENGINEERING = 5)
 	build_path = /obj/item/stock_parts/circuitboard/smes
 	sort_string = "JBABB"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/alerts
 	name = "alerts console"
 	id = "alerts"
 	build_path = /obj/item/stock_parts/circuitboard/stationalert
 	sort_string = "JBACA"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/gas_heater
 	name = "gas heating system"
@@ -422,6 +481,7 @@
 	req_tech = list(TECH_POWER = 2, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/unary_atmos/heater
 	sort_string = "JCAAA"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/gas_cooler
 	name = "gas cooling system"
@@ -429,6 +489,7 @@
 	req_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/unary_atmos/cooler
 	sort_string = "JCAAB"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/oxyregenerator
 	name = "oxygen regenerator"
@@ -436,6 +497,7 @@
 	req_tech = list(TECH_MAGNET = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/oxyregenerator
 	sort_string = "JCAAC"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/reagent_heater
 	name = "chemical heating system"
@@ -443,6 +505,7 @@
 	req_tech = list(TECH_POWER = 2, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/reagent_heater
 	sort_string = "JCAAD"
+	category_items = "Medical Machinery"
 
 /datum/design/circuit/reagent_cooler
 	name = "chemical cooling system"
@@ -450,6 +513,7 @@
 	req_tech = list(TECH_POWER = 2, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/reagent_heater/cooler
 	sort_string = "JCAAE"
+	category_items = "Medical Machinery"
 
 /datum/design/circuit/atmos_control
 	name = "atmospherics control console"
@@ -457,6 +521,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 3)
 	build_path = /obj/item/stock_parts/circuitboard/atmoscontrol
 	sort_string = "JCAAF"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/pipe_dispenser
 	name = "pipe dispenser"
@@ -464,12 +529,14 @@
 	req_tech = list(TECH_ENGINEERING = 6, TECH_MATERIAL = 5)
 	build_path = /obj/item/stock_parts/circuitboard/pipedispensor
 	sort_string = "JCAAG"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/pipe_dispenser/disposal
 	name = "disposal pipe dispenser"
 	id = "pipe_disposal"
 	build_path = /obj/item/stock_parts/circuitboard/pipedispensor/disposal
 	sort_string = "JCAAH"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/secure_airlock
 	name = "secure airlock electronics"
@@ -478,6 +545,7 @@
 	req_tech = list(TECH_DATA = 3)
 	build_path = /obj/item/airlock_electronics/secure
 	sort_string = "JDAAA"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/portable_scrubber
 	name = "portable scrubber"
@@ -485,6 +553,7 @@
 	req_tech = list(TECH_ENGINEERING = 4, TECH_POWER = 4)
 	build_path = /obj/item/stock_parts/circuitboard/portable_scrubber
 	sort_string = "JEAAA"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/portable_pump
 	name = "portable pump"
@@ -492,6 +561,7 @@
 	req_tech = list(TECH_ENGINEERING = 4, TECH_POWER = 4)
 	build_path = /obj/item/stock_parts/circuitboard/portable_scrubber/pump
 	sort_string = "JEAAB"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/portable_scrubber_huge
 	name = "large portable scrubber"
@@ -499,6 +569,7 @@
 	req_tech = list(TECH_ENGINEERING = 5, TECH_POWER = 5, TECH_MATERIAL = 5)
 	build_path = /obj/item/stock_parts/circuitboard/portable_scrubber/huge
 	sort_string = "JEAAC"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/portable_scrubber_stat
 	name = "large stationary portable scrubber"
@@ -506,6 +577,7 @@
 	req_tech = list(TECH_ENGINEERING = 5, TECH_POWER = 5, TECH_MATERIAL = 5)
 	build_path = /obj/item/stock_parts/circuitboard/portable_scrubber/huge/stationary
 	sort_string = "JEAAD"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/thruster
 	name = "gas thruster"
@@ -513,6 +585,7 @@
 	req_tech = list(TECH_POWER = 1, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/unary_atmos/engine
 	sort_string = "JFAAA"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/helms
 	name = "helm control console"
@@ -520,6 +593,7 @@
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3)
 	build_path = /obj/item/stock_parts/circuitboard/helm
 	sort_string = "JFAAB"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/nav
 	name = "navigation control console"
@@ -527,12 +601,14 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/nav
 	sort_string = "JFAAC"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/nav/tele
 	name = "navigation telescreen"
 	id = "nav_tele"
 	build_path = /obj/item/stock_parts/circuitboard/nav/tele
 	sort_string = "JFAAD"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/sensors
 	name = "ship sensor control console"
@@ -540,6 +616,7 @@
 	req_tech = list(TECH_DATA = 4)
 	build_path = /obj/item/stock_parts/circuitboard/sensors
 	sort_string = "JFAAE"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/engine
 	name = "ship engine control console"
@@ -547,6 +624,7 @@
 	req_tech = list(TECH_DATA = 2, TECH_POWER = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/engine
 	sort_string = "JFAAF"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/shuttle
 	name = "basic shuttle console"
@@ -554,6 +632,7 @@
 	req_tech = list(TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/shuttle_console
 	sort_string = "JFAAG"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/shuttle_long
 	name = "long range shuttle console"
@@ -561,6 +640,7 @@
 	req_tech = list(TECH_DATA = 3)
 	build_path = /obj/item/stock_parts/circuitboard/shuttle_console/explore
 	sort_string = "JFAAH"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/biogenerator
 	name = "biogenerator"
@@ -568,6 +648,7 @@
 	req_tech = list(TECH_DATA = 2)
 	build_path = /obj/item/stock_parts/circuitboard/biogenerator
 	sort_string = "KBAAA"
+	category_items = "Hydroponics Machinery"
 
 /datum/design/circuit/hydro_tray
 	name = "hydroponics tray"
@@ -575,6 +656,7 @@
 	req_tech = list(TECH_BIO = 3, TECH_MATERIAL = 2, TECH_DATA = 1)
 	build_path = /obj/item/stock_parts/circuitboard/tray
 	sort_string = "KBAAB"
+	category_items = "Hydroponics Machinery"
 
 /datum/design/circuit/miningdrill
 	name = "mining drill head"
@@ -582,6 +664,7 @@
 	req_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/miningdrill
 	sort_string = "KCAAA"
+	category_items = "Mining Machinery"
 
 /datum/design/circuit/miningdrillbrace
 	name = "mining drill brace"
@@ -589,6 +672,7 @@
 	req_tech = list(TECH_DATA = 1, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/miningdrillbrace
 	sort_string = "KCAAB"
+	category_items = "Mining Machinery"
 
 /datum/design/circuit/floodlight
 	name = "emergency floodlight"
@@ -596,6 +680,7 @@
 	req_tech = list(TECH_POWER = 1, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/floodlight
 	sort_string = "KCAAC"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/disperserfront
 	name = "obstruction field disperser beam generator"
@@ -603,6 +688,7 @@
 	req_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2, TECH_BLUESPACE = 2)
 	build_path = /obj/item/stock_parts/circuitboard/disperserfront
 	sort_string = "KCAAD"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/dispersermiddle
 	name = "obstruction field disperser fusor"
@@ -610,6 +696,7 @@
 	req_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2, TECH_BLUESPACE = 2)
 	build_path = /obj/item/stock_parts/circuitboard/dispersermiddle
 	sort_string = "KCAAE"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/disperserback
 	name = "obstruction field disperser material deconstructor"
@@ -617,6 +704,7 @@
 	req_tech = list(TECH_ENGINEERING = 2, TECH_COMBAT = 2, TECH_BLUESPACE = 2)
 	build_path = /obj/item/stock_parts/circuitboard/disperserback
 	sort_string = "KCAAF"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/disperser_console
 	name = "obstruction field disperser control console"
@@ -624,9 +712,11 @@
 	req_tech = list(TECH_DATA = 2, TECH_COMBAT = 5, TECH_BLUESPACE = 5)
 	build_path = /obj/item/stock_parts/circuitboard/disperser
 	sort_string = "KCAAG"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/tcom
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 4)
+	category_items = "Subspace Telecomms"
 
 /datum/design/circuit/tcom/AssembleDesignName()
 	name = "Telecommunications machinery circuit design ([name])"
@@ -677,6 +767,7 @@
 	req_tech = list(TECH_DATA = 5, TECH_BLUESPACE = 5, TECH_PHORON = 5)
 	build_path = /obj/item/stock_parts/circuitboard/bluespacerelay
 	sort_string = "PAAAH"
+	category_items = "Subspace Telecomms"
 
 /datum/design/circuit/shield_generator
 	name = "Shield Generator"
@@ -685,6 +776,7 @@
 	req_tech = list(TECH_MAGNET = 3, TECH_POWER = 4)
 	build_path = /obj/item/stock_parts/circuitboard/shield_generator
 	sort_string = "VAAAC"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/shield_diffuser
 	name = "Shield Diffuser"
@@ -693,6 +785,7 @@
 	req_tech = list(TECH_MAGNET = 3, TECH_POWER = 4)
 	build_path = /obj/item/stock_parts/circuitboard/shield_diffuser
 	sort_string = "VAAAB"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/pointdefense
 	name = "Point defense battery"
@@ -701,6 +794,7 @@
 	req_tech = list(TECH_COMBAT = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/pointdefense
 	sort_string = "VAAAC"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/pointdefense_control
 	name = "Fire Assist Mainframe"
@@ -709,6 +803,7 @@
 	req_tech = list(TECH_COMBAT = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/pointdefense_control
 	sort_string = "VAAAD"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/ntnet_relay
 	name = "NTNet Quantum Relay"
@@ -716,6 +811,7 @@
 	req_tech = list(TECH_DATA = 4)
 	build_path = /obj/item/stock_parts/circuitboard/ntnet_relay
 	sort_string = "WAAAA"
+	category_items = "Subspace Telecomms"
 
 /datum/design/circuit/washer
 	name = "washing machine"
@@ -723,6 +819,7 @@
 	req_tech = list(TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/washer
 	sort_string = "WAAAS"
+	category_items = "Misc. Machinery"
 
 /datum/design/circuit/microwave
 	name = "microwave"
@@ -730,6 +827,7 @@
 	req_tech = list(TECH_BIO = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/microwave
 	sort_string = "WAAAT"
+	category_items = "Misc. Machinery"
 
 /datum/design/circuit/gibber
 	name = "meat gibber"
@@ -737,6 +835,7 @@
 	req_tech = list(TECH_BIO = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/gibber
 	sort_string = "WAAAU"
+	category_items = "Misc. Machinery"
 
 /datum/design/circuit/cooker
 	name = "kitchen appliance (assorted)"
@@ -745,6 +844,7 @@
 	req_tech = list(TECH_BIO = 1, TECH_MATERIAL = 1)
 	build_path = /obj/item/stock_parts/circuitboard/cooker
 	sort_string = "WAAAV"
+	category_items = "Misc. Machinery"
 
 /datum/design/circuit/honey_extractor
 	name = "honey extractor"
@@ -752,6 +852,7 @@
 	req_tech = list(TECH_BIO = 2, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/honey
 	sort_string = "WAAAW"
+	category_items = "Hydroponics Machinery"
 
 /datum/design/circuit/seed_extractor
 	name = "seed extractor"
@@ -759,6 +860,7 @@
 	req_tech = list(TECH_BIO = 2, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/honey/seed
 	sort_string = "WAAAX"
+	category_items = "Hydroponics Machinery"
 
 /datum/design/circuit/vending
 	name = "vending machine"
@@ -766,6 +868,7 @@
 	req_tech = list(TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/vending
 	sort_string = "WAABA"
+	category_items = "Misc. Machinery"
 
 /datum/design/circuit/reagentgrinder
 	name = "reagent grinder"
@@ -773,6 +876,7 @@
 	req_tech = list(TECH_BIO = 2, TECH_MATERIAL = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/reagentgrinder
 	sort_string = "WAABB"
+	category_items = "Misc. Machinery"
 
 /datum/design/circuit/juicer
 	name = "blender"
@@ -780,6 +884,7 @@
 	req_tech = list(TECH_BIO = 1, TECH_MATERIAL = 2, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/juicer
 	sort_string = "WAABC"
+	category_items = "Misc. Machinery"
 
 /datum/design/circuit/aicore
 	name = "AI core"
@@ -787,6 +892,7 @@
 	req_tech = list(TECH_DATA = 4, TECH_BIO = 3)
 	build_path = /obj/item/stock_parts/circuitboard/aicore
 	sort_string = "XAAAA"
+	category_items = "AI Modules"
 
 /datum/design/circuit/ionengine
 	name = "ion propulsion system"
@@ -795,6 +901,7 @@
 	materials = list(MATERIAL_GOLD = 250, MATERIAL_DIAMOND = 250, MATERIAL_URANIUM = 250, MATERIAL_PLASTIC = 1000, MATERIAL_ALUMINIUM = 1000)
 	build_path = /obj/item/stock_parts/circuitboard/engine/ion
 	sort_string = "XAAAB"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/sublimator/sauna
 	name = "sauna heater system"
@@ -802,6 +909,7 @@
 	req_tech = list(TECH_POWER = 2, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/sublimator/sauna
 	sort_string = "XAAAC"
+	category_items = "Engineering Machinery"
 
 /datum/design/circuit/vitals
 	name = "vitals monitor"
@@ -809,6 +917,7 @@
 	req_tech = list(TECH_BIO = 2, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/vitals_monitor
 	sort_string = "XAAAD"
+	category_items = "Computer Boards"
 
 /datum/design/circuit/sublimator/modular_computer
 	name = "general-purpose computer"
@@ -816,3 +925,4 @@
 	req_tech = list(TECH_POWER = 1, TECH_ENGINEERING = 1)
 	build_path = /obj/item/stock_parts/circuitboard/modular_computer
 	sort_string = "XAAAD"
+	category_items = "Computer Boards"
