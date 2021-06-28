@@ -61,3 +61,47 @@
 	new /obj/item/clothing/under/sad_ninja_sid(src)
 	new /obj/item/clothing/head/beret/sad_ninja_sid(src)
 	new /obj/item/clothing/accessory/armor/tag/sad_ninja_sid(src)
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Revolver
+
+/obj/item/gun/projectile/revolver/medium/sad_ninja_sid
+	name = "peacemaker"
+	desc = "An old fashion custom revolver, chambered in 10mm caliber. \
+			The inscription \"Peacemaker\" is engraved on the handle."
+	icon = CUSTOM_GUN_ICONS
+	item_icons = list(
+		slot_l_hand_str = CUSTOM_GUN_INHANDS_LEFT,
+		slot_r_hand_str = CUSTOM_GUN_INHANDS_RIGHT,
+		slot_belt_str = CUSTOM_ITEM_MOB
+	)
+	icon_state = "peacemaker"
+	item_state = "peacemaker"
+	safety_icon = "peacemaker_safety"
+	starts_loaded = FALSE
+	trade_blacklisted = TRUE
+
+/obj/item/gun/projectile/revolver/medium/sad_ninja_sid/handle_click_empty()
+	. = ..()
+	if(!safety_state)
+		toggle_safety()
+
+/obj/item/gun/projectile/revolver/medium/sad_ninja_sid/handle_post_fire()
+	. = ..()
+	if(!safety_state)
+		toggle_safety()
+
+/obj/item/clothingbag/sad_ninja_sid_revolver
+	name = "peacemaker's bag"
+	desc = "Sidnie Cloud's property"
+	trade_blacklisted = TRUE
+
+/obj/item/weapon_case/custom/sad_ninja_sid
+	owner = "Sidnie Cloud"
+	holding_weapon = /obj/item/gun/projectile/revolver/medium/sad_ninja_sid
+	trade_blacklisted = TRUE
+
+/obj/item/clothingbag/sad_ninja_sid_revolver/Initialize()
+	. = ..()
+	new /obj/item/weapon_case/custom/sad_ninja_sid(src)
+	new /obj/item/ammo_magazine/speedloader/rubber(src)
