@@ -96,7 +96,7 @@
 	)
 	item_state = "adro_edgy_furry_suit"
 	armor = list(
-		melee = ARMOR_MELEE_MAJOR,
+		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_SMALL,
 		laser = ARMOR_LASER_SMALL,
 		bomb = ARMOR_BOMB_PADDED,
@@ -141,7 +141,7 @@
 	)
 	item_state = "adro_edgy_furry_mask"
 	armor = list(
-		melee = ARMOR_MELEE_MAJOR,
+		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_SMALL,
 		laser = ARMOR_LASER_SMALL,
 		bomb = ARMOR_BOMB_PADDED,
@@ -184,7 +184,7 @@
 	item_state = "adro_edgy_furry_gloves"
 	siemens_coefficient = 0
 	armor = list(
-		melee = ARMOR_MELEE_MAJOR,
+		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_SMALL,
 		laser = ARMOR_LASER_SMALL,
 		bomb = ARMOR_BOMB_PADDED,
@@ -206,7 +206,7 @@
 	)
 	item_state = "adro_edgy_furry_boots"
 	armor = list(
-		melee = ARMOR_MELEE_MAJOR,
+		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_SMALL,
 		laser = ARMOR_LASER_SMALL,
 		bomb = ARMOR_BOMB_PADDED,
@@ -272,3 +272,141 @@
 	new /obj/item/clothing/glasses/hud/health/adro(src)
 	new /obj/item/clothing/head/beret/adro(src)
 	new /obj/item/clothing/under/rank/medical/adro(src)
+
+/obj/item/device/hailer/popit
+	name = "pop it"
+	desc = "Антистресс игрушка. Надпись на наклейке: Значок, что владелец дурачок."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "popit"
+
+/obj/item/device/hailer/popit/Initialize()
+	. = ..()
+	color = get_random_colour()
+
+	use_message = "Попыт круче!"
+	action_button_name = "Use Voice Helper"
+
+/obj/item/device/hailer/popit/proc/reset_spamcheck()
+	spamcheck = 0
+
+/obj/item/device/hailer/popit/attack_self(mob/living/carbon/user as mob)
+	if (spamcheck)
+		return
+
+	if(isnull(insults))
+		playsound(get_turf(src), 'infinity/sound/customs/popit/popit.ogg', 60, 1, vary = 0)
+		user.audible_message("<span class='warning'>[user]'s [name] rasps, \"[use_message]\"</span>", null, "<span class='warning'>\The [user] holds up \the [name].</span>")
+
+		spamcheck = 1
+		addtimer(CALLBACK(src, .proc/reset_spamcheck), 60 SECOND)
+
+	else
+		to_chat(user, SPAN_DANGER("*BZZZZZZZZT*"))
+
+/obj/item/clothing/suit/space/vox/carapace/adro
+	name = "blood-red armored raider spacesuit"
+	desc = " Blood red space suit with reinforced inserts for loud raid, also has spikes, improved and reworked for vox by vox."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adrovoxs"
+	item_state = "adrovoxs"
+	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	sprite_sheets = list()
+	trade_blacklisted = TRUE
+
+
+/obj/item/clothing/head/helmet/space/vox/carapace/adro
+	name = "blood-red armored raider helmet"
+	desc = "Blood red helmet with reinforced inserts and five luminous visors, has a lot of tubes and it's clearly non-human shape."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adrovoxh"
+	item_icons = list(
+		slot_head_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adrovoxh"
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/shoes/magboots/vox/adro
+	name = "blood-red magclaws"
+	desc = "Caw-caw."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adrovoxm"
+	item_icons = list(
+		slot_shoes_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adrovoxm"
+	sprite_sheets = list(
+		SPECIES_VOX = CUSTOM_ITEM_MOB
+		)
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/mask/gas/vox/adro
+	name = "merchant mask"
+	desc = "Modified vox mask, allow user to breath nitrogen from  atmosphere, consume food and drink."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adrovoxv"
+	item_icons = list(
+		slot_wear_mask_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adrovoxv"
+	down_icon_state = "adrovoxv"
+	sprite_sheets = list(
+		SPECIES_VOX = CUSTOM_ITEM_MOB
+		)
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/glasses/night/adro
+	name = "night-vision meson googles"
+	desc = "Two in one, allow user to see in dark, also it look nice."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adrovoxn"
+	item_icons = list(
+		slot_glasses_str = CUSTOM_ITEM_MOB
+	)
+	sprite_sheets = list(
+		SPECIES_VOX = CUSTOM_ITEM_MOB
+		)
+	item_state = "adrovoxn"
+	off_state = "adrovoxn"
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/under/vox/vox_robes/adro
+	name = "modern suit"
+	desc = "Just fashionable and comfortable suit for vox"
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adrovoxr"
+	item_icons = list(
+		slot_w_uniform_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adrovoxr"
+	worn_state = "adrovoxr"
+	sprite_sheets = list(
+		SPECIES_VOX = CUSTOM_ITEM_MOB
+		)
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/head/beret/adrovox
+	name = "leader beret"
+	desc = "Brilliant beautiful beret, show who is in charge here"
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adrovoxb"
+	item_icons = list(
+		slot_head_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adrovoxb"
+	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
+
+/obj/item/clothingbag/adro_vox
+	name = "clothing bag"
+	desc = "This is clothing bag"
+
+/obj/item/clothingbag/adro_vox/Initialize()
+	. = ..()
+
+	new /obj/item/clothing/suit/space/vox/carapace/adro(src)
+	new /obj/item/clothing/head/helmet/space/vox/carapace/adro(src)
+	new /obj/item/clothing/shoes/magboots/vox/adro(src)
+	new /obj/item/clothing/mask/gas/vox/adro(src)
+	new /obj/item/clothing/glasses/night/adro(src)
+	new /obj/item/clothing/under/vox/vox_robes/adro(src)
+	new /obj/item/clothing/head/beret/adrovox(src)
+	new /obj/item/device/hailer/popit(src)

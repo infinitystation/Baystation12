@@ -5,6 +5,15 @@
 			Straps with bright-red identification marks sit at the shoulders, \
 			and a two-headed eagle spreads its gilded wings across the wearer's back."
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical)
+	valid_accessory_slots = list(
+        ACCESSORY_SLOT_INSIGNIA,
+        ACCESSORY_SLOT_ARMOR_C,
+        ACCESSORY_SLOT_ARMOR_A,
+        ACCESSORY_SLOT_ARMOR_L,
+        ACCESSORY_SLOT_ARMOR_S,
+        ACCESSORY_SLOT_ARMOR_M,
+        ACCESSORY_SLOT_OVER
+    )
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB,
 					  slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
@@ -57,6 +66,54 @@
 	item_state = "kegangloves"
 	trade_blacklisted = TRUE
 
+/obj/item/clothing/under/rank/chaplain/wolf
+	name = "OP combat uniform"
+	desc = "A tight-fitting and elastic suit in dark tones with yellow inserts. The combination of leather and fabric provides the most comfortable and silent movement. It have symbols of the PMC Outer Paradise"
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
+	icon_state = "keganu"
+	item_state = "keganu"
+	worn_state = "keganu"
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/shoes/jackboots/wolf
+	name = "OP boots"
+	desc = "A tight-fitting and elastic boots in dark tones with yellow inserts. The combination of leather and fabric provides the most comfortable and silent movement."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB)
+	icon_state = "keganj"
+	item_state = "keganj"
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/accessory/storage/black_vest/wolf
+	name = "slings"
+	desc = "Just a slings with pouches."
+	icon = CUSTOM_ITEM_OBJ
+	accessory_icons = list(
+        slot_w_uniform_str = CUSTOM_ITEM_MOB,
+        slot_tie_str = CUSTOM_ITEM_MOB,
+        slot_wear_suit_str = CUSTOM_ITEM_MOB
+	)
+	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
+	icon_state = "keganp"
+	item_state = "keganp"
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/accessory/cloak/wolf
+	name = "OP poncho"
+	desc = "Cloak-poncho made of high-tech materials with the symbols of the PMC Outer Paradise has a kevlar filling with plasteel wire."
+	icon = CUSTOM_ITEM_OBJ
+	accessory_icons = list(
+        slot_w_uniform_str = CUSTOM_ITEM_MOB,
+        slot_tie_str = CUSTOM_ITEM_MOB,
+        slot_wear_suit_str = CUSTOM_ITEM_MOB
+    )
+	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	icon_state = "kegans"
+	item_state = "kegans"
+	trade_blacklisted = TRUE
+
+
 /obj/item/clothingbag/wolforbykot
 	name = "clothing bag"
 	desc = "Roar's property"
@@ -68,6 +125,10 @@
 	new /obj/item/clothing/suit/armor/pcarrier/tactical/wolforbykot(src)
 	new /obj/item/clothing/gloves/thick/duty/wolforbykot(src)
 	new /obj/item/storage/backpack/wolforbykot(src)
+	new /obj/item/clothing/under/rank/chaplain/wolf(src)
+	new /obj/item/clothing/shoes/jackboots/wolf(src)
+	new /obj/item/clothing/accessory/storage/black_vest/wolf(src)
+	new /obj/item/clothing/accessory/cloak/wolf(src)
 
 
 // Chainsword 40k

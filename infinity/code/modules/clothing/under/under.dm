@@ -136,6 +136,7 @@
 	icon_state = "saarecombat"
 	item_state = "saarecombat"
 	worn_state = "saarecombat"
+	gender_icons = 1
 
 /obj/item/clothing/under/rank/security/cadet
 	name = "cadet's uniform"
