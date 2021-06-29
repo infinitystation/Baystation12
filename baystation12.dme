@@ -3863,6 +3863,7 @@
 #include "infinity\customs\wrist_computer.dm"
 #include "infinity\customs\wrist_computer_grayson.dm"
 #include "infinity\customs\zpci_uniform.dm"
+#include "infinity\icons\customs\explanded.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
 #include "maps\_map_include.dm"
