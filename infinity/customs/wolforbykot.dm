@@ -6,14 +6,15 @@
 			and a two-headed eagle spreads its gilded wings across the wearer's back."
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical)
 	valid_accessory_slots = list(
-        ACCESSORY_SLOT_INSIGNIA,
-        ACCESSORY_SLOT_ARMOR_C,
-        ACCESSORY_SLOT_ARMOR_A,
-        ACCESSORY_SLOT_ARMOR_L,
-        ACCESSORY_SLOT_ARMOR_S,
-        ACCESSORY_SLOT_ARMOR_M,
-        ACCESSORY_SLOT_OVER
-    )
+		ACCESSORY_SLOT_INSIGNIA,
+		ACCESSORY_SLOT_ARMOR_C,
+		ACCESSORY_SLOT_ARMOR_A,
+		ACCESSORY_SLOT_ARMOR_L,
+		ACCESSORY_SLOT_ARMOR_S,
+		ACCESSORY_SLOT_ARMOR_M,
+		ACCESSORY_SLOT_OVER
+	)
+
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB,
 					  slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
@@ -30,8 +31,8 @@
 			since disabled any electronics beyond hope of repair. Its built-in air filtration system persists yet."
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB,
-					  slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
-					  slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT)
+					slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+					slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT)
 	item_state_slots = list(slot_l_hand_str = "keganhelmet",
 							slot_r_hand_str = "keganhelmet",)
 	icon_state = "keganhelmet"
@@ -46,8 +47,8 @@
 	desc = "A waist-slung Gaian shocktroop bag. Compact and roomy."
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_back_str = CUSTOM_ITEM_MOB,
-					  slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
-					  slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT)
+					slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+					slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT)
 	item_state_slots = list(slot_l_hand_str = "keganbackpack",
 							slot_r_hand_str = "keganbackpack",)
 	icon_state = "keganbackpack"
@@ -90,9 +91,9 @@
 	desc = "Just a slings with pouches."
 	icon = CUSTOM_ITEM_OBJ
 	accessory_icons = list(
-        slot_w_uniform_str = CUSTOM_ITEM_MOB,
-        slot_tie_str = CUSTOM_ITEM_MOB,
-        slot_wear_suit_str = CUSTOM_ITEM_MOB
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		slot_tie_str = CUSTOM_ITEM_MOB,
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
 	)
 	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
 	icon_state = "keganp"
@@ -104,10 +105,10 @@
 	desc = "Cloak-poncho made of high-tech materials with the symbols of the PMC Outer Paradise has a kevlar filling with plasteel wire."
 	icon = CUSTOM_ITEM_OBJ
 	accessory_icons = list(
-        slot_w_uniform_str = CUSTOM_ITEM_MOB,
-        slot_tie_str = CUSTOM_ITEM_MOB,
-        slot_wear_suit_str = CUSTOM_ITEM_MOB
-    )
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		slot_tie_str = CUSTOM_ITEM_MOB,
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
+	)
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
 	icon_state = "kegans"
 	item_state = "kegans"
