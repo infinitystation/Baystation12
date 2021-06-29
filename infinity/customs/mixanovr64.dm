@@ -56,6 +56,7 @@
 /obj/item/weapon_case/custom/mixa
 	owner = "Micheal White"
 	holding_weapon = /obj/item/gun/energy/pulse_rifle/pistol/mixa
+	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/mixa
 	name = "clothing bag"

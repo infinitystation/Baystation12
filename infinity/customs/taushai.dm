@@ -59,12 +59,12 @@
 
 
 /obj/item/device/kit/suit/taushai
-	name = "Rajirra's voidsuit modification kit"
+	name = "taj scavenger's voidsuit modification kit"
 	desc = "A kit for modifying a voidsuit."
 	uses = 2
 	new_icon_file = CUSTOM_ITEM_OBJ
 	new_mob_icon_file = CUSTOM_ITEM_MOB
-	new_name = "Field engineer"
+	new_name = "scavenger"
 	new_desc = "An older protective voidsuit used for field work."
 	new_icon = "taushai_taj_field_engineer"
 	trade_blacklisted = TRUE
@@ -72,7 +72,7 @@
 
 /obj/item/clothingbag/taushai
 	name = "clothing bag"
-	desc = "Rajirra's property"
+	desc = "Tajaran scavenger's property"
 	trade_blacklisted = TRUE
 
 

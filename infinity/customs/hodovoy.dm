@@ -102,3 +102,116 @@
 	. = ..()
 	new /obj/item/clothing/suit/storage/hooded/hodovoy(src)
 	new /obj/item/clothing/mask/hodovoy(src)
+
+//  Ares Price - gaiaset
+/obj/item/clothing/suit/storage/hodovoy_fleet
+	name = "SCG fleet officer's service jacket"
+	desc = "A navy blue SCG Fleet dress jacket with silver accents."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	icon_state = "hodovoy_price_off_jacket"
+	item_state = "hodovoy_price_off_jacket"
+	body_parts_covered = UPPER_TORSO | ARMS
+	allowed = list(
+		/obj/item/tank/emergency,
+		/obj/item/device/flashlight,
+		/obj/item/pen,
+		/obj/item/clothing/head/soft,
+		/obj/item/clothing/head/beret,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/flame/lighter,
+		/obj/item/device/taperecorder,
+		/obj/item/device/scanner/gas,
+		/obj/item/device/radio,
+		/obj/item/taperoll
+	)
+	valid_accessory_slots = list(
+		ACCESSORY_SLOT_ARMBAND,
+		ACCESSORY_SLOT_MEDAL,
+		ACCESSORY_SLOT_INSIGNIA,
+		ACCESSORY_SLOT_RANK,
+		ACCESSORY_SLOT_DEPT,
+		ACCESSORY_SLOT_DECOR,
+		ACCESSORY_SLOT_OVER
+	)
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/under/hodovoy_fleet
+	name = "SCG fleet officer's uniform"
+	desc = "A service uniform of some kind."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
+	icon_state = "hodovoy_price_off_under"
+	item_state = "hodovoy_price_off_under"
+	rolled_sleeves = 0
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/accessory/ranks_hodovoy_fleet
+	name = "SCG fleet ranks (O-6 captain)"
+	desc = "Sparkling gold shoulder straps of a fleet captain"
+	icon_state = "hodovoy_price_off_jacket_fleetrank"
+	item_state = "hodovoy_price_off_jacket_fleetrank"
+	icon = CUSTOM_ITEM_OBJ
+	accessory_icons = list(
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
+	)
+	w_class = ITEM_SIZE_TINY
+	on_rolled = list("down" = "none")
+	slot = ACCESSORY_SLOT_RANK
+	high_visibility = 1
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/head/hodovoy_fleet
+	name = " SCG fleet officer's peaked cap"
+	desc = "A peaked black uniform cap. This one is trimmed in gold."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
+	icon_state = "hodovoy_price_off_cap"
+	item_state = "hodovoy_price_off_cap"
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/accessory/medal_hodovoy_fleet
+	name = "solar honor medal"
+	desc = "Gold medal of a veteran officer for bravery during the conflict on Gaia.  Only real heroes received such an award."
+	icon_state = "hodovoy_price_off_medal"
+	icon = CUSTOM_ITEM_OBJ
+	accessory_icons = list(
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
+	)
+	slot = ACCESSORY_SLOT_MEDAL
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/accessory/cloak/hodovoy_fleet
+	name = "SCG fleet officer's navy pea jacket"
+	desc = "The captain's Navy pea jacket, with the captain's distinctive signs. \
+			It consists of expensive strong materials. \
+			This pea jacket elevates the wearer above his subordinates with all its appearance."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "hodovoy_price_off_cloak"
+	item_state = "hodovoy_price_off_cloak"
+	accessory_icons = list(
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		slot_tie_str = CUSTOM_ITEM_MOB,
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
+	)
+	item_icons = list(
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
+	)
+	trade_blacklisted = TRUE
+
+/obj/item/clothingbag/hodovoy_fleet
+	name = "clothbag"
+	desc = "true SCG hero"
+	trade_blacklisted = TRUE
+
+/obj/item/clothingbag/hodovoy_fleet/Initialize()
+	. = ..()
+	new /obj/item/clothing/accessory/cloak/hodovoy_fleet(src)
+	new /obj/item/clothing/accessory/medal_hodovoy_fleet(src)
+	new /obj/item/clothing/accessory/ranks_hodovoy_fleet(src)
+	new /obj/item/clothing/head/hodovoy_fleet(src)
+	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/clothing/suit/storage/hodovoy_fleet(src)
+	new /obj/item/clothing/under/hodovoy_fleet(src)

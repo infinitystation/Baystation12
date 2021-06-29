@@ -1,4 +1,4 @@
-/mob/living/simple_animal/lizard
+/mob/living/simple_animal/friendly/lizard
 	holder_type = /obj/item/holder/lizard
 
 /obj/item/holder/lizard
