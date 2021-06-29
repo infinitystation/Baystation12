@@ -8484,6 +8484,8 @@
 	dir = 8;
 	pixel_x = 22
 	},
+/obj/item/clothing/accessory/armguards/green,
+/obj/item/clothing/accessory/legguards/green,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
 "aoq" = (
@@ -9437,15 +9439,24 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing/mapped{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/armory)
 "apL" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
+/obj/structure/table/rack,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/clothing/accessory/armorplate/tactical,
+/obj/item/clothing/head/helmet/tactical,
+/obj/item/clothing/head/helmet/tactical,
+/obj/item/clothing/mask/balaclava/tactical,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
 "apM" = (
@@ -17717,14 +17728,14 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
-/mob/living/bot/cleanbot{
-	name = "Monro";
-	will_patrol = 1
-	},
 /obj/item/device/radio/beacon,
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
+	},
+/mob/living/bot/cleanbot{
+	name = "Monro";
+	will_patrol = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
@@ -23789,7 +23800,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/mob/living/simple_animal/friendly/corgi/Ian,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -23802,6 +23812,7 @@
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 6
 	},
+/mob/living/simple_animal/friendly/corgi/Ian,
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/hop)
 "aMC" = (
@@ -41495,13 +41506,13 @@
 	pixel_y = -6;
 	req_access = list("ACCESS_MEDICAL")
 	},
-/mob/living/simple_animal/friendly/cat/fluff/Runtime,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
+/mob/living/simple_animal/friendly/cat/fluff/Runtime,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
 "pnQ" = (

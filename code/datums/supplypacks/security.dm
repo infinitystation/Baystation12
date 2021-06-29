@@ -38,7 +38,7 @@
 					/obj/item/storage/belt/holster/security/tactical,
 					/obj/item/clothing/shoes/tactical,
 					/obj/item/clothing/gloves/tactical)
-	cost = 45
+	cost = 150
 	containertype = /obj/structure/closet/crate/secure
 	containername = "tactical armor crate"
 	access = access_armory
@@ -47,7 +47,7 @@
 	name = "Armor - Arm and leg guards, black"
 	contains = list(/obj/item/clothing/accessory/armguards = 2,
 					/obj/item/clothing/accessory/legguards = 2)
-	cost = 20
+	cost = 40
 	containertype = /obj/structure/closet/crate/secure
 	containername = "arm and leg guards crate"
 	access = access_armory
@@ -56,7 +56,7 @@
 	name = "Armor - Arm and leg guards, blue"
 	contains = list(/obj/item/clothing/accessory/armguards/blue = 2,
 					/obj/item/clothing/accessory/legguards/blue = 2)
-	cost = 20
+	cost = 40
 	containertype = /obj/structure/closet/crate/secure
 	containername = "arm and leg guards crate"
 	access = access_armory
@@ -65,7 +65,7 @@
 	name = "Armor - Arm and leg guards, green"
 	contains = list(/obj/item/clothing/accessory/armguards/green = 2,
 					/obj/item/clothing/accessory/legguards/green = 2)
-	cost = 20
+	cost = 40
 	containertype = /obj/structure/closet/crate/secure
 	containername = "arm and leg guards crate"
 	access = access_armory
@@ -74,7 +74,7 @@
 	name = "Armor - Arm and leg guards, navy blue"
 	contains = list(/obj/item/clothing/accessory/armguards/navy = 2,
 					/obj/item/clothing/accessory/legguards/navy = 2)
-	cost = 20
+	cost = 40
 	containertype = /obj/structure/closet/crate/secure
 	containername = "arm and leg guards crate"
 	access = access_armory
@@ -83,7 +83,7 @@
 	name = "Armor - Arm and leg guards, tan"
 	contains = list(/obj/item/clothing/accessory/armguards/tan = 2,
 					/obj/item/clothing/accessory/legguards/tan = 2)
-	cost = 20
+	cost = 40
 	containertype = /obj/structure/closet/crate/secure
 	containername = "arm and leg guards crate"
 	access = access_armory
