@@ -596,7 +596,7 @@
 	dat += "<tr>"
 	for(var/i = 1 to codelen)
 		dat += "<td><a href='?src=\ref[src];dec=[i]'>-</a>"
-	dat += "</table><hr><a href='?src=\ref[src];check=1'>Сопоставить код</a>""
+	dat += "</table><hr><a href='?src=\ref[src];check=1'>Сопоставить код</a>"
 		
 	user.set_machine(src)
 	var/datum/browser/popup = new(user, "closet", "[name]")
