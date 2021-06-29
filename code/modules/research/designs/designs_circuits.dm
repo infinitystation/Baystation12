@@ -27,7 +27,6 @@
 	build_path = /obj/item/stock_parts/circuitboard/arcade/battle
 	sort_string = "MAAAA"
 	category_items = "Misc. Machinery"
-	category_items = "Computer Boards"
 
 /datum/design/circuit/oriontrail
 	name = "orion trail arcade machine"
