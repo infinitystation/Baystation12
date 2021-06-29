@@ -108,18 +108,22 @@
 	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike."
 	origin_tech = list(TECH_BIO = 3)
 
+	item_icons = list(
+		slot_l_hand_str = 'infinity/icons/mob/onmob/items/mob_holder.dmi',
+		slot_r_hand_str = 'infinity/icons/mob/onmob/items/mob_holder.dmi',
+		slot_head_str = 'infinity/icons/mob/onmob/items/mob_holder.dmi'
+	)
+
+	item_state_slots = list(
+		slot_l_hand_str = "snake_l",
+		slot_r_hand_str = "snake_r",
+		slot_head_str = "snake_u"
+	)
+
 /obj/item/holder/snake/prepared
 	name = "snake"
 	desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike. Seems to be neutral for everyone."
 	prepared_type = /mob/living/simple_animal/hostile/retaliate/snake/imprinted
-
-/obj/item/holder/snake/prepared/update_state()
-	for(var/mob/M in contents)
-		if(M.name != "snake")
-			M.SetName(name)
-			M.real_name = name
-
-	..()
 
 /obj/item/holder/snake/prepared/safe
 	name = "snake"

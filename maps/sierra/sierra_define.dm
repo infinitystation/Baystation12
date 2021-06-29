@@ -29,6 +29,8 @@
 
 	evac_controller_type = /datum/evacuation_controller/starship/fast
 
+	lockdown_support = TRUE
+
 	default_law_type = /datum/ai_laws/nanotrasen
 	use_overmap = 1
 	num_exoplanets = 1
@@ -132,3 +134,26 @@
 			RELIGION_TAOISM
 		)
 	)
+
+	high_secure_areas = list(
+	//	"First Deck - Security - Armory",			WikiPedia's
+	//	"First Deck - Security - Armory Lobby",		Lie
+	//	"First Deck - Vault",
+	//	"AI Chamber",
+		"Second Deck - AI Upload",
+		"Second Deck - AI Upload Access")
+
+	secure_areas = list(
+		"Second Deck - Engine - Supermatter",
+		"Second Deck - Engineering - Technical Storage",
+		"Second Deck - Teleporter",
+		"First Deck - Telecoms - Storage",
+		"First Deck - Telecoms - Monitoring",
+		"First Deck - Telecoms",
+		"First Deck - EVA",
+		"Security - Brig",
+		"Security - Prison Wing",
+		"Third Deck - Hangar",
+		"Third Deck - Hangar - Atmospherics Storage",
+		"Third Deck - Water Cistern"
+		)
