@@ -232,6 +232,7 @@
 		slot_w_uniform_str = CUSTOM_ITEM_MOB,
 		)
 	worn_state = "adros"
+	trade_blacklisted = TRUE
 
 
 /obj/item/clothing/glasses/hud/health/adro
@@ -246,6 +247,7 @@
 	item_state = "adrov"
 	off_state = "adrov_off"
 	hud_type = HUD_MEDICAL
+	trade_blacklisted = TRUE
 
 /obj/item/clothing/head/beret/adro
 	name = "trauma-Team Beret"
@@ -257,10 +259,12 @@
 		slot_head_str = CUSTOM_ITEM_MOB
 	)
 	item_state = "adrob"
+	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/adro_edgy
 	name = "clothing bag"
 	desc = "This is clothing bag"
+	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/adro_edgy/Initialize()
 	. = ..()
@@ -394,10 +398,12 @@
 	)
 	item_state = "adrovoxb"
 	species_restricted = list(SPECIES_VOX, SPECIES_VOX_ARMALIS)
+	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/adro_vox
 	name = "clothing bag"
 	desc = "This is clothing bag"
+	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/adro_vox/Initialize()
 	. = ..()
@@ -410,3 +416,4 @@
 	new /obj/item/clothing/under/vox/vox_robes/adro(src)
 	new /obj/item/clothing/head/beret/adrovox(src)
 	new /obj/item/device/hailer/popit(src)
+	new /obj/item/device/radio/headset/syndicate(src)
