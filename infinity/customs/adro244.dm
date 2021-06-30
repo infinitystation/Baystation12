@@ -416,3 +416,4 @@
 	new /obj/item/clothing/under/vox/vox_robes/adro(src)
 	new /obj/item/clothing/head/beret/adrovox(src)
 	new /obj/item/device/hailer/popit(src)
+	new /obj/item/device/radio/headset/syndicate(src)
