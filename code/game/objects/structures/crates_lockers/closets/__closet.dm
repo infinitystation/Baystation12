@@ -587,7 +587,7 @@
 /obj/structure/closet/interact(mob/user)
 	add_fingerprint(user)
 
-	var/dat = "<table><tr>"
+	var/dat = "<table style="text-align: center;"><tr>"
 	for(var/i = 1 to codelen)
 		dat += "<td><a href='?src=\ref[src];inc=[i]'>+</a>"
 	dat += "<tr>"
