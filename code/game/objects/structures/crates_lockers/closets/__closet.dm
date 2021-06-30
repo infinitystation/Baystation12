@@ -599,7 +599,7 @@
 	dat += "</table><hr><a href='?src=\ref[src];check=1'>Сопоставить код</a>"
 		
 	user.set_machine(src)
-	var/datum/browser/popup = new(user, "closet", "[name]")
+	var/datum/browser/popup = new(user, "closet", "[name]", 90 + codelen * 30, 200)
 	popup.set_content(dat)
 	popup.open(1)
 
