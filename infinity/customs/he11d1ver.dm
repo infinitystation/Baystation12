@@ -80,3 +80,4 @@
 	new /obj/item/clothing/shoes/jackboots/wolf(src)
 	new /obj/item/clothing/accessory/storage/black_vest/wolf(src)
 	new /obj/item/clothing/accessory/cloak/wolf(src)
+	new /obj/item/clothing/gloves/thick/duty/wolforbykot(src)
