@@ -91,7 +91,8 @@ GLOBAL_VAR(href_logfile)
 		call(debug_server, "auxtools_init")()
 		enable_debugging()
 
-	name = "[server_name] - [GLOB.using_map.full_name]"
+	if(config)
+		name = "[config.server_name] - [GLOB.using_map.full_name]"
 
 	//logs
 	SetupLogs()
