@@ -23,7 +23,19 @@
 /obj/item/clothing/suit/hooded/rex
 	name = "OP plate carrier"
 	desc = " A mostly common, yet stylish TAA-4 plate carrier model, belonging to Outer Paradise PMC."
-	allowed = list(/obj/item/gun/energy,/obj/item/device/radio,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/gun/magnetic,/obj/item/clothing/head/helmet,/obj/item/device/flashlight)
+	allowed = list(
+		/obj/item/gun/energy,
+		/obj/item/device/radio,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/gun/projectile,
+		/obj/item/ammo_magazine,
+		/obj/item/ammo_casing,
+		/obj/item/melee/baton,
+		/obj/item/handcuffs,
+		/obj/item/gun/magnetic,
+		/obj/item/clothing/head/helmet,
+		/obj/item/device/flashlight
+	)
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical)
 	valid_accessory_slots = list(
 		ACCESSORY_SLOT_INSIGNIA,
