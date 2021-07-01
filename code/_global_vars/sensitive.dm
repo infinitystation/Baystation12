@@ -9,6 +9,7 @@ GLOBAL_REAL_VAR(sqlpass)      = ""
 
 // Feedback gathering sql connection
 GLOBAL_REAL_VAR(sqlfdbkdb)    = "test"
+GLOBAL_REAL_VAR(sqlfdbkdbutil) = "test"
 GLOBAL_REAL_VAR(sqlfdbklogin) = "root"
 GLOBAL_REAL_VAR(sqlfdbkpass)  = ""
 

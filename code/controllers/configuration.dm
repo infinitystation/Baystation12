@@ -922,6 +922,8 @@ var/list/gamemode_cache = list()
 				sqlpass = value
 			if ("feedback_database")
 				sqlfdbkdb = value
+			if("utility_database")
+				sqlfdbkdbutil = value
 			if ("feedback_login")
 				sqlfdbklogin = value
 			if ("feedback_password")

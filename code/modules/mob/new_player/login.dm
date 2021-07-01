@@ -61,7 +61,7 @@
 	if(dbcon.IsConnected())
 		var/dbckey = sql_sanitize_text(src.ckey)
 		var/DBQuery/find_ticket = dbcon.NewQuery(
-			"SELECT ckey FROM ckey_whitelist WHERE ckey='[dbckey]' AND is_valid=true AND port=[world.port] AND date_start<=NOW() AND (NOW()<date_end OR date_end IS NULL)"
+			"SELECT ckey FROM [sqlfdbkdbutil].ckey_whitelist WHERE ckey='[dbckey]' AND is_valid=true AND port=[world.port] AND date_start<=NOW() AND (NOW()<date_end OR date_end IS NULL)"
 		)
 
 		if(!find_ticket.Execute())
