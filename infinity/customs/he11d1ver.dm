@@ -20,7 +20,7 @@
 	burn_mod = 0.7
 	speed_mod = 0.18
 
-/obj/item/clothing/suit/armor/pcarrier/tactical/rex
+/obj/item/clothing/suit/hooded/rex
 	name = "OP plate carrier"
 	desc = " A mostly common, yet stylish TAA-4 plate carrier model, belonging to Outer Paradise PMC."
 	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical)
@@ -37,7 +37,15 @@
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
 	icon_state = "rexv"
 	item_state = "rexv"
-	body_parts_covered = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	hoodtype = /obj/item/clothing/head/helmet/tactical/rex
+	action_button_name = "Toggle Hood"
+/obj/item/clothing/suit/hooded/rex/on_update_icon()
+	if(suittoggled)
+		item_state = "[initial(item_state)]_t"
+	else
+		item_state = "[initial(item_state)]"
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/head/helmet/tactical/rex
@@ -51,21 +59,8 @@
 	item_state_slots = list(
 		slot_head_str = "rexh"
 	)
+	canremove = 0
 	trade_blacklisted = TRUE
-	action_button_name = "Toggle hood"
-	var/isHoodUp = 0
-
-/obj/item/clothing/head/helmet/tactical/rex/on_update_icon()
-	. = ..()
-	var/tmp = "[initial(icon_state)][isHoodUp ? "_up" : ""]"
-	item_state_slots = list(slot_head_str = tmp)
-	icon_state = tmp
-	update_clothing_icon()
-
-/obj/item/clothing/head/helmet/tactical/rex/attack_self(mob/user as mob)
-	isHoodUp = !isHoodUp
-	to_chat(user, "You [isHoodUp ? "lower" : "raise"] the hood on the [src].")
-	update_icon()
 
 /obj/item/clothingbag/rex
 	name = "clothing bag"
@@ -74,8 +69,7 @@
 
 /obj/item/clothingbag/rex/New()
 	..()
-	new /obj/item/clothing/head/helmet/tactical/rex(src)
-	new /obj/item/clothing/suit/armor/pcarrier/tactical/rex(src)
+	new /obj/item/clothing/suit/hooded/rex(src)
 	new /obj/item/clothing/under/rank/chaplain/wolf(src)
 	new /obj/item/clothing/shoes/jackboots/wolf(src)
 	new /obj/item/clothing/accessory/storage/black_vest/wolf(src)
