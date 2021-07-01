@@ -68,7 +68,7 @@
 		var/cidquery = ""
 		if(address)
 			failedip = 0
-			ipquery = " OR ip = INET_ATON('[address]') "
+			ipquery = " OR ip = '[address]' "
 
 		if(computer_id)
 			failedcid = 0
