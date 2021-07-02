@@ -58,7 +58,7 @@
 
 /datum/gear/uniform/formal_shirt_and_pants
 	display_name = "formal shirts with pants"
-	path = /obj/item/clothing/under/suit_jacket/charcoal
+	path = /obj/item/clothing/under/suit_jacket
 
 /datum/gear/uniform/formal_shirt_and_pants/New()
 	..()
