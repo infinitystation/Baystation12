@@ -98,7 +98,7 @@
 
 /obj/item/clothingbag/rex
 	name = "clothing bag"
-	desc = "Aard's property"
+	desc = "PMC Outer Paradise's property"
 	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/rex/New()
