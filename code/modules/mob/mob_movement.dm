@@ -167,7 +167,10 @@
 		return
 	if(!mob)
 		return // Moved here to avoid nullrefs below
-	return mob.SelfMove(direction)
+	. = mob.SelfMove(direction)
+	if(.)
+		next_move_dir_add = 0
+		next_move_dir_sub = 0
 
 // Checks whether this mob is allowed to move in space
 // Return 1 for movement, 0 for none,
