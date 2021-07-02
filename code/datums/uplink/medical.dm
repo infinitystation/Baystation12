@@ -42,3 +42,15 @@
 	item_cost = 48
 	antag_costs = list(MODE_MERCENARY = 20)
 	path = /obj/item/storage/firstaid/combat
+
+/datum/uplink_item/item/medical/scanner
+	name = "Health Scanner"
+	desc = "A hand-held body scanner able to distinguish vital signs of the subject."
+	item_cost = 18
+	path = /obj/item/device/scanner/health
+
+/datum/uplink_item/item/medical/scanner
+	name = "Health HUD"
+	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status."
+	item_cost = 18
+	path = /obj/item/clothing/glasses/hud/health
