@@ -55,3 +55,17 @@
 	display_name = "NanoTrasen liason suit"
 	path = /obj/item/clothing/under/suit_jacket/corp/nanotrasen
 	allowed_roles = list(/datum/job/iaa)
+
+/datum/gear/uniform/formal_shirt_and_pants
+	display_name = "formal shirts with pants"
+	path = /obj/item/clothing/under/suit_jacket/charcoal
+
+/datum/gear/uniform/formal_shirt_and_pants/New()
+	..()
+	var/list/shirts = list(
+		/obj/item/clothing/under/suit_jacket/charcoal/no_accessories,
+		/obj/item/clothing/under/suit_jacket/navy/no_accessories,
+		/obj/item/clothing/under/suit_jacket/burgundy/no_accessories,
+		/obj/item/clothing/under/suit_jacket/checkered/no_accessories
+	)
+	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(shirts)
