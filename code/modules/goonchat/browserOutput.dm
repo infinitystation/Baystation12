@@ -282,6 +282,11 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/tmp/iconCache.sav")) //Cache o
 
 /proc/to_chat(target, message, handle_whitespace = TRUE, trailing_newline = TRUE)
 	set waitfor = FALSE
+
+	if(config && config.twitch_censor)
+		for(var/char in config.twich_censor_list)
+			message = replacetext(message, char, config.twich_censor_list[char])
+
 	if(Master.current_runlevel == RUNLEVEL_INIT || !SSchat?.initialized)
 		to_chat_immediate(target, message, handle_whitespace, trailing_newline)
 		return

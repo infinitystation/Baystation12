@@ -69,6 +69,10 @@
 		//Maybe, we need trim text twice? Here and before copytext?
 		input = trim(input)
 
+	if(config.twitch_censor)
+		for(var/char in config.twich_censor_list)
+			input = replacetext(input, char, config.twich_censor_list[char])
+
 	return input
 
 //Run sanitize(), but remove <, >, " first to prevent displaying them as &gt; &lt; &34; in some places, after html_encode().

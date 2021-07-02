@@ -848,6 +848,19 @@ var/global/floorIsLava = 0
 	message_admins("[key_name_admin(usr)] toggled Dead OOC.", 1)
 	SSstatistics.add_field_details("admin_verb","TDOOC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/datum/admins/proc/toggle_twitch_censor()
+	set category = "Server"
+	set name = "Toggle Twitch censor"
+	set desc = "Toggle Twitch censor"
+
+	if(!check_rights(R_SERVER))
+		return
+
+	if(config)
+		config.twitch_censor = !config.twitch_censor
+		log_and_message_admins("[config.twitch_censor ? "enabled" : "disabled"] Twitch censor")
+	SSstatistics.add_field_details("admin_verb","CENSOR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 /datum/admins/proc/togglehubvisibility()
 	set category = "Server"
 	set desc="Globally Toggles Hub Visibility"
