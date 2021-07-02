@@ -1,22 +1,33 @@
 /mob/living/carbon/human/key_down(_key, client/user)
-/*
 	if(_key == "H")
-		var/obj/item/clothing/accessory/holster/H = null
-		if(istype(w_uniform, /obj/item/clothing/under))
-			var/obj/item/clothing/under/S = w_uniform
-			if(S.accessories.len)
-				H = locate() in S.accessories
-		if (!H)
+		if(incapacitated())
 			return
-		if(!H.holstered)
-			if(!istype(get_active_hand(), /obj/item/gun))
-				to_chat(usr, "<span class='warning'>You need your gun equiped to holster it.</span>")
+
+		var/obj/item/clothing/under/U = w_uniform
+		for(var/obj/S in U.accessories)
+			if(istype(S, /obj/item/clothing/accessory/storage/holster))
+				var/datum/extension/holster/E = get_extension(S, /datum/extension/holster)
+				if(!E.holstered)
+					if(!get_active_hand())
+						to_chat(usr, "<span class='warning'>You're not holding anything to holster.</span>")
+						return
+					E.holster(get_active_hand(), src)
+					return
+				else
+					E.unholster(src, TRUE)
+					return
+		if(istype(belt, /obj/item/storage/belt/holster))
+			var/obj/item/storage/belt/holster/B = belt
+			var/datum/extension/holster/E = get_extension(B, /datum/extension/holster)
+			if(!E.holstered)
+				if(!get_active_hand())
+					to_chat(src, "<span class='warning'>You're not holding anything to holster.</span>")
+					return
+				E.holster(src.get_active_hand(), src)
 				return
-			var/obj/item/gun/W = get_active_hand()
-			H.holster(W, usr)
-		else
-			H.unholster(usr)
-*/
+			else
+				E.unholster(src, TRUE)
+				return
 	if(client.keys_held["Shift"])
 		switch(_key)
 			if("E") // Put held thing in belt or take out most recent thing from belt
