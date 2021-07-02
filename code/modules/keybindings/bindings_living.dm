@@ -6,5 +6,9 @@
 			else
 				resist()
 			return
-
+		if("J")
+			if(!aiming)
+				aiming = new(src)
+				aiming.toggle_active()
+			return
 	return ..()

@@ -12,6 +12,9 @@
 	set desc = "Local OOC, seen only by those in view. Remember: Just because you see someone that doesn't mean they see you."
 	set category = "OOC"
 
+	if(!message)
+		message = input(src.mob, "", "looc \"text\"") as text|null
+
 	sanitize_and_communicate(/decl/communication_channel/ooc/looc, src, message)
 
 /client/verb/fix_chat()
