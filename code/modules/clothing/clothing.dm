@@ -918,7 +918,7 @@ BLIND     // can't see anything
 		. = icon_state
 	if(!findtext(.,"_s", -2)) // If we don't already have our suffix
 // INF		if((icon_state + "_f_s") in icon_states(GLOB.default_onmob_icons[slot_w_uniform_str]))
-		if( ((icon_state + "_f_s") in icon_states(GLOB.default_onmob_icons[slot_w_uniform_str])) || ((icon_state + "_f_s") in icon_states(item_icons[slot_w_uniform_str])) ) // INF, где наши иконки?
+		if( ((icon_state + "_f_s") in icon_states(GLOB.default_onmob_icons[slot_w_uniform_str])) || (item_icons && item_icons[slot_w_uniform_str] && ( (icon_state + "_f_s") in icon_states(item_icons[slot_w_uniform_str])) ) ) // INF, где наши иконки?
 			. +=  get_gender_suffix()
 		else
 			. += "_s"

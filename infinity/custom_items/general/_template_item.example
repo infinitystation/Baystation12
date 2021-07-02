@@ -9,5 +9,10 @@
   "req_access" :      [ "ACCESS_CAVEMAN" ]
   "paper_title" :     "Paper's title",
   "paper_stamp_type" :"/obj/item/stamp/real_stamp",
-  "paper_info" :      "Paper content, including [b]code[/b] and [sign]Sign[/sign]"
+  "paper_info" :      "Paper content, including [b]code[/b] and [sign]Sign[/sign]",
+  "additional_data":
+  {
+    "rolled_down": 0, | Можно ли завернуть вниз одежду? 0 - нет, 1 - да. Только для /obj/item/clothing/under
+    "rolled_sleeves": 0 | Можно ли засучить рукава? 0 - нет, 1 - да. Только для /obj/item/clothing/under
   }
+}
