@@ -1,5 +1,5 @@
 /obj/machinery/body_scanconsole
-	var/obj/machinery/bodyscanner/connected	
+	var/obj/machinery/bodyscanner/connected
 	var/stored_scan_subject
 	name = "body scanner console"
 	desc = "A small terminal used to operate an adjacent body scanner, view the results of a scan, and send those results to connected medical displays."
@@ -10,10 +10,10 @@
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	stat_immune = 0
-	
+
 	machine_name = "body scanner console"
 	machine_desc = "A small touchscreen terminal, used to operate an adjacent body scanner, as well as viewing and manipulating its readouts."
-	
+
 	var/list/connected_displays = list()
 	var/list/data = list()
 	var/scan_data
@@ -24,7 +24,7 @@
 
 /obj/machinery/body_scanconsole/on_update_icon()
 	if(stat & (BROKEN | NOPOWER))
-		icon_state = "body_scannerconsole-p"	
+		icon_state = "body_scannerconsole-p"
 	else
 		icon_state = initial(icon_state)
 
@@ -35,7 +35,7 @@
 			qdel(src)
 		if(2.0)
 			if (prob(50))
-				qdel(src)				
+				qdel(src)
 
 /obj/machinery/body_scanconsole/proc/FindScanner()
 	for(var/D in GLOB.cardinal)
@@ -44,7 +44,7 @@
 			break
 		GLOB.destroyed_event.register(connected, src, .proc/unlink_scanner)
 
-/obj/machinery/body_scanconsole/proc/unlink_scanner(obj/machinery/bodyscanner/scanner)	
+/obj/machinery/body_scanconsole/proc/unlink_scanner(obj/machinery/bodyscanner/scanner)
 	GLOB.destroyed_event.unregister(scanner, src, .proc/unlink_scanner)
 	connected = null
 
@@ -110,7 +110,7 @@
 		data["html_scan_header"] = display_medical_data_header(data["scan"], user.get_skill_value(SKILL_MEDICAL))
 		data["html_scan_health"] = display_medical_data_health(data["scan"], user.get_skill_value(SKILL_MEDICAL))
 		data["html_scan_body"] = display_medical_data_body(data["scan"], user.get_skill_value(SKILL_MEDICAL))
-		
+
 		stored_scan_subject = connected.occupant
 		user.visible_message(
 			SPAN_NOTICE("\The [user] performs a scan of \the [connected.occupant] using \the [initial(connected.name)]."),
@@ -118,6 +118,10 @@
 			SPAN_ITALIC("You hear a series of beeps, followed by a deep humming sound.")
 		)
 		playsound(connected.loc, 'sound/machines/medbayscanner.ogg', 50)
+		return TOPIC_REFRESH
+
+	if (href_list["eject"])
+		connected.eject()
 		return TOPIC_REFRESH
 
 	if (href_list["print"])
@@ -128,7 +132,7 @@
 		new /obj/item/paper/bodyscan(loc, "Printout error.", "Body scan report - [stored_scan_subject]", scan.Copy())
 		return TOPIC_REFRESH
 
-	if(href_list["push"])		
+	if(href_list["push"])
 		if(!connected_displays.len && !FindDisplays())
 			to_chat(user, SPAN_WARNING("[icon2html(src, user)]Error: No configured displays detected."))
 			return TOPIC_REFRESH

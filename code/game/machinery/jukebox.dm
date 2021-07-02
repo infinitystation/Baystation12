@@ -57,7 +57,6 @@
 	jukebox.ui_interact(user)
 	return TRUE
 
-
 /obj/machinery/jukebox/attackby(obj/item/I, mob/user)
 	if (isWrench(I))
 		add_fingerprint(user)
@@ -76,14 +75,18 @@
 			to_chat(user, "<span class='warning'>\The [D] is ruined, you can't use it.</span>")
 			return
 
+		if(!D.track)
+			to_chat(user, "<span class='warning'>There is no music recorded on \a [D].</span>")
+			return
+
 		if(user.drop_item())
 			visible_message("<span class='notice'>[usr] insert \a [tape] into \the [src].</span>")
 			D.forceMove(src)
 			tape = D
 			jukebox.tracks += tape.track
 			verbs += /obj/machinery/jukebox/verb/eject
-		return
-	// INF@CODE - END 
+			return
+	// INF@CODE - END
 
 	return ..()
 

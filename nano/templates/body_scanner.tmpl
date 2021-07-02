@@ -7,12 +7,20 @@
             {{:helper.link( 'Incompatible Lifeform', null, { "scan" : 1 }, 'disabled')}}
         {{/if}}
     {{else}}
-        {{:helper.link( 'Scanner Empty', null, { "scan" : 1 }, 'disabled')}}
+        {{:helper.link( 'Nobody to scan', null, { "scan" : 1 }, 'disabled')}}
     {{/if}}
     </td>
     <td>{{:helper.link('Print Scan', null, {"print" : 1}, data.printEnabled ? null : 'disabled')}}</td>
     <td>{{:helper.link('Erase Scan', null, {"erase" : 1}, data.eraseEnabled ? null : 'disabled')}}</td>
-    <td>{{:helper.link('Push  Scan to Displays', null, {"push" : 1}, data.pushEnabled ? null : 'disabled' )}}</td></tr>
+    <td>{{:helper.link('Push  Scan to Displays', null, {"push" : 1}, data.pushEnabled ? null : 'disabled' )}}</td>
+	<td>
+    {{if data.scanEnabled}}
+            {{:helper.link( 'Eject Occupant', null, { "eject" : 1 }, null)}}
+    {{else}}
+        {{:helper.link( 'Scanner Empty', null, { "scan" : 1 }, 'disabled')}}
+    {{/if}}
+    </td>
+	</tr>
 </table>
 {{:data.html_scan_header}}
 {{:data.html_scan_health}}

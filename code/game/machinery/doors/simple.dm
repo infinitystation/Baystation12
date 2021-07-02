@@ -2,7 +2,6 @@
 	name = "door"
 	icon = 'icons/obj/doors/material_doors.dmi'
 	icon_state = "metal"
-
 	var/material/material
 	var/icon_base
 	hitsound = 'sound/weapons/genhit.ogg'
@@ -42,7 +41,7 @@
 		glass = 1
 		alpha = 180
 		set_opacity(0)
-	
+
 	if(!density)
 		set_opacity(0)
 	update_icon()
@@ -87,14 +86,14 @@
 /obj/machinery/door/unpowered/simple/close(var/forced = 0)
 	if(!can_close(forced))
 		return
-	
+
 	// If the door is blocked, don't close
 	for(var/turf/A in locs)
 		var/turf/T = A
 		var/obstruction = T.get_obstruction()
 		if (obstruction)
 			return
-	
+
 	playsound(src.loc, material.dooropen_noise, 100, 1)
 	..()
 
@@ -133,8 +132,23 @@
 			if(prob(20))
 				take_damage(150)
 
-
 /obj/machinery/door/unpowered/simple/attackby(obj/item/I as obj, mob/user as mob)
+	if(isWrench(I))
+		if(user.a_intent == I_HURT)
+			wrench_floor_bolts(user, 20)
+			return
+	if(isWelder(I))
+		var/obj/item/weldingtool/WT = I
+		if(!src.anchored && WT.isOn())
+			playsound(src.loc, 'sound/items/Welder.ogg', 100, 1)
+			to_chat(user, "<span class='notice'>Now slicing through the door...</span>")
+			if(do_after(user, 20, src))
+				to_chat(user, "<span class='warning'>You have sliced door!</span>")
+			material = SSmaterials.get_material_by_name(src.get_material_name())
+			material.place_sheet(get_turf(src), 10)
+			qdel(src)
+			return
+
 	src.add_fingerprint(user, 0, I)
 	if(istype(I, /obj/item/key) && lock)
 		var/obj/item/key/K = I
