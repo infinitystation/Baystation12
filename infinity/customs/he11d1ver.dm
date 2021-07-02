@@ -47,7 +47,10 @@
 		ACCESSORY_SLOT_OVER
 	)
 	icon = CUSTOM_ITEM_OBJ
-	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB,
+		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT
+	)
 	icon_state = "rexv"
 	item_state = "rexv"
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO
@@ -75,6 +78,24 @@
 	canremove = 0
 	trade_blacklisted = TRUE
 
+/obj/item/clothing/mask/gas/rex
+	name = "OP combat mask"
+	desc = "An intimidating mix of respirator and balaclava with dimmed lenses to blend in better with the dark."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "rexm"
+	item_icons = list(
+		slot_wear_mask_str = CUSTOM_ITEM_MOB,
+		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT
+	)
+	item_state_slots = list(
+		slot_wear_mask_str = "rexm",
+		slot_l_hand_str = "rexml",
+		slot_r_hand_str = "rexmr"
+		)
+	tint = 0
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+
 /obj/item/clothingbag/rex
 	name = "clothing bag"
 	desc = "Aard's property"
@@ -83,7 +104,8 @@
 /obj/item/clothingbag/rex/New()
 	..()
 	new /obj/item/clothing/suit/hooded/rex(src)
-	new /obj/item/clothing/under/rank/chaplain/wolf(src)
+	new /obj/item/clothing/mask/gas/rex(src)
+	new /obj/item/clothing/under/solgov/utility/wolf(src)
 	new /obj/item/clothing/shoes/jackboots/wolf(src)
 	new /obj/item/clothing/accessory/storage/black_vest/wolf(src)
 	new /obj/item/clothing/accessory/cloak/wolf(src)
