@@ -23,11 +23,7 @@
 			mode()					// attack_self(). No idea who came up with "mode()"
 			return
 		if("Q", "Northwest") // Northwest is Home
-			var/obj/item/I = get_active_hand()
-			if(!I)
-				to_chat(src, "<span class='warning'>You have nothing to drop in your hand!</span>")
-			else
-				drop_item(I)
+			hotkey_drop()
 			return
 		if("E")
 			quick_equip()
@@ -40,9 +36,6 @@
 			return
 		if(".")
 			SelfMove(DOWN)
-			return
-		if("j")
-			toggle_gun_mode()
 			return
 		//Bodypart selections
 		if("Numpad8")
