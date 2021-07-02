@@ -113,7 +113,7 @@ Teleporter beacon, and its subtypes
 
 	var/bot_type = /mob/living/simple_animal/hostile/hivebot
 	var/bot_amt = 2
-	var/spawn_delay = 100
+	var/spawn_delay = 10 SECONDS
 	var/spawn_time = 0
 
 	ai_holder_type = /datum/ai_holder/simple_animal/hivebot/tele
@@ -126,6 +126,7 @@ Teleporter beacon, and its subtypes
 	visible_message("<span class='danger'>\The [src] warps in!</span>")
 	playsound(src.loc, 'sound/effects/EMPulse.ogg', 25, 1)
 	set_AI_busy(TRUE)
+	spawn_time = world.time + spawn_delay
 
 /mob/living/simple_animal/hostile/hivebot/tele/proc/warpbots()
 	icon_state = "def_radar"

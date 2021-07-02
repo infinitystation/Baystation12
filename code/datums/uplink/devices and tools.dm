@@ -124,6 +124,7 @@
 	item_cost = 24
 	antag_costs = list(MODE_MERCENARY = 20)
 	path = /obj/item/clothing/glasses/thermal/syndi
+	antag_roles = list(MODE_TRAITOR)
 
 /datum/uplink_item/item/tools/flashdark
 	name = "Flashdark"

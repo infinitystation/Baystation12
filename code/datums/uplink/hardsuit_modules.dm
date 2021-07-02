@@ -4,7 +4,7 @@
 /datum/uplink_item/item/hardsuit_modules
 	category = /datum/uplink_category/hardsuit_modules
 
-/datum/uplink_item/item/hardsuit_modules/thermal
+/datum/uplink_item/item/hardsuit_modules/thermal // INF, осталось для антагов ~bear1ake
 	name = "\improper Thermal Scanner"
 	desc = "A module capable of giving vision of synthetic or living creatures, through thermal imaging."
 	item_cost = 16
