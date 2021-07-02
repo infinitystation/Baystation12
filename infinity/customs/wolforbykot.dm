@@ -67,28 +67,39 @@
 	item_state = "kegangloves"
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/under/rank/chaplain/wolf
+/obj/item/clothing/under/solgov/utility/wolf
 	name = "OP combat uniform"
-	desc = "A tight-fitting and elastic suit in dark tones with yellow inserts. The combination of leather and fabric provides the most comfortable and silent movement. It have symbols of the PMC Outer Paradise"
+	desc = "An elastic, tight-fitting suit with yellow highlights. The fused synthleather fabrics offer comfort and prevent noisy friction. The small inscription on the collar reads OUTER PARADISE."
 	icon = CUSTOM_ITEM_OBJ
-	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
+	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT
+	)
 	icon_state = "keganu"
 	item_state = "keganu"
 	worn_state = "keganu"
+	item_state_slots = list(
+		slot_w_uniform_str = "keganu",
+		slot_l_hand_str = "keganul",
+		slot_r_hand_str = "keganur"
+	)
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/shoes/jackboots/wolf
 	name = "OP boots"
-	desc = "A tight-fitting and elastic boots in dark tones with yellow inserts. The combination of leather and fabric provides the most comfortable and silent movement."
+	desc = "Snug, dark-toned boots with yellow highlights. Exceptionally muffle their wearer's footsteps."
 	icon = CUSTOM_ITEM_OBJ
-	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB)
+	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB,
+		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT
+	)
 	icon_state = "keganj"
 	item_state = "keganj"
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/storage/black_vest/wolf
 	name = "slings"
-	desc = "Just a slings with pouches."
+	desc = "Rugged and sturdy slings with pouches."
 	icon = CUSTOM_ITEM_OBJ
 	accessory_icons = list(
 		slot_w_uniform_str = CUSTOM_ITEM_MOB,
@@ -102,16 +113,26 @@
 
 /obj/item/clothing/accessory/cloak/wolf
 	name = "OP poncho"
-	desc = "Cloak-poncho made of high-tech materials with the symbols of the PMC Outer Paradise has a kevlar filling with plasteel wire."
+	desc = "A cloak-poncho hybrid woven out of advanced materials. The PMC Outer Paradise's winged skull symbol is emblazoned on its shoulder."
 	icon = CUSTOM_ITEM_OBJ
 	accessory_icons = list(
 		slot_w_uniform_str = CUSTOM_ITEM_MOB,
 		slot_tie_str = CUSTOM_ITEM_MOB,
 		slot_wear_suit_str = CUSTOM_ITEM_MOB
 	)
-	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB,
+		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT
+	)
 	icon_state = "kegans"
 	item_state = "kegans"
+	item_state_slots = list(
+		slot_tie_str = "kegans",
+		slot_wear_suit_str = "keganss",
+		slot_l_hand_str = "kegansl",
+		slot_r_hand_str = "kegansr"
+	)
+
 	trade_blacklisted = TRUE
 
 
@@ -126,10 +147,11 @@
 	new /obj/item/clothing/suit/armor/pcarrier/tactical/wolforbykot(src)
 	new /obj/item/clothing/gloves/thick/duty/wolforbykot(src)
 	new /obj/item/storage/backpack/wolforbykot(src)
-	new /obj/item/clothing/under/rank/chaplain/wolf(src)
+	new /obj/item/clothing/under/solgov/utility/wolf(src)
 	new /obj/item/clothing/shoes/jackboots/wolf(src)
 	new /obj/item/clothing/accessory/storage/black_vest/wolf(src)
 	new /obj/item/clothing/accessory/cloak/wolf(src)
+	new /obj/item/clothing/mask/gas/rex(src)
 
 
 // Chainsword 40k
