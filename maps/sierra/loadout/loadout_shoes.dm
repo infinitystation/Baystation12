@@ -7,6 +7,11 @@
 	display_name = "dress shoes, white"
 	path = /obj/item/clothing/shoes/dress/white
 
+/datum/gear/shoes/whitedress/color
+	display_name = "dress shoes, color select"
+	path = /obj/item/clothing/shoes/dress/white
+	flags = GEAR_HAS_COLOR_SELECTION
+
 /datum/gear/shoes/dress
 	display_name = "dress shoes"
 	path = /obj/item/clothing/shoes/dress

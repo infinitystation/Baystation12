@@ -146,3 +146,23 @@
 	icon_state = "cadet_standard"
 	item_state = "cadet_standard"
 	worn_state = "cadet_standard"
+
+/obj/item/clothing/under/suit_jacket/charcoal/no_accessories
+	name = "charcoal pants with shirt"
+	desc = "A charcoal pants and white shirt. Very professional."
+	starting_accessories = list()
+
+/obj/item/clothing/under/suit_jacket/navy/no_accessories
+	name = "navy pants with shirt"
+	desc = "A navy pants and white shirt, intended for the galaxy's finest."
+	starting_accessories = list()
+
+/obj/item/clothing/under/suit_jacket/burgundy/no_accessories
+	name = "burgundy pants with shirt"
+	desc = "A burgundy pants and white shirt. Somewhat formal."
+	starting_accessories = list()
+
+/obj/item/clothing/under/suit_jacket/checkered/no_accessories
+	name = "checkered pants with shirt"
+	desc = "A checkered pants and white shirt. Shame if something were to happen to it, eh?"
+	starting_accessories = list()
