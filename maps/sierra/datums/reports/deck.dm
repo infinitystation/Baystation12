@@ -73,7 +73,7 @@
 
 /datum/computer_file/report/recipient/request
 	form_name = "NT-DEC-34"
-	title = "Форма запроса в отдел поставок"
+	title = "Запрос в отдел поставок"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/request/generate_fields()

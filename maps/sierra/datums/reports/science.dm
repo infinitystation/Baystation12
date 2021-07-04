@@ -45,7 +45,7 @@
 
 /datum/computer_file/report/recipient/sci/volunteer_denied
 	form_name = "HR-NTCO-02b-D"
-	title = "Форма добровольца о завершении исследований"
+	title = "Прекращение добровольного исследования"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sci/volunteer_denied/generate_fields()
@@ -60,7 +60,7 @@
 
 /datum/computer_file/report/recipient/sci/prototype
 	form_name = "NT-SCI-07"
-	title = "Форма о передачи прототипов оборудования"
+	title = "Передача прототипов оборудования"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sci/prototype/generate_fields()
@@ -86,7 +86,7 @@
 
 /datum/computer_file/report/recipient/sci/augmentations
 	form_name = "AG17-N1"
-	title = "Форма об установке аугментаций"
+	title = "Аугментация сотрудника"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sci/augmentations/generate_fields()
@@ -104,7 +104,7 @@
 	add_field(/datum/report_field/simple_text, "Причина аугментации", required = 1)
 	add_field(/datum/report_field/options/yes_no, "Добавить инфомацию об аугментациях в базу данных?")
 	add_field(/datum/report_field/pencode_text, "Список аугментаций", required = 1)
-	add_field(/datum/report_field/text_label/instruction, "Каждую аугментацию оформить в виде: часть тела, если протез - описать марку протеза, функционал, название\
+	add_field(/datum/report_field/text_label/instruction, "Каждую аугментацию оформить в виде: часть тела, если протез - описать марку протеза, функционал, название. \
 	При необходимости - вписать дополнительные пункты в списке. Пустые графы заполнить, как N/A.")
 	rd_fields += add_field(/datum/report_field/signature, "Подпись Директора Исследований")
 	add_field(/datum/report_field/signature, "Подпись главы отдела аугментированного")

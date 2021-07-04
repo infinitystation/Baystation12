@@ -29,6 +29,7 @@
 	#include "datums/reports/deck.dm"
 	#include "datums/reports/engineering.dm"
 	#include "datums/reports/exploration.dm"
+	#include "datums/reports/general.dm"
 	#include "datums/reports/iaa.dm"
 	#include "datums/reports/medical.dm"
 	#include "datums/reports/security.dm"
