@@ -360,7 +360,7 @@
 	department_flag = SPT
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Центральным Командованием"
+	supervisors = "Центральному Командованию"
 	selection_color = "#2f2f7f"
 	economic_power = 15
 	minimal_player_age = 10
