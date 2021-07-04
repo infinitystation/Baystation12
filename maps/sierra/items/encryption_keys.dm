@@ -13,6 +13,11 @@
 	icon_state = "qm_cypherkey"
 	channels = list("Supply" = 1, "Command" = 1)
 
+/obj/item/device/encryptionkey/heads/rd
+	name = "research director's encryption key"
+	icon_state = "rd_cypherkey"
+	channels = list("Science" = 1, "Command" = 1, "Exploration" = 1, "Hailing" = 1)
+
 /obj/item/device/encryptionkey/sierra_adjutant
 	name = "adjutant's encryption key"
 	icon_state = "com_cypherkey"
