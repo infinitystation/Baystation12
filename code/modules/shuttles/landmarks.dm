@@ -152,7 +152,7 @@
 
 	var/obj/effect/overmap/sector = map_sectors["[z]"]
 	if(sector)
-		command_announcement.Announce("Дальней станцией обнаружения НТ зафиксирована активация межпространственного сигнализатора в вашем секторе. Квадрат активации: [sector.x]-[sector.y].", "Автоматический рапорт", zlevels = GLOB.using_map.station_levels)
+		command_announcement.Announce("Нашей дальней станцией обнаружения была зафиксирована активация межпространственного сигнализатора в вашем секторе. Квадрат активации: [sector.x]-[sector.y].", "Автоматический рапорт", zlevels = GLOB.using_map.station_levels)
 
 /obj/item/device/spaceflare/on_update_icon()
 	if(active)
