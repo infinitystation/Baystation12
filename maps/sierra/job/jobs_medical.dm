@@ -1,7 +1,7 @@
 /datum/job/senior_doctor
 	title = "Surgeon"
-	supervisors = "Главврачом"
-	department = "Medical"
+	supervisors = "Главному врачу"
+	department = "Медицинский"
 	department_flag = MED
 
 	minimal_player_age = 14
@@ -59,8 +59,8 @@
 
 /datum/job/doctor
 	title = "Doctor"
-	supervisors = "Главврачом"
-	department = "Medical"
+	supervisors = "Главному Врачу"
+	department = "Медицинский"
 	department_flag = MED
 
 	total_positions = 3
@@ -109,8 +109,8 @@
 
 /datum/job/doctor_trainee
 	title = "Intern"
-	supervisors = "Главврачом и остальным медицинским персоналом"
-	department = "Medical"
+	supervisors = "Главному Врачу и остальному медицинскому персоналу"
+	department = "Медицинский"
 	department_flag = MED
 
 	total_positions = 2
@@ -152,8 +152,8 @@
 
 /datum/job/chemist
 	title = "Chemist"
-	supervisors = "Главврачом"
-	department = "Medical"
+	supervisors = "Главному Врачу"
+	department = "Медицинский"
 
 	department_flag = MED
 
@@ -186,8 +186,8 @@
 
 /datum/job/psychiatrist
 	title = "Counselor"
-	supervisors = "Главврачом"
-	department = "Medical"
+	supervisors = "Главному Врачу"
+	department = "Медицинский"
 
 	department_flag = MED
 
