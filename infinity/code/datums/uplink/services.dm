@@ -8,5 +8,5 @@
 	if(world.time > 5 MINUTES)
 		U.visible_message("[U.loc] buzzez and declares, \"Unable to teleport telecrystals.\"")
 		return 0
-	command_announcement.Announce("В секторе была замечена телепортация большого объема телекристаллов, использующихся Горлекскими Мародерами. Рекомендуется вызвать поддержку с ЦК для урегулирования ситуации.", "Показания датчиков [station_name()]" , msg_sanitized = 1, zlevels = GLOB.using_map.station_levels)
+	command_announcement.Announce("На телефон капитана пришло сообщение, что кто-то пообещал спустить ему на лицо. Похоже скоро сюда залетит отряд плохих парней с пушками. Ни слова на ПанСлавике" , msg_sanitized = 1, zlevels = GLOB.using_map.station_levels)
 	return new /obj/item/stack/telecrystal(loc, 781)
