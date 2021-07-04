@@ -200,6 +200,9 @@ TICKLAG 0.5
 ##Defines world FPS. Defaults to 20.
 # FPS 20
 
+##Defines the fps for the players with 0 in preferences. -1 for synced with server fps. 65 recommended
+CLIENTFPS 65
+
 ## Whether the server will talk to other processes through socket_talk
 SOCKET_TALK 0
 
