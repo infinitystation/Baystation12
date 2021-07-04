@@ -138,7 +138,7 @@
 			return
 		to_chat(user, "You fit \the [I] into the suit cycler.")
 		helmet = I
-		
+
 		updateUsrDialog()
 		return
 
@@ -183,7 +183,7 @@
 	return 1
 
 /obj/machinery/suit_cycler/physical_attack_hand(mob/user)
-	if(electrified != 0)
+	if(electrified)
 		if(shock(user, 100))
 			return TRUE
 

@@ -479,10 +479,24 @@
 
 //Pilot
 /obj/item/clothing/head/helmet/space/void/pilot
-	desc = "An atmos resistant helmet for space and planet exploration."
+	desc = "A pilot atmos resistant helmet for space and planet exploration."
 	name = "pilot voidsuit helmet"
 	icon_state = "rig0_pilot"
-	item_state = "pilot_helm"
+	item_state = "rig0_pilot"
+	icon = 'icons/obj/clothing/hats.dmi'
+	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/head.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/species/unathi/helmet.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'//INF
+		)
+	sprite_sheets_obj = list(
+		SPECIES_UNATHI = 'icons/obj/clothing/species/unathi/obj_head_unathi.dmi',
+		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_head_skrell.dmi',
+		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/hats.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/obj_head_resomi.dmi'//INF
+		)
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_MINOR,
@@ -494,9 +508,24 @@
 	tint = TINT_NONE //inf
 
 /obj/item/clothing/suit/space/void/pilot
-	desc = "An atmos resistant voidsuit for space and planet exploration."
+	desc = "A pilot atmos resistant voidsuit for space and planet exploration."
 	icon_state = "rig-pilot"
+	item_state = "rig-pilot"
 	name = "pilot voidsuit"
+	icon = 'icons/obj/clothing/suits.dmi'
+	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/suit.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'icons/mob/species/unathi/suit.dmi',
+		SPECIES_SKRELL = 'icons/mob/species/skrell/suit.dmi',
+		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi'//INF
+		)
+	sprite_sheets_obj = list(
+		SPECIES_UNATHI = 'icons/obj/clothing/species/unathi/obj_suit_unathi.dmi',
+		SPECIES_SKRELL = 'icons/obj/clothing/species/skrell/obj_suit_skrell.dmi',
+		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/suits.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/obj_suit_resomi.dmi'//INF
+		)
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_MINOR,

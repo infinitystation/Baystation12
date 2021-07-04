@@ -175,15 +175,15 @@
 		/obj/item/clothing/head/helmet/space = list(
 			SETUP_NAME = "exploration voidsuit helmet",
 			SETUP_ICON_STATE = "rig0_explorer",
-			SETUP_ITEM_STATE = "explorer_helm"
+			SETUP_ITEM_STATE = "rig0_explorer",
+			SETUP_ITEM_STATE_SLOTS = list(
+				slot_l_hand_str = "rig0_explorer",
+				slot_r_hand_str = "rig0_explorer"
+			),
 		),
 		/obj/item/clothing/suit/space/void = list(
 			SETUP_NAME = "exploration voidsuit",
 			SETUP_ICON_STATE = "rig_explorer",
-			SETUP_ITEM_STATE_SLOTS = list(
-				slot_l_hand_str = "s_suit",
-				slot_r_hand_str = "s_suit"
-			)
 		)
 	)
 

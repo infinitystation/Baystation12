@@ -41,12 +41,6 @@
 	autolinkers = list("exploration")
 
 // Suit cyclers and storage
-/obj/machinery/suit_cycler/exploration
-	name = "Exploration suit cycler"
-	model_text = "Exploration"
-	req_access = list(access_explorer)
-	available_modifications = list(/decl/item_modifier/space_suit/explorer)
-	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_RESOMI, SPECIES_TAJARA)
 
 /obj/machinery/suit_storage_unit/explorer
 	name = "Exploration Voidsuit Storage Unit"

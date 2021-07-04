@@ -65,5 +65,11 @@
 	name = "Pilot suit cycler"
 	model_text = "Pilot"
 	req_access = list(access_mining_office)
-	available_modifications = list(/decl/item_modifier/space_suit/pilot)
+	available_modifications = list(/decl/item_modifier/space_suit/pilot, /decl/item_modifier/space_suit/explorer)
 	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_RESOMI, SPECIES_TAJARA, SPECIES_EROSAN)
+/obj/machinery/suit_cycler/exploration
+	name = "Exploration suit cycler"
+	model_text = "Exploration"
+	req_access = list(access_explorer)
+	available_modifications = list(/decl/item_modifier/space_suit/explorer, /decl/item_modifier/space_suit/pilot)
+	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_RESOMI, SPECIES_TAJARA)
