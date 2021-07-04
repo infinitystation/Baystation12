@@ -37,7 +37,7 @@
 /obj/item/device/encryptionkey/sierra_headset_pilot
 	name = "pilot radio encryption key"
 	icon_state = "srv_cypherkey"
-	channels = list("Exploration" = 1, "Supply" = 1, "Science" = 1)
+	channels = list("Exploration" = 1, "Science" = 1)
 
 /obj/item/device/encryptionkey/sierra_headset_mining
 	name = "prospector radio encryption key"
