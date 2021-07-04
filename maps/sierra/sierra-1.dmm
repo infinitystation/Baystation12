@@ -29140,7 +29140,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/suit_cycler/pilot,
+/obj/machinery/suit_cycler/exploration,
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},

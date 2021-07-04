@@ -480,11 +480,11 @@
 //Pilot
 /obj/item/clothing/head/helmet/space/void/pilot
 	desc = "A pilot atmos resistant helmet for space and planet exploration."
+	icon = 'icons/obj/clothing/hats.dmi'
 	name = "pilot voidsuit helmet"
 	icon_state = "rig0_pilot"
 	item_state = "rig0_pilot"
-	icon = 'icons/obj/clothing/hats.dmi'
-	item_icons = list(slot_wear_suit_str = 'icons/mob/onmob/head.dmi')
+	item_icons = list(slot_head_str = 'icons/mob/onmob/head.dmi')
 	sprite_sheets = list(
 		SPECIES_UNATHI = 'icons/mob/species/unathi/helmet.dmi',
 		SPECIES_SKRELL = 'icons/mob/species/skrell/helmet.dmi',

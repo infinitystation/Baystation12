@@ -1,5 +1,5 @@
 /obj/machinery/suit_cycler/engineering
-	name = "Engineering suit cycler"
+	name = "Engineering and Atmospheric suit cycler"
 	model_text = "Engineering"
 	req_access = list(access_construction)
 	available_modifications = list(/decl/item_modifier/space_suit/engineering, /decl/item_modifier/space_suit/atmos)
@@ -60,15 +60,8 @@
 	available_modifications = list(/decl/item_modifier/space_suit/mercenary)
 	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_RESOMI, SPECIES_TAJARA, SPECIES_EROSAN)
 	can_repair = 1
-
-/obj/machinery/suit_cycler/pilot
-	name = "Pilot suit cycler"
-	model_text = "Pilot"
-	req_access = list(access_mining_office)
-	available_modifications = list(/decl/item_modifier/space_suit/pilot, /decl/item_modifier/space_suit/explorer)
-	species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_RESOMI, SPECIES_TAJARA, SPECIES_EROSAN)
 /obj/machinery/suit_cycler/exploration
-	name = "Exploration suit cycler"
+	name = "Exploration and Pilot suit cycler"
 	model_text = "Exploration"
 	req_access = list(access_explorer)
 	available_modifications = list(/decl/item_modifier/space_suit/explorer, /decl/item_modifier/space_suit/pilot)

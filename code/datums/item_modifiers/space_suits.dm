@@ -184,6 +184,11 @@
 		/obj/item/clothing/suit/space/void = list(
 			SETUP_NAME = "exploration voidsuit",
 			SETUP_ICON_STATE = "rig_explorer",
+			SETUP_ITEM_STATE = "rig_explorer",
+			SETUP_ITEM_STATE_SLOTS = list(
+				slot_l_hand_str = "rig_explorer",
+				slot_r_hand_str = "rig_explorer"
+			)
 		)
 	)
 
@@ -214,14 +219,19 @@
 		/obj/item/clothing/head/helmet/space = list(
 			SETUP_NAME = "pilot voidsuit helmet",
 			SETUP_ICON_STATE = "rig0_pilot",
-			SETUP_ITEM_STATE = "pilot_helm"
+			SETUP_ITEM_STATE = "rig0_pilot",
+			SETUP_ITEM_STATE_SLOTS = list(
+				slot_l_hand_str = "rig0_pilot",
+				slot_r_hand_str = "rig0_pilot"
+			)
 		),
 		/obj/item/clothing/suit/space/void = list(
 			SETUP_NAME = "pilot voidsuit",
 			SETUP_ICON_STATE = "rig-pilot",
+			SETUP_ITEM_STATE = "rig-pilot",
 			SETUP_ITEM_STATE_SLOTS = list(
-				slot_l_hand_str = "s_suit",
-				slot_r_hand_str = "s_suit"
+				slot_l_hand_str = "rig-pilot",
+				slot_r_hand_str = "rig-pilot"
 			)
 		)
 	)
