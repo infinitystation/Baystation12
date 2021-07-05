@@ -59,3 +59,6 @@
 			var/command = macro_set[key]
 			winset(src, "[setname]-\ref[key]", "parent=[setname];name=[key];command=[command]")
 	winset(src, null, "map.focus=true input.background-color=[COLOR_INPUT_DISABLED] mainwindow.macro=default")
+
+	//We do a little cruth here hehe~
+	winset(src, "default-\"F1\"", "parent=default;name=\"F1\";command=adminhelp")

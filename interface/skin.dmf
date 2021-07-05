@@ -129,7 +129,7 @@ window "mainwindow"
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-maximized = true
 		icon = 'icons\\ss13_64.png'
-		macro = "macro"
+		macro = "default"
 		menu = "menu"
 	elem "asset_cache_browser"
 		type = BROWSER
