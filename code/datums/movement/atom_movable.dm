@@ -8,7 +8,6 @@
 
 // Movement relay
 /datum/movement_handler/move_relay/DoMove(var/direction, var/mover)
-	set waitfor = FALSE
 	var/atom/movable/AM = host.loc
 	if(!istype(AM))
 		return

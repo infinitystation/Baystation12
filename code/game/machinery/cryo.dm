@@ -278,7 +278,7 @@
 	if (occupant.client)
 		occupant.client.eye = occupant.client.mob
 		occupant.client.perspective = MOB_PERSPECTIVE
-	occupant.forceMove(loc)
+	occupant.forceMove(get_step(loc, SOUTH))
 	if (occupant.bodytemperature < 261 && occupant.bodytemperature >= 70)
 		occupant.bodytemperature = 261
 	occupant = null
