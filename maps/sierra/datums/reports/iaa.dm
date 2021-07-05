@@ -203,7 +203,7 @@
 
 /datum/computer_file/report/recipient/iaa/audit/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Форма Аудит департамента ИКН Сьерра")
+	add_field(/datum/report_field/text_label/header, "Аудит департамента ИКН Сьерра")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/time, "Время")
 	add_field(/datum/report_field/people/from_manifest, "Глава департамента")
