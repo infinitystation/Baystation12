@@ -235,7 +235,7 @@
 	trade_blacklisted = TRUE
 
 
-/obj/item/clothing/glasses/hud/health/adro
+/obj/item/clothing/glasses/hud/health/tajvisor/adro
 	name = "cyber visor"
 	desc = "A modern modified Ahdomanian made visor that allows the user to see while obscuring their eyes. This one has an in-built medical HUD."
 	species_restricted = list(SPECIES_TAJARA)
@@ -273,7 +273,7 @@
 	new /obj/item/clothing/suit/space/void/medical/alt/adro(src)
 	new /obj/item/clothing/gloves/latex/adro(src)
 	new /obj/item/clothing/shoes/magboots/adro(src)
-	new /obj/item/clothing/glasses/hud/health/adro(src)
+	new /obj/item/clothing/glasses/hud/health/tajvisor/adro(src)
 	new /obj/item/clothing/head/beret/adro(src)
 	new /obj/item/clothing/under/rank/medical/adro(src)
 
