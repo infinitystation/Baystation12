@@ -28,6 +28,8 @@
 	if(H.wear_mask)
 		return 0
 
+
+// Screll helmet
 /obj/item/clothing/head/helmet/tactical/screllhelmet
 	name = "skrellian combat helmet"
 	desc = "An advanced skrellian helmet designed for work in special operations. Looks reliable."
@@ -42,3 +44,18 @@
 	name = "skrellian helmet customization kit"
 	input = /obj/item/clothing/head/helmet/tactical
 	output = /obj/item/clothing/head/helmet/tactical/screllhelmet
+
+
+// Scarf
+/obj/item/clothing/accessory/scarf/inf/thehero13
+	desc = "A scarf made with the yarn of the Satiporoja beetle. \
+			Perfect conductor of The Ripple."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "thehero13_pater_scarf"
+	item_state = "thehero13_pater_scarf"
+	accessory_icons = list(
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
+	)
+	item_icons = list(slot_wear_mask_str = CUSTOM_ITEM_MOB)
+	trade_blacklisted = TRUE
