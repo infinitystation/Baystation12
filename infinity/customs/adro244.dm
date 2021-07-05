@@ -235,7 +235,7 @@
 	trade_blacklisted = TRUE
 
 
-/obj/item/clothing/glasses/hud/health/adro
+/obj/item/clothing/glasses/hud/health/tajvisor/adro
 	name = "cyber visor"
 	desc = "A modern modified Ahdomanian made visor that allows the user to see while obscuring their eyes. This one has an in-built medical HUD."
 	species_restricted = list(SPECIES_TAJARA)
@@ -273,7 +273,7 @@
 	new /obj/item/clothing/suit/space/void/medical/alt/adro(src)
 	new /obj/item/clothing/gloves/latex/adro(src)
 	new /obj/item/clothing/shoes/magboots/adro(src)
-	new /obj/item/clothing/glasses/hud/health/adro(src)
+	new /obj/item/clothing/glasses/hud/health/tajvisor/adro(src)
 	new /obj/item/clothing/head/beret/adro(src)
 	new /obj/item/clothing/under/rank/medical/adro(src)
 
@@ -386,3 +386,187 @@
 	new /obj/item/clothing/under/vox/vox_robes/adro(src)
 	new /obj/item/clothing/head/beret/adrovox(src)
 	new /obj/item/device/radio/headset/syndicate(src)
+
+//IPC custom set
+
+/obj/item/clothing/under/thermal/adroipc
+	name = "gunslinger suit"
+	desc = "A comfort suit for IPC which has many variations of compact cooling tubes and for sure - style of west, also has built-in cooling system."
+	icon_state = "adroipcs"
+	item_state = "adroipcs"
+	worn_state = "adroipcs"
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_w_uniform_str = CUSTOM_ITEM_MOB,
+		)
+	max_cooling = 12
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/head/adroipc
+	name = "gunslinger hat"
+	desc = "Comfort hat for IPC, also has a cool gunslinger insignia on it."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adroipch"
+	item_icons = list(
+		slot_head_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adroipch"
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/suit/armor/pcarrier/adroipc
+	name = "gunslinger armor"
+	desc = "Armor with many tubes and glowing blue lights."
+	starting_accessories = null
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adroipca"
+	item_icons = list(
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adroipca"
+	trade_blacklisted = TRUE
+
+/obj/item/storage/backpack/satchel/adroipc
+	name = "gunslinger poncho"
+	desc = "Perfect red poncho for storaging item's and western performance "
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adroipcr"
+	item_icons = list(
+		slot_back_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adroipcr"
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/shoes/magboots/adroipc
+	name = "gunslinger boots"
+	desc = "High-tech boots with metal inserts and magnetic system and spike's on heel."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adroipcb"
+	item_icons = list(
+		slot_shoes_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adroipcb"
+	action_button_name = "Turn on mag-boots"
+	icon_base = null
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/gloves/insulated/adroipc
+	name = "gunslinger gloves"
+	desc = "Comfortable gloves for very good grip and electricty protection."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adroipcg"
+	item_icons = list(
+		slot_gloves_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adroipcg"
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/mask/adroipc
+	name = "gunslinger monitor"
+	desc = null
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "adroipcm"
+	item_icons = list(
+		slot_wear_mask_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "adroipcm"
+	species_restricted = list(SPECIES_IPC)
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/mask/adroipc/equipped()
+	..()
+	var/mob/living/carbon/human/H = loc
+	if(istype(H) && H.wear_mask == src)
+		canremove = 0
+		to_chat(H, "<span class='notice'>\The [src] connects to your display output.</span>")
+
+/obj/item/gun/energy/stunrevolver/adroipc
+	name = "sunshot"
+	desc = "High-tech revolver with yellow lights and engraving Sunshot on it, also has self-charging system, a truly west armsmith masterpiece."
+	icon = CUSTOM_GUN_ICONS
+	item_icons = list(
+		slot_l_hand_str = CUSTOM_GUN_INHANDS_LEFT,
+		slot_r_hand_str = CUSTOM_GUN_INHANDS_RIGHT,
+		slot_belt_str = CUSTOM_ITEM_MOB
+	)
+	icon_state = "sunshot"
+	item_state = "sunshot"
+	trade_blacklisted = TRUE
+
+/obj/item/clothingbag/adro_ipc
+	name = "clothing bag"
+	desc = "This is clothing bag"
+	trade_blacklisted = TRUE
+
+/obj/item/clothingbag/adro_ipc/Initialize()
+	. = ..()
+
+	new /obj/item/clothing/under/thermal/adroipc(src)
+	new /obj/item/clothing/head/adroipc(src)
+	new /obj/item/clothing/suit/armor/pcarrier/adroipc(src)
+	new /obj/item/storage/backpack/satchel/adroipc(src)
+	new /obj/item/clothing/shoes/magboots/adroipc(src)
+	new /obj/item/clothing/gloves/insulated/adroipc(src)
+	new /obj/item/clothing/mask/adroipc(src)
+	new /obj/item/gun/energy/stunrevolver/adroipc(src)
+
+//VOLK armor
+
+/obj/item/clothing/suit/armor/bulletproof/adro
+	name = "6B13M assault armor"
+	desc = "An assault armor '6B13' from GCC. Personally modified by Blade 6B13. Ceramic armored plates replaced with lightweight polyethylene plates. The protection class is higher, the weight is less."
+	restricted_accessory_slots = list(ACCESSORY_SLOT_ARMOR_A, ACCESSORY_SLOT_ARMOR_L)
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "pcarrier"
+	item_state = "pcarrier"
+	item_icons = list(
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
+		)
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/head/helmet/ballistic/adro
+	name = "sphere-1 assault helmet"
+	desc = "An assault helmet 'Sphere-1'. This one has black paint and white stripes. Personal item of a PMC 'Volk' veteran."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_head_str = CUSTOM_ITEM_MOB
+		)
+	icon_state = "helm_adro"
+	body_parts_covered = HEAD|FACE|EYES
+	action_button_name = "Toggle Visor"
+	trade_blacklisted = TRUE
+	var/raised = FALSE
+
+/obj/item/clothing/head/helmet/ballistic/adro/attack_self(mob/user)
+	raised = !raised
+	if(raised)
+		icon_state = "[icon_state]_up"
+		body_parts_covered &= ~EYES|FACE
+	else
+		icon_state = initial(icon_state)
+		body_parts_covered = initial(body_parts_covered)
+	visible_message(SPAN_ITALIC("\The [user] [raised ? "raises" : "lowers"] the visor on \the [src]."), range = 3)
+	update_clothing_icon()
+
+/obj/item/clothing/under/rank/security/adro
+	name = "agikas tracksuit"
+	desc = "A black tracksuit from Magnitka with 'Agikas' logo on chest, very warm and comfortable"
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
+	icon_state = "adrouni"
+	item_state = "adrouni"
+	worn_state = "adrouni"
+	armor = list() //no armor
+	trade_blacklisted = TRUE
+
+/obj/item/clothingbag/adro
+	name = "uniform package"
+	desc = "An utility bag stamped with a PMC 'Volk' logo."
+	trade_blacklisted = TRUE
+
+/obj/item/clothingbag/adro/Initialize()
+	. = ..()
+
+	new /obj/item/clothing/suit/armor/bulletproof/adro(src)
+	new /obj/item/clothing/head/helmet/ballistic/adro(src)
+	new /obj/item/clothing/under/rank/security/adro(src)
