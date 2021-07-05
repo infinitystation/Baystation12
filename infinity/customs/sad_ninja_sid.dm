@@ -62,9 +62,9 @@
 	new /obj/item/clothing/head/beret/sad_ninja_sid(src)
 	new /obj/item/clothing/accessory/armor/tag/sad_ninja_sid(src)
 
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Revolver
-
 /obj/item/gun/projectile/revolver/medium/sad_ninja_sid
 	name = "peacemaker"
 	desc = "An old fashion custom revolver, chambered in 10mm caliber. \
@@ -91,17 +91,36 @@
 	if(!safety_state)
 		toggle_safety()
 
-/obj/item/clothingbag/sad_ninja_sid_revolver
-	name = "peacemaker's bag"
-	desc = "Sidnie Cloud's property"
+/obj/item/gun/projectile/revolver/medium/sad_ninja_sid/attackby(obj/item/W, mob/user)
+	if ( istype(W, /obj/item/ammo_magazine/speedloader) )
+		to_chat(user, SPAN_WARNING("You can't reload \the [src] with [W]!"))
+		return
+	return ..()
+
+/obj/item/gun/projectile/revolver/medium/sad_ninja_sid/attack_self(mob/user)
+	user.visible_message(SPAN_NOTICE("\The [usr] spins in hands \the [src]!"))
+	return
+
+
+/obj/item/ammo_magazine/box/pistol/sad_ninja_sid
+	ammo_type = /obj/item/ammo_casing/pistol/rubber
+	max_ammo = 30
+	initial_ammo = 6
 	trade_blacklisted = TRUE
+
 
 /obj/item/weapon_case/custom/sad_ninja_sid
 	owner = "Sidnie Cloud"
 	holding_weapon = /obj/item/gun/projectile/revolver/medium/sad_ninja_sid
 	trade_blacklisted = TRUE
 
+
+/obj/item/clothingbag/sad_ninja_sid_revolver
+	name = "peacemaker's bag"
+	desc = "Sidnie Cloud's property"
+	trade_blacklisted = TRUE
+
 /obj/item/clothingbag/sad_ninja_sid_revolver/Initialize()
 	. = ..()
 	new /obj/item/weapon_case/custom/sad_ninja_sid(src)
-	new /obj/item/ammo_magazine/speedloader/rubber(src)
+	new /obj/item/ammo_magazine/box/pistol/sad_ninja_sid(src)
