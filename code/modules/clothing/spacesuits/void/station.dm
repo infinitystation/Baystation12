@@ -479,10 +479,24 @@
 
 //Pilot
 /obj/item/clothing/head/helmet/space/void/pilot
-	desc = "An atmos resistant helmet for space and planet exploration."
+	desc = "A pilot atmos resistant helmet for space and planet exploration."
 	name = "pilot voidsuit helmet"
-	icon_state = "rig0_pilot"
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "pilot_helm"
 	item_state = "pilot_helm"
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_head_unathi.dmi',//INF
+		SPECIES_SKRELL = 'infinity/icons/mob/species/skrell/onmob_head_skrell.dmi',//INF
+		SPECIES_TAJARA = 'infinity/icons/mob/species/tajaran/onmob_head_tajaran.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'//INF
+		)
+	sprite_sheets_obj = list(
+		SPECIES_UNATHI = 'infinity/icons/obj/clothing/species/unathi/obj_head_unathi.dmi',//INF
+		SPECIES_SKRELL = 'infinity/icons/obj/clothing/species/skrell/obj_head_skrell.dmi',//INF
+		SPECIES_TAJARA = 'infinity/icons/obj/clothing/species/tajaran/obj_head_tajaran.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/obj_head_resomi.dmi'//INF
+		)
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_MINOR,
@@ -494,9 +508,24 @@
 	tint = TINT_NONE //inf
 
 /obj/item/clothing/suit/space/void/pilot
-	desc = "An atmos resistant voidsuit for space and planet exploration."
-	icon_state = "rig-pilot"
+	desc = "A pilot atmos resistant voidsuit for space and planet exploration."
+	icon_state = "void_pilot"
+	item_state = "void_pilot"
 	name = "pilot voidsuit"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_suit_unathi.dmi',//INF
+		SPECIES_SKRELL = 'infinity/icons/mob/species/skrell/onmob_suit_skrell.dmi',//INF
+		SPECIES_TAJARA = 'infinity/icons/mob/species/tajaran/onmob_suit_tajaran.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi'//INF
+		)
+	sprite_sheets_obj = list(
+		SPECIES_UNATHI = 'infinity/icons/obj/clothing/species/unathi/obj_suit_unathi.dmi',//INF
+		SPECIES_SKRELL = 'infinity/icons/obj/clothing/species/skrell/obj_suit_skrell.dmi',//INF
+		SPECIES_TAJARA = 'infinity/icons/obj/clothing/species/tajaran/obj_suit_tajaran.dmi',//INF
+		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/obj_suit_resomi.dmi'//INF
+		)
 	armor = list(
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_MINOR,

@@ -512,21 +512,21 @@
 */
 /obj/item/clothing/suit/space/void/exploration
 	name = "exploration voidsuit"
-	icon = 'maps/torch/icons/obj/obj_suit_solgov.dmi'
-	item_icons = list(slot_wear_suit_str = 'maps/torch/icons/mob/onmob_suit_solgov.dmi')
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
 	desc = "The bulky Exoplanet Exploration Unit is a standard voidsuit for Expeditionary Corps field operations. It features extra padding and respectable radiation-resistant lining."
-	icon_state = "rig_explorer"
-	item_state = "rig_explorer"
+	icon_state = "void_explorer"
+	item_state = "void_explorer"
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_suit_solgov_unathi.dmi',
-		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_suit_solgov_skrell.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi',//INF
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_suit_unathi.dmi',//INF
+		SPECIES_SKRELL = 'infinity/icons/mob/species/skrell/onmob_suit_skrell.dmi',//INF
+		SPECIES_TAJARA = 'infinity/icons/mob/species/tajaran/onmob_suit_tajaran.dmi',//INF
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi'//INF
 		)
 	sprite_sheets_obj = list(
-		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_suit_solgov_unathi.dmi',
-		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_suit_solgov_skrell.dmi',
-		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/suits.dmi',//INF
+		SPECIES_UNATHI = 'infinity/icons/obj/clothing/species/unathi/obj_suit_unathi.dmi',//INF
+		SPECIES_SKRELL = 'infinity/icons/obj/clothing/species/skrell/obj_suit_skrell.dmi',//INF
+		SPECIES_TAJARA = 'infinity/icons/obj/clothing/species/tajaran/obj_suit_tajaran.dmi',//INF
 		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/obj_suit_resomi.dmi'//INF
 		)
 	armor = list(

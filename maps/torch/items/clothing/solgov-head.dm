@@ -516,20 +516,20 @@
 /obj/item/clothing/head/helmet/space/void/exploration
 	name = "exploration voidsuit helmet"
 	desc = "A helmet of Exoplanet Exploration Unit, standard issue for Expeditionary Corps away missions. It has an armored glass dome for superiour visibility and extra anti-radiation lining."
-	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
-	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')
-	icon_state = "rig0_explorer"
+	icon = 'infinity/icons/obj/clothing/obj_head.dmi'
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
+	icon_state = "explorer_helm"
 	item_state = "explorer_helm"
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'maps/torch/icons/mob/unathi/onmob_head_solgov_unathi.dmi',
-		SPECIES_SKRELL = 'maps/torch/icons/mob/skrell/onmob_head_solgov_skrell.dmi',
-		SPECIES_TAJARA = 'icons/mob/species/tajaran/helmet.dmi',//INF
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_head_unathi.dmi',//INF
+		SPECIES_SKRELL = 'infinity/icons/mob/species/skrell/onmob_head_skrell.dmi',//INF
+		SPECIES_TAJARA = 'infinity/icons/mob/species/tajaran/onmob_head_tajaran.dmi',//INF
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi'//INF
 		)
 	sprite_sheets_obj = list(
-		SPECIES_UNATHI = 'maps/torch/icons/obj/unathi/obj_head_solgov_unathi.dmi',
-		SPECIES_SKRELL = 'maps/torch/icons/obj/skrell/obj_head_solgov_skrell.dmi',
-		SPECIES_TAJARA = 'icons/obj/clothing/species/tajaran/hats.dmi',//INF
+		SPECIES_UNATHI = 'infinity/icons/obj/clothing/species/unathi/obj_head_unathi.dmi',//INF
+		SPECIES_SKRELL = 'infinity/icons/obj/clothing/species/skrell/obj_head_skrell.dmi',//INF
+		SPECIES_TAJARA = 'infinity/icons/obj/clothing/species/tajaran/obj_head_tajaran.dmi',//INF
 		SPECIES_RESOMI = 'infinity/icons/obj/clothing/species/resomi/obj_head_resomi.dmi'//INF
 		)
 	armor = list(

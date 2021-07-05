@@ -221,7 +221,7 @@
 
 /* BRANCH & RANKS
  * =======
- 
+
 /datum/mil_branch/scgdf
 	name = "Sol Central Government Defence Forces"
 	name_short = "SCGDF"
@@ -235,7 +235,7 @@
 
 /datum/job/submap/sentinel_crew/equip(var/mob/living/carbon/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
 	. = ..(H, alt_title, branch, grade)
-	
+
 	var/milbranches = list(
 		"Malish-Katish" = list(
 			"Mero'ta-Ketish",
@@ -279,7 +279,7 @@
 	id_slot = slot_wear_id
 	pda_type = null
 	belt = null
-	back = null
+	back = /obj/item/storage/backpack/satchel/pocketbook/navy
 	backpack_contents = null
 	flags = OUTFIT_EXTENDED_SURVIVAL
 
