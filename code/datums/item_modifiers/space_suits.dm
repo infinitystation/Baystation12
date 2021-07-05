@@ -174,15 +174,15 @@
 	type_setups = list(
 		/obj/item/clothing/head/helmet/space = list(
 			SETUP_NAME = "exploration voidsuit helmet",
-			SETUP_ICON_STATE = "rig0_explorer",
+			SETUP_ICON_STATE = "explorer_helm",
 			SETUP_ITEM_STATE = "explorer_helm"
 		),
 		/obj/item/clothing/suit/space/void = list(
 			SETUP_NAME = "exploration voidsuit",
-			SETUP_ICON_STATE = "rig_explorer",
+			SETUP_ICON_STATE = "void_explorer",
 			SETUP_ITEM_STATE_SLOTS = list(
-				slot_l_hand_str = "s_suit",
-				slot_r_hand_str = "s_suit"
+				slot_l_hand_str = "void_explorer",
+				slot_r_hand_str = "void_explorer"
 			)
 		)
 	)
@@ -213,15 +213,15 @@
 	type_setups = list(
 		/obj/item/clothing/head/helmet/space = list(
 			SETUP_NAME = "pilot voidsuit helmet",
-			SETUP_ICON_STATE = "rig0_pilot",
+			SETUP_ICON_STATE = "pilot_helm",
 			SETUP_ITEM_STATE = "pilot_helm"
 		),
 		/obj/item/clothing/suit/space/void = list(
 			SETUP_NAME = "pilot voidsuit",
-			SETUP_ICON_STATE = "rig-pilot",
+			SETUP_ICON_STATE = "void_pilot",
 			SETUP_ITEM_STATE_SLOTS = list(
-				slot_l_hand_str = "s_suit",
-				slot_r_hand_str = "s_suit"
+				slot_l_hand_str = "void_pilot",
+				slot_r_hand_str = "void_pilot"
 			)
 		)
 	)
