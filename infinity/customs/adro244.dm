@@ -400,7 +400,6 @@
 		slot_w_uniform_str = CUSTOM_ITEM_MOB,
 		)
 	max_cooling = 12
-	species_restricted = list(SPECIES_IPC)
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/head/adroipc
@@ -412,7 +411,6 @@
 		slot_head_str = CUSTOM_ITEM_MOB
 	)
 	item_state = "adroipch"
-	species_restricted = list(SPECIES_IPC)
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/armor/pcarrier/adroipc
@@ -426,7 +424,6 @@
 		slot_wear_suit_str = CUSTOM_ITEM_MOB
 	)
 	item_state = "adroipca"
-	species_restricted = list(SPECIES_IPC)
 	trade_blacklisted = TRUE
 
 /obj/item/storage/backpack/satchel/adroipc
@@ -451,7 +448,6 @@
 	item_state = "adroipcb"
 	action_button_name = "Turn on mag-boots"
 	icon_base = null
-	species_restricted = list(SPECIES_IPC)
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/gloves/insulated/adroipc
@@ -463,7 +459,6 @@
 		slot_gloves_str = CUSTOM_ITEM_MOB
 	)
 	item_state = "adroipcg"
-	species_restricted = list(SPECIES_IPC)
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/mask/adroipc
