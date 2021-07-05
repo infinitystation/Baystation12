@@ -4,7 +4,7 @@
 
 /datum/computer_file/report/recipient/sec/report_detective
 	form_name = "NT-SEC-14"
-	title = "Служба Безопасности: Отчет о расследовании"
+	title = "Отчет о расследовании"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/report_detective/generate_fields()
@@ -22,7 +22,7 @@
 
 /datum/computer_file/report/recipient/sec/report_incident
 	form_name = "NT-SEC-16"
-	title = "Служба Безопасности: Отчет об происшествии"
+	title = "Отчет об происшествии"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/report_incident/generate_fields()
@@ -45,7 +45,7 @@
 
 /datum/computer_file/report/recipient/sec/report_evidence
 	form_name = "NT-SEC-02b"
-	title = "Служба Безопасности: Отчет об уликах"
+	title = "Отчет об уликах"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/report_evidence/generate_fields()
@@ -65,7 +65,7 @@
 
 /datum/computer_file/report/recipient/sec/patrol
 	form_name = "NT-SEC-04"
-	title = "Служба Безопасности: Назначение патрулей"
+	title = "Назначение патрулей"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/patrol/generate_fields()
@@ -84,7 +84,7 @@
 
 /datum/computer_file/report/recipient/sec/armory
 	form_name = "NT-SEC-05"
-	title = "Служба Безопасности: Инвентаризация оружейной"
+	title = "Инвентаризация оружейной"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/armory/generate_fields()

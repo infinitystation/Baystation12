@@ -21,7 +21,7 @@
 	add_field(/datum/report_field/simple_text, "Предоставленный доступ", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "Доступ обеспечивается сотрудником или его вышестоящим, рассмотревшим и принявшим данный запрос совместно с инженерным составом. Доступ может быть предоставлен на карту сотрудника(ов), выдан виде\
 	гостевой карты или обеспечен иным способом, без дополнительных документов при условии, что он будет изъят по окончанию проведения соответствующих работ.")
-	work_fields += add_field(/datum/report_field/pencode_text, "Необходимые ресурсы", required = 1)
+	add_field(/datum/report_field/pencode_text, "Необходимые ресурсы", required = 1)
 	work_fields += add_field(/datum/report_field/signature, "Подпись ответственного", required = 1)
 	add_field(/datum/report_field/signature, "Подпись запросившего работы", required = 1)
 	for(var/datum/report_field/field in work_fields)
