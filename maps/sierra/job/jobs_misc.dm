@@ -2,9 +2,9 @@
 	title = "Crewman"
 	total_positions = 12
 	spawn_positions = 12
-	department = "Civilian"
+	department = "Гражданский"
 	department_flag = CIV
-	supervisors = "Главой Персонала"
+	supervisors = "Главе Персонала"
 	selection_color = "#515151"
 //	economic_power = 6
 	announced = FALSE

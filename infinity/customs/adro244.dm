@@ -277,36 +277,6 @@
 	new /obj/item/clothing/head/beret/adro(src)
 	new /obj/item/clothing/under/rank/medical/adro(src)
 
-/obj/item/device/hailer/popit
-	name = "pop it"
-	desc = "Антистресс игрушка. Надпись на наклейке: Значок, что владелец дурачок."
-	icon = CUSTOM_ITEM_OBJ
-	icon_state = "popit"
-
-/obj/item/device/hailer/popit/Initialize()
-	. = ..()
-	color = get_random_colour()
-
-	use_message = "Попыт круче!"
-	action_button_name = "Use Voice Helper"
-
-/obj/item/device/hailer/popit/proc/reset_spamcheck()
-	spamcheck = 0
-
-/obj/item/device/hailer/popit/attack_self(mob/living/carbon/user as mob)
-	if (spamcheck)
-		return
-
-	if(isnull(insults))
-		playsound(get_turf(src), 'infinity/sound/customs/popit/popit.ogg', 60, 1, vary = 0)
-		user.audible_message("<span class='warning'>[user]'s [name] rasps, \"[use_message]\"</span>", null, "<span class='warning'>\The [user] holds up \the [name].</span>")
-
-		spamcheck = 1
-		addtimer(CALLBACK(src, .proc/reset_spamcheck), 60 SECOND)
-
-	else
-		to_chat(user, SPAN_DANGER("*BZZZZZZZZT*"))
-
 /obj/item/clothing/suit/space/vox/carapace/adro
 	name = "blood-red armored raider spacesuit"
 	desc = " Blood red space suit with reinforced inserts for loud raid, also has spikes, improved and reworked for vox by vox."
@@ -415,5 +385,4 @@
 	new /obj/item/clothing/glasses/night/adro(src)
 	new /obj/item/clothing/under/vox/vox_robes/adro(src)
 	new /obj/item/clothing/head/beret/adrovox(src)
-	new /obj/item/device/hailer/popit(src)
 	new /obj/item/device/radio/headset/syndicate(src)

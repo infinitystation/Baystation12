@@ -1,6 +1,6 @@
 /datum/computer_file/report/recipient/med/generate_fields()
 	..()
-	set_access(access_medical)
+	set_access (list(list(access_medical_equip, access_psychiatrist)))
 
 /datum/computer_file/report/recipient/med/recipe
 	form_name = "NT-MED-01"
@@ -44,7 +44,7 @@
 	cmo_fields += add_field(/datum/report_field/signature, "Подпись главврача", required = 1)
 	add_field(/datum/report_field/date, "Дата", required = 1)
 	add_field(/datum/report_field/time, "Время", required = 1)
-	add_field(/datum/report_field/text_label/instruction,"Признание невменяемым означает полное отстранение от выполнения должностных обязанностей.\
+	add_field(/datum/report_field/text_label/instruction,"Признание невменяемым означает полное отстранение от выполнения должностных обязанностей. \
 	Документ является недействительным при отсутствии подписи и печати главврача.")
 	for(var/datum/report_field/field in cmo_fields)
 		field.set_access(access_edit = access_cmo)
@@ -66,7 +66,7 @@
 	add_field(/datum/report_field/date, "Дата смерти", required = 1)
 	add_field(/datum/report_field/time, "Время смерти", required = 1)
 	add_field(/datum/report_field/simple_text, "Причина смерти", required = 1)
-	add_field(/datum/report_field/pencode_text, "Дополнительные сведения", required = 1)
+	add_field(/datum/report_field/pencode_text, "Дополнительные сведения")
 	add_field(/datum/report_field/date, "Дата вскрытия", required = 1)
 	add_field(/datum/report_field/time, "Время вскрытия", required = 1)
 	add_field(/datum/report_field/people/from_manifest, "Вскрытие проводил", required = 1)

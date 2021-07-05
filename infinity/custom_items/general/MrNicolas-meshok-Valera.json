@@ -2,5 +2,5 @@
   "ckey" :            "MrNicolas",
   "character_name" :  "Valeria Kirova",
   "item_path" :       "/obj/item/clothingbag/rex",
-  "req_access" :      [ "ACCESS_SECURITY" ]
+  "req_titles" :       [ "Security Guard" ]
   }
