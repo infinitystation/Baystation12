@@ -567,7 +567,11 @@
 /obj/item/clothingbag/adro
 	name = "uniform package"
 	desc = "An utility bag stamped with a PMC 'Volk' logo."
-	New()
-		new /obj/item/clothing/suit/armor/bulletproof/adro(src)
-		new /obj/item/clothing/head/helmet/ballistic/adro(src)
-		new /obj/item/clothing/under/rank/security/adro(src)
+	trade_blacklisted = TRUE
+
+/obj/item/clothingbag/adro/Initialize()
+	. = ..()
+
+	new /obj/item/clothing/suit/armor/bulletproof/adro(src)
+	new /obj/item/clothing/head/helmet/ballistic/adro(src)
+	new /obj/item/clothing/under/rank/security/adro(src)
