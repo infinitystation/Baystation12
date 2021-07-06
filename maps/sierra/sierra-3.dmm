@@ -36888,6 +36888,8 @@
 	dir = 4
 	},
 /obj/structure/table/standard,
+/obj/item/paper_bin,
+/obj/item/pen/multi,
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "dbS" = (
@@ -39109,7 +39111,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
+/obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
@@ -40728,8 +40730,8 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
 "qCy" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 1
+/obj/machinery/atmospherics/tvalve/mirrored{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
@@ -41177,6 +41179,17 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/drone_fabrication)
+"sSr" = (
+/obj/structure/table/standard,
+/obj/item/device/integrated_electronics/wirer,
+/obj/item/device/integrated_electronics/analyzer{
+	pixel_x = 6
+	},
+/obj/item/device/integrated_electronics/debugger{
+	pixel_x = -5
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/misc_lab)
 "sWW" = (
 /obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/cobweb2,
@@ -41449,6 +41462,7 @@
 	dir = 1
 	},
 /obj/structure/table/standard,
+/obj/item/device/integrated_circuit_printer,
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "tQx" = (
@@ -64045,7 +64059,7 @@ jvM
 vva
 oDs
 cZQ
-oDs
+sSr
 aUK
 ymh
 aOF
