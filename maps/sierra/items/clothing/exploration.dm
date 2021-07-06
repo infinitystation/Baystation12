@@ -3,6 +3,9 @@
 	desc = "An utility uniform for NanoTrasen's field specialists. This one made for vessel's dull colors."
 	icon = 'maps/sierra/icons/obj/obj_under_exploration.dmi'
 	item_icons = list(slot_w_uniform_str = 'maps/sierra/icons/mob/onmob_under_exploration.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_under_unathi.dmi'
+	)
 	icon_state = "greyutility"
 	item_state = "greyutility"
 	worn_state = "greyutility"

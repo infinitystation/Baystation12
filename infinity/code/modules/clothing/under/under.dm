@@ -55,6 +55,9 @@
 	name = "janitor's utility uniform"
 	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
 	item_icons = list(slot_w_uniform_str = 'infinity/icons/mob/onmob/onmob_under.dmi')
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_under_unathi.dmi'
+	)
 	icon_state = "janitor_uniform"
 	item_state = "janitor_uniform"
 	worn_state = "janitor_uniform"

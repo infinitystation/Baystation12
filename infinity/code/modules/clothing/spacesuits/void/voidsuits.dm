@@ -80,6 +80,8 @@
 	name = "\improper sapper voidsuit"
 	desc = "A specially produced heavy suit for sapper units on space facilities. Usually, uses as emergency spacesuit."
 	icon_state = "rig-secTG"
+	item_state = "rig-secTG"
+	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	armor = list(melee = 40, bullet = 15, laser = 25,energy = 50, bomb = 90, bio = 100, rad = 10)
 	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDEGLOVES
@@ -98,6 +100,7 @@
 	desc = "A specially produced heavy helmet for sapper units on space facilities."
 	icon_state = "rig0-secTG"
 	item_state = "rig0-secTG"
+	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	armor = list(melee = 30, bullet =20, laser = 25, energy = 50, bomb = 90, bio = 100, rad = 10)
 	item_state_slots = list(
 		slot_l_hand_str = "sec_helm",
