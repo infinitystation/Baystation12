@@ -1,0 +1,6 @@
+{
+    "ckey" :            "adro244",
+    "character_name" :  "Patron",
+    "item_path" :       "/obj/item/clothingbag/adro_ipc",
+    "req_access" :      [ "ACCESS_ENGINEERING" ]
+}
