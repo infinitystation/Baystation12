@@ -109,6 +109,7 @@
 	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
 	icon_state = "keganp"
 	item_state = "keganp"
+	on_rolled = list("rolled" = "keganp", "down" = "keganp")
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/accessory/cloak/wolf
