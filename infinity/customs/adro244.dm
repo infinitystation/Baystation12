@@ -509,6 +509,7 @@
 	new /obj/item/clothing/gloves/insulated/adroipc(src)
 	new /obj/item/clothing/mask/adroipc(src)
 	new /obj/item/gun/energy/stunrevolver/adroipc(src)
+	new /obj/item/clothing/accessory/storage/holster/hip(src)
 
 //VOLK armor
 
