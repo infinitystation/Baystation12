@@ -71,7 +71,7 @@
 	contains = list(/obj/item/gun/projectile/automatic/nt41 = 2)
 	cost = 60
 	containername = "\improper Ballistic PDW crate"
-	security_level = SUPPLY_SECURITY_ELEVATED
+	security_level = SUPPLY_SECURITY_HIGH
 
 
 /decl/hierarchy/supply_pack/security/holster
