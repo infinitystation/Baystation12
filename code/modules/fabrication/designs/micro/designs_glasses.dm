@@ -1,5 +1,5 @@
 /datum/fabricator_recipe/drinkingglass
-	path = /obj/item/reagent_containers/food/drinks/glass2/square
+	path = /obj/item/reagent_containers/food/drinks/glass2/carafe
 	category = "Drinking Glasses"
 	fabricator_types = list(FABRICATOR_CLASS_MICRO)
 
@@ -27,6 +27,9 @@
 /datum/fabricator_recipe/drinkingglass/shake
 	path = /obj/item/reagent_containers/food/drinks/glass2/shake
 
+/datum/fabricator_recipe/drinkingglass/square
+	path = /obj/item/reagent_containers/food/drinks/glass2/square
+
 /datum/fabricator_recipe/drinkingglass/coffecup
 	path = /obj/item/reagent_containers/food/drinks/glass2/coffeecup
 
@@ -38,9 +41,6 @@
 
 /datum/fabricator_recipe/drinkingglass/mug
 	path = /obj/item/reagent_containers/food/drinks/glass2/mug
-
-/datum/fabricator_recipe/drinkingglass/carafe
-	path = /obj/item/reagent_containers/food/drinks/glass2/carafe
 
 /datum/fabricator_recipe/drinkingglass/pint
 	path = /obj/item/reagent_containers/food/drinks/glass2/pint
