@@ -1,0 +1,4 @@
+author: Drakon341
+delete-after: true
+changes:
+  - bugfix: Исправляем проблему с исчезнувшим корпоративным запросом у глав.
