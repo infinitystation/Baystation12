@@ -140,6 +140,8 @@
 	if(is_external)
 		return
 	delay = max(1, mob.movement_delay() + GetGrabSlowdown())
+	if(direction & (direction - 1)) //moved diagonally successfully
+		delay *= 1.41
 	next_move = world.time + delay
 	UpdateGlideSize()
 
