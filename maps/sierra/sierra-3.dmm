@@ -32903,8 +32903,16 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
+"bbT" = (
+/obj/machinery/camera/network/research{
+	c_tag = "Xenobiology - Entry - One";
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/xenobiology/xenoflora)
 "bbX" = (
 /obj/structure/closet/l3closet/scientist,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "bca" = (
@@ -34843,10 +34851,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/aftport)
 "bfK" = (
-/obj/structure/railing/mapped{
+/obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
-/turf/simulated/open,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/aftport)
 "bfL" = (
 /obj/structure/closet/crate/freezer,
@@ -36881,15 +36889,16 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/equipstorage)
 "cZQ" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
 /obj/structure/table/standard,
 /obj/item/paper_bin,
 /obj/item/pen/multi,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "dbS" = (
@@ -37066,9 +37075,10 @@
 /area/security/nuke_storage)
 "dTt" = (
 /obj/machinery/computer/air_control{
-	input_tag = null;
-	name = "Xenoflora Gas Monitor";
-	sensor_name = "Xenoflora Enviroment";
+	input_tag = "test_xenoflora_in";
+	name = "Test Chamber Gas Monitor";
+	output_tag = "test_xenoflora_out";
+	sensor_name = "Xenoflora Environment";
 	sensor_tag = "xenobot_sensor"
 	},
 /turf/simulated/floor/tiled/white,
@@ -37761,6 +37771,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
+"gJw" = (
+/obj/structure/table/standard,
+/obj/item/device/integrated_electronics/wirer,
+/obj/item/device/integrated_electronics/analyzer{
+	pixel_x = 6
+	},
+/obj/item/device/integrated_electronics/debugger{
+	pixel_x = -5
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/misc_lab)
 "gLv" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -37837,6 +37858,8 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "gQw" = (
@@ -37969,7 +37992,6 @@
 /area/crew_quarters/dungeon_master_lounge)
 "hqn" = (
 /obj/machinery/atmospherics/omni/filter{
-	tag_north = 2;
 	tag_south = 2;
 	tag_west = 1
 	},
@@ -38361,6 +38383,14 @@
 /obj/machinery/security_scanner/unwrenched,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/forestarboard)
+"iBY" = (
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/machinery/camera/network/research{
+	c_tag = "Xenoflora - tests area";
+	dir = 8
+	},
+/turf/simulated/floor/grass,
+/area/rnd/xenobiology/xenoflora)
 "iDJ" = (
 /obj/machinery/door/window/brigdoor/northright{
 	autoset_access = 0;
@@ -38942,9 +38972,12 @@
 "kGE" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/botanydisk,
-/obj/structure/hygiene/sink,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
@@ -39995,8 +40028,17 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
 "nQB" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
+/obj/machinery/atmospherics/unary/vent_pump/tank{
+	dir = 8;
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0;
+	id_tag = "test_xenoflora_out";
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	internal_pressure_bound_default = 4000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	pump_direction = 0
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/xenoflora)
@@ -40069,6 +40111,10 @@
 /area/rnd/xenobiology/xenoflora)
 "odE" = (
 /obj/machinery/reagentgrinder,
+/obj/machinery/camera/network/research{
+	c_tag = "Research - Miscellaneuos Room";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "oht" = (
@@ -40179,6 +40225,9 @@
 /area/security/range)
 "oDs" = (
 /obj/structure/table/standard,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "oEz" = (
@@ -40239,6 +40288,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "oTc" = (
@@ -40745,7 +40795,10 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "qEe" = (
-/obj/machinery/atmospherics/tvalve,
+/obj/machinery/atmospherics/tvalve{
+	icon_state = "map_tvalve1";
+	state = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "qIS" = (
@@ -41017,6 +41070,10 @@
 /area/hallway/primary/firstdeck/aft)
 "snj" = (
 /obj/machinery/botany/editor,
+/obj/machinery/camera/network/research{
+	c_tag = "Xenoflora - work area - one";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "sox" = (
@@ -41179,17 +41236,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/drone_fabrication)
-"sSr" = (
-/obj/structure/table/standard,
-/obj/item/device/integrated_electronics/wirer,
-/obj/item/device/integrated_electronics/analyzer{
-	pixel_x = 6
-	},
-/obj/item/device/integrated_electronics/debugger{
-	pixel_x = -5
-	},
-/turf/simulated/floor/tiled/white,
-/area/rnd/misc_lab)
 "sWW" = (
 /obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/cobweb2,
@@ -41732,6 +41778,10 @@
 /area/hallway/primary/firstdeck/central_stairwell)
 "uNP" = (
 /obj/machinery/seed_extractor,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "uOD" = (
@@ -42096,6 +42146,15 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
+"wxl" = (
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/structure/largecrate,
+/obj/random/maintenance,
+/obj/random/maintenance,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/maintenance/firstdeck/aftport)
 "wyo" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 8
@@ -42160,12 +42219,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/medical/morgue)
 "wOa" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -20
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/hydroponics,
+/obj/machinery/camera/network/research{
+	c_tag = "Xenoflora - work area - two"
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
@@ -42488,8 +42545,12 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/center)
 "ylG" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 8;
+	frequency = 1441;
+	icon_state = "map_injector";
+	id = "test_xenoflora_in";
+	use_power = 1
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/xenoflora)
@@ -63860,7 +63921,7 @@ aYy
 aYy
 aUK
 beW
-bfK
+wxl
 bgy
 bgV
 bgu
@@ -64059,7 +64120,7 @@ jvM
 vva
 oDs
 cZQ
-sSr
+gJw
 aUK
 ymh
 aOF
@@ -66880,7 +66941,7 @@ sZA
 aQi
 aRP
 aTs
-sKK
+wOa
 xat
 oXn
 ngO
@@ -67089,7 +67150,7 @@ ceA
 bde
 baU
 bde
-bde
+bbT
 aUK
 bfa
 aOF
@@ -67288,7 +67349,7 @@ vEj
 nnB
 rfN
 qEe
-wOa
+nZP
 bdX
 bdX
 bdX
@@ -68297,7 +68358,7 @@ bdX
 xBr
 xBr
 mAz
-xBr
+iBY
 xBr
 bdX
 bce
