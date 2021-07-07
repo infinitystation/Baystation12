@@ -262,19 +262,34 @@
 
 //SECURITY SCANS
 	.["guns"] = list()
-	if(check_items && ((!pass_access) in target.GetAccess()) && bypass_filter || !bypass_filter)
-		for(var/obj/item/I in target.contents)
-			if(subtype_check(I, banned_items))
-				.["level"] += 4
-				.["guns"] += I.name
-				break
-
-			else if(subtype_check(I, storage_types) && I.contents)
-				for(var/obj/item/thing in I.contents)
-					if(subtype_check(thing, banned_items))
+	if (check_items)
+		if (bypass_filter)
+			if(!check_access(target, pass_access))
+				for(var/obj/item/I in target.contents)
+					if(subtype_check(I, banned_items))
 						.["level"] += 4
-						.["guns"] += thing.name
+						.["guns"] += I.name
 						break
+
+					else if(subtype_check(I, storage_types) && I.contents)
+						for(var/obj/item/thing in I.contents)
+							if(subtype_check(thing, banned_items))
+								.["level"] += 4
+								.["guns"] += thing.name
+								break
+		else
+			for(var/obj/item/I in target.contents)
+				if(subtype_check(I, banned_items))
+					.["level"] += 4
+					.["guns"] += I.name
+					break
+
+				else if(subtype_check(I, storage_types) && I.contents)
+					for(var/obj/item/thing in I.contents)
+						if(subtype_check(thing, banned_items))
+							.["level"] += 4
+							.["guns"] += thing.name
+							break
 
 	if(check_records || check_arrests)
 		var/perpname = target.name
