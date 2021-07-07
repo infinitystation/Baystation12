@@ -85,6 +85,7 @@
 
 /datum/computer_file/report/recipient/command/decree/generate_fields()
 	..()
+	add_field(/datum/report_field/text_label/header, "Корпоративный Указ")
 	add_field(/datum/report_field/number, "Номер указа")
 	add_field(/datum/report_field/people/from_manifest, "Полное имя распорядителя", required = 1)
 	add_field(/datum/report_field/pencode_text, "Содержание распоряжения", required = 1)
@@ -102,6 +103,7 @@
 
 /datum/computer_file/report/recipient/command/request_corporate/generate_fields()
 	..()
+	add_field(/datum/report_field/text_label/header, "Корпоративный Запрос")
 	add_field(/datum/report_field/number, "Номер запроса ")
 	add_field(/datum/report_field/people/from_manifest, "Полное имя запросившего", required = 1)
 	add_field(/datum/report_field/pencode_text, "Содержание запроса", required = 1)
@@ -120,6 +122,7 @@
 
 /datum/computer_file/report/recipient/command/issuing_bonuses/generate_fields()
 	..()
+	add_field(/datum/report_field/text_label/header, "Представление о премировании сотрудника")
 	add_field(/datum/report_field/people/from_manifest, "Имя, фамилия и должность сотрудника", required = 1)
 	add_field(/datum/report_field/simple_text, "Департамент", required = 1)
 	add_field(/datum/report_field/simple_text, "Размер премии", required = 1)

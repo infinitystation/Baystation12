@@ -5,7 +5,8 @@
 
 /datum/computer_file/report/recipient/service_agreement/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Стороны договора")
+	add_field(/datum/report_field/text_label/header, "Договор оказания услуг")
+	add_field(/datum/report_field/text_label, "Стороны договора")
 	add_field(/datum/report_field/date, "Дата составления документа", required = 1)
 	add_field(/datum/report_field/simple_text, "Исполнитель", required = 1)
 	add_field(/datum/report_field/simple_text, "Заказчик", required = 1)
@@ -30,7 +31,8 @@
 
 /datum/computer_file/report/recipient/buy_agreement/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "Стороны договора")
+	add_field(/datum/report_field/text_label/header, "Договор Купли-Продажи")
+	add_field(/datum/report_field/text_label, "Стороны договора")
 	add_field(/datum/report_field/simple_text, "Продавец", required = 1)
 	add_field(/datum/report_field/simple_text, "Покупатель", required = 1)
 	add_field(/datum/report_field/text_label/instruction, "Сторонами могут быть: организация, корпорация или частное лицо. В случае частного лица указать имя, фамилию и должность, если такая предусмотрена. \
