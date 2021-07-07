@@ -25,6 +25,29 @@
 	for(var/datum/report_field/field in cmo_fields)
 		field.set_access(access_edit = access_cmo)
 
+/datum/computer_file/report/recipient/med/checkup
+	form_name = "NT-MED-03b"
+	title = "Контрольный список для медицинского осмотра"
+	available_on_ntnet = 1
+
+/datum/computer_file/report/recipient/med/checkup/generate_fields()
+	..()
+	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Медицинский департамент")
+	add_field(/datum/report_field/people/from_manifest, "Пациент")
+	add_field(/datum/report_field/date, "Дата")
+	add_field(/datum/report_field/time, "Время")
+	add_field(/datum/report_field/simple_text, "Пульс")
+	add_field(/datum/report_field/simple_text, "Кровяное давление")
+	add_field(/datum/report_field/simple_text, "Как звучит сердце?")
+	add_field(/datum/report_field/simple_text, "Как звучат лёгкие?")
+	add_field(/datum/report_field/simple_text, "Занимается ли пациент спортом?")
+	add_field(/datum/report_field/simple_text, "Если пациент курит, то сколько раз в день?")
+	add_field(/datum/report_field/simple_text, "Реакция зрачков на свет")
+	add_field(/datum/report_field/simple_text, "Подвергался ли пациент радиационному облучению в недавнее время?")
+	add_field(/datum/report_field/simple_text, "Болел ли пациент каким-либо заболеваниями в недавнее время?")
+	add_field(/datum/report_field/pencode_text, "Дополнительные заметки")
+	add_field(/datum/report_field/signature, "Подпись врача", required = 1)
+
 /datum/computer_file/report/recipient/med/insanity_resolution
 	logo = "\[sierralogo\]"
 	form_name = "NT-MED-02"
