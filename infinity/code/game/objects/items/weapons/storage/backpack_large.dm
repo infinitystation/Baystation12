@@ -11,8 +11,32 @@
 	icon_state = "anime_coffin"
 	item_state = "anime_coffin"
 	w_class = ITEM_SIZE_HUGE
-
 	flags_inv = BACKOVERHEAD
+
+/obj/structure/closet/coffin/anime
+	name = "coffin"
+	desc = "Очень смешная идея, теперь, мы тоже посмеемся."
+	icon = 'infinity/icons/obj/storage.dmi'
+	icon_state = "anime_coffin"
+	locked = TRUE
+
+/obj/structure/closet/coffin/anime/Initialize()
+	. = ..()
+	store_mobs(0)
+
+/obj/structure/closet/coffin/anime/open()
+	. = ..()
+	if(.)
+		qdel(src)
+
+/obj/item/storage/backpack/industrial/anime_coffin/equipped(var/mob/living/carbon/human/user, slot)
+	if(slot == slot_back && slot_flags & SLOT_BACK)
+		if(istype(user) && (user.species.name in list(SPECIES_ADHERENT, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_QUEEN, SPECIES_MONARCH_WORKER, SPECIES_NABBER)))
+			var/obj/structure/closet/coffin/anime/GROB = new(get_turf(user))
+			user.unEquip(src)
+			dropInto(GROB)
+			return
+	. = ..()
 
 /obj/item/equipped(var/mob/living/carbon/human/user, var/slot)
 	. = ..()

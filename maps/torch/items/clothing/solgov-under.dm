@@ -133,9 +133,9 @@
 /obj/item/clothing/under/solgov/utility/fleet
 	name = "fleet coveralls"
 	desc = "The utility uniform of the SCG Fleet, made from an insulated material."
-	icon_state = "navyutilityoff"
+	icon_state = "navyutility"
 	item_state = "jensensuit"
-	worn_state = "navyutilityoff"
+	worn_state = "navyutility"
 
 /obj/item/clothing/under/solgov/utility/fleet/command
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/command/fleet)
@@ -195,8 +195,8 @@
 /obj/item/clothing/under/solgov/utility/fleet/combat
 	name = "fleet fatigues"
 	desc = "Alternative utility uniform of the SCG Fleet, for when coveralls are impractical."
-	icon_state = "navyutilityoff"
-	worn_state = "navyutilityoff"
+	icon_state = "navyutility"
+	worn_state = "navyutility"
 
 /obj/item/clothing/under/solgov/utility/fleet/combat/security
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/department/security/fleet)

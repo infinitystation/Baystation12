@@ -4,7 +4,7 @@
 
 /datum/computer_file/report/recipient/sec/report_detective
 	form_name = "NT-SEC-14"
-	title = "Служба Безопасности: Отчет о расследовании"
+	title = "Отчет о расследовании"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/report_detective/generate_fields()
@@ -17,12 +17,12 @@
 	add_field(/datum/report_field/time, "Время", required = 1)
 	add_field(/datum/report_field/pencode_text, "Отчёт по делу", required = 1)
 	add_field(/datum/report_field/pencode_text, "Основная информация", required = 1)
-	add_field(/datum/report_field/pencode_text, "Вложения", required = 1)
-	add_field(/datum/report_field/pencode_text, "Наблюдения", required = 1)
+	add_field(/datum/report_field/pencode_text, "Вложения")
+	add_field(/datum/report_field/pencode_text, "Наблюдения")
 
 /datum/computer_file/report/recipient/sec/report_incident
 	form_name = "NT-SEC-16"
-	title = "Служба Безопасности: Отчет об происшествии"
+	title = "Отчет об происшествии"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/report_incident/generate_fields()
@@ -45,7 +45,7 @@
 
 /datum/computer_file/report/recipient/sec/report_evidence
 	form_name = "NT-SEC-02b"
-	title = "Служба Безопасности: Отчет об уликах"
+	title = "Отчет об уликах"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/report_evidence/generate_fields()
@@ -57,15 +57,15 @@
 	add_field(/datum/report_field/time, "Время")
 	add_field(/datum/report_field/people/from_manifest, "Конфисковано у", required = 1)
 	add_field(/datum/report_field/pencode_text, "Список конфискованных предметов", required = 1)
-	add_field(/datum/report_field/signature, "Подпись офицера проводившего конфискацию")
-	det_fields += add_field(/datum/report_field/signature, "Подпись Смотрителя брига", required = 1)
+	add_field(/datum/report_field/signature, "Подпись офицера проводившего конфискацию", required = 1)
+	det_fields += add_field(/datum/report_field/signature, "Подпись Смотрителя брига/Главы Службы Безопасности", required = 1)
 	set_access(access_edit = access_security)
 	for(var/datum/report_field/field in det_fields)
 		field.set_access(access_edit = access_armory)
 
 /datum/computer_file/report/recipient/sec/patrol
 	form_name = "NT-SEC-04"
-	title = "Служба Безопасности: Назначение патрулей"
+	title = "Назначение патрулей"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/patrol/generate_fields()
@@ -84,7 +84,7 @@
 
 /datum/computer_file/report/recipient/sec/armory
 	form_name = "NT-SEC-05"
-	title = "Служба Безопасности: Инвентаризация оружейной"
+	title = "Инвентаризация оружейной"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/armory/generate_fields()
@@ -112,7 +112,7 @@
 	add_field(/datum/report_field/number, "Лазерные карабины")
 	add_field(/datum/report_field/number, "Боевой дробовик")
 	add_field(/datum/report_field/number, "Бронещиты")
-	add_field(/datum/report_field/pencode_text, "Прочее оружие", required = 1)
+	add_field(/datum/report_field/pencode_text, "Прочее оружие")
 	add_field(/datum/report_field/time, "Опись арсенала проведена в")
 	add_field(/datum/report_field/signature, "Подпись сотрудника проводившего опись", required = 1)
 	set_access(access_armory, access_armory)
@@ -161,7 +161,7 @@
 	add_field(/datum/report_field/text_label/header, "Квитанция о взымании штрафа")
 	add_field(/datum/report_field/text_label/instruction, "Заполняется старшим сотрудником Охранного департамента.")
 	add_field(/datum/report_field/people/from_manifest, "Полное имя, фамилия и должность обвиняемого", required = 1)
-	add_field(/datum/report_field/simple_text, "Номер статьи, по которой выплачивается штраф", required = 1)
+	add_field(/datum/report_field/number, "Номер статьи, по которой выплачивается штраф", required = 1)
 	add_field(/datum/report_field/simple_text, "Размер штрафа", required = 1)
 	add_field(/datum/report_field/text_label, "Выплата возможна действующему старшему сотруднику отдела Службы защиты активов ИКН Сьерра.")
 	add_field(/datum/report_field/signature, "Подпись обвиняемого", required = 1)

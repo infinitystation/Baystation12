@@ -27,6 +27,13 @@
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/sierra_quartermaster
 
+/obj/item/device/radio/headset/heads/rd
+	name = "research director's headset"
+	desc = "Headset of the researching God."
+	icon_state = "com_headset"
+	item_state = "headset"
+	ks1type = /obj/item/device/encryptionkey/heads/rd
+
 /obj/item/device/radio/headset/sierra_quartermaster/alt
 	name = "quartermaster's bowman headset"
 	item_state = "cargo_headset_alt"

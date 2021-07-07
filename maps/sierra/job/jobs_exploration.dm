@@ -1,11 +1,11 @@
 /datum/job/exploration_leader
 	title = "Exploration Leader"
-	department = "Exploration"
+	department = "Экспедиционный"
 	department_flag = EXP
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Директором Исследований и Капитаном"
+	supervisors = "Директору Исследований и Капитану"
 	selection_color = "#68099e"
 	minimal_player_age = 14
 	economic_power = 9
@@ -42,11 +42,11 @@
 
 /datum/job/explorer
 	title = "Explorer"
-	department = "Exploration"
+	department = "Экспедиционный"
 	department_flag = EXP
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "Лидером Экспедиции и Директором Исследований"
+	supervisors = "Лидеру Экспедиции и Директору Исследований"
 	selection_color = "#68099e"
 	minimal_player_age = 4
 	ideal_character_age = 20
@@ -80,11 +80,11 @@
 
 /datum/job/explorer_pilot
 	title = "Expeditionary Pilot"
-	department = "Exploration"
+	department = "Экспедиционный"
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Лидером Экспедиции и Директором Исследований"
+	supervisors = "Лидеру Экспедиции и Директору Исследований"
 	selection_color = "#68099e"
 	minimal_player_age = 14
 	ideal_character_age = 24
@@ -119,11 +119,11 @@
 
 /datum/job/explorer_medic
 	title = "Field Medic"
-	department = "Exploration"
+	department = "Экспедиционный"
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Лидером Экспедиции и Директором Исследований"
+	supervisors = "Лидеру Экспедиции и Директору Исследований"
 	selection_color = "#68099e"
 	ideal_character_age = 34
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/exploration/medic
@@ -164,11 +164,11 @@
 
 /datum/job/explorer_engineer
 	title = "Field Engineer"
-	department = "Exploration"
+	department = "Экспедиционный"
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Лидером Экспедиции и Директором Исследований"
+	supervisors = "Лидеру Экспедиции и Директору Исследований"
 	selection_color = "#68099e"
 	minimal_player_age = 8
 	ideal_character_age = 28

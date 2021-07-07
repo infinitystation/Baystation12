@@ -55,7 +55,7 @@
 
 /datum/computer_file/report/recipient/command/fire
 	form_name = "D-NTF-01"
-	title = "Форма прекращения трудового контракта NT"
+	title = "Прекращение трудового контракта NT"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/command/fire/generate_fields()
@@ -95,13 +95,13 @@
 	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи или печати.")
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
 
-/datum/computer_file/report/recipient/request_corporate
+/datum/computer_file/report/recipient/command/request_corporate
 	form_name = "REQ-NTF"
 	title = "Корпоративный Запрос"
 	logo = "\[logo\]"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/request_corporate/generate_fields()
+/datum/computer_file/report/recipient/command/request_corporate/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "Корпоративный Запрос")
 	add_field(/datum/report_field/number, "Номер запроса ")
@@ -112,7 +112,7 @@
 	add_field(/datum/report_field/time, "Время заполнения")
 	add_field(/datum/report_field/text_label/instruction, "Документ является недействительным в случае отсутствия подписи или печати.")
 	add_field(/datum/report_field/signature, "Подпись", required = 1)
-	set_access(list(list(access_heads, access_qm, access_el)), list(list(access_heads, access_qm, access_el)))
+	set_access(list(list(access_qm, access_el)), list(list(access_qm, access_el)))
 
 /datum/computer_file/report/recipient/command/issuing_bonuses
 	form_name = "CTA-IB-01"
@@ -122,16 +122,13 @@
 
 /datum/computer_file/report/recipient/command/issuing_bonuses/generate_fields()
 	..()
-	var/list/heads_fields = list()
 	add_field(/datum/report_field/text_label/header, "Представление о премировании сотрудника")
 	add_field(/datum/report_field/people/from_manifest, "Имя, фамилия и должность сотрудника", required = 1)
 	add_field(/datum/report_field/simple_text, "Департамент", required = 1)
 	add_field(/datum/report_field/simple_text, "Размер премии", required = 1)
 	add_field(/datum/report_field/pencode_text, "Причина премирования", required = 1)
-	heads_fields += add_field(/datum/report_field/people/from_manifest, "Полное имя, фамилия и должность сотрудника, назначившего премирование", required = 1)
-	heads_fields += add_field(/datum/report_field/signature, "Подпись сотрудника, назначившего премирование", required = 1)
+	add_field(/datum/report_field/people/from_manifest, "Полное имя, фамилия и должность сотрудника, назначившего премирование", required = 1)
+	add_field(/datum/report_field/signature, "Подпись сотрудника, назначившего премирование", required = 1)
 	add_field(/datum/report_field/signature, "Подпись о получении премиальных", required = 1)
 	add_field(/datum/report_field/date, "Дата заполнения")
 	add_field(/datum/report_field/time, "Время заполнения")
-	for(var/datum/report_field/field in heads_fields)
-		field.set_access(access_edit = access_heads)

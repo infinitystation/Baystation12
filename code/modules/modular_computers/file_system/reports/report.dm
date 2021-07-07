@@ -22,7 +22,7 @@
 /*
 Access stuff. The report's access/access_edit should control whether it can be opened/submitted.
 For field editing or viewing, use the field's access/access_edit permission instead.
-The access system is based on "access patterns", lists of access values. 
+The access system is based on "access patterns", lists of access values.
 A user needs all access values in a pattern to be granted access.
 A user needs to only match one of the potentially several stored access patterns to be granted access.
 You must have access to have edit access.
@@ -113,7 +113,7 @@ If the override option is set to 0, the access supplied will instead be added as
 	return temp
 
 /datum/computer_file/report/proc/display_name()
-	return "Form [form_name]: [title]"
+	return "Форма [form_name]: [title]"
 
 //if access is given, will include access information by performing checks against it.
 /datum/computer_file/report/proc/generate_nano_data(list/given_access)

@@ -1,11 +1,11 @@
 /datum/job/senior_scientist
 	title = "Senior Researcher"
-	department = "Science"
+	department = "Научный"
 	department_flag = SCI
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Директором Исследований"
+	supervisors = "Директору Исследований"
 	selection_color = "#633d63"
 	economic_power = 12
 	minimal_player_age = 10
@@ -50,11 +50,11 @@
 
 /datum/job/scientist
 	title = "Scientist"
-	department = "Science"
+	department = "Научный"
 	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
-	supervisors = "Директором Исследований и Старшим Исследователем"
+	supervisors = "Директору Исследований и Старшему Исследователю"
 	economic_power = 10
 	ideal_character_age = 45
 	alt_titles = list(
@@ -104,12 +104,12 @@
 
 /datum/job/roboticist
 	title = "Roboticist"
-	department = "Science"
+	department = "Научный"
 	department_flag = SCI
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Директором Исследований и Старшим Исследователем"
+	supervisors = "Директору Исследований и Старшему Исследователю"
 	selection_color = "#633d63"
 	economic_power = 6
 	alt_titles = list(
@@ -161,12 +161,12 @@
 
 /datum/job/scientist_assistant
 	title = "Research Assistant"
-	department = "Science"
+	department = "Научный"
 	department_flag = SCI
 
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Директором Исследований и остальным научным персоналом"
+	supervisors = "Директору Исследований и остальному научному персоналу"
 	selection_color = "#633d63"
 	economic_power = 3
 	ideal_character_age = 30

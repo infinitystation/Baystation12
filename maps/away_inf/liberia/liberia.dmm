@@ -117,6 +117,10 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/merchantstorage)
+"ao" = (
+/obj/effect/shuttle_landmark/nav_liberia/south,
+/turf/space,
+/area/space)
 "aq" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3204,7 +3208,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/liberia/mule)
 "fm" = (
 /obj/structure/closet/crate/uranium,
@@ -3815,9 +3819,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/liberia/toiletroom1)
 "go" = (
-/obj/machinery/computer/shuttle_control/merchant{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -3830,6 +3831,7 @@
 	pixel_x = -24
 	},
 /obj/structure/cable/blue,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/liberia/officeroom)
 "gp" = (
@@ -4744,6 +4746,12 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/access_button/airlock_interior{
+	frequency = 1380;
+	master_tag = "liberia_solar_south";
+	name = "south liberia solar interior";
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/liberia/atmos)
 "id" = (
@@ -4906,14 +4914,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringstorage)
 "ix" = (
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1380;
-	master_tag = "solar_merchant_airlock";
-	name = "interior access button";
-	pixel_x = -24;
-	req_access = list("ACCESS_MERCHANT")
-	},
 /obj/machinery/power/solar_control/autostart{
 	dir = 4
 	},
@@ -5135,9 +5135,9 @@
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
 	frequency = 1380;
-	id_tag = "merchant_solar_outer";
+	id_tag = "liberia_solar_north_outer";
 	locked = 1;
-	name = "Solar External Access";
+	name = "North Liberia Solar External";
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/structure/cable/yellow{
@@ -5148,27 +5148,12 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringstorage)
 "iU" = (
-/obj/structure/catwalk,
-/obj/machinery/airlock_sensor{
-	frequency = 1380;
-	id_tag = "solar_merchant_sensor";
-	pixel_y = 24
-	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	id_tag = "solar_merchant_pump"
+	id_tag = "liberia_solar_north_pump"
 	},
+/obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	frequency = 1380;
-	id_tag = "solar_merchant_airlock";
-	pixel_y = -24;
-	req_access = list("ACCESS_MERCHANT");
-	tag_airpump = "solar_merchant_pump";
-	tag_chamber_sensor = "solar_merchant_sensor";
-	tag_exterior_door = "solar_merchant_outer";
-	tag_interior_door = "solar_merchant_inner"
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -5176,6 +5161,24 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	dir = 1;
+	frequency = 1380;
+	id_tag = "liberia_solar_north";
+	name = "Liberia Solar North Airlock Controller";
+	pixel_y = -24;
+	req_access = list();
+	tag_airpump = "liberia_solar_north_pump";
+	tag_chamber_sensor = "liberia_solar_north_sensor";
+	tag_exterior_door = "liberia_solar_north_outer";
+	tag_interior_door = "liberia_solar_north_inner"
+	},
+/obj/machinery/airlock_sensor{
+	frequency = 1380;
+	id_tag = "liberia_solar_north_sensor";
+	master_tag = "liberia_solar_north";
+	pixel_y = 24
 	},
 /turf/simulated/floor/plating,
 /area/liberia/engineeringstorage)
@@ -5187,14 +5190,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/merchantstorage)
 "iW" = (
-/obj/machinery/door/airlock/external{
-	autoset_access = 0;
-	frequency = 1380;
-	id_tag = "merchant_solar_inner";
-	locked = 1;
-	name = "Solar External Access";
-	req_access = list("ACCESS_MERCHANT")
-	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
 	},
@@ -5202,6 +5197,14 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external{
+	autoset_access = 0;
+	frequency = 1380;
+	id_tag = "liberia_solar_north_inner";
+	locked = 1;
+	name = "North Liberia Solar Interior";
+	req_access = list("ACCESS_MERCHANT")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringstorage)
@@ -5732,7 +5735,7 @@
 /obj/machinery/ion_engine{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/liberia/mule)
 "kg" = (
 /obj/machinery/door/airlock/civilian{
@@ -6239,10 +6242,6 @@
 /turf/simulated/floor/tiled/white,
 /area/liberia/medbay)
 "lb" = (
-/obj/structure/sign/warning/airlock{
-	dir = 1;
-	pixel_y = -32
-	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 9
 	},
@@ -6260,6 +6259,12 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/access_button/airlock_interior{
+	frequency = 1380;
+	master_tag = "liberia_solar_north";
+	name = "north liberia solar interior";
+	pixel_y = -24
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringstorage)
 "lc" = (
@@ -6274,6 +6279,10 @@
 	},
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
+	},
+/obj/structure/sign/warning/airlock{
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringstorage)
@@ -6723,6 +6732,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/liberia/bar)
+"mt" = (
+/obj/effect/shuttle_landmark/nav_liberia/west,
+/turf/space,
+/area/space)
 "mu" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -6838,6 +6851,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/liberia/library)
+"oo" = (
+/obj/effect/shuttle_landmark/nav_liberia/antag,
+/turf/space,
+/area/space)
 "op" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -7247,23 +7264,26 @@
 /obj/structure/catwalk,
 /obj/machinery/airlock_sensor{
 	frequency = 1380;
-	id_tag = "solar_merchant_sensor";
+	id_tag = "liberia_solar_south_sensor";
+	master_tag = "liberia_solar_south";
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	id_tag = "solar_merchant_pump"
+	id_tag = "liberia_solar_south_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	dir = 1;
 	frequency = 1380;
-	id_tag = "solar_merchant_airlock";
+	id_tag = "liberia_solar_south";
+	name = "Liberia Solar South Airlock Controller";
 	pixel_y = -24;
-	req_access = list("ACCESS_MERCHANT");
-	tag_airpump = "solar_merchant_pump";
-	tag_chamber_sensor = "solar_merchant_sensor";
-	tag_exterior_door = "solar_merchant_outer";
-	tag_interior_door = "solar_merchant_inner"
+	req_access = list();
+	tag_airpump = "liberia_solar_south_pump";
+	tag_chamber_sensor = "liberia_solar_south_sensor";
+	tag_exterior_door = "liberia_solar_south_outer";
+	tag_interior_door = "liberia_solar_south_inner"
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -7346,6 +7366,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/liberia/hallway)
+"tA" = (
+/obj/machinery/access_button/airlock_exterior{
+	frequency = 1380;
+	master_tag = "liberia_solar_north";
+	name = "north liberia solars exterior";
+	pixel_x = -10
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/liberia/engineeringstorage)
 "tI" = (
 /obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
@@ -7419,6 +7448,10 @@
 "ur" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/liberia/guestroom1)
+"uX" = (
+/obj/effect/shuttle_landmark/nav_liberia/north,
+/turf/space,
+/area/space)
 "vd" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -7444,6 +7477,19 @@
 "vv" = (
 /turf/space,
 /area/liberia/solar1)
+"vw" = (
+/obj/effect/shuttle_landmark/nav_liberia/east,
+/turf/space,
+/area/space)
+"vB" = (
+/obj/machinery/access_button/airlock_exterior{
+	frequency = 1380;
+	master_tag = "liberia_solar_south";
+	name = "south liberia solars exterior";
+	pixel_x = -10
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/liberia/atmos)
 "vR" = (
 /obj/structure/cable/blue{
 	d1 = 1;
@@ -7456,9 +7502,9 @@
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
 	frequency = 1380;
-	id_tag = "merchant_solar_inner";
+	id_tag = "liberia_solar_south_inner";
 	locked = 1;
-	name = "Solar External Access";
+	name = "South Liberia Solar Interior";
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -8148,7 +8194,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/liberia/merchantstorage)
 "Iw" = (
 /turf/simulated/wall/prepainted,
@@ -8202,9 +8248,9 @@
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
 	frequency = 1380;
-	id_tag = "merchant_solar_outer";
+	id_tag = "liberia_solar_south_outer";
 	locked = 1;
-	name = "Solar External Access";
+	name = "South Liberia Solar External";
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/structure/cable/yellow{
@@ -17567,7 +17613,7 @@ aa
 aa
 aa
 aa
-aa
+mt
 aa
 aa
 aa
@@ -26615,7 +26661,7 @@ aa
 aa
 aa
 aa
-aa
+uX
 aa
 aa
 aa
@@ -26849,7 +26895,7 @@ iy
 IA
 IA
 IA
-IA
+tA
 iT
 ur
 aa
@@ -26867,7 +26913,7 @@ lh
 EG
 GP
 JE
-GP
+vB
 Uh
 lu
 lu
@@ -28111,7 +28157,7 @@ aa
 aa
 aa
 aa
-aa
+ao
 aa
 aa
 aa
@@ -37923,7 +37969,7 @@ aa
 aa
 aa
 aa
-aa
+oo
 aa
 aa
 aa
@@ -38576,7 +38622,7 @@ aa
 aa
 aa
 aa
-aa
+vw
 aa
 aa
 aa
