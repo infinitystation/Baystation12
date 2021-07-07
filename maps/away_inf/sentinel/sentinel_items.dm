@@ -54,13 +54,6 @@
  * ========
  */
 
-/obj/item/clothing/under/solgov/utility/fleet
-	name = "fleet coveralls"
-	desc = "The utility uniform of the SCG Fleet, made from an insulated material."
-	icon_state = "navyutility"
-	item_state = "navyutility"
-	worn_state = "navyutility"
-
 /obj/item/clothing/under/solgov/utility/fleet/officer/pilot1/away_solpatrol
 	starting_accessories = list(
 		/obj/item/clothing/accessory/solgov/specialty/pilot,
