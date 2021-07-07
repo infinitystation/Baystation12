@@ -151,7 +151,7 @@
 	var/list/iaahop_fields = list()
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/time, "Время")
-	add_field(/datum/report_field/people/from_manifest, "Данный документ разрешает выплату оставшегося оклада погибщему сотруднику NT:")
+	add_field(/datum/report_field/people/from_manifest, "Данный документ разрешает выплату оставшегося оклада погибшему сотруднику NT")
 	add_field(/datum/report_field/pencode_text, "Помимо полной выплаты оставшихся личных активов(Актив, стоимость актива в талерах)", required = 1)
 	add_field(/datum/report_field/pencode_text, "Включая личные вещи", required = 1)
 	add_field(/datum/report_field/text_label, "Должно быть немедленно отправлено ближайшему родственнику сотрудника.")
