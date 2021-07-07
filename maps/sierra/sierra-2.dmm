@@ -22720,9 +22720,6 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/machinery/alarm{
-	pixel_y = 24
-	},
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
@@ -34679,10 +34676,6 @@
 /obj/item/paper/sierra,
 /turf/simulated/floor/carpet/blue3,
 /area/crew_quarters/cafe)
-"fae" = (
-/obj/structure/girder,
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/aftport)
 "fgK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -34879,9 +34872,6 @@
 /obj/structure/bed/sofa/brown/left,
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/cafe)
-"fLO" = (
-/turf/simulated/wall/r_wall/hull,
-/area/maintenance/seconddeck/aftport)
 "fOz" = (
 /obj/random/date_based/christmas/xmaslights,
 /obj/structure/table/woodentable_reinforced/walnut,
@@ -38126,6 +38116,10 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/crew_quarters/cafe)
+"qhX" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftport)
 "qjD" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -38630,6 +38624,9 @@
 "rSZ" = (
 /turf/simulated/floor/carpet/green,
 /area/crew_quarters/sleep/bunk_big)
+"rVY" = (
+/turf/simulated/wall/r_wall/hull,
+/area/maintenance/seconddeck/aftport)
 "rYM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -60814,10 +60811,10 @@ bdI
 beg
 bei
 bip
-fLO
-fLO
-fLO
-fLO
+rVY
+rVY
+rVY
+rVY
 aam
 aam
 aam
@@ -61016,11 +61013,11 @@ bhK
 bhK
 bhK
 bip
-fLO
-fLO
-fLO
-fLO
-fLO
+rVY
+rVY
+rVY
+rVY
+rVY
 aam
 aam
 aam
@@ -61221,8 +61218,8 @@ bdV
 bdV
 bdV
 bdV
-fLO
-fLO
+rVY
+rVY
 aam
 aam
 aam
@@ -61417,15 +61414,15 @@ aHd
 bdV
 bdV
 aWj
-fae
+qhX
 bdV
 aUu
 bdV
 bdV
 bdV
-fLO
-fLO
-fLO
+rVY
+rVY
+rVY
 aam
 aam
 aam
@@ -61625,10 +61622,10 @@ bdV
 aTY
 aVP
 bdV
-fLO
-fLO
-fLO
-fLO
+rVY
+rVY
+rVY
+rVY
 aam
 aam
 aam
