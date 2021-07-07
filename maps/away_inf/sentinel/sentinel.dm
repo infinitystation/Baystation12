@@ -46,9 +46,9 @@
 	description = "Nagashino-class Multipurpose Patrol Craft."
 	prefix = "maps/away_inf/"
 	suffixes = list("sentinel/sentinel-1.dmm", "sentinel/sentinel-2.dmm")
-	spawn_cost = 0.5
-	player_cost = 7 // Нынешнее значение основано на количестве игроков в авейке ~bear1ake
-	spawn_weight = 1 // INF, spawn_weight = 0.5
+	spawn_cost = 0
+	player_cost = 0 // Нынешнее значение основано на количестве игроков в авейке ~bear1ake
+	spawn_weight = 50 // INF, spawn_weight = 0.5
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/reaper)
 
 
