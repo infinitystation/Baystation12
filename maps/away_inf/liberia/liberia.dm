@@ -4,6 +4,7 @@
 #include "liberia_jobs.dm"
 #include "liberia_shuttles.dm"
 #include "liberia_machinery.dm"
+#include "liberia_navpoints.dm"
 
 // Map template data.
 /datum/map_template/ruin/away_site/liberia //Основной файл
@@ -35,6 +36,12 @@
 	initial_restricted_waypoints = list(
 		"Mule" = list("nav_mule_start")
 	)
+	initial_generic_waypoints = list(
+		"nav_liberia_north",
+		"nav_liberia_east",
+		"nav_liberia_south",
+		"nav_liberia_west"
+	)
 
 /obj/effect/submap_landmark/joinable_submap/liberia
 	name = "Liberia"
@@ -46,5 +53,9 @@
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
+
+
+
+
 
 #undef WEBHOOK_SUBMAP_LOADED_LIBERIA

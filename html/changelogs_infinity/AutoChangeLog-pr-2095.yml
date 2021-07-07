@@ -1,0 +1,4 @@
+author: SidVeld
+delete-after: true
+changes:
+  - bugfix: Исправлено отображение спрайтов униформы Флота

@@ -94,8 +94,9 @@ SIERRA_ESCAPE_POD(9)
 		"nav_casino_antag",
 		"nav_yacht_antag",
 		"nav_slavers_base_antag",
-		"nav_mining_antag"
-		)
+		"nav_mining_antag",
+		"nav_liberia_antag"
+	)
 
 /obj/effect/shuttle_landmark/ninja/deck1
 	name = "West of Fourth Deck"
