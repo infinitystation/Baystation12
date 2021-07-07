@@ -7371,8 +7371,7 @@
 	frequency = 1380;
 	master_tag = "liberia_solar_north";
 	name = "north liberia solars exterior";
-	pixel_x = -10;
-	step_x = 0
+	pixel_x = -10
 	},
 /turf/simulated/wall/r_wall/prepainted,
 /area/liberia/engineeringstorage)
