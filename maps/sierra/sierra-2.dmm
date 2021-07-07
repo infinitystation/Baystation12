@@ -23449,12 +23449,14 @@
 /area/rnd/xenobiology/level1)
 "aQc" = (
 /obj/effect/catwalk_plated/white,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/open,
 /area/rnd/xenobiology/level1)
@@ -24818,9 +24820,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
 	},
@@ -24841,7 +24840,7 @@
 	dir = 8;
 	pixel_x = 20
 	},
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+/obj/machinery/atmospherics/pipe/manifold/visible/supply{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -25143,7 +25142,7 @@
 	dir = 8;
 	pixel_x = 23
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/universal,
+/obj/machinery/atmospherics/pipe/simple/visible/supply,
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/xenobiology/atmos)
 "aTt" = (
@@ -25395,8 +25394,8 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/level1)
 "aTM" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/level1)
@@ -25504,6 +25503,10 @@
 /area/chapel/office)
 "aTY" = (
 /obj/structure/table/standard,
+/obj/item/reagent_containers/food/drinks/teapot{
+	pixel_x = 4;
+	pixel_y = 16
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "aUa" = (
@@ -26740,8 +26743,9 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level1)
 "aWj" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/rnd/xenobiology/entry)
+/obj/random/closet,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftport)
 "aWk" = (
 /obj/structure/catwalk,
 /turf/simulated/open,
@@ -26937,6 +26941,9 @@
 "aWB" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/monkeycubes,
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/level1)
 "aWC" = (
@@ -27507,10 +27514,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -30209,10 +30212,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge/hall/level_one)
 "bcK" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/xenobiology/atmos)
 "bcL" = (
@@ -35026,6 +35029,9 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hydroponics/storage)
+"gnO" = (
+/turf/simulated/wall/r_wall/hull,
+/area/maintenance/seconddeck/aftport)
 "gpb" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -36943,6 +36949,10 @@
 /obj/machinery/smartfridge/foods,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
+"mLf" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftport)
 "mLP" = (
 /obj/machinery/light/navigation/delay2,
 /turf/simulated/floor/reinforced/airless,
@@ -60809,10 +60819,10 @@ bdI
 beg
 bei
 bip
-bip
-bip
-bip
-bip
+gnO
+gnO
+gnO
+gnO
 aam
 aam
 aam
@@ -61011,11 +61021,11 @@ bhK
 bhK
 bhK
 bip
-bip
-bip
-bip
-aam
-aam
+gnO
+gnO
+gnO
+gnO
+gnO
 aam
 aam
 aam
@@ -61216,8 +61226,8 @@ bdV
 bdV
 bdV
 bdV
-aam
-aam
+gnO
+gnO
 aam
 aam
 aam
@@ -61411,16 +61421,16 @@ ais
 aHd
 bdV
 bdV
-bdV
-aVj
+aWj
+mLf
 bdV
 aUu
 bdV
 bdV
 bdV
-aOm
-aOm
-aOm
+gnO
+gnO
+gnO
 aam
 aam
 aam
@@ -61620,10 +61630,10 @@ bdV
 aTY
 aVP
 bdV
-aOm
-aOm
-aOm
-aOm
+gnO
+gnO
+gnO
+gnO
 aam
 aam
 aam
@@ -61821,7 +61831,7 @@ aVX
 aVX
 aVX
 aVX
-aVX
+aVB
 aOm
 aOm
 aOm
@@ -62023,7 +62033,7 @@ aTD
 aSV
 aUc
 aTJ
-aVX
+aVB
 aOm
 aOm
 aOm
@@ -62225,7 +62235,7 @@ aXl
 aUG
 aVJ
 aOk
-aWj
+aVB
 aTC
 aUe
 aUU
@@ -62427,7 +62437,7 @@ beU
 aWJ
 aVK
 aTK
-aWj
+aVB
 aTa
 aUl
 aUY
@@ -62629,7 +62639,7 @@ aTs
 aOd
 aUa
 aUn
-aWj
+aVB
 aWE
 aUC
 aUZ
