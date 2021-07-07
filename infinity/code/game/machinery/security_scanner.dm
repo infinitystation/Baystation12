@@ -264,7 +264,7 @@
 	.["guns"] = list()
 	if (check_items)
 		if(!bypass_filter || !check_access(target, pass_access))
-			var/list/items_to_check = target.contents
+			var/list/items_to_check = target.contents.Copy()
 			while(length(items_to_check))
 				var/obj/item/I = items_to_check[1]
 				if(subtype_check(I, banned_items))
