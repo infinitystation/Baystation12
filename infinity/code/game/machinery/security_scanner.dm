@@ -10,7 +10,7 @@
 //	opacity = FALSE // wait... we should able to use it somehow..
 	anchored = TRUE
 	layer = BELOW_DOOR_LAYER
-	appearance_flags = TILE_BOUND
+	appearance_flags = TILE_BOUND | LONG_GLIDE
 	atmos_canpass = CANPASS_DENSITY
 
 	var/on = FALSE
