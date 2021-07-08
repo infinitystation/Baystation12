@@ -34,7 +34,7 @@
 #define HOME_SYSTEM_CERES      "Ceres"
 #define HOME_SYSTEM_PLUTO      "Pluto"
 #define HOME_SYSTEM_TAU_CETI   "Ceti Epsilon"
-#define HOME_SYSTEM_HELIOS	   "Eos"
+#define HOME_SYSTEM_HELIOS	   "Gauss"
 #define HOME_SYSTEM_TERRA 	   "Terra"
 #define HOME_SYSTEM_TERSTEN    "Tersten"
 #define HOME_SYSTEM_LORRIMAN   "Lorriman"
