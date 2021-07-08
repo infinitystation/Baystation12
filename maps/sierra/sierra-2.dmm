@@ -38538,6 +38538,12 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/grass,
 /area/bridge/lobby)
+"rDW" = (
+/obj/machinery/constructable_frame/computerframe{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftport)
 "rHl" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -61211,8 +61217,8 @@ aHn
 aVj
 aSJ
 bdV
-bdV
-bdV
+rDW
+rDW
 bdV
 rVY
 rVY
