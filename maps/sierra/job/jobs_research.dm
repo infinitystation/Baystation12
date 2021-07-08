@@ -38,7 +38,7 @@
 	max_skill = list(
 			SKILL_DEVICES		=	SKILL_MAX,
 			SKILL_SCIENCE		=	SKILL_MAX,
-			SKILL_CHEMISTRY		=	SKILL_MAX
+			SKILL_ANATOMY		=	SKILL_MAX
 		)
 	skill_points = 30
 	good_genome_prob = 40
