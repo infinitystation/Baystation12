@@ -18809,12 +18809,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/abandoned_hydroponics)
-"aHm" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/aftport)
 "aHn" = (
 /obj/structure/table/rack,
 /obj/random/maintenance,
@@ -34185,14 +34179,16 @@
 "dMJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/catwalk,
-/obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/seconddeck/aftport)
 "dOC" = (
 /obj/machinery/computer/prisoner{
@@ -36886,7 +36882,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/rnd/xenobiology/level1)
+/area/space)
 "mHS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -37014,7 +37010,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/rnd/xenobiology/level1)
+/area/space)
 "mTO" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -61614,7 +61610,7 @@ ajB
 ais
 aHd
 aEL
-aHm
+bdV
 aKl
 aVj
 aUu
