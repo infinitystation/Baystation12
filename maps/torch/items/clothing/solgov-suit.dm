@@ -416,6 +416,8 @@
 	boots = /obj/item/clothing/shoes/magboots
 
 /obj/item/clothing/suit/space/void/pilot/sol
+	icon_state = "rig-pilot"
+	item_state = "rig-pilot"
 	icon = 'maps/torch/icons/obj/obj_suit_solgov.dmi'
 	item_icons = list(slot_wear_suit_str = 'maps/torch/icons/mob/onmob_suit_solgov.dmi')
 	sprite_sheets = list(

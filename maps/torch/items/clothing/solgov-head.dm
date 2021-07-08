@@ -463,6 +463,8 @@
 		)
 
 /obj/item/clothing/head/helmet/space/void/pilot/sol
+	icon_state = "rig0_pilot"
+	item_state = "pilot_helm"
 	light_overlay = "helmet_light_alt"
 	icon = 'maps/torch/icons/obj/obj_head_solgov.dmi'
 	item_icons = list(slot_head_str = 'maps/torch/icons/mob/onmob_head_solgov.dmi')

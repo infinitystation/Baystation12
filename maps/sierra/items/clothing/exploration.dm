@@ -4,7 +4,14 @@
 	icon = 'maps/sierra/icons/obj/obj_under_exploration.dmi'
 	item_icons = list(slot_w_uniform_str = 'maps/sierra/icons/mob/onmob_under_exploration.dmi')
 	sprite_sheets = list(
-		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_under_unathi.dmi'
+		SPECIES_VOX = 'icons/mob/species/vox/onmob_under_vox.dmi',
+		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_under_vox_armalis.dmi',
+		SPECIES_NABBER = 'icons/mob/species/nabber/onmob_under_gas.dmi',
+		SPECIES_MONARCH_QUEEN = 'icons/mob/species/nabber/msq/onmob_under_msq.dmi',
+		SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_under_unathi.dmi',
+		SPECIES_MANTID_ALATE = 'icons/mob/species/mantid/onmob_under_alate.dmi',
+		SPECIES_MANTID_GYNE = 'icons/mob/species/mantid/onmob_under_gyne.dmi',
+		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_under_resomi.dmi'//inf
 	)
 	icon_state = "greyutility"
 	item_state = "greyutility"
