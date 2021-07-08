@@ -1,5 +1,7 @@
 name: Баг
-description: Описать проблему, чтобы помочь починить её
+description: Сообщить об ошибке
+title: "Bug: "
+labels: [bug, triage]
 body:
   - type: textarea
     id: bug_description
@@ -25,8 +27,8 @@ body:
   - type: textarea
     id: additional_info
     attributes:
-      label: (Опционально) Дополнительная информация
-      description: Здесь можете описать любую дополнительную информацию, которая касается бага. Также можете приложить скриншоты.
+      label: Дополнительная информация
+      description: (Опционально) Здесь можете описать любую дополнительную информацию, которая касается бага. Также можете приложить скриншоты.
   - type: markdown
     attributes:
       value: "## Характеристики"
