@@ -403,8 +403,8 @@
 	title = "Adjutant"
 	department = "Командный"
 	department_flag = SPT
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "Капитану и остальным главам"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 18

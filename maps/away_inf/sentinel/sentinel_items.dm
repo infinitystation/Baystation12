@@ -96,7 +96,7 @@
 /obj/item/clothing/under/solgov/utility/army/urban/away_solpatrol/captain
 	starting_accessories = list(/obj/item/clothing/accessory/solgov/rank/army/officer/o3)
 
-/obj/item/storage/belt/holster/general/away_solpatrol/New()
+/obj/item/storage/belt/holster/security/away_solpatrol/New()
 	..()
 	new /obj/item/gun/projectile/pistol/military(src)
 	new /obj/item/ammo_magazine/pistol/double(src)

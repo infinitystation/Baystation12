@@ -300,20 +300,20 @@
 /decl/hierarchy/outfit/job/patrol/engineer
 	name = PATROL_OUTFIT_JOB_NAME("Technician")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/engineering/away_solpatrol
-	belt = /obj/item/storage/belt/holster/general/away_solpatrol
+	belt = /obj/item/storage/belt/holster/security/away_solpatrol
 	gloves = /obj/item/clothing/gloves/insulated/black
 
 /decl/hierarchy/outfit/job/patrol/surgeon
 	name = PATROL_OUTFIT_JOB_NAME("Doctor")
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/medical/away_solpatrol
-	belt = /obj/item/storage/belt/holster/general/away_solpatrol
+	belt = /obj/item/storage/belt/holster/security/away_solpatrol
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 
 /decl/hierarchy/outfit/job/patrol/commander
 	name = PATROL_OUTFIT_JOB_NAME("Lieutenant Commander")
 	head = /obj/item/clothing/head/beret/solgov/fleet/branch/fifth
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/officer/command/commander/away_solpatrol
-	belt = /obj/item/storage/belt/holster/general/away_solpatrol
+	belt = /obj/item/storage/belt/holster/security/away_solpatrol
 	id_types = list(/obj/item/card/id/awaycavalry/fleet/commander)
 	gloves = /obj/item/clothing/gloves/thick/duty/solgov/cmd
 
@@ -321,7 +321,7 @@
 	name = PATROL_OUTFIT_JOB_NAME("Ensign")
 	head = /obj/item/clothing/head/beret/solgov/fleet/branch/fifth
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/officer/pilot1/away_solpatrol
-	belt = /obj/item/storage/belt/holster/general/away_solpatrol
+	belt = /obj/item/storage/belt/holster/security/away_solpatrol
 	gloves = /obj/item/clothing/gloves/thick/duty/rivalgloves
 
 #undef PATROL_OUTFIT_JOB_NAME
