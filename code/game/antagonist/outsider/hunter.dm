@@ -5,11 +5,11 @@ GLOBAL_DATUM_INIT(hunters, /datum/antagonist/hunter, new)
 	role_text = "Hunter"
 	role_text_plural = "Hunters"
 	flags = ANTAG_HAS_LEADER | ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT
-	leader_welcome_text = "You are a gyne of the Ascent, and command a brood of alates. Your task is to \
-	take control of this sector so that you may found a new fortress-nest. Identify and capture local resources, \
-	and remove anything that might threaten your progeny."
-	welcome_text = "You are an alate of the Ascent, tasked with ridding this sector of whatever your matriarch directs you to, \
-	preparing it for the foundation of a new fortress-nest. Obey your gyne and bring prosperity to your nest-lineage."
+	leader_welcome_text = "Вы самка Восхождения и управляете выводком крылатых существ. Ваша задача \
+	взять под контроль этот сектор, что основать новую крепость-гнездо. Разведывайте и собирайте местные ресурсы, \
+	и уничтожьте все, что может угрожать вашему потомству."
+	welcome_text = "Вы существо из Восхождения, задача которого избавить этот сектор от всего, что Ваша Мать прикажет, \
+	и подготовить его к мозданию новой крепости-гнезда. Повинуйтесь своей Матери и принесите процветание своему роду."
 	leader_welcome_text
 	antaghud_indicator = "hudhunter"
 	antag_indicator = "hudhunter"

@@ -5,16 +5,16 @@ GLOBAL_DATUM_INIT(foundation_agents, /datum/antagonist/foundation, new)
 	role_text = "Foundation Agent"
 	antag_indicator = "hudfoundation"
 	role_text_plural = "Foundation Agents"
-	welcome_text = "<span class='info'>You are a field agent of the Cuchulain Foundation, \
-	a body that specializes in taking down psychic threats. You have a free pass to anywhere \
-	you like, a pistol loaded with anti-psi nullglass rounds, and a clear duty. Naturally, \
-	nobody takes your employers seriously - until a day like today.</span>"
-	antag_text = "You are an <b>anti</b> antagonist! Within the rules, \
-		try to save the installation and its inhabitants from the ongoing crisis. \
-		Try to make sure other players have <i>fun</i>! If you are confused or at a loss, always adminhelp, \
-		and before taking extreme actions, please try to also contact the administration! \
-		Think through your actions and make the roleplay immersive! <b>Please remember all \
-		rules aside from those without explicit exceptions apply to Foundation Agents.</b>"
+	welcome_text = "<span class='info'>Вы являетесь оперативным агентом Фонда Cuchulain, \
+	тот, кто специализируется на устранении психических угроз. У вас есть свободный доступ куда вы \
+	пожелаете, пистолет, заряженный патронами из антипсихотического нулевого стекла, и четкая задача. Обычно, \
+	никто не воспринимает ваших работодателей всерьез - до такого дня, как сегодня.</span>"
+	antag_text = "Вы <b>анти</b> антагонист! В рамках правил \
+		постарайтесь спасти судно и его команду от продолжающегося кризиса. \
+		Постарайтесь убедиться, что <i>другие игроки наслаждаются игрой</i>! Если вы запутались или растерялись, всегда пишите в adminhelp, \
+		и прежде чем предпринимать крайние меры, пожалуйста, постарайтесь также связаться с администрацией! \
+		Продумайте свои действия и сделайте ролевую игру захватывающей! <b>Пожалуйста помните, что \
+		все правила, кроме тех, которые содержат явные исключения, применяются к Агентам Фонда.</b>"
 
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_SET_APPEARANCE
 	antaghud_indicator = "hudfoundation"

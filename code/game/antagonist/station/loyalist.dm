@@ -6,10 +6,10 @@ GLOBAL_DATUM_INIT(loyalists, /datum/antagonist/loyalists, new)
 	role_text_plural = "Loyalists"
 	feedback_tag = "loyalist_objective"
 	antag_indicator = "hud_loyal_head"
-	victory_text = "The heads of staff remained at their posts! The loyalists win!"
-	loss_text = "The heads of staff did not stop the revolution!"
-	victory_feedback_tag = "win - rev heads killed"
-	loss_feedback_tag = "loss - heads killed"
+	victory_text = "Главы остались на своих должностях! Лоялисты победили!"
+	loss_text = "Главы не смогли остановить революцию!"
+	victory_feedback_tag = "Победа - главные заговорщики убиты"
+	loss_feedback_tag = "Поражение - Главы убиты"
 	antaghud_indicator = "hud_loyal"
 	flags = 0
 
@@ -32,8 +32,8 @@ GLOBAL_DATUM_INIT(loyalists, /datum/antagonist/loyalists, new)
 
 /datum/antagonist/loyalists/Initialize()
 	..()
-	welcome_text = "You belong to the [GLOB.using_map.company_name], body and soul. Preserve its interests against the conspirators amongst the crew."
-	faction_welcome = "Preserve [GLOB.using_map.company_short]'s interests against the traitorous recidivists amongst the crew. Protect the heads of staff with your life."
+	welcome_text = "Вы верны [GLOB.using_map.company_name] телом и душой. Защищтите их интересы от заговорщиков среди экипажа."
+	faction_welcome = "Защитите интересы [GLOB.using_map.company_short] отпредателей-рецидивистов среди экипажа. Защищтите Глав ценой собственной жизни."
 	faction_descriptor = "[GLOB.using_map.company_name]"
 
 /datum/antagonist/loyalists/create_global_objectives()

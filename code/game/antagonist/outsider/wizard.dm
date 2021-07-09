@@ -5,7 +5,7 @@ GLOBAL_DATUM_INIT(wizards, /datum/antagonist/wizard, new)
 	role_text = ANTAG_WIZARD
 	role_text_plural = ANTAG_WIZARD + "s"
 	landmark_id = "wizard"
-	welcome_text = "You will find a list of available spells in your spell book. Choose your magic arsenal carefully.<br>In your pockets you will find a teleport scroll. Use it as needed."
+	welcome_text = "Вы найдете список доступных заклинаний в своей книге заклинаний. Тщательно подготовьте свой магический арсенал.<br>В ваших карманах вы найдете свиток телепортации. Используйте его как только понадобится."
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_CLEAR_EQUIPMENT | ANTAG_CHOOSE_NAME | ANTAG_VOTABLE | ANTAG_SET_APPEARANCE
 	antaghud_indicator = "hudwizard"
 
@@ -63,7 +63,7 @@ GLOBAL_DATUM_INIT(wizards, /datum/antagonist/wizard, new)
 
 /datum/antagonist/wizard/update_antag_mob(var/datum/mind/wizard)
 	..()
-	wizard.StoreMemory("<B>Remember:</B> do not forget to prepare your spells.", /decl/memory_options/system)
+	wizard.StoreMemory("<B>Помните:</B> не забудьте подготовить свои заклинания.", /decl/memory_options/system)
 	wizard.current.real_name = "[pick(GLOB.wizard_first)] [pick(GLOB.wizard_second)]"
 	wizard.current.SetName(wizard.current.real_name)
 
@@ -111,18 +111,18 @@ obj/item/clothing
 /*Checks if the wizard is wearing the proper attire.
 Made a proc so this is not repeated 14 (or more) times.*/
 /mob/proc/wearing_wiz_garb()
-	to_chat(src, "Silly creature, you're not a human. Only humans can cast this spell.")
+	to_chat(src, "Глупое создание, ты не человек. Только люди могут создать это заклинание.")
 	return 0
 
 // Humans can wear clothes.
 /mob/living/carbon/human/wearing_wiz_garb()
 	if(!is_wiz_garb(wear_suit) && (!species.hud || (slot_wear_suit in species.hud.equip_slots)))
-		to_chat(src, "<span class='warning'>I don't feel strong enough without my robe.</span>")
+		to_chat(src, "<span class='warning'>Я не чувствую себя достаточно сильным без своей мантии.</span>")
 		return 0
 	if(!is_wiz_garb(shoes) && (!species.hud || (slot_shoes in species.hud.equip_slots)))
-		to_chat(src, "<span class='warning'>I don't feel strong enough without my sandals.</span>")
+		to_chat(src, "<span class='warning'>Я не чувствую себя достаточно сильным без своей обуви.</span>")
 		return 0
 	if(!is_wiz_garb(head) && (!species.hud || (slot_head in species.hud.equip_slots)))
-		to_chat(src, "<span class='warning'>I don't feel strong enough without my hat.</span>")
+		to_chat(src, "<span class='warning'>Я не чувствую себя достаточно сильным без своей шляпы.</span>")
 		return 0
 	return 1

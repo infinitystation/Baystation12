@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(deathsquad, /datum/antagonist/deathsquad, new)
 	id = MODE_DEATHSQUAD
 	role_text = "Death Commando"
 	role_text_plural = "Death Commandos"
-	welcome_text = "You work in the service of corporate Asset Protection, answering directly to the Board of Directors."
+	welcome_text = "Вы работаете в службе защиты корпоративных активов, подчиняясь непосредственно Совету директоров."
 	landmark_id = "Commando"
 	flags = ANTAG_OVERRIDE_JOB | ANTAG_OVERRIDE_MOB | ANTAG_HAS_LEADER | ANTAG_RANDOM_EXCEPTED
 	default_access = list(access_cent_general, access_cent_specops, access_cent_living, access_cent_storage)
@@ -59,9 +59,9 @@ GLOBAL_DATUM_INIT(deathsquad, /datum/antagonist/deathsquad, new)
 
 	var/syndicate_commando_rank
 	if(leader && player == leader)
-		syndicate_commando_rank = pick("Corporal", "Sergeant", "Staff Sergeant", "Sergeant 1st Class", "Master Sergeant", "Sergeant Major")
+		syndicate_commando_rank = pick("Мл. сержант", "Сержант", "Штаб-сержант", "Сержант 1 класса", "Мастер-сержант", "Сержант-майор")
 	else
-		syndicate_commando_rank = pick("Lieutenant", "Captain", "Major")
+		syndicate_commando_rank = pick("Лейтенант", "Капитан", "Майор")
 
 	var/syndicate_commando_name = pick(GLOB.last_names)
 

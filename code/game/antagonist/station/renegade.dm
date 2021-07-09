@@ -5,15 +5,15 @@ GLOBAL_DATUM_INIT(renegades, /datum/antagonist/renegade, new)
 	role_text_plural = "Renegades"
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/submap)
 	restricted_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/chief_engineer, /datum/job/rd, /datum/job/cmo)
-	welcome_text = "Something's going to go wrong today, you can just feel it. You're paranoid, you've got a gun, and you're going to survive."
-	antag_text = "You are a <b>minor</b> antagonist! Within the rules, \
-		try to protect yourself and what's important to you. You aren't here to <i>cause</i> trouble, \
-		you're just willing (and equipped) to go to extremes to <b>stop</b> it. \
-		Your job is to oppose the other antagonists, should they threaten you, in ways that aren't quite legal. \
-		Try to make sure other players have <i>fun</i>! If you are confused or at a loss, always adminhelp, \
-		and before taking extreme actions, please try to also contact the administration! \
-		Think through your actions and make the roleplay immersive! <b>Please remember all \
-		rules aside from those without explicit exceptions apply to antagonists.</b>"
+	welcome_text = "Сегодня что-то пойдет не так, ты чувствуешь это. Ты параноик, у тебя есть оружие, и ты собираешься выжить."
+	antag_text = "Ты <b>небольшой</b> антагонист! В рамках правил, \
+	постарайся защитить себя и то, что для тебя важно. Ты здесь <i>не для того,</i> чтобы создавать неприятности, \
+		ты просто готов (и снаряжен) пойти на крайности, чтобы <b>остановить</b> их. \
+		Ваша задача - противостоять другим антагонистам, если они будут угрожать вам, не совсем законными способами. \
+		Постарайтесь убедиться, что <i>другие игроки наслаждаются игрой</i>! Если вы запутались или растерялись, всегда пишите в adminhelp, \
+		и прежде чем предпринимать крайние меры, пожалуйста, постарайтесь также связаться с администрацией! \
+		Продумайте свои действия и сделайте ролевую игру захватывающей! <b>Пожалуйста помните, что \
+		все правила, кроме тех, которые содержат явные исключения, применяются к антагонистам.</b>"
 
 	id = MODE_RENEGADE
 	flags = ANTAG_SUSPICIOUS | ANTAG_IMPLANT_IMMUNE | ANTAG_RANDSPAWN | ANTAG_VOTABLE

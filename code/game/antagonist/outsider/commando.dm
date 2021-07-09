@@ -5,7 +5,7 @@ GLOBAL_DATUM_INIT(commandos, /datum/antagonist/deathsquad/mercenary, new)
 	landmark_id = "Syndicate-Commando"
 	role_text = "Syndicate Commando"
 	role_text_plural = "Commandos"
-	welcome_text = "You are in the employ of a criminal syndicate hostile to corporate interests."
+	welcome_text = "Вы работаете на преступный синдикат, который враждебено относится к корпоративным интересам."
 	id_type = /obj/item/card/id/syndicate_command  // INF was /obj/item/card/id/centcom/ERT
 
 	flags = ANTAG_RANDOM_EXCEPTED

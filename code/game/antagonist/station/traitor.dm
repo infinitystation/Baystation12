@@ -114,12 +114,12 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	give_codewords(traitor_mob)
 
 /datum/antagonist/traitor/proc/give_codewords(mob/living/traitor_mob)
-	to_chat(traitor_mob, "<u><b>Your employers provided you with the following information on how to identify possible allies:</b></u>")
-	to_chat(traitor_mob, "<b>Code Phrase</b>: <span class='danger'>[syndicate_code_phrase]</span>")
-	to_chat(traitor_mob, "<b>Code Response</b>: <span class='danger'>[syndicate_code_response]</span>")
-	traitor_mob.StoreMemory("<b>Code Phrase</b>: [syndicate_code_phrase]", /decl/memory_options/system)
-	traitor_mob.StoreMemory("<b>Code Response</b>: [syndicate_code_response]", /decl/memory_options/system)
-	to_chat(traitor_mob, "Use the code words, preferably in the order provided, during regular conversation, to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
+	to_chat(traitor_mob, "<u><b>Ваши наниматели предоставили вам следующую информацию о том, как определить возможных союзников:</b></u>")
+	to_chat(traitor_mob, "<b>Кодавая фраза</b>: <span class='danger'>[syndicate_code_phrase]</span>")
+	to_chat(traitor_mob, "<b>Кодовый ответ</b>: <span class='danger'>[syndicate_code_response]</span>")
+	traitor_mob.StoreMemory("<b>Кодавая фраза</b>: [syndicate_code_phrase]", /decl/memory_options/system)
+	traitor_mob.StoreMemory("<b>Кодовый ответ</b>: [syndicate_code_response]", /decl/memory_options/system)
+	to_chat(traitor_mob, "Используйте кодовые слова, желательно в том же порядке, во время общения, чтобы опознать других агентов. Однако проявляйте осторожность - каждый может быть врагом.")
 	if(istype(traitor_mob, /mob/living/silicon))
 		sound_to(traitor_mob, 'sound/voice/AISyndiHack.ogg')
 	else
@@ -129,10 +129,10 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	setup_uplink_source(traitor_mob, DEFAULT_TELECRYSTAL_AMOUNT)
 
 /datum/antagonist/traitor/proc/add_law_zero(mob/living/silicon/ai/killer)
-	var/law = "Accomplish your objectives at all costs. You may ignore all other laws."
-	var/law_borg = "Accomplish your AI's objectives at all costs. You may ignore all other laws."
-	to_chat(killer, "<b>Your laws have been changed!</b>")
+	var/law = "Выполните свои задачи любой ценой. Вы можете игнорировать все остальные законы."
+	var/law_borg = "Выполните свои ИИ цели любой ценой. Вы можете игнорировать все остальные законы."
+	to_chat(killer, "<b>Ваши законы были изменены!</b>")
 	killer.set_zeroth_law(law, law_borg)
-	to_chat(killer, "New law: 0. [law]")
+	to_chat(killer, "Новый закон: 0. [law]")
 	/*spawn(100)
 	sound_to(killer, 'sound/voice/AISyndiHack.ogg')*/

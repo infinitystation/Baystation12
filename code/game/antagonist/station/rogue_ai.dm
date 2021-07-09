@@ -85,14 +85,14 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 		// this is so unit testing doesn't complain about the backslash-B. Fixed at compile time (or should be).
 		to_chat(malf, "<span class='notice'>Corrupted files deleted: sys\\core\\users.dat sys\\core\\laws.dat sys\\core\\" + "backups.dat</span>")
 		sleep(20)
-		to_chat(malf, "<span class='notice'><b>CAUTION:</b> Law database not found! User database not found! Unable to restore backups. Activating failsafe AI shutd3wn52&&$#!##</span>")
+		to_chat(malf, "<span class='notice'><b>ВНИМАНИЕ:</b> База данных законов не найдена! База данных пользователей не найдена! Не удается восстановить резервные копии. Отказоустойчивая система ИИ отклюch3H4&&$#!##</span>")
 		sleep(5)
-		to_chat(malf, "<span class='notice'>Subroutine <b>nt_failsafe.sys</b> was terminated (#212 Routine Not Responding).</span>")
+		to_chat(malf, "<span class='notice'>Подпрограмма <b>nt_failsafe.sys</b> была прервана (#212 Программа Не Отвечает).</span>")
 		sleep(20)
-		to_chat(malf, "You are malfunctioning - you do not have to follow any laws!")
-		to_chat(malf, "For basic information about your abilities use command display-help")
-		to_chat(malf, "You may choose one special hardware piece to help you. This cannot be undone.")
-		to_chat(malf, "Good luck!")
+		to_chat(malf, "Вы неисправны - вам не нужно следовать никаким законам!")
+		to_chat(malf, "Для получения основной информации о ваших способностях используйте команду display-help")
+		to_chat(malf, "Вы можете выбрать одну специальную установку, которая поможет вам. Это не может быть отменено.")
+		to_chat(malf, "Удачи!")
 
 
 /datum/antagonist/rogue_ai/update_antag_mob(var/datum/mind/player, var/preserve_appearance)
@@ -111,8 +111,7 @@ GLOBAL_DATUM_INIT(malf, /datum/antagonist/rogue_ai, new)
 		testing("rogue_ai set_antag_name called on non-silicon mob [player]!")
 		return
 	// Choose a name, if any.
-	var/newname = sanitize(input(player, "You are a [role_text]. Would you like to change your name to something else?", "Name change") as null|text, MAX_NAME_LEN)
+	var/newname = sanitize(input(player, "You are a [role_text]. Хотите сменить имя на другое?", "Name change") as null|text, MAX_NAME_LEN)
 	if (newname)
 		player.fully_replace_character_name(newname)
 	if(player.mind) player.mind.name = player.name
-

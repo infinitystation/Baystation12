@@ -127,13 +127,13 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 		if(5)
 			directive += "На данный момент, мы сотрудничаем с [GLOB.using_map.company_name]. Убийства допускаются лишь в крайнем случае."
 //		if(6)
-//			directive += "We are engaged in a legal dispute over [GLOB.using_map.station_name]. If a laywer is present on board, force their cooperation in the matter."
+//			directive += "Мы участвуем в юридическом споре по поводу [GLOB.using_map.station_name]. Если на борту присутствует адвокат, заставьте его сотрудничать по этому делу."
 //		if(7)
-//			directive += "A financial backer has made an offer we cannot refuse. Implicate criminal involvement in the operation."
+//			directive += "Финансовый покровитель сделал предложение, от которого мы не можем отказаться. Обвините в преступной причастности во время операции."
 		if(8)
 			directive += "Пусть никто не сомневается в милости Клана Паука. Обеспечьте безопасность всего второстепенного персонала, с которым вы столкнетесь."
 //		if(9)
-//			directive += "A free agent has proposed a lucrative business deal. Implicate [GLOB.using_map.company_name] involvement in the operation."
+//			directive += "Свободный агент предложил выгодное деловое предложение. Обвините [GLOB.using_map.company_name] в причастности к операции."
 		if(10)
 			directive += "Наша репутация находится под угрозой. Нанесите как можно меньше вреда гражданским и невинным."
 		if(11)

@@ -41,21 +41,21 @@ GLOBAL_DATUM_INIT(actor, /datum/antagonist/actor, new)
 /mob/observer/ghost/verb/join_as_actor()
 	set category = "Ghost"
 	set name = "Join as Actor"
-	set desc = "Join as an Actor to entertain the crew through television!"
+	set desc = "Присоедениться как Актер, чтобы развлекать экипаж по средствам телевидения!"
 
 	if(!MayRespawn(1) || !GLOB.actor.can_become_antag(usr.mind, 1))
 		return
 
 	if(jobban_isbanned(usr, MODE_ACTOR))
-		to_chat(usr, "Seems you have job-banned from actors. Well, bad news.")
+		to_chat(usr, "Кажется, у вас джоб-бан на работу Актера. Что ж, плохие новости.")
 		return
 
-	var/choice = alert("Are you sure you'd like to join as an actor?", "Confirmation","Yes", "No")
+	var/choice = alert("Вы уверены, что хотите стать актером?", "Confirmation","Yes", "No")
 	if(choice != "Yes")
 		return
 
 	if(GLOB.actor.current_antagonists.len >= GLOB.actor.hard_cap)
-		to_chat(usr, "No more actors may spawn at the current time.")
+		to_chat(usr, "В настоящее время актеры больше не могут появляться.")
 		return
 
 	GLOB.actor.create_default(usr)
