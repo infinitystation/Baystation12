@@ -1,4 +1,4 @@
-//Point defense 
+//Point defense
 /obj/machinery/pointdefense_control
 	name = "fire assist mainframe"
 	desc = "A specialized computer designed to synchronize a variety of weapon systems and a vessel's astronav data."
@@ -110,7 +110,7 @@
 	base_type = /obj/machinery/pointdefense
 	stock_part_presets = list(/decl/stock_part_preset/terminal_setup)
 	uncreated_component_parts = null
-	appearance_flags = PIXEL_SCALE
+	appearance_flags = PIXEL_SCALE | LONG_GLIDE
 	machine_name = "point defense battery"
 	machine_desc = "A mounted turret that locks onto and destroys incoming meteors. Aim away from vessel."
 	var/active = TRUE
@@ -150,7 +150,7 @@
 	rot_matrix.Turn(Angle)
 	addtimer(CALLBACK(src, .proc/finish_shot, target), rotation_speed)
 	animate(src, transform = rot_matrix, rotation_speed, easing = SINE_EASING)
-			
+
 	set_dir(transform.get_angle() > 0 ? NORTH : SOUTH)
 
 /obj/machinery/pointdefense/proc/finish_shot(var/weakref/target)
@@ -189,7 +189,7 @@
 		set_dir(desiredir)
 	if(engaging || ((world.time - last_shot) < charge_cooldown))
 		return
-	
+
 	if(GLOB.meteor_list.len == 0)
 		return
 	var/datum/extension/local_network_member/pointdefense = get_extension(src, /datum/extension/local_network_member)

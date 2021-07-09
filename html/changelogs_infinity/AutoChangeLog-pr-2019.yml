@@ -1,0 +1,4 @@
+author: Vallat
+delete-after: true
+changes:
+  - bugfix: портировано исправление плавного глайдинга из SS220

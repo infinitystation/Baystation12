@@ -10,16 +10,16 @@
 //	opacity = FALSE // wait... we should able to use it somehow..
 	anchored = TRUE
 	layer = BELOW_DOOR_LAYER
-	appearance_flags = TILE_BOUND
+	appearance_flags = TILE_BOUND | LONG_GLIDE
 	atmos_canpass = CANPASS_DENSITY
 
 	var/on = FALSE
 	var/locked = TRUE
 
 	// Access to operating this machine
-	req_access = list(access_security, access_forensics_lockers)
+	req_access = list(access_security)
 	// Access to pass alarm trigger
-	var/pass_access = list(access_security, access_forensics_lockers)
+	var/pass_access = list(access_security)
 
 //	var/timeBetweenUses = 2 SECONDS // I can see this being fun
 	var/success_sound = 'sound/machines/chime.ogg'
