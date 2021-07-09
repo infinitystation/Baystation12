@@ -114,7 +114,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 
 	H.move_intent.move_delay = 6
 	H.stat = CONSCIOUS
-/* //[INF]
+/* [inf.exclude]
 	if (H.wear_id)
 		qdel(H.wear_id)
 	if (H.gloves)
@@ -125,7 +125,7 @@ GLOBAL_LIST_INIT(zombie_species, list(\
 		qdel(H.glasses)
 	if (H.wear_mask)
 		qdel(H.wear_mask)
-*/ //[INF]
+[/inf.exclude] */
 	..()
 
 /datum/species/zombie/handle_environment_special(mob/living/carbon/human/H)
