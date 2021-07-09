@@ -15,5 +15,4 @@
 		slot_tie_str = "hacsoc",
 		slot_wear_suit_str = "hacsoc",
 	)
-
 	trade_blacklisted = TRUE
