@@ -9939,6 +9939,9 @@
 	pixel_y = -3
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/item/storage/fancy/cigar,
+/obj/item/flame/lighter/zippo,
+/obj/item/clothing/mask/smokable/cigarette/cigar/havana,
 /turf/simulated/floor/carpet/red,
 /area/crew_quarters/heads/captain/office_anteroom)
 "asw" = (
@@ -19302,10 +19305,6 @@
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/captain/office_anteroom)
 "aIq" = (
-/obj/structure/table/woodentable/walnut,
-/obj/item/storage/fancy/cigar,
-/obj/item/flame/lighter/zippo,
-/obj/item/clothing/mask/smokable/cigarette/cigar/havana,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -20
@@ -19315,6 +19314,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/machinery/psi_monitor,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)
 "aIr" = (
@@ -36331,7 +36331,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
 "kAj" = (
-/obj/structure/table/steel_reinforced,
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6
@@ -36351,6 +36350,9 @@
 /obj/machinery/light/led{
 	dir = 4;
 	pixel_y = -12
+	},
+/obj/machinery/computer/ship/sensors{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -37934,12 +37936,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "pZn" = (
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "bridge_windows";
-	name = "Bridge Window Blast Doors";
-	pixel_x = 28
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
 	},
@@ -37951,12 +37947,6 @@
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 10
-	},
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "bridge_ent";
-	name = "Bridge Entarence Blast Doors";
-	pixel_x = 37
 	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 4
@@ -38916,6 +38906,18 @@
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
+	},
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "bridge_windows";
+	name = "Bridge Window Blast Doors";
+	pixel_x = 28
+	},
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "bridge_ent";
+	name = "Bridge Entarence Blast Doors";
+	pixel_x = 37
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)

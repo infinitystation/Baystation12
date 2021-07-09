@@ -7485,7 +7485,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "amT" = (
-/obj/structure/closet/secure_closet/guncabinet/sierra_armory/smg,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -41527,9 +41526,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/holoplant{
-	plant = "P-Alien Plant"
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
@@ -41541,6 +41537,7 @@
 	dir = 6
 	},
 /obj/random/date_based/christmas/xmaslights,
+/obj/machinery/psi_monitor,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
 "pAN" = (

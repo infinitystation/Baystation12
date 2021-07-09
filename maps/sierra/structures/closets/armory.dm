@@ -5,7 +5,7 @@
 	name = "submachine gun guncabinet"
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/smg/WillContain()
-	return list(/obj/item/bikehorn = 2)
+	return list()  // Last time there was clown's bikehorns and NT41. Laxesh working on alternative for NT41
 
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/shotgun
 	name = "shotgun guncabinet"
