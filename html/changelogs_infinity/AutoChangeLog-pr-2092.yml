@@ -1,0 +1,4 @@
+author: Niga2012
+delete-after: true
+changes:
+  - experiment: При перерождении в качестве зомби, персонаж не будет терять свои вещи.
