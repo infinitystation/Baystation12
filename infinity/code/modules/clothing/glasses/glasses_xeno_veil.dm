@@ -15,6 +15,7 @@
 	icon = 'infinity/icons/obj/clothing/obj_eyes.dmi'
 	icon_state = "tajblind_med"
 	item_state = "tajblind_med"
+	off_state = "tajblind_med"
 	body_parts_covered = EYES
 
 /obj/item/clothing/glasses/sunglasses/sechud/tajblind
@@ -44,6 +45,7 @@
 	icon = 'infinity/icons/obj/clothing/obj_eyes.dmi'
 	icon_state = "tajvisor_med"
 	item_state = "tajvisor_med"
+	off_state = "tajvisor_med"
 	body_parts_covered = EYES
 
 /obj/item/clothing/glasses/sunglasses/sechud/tajvisor
