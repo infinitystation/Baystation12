@@ -107,7 +107,8 @@
 	force = 10
 	one_hand_penalty = 0
 
-	projectile_type = /obj/item/projectile/bullet/pistol/medium/fast //Balance...
+	//projectile_type = /obj/item/projectile/bullet/pistol/medium/fast //Balance...
+	projectile_type = /obj/item/projectile/bullet/rifle/shell/apds //INF
 
 	firemodes = list(
 		list(mode_name="short bursts",	can_autofire=0, burst=5, fire_delay=5, move_delay=12, one_hand_penalty=0, burst_accuracy = list(0,-1,-1,-2,-2),          dispersion = list(0.6, 1.0, 1.0, 1.0, 1.2)),
