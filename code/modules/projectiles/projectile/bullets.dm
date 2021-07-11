@@ -5,7 +5,10 @@
 	damage = 50
 	damage_type = BRUTE
 	damage_flags = DAM_BULLET | DAM_SHARP
+	nodamage = FALSE
 	embed = TRUE
+	sharp = TRUE //INF, WAS NOTHING (0)
+	step_delay = 0.4 //INF, WAS NOTHING (1)
 	penetration_modifier = 1.0
 	var/mob_passthrough_check = 0
 	var/is_pellet = FALSE
@@ -130,7 +133,7 @@
 /obj/item/projectile/bullet/pistol/holdout
 	damage = 40
 	penetration_modifier = 1.2
-	distance_falloff = 4
+	//INF distance_falloff = 4
 
 /obj/item/projectile/bullet/pistol/strong
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
@@ -153,10 +156,10 @@
 /obj/item/projectile/bullet/flechette
 	fire_sound = 'sound/weapons/gunshot/gunshot_4mm.ogg'
 	damage = 23
-	penetrating = 1
+	penetrating = 0 //INF, WAS 1. It already has nearly 100% AP
 	armor_penetration = 70
 	embed = FALSE
-	distance_falloff = 2
+	//INF distance_falloff = 2
 
 /* shotgun projectiles */
 
@@ -173,7 +176,7 @@
 	agony = 60
 	embed = FALSE
 	armor_penetration = 0
-	distance_falloff = 3
+	//INF distance_falloff = 3
 
 //Should do about 180 damage at 1 tile distance (adjacent), and 120 damage at 3 tiles distance.
 //Overall less damage than slugs in exchange for more damage at very close range and more embedding
@@ -206,8 +209,8 @@
 	damage = 45
 	armor_penetration = 25
 	penetration_modifier = 1.5
-	penetrating = 1
-	distance_falloff = 1.5
+	penetrating = 0 //INF, WAS 1
+	//INF distance_falloff = 1.5
 
 /obj/item/projectile/bullet/rifle/military
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
@@ -220,10 +223,10 @@
 	damage = 80
 	stun = 3
 	weaken = 3
+	//INF distance_falloff = 0.5
 	penetrating = 3
 	armor_penetration = 70
 	penetration_modifier = 1.2
-	distance_falloff = 0.5
 
 /obj/item/projectile/bullet/rifle/shell/apds
 	damage = 70
@@ -270,6 +273,7 @@
 	damage = 0
 	nodamage = TRUE
 	embed = FALSE
+	sharp = FALSE //INF, WAS NOTHING (1)
 
 /obj/item/projectile/bullet/pistol/cap/Process()
 	qdel(src)
@@ -281,7 +285,7 @@
 	damage = 40
 	armor_penetration = 25
 	life_span = 255
-	distance_falloff = 0
+	//INF distance_falloff = 0
 
 /obj/item/projectile/bullet/rock/New()
 	icon_state = "rock[rand(1,3)]"
