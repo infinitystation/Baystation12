@@ -25089,8 +25089,8 @@
 	dir = 4;
 	pixel_x = -24;
 	req_access = list();
-	target_temperature = 428.15;
-	temperature = 373.15
+	target_temperature = 398.15;
+	temperature = 343.15
 	},
 /obj/machinery/newscaster{
 	pixel_y = 30
