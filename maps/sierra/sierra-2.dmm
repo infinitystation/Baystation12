@@ -7665,6 +7665,9 @@
 /obj/machinery/light/spot{
 	dir = 1
 	},
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)
 "aop" = (
@@ -17917,9 +17920,12 @@
 	pixel_y = -10
 	},
 /obj/item/device/camera,
-/obj/machinery/newscaster/security_unit{
-	pixel_x = 26;
-	pixel_y = 2
+/obj/item/storage/fancy/cigar,
+/obj/item/clothing/mask/smokable/cigarette/cigar/havana,
+/obj/item/flame/lighter/zippo,
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)
@@ -19310,19 +19316,12 @@
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/captain/office_anteroom)
 "aIq" = (
-/obj/structure/table/woodentable/walnut,
-/obj/item/storage/fancy/cigar,
-/obj/item/flame/lighter/zippo,
-/obj/item/clothing/mask/smokable/cigarette/cigar/havana,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -20
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/machinery/psi_monitor,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)
 "aIr" = (
@@ -25089,7 +25088,9 @@
 /obj/machinery/alarm/warm{
 	dir = 4;
 	pixel_x = -24;
-	req_access = list()
+	req_access = list();
+	target_temperature = 428.15;
+	temperature = 373.15
 	},
 /obj/machinery/newscaster{
 	pixel_y = 30
@@ -29469,9 +29470,9 @@
 /obj/structure/table/woodentable/walnut,
 /obj/item/storage/secure/briefcase/nukedisk,
 /obj/prefab/hand_teleporter,
-/obj/machinery/recharger/wallcharger{
-	dir = 1;
-	pixel_y = -22
+/obj/machinery/newscaster/security_unit{
+	pixel_x = 26;
+	pixel_y = 2
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)
@@ -36273,7 +36274,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
 "kAj" = (
-/obj/structure/table/steel_reinforced,
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6
@@ -36293,6 +36293,9 @@
 /obj/machinery/light/led{
 	dir = 4;
 	pixel_y = -12
+	},
+/obj/machinery/computer/ship/sensors{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -38026,12 +38029,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "pZn" = (
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "bridge_windows";
-	name = "Bridge Window Blast Doors";
-	pixel_x = 28
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
 	},
@@ -38043,12 +38040,6 @@
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 10
-	},
-/obj/machinery/button/blast_door{
-	dir = 8;
-	id_tag = "bridge_ent";
-	name = "Bridge Entarence Blast Doors";
-	pixel_x = 37
 	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 4
@@ -39033,6 +39024,18 @@
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 8
+	},
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "bridge_windows";
+	name = "Bridge Window Blast Doors";
+	pixel_x = 28
+	},
+/obj/machinery/button/blast_door{
+	dir = 8;
+	id_tag = "bridge_ent";
+	name = "Bridge Entarence Blast Doors";
+	pixel_x = 37
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
@@ -40511,11 +40514,11 @@
 /turf/space,
 /area/space)
 "xuR" = (
-/obj/structure/fitness/weightlifter,
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1;
 	pixel_y = 24
 	},
+/obj/structure/fitness/punchingbag,
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/gym)
 "xwq" = (
