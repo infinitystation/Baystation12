@@ -33,7 +33,8 @@
 		/obj/item/storage/box/custom_forrya_whitebox,
 		/obj/item/crowbar/custom_multishowel,
 		/obj/item/clothing/accessory/storage/white_drop/custom_forrya,
-		/obj/item/clothing/mask/gas/alt/custom_forrya
+		/obj/item/clothing/mask/gas/alt/custom_forrya,
+		/obj/item/storage/belt/forrya
 	)
 	item_icons = list(
 		slot_back_str = CUSTOM_ITEM_MOB)
@@ -298,7 +299,6 @@
 		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
 		/obj/item/clothing/accessory/badge/dog_tags/tajamc,
 		/obj/item/clothing/accessory/inf_pin/ccapin,
-		/obj/item/storage/belt/forrya,
 		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom)
 	can_hold = list(
 		/obj/item/clothing/accessory/cloak/custom_forrya_cam,
@@ -308,7 +308,6 @@
 		/obj/item/clothing/accessory/inf_pin/ccapin,
 		/obj/item/music_player/csplayer,
 		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom,
-		/obj/item/storage/belt/forrya
 		)
 
 	trade_blacklisted = TRUE
