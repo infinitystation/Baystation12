@@ -512,13 +512,14 @@
 		/obj/item/shovel/custom_multishowel,
 		/obj/item/pickaxe/silver/custom_multishowel,
 		/obj/item/crowbar/custom_multishowel,
-		/obj/item/weldingtool/electric/forrya,
-		/obj/item/screwdriver/forrya,
-		/obj/item/wrench/forrya,
-		/obj/item/crowbar/forrya,
-		/obj/item/wirecutters/forrya,
-		/obj/item/device/multitool/multimeter/forrya,
-		/obj/item/material/hatchet/machete
+		/obj/item/weldingtool/electric,
+		/obj/item/screwdriver,
+		/obj/item/wrench,
+		/obj/item/crowbar,
+		/obj/item/wirecutters,
+		/obj/item/device/multitool/multimeter,
+		/obj/item/material/hatchet/machete,
+		/obj/item/stack/cable_coil
 		)
 	startswith = list(
 		/obj/item/weldingtool/electric/forrya,
