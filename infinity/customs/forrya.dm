@@ -33,8 +33,7 @@
 		/obj/item/storage/box/custom_forrya_whitebox,
 		/obj/item/crowbar/custom_multishowel,
 		/obj/item/clothing/accessory/storage/white_drop/custom_forrya,
-		/obj/item/clothing/mask/gas/alt/custom_forrya,
-		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom
+		/obj/item/clothing/mask/gas/alt/custom_forrya
 	)
 	item_icons = list(
 		slot_back_str = CUSTOM_ITEM_MOB)
@@ -298,14 +297,19 @@
 		/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya,
 		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
 		/obj/item/clothing/accessory/badge/dog_tags/tajamc,
-		/obj/item/clothing/accessory/inf_pin/ccapin)
+		/obj/item/clothing/accessory/inf_pin/ccapin,
+		/obj/item/storage/belt/forrya,
+		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom)
 	can_hold = list(
 		/obj/item/clothing/accessory/cloak/custom_forrya_cam,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/custom_forrya,
 		/obj/item/clothing/shoes/workboots/custom_forrya_winter,
 		/obj/item/clothing/accessory/badge/dog_tags/tajamc,
 		/obj/item/clothing/accessory/inf_pin/ccapin,
-		/obj/item/music_player/csplayer)
+		/obj/item/music_player/csplayer,
+		/obj/item/clothing/glasses/meson/prescription/tajvisor/hybrid/custom,
+		/obj/item/storage/belt/forrya
+		)
 
 	trade_blacklisted = TRUE
 
@@ -444,3 +448,84 @@
 	set category = "Object"
 	set src in usr
 	attack_self(usr)
+
+
+//Пояс с инструментами
+
+/obj/item/weldingtool/electric/forrya
+	desc = "A man-portable arc welding tool. This one is orange."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "forwt"
+	trade_blacklisted = TRUE
+
+/obj/item/weldingtool/electric/forrya/on_update_icon()
+	icon_state = welding ? "forwt1" : "forwt"
+
+/obj/item/screwdriver/forrya
+	name = "schraubendreher"
+	desc = "Your archetypal flathead screwdriver, with a nice, heavy polymer handle. This one is orange."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "fors"
+	build_from_parts = FALSE
+	trade_blacklisted = TRUE
+
+/obj/item/wrench/forrya
+	desc = "A good, durable combination wrench, with self-adjusting, universal open- and ring-end mechanisms to match a wide variety of nuts and bolts. This one is orange."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "forw"
+	trade_blacklisted = TRUE
+
+/obj/item/wrench/forrya/Initialize()
+	. = ..()
+	icon_state = initial(icon_state)
+	item_state = initial(item_state)
+
+/obj/item/crowbar/forrya
+	desc = "A heavy crowbar of solid steel, good and solid in your hand. This one is orange."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "forc"
+	trade_blacklisted = TRUE
+
+/obj/item/wirecutters/forrya
+	desc = "A special pair of pliers with cutting edges. Various brackets and manipulators built into the handle allow it to repair severed wiring. This one is orange."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "forwc"
+	build_from_parts = FALSE
+	trade_blacklisted = TRUE
+
+/obj/item/device/multitool/multimeter/forrya
+	desc = "Используется для измерения потребления электроэнергии оборудования и прозвонки проводов. Рекомендуется докторами. This one is orange."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "forwm"
+	trade_blacklisted = TRUE
+
+/obj/item/storage/belt/forrya
+	name = "toolbelt"
+	desc = "Can hold various things. This one is black."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_belt_str = CUSTOM_ITEM_MOB)
+	icon_state = "forwb"
+	item_state = "forwb"
+	storage_slots = 9
+	overlay_flags = BELT_OVERLAY_ITEMS
+	can_hold = list(
+		/obj/item/shovel/custom_multishowel,
+		/obj/item/pickaxe/silver/custom_multishowel,
+		/obj/item/crowbar/custom_multishowel,
+		/obj/item/weldingtool/electric/forrya,
+		/obj/item/screwdriver/forrya,
+		/obj/item/wrench/forrya,
+		/obj/item/crowbar/forrya,
+		/obj/item/wirecutters/forrya,
+		/obj/item/device/multitool/multimeter/forrya,
+		/obj/item/material/hatchet/machete
+		)
+	startswith = list(
+		/obj/item/weldingtool/electric/forrya,
+		/obj/item/screwdriver/forrya,
+		/obj/item/wrench/forrya,
+		/obj/item/crowbar/forrya,
+		/obj/item/wirecutters/forrya,
+		/obj/item/device/multitool/multimeter/forrya
+		)
+	trade_blacklisted = TRUE
