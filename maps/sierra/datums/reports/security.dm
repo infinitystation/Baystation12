@@ -147,7 +147,7 @@
 
 /datum/computer_file/report/recipient/sec/penalty
 	form_name = "NT-SEC-20"
-	title = "Служба Безопасности: Квитанция о взымании штрафа"
+	title = "Квитанция о взымании штрафа"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/penalty/generate_fields()
