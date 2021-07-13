@@ -9,6 +9,6 @@
 		if("J")
 			if(!aiming)
 				aiming = new(src)
-				aiming.toggle_active()
+			aiming.toggle_active()
 			return
 	return ..()
