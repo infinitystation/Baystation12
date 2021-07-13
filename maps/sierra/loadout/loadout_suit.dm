@@ -83,3 +83,7 @@
 
 /datum/gear/suit/sec_jacket
 	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
+
+/datum/gear/suit/snakeskin
+	display_name = "snakeskin coat"
+	path = /obj/item/clothing/suit/snakeskin
