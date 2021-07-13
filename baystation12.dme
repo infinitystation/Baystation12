@@ -3359,7 +3359,6 @@
 #include "infinity\code\game\machinery\newscaster.dm"
 #include "infinity\code\game\machinery\nuclear_bomb.dm"
 #include "infinity\code\game\machinery\sealgen.dm"
-#include "infinity\code\game\machinery\security_scanner.dm"
 #include "infinity\code\game\machinery\sleeper.dm"
 #include "infinity\code\game\machinery\spaceheater.dm"
 #include "infinity\code\game\machinery\suit_storage_units.dm"
