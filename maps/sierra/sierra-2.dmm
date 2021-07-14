@@ -30627,9 +30627,7 @@
 /area/chapel/office)
 "bdJ" = (
 /obj/structure/table/standard,
-/obj/machinery/reagent_temperature/cooler{
-	density = 0
-	},
+/obj/machinery/reagent_temperature/cooler,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -37469,7 +37467,6 @@
 /obj/machinery/door/airlock/multi_tile/civilian{
 	frequency = 1379;
 	id_tag = "lounge1";
-	locked = 0;
 	name = "Lounge"
 	},
 /obj/machinery/door/firedoor,

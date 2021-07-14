@@ -12208,7 +12208,6 @@
 	dir = 8
 	},
 /obj/machinery/conveyor{
-	dir = 2;
 	id = "charon_cargo_out";
 	name = "charon interior conveyor belt"
 	},
@@ -20479,7 +20478,6 @@
 	dir = 8
 	},
 /obj/machinery/conveyor{
-	dir = 2;
 	id = "charon_cargo_out";
 	name = "charon interior conveyor belt"
 	},
