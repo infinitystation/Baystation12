@@ -6272,9 +6272,6 @@
 /obj/structure/table/wallf/steel{
 	dir = 4
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/engineering/engineering_monitoring)
 "alJ" = (
@@ -6310,9 +6307,6 @@
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown2_7"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/lobby)
@@ -12737,9 +12731,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/engineering_monitoring)
 "awU" = (
@@ -13767,9 +13758,6 @@
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown2_7"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/lobby)

@@ -7042,9 +7042,6 @@
 	dir = 4;
 	id_tag = "lockdown3_4"
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
 "lw" = (
@@ -7836,9 +7833,6 @@
 	dir = 4;
 	id_tag = "lockdown3_1"
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "mB" = (
@@ -7935,9 +7929,6 @@
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown3_4"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
@@ -8057,9 +8048,6 @@
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown3_4"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
@@ -24490,9 +24478,6 @@
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown3_4"
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/fore)
