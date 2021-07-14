@@ -17512,8 +17512,10 @@
 	},
 /obj/item/device/radio/beacon,
 /obj/effect/catwalk_plated,
-/obj/structure/disposalpipe/junction{
-	dir = 4
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	name = "Research Experimental";
+	sort_type = "Research Experimental"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/firstdeck/aft)
