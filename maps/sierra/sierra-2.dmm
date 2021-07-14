@@ -25653,6 +25653,9 @@
 	monitored_alarm_ids = list("xenobio1_alarm","xenobio2_alarm","xenobio3_alarm","xenobio4_alarm","xenobio5_alarm");
 	req_access = list("ACCESS_RESEARCH")
 	},
+/obj/effect/floor_decal/techfloor{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/xenobiology/atmos)
 "aUo" = (
@@ -34186,6 +34189,10 @@
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/nano)
+"dOX" = (
+/obj/random/obstruction,
+/turf/simulated/floor/plating,
+/area/maintenance/seconddeck/aftport)
 "dRn" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
@@ -63617,7 +63624,7 @@ jGB
 aSX
 aCo
 aGm
-bdV
+dOX
 aDl
 aDl
 aDl
