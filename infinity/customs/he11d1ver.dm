@@ -110,3 +110,4 @@
 	new /obj/item/clothing/accessory/storage/black_vest/wolf(src)
 	new /obj/item/clothing/accessory/cloak/wolf(src)
 	new /obj/item/clothing/gloves/thick/duty/wolforbykot(src)
+	new /obj/item/storage/backpack/wolforbykot(src)

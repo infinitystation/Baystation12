@@ -114,3 +114,13 @@
 		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "anime_blue"
 	item_state = "anime_blue"
+
+/obj/item/clothing/suit/snakeskin
+	name = "snakeskin coat"
+	desc = "A stylish snakeskin coat."
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi') //sprite by CeUvi#1236
+	icon_state = "snakeskin"
+	item_state = "snakeskin"
+	body_parts_covered = UPPER_TORSO|ARMS
