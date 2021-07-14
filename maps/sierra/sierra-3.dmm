@@ -37183,13 +37183,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway)
-"dYV" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/xenoflora)
 "dZG" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -37281,6 +37274,13 @@
 /obj/machinery/ai_status_display,
 /turf/simulated/wall/r_wall/prepainted,
 /area/crew_quarters/heads/office/cmo)
+"ezq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
+/obj/machinery/atmospherics/binary/pump,
+/turf/simulated/floor/tiled/white,
+/area/rnd/xenobiology/xenoflora)
 "eHM" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -38529,13 +38529,6 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/forestarboard)
 "iBY" = (
@@ -39620,13 +39613,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
 "mew" = (
@@ -41109,13 +41095,6 @@
 /obj/effect/floor_decal/corner/red/bordercorner,
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/port)
-"rpJ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
-	},
-/obj/machinery/atmospherics/binary/pump,
-/turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/xenoflora)
 "rwo" = (
 /turf/simulated/floor/tiled/dark,
 /area/medical/morgue)
@@ -41610,6 +41589,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/infirmary)
+"trf" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/xenobiology/xenoflora)
 "trm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -66050,7 +66036,7 @@ wwO
 muc
 eMu
 qqg
-dYV
+trf
 ngO
 klE
 beU
@@ -66249,7 +66235,7 @@ aTs
 bdY
 irj
 xoz
-rpJ
+ezq
 ret
 sei
 uec
