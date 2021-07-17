@@ -181,7 +181,7 @@
 
 
 /obj/item/clothing/suit/space/void/atmos/alt/diesiege
-	name = "IonLok voidsuit"
+	name = "IonLok enviromental suit"
 	desc = "The IonLok suit AP-04-SL-H has advanced \
 			technology within tight body-hugging garments and materials. \
 			It provides environmental protection from various temperatures. \
