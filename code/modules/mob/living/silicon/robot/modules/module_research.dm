@@ -28,7 +28,7 @@
 		/obj/item/reagent_containers/syringe,
 		/obj/item/gripper/chemistry,
 		/obj/item/stack/nanopaste,
-		/obj/item/borg/sight/hud/sci
+		/obj/item/borg/sight/hud/sci  // INF
 	)
 	synths = list(
 		/datum/matter_synth/nanite = 10000
