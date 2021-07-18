@@ -10,7 +10,6 @@
 /datum/computer_file/report/recipient/sec/report_detective/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
-	add_field(/datum/report_field/text_label/header, "Отчет о расследовании")
 	add_field(/datum/report_field/text_label/instruction, "Для ознакомления авторизованному персоналу.")
 	add_field(/datum/report_field/people/from_manifest, "Имя", required = 1)
 	add_field(/datum/report_field/date, "Дата", required = 1)
@@ -28,7 +27,6 @@
 /datum/computer_file/report/recipient/sec/report_incident/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
-	add_field(/datum/report_field/text_label/header, "Отчет о происшествии")
 	add_field(/datum/report_field/text_label/instruction, "Заполняется дежурным офицером.")
 	add_field(/datum/report_field/time, "Время происшествия", required = 1)
 	add_field(/datum/report_field/simple_text, "Тип происшествия/преступления", required = 1)
@@ -52,7 +50,6 @@
 	..()
 	var/list/det_fields = list()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
-	add_field(/datum/report_field/text_label/header, "Вещественные доказательства")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/time, "Время")
 	add_field(/datum/report_field/people/from_manifest, "Конфисковано у", required = 1)
@@ -71,7 +68,6 @@
 /datum/computer_file/report/recipient/sec/patrol/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
-	add_field(/datum/report_field/text_label/header, "Назначение патрулей")
 	add_field(/datum/report_field/date, "Дата утверждения")
 	add_field(/datum/report_field/time, "Время утверждения")
 	add_field(/datum/report_field/pencode_text, "Описание патрулей", required = 1)
@@ -90,7 +86,6 @@
 /datum/computer_file/report/recipient/sec/armory/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
-	add_field(/datum/report_field/text_label/header, "Инвентаризация оружейной")
 	add_field(/datum/report_field/text_label, "Снаряжение")
 	add_field(/datum/report_field/number, "Портативные укрепления")
 	add_field(/datum/report_field/number, "Фальшфейеры")
@@ -152,13 +147,12 @@
 
 /datum/computer_file/report/recipient/sec/penalty
 	form_name = "NT-SEC-20"
-	title = "Служба Безопасности: Квитанция о взымании штрафа"
+	title = "Квитанция о взымании штрафа"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/sec/penalty/generate_fields()
 	..()
 	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Охранный департамент")
-	add_field(/datum/report_field/text_label/header, "Квитанция о взымании штрафа")
 	add_field(/datum/report_field/text_label/instruction, "Заполняется старшим сотрудником Охранного департамента.")
 	add_field(/datum/report_field/people/from_manifest, "Полное имя, фамилия и должность обвиняемого", required = 1)
 	add_field(/datum/report_field/number, "Номер статьи, по которой выплачивается штраф", required = 1)

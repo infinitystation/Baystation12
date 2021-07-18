@@ -68,6 +68,7 @@
 	new /obj/item/weapon_case/custom/mixa(src)
 	new /obj/item/clothing/accessory/storage/holster/hip(src)
 
+
 // MDSF
 /obj/item/clothing/under/mixa
 	name = "MDSF Uniform"
@@ -167,3 +168,61 @@
 	icon_state = "novak_mask"
 	item_state = "novak_mask"
 	flags_inv = BLOCKHAIR
+
+
+// Exploration Leader's RIG
+/obj/item/clothing/head/helmet/space/rig/command/exploration/mixanovr64
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
+	icon_state = "mixanovr64_el_rig_helmet"
+
+/obj/item/clothing/suit/space/rig/command/mixanovr64
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	icon_state = "mixanovr64_el_rig_chest"
+
+/obj/item/clothing/gloves/rig/command/mixanovr64
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_gloves_str = CUSTOM_ITEM_MOB)
+	icon_state = "mixanovr64_el_rig_gloves"
+
+/obj/item/clothing/shoes/magboots/rig/command/mixanovr64
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB)
+	icon_state = "mixanovr64_el_rig_boots"
+
+/obj/item/rig/exploration/mixanovr64
+	name = "modified EL RIG"
+	desc = "Expedition Leader RIG, customly redisigned with new parts and paint."
+	suit_type = "modified EL RIG"
+	icon = CUSTOM_ITEM_OBJ
+	icon_override = CUSTOM_ITEM_MOB
+	icon_state = "mixanovr64_el_rig"
+	custom = TRUE
+	piece_icon_state_overrides = list(
+		"helmet" = "mixanovr64_el_rig_helmet",
+		"chest" = "mixanovr64_el_rig_chest",
+		"gloves" = "mixanovr64_el_rig_gloves",
+		"boots" = "mixanovr64_el_rig_boots"
+	)
+
+	helm_type = /obj/item/clothing/head/helmet/space/rig/command/exploration/mixanovr64
+	chest_type = /obj/item/clothing/suit/space/rig/command/mixanovr64
+	glove_type = /obj/item/clothing/gloves/rig/command/mixanovr64
+	boot_type = /obj/item/clothing/shoes/magboots/rig/command/mixanovr64
+
+	initial_modules = list(
+		/obj/item/rig_module/cooling_unit,
+		/obj/item/rig_module/device/anomaly_scanner,
+		/obj/item/rig_module/device/flash,
+		/obj/item/rig_module/grenade_launcher/light,
+		/obj/item/rig_module/maneuvering_jets,
+	)
+
+	trade_blacklisted = TRUE
+
+/obj/item/custkit/mixanovr64_el_rig
+	name = "modkit for EL rig"
+	input = /obj/item/rig/exploration
+	output = /obj/item/rig/exploration/mixanovr64
+	trade_blacklisted = TRUE

@@ -4526,7 +4526,6 @@
 	id_tag = "security_lockdown";
 	name = "Security Department Lockdown"
 	},
-/obj/machinery/security_scanner,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -6189,7 +6188,6 @@
 	id_tag = "security_lockdown";
 	name = "Security Department Lockdown"
 	},
-/obj/machinery/security_scanner,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -14838,9 +14836,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 4
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -15306,9 +15301,6 @@
 /obj/effect/floor_decal/steeldecal/steel_decals6,
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/aft)
@@ -16268,9 +16260,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 4
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -16685,9 +16674,6 @@
 	dir = 4
 	},
 /obj/random/date_based/christmas/xmaslights,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/aft)
 "aCP" = (
@@ -19740,7 +19726,6 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/entry)
 "aGV" = (
@@ -19752,7 +19737,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/entry)
 "aGW" = (
@@ -26861,7 +26845,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/security/sierra/hosbed)
 "aQF" = (
@@ -28124,9 +28107,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/brig)
@@ -38447,9 +38427,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -38895,7 +38872,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/infirmary)
 "fpQ" = (
@@ -38937,7 +38913,6 @@
 	id_tag = "security_lockdown";
 	name = "Security Department Lockdown"
 	},
-/obj/machinery/security_scanner,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -39162,7 +39137,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/security_scanner,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -39795,13 +39769,6 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/forestarboard)
 "iEb" = (
@@ -40097,9 +40064,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/security_scanner{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -40691,13 +40655,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
 "mew" = (
@@ -42482,7 +42439,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/infirmary)
 "tYh" = (
