@@ -34,6 +34,9 @@
 	allowed_branches = list(/datum/mil_branch/employee)
 	allowed_skills = list(SKILL_SCIENCE = SKILL_EXPERT)
 
+/datum/gear/accessory/penlight
+	allowed_roles = STERILE_ROLES
+
 /datum/gear/accessory/stethoscope
 	allowed_roles = STERILE_ROLES
 
