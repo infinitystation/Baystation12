@@ -56,3 +56,4 @@
 	var/datum/matter_synth/nanite/nanite = locate() in synths
 	var/obj/item/stack/nanopaste/N = locate() in equipment
 	N.synths = list(nanite)
+

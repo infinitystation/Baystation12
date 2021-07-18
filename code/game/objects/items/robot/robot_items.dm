@@ -90,3 +90,4 @@
 	. = ..()
 	hud = new /obj/item/clothing/glasses/hud/science(src)
 // [/INF]
+
