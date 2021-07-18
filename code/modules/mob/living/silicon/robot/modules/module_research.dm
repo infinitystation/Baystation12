@@ -27,7 +27,8 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/gripper/chemistry,
-		/obj/item/stack/nanopaste
+		/obj/item/stack/nanopaste,
+		/obj/item/borg/sight/hud/sci
 	)
 	synths = list(
 		/datum/matter_synth/nanite = 10000
