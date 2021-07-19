@@ -88,7 +88,6 @@
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "niga2012_plasmacutter"
 	suit_overlay_active = "niga2012_plasmacutter"
-	gun = /obj/item/gun/energy/plasmacutter/mounted
 
 /obj/item/rig_module/vision/niga2012
 	vision_modes = list(
