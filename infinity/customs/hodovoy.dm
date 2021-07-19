@@ -215,3 +215,46 @@
 	new /obj/item/clothing/shoes/laceup(src)
 	new /obj/item/clothing/suit/storage/hodovoy_fleet(src)
 	new /obj/item/clothing/under/hodovoy_fleet(src)
+
+
+//Еще один мед-сет
+
+/obj/item/clothing/suit/storage/hooded/hodovoy/armor
+	name = "RRS NT Medical Combat Suit"
+	desc = "Special medical suit of a corporate combat medic of the NT rapid response unit."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_wear_suit_str = CUSTOM_ITEM_MOB
+	)
+	icon_state = "hodovoy_a"
+	item_state = "hodovoy_a"
+	item_state_slots = list(
+		slot_wear_suit_str = "hodovoy_a",
+	)
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_MAJOR,
+		bio = ARMOR_BIO_SHIELDED,
+		)
+	hoodtype = /obj/item/clothing/head/hodovoy/armor
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/head/hodovoy/armor
+	name = "RRS NT Medical Combat Helmet"
+	desc = "Special medical helmet of a corporate combat medic of the NT rapid response unit."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "hodovoy_ah"
+	item_icons = list(
+		slot_head_str = CUSTOM_ITEM_MOB
+	)
+	item_state = "hodovoy_ah"
+	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_AIRTIGHT
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_MAJOR,
+		bio = ARMOR_BIO_SHIELDED,
+		)
+	canremove = 0
+	trade_blacklisted = TRUE
