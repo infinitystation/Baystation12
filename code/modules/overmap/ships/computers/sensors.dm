@@ -4,7 +4,6 @@
 	icon_screen = "teleport"
 	light_color = "#77fff8"
 	extra_view = 4
-	silicon_restriction = STATUS_UPDATE
 	machine_name = "sensors console"
 	machine_desc = "Used to activate, monitor, and configure a spaceship's sensors. Higher range means higher temperature; dangerously high temperatures may fry the delicate equipment."
 	var/obj/machinery/shipsensors/sensors
@@ -36,8 +35,6 @@
 	var/data[0]
 
 	data["viewing"] = viewing_overmap(user)
-	var/mob/living/silicon/silicon = user
-	data["viewing_silicon"] = ismachinerestricted(silicon)
 	if(sensors)
 		data["on"] = sensors.use_power
 		data["range"] = sensors.range
