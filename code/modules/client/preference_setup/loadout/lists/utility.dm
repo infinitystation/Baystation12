@@ -50,10 +50,6 @@
 	path = /obj/item/clothing/accessory/stethoscope
 	cost = 2
 
-/datum/gear/accessory/penlight
-	display_name = "penlight"
-	path = /obj/item/device/flashlight/pen
-
 /datum/gear/utility/pen
 	display_name = "Multicolored Pen"
 	path = /obj/item/pen/multi
