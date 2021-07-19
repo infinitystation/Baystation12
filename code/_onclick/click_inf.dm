@@ -1,4 +1,4 @@
-/mob/living/carbon/MiddleClickOn(atom/A)
+/mob/living/carbon/AltMiddleClickOn(atom/A)
 	if(!stat && mind && iscarbon(A) && A != src)
 		var/datum/changeling/C = mind.changeling
 		if(C?.chosen_sting)

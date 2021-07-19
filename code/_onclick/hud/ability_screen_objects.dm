@@ -353,6 +353,7 @@
 		toggle_open(2) //forces the icons to refresh on screen
 
 /mob/Life()
+	set waitfor = FALSE
 	UNLINT(..())
 	if(ability_master)
 		ability_master.update_spells(0)

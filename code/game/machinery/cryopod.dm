@@ -353,11 +353,11 @@
 				if(istype(O,/obj/item/storage/internal)) //Stop eating pockets, you fuck!
 					continue
 				O.forceMove(src)
-	
+
 	// Надо их просто удалить
 	for(var/obj/item/holder/H in occupant)
 		H.destroy_all()
-	
+
 	for(var/obj/item/holder/H in src.contents)
 		H.destroy_all()
 
@@ -586,10 +586,10 @@
 		occupant.client.eye = src.occupant.client.mob
 		occupant.client.perspective = MOB_PERSPECTIVE
 
-	if(not_turf_contains_dense_objects(get_turf(get_step(loc, dir))))
-		occupant.dropInto(get_step(loc, dir))
-	else
-		occupant.dropInto(loc)
+//	if(not_turf_contains_dense_objects(get_turf(get_step(loc, dir))))		//Because of new input system, I don't want to write more cruthes in it
+//		occupant.dropInto(get_step(loc, dir))
+//	else
+	occupant.dropInto(loc)
 
 	set_occupant(null)
 

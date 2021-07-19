@@ -1,4 +1,4 @@
-/mob/living/MiddleClickOn(atom/A)
+/mob/living/AltMiddleClickOn(atom/A)
 	if(get_preference_value(/datum/client_preference/hardsuit_activation) == GLOB.PREF_MIDDLE_CLICK)
 		if(HardsuitClickOn(A))
 			return

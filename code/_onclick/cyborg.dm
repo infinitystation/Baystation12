@@ -96,8 +96,9 @@
 			return
 	return
 
-//Middle click cycles through selected modules.
-/mob/living/silicon/robot/MiddleClickOn(var/atom/A)
+//Alt Middle click cycles through selected modules.
+//Though we have "X" marcos for it and humans now can't swap hands using middle click, I'll let it be here
+/mob/living/silicon/robot/AltMiddleClickOn(var/atom/A)
 	cycle_modules()
 	return
 

@@ -65,6 +65,9 @@
 	if(modifiers["middle"])
 		MiddleClickOn(A)
 		return 1
+	if(modifiers["middle"] && modifiers["alt"])
+		AltMiddleClickOn(A)
+		return 1
 	if(modifiers["shift"])
 		ShiftClickOn(A)
 		return 0
@@ -219,7 +222,10 @@
 	Only used for swapping hands
 */
 /mob/proc/MiddleClickOn(var/atom/A)
-	swap_hand()
+	pointed(A)
+	return
+
+/mob/proc/AltMiddleClickOn(var/atom/A)
 	return
 
 // In case of use break glass
@@ -302,11 +308,8 @@
 /mob/proc/CtrlAltClickOn(var/atom/A)
 	if(A.CtrlAltClick(src))
 		return
-	pointed(A)
 
 /atom/proc/CtrlAltClick(var/mob/user)
-	if(user.client && user.client.eye == user)
-		user.pointed(src)
 	return
 
 /*
