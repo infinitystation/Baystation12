@@ -21,7 +21,7 @@
 		H.hydration = rand(0,200)
 		if(H.species.name == SPECIES_UNATHI)
 			H.nutrition = rand(100,200)
-	if(prob(15)) //stutterting and jittering (because of cold?)
+	if(prob(10)) //stutterting and jittering (because of cold?)
 		message += SPAN_WARNING("Трясет от холода. ")
 		H.make_jittery(120)
 		H.stuttering = 20
