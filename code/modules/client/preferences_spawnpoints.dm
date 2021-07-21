@@ -135,8 +135,7 @@ GLOBAL_VAR(spawntypes)
 							sector = candidate
 					greetings = " на [istype(sector, /obj/effect/overmap/visitable/ship) ? "судне" : "станции"] '[GLOB.using_map.full_name]'."
 			to_chat(victim, SPAN_NOTICE("Вы пробуждаетесь от крио-сна[greetings]"))
-			victim.sleeping = 0
-			victim.Sleeping(rand(2,7))
+			victim.Sleeping(3)
 			victim.bodytemperature = victim.species.cold_level_1 //very cold, but a point before damage
 
 			if(!victim.isSynthetic()) //fluff. I didn't used else at next lines because of code readness
@@ -150,7 +149,6 @@ GLOBAL_VAR(spawntypes)
 				give_effect(victim)
 				give_advice(victim)
 
-				victim.drowsyness += 30
 //[/INF]
 			break//inf, was: return
 
