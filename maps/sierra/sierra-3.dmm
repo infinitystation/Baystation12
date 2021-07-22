@@ -39975,7 +39975,7 @@
 	pixel_x = -24
 	},
 /obj/machinery/r_n_d/circuit_imprinter,
-/obj/item/reagent_containers/glass/beaker,
+/obj/item/reagent_containers/glass/beaker/sulphuric,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -40223,6 +40223,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/pipe/cap/hidden,
+/obj/machinery/constructable_frame/machine_frame/deconstruct,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "kSY" = (
