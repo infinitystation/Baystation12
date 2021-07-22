@@ -116,7 +116,7 @@
 		/obj/item/storage/firstaid/individual/military,
 		/obj/item/clothing/accessory/storage/black_drop,
 		/obj/item/clothing/mask/gas/alt,
-		/obj/item/clothing/under/solgov/utility/fleet/polopants,
+//		/obj/item/clothing/under/solgov/utility/fleet/polopants,	// Почини меня, хеллпони, или скопируй с торча с другим путем,
 		/obj/item/clothing/head/beret/solgov/fleet/branch/fifth,
 		/obj/item/clothing/head/beret/solgov/fleet,
 		/obj/item/combitool,
@@ -134,7 +134,7 @@
 		/obj/item/storage/firstaid/individual/military,
 		/obj/item/clothing/accessory/storage/black_drop,
 		/obj/item/clothing/mask/gas/alt,
-		/obj/item/clothing/under/solgov/utility/fleet/polopants,
+//		/obj/item/clothing/under/solgov/utility/fleet/polopants,	// Почини меня, хеллпони, или скопируй с торча с другим путем,
 		/obj/item/clothing/head/beret/solgov/fleet/branch/fifth,
 		/obj/item/clothing/head/beret/solgov/fleet,
 		/obj/item/storage/belt/utility/full,
@@ -158,7 +158,7 @@
 		/obj/item/storage/firstaid/individual/military,
 		/obj/item/clothing/accessory/storage/black_drop,
 		/obj/item/clothing/mask/gas/alt,
-		/obj/item/clothing/under/solgov/utility/fleet/polopants,
+//		/obj/item/clothing/under/solgov/utility/fleet/polopants,	// Почини меня, хеллпони, или скопируй с торча с другим путем,
 		/obj/item/clothing/head/beret/solgov/fleet/branch/fifth,
 		/obj/item/clothing/head/beret/solgov/fleet,
 		/obj/item/storage/belt/medical,
@@ -193,7 +193,7 @@
 		/obj/item/flame/lighter/zippo/gunmetal,
 		/obj/item/clothing/head/beret/solgov/fleet/branch/fifth,
 		/obj/item/clothing/head/beret/solgov/fleet/command,
-		/obj/item/clothing/under/solgov/utility/fleet/polopants/command,
+//		/obj/item/clothing/under/solgov/utility/fleet/polopants/command,	// Почини меня, хеллпони, или скопируй с торча с другим путем,
 		/obj/item/gun/projectile/revolver/medium,
 		/obj/item/combitool,
 		/obj/item/clothing/gloves/wristwatch/gold,
@@ -212,7 +212,7 @@
 
 /obj/structure/closet/wardrobe/patrol/desert/WillContain()
 	return list(
-	/obj/item/clothing/under/solgov/utility/army/tan = 3,
+	//obj/item/clothing/under/solgov/utility/army/tan = 3,	// Почини меня, хеллпони, или скопируй с торча с другим путем,
 	/obj/item/clothing/head/solgov/utility/army/tan = 3,
 	/obj/item/clothing/shoes/tactical = 3,
 	/obj/item/clothing/gloves/thick/combat = 3

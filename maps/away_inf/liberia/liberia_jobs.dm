@@ -36,10 +36,10 @@
 	whitelisted_species = null
 	blacklisted_species = list(SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_XENO)
 	allowed_branches = list(
-		/datum/mil_branch/civilian
+		/datum/mil_branch/trader
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/civ/civ
+		/datum/mil_rank/civ/trader
 	)
 	latejoin_at_spawnpoints = 1
 
@@ -96,10 +96,10 @@
 	)
 	outfit_type = /decl/hierarchy/outfit/job/liberia/merchant
 	allowed_branches = list(
-		/datum/mil_branch/civilian
+		/datum/mil_branch/trader
 	)
 	allowed_ranks = list(
-		/datum/mil_rank/civ/civ
+		/datum/mil_rank/civ/trader/trainee
 	)
 	latejoin_at_spawnpoints = 1
 	access = list(
@@ -169,3 +169,27 @@
 /obj/item/card/id/liberia/merchant/leader
 	desc = "An identification card issued to Merchant Leaders, indicating their right to sell and buy goods."
 	job_access_type = /datum/job/submap/merchant
+
+/datum/mil_branch/trader
+	name = "Trader"
+	name_short = "FTU"
+	email_domain = "freemail.net"
+	allow_custom_email = TRUE
+
+	rank_types = list(
+		/datum/mil_rank/civ/trader,
+		/datum/mil_rank/civ/trader/trainee
+	)
+
+	spawn_rank_types = list(
+		/datum/mil_rank/civ/trader,
+		/datum/mil_rank/civ/trader/trainee
+	)
+
+
+/datum/mil_rank/civ/trader
+	name = "Merchant"
+	name_short = null
+
+/datum/mil_rank/civ/trader/trainee
+	name = "Merchant Trainee"

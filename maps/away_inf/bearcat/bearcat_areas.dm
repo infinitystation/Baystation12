@@ -99,7 +99,7 @@
 /area/ship/scrap/maintenance
 	name = "Maintenance Compartments"
 	icon_state = "amaint"
-	req_access = list(access_bearcat)
+	req_access = list(access_bearcat_inf)
 
 /area/ship/scrap/maintenance/hallway
 	name = "Maintenance Corridors"
@@ -150,17 +150,17 @@
 /area/ship/scrap/command/hallway
 	name = "Command Deck"
 	icon_state = "centcom"
-	req_access = list(access_bearcat)
+	req_access = list(access_bearcat_inf)
 
 /area/ship/scrap/command/bridge
 	name = "Bridge"
 	icon_state = "bridge"
-	req_access = list(access_bearcat)
+	req_access = list(access_bearcat_inf)
 
 /area/ship/scrap/command/captain
 	name = "Captain's Quarters"
 	icon_state = "captain"
-	req_access = list(access_bearcat_captain)
+	req_access = list(access_bearcat_inf_captain)
 
 /area/ship/scrap/comms
 	name = "Communications Relay"
@@ -178,4 +178,4 @@
 	name = "\improper Exploration Shuttle"
 	icon_state = "tcomsatcham"
 	area_flags = AREA_FLAG_RAD_SHIELDED
-	req_access = list(access_bearcat)
+	req_access = list(access_bearcat_inf)

@@ -315,7 +315,7 @@
 	uniform = /obj/item/clothing/under/solgov/utility/fleet/officer/command/commander/away_solpatrol
 	belt = /obj/item/storage/belt/holster/general/away_solpatrol
 	id_types = list(/obj/item/card/id/awaycavalry/fleet/commander)
-	gloves = /obj/item/clothing/gloves/thick/duty/solgov/cmd
+	gloves = /obj/item/clothing/gloves/thick/duty/rivalgloves	//	gloves = /obj/item/clothing/gloves/thick/duty/solgov/cmd	// Почини меня, хеллпони, или скопируй с торча с другим путем,
 
 /decl/hierarchy/outfit/job/patrol/pilot1
 	name = PATROL_OUTFIT_JOB_NAME("Ensign")
