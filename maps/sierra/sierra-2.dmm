@@ -17918,7 +17918,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)
 "aFF" = (
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall/r_wall/prepainted,
 /area/rnd/xenobiology/entry)
 "aFG" = (
 /obj/structure/cable/green{
@@ -64435,7 +64435,7 @@ aSX
 aSX
 aSX
 aIL
-aDl
+aVj
 ohp
 aFF
 aFF
@@ -64637,11 +64637,11 @@ aJf
 auV
 aSX
 aIL
-aDl
+aVj
 msP
 aXQ
 apm
-aVB
+pXq
 aYo
 aSr
 aTU
@@ -64839,11 +64839,11 @@ aJL
 auW
 aSX
 aIL
-aDl
+aVj
 aLa
 uzc
 apy
-aVB
+pXq
 aSr
 aSr
 aUs
@@ -65041,7 +65041,7 @@ aIR
 aSX
 aSX
 aBE
-aDl
+aVj
 aDj
 mja
 aHe
@@ -65243,11 +65243,11 @@ aKU
 aOe
 bgY
 aKX
-aDl
+aVj
 nVM
 bFa
 hGK
-aVB
+pXq
 aYp
 aSr
 jiV
@@ -65445,11 +65445,11 @@ aNx
 aNT
 aSX
 aSn
-aDl
+aVj
 aFF
 aLo
 aFA
-aVB
+pXq
 aKY
 aSr
 hMn

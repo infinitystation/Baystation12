@@ -31802,9 +31802,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
-"aYy" = (
-/turf/simulated/wall/prepainted,
-/area/rnd/misc_lab)
 "aYT" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/firstdeck/aftport)
@@ -33921,11 +33918,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/rnd/research)
 "bdW" = (
-/obj/machinery/door/airlock/research{
-	autoset_access = 0;
-	name = "Xenobiology Access";
-	req_access = list("ACCESS_RESEARCH")
-	},
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -33942,6 +33934,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/industrial/hatch/grey,
+/obj/machinery/door/airlock/maintenance{
+	name = "Xenoflora Lab Maintenance";
+	req_access = newlist()
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/research)
 "bdX" = (
@@ -64211,15 +64207,15 @@ aMD
 bdV
 eHM
 aRA
-aYy
-aYy
-aYy
-aYy
+aUK
+aUK
+aUK
+aUK
 gQR
-aYy
-aYy
-aYy
-aYy
+aUK
+aUK
+aUK
+aUK
 aUK
 beW
 wxl
@@ -64413,7 +64409,7 @@ aMW
 aMV
 aPU
 aRB
-aYy
+aUK
 aWe
 aDx
 hKi
@@ -64615,7 +64611,7 @@ aMX
 aNf
 aPV
 beD
-aYy
+aUK
 aWf
 llg
 uVv
@@ -64817,7 +64813,7 @@ aMY
 bdV
 aPW
 aPM
-aYy
+aUK
 lvL
 iDJ
 joI
@@ -65019,7 +65015,7 @@ aGW
 aGW
 aPX
 aRE
-aYy
+aUK
 pdo
 uOW
 nht
@@ -65221,7 +65217,7 @@ aMZ
 aGW
 aPY
 aRF
-aYy
+aUK
 wck
 iDP
 nht
@@ -65423,7 +65419,7 @@ aNa
 aOs
 aPZ
 aRG
-aYy
+aUK
 sbf
 pYP
 nht
@@ -65625,15 +65621,15 @@ aNb
 aOt
 aQa
 aRH
-aYy
-aYy
-aYy
-aYy
-aYy
+aUK
+aUK
+aUK
+aUK
+aUK
 iRy
 xfd
-aYy
-aYy
+aUK
+aUK
 aUK
 beU
 aNm
@@ -65827,7 +65823,7 @@ aNc
 aGW
 aPp
 aRI
-aTs
+bdX
 aTo
 oot
 ssU
@@ -66843,9 +66839,9 @@ xat
 uKq
 cfW
 gkj
-bdX
-bdX
-bdX
+aTs
+aTs
+aTs
 bdX
 beU
 bfR
@@ -67045,7 +67041,7 @@ svj
 peU
 pDe
 hEV
-bdX
+aTs
 bbX
 baT
 bdX
@@ -67247,7 +67243,7 @@ xat
 oXn
 ngO
 vky
-bdX
+aTs
 oPb
 baT
 bdX
@@ -67645,7 +67641,7 @@ aNj
 aOx
 aQk
 aQb
-bdX
+aTs
 vEj
 nnB
 rfN
@@ -67847,7 +67843,7 @@ aGZ
 aOy
 aQl
 aOy
-bdX
+aTs
 ibV
 xat
 kEi
@@ -68049,7 +68045,7 @@ aIP
 aOz
 aQm
 aRS
-bdX
+aTs
 dTt
 rcl
 iFr
