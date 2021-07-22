@@ -31585,8 +31585,8 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/item/stack/material/steel/fifty,
-/obj/item/stack/material/glass/fifty,
+/obj/random/material_rnd_steel,
+/obj/random/material_rnd_glass,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aXm" = (
