@@ -65,7 +65,7 @@
 	add_field(/datum/report_field/options/yes_no, "Химическая или радиационная опасность?", required = 1)
 	add_field(/datum/report_field/signature, "Для разрешение на посещение судна, рапсишитесь/поставьте печать здесь", required = 1)
 	add_field(/datum/report_field/text_label, "ОТСТЫКОВКА И ОТЪЕЗД")
-	add_field(/datum/report_field/simple_text, "Время отстыковки")
+	add_field(/datum/report_field/time, "Время отстыковки")
 	add_field(/datum/report_field/pencode_text,"Дополнительные заметки во время отстыковки")
 	set_access(access_security, override = 0)
 

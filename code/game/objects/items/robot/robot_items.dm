@@ -75,4 +75,19 @@
 
 /obj/item/borg/sight/hud/jani/Initialize()
 	. = ..()
+/obj/item/borg/sight/hud/jani/Initialize()
+	. = ..()
 	hud = new /obj/item/clothing/glasses/hud/janitor(src)
+
+// [INF]
+/obj/item/borg/sight/hud/sci
+	name = "science hud"
+	icon_state = "scihud"
+	icon = 'icons/obj/clothing/obj_eyes.dmi'
+	hud_type = HUD_SCIENCE
+
+/obj/item/borg/sight/hud/sci/Initialize()
+	. = ..()
+	hud = new /obj/item/clothing/glasses/hud/science(src)
+// [/INF]
+
