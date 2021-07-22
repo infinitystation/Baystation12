@@ -30660,9 +30660,8 @@
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
-/obj/item/stack/material/plastic{
-	amount = 30
-	},
+/obj/item/stack/material/aluminium/fifty,
+/obj/item/stack/material/plastic/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aVQ" = (
@@ -31586,12 +31585,8 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/item/stack/material/steel{
-	amount = 30
-	},
-/obj/item/stack/material/glass{
-	amount = 30
-	},
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/glass/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aXm" = (
@@ -31610,9 +31605,7 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/obj/item/stack/material/plasteel{
-	amount = 30
-	},
+/obj/item/stack/material/plasteel/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aXo" = (
