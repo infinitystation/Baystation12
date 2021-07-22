@@ -20665,10 +20665,6 @@
 "aIp" = (
 /obj/machinery/r_n_d/circuit_imprinter,
 /obj/item/reagent_containers/glass/beaker/sulphuric,
-/obj/structure/reagent_dispensers/acid{
-	density = 0;
-	pixel_x = -28
-	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -23278,10 +23274,6 @@
 /area/crew_quarters/heads/office/rd)
 "aLJ" = (
 /obj/structure/bed/chair/office/purple,
-/obj/structure/reagent_dispensers/acid{
-	density = 0;
-	pixel_x = -28
-	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -24033,21 +24025,15 @@
 "aMT" = (
 /obj/machinery/light,
 /obj/structure/table/standard,
-/obj/item/stack/material/steel{
-	amount = 50
-	},
-/obj/item/stack/material/glass{
-	amount = 50
-	},
-/obj/item/stack/material/plastic{
-	amount = 50
-	},
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/item/stack/material/plastic/ten,
+/obj/item/stack/material/plasteel/ten,
+/obj/item/stack/material/glass/ten,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/development)
 "aMU" = (
@@ -24333,13 +24319,13 @@
 	},
 /obj/structure/table/rack,
 /obj/item/stack/material/steel{
-	amount = 50
+	amount = 25
 	},
 /obj/item/stack/material/steel{
-	amount = 50
+	amount = 25
 	},
 /obj/item/stack/material/steel{
-	amount = 50
+	amount = 25
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -25274,15 +25260,12 @@
 	amount = 20
 	},
 /obj/item/stack/material/glass{
-	amount = 50
+	amount = 20
 	},
 /obj/item/stack/material/glass{
-	amount = 50
+	amount = 20
 	},
-/obj/item/stack/material/plastic{
-	amount = 50
-	},
-/obj/item/stack/material/aluminium/fifty,
+/obj/item/stack/material/aluminium/ten,
 /obj/structure/table/rack,
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -30676,12 +30659,6 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/item/stack/material/glass{
-	amount = 50
-	},
-/obj/random/material_rnd_glass,
-/obj/random/material_rnd_glass,
-/obj/random/material_rnd_glass,
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
@@ -31608,12 +31585,6 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/item/stack/material/steel{
-	amount = 50
-	},
-/obj/random/material_rnd_steel,
-/obj/random/material_rnd_steel,
-/obj/random/material_rnd_steel,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aXm" = (
@@ -31628,15 +31599,10 @@
 /area/rnd/storage)
 "aXn" = (
 /obj/structure/table/rack,
-/obj/item/stack/material/plastic/fifty,
-/obj/item/stack/material/plasteel{
-	amount = 20
-	},
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 24
 	},
-/obj/item/stack/material/aluminium/fifty,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aXo" = (
@@ -39460,6 +39426,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
 	},
+/obj/item/paper/sierra/cryocell,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "hFB" = (
@@ -40243,7 +40210,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/medical/morgue)
 "kRC" = (
-/obj/machinery/atmospherics/unary/cryo_cell,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
 	},
@@ -40251,6 +40217,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/pipe/cap/hidden,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "kSY" = (
