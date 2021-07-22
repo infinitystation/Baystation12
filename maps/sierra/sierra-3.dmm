@@ -25263,6 +25263,9 @@
 	amount = 20
 	},
 /obj/item/stack/material/aluminium/ten,
+/obj/item/stack/material/plastic{
+	amount = 20
+	},
 /obj/structure/table/rack,
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -25281,7 +25284,6 @@
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
 	},
-/obj/item/stack/material/plastic/ten,
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "aOy" = (
