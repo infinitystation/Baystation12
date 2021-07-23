@@ -226,3 +226,20 @@
 	input = /obj/item/rig/exploration
 	output = /obj/item/rig/exploration/mixanovr64
 	trade_blacklisted = TRUE
+
+/obj/item/melee/energy/sword/mixanovr64
+	name = "energy sabre"
+	desc = "Strange energy sword with malfunctioned crystal, that reduced combat characteristics."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT
+	)
+	icon_state = "mixanovr64_saber"
+	blade_color = "green"
+	base_parry_chance = 40
+	active_force = 16  // Like in titanium machete
+
+/obj/item/melee/energy/sword/mixanovr64/Initialize()
+	. = ..()
+	active_icon = "[icon_state]_on"
