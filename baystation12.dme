@@ -3799,6 +3799,7 @@
 #include "infinity\customs\army_overcoat.dm"
 #include "infinity\customs\asriel.dm"
 #include "infinity\customs\atlas.dm"
+#include "infinity\customs\ayadanger.dm"
 #include "infinity\customs\Chowny-Geniffer_Fon_Livia.dm"
 #include "infinity\customs\chowny_sindyexpress.dm"
 #include "infinity\customs\clown.dm"

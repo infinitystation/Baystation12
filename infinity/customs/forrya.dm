@@ -519,7 +519,7 @@
 		/obj/item/device/multitool/multimeter,
 		/obj/item/material/hatchet/machete,
 		/obj/item/stack/cable_coil
-		)
+	)
 	startswith = list(
 		/obj/item/weldingtool/electric/forrya,
 		/obj/item/screwdriver/forrya,
@@ -527,5 +527,185 @@
 		/obj/item/crowbar/forrya,
 		/obj/item/wirecutters/forrya,
 		/obj/item/device/multitool/multimeter/forrya
-		)
+	)
 	trade_blacklisted = TRUE
+
+/**
+ * ACU RIG
+ */
+
+/* MODULES */
+/obj/item/rig_module/forrya_acu_ras
+	name = "RAS module"
+	interface_name = "mounted RAS reactor"
+	interface_desc = "Small power reactor powered by built-in CTRL-K system."
+	use_power_cost = 100
+	selectable = 1
+	module_cooldown = 5 SECONDS
+	icon = 'icons/obj/power.dmi'
+	icon_state = "potato_cell"
+
+/obj/item/rig_module/forrya_acu_ras/engage()
+
+	if(!check(use_power_cost))
+		return 0
+
+	holder.cell.charge = min(holder.cell.maxcharge, holder.cell.charge + use_power_cost * 3)
+
+	next_use = world.time + module_cooldown
+	return 1
+
+/obj/item/rig_module/self_destruct/forrya_acu
+	name = "CTRL-K system"
+	desc = "Fuel distribution system for RAS module"
+
+	activate_string = "Enable Auto Overcharge"
+	deactivate_string = "Disable Auto Overcharge"
+
+	engage_string = "Manual Overcharge"
+	interface_desc = "An integrated automatic Overcharge module. Don`t enable."
+
+
+/obj/item/rig_module/mounted/plasmacutter/forrya_acu
+
+	name = "mounted microwave laser"
+	desc = "An engineering microwave laser mounted on the RIG chestplate."
+	icon_state = "plasmacutter"
+	suit_overlay_active = "plasmacutter"
+	interface_name = "mounted microwave laser"
+	interface_desc = "An engineering microwave laser."
+
+	gun = /obj/item/gun/energy/plasmacutter/forrya_acu
+
+/obj/item/gun/energy/plasmacutter/forrya_acu
+	name = "microwave lase"
+	desc = "An engineering microwave laser."
+	projectile_type = /obj/item/projectile/beam/plasmacutter/forrya_acu
+	has_safety = FALSE
+
+/obj/item/projectile/beam/plasmacutter/forrya_acu
+	name = "maser"
+	icon_state = "laser"
+	fire_sound='sound/weapons/Laser.ogg'
+	damage = 12.5
+	armor_penetration = 55
+	life_span = 7
+
+	muzzle_type = /obj/effect/projectile/laser/heavy/muzzle
+	tracer_type = /obj/effect/projectile/laser/heavy/tracer
+	impact_type = /obj/effect/projectile/laser/heavy/impact
+
+/* RIG PARTS */
+/obj/item/clothing/head/helmet/space/rig/eva/forrya_acu
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
+	icon_state = "forrya_rig_helmet"
+
+/obj/item/clothing/suit/space/rig/eva/forrya_acu
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	icon_state = "forrya_rig_chest"
+
+/obj/item/clothing/gloves/rig/eva/forrya_acu
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_gloves_str = CUSTOM_ITEM_MOB)
+	icon_state = "forrya_rig_gloves"
+
+/obj/item/clothing/shoes/magboots/rig/eva/forrya_acu
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB)
+	icon_state = "forrya_rig_boots"
+
+/obj/item/tank/air/forrya_acu
+	volume = 360
+	name = "high capacity oxygen tank"
+	desc = "An unwieldy tank for lots of oxygen."
+
+/* MAIN RIG PART */
+/obj/item/rig/eva/forrya_acu
+	name = "C-ACU exosuit"
+	desc = "Heavy engineering RIG for emergency operation. This one has enhanced protection against aggressive environments."
+	suit_type = "C-ACU exosuit"
+	icon = CUSTOM_ITEM_OBJ
+	icon_override = CUSTOM_ITEM_MOB
+	icon_state = "forrya_rig"
+	equipment_overlay_icon = CUSTOM_ITEM_MOB
+	piece_icon_state_overrides = list(
+		"helmet" = "forrya_rig_helmet",
+		"chest" = "forrya_rig_chest",
+		"gloves" = "forrya_rig_gloves",
+		"boots" = "forrya_rig_boots"
+	)
+
+	helm_type = /obj/item/clothing/head/helmet/space/rig/eva/forrya_acu
+	chest_type = /obj/item/clothing/suit/space/rig/eva/forrya_acu
+	glove_type = /obj/item/clothing/gloves/rig/eva/forrya_acu
+	boot_type = /obj/item/clothing/shoes/magboots/rig/eva/forrya_acu
+	air_type = /obj/item/tank/air/forrya_acu
+
+	action_button_name = "Toggle defensive mode"
+	var/defensive_mode = FALSE
+	var/list/defensive_mode_armor = list(
+		melee = 60,
+		bullet = 60,
+		laser =  60,
+		energy = 60,
+		bomb = 60,
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_SHIELDED
+	)
+	emp_protection = 100
+
+	initial_modules = list(
+		/obj/item/rig_module/maneuvering_jets,
+		/obj/item/rig_module/device/rcd,
+		/obj/item/rig_module/vision/meson,
+		/obj/item/rig_module/cooling_unit,
+		/obj/item/rig_module/forrya_acu_ras,
+		/obj/item/rig_module/self_destruct/forrya_acu,
+		/obj/item/rig_module/mounted/plasmacutter/forrya_acu
+	)
+
+	custom = TRUE
+	trade_blacklisted = TRUE
+
+/datum/client_color/forrya_acu
+	client_color = list(0.70,0.70,0.70, 0.28,0.28,0.28, 0.28,0.28,0.28)
+	priority = 100
+
+/obj/item/rig/eva/forrya_acu/ui_action_click()
+	. = ..()
+	if (offline)
+		to_chat(usr, SPAN_WARNING(":: Toggle on ACU first. ::"))
+		return
+
+	defensive_mode = !defensive_mode
+
+	for (var/obj/item/piece in list(gloves, helmet, boots, chest))
+		if (defensive_mode)
+			piece.armor = defensive_mode_armor
+
+			slowdown_general = 4
+		else
+			piece.armor = armor
+			slowdown_general = 0
+	to_chat(usr, SPAN_WARNING("::DEFNSIVE MODE [defensive_mode ? "ENGAGED" : "DISENGAGED"]::"))
+
+/obj/item/rig/eva/forrya_acu/toggle_seals(mob/initiator, instant)
+	if (defensive_mode)
+		ui_action_click()
+	. = ..()
+
+/obj/item/rig/eva/forrya_acu/reset()
+	if (defensive_mode)
+		ui_action_click()
+	. = ..()
+
+/obj/item/clothingbag/forrya_acu
+	name = "ACU's bag"
+	desc = "For Seton."
+	trade_blacklisted = TRUE
+
+/obj/item/clothingbag/forrya_acu/Initialize()
+	. = ..()
+	new /obj/item/rig/eva/forrya_acu(src)
