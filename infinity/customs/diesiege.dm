@@ -205,3 +205,36 @@
 /obj/item/clothing/suit/space/void/atmos/alt/diesiege/New()
 	. = ..()
 	slowdown_per_slot[slot_wear_suit] = null
+
+/*
+ * Lorriman's alcho
+ */
+/datum/reagent/ethanol/diesiege_lorrakevitt
+	name = "Lorrimanian Akevitt"
+	description = "A hearty and strong distilled spirit drink typically consumed on ice deserts of Lorriman."
+	taste_description = "oaky aqua vitae and hearty spices"
+	taste_mult = 1.5
+	color = "#bdb6a9"
+	strength = 12
+
+	glass_name = "Lorrimanian Akevitt"
+	glass_desc = "A hearty and strong distilled spirit drink typically consumed on ice deserts of Lorriman."
+
+/obj/item/reagent_containers/food/drinks/bottle/diesiege_lorrakevitt
+	name = "Hub's Choice Akevitt"
+	desc = "A bottle of rare Lorrimanian distilled 88 proof (50%) spirit drink. \
+			Label says - Flavoured with caraway, cardamom, cumin, anise, fennel and orange peel since 2225AD"
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "siege_bottle_akevitt"
+	volume = 200
+	center_of_mass = "x=16; y=16"
+	isGlass = FALSE
+
+/obj/item/reagent_containers/food/drinks/bottle/diesiege_lorrakevitt/Initialize()
+	. = ..()
+	reagents.add_reagent(/datum/reagent/ethanol/diesiege_lorrakevitt, 200)
+	var/namepick = pick("Ice Desert", "Hub's Choice", "Academical", "Kelvin's", "Newtonian", "Pascal's")
+	var/typepick = pick("Premium Akevitt", "Hearty Akvavit", "Aquavit", "Special Akevitt")
+	var/agedyear = GLOB.using_map.game_year - rand(15, 75)
+	SetName("[namepick] [typepick]")
+	desc += " This bottle is marked as [agedyear] Vintage."
