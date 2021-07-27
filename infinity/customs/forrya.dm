@@ -587,7 +587,7 @@
 	name = "maser"
 	icon_state = "laser"
 	fire_sound='sound/weapons/Laser.ogg'
-	damage = 12.5
+	damage = 20
 	armor_penetration = 55
 	life_span = 7
 
@@ -600,21 +600,25 @@
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
 	icon_state = "forrya_rig_helmet"
+	species_restricted = list(SPECIES_TAJARA)
 
 /obj/item/clothing/suit/space/rig/eva/forrya_acu
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
 	icon_state = "forrya_rig_chest"
+	species_restricted = list(SPECIES_TAJARA)
 
 /obj/item/clothing/gloves/rig/eva/forrya_acu
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_gloves_str = CUSTOM_ITEM_MOB)
 	icon_state = "forrya_rig_gloves"
+	species_restricted = list(SPECIES_TAJARA)
 
 /obj/item/clothing/shoes/magboots/rig/eva/forrya_acu
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB)
 	icon_state = "forrya_rig_boots"
+	species_restricted = list(SPECIES_TAJARA)
 
 /obj/item/tank/air/forrya_acu
 	volume = 360
