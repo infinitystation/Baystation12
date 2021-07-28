@@ -1,7 +1,7 @@
 /obj/item/mech_equipment/mounted_system/rcd
 	icon_state = "mech_rcd"
 	holding_type = /obj/item/rcd/mounted
-	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND)
+	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER)
 	restricted_software = list(MECH_SOFTWARE_ENGINEERING)
 
 /obj/item/rcd/mounted/get_hardpoint_maptext()
@@ -34,5 +34,5 @@
 /obj/item/mech_equipment/mounted_system/extinguisher
 	icon_state = "mech_exting"
 	holding_type = /obj/item/extinguisher/mech
-	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND)
+	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER)
 	restricted_software = list(MECH_SOFTWARE_ENGINEERING)
