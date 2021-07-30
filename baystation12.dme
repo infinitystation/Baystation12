@@ -3557,6 +3557,7 @@
 #include "infinity\code\modules\clothing\under\thermal.dm"
 #include "infinity\code\modules\clothing\under\under.dm"
 #include "infinity\code\modules\clothing\under\under_bluebrig.dm"
+#include "infinity\code\modules\clothing\under\under_hooded.dm"
 #include "infinity\code\modules\clothing\under\under_resomi.dm"
 #include "infinity\code\modules\codex\entries\infinity.dm"
 #include "infinity\code\modules\culture_descriptor\culture\cultures.dm"
