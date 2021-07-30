@@ -19,9 +19,9 @@
 	ToggleHood()
 
 /obj/item/clothing/under/hooded/equipped(mob/user, slot)
-    if(slot != slot_w_uniform)
-        RemoveHood()
-    ..()
+	if(slot != slot_w_uniform)
+		RemoveHood()
+	..()
 
 /obj/item/clothing/under/hooded/proc/RemoveHood()
 	if(!hood)
