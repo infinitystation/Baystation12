@@ -38,24 +38,24 @@
 	RemoveHood()
 
 /obj/item/clothing/under/hooded/proc/ToggleHood()
-    if(!suittoggled)
-        if(ishuman(loc))
-            var/mob/living/carbon/human/H = src.loc
-            if(H.w_uniform != src)
-                to_chat(H, SPAN_WARNING("You must be wearing \the [src] to put up the hood!"))
-                return
-            if(H.head)
-                to_chat(H, SPAN_WARNING("You're already wearing something on your head!"))
-                return
-            else
-                H.equip_to_slot_if_possible(hood,slot_head,0,0,1)
-                suittoggled = 1
-                hood.icon_state = "[icon_state]_hood"
-                hood.item_state = "[item_state]_hood"
-                update_icon()
-                H.update_inv_wear_suit()
-    else
-        RemoveHood()
+	if(!suittoggled)
+		if(ishuman(loc))
+			var/mob/living/carbon/human/H = src.loc
+			if(H.w_uniform != src)
+				to_chat(H, SPAN_WARNING("You must be wearing \the [src] to put up the hood!"))
+				return
+			if(H.head)
+				to_chat(H, SPAN_WARNING("You're already wearing something on your head!"))
+				return
+			else
+				H.equip_to_slot_if_possible(hood,slot_head,0,0,1)
+				suittoggled = 1
+ 				hood.icon_state = "[icon_state]_hood"
+				hood.item_state = "[item_state]_hood"
+				update_icon()
+				H.update_inv_wear_suit()
+	else
+		RemoveHood()
 
 /obj/item/clothing/under/hooded/on_update_icon()
 	if(suittoggled)
