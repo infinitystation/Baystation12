@@ -1,0 +1,6 @@
+{
+  "ckey" :            "s1334",
+  "character_name" :  "Viktor Samsonov",
+  "item_path" :       "/obj/item/clothingbag/kilmed",
+  "req_access" :       [ "ACCESS_MEDICAL" ]
+  }

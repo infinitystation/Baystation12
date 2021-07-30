@@ -167,29 +167,22 @@
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_MINOR
 	)
-	tint = 0
+	tint = 2
 	trade_blacklisted = TRUE
 
-//obj/item/clothing/shoes/jackboots/kilkamedshoe
-//	name = "hazard materials boots"
-//	desc = "Rubberized boots, tightly fitting to the body designed to protect its owner from toxic substances and biological agents."
-//	icon_state = "kilshoes"
-//	item_state = "kilshoes"
-//	icon = CUSTOM_ITEM_OBJ
-//	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB,
-//		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
-//		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT
-//	)
-//	item_state_slots = list(
-//		slot_l_hand_str = "kilshoes",
-//		slot_r_hand_str = "kilshoes"
-//	)
-//	armor = list(
-//		bio = ARMOR_BIO_SHIELDED,
-//		rad = ARMOR_RAD_MINOR
-//	)
-//
-//	trade_blacklisted = TRUE
+obj/item/clothing/shoes/jackboots/kilkamedshoe
+	name = "hazardous materials boots"
+	desc = "Rubberized boots, tightly fitting to the body designed to protect its owner from toxic substances and biological agents."
+	icon_state = "kilshoes"
+	item_state = "kilshoes"
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_shoes_str = CUSTOM_ITEM_MOB
+	)
+	armor = list(
+		bio = ARMOR_BIO_SHIELDED,
+		rad = ARMOR_RAD_MINOR
+	)
+	trade_blacklisted = TRUE
 
 /obj/item/clothingbag/kilmed
 	name = "clothing bag"
@@ -203,4 +196,4 @@
 	new /obj/item/clothing/mask/gas/kilkamask(src)
 	new /obj/item/clothing/suit/armor/pcarrier/kilkapc(src)
 	new /obj/item/clothing/head/helmet/kilkahelm(src)
-	//new /obj/item/clothing/shoes/jackboots/kilshoes(src)
+	new /obj/item/clothing/shoes/jackboots/kilkamedshoe(src)
