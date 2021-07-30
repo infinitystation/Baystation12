@@ -50,7 +50,7 @@
 			else
 				H.equip_to_slot_if_possible(hood,slot_head,0,0,1)
 				suittoggled = 1
- 				hood.icon_state = "[icon_state]_hood"
+				hood.icon_state = "[icon_state]_hood"
 				hood.item_state = "[item_state]_hood"
 				update_icon()
 				H.update_inv_wear_suit()
