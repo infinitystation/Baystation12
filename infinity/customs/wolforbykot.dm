@@ -233,3 +233,19 @@
 	name = "CS-9 \"Martha\" customization kit"
 	input = /obj/item/material/hatchet/machete
 	output = /obj/item/chainsword
+
+//CURTKA
+
+/obj/item/clothing/suit/storage/toggle/wolfkurtka
+	name = "OP bomber"
+	desc = "A green bomber jacket with multiple patches and insignias, the skull on the back most fiercely spreading wings over OUTER PARADISE. Never be game over."
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(
+		slot_wear_suit_str = CUSTOM_ITEM_MOB,
+		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT
+	)
+	icon_state = "bomber"
+	icon_open = "bomber_open"
+	icon_closed = "bomber"
+	trade_blacklisted = TRUE

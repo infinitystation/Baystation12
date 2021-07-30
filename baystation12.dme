@@ -3803,6 +3803,7 @@
 #include "infinity\customs\Chowny-Geniffer_Fon_Livia.dm"
 #include "infinity\customs\chowny_sindyexpress.dm"
 #include "infinity\customs\clown.dm"
+#include "infinity\customs\coiscin.dm"
 #include "infinity\customs\coolered.dm"
 #include "infinity\customs\cust_zippo.dm"
 #include "infinity\customs\dakimakura.dm"
