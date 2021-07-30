@@ -220,8 +220,8 @@
 //Еще один мед-сет
 
 /obj/item/clothing/suit/storage/hooded/hodovoy/armor
-	name = "RRS NT Medical Combat Suit"
-	desc = "Special medical suit of a corporate combat medic of the NT rapid response unit."
+	name = "NT Сomfortable Lightweight Medical Suit"
+	desc = "Very technological and futuristic NT Сomfortable Lightweight Medical suit for shift work on a spacecraft made of strong ultra-light materials. Very convenient, a medic's dream!"
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(
 		slot_wear_suit_str = CUSTOM_ITEM_MOB
@@ -241,8 +241,8 @@
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/head/hodovoy/armor
-	name = "RRS NT Medical Combat Helmet"
-	desc = "Special medical helmet of a corporate combat medic of the NT rapid response unit."
+	name = "NT Сomfortable Lightweight Medical Helmet"
+	desc = "Very technological and futuristic NT Сomfortable Lightweight Medical helmet for shift work on a spacecraft made of strong ultra-light materials. Very convenient, a medic's dream!"
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "hodovoy_ah"
 	item_icons = list(
