@@ -32470,15 +32470,8 @@
 	autoset_access = 0;
 	frequency = 1379;
 	id_tag = "xeno_airlock_outer";
-	locked = 1;
 	name = "Xenobiology Access";
 	req_access = list("ACCESS_RESEARCH")
-	},
-/obj/machinery/button/alternate/door/bolts{
-	dir = 1;
-	id_tag = "xeno_airlock_outer";
-	name = "Xenobio Lock";
-	pixel_x = -25
 	},
 /obj/machinery/door/firedoor{
 	dir = 4
