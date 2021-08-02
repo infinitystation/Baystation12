@@ -20734,7 +20734,12 @@
 /obj/machinery/dummy_airlock_controller{
 	id_tag = "xenohight_airlock";
 	name = "Airlock Remote Terminal";
+	pixel_x = 6;
 	pixel_y = 20
+	},
+/obj/machinery/light_switch{
+	pixel_x = -6;
+	pixel_y = 28
 	},
 /turf/simulated/open,
 /area/rnd/xenobiology/level1)
@@ -24780,21 +24785,10 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/water_cell)
 "aSI" = (
-/obj/effect/wallframe_spawn/reinforced/hull,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "xenobioaqua";
-	name = "Containment Blast Doors";
-	opacity = 0
-	},
-/obj/machinery/dummy_airlock_controller{
-	id_tag = "xenohight_airlock";
-	name = "Airlock Remote Terminal";
-	pixel_y = 20
-	},
-/turf/simulated/floor/plating,
+/obj/structure/catwalk,
+/obj/item/reagent_containers/food/snacks/meat/monkey,
+/obj/item/reagent_containers/glass/bucket,
+/turf/simulated/open,
 /area/rnd/xenobiology/water_cell)
 "aSJ" = (
 /mob/living/simple_animal/hostile/scarybat,
@@ -24814,15 +24808,30 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/seconddeck/aft)
 "aSM" = (
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 23
+/obj/machinery/atmospherics/pipe/simple/hidden/black,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
 	},
 /obj/machinery/light/spot{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 23
+	},
 /turf/simulated/floor/tiled/white,
-/area/rnd/xenobiology/water_cell)
+/area/rnd/xenobiology/level1)
 "aSN" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -24852,8 +24861,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/blue{
 	dir = 6
 	},
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/reagent_containers/food/snacks/meat/monkey,
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/water_cell)
 "aSP" = (
@@ -24967,12 +24974,16 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/xenobiology/atmos)
 "aSW" = (
-/obj/machinery/dummy_airlock_controller{
-	id_tag = "xenohight_airlock";
-	name = "Airlock Remote Terminal";
-	pixel_y = 20
+/obj/effect/wallframe_spawn/reinforced/hull,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "xenobioaqua";
+	name = "Containment Blast Doors";
+	opacity = 0
 	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/plating,
 /area/rnd/xenobiology/water_cell)
 "aSX" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -26146,7 +26157,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
-/area/rnd/xenobiology/level1)
+/area/rnd/xenobiology/entry)
 "aUR" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/blast/regular{
@@ -27150,6 +27161,13 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
+/obj/machinery/button/blast_door{
+	id_tag = "xenobioaqua";
+	name = "Aqua Containment Blast Doors";
+	pixel_x = 6;
+	pixel_y = 29;
+	req_access = list("ACCESS_RESEARCH")
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/level1)
 "aWL" = (
@@ -27172,13 +27190,6 @@
 	},
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 1
-	},
-/obj/machinery/button/blast_door{
-	id_tag = "xenobioaqua";
-	name = "Aqua Containment Blast Doors";
-	pixel_x = 6;
-	pixel_y = 29;
-	req_access = list("ACCESS_RESEARCH")
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/level1)
@@ -39011,7 +39022,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black,
 /turf/simulated/floor/tiled/white/monotile,
-/area/rnd/xenobiology/level1)
+/area/rnd/xenobiology/entry)
 "sMI" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
@@ -65316,7 +65327,7 @@ nVM
 nVM
 bFa
 hGK
-aVB
+nVM
 tRJ
 aSr
 jiV
@@ -65518,7 +65529,7 @@ nVM
 nVM
 aLo
 aFA
-aVB
+nVM
 aKY
 aSr
 aTU
@@ -65924,7 +65935,7 @@ aXk
 aLL
 sKX
 aSU
-aSU
+aSM
 aOv
 aUH
 aVy
@@ -66126,7 +66137,7 @@ aVq
 aLf
 nVM
 aSW
-aSM
+aVh
 aWK
 aUi
 aUE
@@ -66328,7 +66339,7 @@ aVh
 aVh
 aVh
 aSI
-aVh
+aPZ
 aWL
 aUj
 aUF
