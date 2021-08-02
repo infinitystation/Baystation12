@@ -89,9 +89,8 @@
 	item_state = "thehero13_qairo_gloves"
 
 /obj/item/clothing/shoes/dutyboots/thehero13_skrellian
-	name = "skrellian tactical suit"
-	desc = "A comfortable tactical suit designed to not allot moisture away from the body. \
-			The tag on the inner side appears to contain something written in Skrellian."
+	name = "skrellian tactical boots"
+	desc = "A pair of black boots with extra padding and armor."
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(
 		slot_shoes_str = CUSTOM_ITEM_MOB
