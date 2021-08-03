@@ -123,7 +123,7 @@
 	icon_state = "quartoffice"
 	req_access = list(access_mailsorting, access_cargo)
 
-/area/quartermaster/locker_room
+/area/quartermaster/suplocker_room
     name = "Third Derck - Supply - Locker room"
 	icon_state = "quartoffice"
 	req_access = list(access_mailsorting, access_cargo)
