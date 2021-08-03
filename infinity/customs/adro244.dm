@@ -574,16 +574,17 @@
 
 //Cool cybercoat
 
-/obj/item/clothing/suit/cybercoat/adro
+/obj/item/clothing/suit/storage/adro_cybercoat
 	name = "cybercoat"
 	desc = "Comfort black coat with cybernetics for tajaran"
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
 	icon_state = "cybercoat"
 	item_state = "cybercoat"
+	slots = 2
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/suit/cybercoat/adro/Initialize()
+/obj/item/clothing/suit/storage/adro_cybercoat/Initialize()
 	. = ..()
 
-	new /obj/item/clothing/suit/cybercoat/adro(src)
+	new /obj/item/clothing/suit/storage/adro_cybercoat(src)
