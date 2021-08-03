@@ -571,3 +571,19 @@
 	new /obj/item/clothing/suit/armor/bulletproof/adro(src)
 	new /obj/item/clothing/head/helmet/ballistic/adro(src)
 	new /obj/item/clothing/under/rank/security/adro(src)
+
+//Cool cybercoat
+
+/obj/item/clothing/suit/cybercoat/adro
+	name = "cybercoat"
+	desc = "Comfort black coat with cybernetics for tajaran"
+	icon = CUSTOM_ITEM_OBJ
+	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB)
+	icon_state = "cybercoat"
+	item_state = "cybercoat"
+	trade_blacklisted = TRUE
+
+/obj/item/clothing/suit/cybercoat/adro/Initialize()
+	. = ..()
+
+	new /obj/item/clothing/suit/cybercoat/adro(src)
