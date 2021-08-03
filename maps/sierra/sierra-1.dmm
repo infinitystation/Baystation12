@@ -3386,7 +3386,7 @@
 	pixel_y = 26
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "ga" = (
 /obj/machinery/door/airlock/hatch/maintenance,
 /obj/structure/cable/green{
@@ -15019,7 +15019,7 @@
 	pixel_x = 24
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "xK" = (
 /obj/machinery/door/window/southright{
 	autoset_access = 0;
@@ -16494,7 +16494,7 @@
 "Ab" = (
 /obj/structure/sign/poster/humpost/hum_21,
 /turf/simulated/wall/r_wall/hull,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "Ac" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -18726,7 +18726,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "DU" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/mineral/processing_unit,
@@ -19457,7 +19457,7 @@
 	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "Fh" = (
 /obj/structure/bed/chair/shuttle/white{
 	dir = 8
@@ -21730,7 +21730,7 @@
 /area/vacant/infirmary)
 "IJ" = (
 /turf/simulated/wall/r_wall/hull,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "IK" = (
 /obj/structure/bed/chair/shuttle/blue{
 	dir = 1
@@ -22602,7 +22602,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "Kd" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/brigdoor/northleft{
@@ -22982,7 +22982,7 @@
 	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "KH" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -23011,7 +23011,7 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "KJ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -23605,7 +23605,7 @@
 	pixel_y = -24
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "LQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -23708,7 +23708,7 @@
 	pixel_x = 23
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "Ma" = (
 /obj/structure/flora/seaweed/mid,
 /obj/effect/fluid_mapped,
@@ -24563,7 +24563,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "Nx" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -27423,7 +27423,7 @@
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "Sk" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -28596,7 +28596,7 @@
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/belt/utility,
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "UC" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -28673,7 +28673,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "UR" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -29737,7 +29737,7 @@
 /area/shuttle/petrov/ship)
 "Xj" = (
 /turf/simulated/floor/tiled,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "Xk" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -29866,7 +29866,7 @@
 /area/storage/primary)
 "Xx" = (
 /turf/simulated/wall/prepainted,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "Xz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -30460,7 +30460,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 "YM" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -30973,7 +30973,7 @@
 "ZY" = (
 /obj/structure/sign/poster/humpost/hum_18,
 /turf/simulated/wall/prepainted,
-/area/quartermaster/locker_room)
+/area/quartermaster/suplocker_room)
 
 (1,1,1) = {"
 Is
