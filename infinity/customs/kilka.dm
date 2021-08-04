@@ -197,3 +197,5 @@ obj/item/clothing/shoes/jackboots/kilkamedshoe
 	new /obj/item/clothing/suit/armor/pcarrier/kilkapc(src)
 	new /obj/item/clothing/head/helmet/kilkahelm(src)
 	new /obj/item/clothing/shoes/jackboots/kilkamedshoe(src)
+	new /obj/item/storage/backpack/wolforbykot(src)
+
