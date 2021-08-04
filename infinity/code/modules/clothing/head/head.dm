@@ -73,3 +73,8 @@
 	item_icons = list(slot_head_str = 'infinity/icons/mob/onmob/onmob_head.dmi')
 	icon_state = "anime_blue"
 	item_state = "anime_blue"
+
+
+/obj/item/clothing/head/hijab
+	flags_inv = HIDEEARS|BLOCKHEADHAIR
+	body_parts_covered = HEAD
