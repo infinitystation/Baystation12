@@ -564,7 +564,7 @@
 /obj/item/mech_equipment/mounted_system/taser/autoplasma
 	icon_state = "mech_energy"
 	holding_type = /obj/item/gun/energy/plasmacutter/mounted/mech/auto
-	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER) //По царски можно цеплять ротационку на плечи и косплеить всяких гандамов
+	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER) // INF added HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER ~ Kek4ik
 	restricted_software = list(MECH_SOFTWARE_UTILITY)
 	origin_tech = list(TECH_MATERIAL = 5, TECH_PHORON = 4, TECH_ENGINEERING = 6, TECH_COMBAT = 4)
 
