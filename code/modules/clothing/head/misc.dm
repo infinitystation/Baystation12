@@ -308,8 +308,8 @@
 	name = "hijab"
 	desc = "A veil which is wrapped to cover the head and chest."
 	icon_state = "hijab"
-	flags_inv = HIDEEARS|BLOCKHAIR
-	body_parts_covered = HEAD
+	body_parts_covered = 0
+	flags_inv = BLOCKHAIR
 
 /obj/item/clothing/head/kippa
 	name = "kippa"
