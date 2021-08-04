@@ -35,3 +35,4 @@
 	icon_state = "mech_exting"
 	holding_type = /obj/item/extinguisher/mech
 	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER) // INF added HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER ~ Kek4ik
+	restricted_software = list(MECH_SOFTWARE_ENGINEERING)
