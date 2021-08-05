@@ -1,0 +1,4 @@
+author: HaCsO
+delete-after: true
+changes:
+  - bugfix: Хиджаб скрывает флавор головы
