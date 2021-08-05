@@ -147,6 +147,11 @@ Passports
 	name = "\improper Southern Gaian passport"
 	desc = "A passport from the southern part of Gaia, under control of the Sol Central Government."
 
+/obj/item/passport/scg/birdcage
+	name = "\improper Colchis passport"
+	icon_state = "passport"
+	desc = "A passport from Colchis habitat within SCG space, commonly known as Birdcage."
+
 
 // ICCG Passports
 /obj/item/passport/iccg
@@ -173,6 +178,16 @@ Passports
 	icon_state = "passport"
 	desc = "A passport from Magnitka, an independent colony."
 
+/obj/item/passport/independent/eremus
+	name = "\improper Eremus passport"
+	icon_state = "passport"
+	desc = "A passport from Eremus, the most populated system bordering Resomi Empire."
+
+/obj/item/passport/independent/asranda
+	name = "\improper Randian passport"
+	icon_state = "passport"
+	desc = "A passport issued by the Republic of Asranda, an isolated colony resembling long-gone Resomi Republic."
+
 
 // xeno passports
 /obj/item/passport/xeno/tajara
@@ -185,3 +200,8 @@ Passports
 	name = "\improper Resomi registration document"
 	icon_state = "passport"
 	desc = "Something like a passport for Resomi."
+
+/obj/item/passport/xeno/unathi
+	name = "\improper Unathi registration document"
+	icon_state = "passport"
+	desc = "Passport, belongs to Unathi species."
