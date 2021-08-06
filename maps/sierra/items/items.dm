@@ -186,10 +186,6 @@ Passports
 	name = "\improper Kaldark passport"
 	desc = "A passport from Kaldark, an independent colony."
 
-/obj/item/passport/independent/brinkburn
-	name = "\improper Brinkburn passport"
-	desc = "A passport from Brinkburn, an independent colony."
-
 /obj/item/passport/independent/mirania
 	name = "\improper Mirania passport"
 	desc = "A passport from Mirania, an independent colony."
