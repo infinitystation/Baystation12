@@ -115,6 +115,13 @@
 	icon_state = "passport_scg2"
 	desc = "A passport from Tersten, within Sol Central Government space."
 
+//[inf]
+/obj/item/passport/birdcage
+	name = "\improper Colchis passport"
+	icon_state = "passport_scg2"
+	desc = "A passport from Colchis habitat within SCG space, commonly known as Birdcage."
+// [/inf]
+
 /obj/item/passport/south_gaia
 	name = "\improper Southern Gaian passport"
 	icon_state = "passport_scg2"
@@ -154,3 +161,16 @@
 	name = "\improper Mohrandade passport"
 	icon_state = "passport"
 	desc = "A passport from the Empire of Mohranda, a frontier empire established on Lohrene and Mohranda, in the Luggust system."
+
+//[inf]
+
+/obj/item/passport/eremus
+	name = "\improper Eremus passport"
+	icon_state = "passport"
+	desc = "A passport from Eremus, the most populated system bordering Resomi Empire."
+
+/obj/item/passport/asranda
+	name = "\improper Randian passport"
+	icon_state = "passport"
+	desc = "A passport issued by the Republic of Asranda, an isolated colony resembling long-gone Resomi Republic."
+//[/inf]

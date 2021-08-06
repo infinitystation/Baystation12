@@ -111,9 +111,9 @@ Passports
 	name = "\improper Tiamat passport"
 	desc = "A passport from Tiamat, within Sol Central Government space."
 
-/obj/item/passport/scg/eos
-	name = "\improper Eos passport"
-	desc = "A passport from Eos, within Sol Central Government space."
+/obj/item/passport/scg/gauss
+	name = "\improper Gauss passport"
+	desc = "A passport from Gauss, within Sol Central Government space."
 
 /obj/item/passport/scg/ceti_epsilon
 	name = "\improper Cetite passport"
@@ -147,6 +147,11 @@ Passports
 	name = "\improper Southern Gaian passport"
 	desc = "A passport from the southern part of Gaia, under control of the Sol Central Government."
 
+/obj/item/passport/scg/birdcage
+	name = "\improper Colchis passport"
+	icon_state = "passport"
+	desc = "A passport from Colchis habitat within SCG space, commonly known as Birdcage."
+
 
 // ICCG Passports
 /obj/item/passport/iccg
@@ -168,13 +173,49 @@ Passports
 
 
 // independent
+/obj/item/passport/independent
+	name = "\improper Independent passport"
+	icon_state = "passport"
+	desc = "Passport of one of the many independent colonies"
+
 /obj/item/passport/independent/magnitka
 	name = "\improper Magnitkan passport"
-	icon_state = "passport"
 	desc = "A passport from Magnitka, an independent colony."
+
+/obj/item/passport/independent/kaldark
+	name = "\improper Kaldark passport"
+	desc = "A passport from Kaldark, an independent colony."
+
+/obj/item/passport/independent/brinkburn
+	name = "\improper Brinkburn passport"
+	desc = "A passport from Brinkburn, an independent colony."
+
+/obj/item/passport/independent/mirania
+	name = "\improper Mirania passport"
+	desc = "A passport from Mirania, an independent colony."
+
+/obj/item/passport/independent/avalon
+	name = "\improper Avalon passport"
+	desc = "A passport from Avalon, an independent colony."
+
+/obj/item/passport/independent/eremus
+	name = "\improper Eremus passport"
+	icon_state = "passport"
+	desc = "A passport from Eremus, the most populated system bordering Resomi Empire."
+
+/obj/item/passport/independent/asranda
+	name = "\improper Randian passport"
+	icon_state = "passport"
+	desc = "A passport issued by the Republic of Asranda, an isolated colony resembling long-gone Resomi Republic."
 
 
 // xeno passports
+/obj/item/passport/xeno
+	name = "\improper Xeno passport"
+	icon = 'infinity/icons/obj/passports.dmi'
+	icon_state = "passport"
+	desc = "A passport for Xenos."
+
 /obj/item/passport/xeno/tajara
 	name = "\improper Tajaran passport"
 	icon = 'infinity/icons/obj/passports.dmi'
@@ -185,3 +226,8 @@ Passports
 	name = "\improper Resomi registration document"
 	icon_state = "passport"
 	desc = "Something like a passport for Resomi."
+
+/obj/item/passport/xeno/unathi
+	name = "\improper Unathi registration document"
+	icon_state = "passport"
+	desc = "Passport, belongs to Unathi species."
