@@ -294,10 +294,13 @@
 	. = ..()
 	if(. && get_turf(user) == get_turf(src))
 		var/turf/T = get_step(src, src.dir)
-		if(T.turf_is_crowded(user))
+		if(T.turf_is_crowded(user) && density == 1)
 			to_chat(user, "<span class='warning'>You can't climb there, the way is blocked.</span>")
 			return 0
-
+		if(density == 1)
+			to_chat(user, "<span class='warning'>You can't climb there, the way is blocked.</span>")
+			return 0
+		//inf проверка на плотные объекты
 /obj/structure/railing/do_climb(var/mob/living/user)
 	. = ..()
 	if(.)
