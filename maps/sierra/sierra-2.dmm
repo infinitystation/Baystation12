@@ -13501,15 +13501,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/substation/seconddeck)
 "ayl" = (
-/obj/structure/table/rack,
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/structure/railing/mapped{
-	dir = 1
-	},
+/obj/structure/largecrate,
 /obj/random/maintenance,
-/obj/random/maintenance,
+/obj/machinery/light/small,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "aym" = (
@@ -17440,7 +17434,7 @@
 "aEL" = (
 /obj/effect/floor_decal/techfloor/corner,
 /obj/random/trash,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftport)
 "aEM" = (
 /obj/effect/floor_decal/corner_techfloor_grid{
@@ -18739,12 +18733,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "aHe" = (
-/obj/machinery/embedded_controller/radio/airlock/access_controller{
-	dir = 1;
-	id_tag = "xenohight_airlock";
-	name = "Xenobiology Access Console";
-	pixel_y = -24;
-	req_access = list("ACCESS_XENOBIO")
+/obj/machinery/airlock_sensor/airlock_exterior{
+	id_tag = "xenohight_airlock_exterior_sensor";
+	master_tag = "xenohight_airlock";
+	pixel_x = 1;
+	pixel_y = -24
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/storage2)
@@ -18815,6 +18808,9 @@
 /obj/random/maintenance,
 /obj/structure/railing/mapped{
 	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
@@ -20321,9 +20317,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
 "aKl" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
 /obj/structure/table/rack,
 /obj/random/maintenance,
 /obj/random/maintenance,
@@ -20707,15 +20700,15 @@
 /area/maintenance/seconddeck/aftport)
 "aKY" = (
 /obj/structure/catwalk,
-/obj/machinery/dummy_airlock_controller{
-	id_tag = "xenohight_airlock";
-	name = "Airlock Remote Terminal";
-	pixel_x = 6;
-	pixel_y = 20
-	},
 /obj/machinery/light_switch{
 	pixel_x = -6;
 	pixel_y = 28
+	},
+/obj/machinery/airlock_sensor/airlock_interior{
+	id_tag = "xenohight_airlock_sensor_inner";
+	master_tag = "xenohight_airlock";
+	pixel_x = 5;
+	pixel_y = 29
 	},
 /turf/simulated/open,
 /area/rnd/xenobiology/level1)
@@ -24807,10 +24800,6 @@
 /obj/machinery/light/spot{
 	dir = 4
 	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 23
-	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/level1)
 "aSN" = (
@@ -24822,16 +24811,17 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/dummy_airlock_controller{
-	id_tag = "xenohight_airlock";
-	name = "Airlock Remote Terminal";
-	pixel_y = 20
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 4
+	},
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
+	id_tag = "xenohight_airlock";
+	name = "Xenobiology Access Console";
+	pixel_y = 22;
+	req_access = list("ACCESS_XENOBIO")
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/entry)
@@ -26837,7 +26827,7 @@
 /area/rnd/xenobiology/level1)
 "aWj" = (
 /obj/random/closet,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftport)
 "aWk" = (
 /obj/structure/catwalk,
@@ -38706,9 +38696,7 @@
 /turf/simulated/wall/r_wall/hull,
 /area/maintenance/seconddeck/aftport)
 "rYM" = (
-/obj/structure/largecrate,
-/obj/random/maintenance,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftport)
 "rYQ" = (
 /obj/structure/catwalk,
@@ -38970,8 +38958,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/janitor)
 "sHz" = (
-/obj/machinery/light/small,
-/obj/random/closet,
+/obj/structure/largecrate,
+/obj/random/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "sIr" = (
@@ -40153,6 +40141,14 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/structure/table/rack,
+/obj/random/maintenance,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
@@ -61301,7 +61297,7 @@ ajB
 ais
 aHd
 rYM
-ayl
+amn
 aHn
 aVj
 aSJ
@@ -61502,8 +61498,8 @@ ajB
 ajB
 ais
 aHd
-bdV
-bdV
+rYM
+rYM
 aWj
 qhX
 bdV
@@ -61906,7 +61902,7 @@ ajB
 ajB
 ais
 aHd
-bdV
+aWj
 aVX
 aVX
 aVX
@@ -62108,7 +62104,7 @@ ajB
 ajB
 ais
 aHd
-rYM
+ayl
 aVX
 aLb
 aST

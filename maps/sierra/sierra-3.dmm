@@ -27656,12 +27656,6 @@
 	},
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/purple/border,
-/obj/effect/floor_decal/borderfloorwhite/corner2{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/purple/bordercorner2{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
@@ -27685,6 +27679,8 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
+/obj/effect/floor_decal/borderfloorwhite,
+/obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
 "aRI" = (
@@ -27700,16 +27696,16 @@
 	dir = 4
 	},
 /obj/machinery/light,
-/obj/effect/floor_decal/borderfloorwhite/corner2,
-/obj/effect/floor_decal/corner/purple/bordercorner2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite,
+/obj/effect/floor_decal/corner/purple/border,
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	dir = 9
 	},
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 9
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
@@ -34826,9 +34822,6 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/lounge/upper)
 "bfI" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
@@ -35168,8 +35161,12 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "bgt" = (
-/obj/structure/closet/crate/secure/loot,
-/turf/simulated/floor/plating,
+/obj/structure/ladder,
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/open,
 /area/maintenance/firstdeck/aftport)
 "bgu" = (
 /turf/simulated/wall/r_wall/hull,
@@ -41861,6 +41858,10 @@
 "uoW" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/medical/surgery/second)
+"upT" = (
+/obj/structure/closet/crate/secure/loot,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/aftport)
 "uuc" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -62958,7 +62959,7 @@ fFG
 aYT
 beS
 aLW
-aLW
+upT
 aLW
 aao
 aao
@@ -63158,9 +63159,9 @@ baD
 bbJ
 iSP
 aYT
-beS
+beT
 aLW
-bgt
+aLW
 aLW
 aLW
 aLW
@@ -63360,8 +63361,8 @@ baE
 aZs
 aZs
 aYT
-beT
-aLW
+beU
+bgt
 bgu
 bgu
 bgu
