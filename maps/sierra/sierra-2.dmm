@@ -18737,7 +18737,8 @@
 	id_tag = "xenohight_airlock_exterior_sensor";
 	master_tag = "xenohight_airlock";
 	pixel_x = 1;
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list("ACCESS_XENOBIO")
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/storage2)
@@ -20708,7 +20709,8 @@
 	id_tag = "xenohight_airlock_sensor_inner";
 	master_tag = "xenohight_airlock";
 	pixel_x = 5;
-	pixel_y = 29
+	pixel_y = 29;
+	req_access = list("ACCESS_XENOBIO")
 	},
 /turf/simulated/open,
 /area/rnd/xenobiology/level1)
