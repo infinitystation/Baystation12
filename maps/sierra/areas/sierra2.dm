@@ -22,6 +22,10 @@
 	name = "Second Deck - Maintenance"
 	icon_state = "maintcentral"
 
+/area/maintenance/seconddeck/xenobio
+	name = "Second Deck - Maintenance - Xenobio"
+	icon_state = "maintcentral"
+
 /area/maintenance/seconddeck/emergency
 	name = "Second Deck - Emergency Storage"
 	icon_state = "emergencystorage"
