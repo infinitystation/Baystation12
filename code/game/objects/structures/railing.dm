@@ -297,7 +297,10 @@
 		if(T.turf_is_crowded(user))
 			to_chat(user, "<span class='warning'>You can't climb there, the way is blocked.</span>")
 			return 0
-
+		if(density == 1)
+			to_chat(user, SPAN_WARNING("You can't climb there, the way is blocked."))//inf ещё изменения
+			return 0
+		//inf проверка на плотные объекты
 /obj/structure/railing/do_climb(var/mob/living/user)
 	. = ..()
 	if(.)
