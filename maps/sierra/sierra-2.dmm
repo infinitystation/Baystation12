@@ -17925,9 +17925,12 @@
 	pixel_y = -10
 	},
 /obj/item/device/camera,
-/obj/machinery/newscaster/security_unit{
-	pixel_x = 26;
-	pixel_y = 2
+/obj/item/storage/fancy/cigar,
+/obj/item/clothing/mask/smokable/cigarette/cigar/havana,
+/obj/item/flame/lighter/zippo,
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)

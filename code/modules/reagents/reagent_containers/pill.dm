@@ -375,6 +375,8 @@ obj/item/reagent_containers/pill/noexcutite/New()
 /obj/item/reagent_containers/pill/detergent/New()
 	..()
 	reagents.add_reagent(/datum/reagent/ammonia, 30)
+	reagents.add_reagent(/datum/reagent/paint, 2,5)
+	//inf красочка для чистки вещей
 
 /obj/item/reagent_containers/pill/pod
 	name = "master flavorpod item"
