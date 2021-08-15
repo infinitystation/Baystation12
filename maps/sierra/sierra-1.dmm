@@ -10945,6 +10945,9 @@
 /area/shuttle/petrov/cell2)
 "rh" = (
 /obj/machinery/artifact_scanpad,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
 "ri" = (
@@ -21943,6 +21946,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/airlock)
+"IV" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/shuttle/petrov/cell3)
 "IW" = (
 /obj/machinery/computer/air_control{
 	dir = 8;
@@ -29256,6 +29265,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/security/sierra/dockcheck)
+"Wi" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/random/hostile/xenobio,
+/turf/simulated/floor/reinforced,
+/area/rnd/xenobiology/level2)
 "Wl" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -55467,7 +55483,7 @@ Io
 PC
 Rd
 Nv
-MX
+Wi
 Nn
 QF
 NK
@@ -61916,7 +61932,7 @@ nv
 oQ
 wO
 qR
-rj
+IV
 rK
 sJ
 Is
