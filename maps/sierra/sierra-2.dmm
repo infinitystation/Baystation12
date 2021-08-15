@@ -2095,7 +2095,7 @@
 /area/maintenance/substation/seconddeck)
 "aeo" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 6
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
@@ -2251,10 +2251,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/galley/backroom)
 "aeJ" = (
-/obj/machinery/atmospherics/binary/pump/on{
-	dir = 1;
-	target_pressure = 15000
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "aeK" = (
@@ -2811,13 +2807,15 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "afA" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/black,
 /obj/machinery/door/blast/regular{
 	dir = 2;
 	id_tag = "ThrusterVents";
 	name = "Thruster Blast Door"
 	},
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "afB" = (
@@ -3274,10 +3272,14 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
 "agq" = (
+/obj/effect/floor_decal/techfloor,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 9
 	},
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "agr" = (
 /obj/structure/cable/green{
@@ -4028,6 +4030,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "ahD" = (
@@ -4783,6 +4786,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
 "aiS" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "aiT" = (
@@ -4796,10 +4802,10 @@
 	name = "thruster vent access";
 	req_access = newlist()
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/manifold/visible/black{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "aiU" = (
@@ -4934,7 +4940,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
@@ -7031,8 +7036,10 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 6
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "anh" = (
@@ -7043,12 +7050,18 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "ani" = (
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
@@ -7061,6 +7074,9 @@
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
@@ -9887,6 +9903,9 @@
 "asl" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
@@ -17912,12 +17931,9 @@
 	pixel_y = -10
 	},
 /obj/item/device/camera,
-/obj/item/storage/fancy/cigar,
-/obj/item/clothing/mask/smokable/cigarette/cigar/havana,
-/obj/item/flame/lighter/zippo,
-/obj/machinery/recharger/wallcharger{
-	dir = 8;
-	pixel_x = 22
+/obj/machinery/newscaster/security_unit{
+	pixel_x = 26;
+	pixel_y = 2
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)
@@ -19214,6 +19230,7 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/engine_room)
 "aIh" = (
@@ -19312,6 +19329,10 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/table/woodentable/walnut,
+/obj/item/flame/lighter/zippo,
+/obj/item/storage/fancy/cigar,
+/obj/item/clothing/mask/smokable/cigarette/cigar/havana,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)
 "aIr" = (
@@ -27526,6 +27547,10 @@
 	c_tag = "Engine - Starboard Thruster";
 	dir = 4
 	},
+/obj/machinery/atmospherics/binary/pump/on{
+	dir = 1;
+	target_pressure = 15000
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "aXv" = (
@@ -27596,6 +27621,9 @@
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -24
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
@@ -29573,9 +29601,9 @@
 /obj/structure/table/woodentable/walnut,
 /obj/item/storage/secure/briefcase/nukedisk,
 /obj/prefab/hand_teleporter,
-/obj/machinery/newscaster/security_unit{
-	pixel_x = 26;
-	pixel_y = 2
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)
@@ -39999,6 +40027,9 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "vdR" = (
@@ -67531,7 +67562,7 @@ aTh
 aax
 awW
 aNt
-afx
+aUd
 ajk
 ang
 anP
@@ -67732,8 +67763,8 @@ aVr
 bbA
 aVr
 aVr
-afx
-agq
+aUd
+aUd
 ajp
 anh
 lip
@@ -67934,7 +67965,7 @@ aWS
 aRl
 aZQ
 aNs
-afy
+aUd
 aiq
 ajq
 ani
@@ -68136,7 +68167,7 @@ aTT
 aTT
 aTT
 aOp
-afy
+aUd
 alG
 ajz
 anj
@@ -68337,8 +68368,8 @@ aVr
 aLK
 aSa
 aVf
-afx
-agq
+aUd
+aUd
 arw
 ajA
 vbC
@@ -68539,11 +68570,11 @@ aVr
 aVr
 aUd
 aUd
-afy
+aUd
 ags
 asl
 aIg
-ani
+agq
 aEv
 aoN
 aHq
