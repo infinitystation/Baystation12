@@ -4800,6 +4800,7 @@
 	req_access = newlist()
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "aiU" = (
@@ -17925,12 +17926,9 @@
 	pixel_y = -10
 	},
 /obj/item/device/camera,
-/obj/item/storage/fancy/cigar,
-/obj/item/clothing/mask/smokable/cigarette/cigar/havana,
-/obj/item/flame/lighter/zippo,
-/obj/machinery/recharger/wallcharger{
-	dir = 8;
-	pixel_x = 22
+/obj/machinery/newscaster/security_unit{
+	pixel_x = 26;
+	pixel_y = 2
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/captain)
