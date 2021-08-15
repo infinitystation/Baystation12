@@ -1,4 +1,0 @@
-author: polerno
-delete-after: true
-changes:
-  - bugfix: теперь перила не дают проходить сквозь стены
