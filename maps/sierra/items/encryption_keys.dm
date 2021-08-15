@@ -1,7 +1,7 @@
 /obj/item/device/encryptionkey/heads/sierra_captain
 	name = "captain's encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Security" = 1, "Engineering" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "Exploration" = 1)
+	channels = list("Command" = 1, "Security" = 1, "Engineering" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "Exploration" = 1, "Hailing" = 1)
 
 /obj/item/device/encryptionkey/sierra_roboticist
 	name = "roboticist's encryption key"
