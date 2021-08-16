@@ -124,10 +124,10 @@
 	req_access = list(access_mailsorting, access_cargo)
 
 /area/quartermaster/suplocker_room
-    name = "Third Derck - Supply - Locker room"
+	name = "Third Deck - Supply - Locker room"
 	icon_state = "quartoffice"
 	req_access = list(access_mailsorting, access_cargo)
-	
+
 /area/quartermaster/storage
 	name = "Third Deck - Supply - Warehouse"
 	icon_state = "quartstorage"
