@@ -9847,6 +9847,22 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/center)
+"ps" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/port)
 "pt" = (
 /obj/effect/wallframe_spawn/reinforced_phoron,
 /obj/machinery/door/firedoor,
@@ -13428,8 +13444,8 @@
 	},
 /obj/structure/disposalpipe/sortjunction/flipped{
 	dir = 1;
-	name = "Commissary";
-	sort_type = "Commissary"
+	name = "Deck Officer";
+	sort_type = "Deck Officer"
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
@@ -15018,6 +15034,10 @@
 	name = "east bump";
 	pixel_x = 24
 	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
 "xK" = (
@@ -16026,11 +16046,6 @@
 	},
 /obj/machinery/atmospherics/binary/pump/on{
 	target_pressure = 200
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
@@ -18725,6 +18740,11 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
 "DU" = (
@@ -19517,6 +19537,11 @@
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
@@ -28063,6 +28088,10 @@
 	pixel_y = -20
 	},
 /obj/structure/closet/radiation,
+/obj/machinery/camera/network/supply{
+	c_tag = "Supply Office - Desk";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
 "Tr" = (
@@ -28674,6 +28703,18 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/suplocker_room)
+"UN" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/port)
 "UR" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -30459,6 +30500,11 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
 /area/quartermaster/suplocker_room)
 "YM" = (
@@ -49270,7 +49316,7 @@ Xx
 Xx
 ZY
 Xx
-UC
+UN
 Ex
 JD
 Pa
@@ -49472,7 +49518,7 @@ ya
 Ak
 Eb
 Gu
-UC
+ps
 fY
 Sp
 Pa
