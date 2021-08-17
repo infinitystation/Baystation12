@@ -3910,7 +3910,6 @@
 #include "maps\random_ruins\space_ruins\space_ruins.dm"
 #include "maps\sierra\sierra.dm"
 #include "maps\sierra\sierra_define.dm"
-#include "maps\sierra\areas\sierra1.dm"
 #include "maps\torch\torch_define.dm"
 #include "maps\~mapsystem\inf_map_procs.dm"
 #include "maps\~mapsystem\map_preferences.dm"
