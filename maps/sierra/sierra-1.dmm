@@ -3376,7 +3376,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/supply{
-	c_tag = "Hangar Deck - Supply Drone";
+	c_tag = "Supply office - Supply locker room";
 	dir = 4
 	},
 /obj/structure/bed/chair/office/brown{
@@ -18576,11 +18576,6 @@
 	name = "Petrov Exterior Access";
 	req_access = list("ACCESS_PETROV")
 	},
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/techfloor/orange,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
@@ -28089,7 +28084,7 @@
 	},
 /obj/structure/closet/radiation,
 /obj/machinery/camera/network/supply{
-	c_tag = "Supply Office - Desk";
+	c_tag = "Supply Office - warehouse";
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
