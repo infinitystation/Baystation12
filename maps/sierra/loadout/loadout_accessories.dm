@@ -5,7 +5,10 @@
 /datum/gear/accessory/pilot_pin
 	display_name = "pilot's qualification pin"
 	path = /obj/item/clothing/accessory/solgov/specialty/pilot
-	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/adjutant, /datum/job/exploration_leader, /datum/job/explorer_pilot)
+	// allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/adjutant, /datum/job/exploration_leader, /datum/job/explorer_pilot)
+	// [INF]
+	allowed_skills = list(SKILL_PILOT = SKILL_EXPERT)
+	// [/INF] by hacso
 
 /datum/gear/accessory/armband_security
 	allowed_roles = SECURITY_ROLES
