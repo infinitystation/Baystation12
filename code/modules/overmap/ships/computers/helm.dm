@@ -310,7 +310,6 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 	name = "navigation console"
 	icon_keyboard = "generic_key"
 	icon_screen = "helm"
-	silicon_restriction = STATUS_UPDATE
 	machine_name = "navigation console"
 	machine_desc = "Used to view a sensor-assisted readout of the current sector and its surrounding areas."
 
@@ -324,9 +323,6 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 
 	var/turf/T = get_turf(linked)
 	var/obj/effect/overmap/visitable/sector/current_sector = locate() in T
-
-	var/mob/living/silicon/silicon = user
-	data["viewing_silicon"] = ismachinerestricted(silicon)
 
 	data["sector"] = current_sector ? current_sector.name : "Deep Space"
 	data["sector_info"] = current_sector ? current_sector.desc : "Not Available"
