@@ -72,3 +72,8 @@
 	flags = GEAR_HAS_SUBTYPE_SELECTION
 	custom_setup_proc = /obj/item/passport/proc/set_info
 	cost = 0
+
+/datum/gear/utility/holster_belt
+	display_name = "holser belt"
+	path = /obj/item/storage/belt/holster/general
+	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, /datum/job/iaa, /datum/job/adjutant)

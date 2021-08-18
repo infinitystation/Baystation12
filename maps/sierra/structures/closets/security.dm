@@ -183,6 +183,8 @@
 		/obj/item/device/flashlight/maglight,
 		/obj/item/device/holowarrant,
 		/obj/item/device/hailer,
+		/obj/item/device/radio/headset/headset_sec,
+		/obj/item/device/radio/headset/headset_sec/alt,
 		/obj/item/taperoll/police,
 		/obj/item/storage/belt/holster/security,
 		/obj/item/reagent_containers/spray/pepper,

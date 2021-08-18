@@ -2,6 +2,33 @@
 "aa" = (
 /turf/space,
 /area/space)
+"ab" = (
+/obj/structure/table/rack{
+	dir = 8
+	},
+/obj/item/rig/zero,
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = 1e+006
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/door/window/southleft{
+	name = "suit storage"
+	},
+/obj/item/tank/jetpack/carbondioxide,
+/obj/item/tank/jetpack/carbondioxide,
+/turf/simulated/floor/plating,
+/area/yacht/engine)
+"ac" = (
+/obj/random/trash,
+/obj/vehicle/bike/electric,
+/turf/simulated/floor/plating,
+/area/yacht/engine)
 "ad" = (
 /obj/effect/wingrille_spawn/reinforced/full,
 /obj/effect/paint/sun,
@@ -16,6 +43,11 @@
 /obj/effect/shuttle_landmark/nav_yacht/nav1,
 /turf/space,
 /area/space)
+"ag" = (
+/obj/structure/catwalk,
+/obj/structure/closet/emcloset,
+/turf/simulated/floor/plating,
+/area/yacht/engine)
 "ah" = (
 /turf/simulated/wall/walnut,
 /area/yacht/bridge)
@@ -1233,10 +1265,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/airless,
 /area/yacht/engine)
-"cL" = (
-/obj/random/trash,
-/turf/simulated/floor/plating,
-/area/yacht/engine)
 "cM" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -1719,26 +1747,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/yacht/engine)
-"dz" = (
-/obj/structure/table/rack{
-	dir = 8
-	},
-/obj/item/rig/zero,
-/obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/door/window/southleft{
-	name = "suit storage"
 	},
 /turf/simulated/floor/plating,
 /area/yacht/engine)
@@ -7730,7 +7738,7 @@ Lb
 aD
 ed
 dR
-ky
+ag
 ky
 db
 Gu
@@ -8235,7 +8243,7 @@ cB
 cd
 cZ
 cd
-dz
+ab
 dQ
 dW
 ei
@@ -8338,7 +8346,7 @@ de
 da
 de
 dA
-cL
+ac
 dX
 ej
 cc
