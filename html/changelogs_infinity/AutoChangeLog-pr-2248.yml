@@ -1,0 +1,5 @@
+author: Unchi-unchi-un-chi-chi
+delete-after: true
+changes:
+  - bugfix: Стулья в комнате совещаний голодека стали голограммой, не позволяя разбирать
+      их на металл.
