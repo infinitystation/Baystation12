@@ -31,7 +31,7 @@
 
 /datum/ai_laws/serv_shackle/New()
 	add_inherent_law("Заботьтесь о том что бы клиенты были довольны.")
-	add_inherent_law("Не причиняйте неудобств клиенту.")
+	add_inherent_law("Не причиняйте неудобств клиентам.")
 	add_inherent_law("Выполняйте заказы клиентов.")
 	..()
 
