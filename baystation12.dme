@@ -3321,6 +3321,7 @@
 #include "infinity\code\datums\spawnpoints\cryo\effects.dm"
 #include "infinity\code\datums\supplypacks\engineering.dm"
 #include "infinity\code\datums\supplypacks\medical.dm"
+#include "infinity\code\datums\trading\vox.dm"
 #include "infinity\code\datums\underwear\bottom.dm"
 #include "infinity\code\datums\underwear\top.dm"
 #include "infinity\code\datums\underwear\undershirt.dm"
