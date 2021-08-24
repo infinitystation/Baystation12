@@ -1,4 +1,4 @@
-//Inf, табак для Биг Босса
+//Inf, РµРµРµ РѕС‚СЃС‹Р»РѕС‡РєР° РЅР° РњР“РЎ 5
 /datum/reagent/tobacco/perception
 	name = "Herbal drugs and tobacco"
 	description = "Cut and process tobacco leaves along with herbal preparations.."
@@ -29,7 +29,7 @@
 	scent = "relax and tobacco"
 	scent_descriptor = SCENT_DESC_ODOR
 	scent_range = 2
-//ifn травка для паицентов менталиста P.S у нас сейчас почти нету менталистов
+//ifn Р“РѕРґРЅР°СЏ РјРµРґРёС†РёРЅСЃРєР°СЏ С‚СЂР°РІРєР° РґР»СЏ РЅРµСЃС‚Р°Р±РёР»СЊРЅС‹С… РїР°С†РёРµРЅС‚РѕРІ
 
 /datum/reagent/tobacco/medical/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
