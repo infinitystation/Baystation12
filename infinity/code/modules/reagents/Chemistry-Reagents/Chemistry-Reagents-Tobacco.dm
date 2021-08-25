@@ -1,4 +1,4 @@
-//Inf, табак для Биг Босса
+//Inf, СЃРЅРёР·Сѓ РѕС‚СЃС‹Р»РєР° РІ СЃРёРіР°СЂРµ РёР· РњР“РЎ 5
 /datum/reagent/tobacco/perception
 	name = "Herbal drugs and tobacco"
 	description = "Cut and process tobacco leaves along with herbal preparations.."
@@ -29,7 +29,7 @@
 	scent = "relax and tobacco"
 	scent_descriptor = SCENT_DESC_ODOR
 	scent_range = 2
-//ifn травка для паицентов менталиста P.S у нас сейчас почти нету менталистов
+//ifn РјРµРґРёС†РёРЅСЃРєР°СЏ С‚СЂР°РІРєР° РґР»СЏ РїР°С†РёРµРЅС‚РѕРІ РјРµРЅС‚Р°Р»РёСЃС‚Р°
 
 /datum/reagent/tobacco/medical/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -48,6 +48,7 @@ datum/reagent/tobacco/strong
 	scent_descriptor = SCENT_DESC_ODOR
 	scent_range = 10
 //inf Boss, try remember basic of CQC
+
 /datum/reagent/tobacco/strong/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
 	M.reagents.add_reagent(/datum/reagent/nicotine, 10)
