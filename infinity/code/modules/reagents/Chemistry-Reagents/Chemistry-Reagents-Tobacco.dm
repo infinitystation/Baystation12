@@ -19,7 +19,7 @@
 
 
 /datum/reagent/tobacco/medical
-	name = "Medical tobaccto"
+	name = "Medical tobacco"
 	description = "medicinal tobacco used for relaxation and concentration."
 	taste_description = "Relax, concetration and tobacco"
 	reagent_state = SOLID
