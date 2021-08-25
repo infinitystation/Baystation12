@@ -13,8 +13,8 @@
 
 /datum/reagent/tobacco/perception/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
-	M.reagents.add_reagent(/datum/reagent/nicotine, 2.5)
-	M.reagents.add_reagent(/datum/reagent/bicaridine, 2.5)
+	M.reagents.add_reagent(/datum/reagent/nicotine, 0.15)
+	M.reagents.add_reagent(/datum/reagent/bicaridine, 0.15)
 	M.add_chemical_effect(CE_PAINKILLER, 5)
 
 
@@ -33,8 +33,8 @@
 
 /datum/reagent/tobacco/medical/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
-	M.reagents.add_reagent(/datum/reagent/paroxetine, 0.6)
-	M.reagents.add_reagent(/datum/reagent/nicotine, 0.2)
+	M.reagents.add_reagent(/datum/reagent/paroxetine, 0.06)
+	M.reagents.add_reagent(/datum/reagent/nicotine, 0.02)
 
 datum/reagent/tobacco/strong
 	name = "Strong tobacco"
@@ -80,7 +80,7 @@ datum/reagent/tobacco/honey
 
 datum/reagent/tobacco/honey/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
-	M.reagents.add_reagent(/datum/reagent/nicotine, 1)
+	M.reagents.add_reagent(/datum/reagent/nicotine, 0.05)
 
 datum/reagent/tobacco/coffee
 	name = "tobacco with coffee"
@@ -96,4 +96,4 @@ datum/reagent/tobacco/coffee
 
 datum/reagent/tobacco/coffee/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
-	M.reagents.add_reagent(/datum/reagent/nicotine, 1)
+	M.reagents.add_reagent(/datum/reagent/nicotine, 0.05)
