@@ -169,7 +169,7 @@ var/list/admin_verbs_server = list(
 	// /client/proc/check_customitem_activity,
 	/client/proc/update_server,
 	/client/proc/cmd_toggle_admin_help,
-	/client/proc/observe_delay, 
+	/client/proc/observe_delay,
 	/datum/admins/proc/toggleevent,
 	/client/proc/cmd_set_station_date,
 //[/INF],
@@ -640,6 +640,7 @@ var/list/admin_verbs_xeno = list(
 		usr.PushClickHandler(/datum/click_handler/build_mode)
 	SSstatistics.add_field_details("admin_verb","TBMS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_and_message_admins("switched build mode for himself.")
+	send2adminirc("[get_key(src)] switched build mode for himself.")  // INF
 
 /client/proc/object_talk(var/msg as text) // -- TLE
 	set category = "Special Verbs"
