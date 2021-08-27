@@ -199,6 +199,7 @@
 		if(href_list["set_psi_faculty"] && href_list["set_psi_faculty_rank"])
 			current.set_psi_rank(href_list["set_psi_faculty"], text2num(href_list["set_psi_faculty_rank"]))
 			log_and_message_admins("set [key_name(current)]'s [href_list["set_psi_faculty"]] faculty to [text2num(href_list["set_psi_faculty_rank"])].")
+			send2adminirc(":: SET PSI FACULTY :: [key_name_admin(usr)] set [key_name(current)]'s [href_list["set_psi_faculty"]] faculty to [text2num(href_list["set_psi_faculty_rank"])].")  // INF
 			var/datum/admins/admin = GLOB.admins[usr.key]
 			if(istype(admin)) admin.show_player_panel(current)
 			return TRUE
@@ -208,6 +209,7 @@
 		if(antag)
 			if(antag.add_antagonist(src, 1, 1, 0, 1, 1)) // Ignore equipment and role type for this.
 				log_admin("[key_name_admin(usr)] made [key_name(src)] into a [antag.role_text].")
+				send2adminirc(":: ADD ANTAGONIST :: [key_name_admin(usr)] made [key_name(src)] into a [antag.role_text].")  // INF
 			else
 				to_chat(usr, "<span class='warning'>[src] could not be made into a [antag.role_text]!</span>")
 

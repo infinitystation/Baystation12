@@ -913,6 +913,7 @@ var/global/floorIsLava = 0
 		SSticker.forced_end = TRUE
 		log_admin("[key_name(usr)] инициировал завершение раунда.")
 		to_world("<span class='danger'>Раунд завершен!</span> <span class='notice'>Инициировано [usr.key].</span>")
+		send2adminirc(":: END ROUND :: [key_name(usr)] инициировал завершение раунда.") // INF
 		SSstatistics.add_field("admin_verb","ER") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	else
 		to_chat(usr, FONT_LARGE(SPAN_WARNING("You cannot end the round before it's begun!")))

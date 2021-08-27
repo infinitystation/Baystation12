@@ -27,6 +27,10 @@
 	name = "Xenobiology Access"
 	icon_state = "xeno_lab"
 
+/area/rnd/xenobiology/storage2
+	name = "Xenobiology Access"
+	icon_state = "xeno_lab"
+
 /area/rnd/xenobiology/level1
 	name = "Xenobiology Level One"
 	icon_state = "xeno_lab"
