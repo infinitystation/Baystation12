@@ -18,14 +18,6 @@
 	desc = "Randomly selects a ballon for you!"
 	path = /obj/item/toy/balloon
 
-//[INF]
-/datum/uplink_item/item/badassery/tobacco
-	name = "Strong tobacco"
-	desc = "A very strong tobacco for cool agents! The filter and paper for cigarettes are not included in the package."
-	item_cost = 4
-	path = /obj/item/tobacco/strong
-//[/INF]
-
 /datum/uplink_item/item/badassery/money_cannon
 	name = "Modified Money Cannon"
 	item_cost = 48

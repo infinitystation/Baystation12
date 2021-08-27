@@ -110,44 +110,6 @@
 	startswith = list(/obj/item/reagent_containers/food/snacks/grown/dried_tobacco/fine = 8)
 	icon_state = "rollfine"
 
-//[INF]
-/obj/item/storage/chewables/rollable/perception
-	name = "bag of perception tobacco"
-	desc = "Cut and process tobacco leaves along with herbal preparations."
-	startswith = list(/obj/item/tobacco/perception = 8)
-	icon_state = "rollfine"
-
-/obj/item/storage/chewables/rollable/medical
-	name = "bag of medical tobacco"
-	desc = "Medicinal tobacco used for relaxation and concentration."
-	startswith = list(/obj/item/tobacco/medical = 8)
-	icon_state = "rollfine"
-
-/obj/item/storage/chewables/rollable/strong
-	name = "bag of strong tobacco"
-	desc = "Strong tobacco for strong men... or women, perhaps."
-	startswith = list(/obj/item/tobacco/strong = 8)
-	icon_state = "rollfine"
-
-/obj/item/storage/chewables/rollable/female
-	name = "bag of female tobacco"
-	desc = "Female tobacco for good lady's."
-	startswith = list(/obj/item/tobacco/female = 8)
-	icon_state = "rollfine"
-
-/obj/item/storage/chewables/rollable/honey
-	name = "bag of honey tobacco"
-	desc = "Tobacco that has been processed in honey."
-	startswith = list(/obj/item/tobacco/honey = 8)
-	icon_state = "rollfine"
-
-/obj/item/storage/chewables/rollable/coffee
-	name = "bag of coffee tobacco"
-	desc = "Tobacco leaves that have been mixed with coffee powder."
-	startswith = list(/obj/item/tobacco/coffee = 8)
-	icon_state = "rollfine"
-//[/INF]
-
 //chewing tobacco
 /obj/item/storage/chewables/tobacco
 	name = "tin of Lenny's brand chewing tobacco"

@@ -77,3 +77,45 @@
 			qdel(src)
 			return
 	..()
+
+/datum/uplink_item/item/badassery/tobacco
+	name = "Strong tobacco"
+	desc = "A very strong tobacco for cool agents! The filter and paper for cigarettes are not included in the package."
+	item_cost = 4
+	path = /obj/item/tobacco/strong
+
+/obj/item/storage/chewables/rollable/perception
+	name = "bag of perception tobacco"
+	desc = "Cut and process tobacco leaves along with herbal preparations."
+	startswith = list(/obj/item/tobacco/perception = 8)
+	icon_state = "rollfine"
+
+/obj/item/storage/chewables/rollable/medical
+	name = "bag of medical tobacco"
+	desc = "Medicinal tobacco used for relaxation and concentration."
+	startswith = list(/obj/item/tobacco/medical = 8)
+	icon_state = "rollfine"
+
+/obj/item/storage/chewables/rollable/strong
+	name = "bag of strong tobacco"
+	desc = "Strong tobacco for strong men... or women, perhaps."
+	startswith = list(/obj/item/tobacco/strong = 8)
+	icon_state = "rollfine"
+
+/obj/item/storage/chewables/rollable/female
+	name = "bag of female tobacco"
+	desc = "Female tobacco for good lady's."
+	startswith = list(/obj/item/tobacco/female = 8)
+	icon_state = "rollfine"
+
+/obj/item/storage/chewables/rollable/honey
+	name = "bag of honey tobacco"
+	desc = "Tobacco that has been processed in honey."
+	startswith = list(/obj/item/tobacco/honey = 8)
+	icon_state = "rollfine"
+
+/obj/item/storage/chewables/rollable/coffee
+	name = "bag of coffee tobacco"
+	desc = "Tobacco leaves that have been mixed with coffee powder."
+	startswith = list(/obj/item/tobacco/coffee = 8)
+	icon_state = "rollfine"
