@@ -78,12 +78,6 @@
 			return
 	..()
 
-/datum/uplink_item/item/badassery/tobacco
-	name = "Strong tobacco"
-	desc = "A very strong tobacco for cool agents! The filter and paper for cigarettes are not included in the package."
-	item_cost = 4
-	path = /obj/item/tobacco/strong
-
 /obj/item/storage/chewables/rollable/perception
 	name = "bag of perception tobacco"
 	desc = "Cut and process tobacco leaves along with herbal preparations."

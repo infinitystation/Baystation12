@@ -74,3 +74,9 @@
 	item_cost = DEFAULT_TELECRYSTAL_AMOUNT * 4
 	antag_roles = list(MODE_MERCENARY)
 	path = /mob/living/exosuit/premade/combat/merc
+
+/datum/uplink_item/item/badassery/tobacco
+	name = "Strong tobacco"
+	desc = "A very strong tobacco for cool agents! The filter and paper for cigarettes are not included in the package."
+	item_cost = 4
+	path = /obj/item/tobacco/strong
