@@ -30,6 +30,7 @@ var/list/mob_hat_cache = list()
 	universal_understand = TRUE
 	gender = NEUTER
 	pass_flags = PASS_FLAG_TABLE
+	faction = "silicon"
 	braintype = "Drone"
 	lawupdate = FALSE
 	density = FALSE
@@ -37,7 +38,7 @@ var/list/mob_hat_cache = list()
 	integrated_light_max_bright = 0.5
 	local_transmit = 1
 	possession_candidate = 1
-	speed = 2
+	speed = 0
 
 	can_pull_size = ITEM_SIZE_NORMAL
 	can_pull_mobs = MOB_PULL_SMALLER

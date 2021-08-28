@@ -275,7 +275,8 @@
 	icon_state = "revolver"
 
 /obj/random/projectile/spawn_choices()
-	return list(/obj/item/gun/projectile/heavysniper/boltaction = 4,
+	return list(/obj/item/gun/projectile/automatic/battlerifle = 4,
+				/obj/item/gun/projectile/automatic/semistrip = 4,
 				/obj/item/gun/projectile/shotgun/pump = 3,
 				/obj/item/gun/projectile/automatic/merc_smg = 2,
 				/obj/item/gun/projectile/automatic/assault_rifle = 2,
@@ -318,6 +319,7 @@
 	return list(/obj/item/storage/box/ammo/beanbags = 6,
 				/obj/item/storage/box/ammo/shotgunammo = 2,
 				/obj/item/storage/box/ammo/shotgunshells = 4,
+				/obj/item/storage/box/ammo/flechetteshells = 2,
 				/obj/item/storage/box/ammo/stunshells = 1,
 				/obj/item/ammo_magazine/pistol = 2,
 				/obj/item/ammo_magazine/smg_top = 2,
@@ -433,8 +435,8 @@ obj/random/closet //A couple of random closets to spice up maint
 	icon_state = "base"
 	var/vermin_chance = 5
 	var/list/locker_vermin = list(
-		/mob/living/simple_animal/mouse,
-		/mob/living/simple_animal/opossum,
+		/mob/living/simple_animal/friendly/mouse,
+		/mob/living/simple_animal/friendly/opossum,
 		/mob/living/carbon/alien/diona
 	)
 

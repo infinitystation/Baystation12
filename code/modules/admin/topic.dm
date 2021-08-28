@@ -214,9 +214,11 @@
 			if("1")
 				if (evacuation_controller.call_evacuation(usr, TRUE))
 					log_and_message_admins("called an evacuation.")
+					send2adminirc(":: CALL SHUTTLE :: [get_key(usr)] вызвал эвакуацию.")  // INF
 			if("2")
 				if (evacuation_controller.cancel_evacuation())
 					log_and_message_admins("cancelled an evacuation.")
+					send2adminirc(":: CALL SHUTTLE :: [get_key(usr)] отменил эвакуацию.")  // INF
 
 		href_list["secretsadmin"] = "check_antagonist"
 
@@ -225,6 +227,7 @@
 
 		SSticker.delay_end = !SSticker.delay_end
 		log_and_message_admins("[SSticker.delay_end ? "delayed the round end" : "has made the round end normally"].")
+		send2adminirc(":: DELAY ROUND END :: [get_key(usr)] [SSticker.delay_end ? "приостановил конец раунда." : "возобновил конец раунда."].")
 		href_list["secretsadmin"] = "check_antagonist"
 
 	else if(href_list["simplemake"])
@@ -250,10 +253,10 @@
 			if("slime")				M.change_mob_type( /mob/living/carbon/slime , null, null, delmob )
 			if("monkey")			M.change_mob_type( /mob/living/carbon/human/monkey , null, null, delmob )
 			if("robot")				M.change_mob_type( /mob/living/silicon/robot , null, null, delmob )
-			if("cat")				M.change_mob_type( /mob/living/simple_animal/cat , null, null, delmob )
-			if("runtime")			M.change_mob_type( /mob/living/simple_animal/cat/fluff/Runtime , null, null, delmob )
-			if("corgi")				M.change_mob_type( /mob/living/simple_animal/corgi , null, null, delmob )
-			if("ian")				M.change_mob_type( /mob/living/simple_animal/corgi/Ian , null, null, delmob )
+			if("cat")				M.change_mob_type( /mob/living/simple_animal/friendly/cat , null, null, delmob )
+			if("runtime")			M.change_mob_type( /mob/living/simple_animal/friendly/cat/fluff/Runtime , null, null, delmob )
+			if("corgi")				M.change_mob_type( /mob/living/simple_animal/friendly/corgi , null, null, delmob )
+			if("ian")				M.change_mob_type( /mob/living/simple_animal/friendly/corgi/Ian , null, null, delmob )
 			if("crab")				M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
 			if("coffee")			M.change_mob_type( /mob/living/simple_animal/crab/Coffee , null, null, delmob )
 			if("parrot")			M.change_mob_type( /mob/living/simple_animal/hostile/retaliate/parrot , null, null, delmob )
@@ -1259,6 +1262,7 @@
 		if(config.allow_admin_rev)
 			L.revive()
 			log_and_message_admins("healed / Revived [key_name(L)]")
+			send2adminirc(":: REJUVINATE :: [get_key(usr)] вылечил / воскресил [get_key(L)]") // INF
 		else
 			to_chat(usr, "Admin Rejuvinates have been disabled")
 
@@ -1311,6 +1315,7 @@
 			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human")
 
 		log_and_message_admins("attempting to zombify [key_name_admin(H)]")
+		send2adminirc(":: MAKEZOMBIE :: [get_key(usr)] пытается превратить в зомби [get_key(H)]") // INF
 		H.zombify()
 
 	else if(href_list["togmutate"])

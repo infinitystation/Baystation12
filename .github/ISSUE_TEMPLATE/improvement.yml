@@ -1,0 +1,17 @@
+name: Улучшение
+description: Предложить идею по улучшению сборки
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Улучшение
+      description: Четко и понятно опишите в чем заключается проблема.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Решение
+      description: Опишите ваше решение проблемы.
+    validations:
+      required: true

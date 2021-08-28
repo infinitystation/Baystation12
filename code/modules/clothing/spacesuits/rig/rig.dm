@@ -105,6 +105,7 @@
 //inf ahead
 	vision_restriction = 2 //rigs can hold your broken bones, have modules and moremoremore
 	offline_vision_restriction = 3
+	var/custom = FALSE     // Для кастомных подтипов Ригов ~ SidVeld
 //ind end
 
 /obj/item/rig/get_cell()
@@ -174,7 +175,15 @@
 		piece.canremove = 0
 		piece.SetName("[suit_type] [initial(piece.name)]")
 		piece.desc = "It seems to be part of a [src.name]."
+/* [ORIG]
 		piece.icon_state = "[initial(icon_state)]"
+[/ORIG] */
+// [INF]
+//		Если риг не кастомный подтип -> мы задаём icon_state части рига по icon_state самого рига
+// 		В ином случае части рига будут использовать захардкоженные icon_state ~ SidVeld
+		if (!custom)
+			piece.icon_state = "[initial(icon_state)]"
+// [/INF]
 		piece.min_cold_protection_temperature = min_cold_protection_temperature
 		piece.max_heat_protection_temperature = max_heat_protection_temperature
 		if(piece.siemens_coefficient > siemens_coefficient) //So that insulated gloves keep their insulation.
@@ -614,7 +623,7 @@
 	return ret
 
 /obj/item/rig/get_req_access()
-	if(!security_check_enabled)
+	if(!security_check_enabled || !locked)
 		return list()
 	return ..()
 

@@ -77,12 +77,30 @@
 
 /obj/item/clothing/head/helmet/space/proc/update_tint()
 	if(tinted)
+/* [ORIG]
 		icon_state = "[initial(icon_state)]_dark"
+		item_state = "[initial(item_state)]_dark"
+[/ORIG] */
+
+// [INF] BS12 orig variant breaks helmet's sprites ~ SidVeld
+		icon_state = "[icon_state]_dark"
+		item_state = "[item_state]_dark"
+// [/INF]
+
 		flash_protection = FLASH_PROTECTION_MAJOR
 		flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 		tint = TINT_MODERATE
 	else
+/* [ORIG]
 		icon_state = initial(icon_state)
+		item_state = initial(item_state)
+[/ORIG] */
+
+// [INF] BS12 orig variant breaks helmet's sprites ~ SidVeld
+		icon_state = replacetext(icon_state, "_dark", "")
+		item_state = replacetext(item_state, "_dark", "")
+// [/INF]
+
 		flash_protection = FLASH_PROTECTION_NONE
 		flags_inv = HIDEEARS|BLOCKHAIR
 		tint = TINT_NONE

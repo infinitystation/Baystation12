@@ -149,7 +149,7 @@
 	products = list(/obj/item/airlock_electronics = 4,/obj/item/airlock_electronics/secure = 2,
 					/obj/item/module/power_control = 4,
 					/obj/item/airalarm_electronics = 4, /obj/item/firealarm_electronics = 4,
-					/obj/item/cell = 4, /obj/item/light/tube = 10, /obj/item/light/bulb = 10, /obj/item/light/tube/large = 4,
+					/obj/item/cell/standard = 4, /obj/item/light/tube = 10, /obj/item/light/bulb = 10, /obj/item/light/tube/large = 4,
 					/obj/item/stock_parts/scanning_module = 5,/obj/item/stock_parts/micro_laser = 5,
 					/obj/item/stock_parts/matter_bin = 5,/obj/item/stock_parts/manipulator = 5,
 					/obj/item/stock_parts/console_screen = 5,/obj/item/stock_parts/capacitor = 5)
@@ -159,7 +159,7 @@
 /obj/machinery/vending/parts/research
 	name = "Wolfor-Spares Vendor"
 	req_access = list(access_research)
-	products = list(/obj/item/cell = 5,
+	products = list(/obj/item/cell/standard = 5,
 					/obj/item/stock_parts/capacitor = 8,/obj/item/stock_parts/scanning_module = 8,
 					/obj/item/stock_parts/micro_laser = 8,/obj/item/stock_parts/matter_bin = 8,
 					/obj/item/stock_parts/manipulator = 8,/obj/item/stock_parts/console_screen = 8)
@@ -168,7 +168,7 @@
 /obj/machinery/vending/parts/public
 	name = "Wolfor-Spares Vendor"
 	req_access = list()
-	products = list(/obj/item/cell = 4,
+	products = list(/obj/item/cell/standard = 4,
 					/obj/item/stock_parts/capacitor = 4,/obj/item/stock_parts/scanning_module = 4,
 					/obj/item/stock_parts/micro_laser = 4,/obj/item/stock_parts/matter_bin = 4,
 					/obj/item/stock_parts/manipulator = 4,/obj/item/stock_parts/console_screen = 4)
@@ -263,3 +263,25 @@
 					/obj/item/clothing/under/stripper/mankini = 1)
 
 	contraband = list()
+
+/obj/machinery/vending/engivend
+	products = list(
+		/obj/item/device/flashlight = 3,
+		/obj/item/device/multitool = 3,
+		/obj/item/device/multitool/multimeter = 3,
+		/obj/item/device/geiger = 3,
+		/obj/item/device/scanner/gas = 3,
+		/obj/item/device/t_scanner = 3,
+		/obj/item/device/cable_painter = 2,
+		/obj/item/rpd = 2,
+		/obj/item/clamp = 4,
+		/obj/item/tape_roll = 6,
+		/obj/item/device/paint_sprayer = 2,
+		/obj/item/grenade/chem_grenade/metalfoam = 5
+	)
+	contraband = list(/obj/item/cell/potato = 5)
+	premium = list(
+		/obj/item/combitool = 1,
+		/obj/item/wrench/power = 1,
+		/obj/item/wirecutters/power = 1
+	)

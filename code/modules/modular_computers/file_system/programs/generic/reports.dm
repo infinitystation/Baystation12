@@ -5,6 +5,8 @@
 	filename = "repview"
 	filedesc = "Report Editor"
 	nanomodule_path = /datum/nano_module/program/reports
+	program_icon_state = "generic"
+	program_key_state = "generic_key"
 	extended_desc = "A general paperwork viewing and editing utility."
 	size = 2
 	available_on_ntnet = TRUE

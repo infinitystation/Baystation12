@@ -47,6 +47,7 @@
 		/obj/item/gun/energy/gun/small/secure,
 		/obj/item/storage/secure/briefcase,
 		/obj/item/clothing/shoes/laceup,
+		/obj/item/storage/belt/holster/general,
 		/obj/item/clothing/under/rank/internalaffairs,
 		/obj/item/clothing/suit/storage/toggle/suit/black,
 		/obj/item/clothing/glasses/sunglasses/big,
@@ -91,4 +92,3 @@
 	name = "present crate"
 	desc = "Wow, a present!"
 	closet_appearance = /decl/closet_appearance/crate/present
-

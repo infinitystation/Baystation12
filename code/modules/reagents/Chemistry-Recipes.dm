@@ -991,13 +991,13 @@
 	result_amount = 1
 	required = /obj/item/slime_extract/gold
 	var/list/possible_mobs = list(
-							/mob/living/simple_animal/cat,
-							/mob/living/simple_animal/cat/kitten,
-							/mob/living/simple_animal/corgi,
-							/mob/living/simple_animal/corgi/puppy,
-							/mob/living/simple_animal/cow,
-							/mob/living/simple_animal/chick,
-							/mob/living/simple_animal/chicken
+							/mob/living/simple_animal/friendly/cat,
+							/mob/living/simple_animal/friendly/cat/kitten,
+							/mob/living/simple_animal/friendly/corgi,
+							/mob/living/simple_animal/friendly/corgi/puppy,
+							/mob/living/simple_animal/friendly/cow,
+							/mob/living/simple_animal/friendly/chick,
+							/mob/living/simple_animal/friendly/chicken
 							)
 
 /datum/chemical_reaction/slime/crit/on_reaction(var/datum/reagents/holder)
@@ -2629,7 +2629,7 @@
 /datum/chemical_reaction/alexander
 	name = "Alexander"
 	result = /datum/reagent/ethanol/alexander
-	required_reagents = list(/datum/reagent/ethanol/creme_de_menthe = 1, /datum/reagent/ethanol/cognac = 1, /datum/reagent/drink/milk/cream = 1)
+	required_reagents = list(/datum/reagent/ethanol/creme_de_cacao = 1, /datum/reagent/ethanol/cognac = 1, /datum/reagent/drink/milk/cream = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/between_the_sheets
@@ -2785,8 +2785,8 @@
 /datum/chemical_reaction/orange_soda
 	name = "Fizzy Orange"
 	result = /datum/reagent/drink/orange_soda
-	required_reagents = list(/datum/reagent/drink/sodawater = 2, /datum/reagent/drink/juice/orange = 1)
-	result_amount = 3
+	required_reagents = list(/datum/reagent/drink/sodawater = 2, /datum/reagent/drink/juice/orange = 1, /datum/reagent/sugar = 1)
+	result_amount = 4
 	mix_message = "The liquid blends together smoothly"
 
 /datum/chemical_reaction/pork_soda
@@ -2971,7 +2971,7 @@
 /datum/chemical_reaction/frappe
 	name = "Iced Frappe"
 	result = /datum/reagent/drink/coffee/iced/frappe
-	required_reagents = list(/datum/reagent/drink/coffee = 2, /datum/reagent/drink/ice = 1, /datum/reagent/sugar = 1)
+	required_reagents = list(/datum/reagent/drink/coffee/icecoffee = 3, /datum/reagent/sugar = 1)
 	result_amount = 4
 	minimum_temperature = (0 CELSIUS) - 100
 	maximum_temperature = 0 CELSIUS

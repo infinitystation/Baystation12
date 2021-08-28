@@ -5,6 +5,8 @@
 #define LS_MODE_MANUAL		"Ручной"
 #define LS_MODE_ONLY_OFF	"Только выключать"
 #define LS_MODE_FULL_AUTO	"Полная автоматика"
+#define LS_ALL_SMART_MODES	list(LS_MODE_MANUAL, LS_MODE_ONLY_OFF, LS_MODE_FULL_AUTO)
+#define LS_SMART_MOBS		list(/mob/living/carbon/human, /mob/living/exosuit)
 /obj/machinery/light_switch
 	var/smart = LS_MODE_FULL_AUTO
 
@@ -23,9 +25,9 @@
 	// Events writes into force - areas... But who cares
 
 	// Furniture, simple_animals - doesn't care
-	if(!(ishuman(detected) || istype(detected, /mob/living/exosuit)) && force != TRUE)
+	if(!(is_type_in_list(detected, LS_SMART_MOBS)) && force != TRUE)
 		return
-	if(!(smart in list(LS_MODE_MANUAL, LS_MODE_ONLY_OFF, LS_MODE_FULL_AUTO)))
+	if(!(smart in LS_ALL_SMART_MODES))
 		smart = LS_MODE_FULL_AUTO
 	// Regular manual lightswitch
 	if(smart == LS_MODE_MANUAL)
@@ -34,15 +36,17 @@
 	if(smart == LS_MODE_ONLY_OFF && !on)
 		return
 	var/anyoneElse = FALSE
-	if((locate(/mob/living/carbon/human) in connected_area) || (locate(/mob/living/exosuit) in connected_area))
-		anyoneElse = TRUE
+	for(var/type in LS_SMART_MOBS)
+		if(locate(type) in connected_area)
+			anyoneElse = TRUE
+			break
 	
 	// We won't turn lights off if there other humans presented
 	if(!(on ^ anyoneElse))
 		return
 
-	if(on)
-		addtimer(CALLBACK(src, .proc/set_state, !on), 3 SECONDS)
+	if(on && (force != TRUE))
+		addtimer(CALLBACK(src, .proc/motion_detect, TRUE), 3 SECONDS)
 	else
 		set_state(!on)
 	//visible_message("Выключатель тихо щелкнул и в[on?"":"ы"]ключился как только [detected.name] [on?"вошел в":"покидает"] помещение.")
@@ -67,7 +71,7 @@
 	if(!CanPhysicallyInteract(usr))
 		return
 	
-	var/selection = input(usr, "Установите режим датчика движения", "Mode" , smart) as null|anything in list(LS_MODE_MANUAL, LS_MODE_ONLY_OFF, LS_MODE_FULL_AUTO)
+	var/selection = input(usr, "Установите режим датчика движения", "Mode" , smart) as null|anything in LS_ALL_SMART_MODES
 	if(!CanPhysicallyInteract(usr))
 		return
 	if(selection)
@@ -78,16 +82,16 @@
 /datum/map/proc/reset_lights_automatics()
 	var/selection = LS_MODE_FULL_AUTO
 	if(usr)
-		selection = input(usr, "Установите режим датчиков движения", "Mode" , LS_MODE_FULL_AUTO) as null|anything in list("Включить свет", "Выключить свет", LS_MODE_MANUAL, LS_MODE_ONLY_OFF, LS_MODE_FULL_AUTO)
+		selection = input(usr, "Установите режим датчиков движения", "Mode" , LS_MODE_FULL_AUTO) as null|anything in list("Включить свет", "Выключить свет")+LS_ALL_SMART_MODES
 		to_chat(usr, SPAN_NOTICE("Консоль издает тихий писк, подтверждая что новые настройки были применены."))
 	for(var/obj/machinery/light_switch/ls in SSmachines.machinery)
 		if(ls.z in GLOB.using_map.station_levels)
 			switch(selection)
 				if("Включить свет")
-					ls.set_state(1)
+					ls.set_state(TRUE)
 					continue
 				if("Выключить свет")
-					ls.set_state(0)
+					ls.set_state(FALSE)
 					continue
 				
 			if(ls.smart != selection)
@@ -96,6 +100,8 @@
 				ls.visible_message(SPAN_NOTICE("Выключатель мягко мигает, подтверждая что его настройки были изменены"))
 				ls.motion_detect(TRUE)
 
+#undef LS_SMART_MOBS
+#undef LS_ALL_SMART_MODES
 #undef LS_MODE_FULL_AUTO
 #undef LS_MODE_ONLY_OFF
 #undef LS_MODE_MANUAL

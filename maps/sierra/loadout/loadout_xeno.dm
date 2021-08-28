@@ -1,5 +1,14 @@
 // Unathi clothing
 
+/datum/gear/passport/unathi
+	display_name = "(Unathi) registration document"
+	path = /obj/item/passport/xeno/unathi
+	sort_category = "Xenowear"
+	flags = 0
+	whitelisted = list(SPECIES_UNATHI)
+	custom_setup_proc = /obj/item/passport/proc/set_info
+	cost = 0
+
 // Skrell clothing
 
 /datum/gear/head/skrell_helmet

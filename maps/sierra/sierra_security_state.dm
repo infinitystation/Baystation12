@@ -22,11 +22,10 @@
 	all_security_levels = list(/decl/security_level/default/sierradept/code_green, /decl/security_level/default/sierradept/code_violet, /decl/security_level/default/sierradept/code_orange, /decl/security_level/default/sierradept/code_blue, /decl/security_level/default/sierradept/code_red, /decl/security_level/default/sierradept/code_delta)
 
 /decl/security_level/default/sierradept
-	icon = 'maps/sierra/icons/security_state.dmi'
+	icon = 'infinity/icons/misc/security_state.dmi'
 
 /decl/security_level/default/sierradept/code_green
 	name = "код зелёный"
-	icon = 'infinity/icons/misc/security_state.dmi'
 
 	light_max_bright = 0.25
 	light_inner_range = 0.1
@@ -36,6 +35,7 @@
 
 	overlay_alarm = "alarm_green"
 	overlay_status_display = "status_display_green"
+	alert_border = "alert_border_green"
 
 	var/static/datum/announcement/priority/security/security_announcement_green = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/notice2.ogg'))
 
@@ -46,11 +46,9 @@
 	notify_station()
 	GLOB.using_map.unlock_secure_areas()
 	GLOB.using_map.unlock_high_secure_areas()
-	GLOB.using_map.lockdown("open")
 
 /decl/security_level/default/sierradept/code_violet
 	name = "код фиолетовый"
-	icon = 'infinity/icons/misc/security_state.dmi'
 
 	light_max_bright = 0.25
 	light_inner_range = 1
@@ -62,6 +60,7 @@
 
 	overlay_alarm = "alarm_violet"
 	overlay_status_display = "status_display_violet"
+	alert_border = "alert_border_violet"
 
 /decl/security_level/default/sierradept/code_violet/switching_up_to()
 	security_announcement_up.Announce("На судне находятся нелокализованные вредоносные патогены. \
@@ -78,11 +77,9 @@
 	GLOB.using_map.unlock_high_secure_areas()
 	GLOB.using_map.unlock_secure_areas()
 	GLOB.using_map.toggle_crew_sensors(2)
-	GLOB.using_map.lockdown("open")
 
 /decl/security_level/default/sierradept/code_orange
 	name = "код оранжевый"
-	icon = 'infinity/icons/misc/security_state.dmi'
 
 	light_max_bright = 0.25
 	light_inner_range = 1
@@ -91,6 +88,7 @@
 	light_color_status_display = COLOR_ORANGE
 	overlay_alarm = "alarm_orange"
 	overlay_status_display = "status_display_orange"
+	alert_border = "alert_border_orange"
 	airlock_override = 1
 	psionic_control_level = PSI_IMPLANT_LOG
 
@@ -112,11 +110,9 @@
 	GLOB.using_map.lock_high_secure_areas()
 	GLOB.using_map.unlock_secure_areas()
 	GLOB.using_map.toggle_crew_sensors(1)
-	GLOB.using_map.lockdown("open")
 
 /decl/security_level/default/sierradept/code_blue
 	name = "код синий"
-	icon = 'infinity/icons/misc/security_state.dmi'
 
 	light_max_bright = 0.5
 	light_inner_range = 1
@@ -125,6 +121,7 @@
 	light_color_status_display = COLOR_BLUE
 	overlay_alarm = "alarm_blue"
 	overlay_status_display = "status_display_blue"
+	alert_border = "alert_border_blue"
 	psionic_control_level = PSI_IMPLANT_LOG
 
 /decl/security_level/default/sierradept/code_blue/switching_up_to()
@@ -140,11 +137,9 @@
 	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Код угрозы понижен до Синего")
 	notify_station()
 	GLOB.using_map.unlock_secure_areas()
-	GLOB.using_map.lockdown("open")
 
 /decl/security_level/default/sierradept/code_red
 	name = "код красный"
-	icon = 'infinity/icons/misc/security_state.dmi'
 
 	light_max_bright = 0.5
 	light_inner_range = 1
@@ -153,6 +148,7 @@
 	light_color_status_display = COLOR_RED
 	overlay_alarm = "alarm_red"
 	overlay_status_display = "status_display_red"
+	alert_border = "alert_border_red"
 
 	airlock_override = 1
 	psionic_control_level = PSI_IMPLANT_DISABLED
@@ -168,7 +164,6 @@
 	GLOB.using_map.lock_secure_areas()
 	GLOB.using_map.lock_high_secure_areas()
 	GLOB.using_map.toggle_crew_sensors(3)
-	GLOB.using_map.lockdown("close")
 
 /decl/security_level/default/sierradept/code_red/switching_down_to()
 	security_announcement_red.Announce("Взрывное устройство было обезврежено. \
@@ -178,7 +173,6 @@
 	notify_station()
 	GLOB.using_map.lock_secure_areas()
 	GLOB.using_map.lock_high_secure_areas()
-	GLOB.using_map.lockdown("close")
 
 /decl/security_level/default/sierradept/code_delta
 	name = "код дельта"
@@ -189,9 +183,9 @@
 	light_color_alarm = COLOR_RED
 	light_color_status_display = COLOR_NAVY_BLUE
 
-	icon = 'infinity/icons/misc/security_state.dmi'
 	overlay_alarm = "alarm_delta"
 	overlay_status_display = "status_display_delta"
+	alert_border = "alert_border_delta"
 
 	psionic_control_level = PSI_IMPLANT_DISABLED
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
@@ -204,7 +198,6 @@
 	GLOB.using_map.unlock_secure_areas()
 	GLOB.using_map.unlock_high_secure_areas()
 	GLOB.using_map.toggle_crew_sensors(3)
-	GLOB.using_map.lockdown("open")
 
 #undef PSI_IMPLANT_AUTOMATIC
 #undef PSI_IMPLANT_SHOCK
