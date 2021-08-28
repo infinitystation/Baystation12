@@ -862,11 +862,11 @@
 					/obj/item/storage/chewables/rollable/generic = 2,
 					/obj/item/storage/chewables/rollable/fine = 2,
 					//[INF]
-					/obj/item/storage/chewables/rollable/perception = 2,
-					/obj/item/storage/chewables/rollable/medical = 2,
-					/obj/item/storage/chewables/rollable/female = 2,
-					/obj/item/storage/chewables/rollable/honey = 2,
-					/obj/item/storage/chewables/rollable/coffee = 2,
+					/obj/item/storage/chewables/rollable/perception = 2, //inf
+					/obj/item/storage/chewables/rollable/medical = 2, //inf
+					/obj/item/storage/chewables/rollable/female = 2, //inf
+					/obj/item/storage/chewables/rollable/honey = 2, //inf
+					/obj/item/storage/chewables/rollable/coffee = 2, //inf
 					//[/INF]
 					/obj/item/storage/fancy/cigarettes = 5,
 					/obj/item/storage/fancy/cigarettes/luckystars = 2,
