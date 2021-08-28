@@ -32,8 +32,8 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 
 
 /datum/job/submap/pod/equip(var/mob/living/carbon/human/H)
-	..()
 	setup_away_account(H)
+	return ..()
 
 /datum/job/submap/pod/New(var/datum/submap/_owner, var/abstract_job = FALSE)
 	..()

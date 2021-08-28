@@ -65,8 +65,8 @@
 	economic_power = 5
 
 /datum/job/submap/yachtman/equip(var/mob/living/carbon/human/H)
-	..()
 	setup_away_account(H)
+	return ..()
 
 /decl/hierarchy/outfit/job/yachtman
 	name = OUTFIT_JOB_NAME("Yachtman")

@@ -21,12 +21,12 @@
 	economic_power = 2
 
 /datum/job/submap/bearcat_captain/equip(var/mob/living/carbon/human/H)
-	..()
 	setup_away_account(H)
+	return ..()
 	
 /datum/job/submap/bearcat_crewman/equip(var/mob/living/carbon/human/H)
-	..()
 	setup_away_account(H)
+	return ..()
 	
 #define BEARCAT_OUTFIT_JOB_NAME(job_name) ("Bearcat - Job - " + job_name)
 
