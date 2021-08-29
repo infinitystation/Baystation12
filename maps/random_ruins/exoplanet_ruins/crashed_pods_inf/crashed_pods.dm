@@ -13,26 +13,38 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "crashed_pods"
 	turf_initializer = /decl/turf_initializer/maintenance
+	ambience = list('infinity\sound\ambience\crashed_pods\away_pod1.ogg','infinity\sound\ambience\crashed_pods\away_pod2.ogg')
+
 
 /area/map_template/crashed_pods/pod_hydro
 	name = "\improper Crashed hydroponic Pod"
 	icon_state = "pod_hydro"
+	ambience = list('infinity\sound\ambience\crashed_pods\pod1.ogg','infinity\sound\ambience\crashed_pods\pod2.ogg','infinity\sound\ambience\crashed_pods\pod3.ogg')
+	sound_env = SMALL_ENCLOSED
 
 /area/map_template/crashed_pods/pod_cargo
 	name = "\improper Crashed cargo Pods"
 	icon_state = "pod_cargo"
+	ambience = list('infinity\sound\ambience\crashed_pods\away_pod3.ogg')
+	sound_env = LARGE_ENCLOSED
 
 /area/map_template/crashed_pods/pod_eng
 	name = "\improper Crashed engineering Pod"
 	icon_state = "pod_eng"
+	ambience = list('infinity\sound\ambience\crashed_pods\pod1.ogg','infinity\sound\ambience\crashed_pods\pod2.ogg','infinity\sound\ambience\crashed_pods\pod3.ogg')
+	sound_env = SMALL_ENCLOSED
 
 /area/map_template/crashed_pods/pod_med
 	name = "\improper Crashed medical Pod"
 	icon_state = "pod_med"
+	ambience = list('infinity\sound\ambience\crashed_pods\pod1.ogg','infinity\sound\ambience\crashed_pods\pod2.ogg','infinity\sound\ambience\crashed_pods\pod3.ogg')
+	sound_env = SMALL_ENCLOSED
 
 /area/map_template/crashed_pods/pod_com
 	name = "\improper Crashed Pods"
 	icon_state = "pod_com"
+	ambience = list('infinity\sound\ambience\crashed_pods\pod_com1.ogg','infinity\sound\ambience\crashed_pods\pod_com2.ogg')
+    sound_env = SMALL_ENCLOSED
 
 /decl/submap_archetype/crashed_pod
 	descriptor = "crashed survival pods"
