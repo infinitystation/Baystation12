@@ -33,6 +33,10 @@
 	ingested.my_atom = owner
 	ingested.parent = owner
 
+/obj/item/organ/internal/stomach/robotize()
+	. = ..()
+	icon_state = "stomach-prosthetic"
+
 /obj/item/organ/internal/stomach/proc/can_eat_atom(var/atom/movable/food)
 	return !isnull(get_devour_time(food))
 
@@ -80,8 +84,8 @@
 /obj/item/organ/internal/stomach/attack_self(mob/user)
 	. = ..()
 	if(. && action_button_name == PUKE_ACTION_NAME && owner && !owner.incapacitated())
-		owner.vomit(deliberate = TRUE)
-//		refresh_action_button()
+		owner.empty_stomach()
+		refresh_action_button()
 
 /obj/item/organ/internal/stomach/return_air()
 	return null

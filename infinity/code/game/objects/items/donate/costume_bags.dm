@@ -39,3 +39,26 @@
 	new /obj/item/clothing/under/rank/chaplain(src)
 	new /obj/item/clothing/shoes/black(src)
 	new /obj/item/material/cross(src)
+
+// Anime costumes
+
+/obj/item/clothingbag/costume/anime_white
+	name = "costume clothing bag - white anime set"
+	desc = "KAWAIIIIIII"
+
+/obj/item/clothingbag/costume/anime_white/Initialize()
+	. = ..()
+	new /obj/item/clothing/suit/anime_white(src)
+	new /obj/item/clothing/shoes/anime_white(src)
+	new /obj/item/clothing/head/anime_band(src)
+	new /obj/item/storage/backpack/industrial/anime_coffin(src)
+
+/obj/item/clothingbag/costume/anime_blue
+	name = "costume clothing bag - blue anime set"
+	desc = "KAWAIIIIIII"
+
+/obj/item/clothingbag/costume/anime_blue/Initialize()
+	. = ..()
+	new /obj/item/clothing/suit/anime_blue(src)
+	new /obj/item/clothing/shoes/anime_blue(src)
+	new /obj/item/clothing/head/anime_band/blue(src)

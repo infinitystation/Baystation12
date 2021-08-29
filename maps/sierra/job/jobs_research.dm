@@ -1,11 +1,11 @@
 /datum/job/senior_scientist
 	title = "Senior Researcher"
-	department = "Science"
+	department = "Научный"
 	department_flag = SCI
 
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Директором Исследований"
+	supervisors = "Директору Исследований"
 	selection_color = "#633d63"
 	economic_power = 12
 	minimal_player_age = 10
@@ -38,10 +38,11 @@
 	max_skill = list(
 			SKILL_DEVICES		=	SKILL_MAX,
 			SKILL_SCIENCE		=	SKILL_MAX,
-			SKILL_CHEMISTRY		=	SKILL_MAX
+			SKILL_ANATOMY		=	SKILL_MAX
 		)
 	skill_points = 30
 	good_genome_prob = 40
+	possible_goals = list(/datum/goal/achievement/notslimefodder)
 
 /datum/job/senior_scientist/get_description_blurb()
 	return "Самый старший член исследовательской команды, старший научный сотрудник, отвечает за то,чтобы остальные сотрудники отдела знали, что они должны делать, и делать это быстро и профессионально.\
@@ -49,11 +50,11 @@
 
 /datum/job/scientist
 	title = "Scientist"
-	department = "Science"
+	department = "Научный"
 	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
-	supervisors = "Директором Исследований и Старшим Исследователем"
+	supervisors = "Директору Исследований и Старшему Исследователю"
 	economic_power = 10
 	ideal_character_age = 45
 	alt_titles = list(
@@ -94,6 +95,7 @@
 
 	minimal_access = list()
 	skill_points = 22
+	possible_goals = list(/datum/goal/achievement/notslimefodder)
 
 /datum/job/scientist/get_description_blurb()
 	return "Ученый - одна из самых распространенных и разнообразных рабочих профессий на борту корабля.\
@@ -102,12 +104,12 @@
 
 /datum/job/roboticist
 	title = "Roboticist"
-	department = "Science"
+	department = "Научный"
 	department_flag = SCI
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Директором Исследований и Старшим Исследователем"
+	supervisors = "Директору Исследований и Старшему Исследователю"
 	selection_color = "#633d63"
 	economic_power = 6
 	alt_titles = list(
@@ -159,12 +161,12 @@
 
 /datum/job/scientist_assistant
 	title = "Research Assistant"
-	department = "Science"
+	department = "Научный"
 	department_flag = SCI
 
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Директором Исследований и остальным научным персоналом"
+	supervisors = "Директору Исследований и остальному научному персоналу"
 	selection_color = "#633d63"
 	economic_power = 3
 	ideal_character_age = 30
@@ -199,7 +201,8 @@
 		)
 
 	minimal_access = list()
-	
+	possible_goals = list(/datum/goal/achievement/notslimefodder)
+
 /datum/job/scientist_assistant/get_description_blurb()
 	return "Научный ассистент служит, в основном, для того, чтобы помогать ученым любыми способами, которые им нужны,\
 	и, благодаря этому, служит отличной отправной точкой для новых игроков, желающих узнать больше об исследованиях."

@@ -76,9 +76,9 @@
 			version_message = "\nВам необходимо использовать версию byond 511 или выше, чтобы использовать эту функцию. Версия [user.client.byond_version] слишком устарела."
 		if (world.byond_version < 511)
 			version_message += "\nВ настоящий момент, сервер не поддерживает эту функцию."
-		var/new_fps = input(user, "Выберите желаемое количество кадров в секунду.[version_message]\n(0 = синхронизация с ФПС сервера (текущий:[world.fps]))", "Глобальные Предпочтения") as num|null
+		var/new_fps = input(user, "Выберите желаемое количество кадров в секунду.[version_message]\n  0 = значение по умолчанию ([config.clientfps]) < РЕКОМЕНДОВАНО\n -1 = синхронизация с сервером (текущий:[world.fps])", "Глобальные Предпочтения") as num|null
 		if (isnum(new_fps) && CanUseTopic(user))
-			pref.clientfps = Clamp(new_fps, CLIENT_MIN_FPS, CLIENT_MAX_FPS)
+			pref.clientfps = Clamp(new_fps ? new_fps : config.clientfps, CLIENT_MIN_FPS, CLIENT_MAX_FPS)
 
 			var/mob/target_mob = preference_mob()
 			if(target_mob && target_mob.client)

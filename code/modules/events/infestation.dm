@@ -39,11 +39,11 @@
 	vermin = rand(1,3)	// INF, было:	vermin = rand(0,3) | Пока что убираем мышек из ротации ~bear1ake
 	switch(vermin)
 		if(VERM_MICE)
-			spawn_types = list(/mob/living/simple_animal/mouse) // The base mouse type selects a random color for us
+			spawn_types = list(/mob/living/simple_animal/friendly/mouse) // The base mouse type selects a random color for us
 			max_number = 12
 			vermstring = "mice"
 		if(VERM_LIZARDS)
-			spawn_types = list(/mob/living/simple_animal/lizard)
+			spawn_types = list(/mob/living/simple_animal/friendly/lizard)
 			max_number = 6
 			vermstring = "lizards"
 		if(VERM_SPIDERS)
@@ -51,7 +51,7 @@
 			max_number = 3
 			vermstring = "spiders"
 		if(VERM_SNAKES)	// Змеи? Откуда они?
-			spawn_types = list(/mob/living/simple_animal/hostile/retaliate/poison/snake)
+			spawn_types = list(/mob/living/simple_animal/hostile/retaliate/snake)
 			max_number = 4
 			vermstring = "snakes"
 

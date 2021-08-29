@@ -35,6 +35,7 @@
 	var/old_lighting_overlay = lighting_overlay
 	var/old_corners = corners
 	var/old_ao_neighbors = ao_neighbors
+	var/old_above = above
 
 //	log_debug("Replacing [src.type] with [N]")
 
@@ -82,6 +83,8 @@
 
 	for(var/turf/space/S in range(W,1))
 		S.update_starlight()
+
+	W.above = old_above
 
 	W.post_change()
 	. = W

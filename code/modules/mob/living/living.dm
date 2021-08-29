@@ -5,6 +5,8 @@
 	else
 		add_to_living_mob_list()
 
+	selected_image = image(icon('icons/misc/buildmode.dmi'), loc = src, icon_state = "ai_sel")
+
 /mob/living/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if (admin_paralyzed)
@@ -574,7 +576,7 @@ default behaviour is:
 
 	if (!isliving(pulling))
 		if(pulling.loc != loc && pulling.loc != old_loc) //inf
-			step(pulling, get_dir(pulling.loc, old_loc))
+			step_glide(pulling, get_dir(pulling.loc, old_loc), glide_size)
 			handle_dir_after_pull() //inf
 	else
 		var/mob/living/M = pulling
@@ -590,7 +592,7 @@ default behaviour is:
 			var/atom/movable/t = M.pulling
 			M.stop_pulling()
 			if(pulling.loc != loc && pulling.loc != old_loc) //inf
-				step(M, get_dir(pulling.loc, old_loc))
+				step_glide(M, get_dir(pulling.loc, old_loc), glide_size)
 				handle_dir_after_pull() //inf
 			if(t)
 				M.start_pulling(t)
@@ -837,6 +839,8 @@ default behaviour is:
 	if(auras)
 		for(var/a in auras)
 			remove_aura(a)
+
+	qdel(selected_image)
 	return ..()
 
 /mob/living/proc/melee_accuracy_mods()

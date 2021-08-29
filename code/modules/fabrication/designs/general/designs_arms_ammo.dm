@@ -96,6 +96,10 @@
 	name = "ammunition (shell, shotgun)"
 	path = /obj/item/ammo_casing/shotgun/pellet
 
+/datum/fabricator_recipe/arms_ammo/hidden/shotgun_flechette
+	name = "ammunition (flechette, shotgun)"
+	path = /obj/item/ammo_casing/shotgun/flechette
+
 /datum/fabricator_recipe/arms_ammo/hidden/tacknife
 	path = /obj/item/material/knife/combat
 
@@ -116,5 +120,9 @@
 	path = /obj/item/magnetic_ammo/skrell/slug
 
 /datum/fabricator_recipe/arms_ammo/hidden/stripperclip
-	name = "ammunition (stripper clip)"
+	name = "ammunition (rifle stripper clip)"
 	path = /obj/item/ammo_magazine/speedloader/clip
+
+/datum/fabricator_recipe/arms_ammo/hidden/pistolstripperclip
+	name = "ammunition (pistol stripper clip)"
+	path = /obj/item/ammo_magazine/speedloader/pclip

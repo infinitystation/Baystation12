@@ -699,8 +699,21 @@ proc/dd_sortedTextList(list/incoming)
 		var/atom/A = key
 		if(A.type == T)
 			return A
-//[INF]
-//Like typesof() or subtypesof(), but returns a typecache instead of a list
+
+/**
+ * Returns a new list with only atoms that are in typecache L
+ *
+ */
+/proc/typecache_filter_list(list/atoms, list/typecache)
+	. = list()
+	for(var/thing in atoms)
+		var/atom/A = thing
+		if(typecache[A.type])
+			. += A
+
+/**
+ * Like typesof() or subtypesof(), but returns a typecache instead of a list
+ */
 /proc/typecacheof(path, ignore_root_path, only_root_path = FALSE)
 	if(ispath(path))
 		var/list/types = list()
@@ -728,6 +741,7 @@ proc/dd_sortedTextList(list/incoming)
 						L[T] = TRUE
 		return L
 
+//[INF]
 //Checks for specific types in specifically structured (Assoc "type" = TRUE) lists ('typecaches')
 /proc/is_type_in_typecache(atom/A, list/L)
 	if(!L || !L.len || !A)

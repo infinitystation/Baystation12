@@ -1,0 +1,8 @@
+{
+	"ckey" :            "comradesuhov",
+	"character_name" :  "Akale Rasstmakss Poraz",
+	"item_name" :       "Vaquero Sombrero",
+	"item_desc" :       "That thing looks old. Colours look bleak, but it's still somehow festive!",
+	"item_icon_state" : "comradesuhov_sombrero",
+	"item_path" :       "/obj/item/clothing/head"
+}

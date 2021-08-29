@@ -13,4 +13,4 @@
 	if(..())
 		return 1
 	if(result[1] == "End the Round")
-		SSticker.force_ending = 1
+		SSticker.forced_end = TRUE

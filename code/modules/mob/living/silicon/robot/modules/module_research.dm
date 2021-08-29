@@ -27,7 +27,8 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/gripper/chemistry,
-		/obj/item/stack/nanopaste
+		/obj/item/stack/nanopaste,
+		/obj/item/borg/sight/hud/sci  // INF
 	)
 	synths = list(
 		/datum/matter_synth/nanite = 10000
@@ -55,3 +56,11 @@
 	var/datum/matter_synth/nanite/nanite = locate() in synths
 	var/obj/item/stack/nanopaste/N = locate() in equipment
 	N.synths = list(nanite)
+
+// [INF]
+/obj/item/robot_module/research/build_emag()
+	if(ispath(emag))
+		new emag(src)
+		emag = locate(/obj/item/device/electronic_assembly) in src
+// [/INF]
+

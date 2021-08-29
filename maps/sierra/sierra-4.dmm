@@ -133,8 +133,7 @@
 "aaN" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine/centcomm{
-	desc = "Fax machine, called in honor of the legendary bureaucrat. It has small keyboard so you can write answers right there!";
-	name = "fax machine"
+	desc = "Fax machine, called in honor of the legendary bureaucrat. It has small keyboard so you can write answers right there!"
 	},
 /turf/unsimulated/floor{
 	icon_state = "steel"
@@ -1293,12 +1292,6 @@
 /area/centcom/control)
 "agD" = (
 /obj/machinery/tele_projector,
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
-/area/centcom/control)
-"agE" = (
- /obj/machinery/tele_pad,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -5622,9 +5615,7 @@
 /area/tdome/testing/engineering/unpowered)
 "axH" = (
 /obj/structure/table/glass,
-/obj/machinery/reagent_temperature/cooler{
-	density = 0
-	},
+/obj/machinery/reagent_temperature/cooler,
 /obj/effect/floor_decal/corner/beige{
 	dir = 10
 	},
@@ -5634,9 +5625,7 @@
 /area/tdome/testing)
 "axI" = (
 /obj/structure/table/glass,
-/obj/machinery/reagent_temperature{
-	density = 0
-	},
+/obj/machinery/reagent_temperature,
 /obj/effect/floor_decal/corner/beige{
 	dir = 10
 	},
@@ -7208,7 +7197,8 @@
 /area/holodeck/source_military)
 "aTC" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/spline/plain/black{
 	dir = 8
@@ -7220,7 +7210,8 @@
 /area/holodeck/source_military)
 "aTD" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/corner/black{
 	dir = 4
@@ -7229,7 +7220,8 @@
 /area/holodeck/source_military)
 "aTE" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/corner/black{
 	dir = 1
@@ -7238,7 +7230,8 @@
 /area/holodeck/source_military)
 "aTF" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/spline/plain/black{
 	dir = 4
@@ -7277,7 +7270,8 @@
 /area/holodeck/source_plaza)
 "aUt" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/spline/plain/black{
 	dir = 10
@@ -7286,14 +7280,16 @@
 /area/holodeck/source_military)
 "aUu" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/spline/plain/black,
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/holodeck/source_military)
 "aUv" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/spline/plain/black{
 	dir = 6
@@ -29030,7 +29026,7 @@ afI
 afI
 abm
 abm
-agE
+agF
 agF
 agF
 agF

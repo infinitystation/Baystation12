@@ -34,3 +34,22 @@
 	..()
 	set_trait(TRAIT_PRODUCT_COLOUR,"#ffbc1f")
 	set_trait(TRAIT_FLESH_COLOUR,"#ffbc1f")
+
+/datum/seed/aghrassh
+	name = "aghrassh"
+	seed_name = "aghrassh"
+	display_name = "aghrassh trees"
+	chems = list(/datum/reagent/nutriment = list(1,10), /datum/reagent/silver = list(1,3))
+
+/datum/seed/aghrassh/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,1)
+	set_trait(TRAIT_MATURATION,6)
+	set_trait(TRAIT_PRODUCTION,10)
+	set_trait(TRAIT_YIELD,4)
+	set_trait(TRAIT_POTENCY,10)
+	set_trait(TRAIT_PRODUCT_ICON,"treefruit")
+	set_trait(TRAIT_IDEAL_LIGHT, 3)
+	set_trait(TRAIT_PRODUCT_COLOUR,"#858585")
+	set_trait(TRAIT_PLANT_ICON,"tree5")
+	set_trait(TRAIT_PHOTOSYNTHESIS, 1)
