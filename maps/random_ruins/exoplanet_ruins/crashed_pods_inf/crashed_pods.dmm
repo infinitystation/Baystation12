@@ -1,0 +1,7668 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"af" = (
+/turf/simulated/shuttle/wall/corner/dark,
+/area/map_template/crashed_pods/pod_med)
+"ag" = (
+/turf/simulated/shuttle/wall/corner/dark,
+/area/map_template/crashed_pods/pod_cargo)
+"aj" = (
+/obj/effect/floor_decal/industrial/warning/dust,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"az" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"aD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust,
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"aE" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/red/bordercorner2{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"aX" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"bI" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_med)
+"cd" = (
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"cj" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/machinery/power/apc/inactive{
+	dir = 8;
+	pixel_x = -24
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"cx" = (
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_com)
+"cF" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/obj/item/gun/projectile/pistol,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"cH" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4;
+	icon_state = "map_universal"
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/material/knife/kitchen/cleaver/bronze,
+/obj/item/material/knife/kitchen,
+/obj/item/material/kitchen/rollingpin,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"da" = (
+/obj/structure/grille/broken,
+/obj/structure/firedoor_assembly,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"dg" = (
+/obj/effect/floor_decal/industrial/outline/orange,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/map_template/crashed_pods/pod_cargo)
+"dt" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"dA" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"dB" = (
+/obj/item/tank/emergency/oxygen/double,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"dF" = (
+/obj/machinery/floodlight{
+	dir = 8
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"dP" = (
+/obj/effect/decal/cleanable/cobweb2,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/archaeological_find/remains/robot,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"dQ" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"dS" = (
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"dX" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/device/radio,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"dY" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/effect/floor_decal/borderfloor/full,
+/obj/effect/floor_decal/corner/orange/bordercee{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"ea" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_com)
+"ej" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 8
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"el" = (
+/obj/item/stock_parts/computer/scanner,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"ep" = (
+/obj/machinery/sleeper{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_med)
+"er" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"et" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/handrail{
+	dir = 8
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"ey" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/sign/emergonly{
+	pixel_y = 27
+	},
+/obj/structure/handrail,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"eC" = (
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"eD" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	locked = 0;
+	pixel_x = -25;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_hydro)
+"eT" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/sign/emergonly{
+	pixel_y = 27
+	},
+/obj/structure/handrail,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"eZ" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"fg" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/disposal/deliveryChute{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 6
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"fm" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 8
+	},
+/obj/structure/closet/crate,
+/obj/item/device/oxycandle,
+/obj/item/device/oxycandle,
+/obj/item/device/oxycandle,
+/obj/item/device/oxycandle,
+/obj/item/device/oxycandle,
+/obj/item/device/oxycandle,
+/obj/item/device/oxycandle,
+/obj/item/device/oxycandle,
+/obj/item/device/oxycandle,
+/obj/item/device/oxycandle,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"fn" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"fw" = (
+/obj/machinery/alarm{
+	dir = 4;
+	locked = 0;
+	pixel_x = -25;
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4;
+	level = 2
+	},
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"fx" = (
+/turf/simulated/shuttle/wall/corner/dark/se,
+/area/map_template/crashed_pods/pod_cargo)
+"fA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"fF" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_med)
+"fM" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = -27
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_com)
+"fN" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"fT" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/sign/emergonly{
+	pixel_y = 27
+	},
+/obj/structure/handrail,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"fX" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"gb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"gl" = (
+/obj/structure/handrail{
+	dir = 4
+	},
+/obj/structure/sign/directions/med{
+	dir = 4;
+	pixel_x = -40
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"gy" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"gH" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"gN" = (
+/turf/simulated/shuttle/wall/corner/dark/se,
+/area/map_template/crashed_pods/pod_med)
+"gT" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"hE" = (
+/obj/structure/grille/broken,
+/obj/structure/firedoor_assembly,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"hH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/remains/lizard,
+/turf/simulated/floor/tiled,
+/area/map_template/crashed_pods/pod_cargo)
+"hL" = (
+/obj/structure/disposaloutlet{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_med)
+"hM" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = -27
+	},
+/obj/item/device/synthesized_instrument/guitar,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_hydro)
+"hV" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_med)
+"if" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"ih" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"ip" = (
+/obj/item/stock_parts/power,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"iq" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/black/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"ir" = (
+/obj/effect/decal/cleanable/vomit,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"it" = (
+/obj/structure/grille/broken,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 22
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"iu" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_com)
+"iv" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"iy" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"iE" = (
+/obj/structure/window/reinforced,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"iK" = (
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"je" = (
+/obj/structure/sign/directions/supply{
+	dir = 4;
+	pixel_x = 34
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"jg" = (
+/obj/structure/bed/chair/comfy/captain,
+/obj/effect/landmark/corpse/commander,
+/obj/effect/decal/cleanable/blood,
+/obj/item/clothing/head/solgov/service/expedition/captain,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"jl" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"jA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"jC" = (
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"jE" = (
+/obj/machinery/power/solar,
+/obj/effect/floor_decal/techfloor{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"jJ" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/structure/closet/hydrant{
+	pixel_x = -27
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/archaeological_find/remains/robot,
+/obj/structure/fireaxecabinet{
+	pixel_y = 28
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"jO" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/structure/iv_drip,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 9
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = -27
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"jS" = (
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_hydro)
+"jT" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	locked = 0;
+	pixel_x = -25;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_com)
+"kh" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/arrow/rod,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"ki" = (
+/obj/machinery/atmospherics/omni/filter,
+/obj/item/material/twohanded/fireaxe,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/orange/border,
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"kq" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/space_heater,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"kw" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"kE" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"kH" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 10
+	},
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"kO" = (
+/obj/structure/disposaloutlet{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_cargo)
+"kR" = (
+/obj/machinery/atmospherics/omni/filter,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/blue/border,
+/obj/machinery/light/small,
+/obj/structure/bed/roller,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"kT" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"kY" = (
+/obj/machinery/atmospherics/unary/tank/air,
+/obj/effect/decal/cleanable/cobweb2,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"lb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 5
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"lc" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/gibspawner/human,
+/turf/simulated/floor/tiled,
+/area/map_template/crashed_pods/pod_cargo)
+"lf" = (
+/obj/machinery/power/apc{
+	acid_melted = /obj/item/cell/crap/empty;
+	dir = 1;
+	locked = 0;
+	name = "north bump";
+	pixel_y = 24
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"lg" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/item/defibrillator/loaded,
+/obj/structure/table/standard,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/structure/sign/kiddieplaque{
+	desc = "A plaque with information regarding this particular lifepod. It reads: 'Armalev Industries Skyfin-E, Exoplanetary Suvival Pod' there's a registry number, and an assigned mothership, but they've both been scratched to illegiblity.";
+	name = "\improper Lifepod Plaque";
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"li" = (
+/turf/simulated/shuttle/wall/corner/dark/ne,
+/area/map_template/crashed_pods/pod_hydro)
+"ln" = (
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"lu" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/crowbar,
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"ly" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"lM" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"lO" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_hydro)
+"lQ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_eng)
+"lT" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/sign/kiddieplaque{
+	desc = "A plaque with information regarding this particular lifepod. It reads: 'Armalev Industries Skyfin-E, Exoplanetary Suvival Pod' there's a registry number, and an assigned mothership, but they've both been scratched to illegiblity.";
+	name = "\improper Lifepod Plaque";
+	pixel_y = 30
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"mf" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"mz" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_med)
+"mD" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	locked = 0;
+	pixel_x = -25;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_med)
+"mI" = (
+/obj/machinery/power/smes/buildable{
+	charge = 50000;
+	inputting = 1;
+	outputting = 1
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/cobweb,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"mQ" = (
+/obj/effect/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"mR" = (
+/obj/structure/window/reinforced,
+/obj/machinery/fabricator,
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"mV" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/device/radio,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"mW" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"mY" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/obj/structure/closet,
+/obj/item/clothing/suit/armor/bulletproof,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"ne" = (
+/obj/machinery/power/apc{
+	acid_melted = /obj/item/cell/crap/empty;
+	dir = 1;
+	locked = 0;
+	name = "north bump";
+	pixel_y = 24
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"ni" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/disposal/deliveryChute{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 6
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/map_template/crashed_pods/pod_cargo)
+"nl" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"nw" = (
+/obj/item/device/flashlight/lamp/floodlamp{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"ny" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/liquid_fuel,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"nJ" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/disposal/deliveryChute{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 6
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"nL" = (
+/obj/structure/sign/directions/evac{
+	dir = 8;
+	pixel_x = -32
+	},
+/obj/structure/handrail{
+	dir = 4
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"nM" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"nV" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/machinery/pipedispenser,
+/obj/structure/sign/kiddieplaque{
+	desc = "A plaque with information regarding this particular lifepod. It reads: 'Armalev Industries Skyfin-E, Exoplanetary Suvival Pod' there's a registry number, and an assigned mothership, but they've both been scratched to illegiblity.";
+	name = "\improper Lifepod Plaque";
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"ob" = (
+/obj/structure/sign/directions/engineering{
+	dir = 8;
+	pixel_x = -32
+	},
+/obj/machinery/power/solar_control,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"os" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/shuttle/wall/corner/dark/ne,
+/area/map_template/crashed_pods/pod_med)
+"ox" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"oD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/material/steel,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"oG" = (
+/obj/effect/floor_decal/techfloor/orange/corner,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"oK" = (
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"oN" = (
+/obj/item/caution/cone,
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"oR" = (
+/obj/structure/handrail{
+	dir = 4
+	},
+/obj/structure/sign/hydro{
+	dir = 4;
+	pixel_x = -40
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"pg" = (
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/item/stock_parts/micro_laser,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"pi" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"pE" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_eng)
+"pK" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/dust,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"pN" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_med)
+"pT" = (
+/obj/item/remains/xeno/charred,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"pY" = (
+/obj/machinery/door/airlock/engineering,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"qc" = (
+/obj/structure/window/reinforced,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"qf" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_cargo)
+"qp" = (
+/obj/item/ammo_magazine/pistol/small,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"qq" = (
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_eng)
+"qw" = (
+/obj/effect/decal/cleanable/liquid_fuel,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"qz" = (
+/obj/structure/sign/directions/bridge{
+	dir = 8;
+	pixel_x = -32
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"qN" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/disposal/deliveryChute{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 6
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"qQ" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"qW" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/device/radio,
+/obj/item/pickaxe/drill,
+/obj/item/pickaxe/drill,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/item/reagent_containers/food/snacks/meatballsoup,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"rl" = (
+/obj/structure/window/reinforced,
+/obj/machinery/fabricator,
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"rq" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = 25
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"rs" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 4
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"ry" = (
+/obj/effect/floor_decal/borderfloor/full,
+/obj/machinery/power/smes/buildable{
+	charge = 50000;
+	inputting = 1;
+	outputting = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"rR" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_com)
+"rU" = (
+/obj/structure/inflatable,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"rX" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/floor_decal/industrial/outline/blue,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"sb" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 5
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"sj" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4;
+	icon_state = "map_universal"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/table/standard,
+/obj/item/storage/firstaid/surgery,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/item/storage/pill_bottle/assorted,
+/obj/item/storage/pill_bottle/assorted,
+/obj/item/roller,
+/obj/item/roller,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"sk" = (
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"sl" = (
+/obj/machinery/sleeper{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_hydro)
+"sz" = (
+/obj/item/device/flashlight/lamp/floodlamp{
+	dir = 1
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"sC" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/space_heater,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio/intercom/map_preset/playablecolony2{
+	dir = 8;
+	pixel_x = 20
+	},
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"sG" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"sJ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/item/storage/mirror{
+	dir = 1;
+	pixel_x = -27
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"sK" = (
+/obj/structure/inflatable/door,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"sR" = (
+/obj/structure/closet/crate,
+/obj/random/handgun,
+/obj/random/handgun,
+/obj/random/handgun,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/stack/material/glass/fifty,
+/obj/item/device/flashlight/lantern,
+/obj/item/device/flashlight/lantern,
+/obj/item/storage/box/glowsticks,
+/obj/item/storage/box/glowsticks,
+/obj/item/storage/box/glowsticks,
+/obj/item/stack/material/steel/fifty,
+/obj/random/toolbox,
+/obj/random/toolbox,
+/obj/random/toolbox,
+/obj/random/toolbox,
+/obj/item/stack/material/aluminium/fifty,
+/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/plasteel/ten,
+/obj/item/stack/material/steel/fifty,
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"sW" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/device/radio,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/map_template/crashed_pods/pod_cargo)
+"tn" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/closet/radiation,
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/orange/border,
+/obj/structure/curtain/open/shower/engineering{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"to" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/crowbar,
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"tF" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/sign/emergonly{
+	pixel_y = 27
+	},
+/obj/structure/handrail,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"tI" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_cargo)
+"tP" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 6
+	},
+/obj/structure/reagent_dispensers/watertank,
+/obj/item/reagent_containers/glass/bucket,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"tW" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"tX" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_cargo)
+"uh" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor/orange,
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/handrail{
+	dir = 1
+	},
+/obj/machinery/light/xenon,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"up" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/item/ammo_casing/pistol,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"uy" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = -27
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_med)
+"uG" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/shuttle/wall/corner/dark/ne,
+/area/map_template/crashed_pods/pod_com)
+"uI" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"uO" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"uU" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 1
+	},
+/obj/structure/sign/kiddieplaque{
+	desc = "A plaque with information regarding this particular lifepod. It reads: 'Armalev Industries Skyfin-E, Exoplanetary Suvival Pod' there's a registry number, and an assigned mothership, but they've both been scratched to illegiblity.";
+	name = "\improper Lifepod Plaque";
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"va" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"vn" = (
+/obj/effect/decal/cleanable/filth,
+/obj/item/stock_parts/matter_bin,
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"vv" = (
+/turf/simulated/shuttle/wall/corner/dark/ne,
+/area/map_template/crashed_pods/pod_eng)
+"vB" = (
+/turf/simulated/shuttle/wall/corner/dark,
+/area/map_template/crashed_pods/pod_hydro)
+"vC" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/structure/firedoor_assembly,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"vI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/firedoor_assembly,
+/obj/structure/grille/broken,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"vT" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"wd" = (
+/obj/effect/decal/cleanable/filth,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"wu" = (
+/obj/structure/closet/crate/uranium,
+/obj/effect/floor_decal/industrial/warning/dust/corner,
+/obj/effect/floor_decal/industrial/outline/orange,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"wB" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_com)
+"wC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"wE" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"wI" = (
+/obj/effect/floor_decal/techfloor/corner,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"wR" = (
+/obj/structure/table/standard,
+/obj/item/tank/air,
+/obj/item/tank/air,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"wS" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/shuttle/wall/corner/dark/nw,
+/area/map_template/crashed_pods/pod_med)
+"wY" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_hydro)
+"wZ" = (
+/turf/simulated/shuttle/wall/corner/dark/se,
+/area/map_template/crashed_pods/pod_hydro)
+"xe" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"xm" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/item/device/binoculars,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"xE" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	dir = 9
+	},
+/obj/machinery/light/small,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"xL" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = -27
+	},
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_eng)
+"xP" = (
+/obj/machinery/atmospherics/unary/tank/air,
+/obj/effect/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 5
+	},
+/obj/effect/floor_decal/industrial/outline/orange,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"xR" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/map_template/crashed_pods/pod_cargo)
+"xV" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"xZ" = (
+/obj/machinery/portable_atmospherics/canister/empty,
+/obj/effect/floor_decal/borderfloor/full,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"yb" = (
+/obj/machinery/portable_atmospherics/canister/empty,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/full,
+/obj/effect/floor_decal/corner/orange/bordercee{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"yv" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = -27
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_cargo)
+"yB" = (
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_hydro)
+"yE" = (
+/turf/simulated/shuttle/wall/corner/dark/nw,
+/area/map_template/crashed_pods/pod_cargo)
+"yG" = (
+/obj/structure/disposaloutlet{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_com)
+"yR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust/corner,
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"yU" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"yY" = (
+/obj/structure/undies_wardrobe,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"yZ" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"zb" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"zf" = (
+/obj/effect/decal/cleanable/blood/tracks/body,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/map_template/crashed_pods/pod_cargo)
+"zi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/arrow/rod,
+/turf/simulated/floor/tiled,
+/area/map_template/crashed_pods/pod_cargo)
+"zo" = (
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/arrow/rod,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"zp" = (
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/arrow/rod,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"zI" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/flour,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/white/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"zT" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_hydro)
+"Aa" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/item/seeds/carrotseed,
+/obj/item/seeds/carrotseed,
+/obj/item/seeds/cherryseed,
+/obj/item/seeds/cornseed,
+/obj/item/seeds/cornseed,
+/obj/item/seeds/lemonseed,
+/obj/item/seeds/potatoseed,
+/obj/item/seeds/potatoseed,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/structure/closet/crate/large/hydroponics,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"Ag" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	dir = 1;
+	icon_state = "1-4"
+	},
+/obj/machinery/constructable_frame/computerframe/deconstruct{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"Ah" = (
+/obj/structure/lattice,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/material/steel,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Am" = (
+/obj/item/pizzabox/meat,
+/obj/effect/floor_decal/techfloor/orange,
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/handrail{
+	dir = 1
+	},
+/obj/machinery/light/xenon,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Ar" = (
+/obj/machinery/atmospherics/unary/tank/air,
+/obj/effect/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/floor_decal/industrial/outline/blue,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Ax" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"AA" = (
+/obj/structure/table/standard,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"AD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"AR" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 10
+	},
+/obj/structure/door_assembly,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"Bf" = (
+/obj/machinery/portable_atmospherics/canister/empty,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/full,
+/obj/effect/floor_decal/corner/red/bordercee{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"Bo" = (
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_med)
+"Bz" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = -27
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 9
+	},
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"BE" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_med)
+"BK" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/item/ammo_casing/pistol,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"BQ" = (
+/obj/machinery/sleeper{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_com)
+"BZ" = (
+/obj/machinery/floodlight{
+	dir = 4
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Cc" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 8
+	},
+/obj/structure/closet/emcloset,
+/obj/item/device/lightreplacer,
+/obj/item/mop/advanced,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"Cp" = (
+/obj/item/stock_parts/micro_laser,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"CA" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"CB" = (
+/obj/structure/sign/directions/medical{
+	dir = 4;
+	pixel_x = 32
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"CC" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"CE" = (
+/obj/structure/sign/directions/medical{
+	dir = 8;
+	pixel_x = -32
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"Dl" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/item/ammo_casing/pistol,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/corner,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"Dr" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/landmark/corpse/lar_maria/zhp_guard,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"Ds" = (
+/obj/machinery/space_heater,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"Dt" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Dy" = (
+/obj/item/crowbar,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"DJ" = (
+/obj/structure/window/reinforced,
+/obj/machinery/fabricator,
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"DS" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Eg" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Ei" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_eng)
+"Ek" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 6
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"En" = (
+/obj/machinery/door/airlock/engineering,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"EA" = (
+/obj/effect/decal/cleanable/filth,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/material/steel,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"EF" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"EM" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/constructable_frame/computerframe/deconstruct,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"Fc" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_cargo)
+"Fk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 1
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"Fy" = (
+/obj/effect/decal/cleanable/greenglow,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"FH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 9
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"FK" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_eng)
+"FY" = (
+/obj/machinery/power/solar,
+/obj/structure/railing/mapped,
+/obj/effect/floor_decal/techfloor{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"Gg" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4;
+	icon_state = "map_universal"
+	},
+/obj/machinery/space_heater,
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Gh" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"Gr" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/red/bordercorner2,
+/obj/item/ammo_magazine/pistol,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"Gv" = (
+/obj/machinery/atmospherics/omni/filter,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor/corner,
+/obj/effect/floor_decal/corner/white/bordercorner,
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"Gx" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"GB" = (
+/obj/effect/decal/cleanable/spiderling_remains,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"GD" = (
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_com)
+"GM" = (
+/obj/structure/window/reinforced,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/structure/closet/lasertag,
+/obj/item/clothing/suit/space/emergency,
+/obj/item/clothing/suit/space/emergency,
+/obj/item/tank/emergency/oxygen/double,
+/obj/item/tank/emergency/oxygen/double,
+/obj/item/clothing/mask/gas/half,
+/obj/item/clothing/mask/gas/half,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/map_template/crashed_pods/pod_cargo)
+"GX" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Ha" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Hb" = (
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Hj" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"Hp" = (
+/obj/effect/floor_decal/borderfloor/full,
+/obj/machinery/power/smes/buildable{
+	charge = 50000;
+	inputting = 1;
+	outputting = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"Hs" = (
+/obj/machinery/power/solar,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"Ht" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"Hy" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_com)
+"HY" = (
+/obj/structure/handrail{
+	dir = 8
+	},
+/obj/structure/sign/hydro{
+	dir = 8;
+	pixel_x = 40
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"Ib" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 8
+	},
+/obj/structure/closet/emcloset,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled,
+/area/map_template/crashed_pods/pod_cargo)
+"Ih" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"Ii" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Ij" = (
+/obj/machinery/portable_atmospherics/canister/empty,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/full,
+/obj/effect/floor_decal/industrial/outline/orange,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"IH" = (
+/obj/structure/window/reinforced,
+/obj/machinery/fabricator,
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"II" = (
+/obj/effect/decal/cleanable/filth,
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"IO" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"IV" = (
+/obj/structure/handrail{
+	dir = 4
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"IW" = (
+/obj/effect/floor_decal/techfloor/orange,
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/handrail{
+	dir = 1
+	},
+/obj/machinery/light/xenon,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"IZ" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Je" = (
+/obj/item/stock_parts/computer/hard_drive,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Jm" = (
+/obj/item/crowbar,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Jx" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"Jy" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_med)
+"JB" = (
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"JF" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/disposal/deliveryChute{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 6
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"JI" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/machinery/seed_extractor,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_hydro)
+"JL" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/item/ammo_casing/pistol,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"JM" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/structure/sign/monkey_painting{
+	pixel_x = 28
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_com)
+"Ke" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Kg" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/device/radio,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/item/stock_parts/circuitboard/tray,
+/obj/item/stock_parts/circuitboard/tray,
+/obj/item/stock_parts/circuitboard/tray,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"Ko" = (
+/obj/item/stack/material/steel,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Ku" = (
+/obj/item/circular_saw,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"KB" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	locked = 0;
+	pixel_x = -25;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_eng)
+"KC" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_eng)
+"KD" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange,
+/obj/structure/handrail{
+	dir = 1
+	},
+/obj/machinery/light/xenon,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"KL" = (
+/obj/item/crowbar,
+/obj/effect/floor_decal/corner/black/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"KO" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/sign/emergonly{
+	pixel_y = 27
+	},
+/obj/structure/handrail,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"KR" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/optable,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/structure/curtain/medical,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Lf" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_x = -27
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/freezer/meat,
+/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/food/drinks/milk,
+/obj/item/reagent_containers/food/drinks/soymilk,
+/obj/item/reagent_containers/food/drinks/soymilk,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 9
+	},
+/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"Lh" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/effect/floor_decal/techfloor/orange,
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/handrail{
+	dir = 1
+	},
+/obj/machinery/light/xenon,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Lj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"Lm" = (
+/obj/machinery/power/apc/inactive{
+	dir = 8;
+	pixel_x = -24
+	},
+/obj/effect/landmark/corpse/miningstation/deadminer,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"Lz" = (
+/obj/structure/sign/directions/bridge{
+	dir = 4;
+	pixel_x = 32
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"LC" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor/orange,
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/handrail{
+	dir = 1
+	},
+/obj/machinery/light/xenon,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"LT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 8
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"Ma" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"Mo" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_eng)
+"Mz" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"MA" = (
+/obj/effect/floor_decal/techfloor/orange/corner{
+	dir = 8
+	},
+/obj/item/stock_parts/computer/hard_drive/cluster,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"MD" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/item/stock_parts/circuitboard/solar_control,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/solar_assembly,
+/obj/item/stack/material/glass/fifty,
+/obj/item/stack/cable_coil/white,
+/obj/item/stack/cable_coil/white,
+/obj/structure/closet/crate/solar,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"MH" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"MI" = (
+/obj/machinery/atmospherics/omni/filter,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"MW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 10
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"MX" = (
+/obj/machinery/alarm{
+	dir = 4;
+	locked = 0;
+	pixel_x = -25;
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4;
+	level = 2
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"MY" = (
+/turf/simulated/shuttle/wall/corner/dark,
+/area/map_template/crashed_pods/pod_eng)
+"Na" = (
+/obj/item/remains/mouse,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Ni" = (
+/turf/simulated/shuttle/wall/corner/dark/se,
+/area/map_template/crashed_pods/pod_com)
+"Nn" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Nr" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/closet/lasertag,
+/obj/item/tank/emergency/oxygen/double,
+/obj/item/tank/emergency/oxygen/double,
+/obj/item/clothing/suit/space,
+/obj/item/clothing/suit/space/emergency,
+/obj/item/clothing/mask/gas/half,
+/obj/item/clothing/mask/gas/radical,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"NC" = (
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "escape pod airlock"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"NK" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/submap_landmark/joinable_submap/crashed_pods,
+/obj/machinery/constructable_frame/computerframe/deconstruct{
+	dir = 1
+	},
+/obj/structure/window/reinforced,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"NU" = (
+/obj/machinery/atmospherics/unary/tank/air,
+/obj/effect/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 5
+	},
+/obj/effect/floor_decal/industrial/outline/orange,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"NZ" = (
+/obj/structure/closet/crate,
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/item/device/scanner/gas,
+/obj/item/stock_parts/circuitboard/unary_atmos/cooler,
+/obj/item/stock_parts/circuitboard/unary_atmos/heater,
+/obj/item/stock_parts/circuitboard/oxyregenerator,
+/obj/item/tank/oxygen/yellow,
+/obj/structure/cable,
+/obj/item/stack/material/uranium/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/item/stack/material/uranium/ten,
+/obj/item/clothing/under/savage_hunter,
+/obj/item/clothing/under/savage_hunter/female,
+/obj/item/clothing/under/wetsuit,
+/obj/item/trash/proteinbar,
+/obj/item/trash/liquidfood,
+/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/circuitboard/biogenerator,
+/obj/item/bedsheet/orange,
+/obj/item/bedsheet/orange,
+/obj/item/stock_parts/matter_bin/adv,
+/obj/item/stock_parts/micro_laser/ultra,
+/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/stack/material/sandstone{
+	amount = 50
+	},
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 6
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"Ob" = (
+/obj/item/stock_parts/computer/battery_module/nano,
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Om" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Oq" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"Oy" = (
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 5
+	},
+/obj/item/reagent_containers/glass/bucket,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"Oz" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/sign/emergonly{
+	pixel_y = 27
+	},
+/obj/structure/handrail,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"OA" = (
+/obj/effect/decal/cleanable/filth,
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"OD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"OM" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/turf/space,
+/area/map_template/crashed_pods/pod_eng)
+"OO" = (
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"OR" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/hydroponics,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"OU" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"OY" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Pa" = (
+/obj/structure/mopbucket,
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/filth,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"Pf" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/firedoor_assembly,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"Pj" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/machinery/power/port_gen/pacman/super,
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/curtain/open/shower/engineering{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Pq" = (
+/obj/machinery/alarm{
+	dir = 4;
+	locked = 0;
+	pixel_x = -25;
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4;
+	level = 2
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"PF" = (
+/obj/effect/floor_decal/borderfloor/full,
+/obj/structure/ore_box,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"PJ" = (
+/obj/machinery/sleeper{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_eng)
+"PK" = (
+/obj/effect/decal/cleanable/blood/tracks/body,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"PM" = (
+/obj/machinery/alarm{
+	dir = 4;
+	locked = 0;
+	pixel_x = -25;
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4;
+	level = 2
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 8
+	},
+/obj/random/toolbox,
+/obj/item/stack/material/steel/fifty,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"PT" = (
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "escape pod airlock"
+	},
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"PV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	dir = 4;
+	icon_state = "1-4"
+	},
+/mob/living/simple_animal/hostile/meat/horror,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"Qe" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Qf" = (
+/obj/structure/handrail{
+	dir = 8
+	},
+/obj/structure/sign/directions/med{
+	dir = 8;
+	pixel_x = 40
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"Ql" = (
+/obj/item/crowbar,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"Qn" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_eng)
+"Qp" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 1
+	},
+/obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"QF" = (
+/obj/structure/sign/emergonly{
+	pixel_y = 27
+	},
+/obj/structure/handrail,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"QQ" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/item/storage/backpack/dufflebag/eng,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Rk" = (
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_cargo)
+"Rn" = (
+/obj/structure/window/reinforced,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/obj/structure/closet/lasertag,
+/obj/item/clothing/suit/space/emergency,
+/obj/item/clothing/suit/space/emergency,
+/obj/item/tank/emergency/oxygen/double,
+/obj/item/tank/emergency/oxygen/double,
+/obj/item/clothing/mask/gas/half,
+/obj/item/clothing/mask/gas/half,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/obj/item/storage/briefcase/inflatable,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"Ru" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/sign/emergonly{
+	pixel_y = 27
+	},
+/obj/structure/handrail,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"Sc" = (
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_eng)
+"So" = (
+/obj/structure/closet/crate/large/hydroponics,
+/obj/item/seeds/potatoseed,
+/obj/item/seeds/potatoseed,
+/obj/item/seeds/wheatseed,
+/obj/item/seeds/wheatseed,
+/obj/item/seeds/orangeseed,
+/obj/item/seeds/orangeseed,
+/obj/item/seeds/cornseed,
+/obj/item/seeds/cornseed,
+/obj/item/material/hatchet,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/material/minihoe,
+/obj/item/plantspray/pests,
+/obj/item/plantspray/pests,
+/obj/item/plantspray/weeds,
+/obj/item/seeds/poppyseed,
+/obj/item/seeds/towermycelium,
+/obj/item/seeds/glowshroom,
+/obj/item/seeds/whitebeetseed,
+/obj/item/storage/plants,
+/obj/item/seeds/bananaseed,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/black/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"Sr" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/sign/emergonly{
+	pixel_y = 27
+	},
+/obj/structure/handrail,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Sv" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/microwave,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"Sy" = (
+/obj/effect/decal/cleanable/flour,
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"SE" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"SR" = (
+/obj/structure/inflatable/wall,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"Te" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/item/device/radio/map_preset,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"Th" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/orange/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/orange/bordercorner2{
+	dir = 9
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Tl" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/turf/space,
+/area/map_template/crashed_pods/pod_cargo)
+"To" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_hydro)
+"Tw" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/reagent_containers/food/condiment/soysauce{
+	pixel_x = 9;
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = 4;
+	pixel_y = 15
+	},
+/obj/item/reagent_containers/food/condiment/enzyme{
+	pixel_x = -2;
+	pixel_y = 17
+	},
+/obj/item/reagent_containers/food/condiment/small/sugar{
+	pixel_x = -1;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/food/condiment/small/peppermill{
+	pixel_x = 3;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/food/condiment/barbecue{
+	pixel_x = -8;
+	pixel_y = 20
+	},
+/obj/effect/floor_decal/corner/black/diagonal,
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 1
+	},
+/obj/item/reagent_containers/food/snacks/meatsteak,
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"TI" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/blue/border,
+/obj/effect/floor_decal/borderfloor/corner2,
+/obj/effect/floor_decal/corner/blue/bordercorner2,
+/obj/random/firstaid,
+/obj/random/firstaid,
+/obj/random/firstaid,
+/obj/random/firstaid,
+/obj/random/firstaid,
+/obj/random/firstaid,
+/obj/structure/closet/crate/medical,
+/obj/structure/curtain/medical{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"TW" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/item/storage/firstaid/adv{
+	pixel_y = 3
+	},
+/obj/structure/table/rack,
+/obj/effect/floor_decal/corner/blue/border,
+/obj/item/storage/firstaid/stab,
+/obj/item/storage/med_pouch/radiation,
+/obj/item/storage/med_pouch/radiation,
+/obj/item/storage/med_pouch/radiation,
+/obj/item/storage/med_pouch/radiation,
+/obj/structure/curtain/medical{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Ui" = (
+/obj/item/stock_parts/matter_bin,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Ul" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/item/device/binoculars,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Uo" = (
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/wirecutters,
+/obj/item/arrow/rod,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"Up" = (
+/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_hydro)
+"Uw" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/closet/lasertag,
+/obj/item/tank/emergency/oxygen/double,
+/obj/item/tank/emergency/oxygen/double,
+/obj/item/clothing/suit/space,
+/obj/item/clothing/suit/space/emergency,
+/obj/item/clothing/mask/gas/half,
+/obj/item/clothing/mask/gas/radical,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Uy" = (
+/obj/structure/window/reinforced,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"UB" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"UF" = (
+/obj/item/stock_parts/computer/card_slot/broadcaster,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"UK" = (
+/obj/structure/grille,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"UO" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/corner/black/diagonal,
+/turf/simulated/floor/tiled/white,
+/area/map_template/crashed_pods/pod_hydro)
+"UP" = (
+/turf/simulated/shuttle/wall/corner/dark/se,
+/area/map_template/crashed_pods/pod_eng)
+"UQ" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"Vv" = (
+/obj/structure/sign/directions/supply{
+	dir = 8;
+	pixel_x = -34
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"VK" = (
+/obj/item/stack/material/steel,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"VM" = (
+/turf/simulated/shuttle/wall/corner/dark/nw,
+/area/map_template/crashed_pods/pod_eng)
+"VY" = (
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_med)
+"Wf" = (
+/obj/machinery/power/solar,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_eng)
+"Wl" = (
+/obj/structure/disposaloutlet{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/crashed_pods/pod_hydro)
+"Wm" = (
+/obj/structure/sign/directions/evac{
+	dir = 4;
+	pixel_x = 32
+	},
+/obj/structure/handrail{
+	dir = 8
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"Wq" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/shuttle/wall/corner/dark/nw,
+/area/map_template/crashed_pods/pod_com)
+"Ws" = (
+/obj/structure/lattice,
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Wt" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_eng)
+"WB" = (
+/obj/structure/firedoor_assembly,
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"WI" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/crowbar,
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"WS" = (
+/obj/item/stock_parts/power,
+/obj/effect/decal/cleanable/dirt,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"WV" = (
+/obj/structure/sign/directions/engineering{
+	dir = 4;
+	pixel_x = 32
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"WW" = (
+/obj/structure/window/reinforced,
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods/pod_cargo)
+"WX" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/techfloor/orange,
+/obj/structure/handrail{
+	dir = 1
+	},
+/obj/machinery/light/xenon,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"WY" = (
+/obj/structure/largecrate/animal/cat,
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline/green,
+/turf/simulated/floor/plating,
+/area/map_template/crashed_pods)
+"Xb" = (
+/obj/effect/floor_decal/borderfloor/full,
+/obj/machinery/power/smes/buildable{
+	charge = 50000;
+	inputting = 1;
+	outputting = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Xl" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4;
+	icon_state = "map_universal"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/machinery/constructable_frame/computerframe/deconstruct,
+/obj/effect/floor_decal/corner/red/border{
+	dir = 1
+	},
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"Xm" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/turf/space,
+/area/map_template/crashed_pods/pod_med)
+"Xq" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/machinery/seed_extractor,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/crashed_pods/pod_cargo)
+"Xv" = (
+/obj/item/device/binoculars,
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/filth,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"Xy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"XS" = (
+/obj/structure/mopbucket,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"XT" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_cargo)
+"XU" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/sign/emergonly{
+	pixel_y = 27
+	},
+/obj/structure/handrail,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_com)
+"XV" = (
+/obj/machinery/portable_atmospherics/canister/empty,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/full,
+/obj/effect/floor_decal/corner/blue/bordercee{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Yh" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/techfloor/orange,
+/obj/effect/floor_decal/industrial/hatch/orange,
+/obj/structure/handrail{
+	dir = 1
+	},
+/obj/machinery/light/xenon,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Yi" = (
+/obj/item/stock_parts/computer/network_card/wired,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"Yn" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/map_template/crashed_pods/pod_med)
+"Yr" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/turf/space,
+/area/map_template/crashed_pods/pod_hydro)
+"Ys" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"Yu" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_eng)
+"Yy" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_hydro)
+"YI" = (
+/obj/item/stock_parts/console_screen,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
+"YK" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/device/radio,
+/turf/simulated/floor/holofloor/tiled,
+/area/map_template/crashed_pods/pod_com)
+"YL" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/turf/space,
+/area/map_template/crashed_pods/pod_com)
+"Ze" = (
+/turf/simulated/shuttle/wall/corner/dark,
+/area/map_template/crashed_pods/pod_com)
+"Zt" = (
+/turf/simulated/shuttle/wall/corner/dark/nw,
+/area/map_template/crashed_pods/pod_hydro)
+"Zw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 4
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"ZG" = (
+/obj/structure/handrail{
+	dir = 8
+	},
+/turf/template_noop,
+/area/map_template/crashed_pods)
+"ZO" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+"ZW" = (
+/obj/structure/table/steel_reinforced,
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lime/bordercorner2{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_med)
+"ZZ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro)
+
+(1,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Hs
+FY
+WV
+JB
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(2,1,1) = {"
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+Gh
+VM
+OM
+Sc
+Sc
+Sc
+Mz
+aX
+Sc
+MY
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(3,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Mo
+Sc
+Sc
+Sc
+dY
+Sc
+eT
+Lh
+Sc
+Sc
+MY
+ZG
+cd
+ZG
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Lz
+dS
+Gh
+Gh
+Gh
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(4,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Mo
+Sc
+mI
+PM
+Th
+Sc
+Eg
+GX
+Sc
+Sc
+Sc
+Sc
+FK
+Sc
+MY
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+YL
+cx
+cx
+cx
+gH
+Ht
+cx
+Ze
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(5,1,1) = {"
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+VM
+Sc
+MH
+UB
+fA
+En
+nM
+nl
+qW
+qc
+xL
+KB
+qq
+Sc
+Sc
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cx
+cx
+cx
+ry
+cx
+XU
+KD
+cx
+cx
+Ze
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(6,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+OM
+KC
+Gg
+Ql
+Pj
+Om
+Uw
+Yu
+Dt
+OY
+kT
+kT
+kT
+fm
+Qn
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+cx
+Bz
+MX
+aE
+cx
+yZ
+gT
+cx
+cx
+cx
+cx
+rR
+cx
+Ze
+cd
+cd
+"}
+(7,1,1) = {"
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+OM
+KC
+sR
+mQ
+tn
+Om
+MD
+QQ
+kT
+kT
+kT
+kT
+kT
+lu
+Qn
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Wq
+cx
+mY
+xm
+YK
+cj
+jA
+kH
+mV
+iE
+fM
+jT
+GD
+cx
+cx
+cd
+cd
+"}
+(8,1,1) = {"
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+vv
+Sc
+nV
+iy
+ki
+lQ
+lf
+er
+JF
+rl
+Wt
+pE
+PJ
+Sc
+Sc
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+YL
+wB
+Xl
+Dy
+Ag
+PV
+BK
+AD
+Ma
+OD
+Dr
+ly
+ly
+iK
+ea
+cd
+cd
+"}
+(9,1,1) = {"
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+Mo
+Sc
+Ar
+rq
+NZ
+Sc
+Ii
+Ke
+Ei
+Sc
+Sc
+Sc
+FK
+Sc
+UP
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+YL
+wB
+EM
+jg
+NK
+JL
+up
+wI
+Hj
+mW
+qp
+mW
+ln
+to
+ea
+cd
+cd
+"}
+(10,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Mo
+Sc
+Sc
+Sc
+yb
+Sc
+Oz
+Yh
+Ei
+Sc
+UP
+IV
+cd
+IV
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+uG
+cx
+lT
+cF
+MI
+Dl
+Te
+UQ
+qN
+DJ
+JM
+iu
+BQ
+cx
+cx
+cd
+cd
+"}
+(11,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+vv
+OM
+Sc
+Sc
+Sc
+eZ
+Nn
+Ei
+UP
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+cx
+xP
+sC
+Gr
+cx
+fN
+PT
+Hy
+cx
+cx
+cx
+rR
+cx
+Ni
+cd
+cd
+"}
+(12,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Wf
+jE
+ob
+cd
+jC
+xV
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cx
+cx
+cx
+Bf
+cx
+fT
+WX
+Hy
+cx
+Ni
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(13,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+YL
+cx
+cx
+cx
+sb
+jl
+Hy
+Ni
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(14,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+qz
+OO
+Gh
+yG
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(15,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(16,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(17,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(18,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(19,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(20,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+Gh
+cd
+CB
+JB
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(21,1,1) = {"
+cd
+cd
+cd
+yR
+rs
+rs
+rs
+Zw
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Xm
+Bo
+Bo
+Bo
+dQ
+vT
+Bo
+af
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(22,1,1) = {"
+cd
+cd
+yR
+Ek
+SR
+SR
+SR
+lb
+Zw
+Gh
+Gh
+cd
+Gh
+Gh
+Gh
+Gh
+BE
+Bo
+Bo
+Bo
+Xb
+Bo
+Sr
+Am
+Bo
+Bo
+af
+ZG
+cd
+Qf
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(23,1,1) = {"
+cd
+cd
+aD
+SR
+AA
+dB
+wu
+SR
+SR
+SR
+Zw
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+Bo
+jO
+Pq
+xE
+Bo
+IZ
+ox
+Bo
+Bo
+Bo
+Bo
+Jy
+Bo
+af
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(24,1,1) = {"
+cd
+cd
+aD
+SR
+wR
+Ku
+aj
+sK
+pK
+sK
+Xy
+cd
+cd
+cd
+Gh
+Gh
+wS
+Bo
+Qp
+Ul
+gy
+pY
+Qe
+OU
+dX
+Uy
+uy
+mD
+VY
+Bo
+Bo
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(25,1,1) = {"
+cd
+cd
+aD
+SR
+rX
+sk
+WY
+SR
+SR
+SR
+Fk
+cd
+cd
+cd
+Gh
+Gh
+Xm
+pN
+sj
+Jm
+TI
+kw
+Nr
+Ys
+az
+SE
+va
+va
+va
+ZW
+fF
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(26,1,1) = {"
+cd
+cd
+LT
+MW
+SR
+SR
+SR
+FH
+Fk
+Gh
+Gh
+cd
+cd
+cd
+cd
+Gh
+Xm
+pN
+KR
+va
+TW
+kw
+Ax
+va
+va
+va
+va
+va
+va
+WI
+fF
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(27,1,1) = {"
+cd
+cd
+cd
+LT
+ej
+ej
+ej
+Fk
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+os
+Bo
+lg
+tW
+kR
+mz
+ne
+va
+nJ
+IH
+hV
+bI
+ep
+Bo
+Bo
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(28,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Bo
+NU
+kq
+uI
+Bo
+dA
+sG
+Yn
+Bo
+Bo
+Bo
+Jy
+Bo
+gN
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(29,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+BE
+Bo
+Bo
+Bo
+XV
+Bo
+QF
+IW
+Yn
+Bo
+gN
+IV
+cd
+gl
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(30,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Xm
+Bo
+Bo
+Bo
+dt
+xe
+Yn
+gN
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(31,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Gh
+CE
+cd
+cd
+hL
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(32,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(33,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(34,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(35,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(36,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(37,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Cp
+Hb
+Hb
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(38,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Hb
+Hb
+cd
+II
+cd
+cd
+cd
+cd
+cd
+"}
+(39,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+wd
+Hb
+Hb
+Hb
+Hb
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
+(40,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Ha
+Ha
+Hb
+pT
+Yi
+Hb
+Hb
+Hb
+Hb
+Hb
+Ko
+Hb
+Hb
+Hb
+Hb
+Hb
+cd
+"}
+(41,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Ha
+Ha
+Ha
+Hb
+Ha
+Hb
+Ha
+Hb
+el
+Hb
+Hb
+Hb
+Hb
+Ui
+Hb
+wd
+Hb
+cd
+"}
+(42,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+oN
+Ha
+UK
+Hb
+Ha
+dF
+Hb
+Ha
+Hb
+wd
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Ko
+cd
+"}
+(43,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Hb
+Ha
+Ha
+Fy
+Tl
+Rk
+pi
+Ha
+Ha
+Ha
+Hb
+VK
+Hb
+Hb
+eC
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+"}
+(44,1,1) = {"
+cd
+cd
+Gh
+Gh
+Gh
+Lj
+et
+Gh
+Wm
+JB
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+wd
+Hb
+nw
+Ha
+OA
+pi
+qw
+Hb
+je
+Ha
+Ha
+Hb
+YI
+Hb
+Hb
+Hb
+Ws
+Rk
+Rk
+Rk
+ag
+"}
+(45,1,1) = {"
+cd
+Gh
+Gh
+Gh
+Gh
+Yr
+jS
+jS
+jS
+CC
+Gx
+jS
+vB
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Ob
+Ha
+Ha
+Ha
+oD
+Ha
+Ha
+UK
+Rk
+Rk
+da
+ih
+Ws
+Ko
+Hb
+Hb
+Hb
+Hb
+tI
+qf
+Rk
+Rk
+"}
+(46,1,1) = {"
+cd
+cd
+Gh
+Gh
+jS
+jS
+jS
+Hp
+jS
+Ru
+uh
+jS
+jS
+vB
+ZG
+cd
+HY
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Hb
+oN
+Ha
+OA
+Rk
+Rk
+Rk
+PF
+Rk
+tF
+EF
+rU
+UK
+Rk
+ag
+Hb
+Hb
+xR
+xR
+Ib
+Pf
+"}
+(47,1,1) = {"
+cd
+Gh
+Gh
+Zt
+jS
+Lf
+fw
+yU
+jS
+NC
+Ih
+jS
+jS
+jS
+jS
+Up
+jS
+vB
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+OA
+Ha
+Ha
+Ha
+yE
+Rk
+jJ
+Lm
+Uo
+Rk
+iv
+iv
+Ws
+Hb
+Rk
+Rk
+ag
+Hb
+if
+if
+kh
+vI
+"}
+(48,1,1) = {"
+Gh
+Gh
+Gh
+Yy
+jS
+Tw
+UO
+zI
+sJ
+wC
+fX
+Kg
+Rn
+hM
+eD
+yB
+jS
+jS
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Hb
+sz
+Ha
+DS
+Rk
+yY
+PK
+MA
+AR
+hH
+if
+Hb
+Ko
+Rk
+Rk
+Rk
+Ws
+Hb
+Fc
+Rk
+Rk
+"}
+(49,1,1) = {"
+cd
+Gh
+Gh
+Yr
+lO
+cH
+KL
+So
+OR
+CA
+lM
+IO
+ZZ
+Oq
+Oq
+Oq
+Cc
+zT
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Ha
+oN
+Na
+Ha
+Tl
+vC
+pg
+gb
+EA
+Xv
+Hb
+Ko
+YI
+Hb
+sW
+GM
+yv
+Hb
+UK
+UK
+Rk
+fx
+"}
+(50,1,1) = {"
+Gh
+Gh
+Gh
+Yr
+lO
+Sv
+Sy
+Aa
+OR
+CA
+Oq
+Oq
+Oq
+Oq
+Oq
+XS
+tP
+zT
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Hb
+wd
+Ha
+Ha
+hE
+Ws
+UF
+vn
+Pa
+xR
+Hb
+Hb
+Hb
+lc
+Ha
+if
+Ws
+Hb
+Hb
+Ws
+Hb
+"}
+(51,1,1) = {"
+cd
+Gh
+Gh
+Yy
+jS
+uU
+iq
+Gv
+Oy
+ZO
+Oq
+fg
+mR
+JI
+To
+sl
+jS
+jS
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Ha
+Ha
+oK
+Ha
+UK
+Ha
+ir
+oG
+fn
+dg
+xR
+Hb
+ip
+zf
+zi
+Ha
+Ws
+Ha
+Ha
+cd
+cd
+"}
+(52,1,1) = {"
+cd
+Gh
+Gh
+li
+jS
+kY
+Ds
+zb
+jS
+kE
+qQ
+wY
+jS
+jS
+jS
+Up
+jS
+wZ
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+Ha
+Ha
+Tl
+vC
+zo
+GB
+Ws
+it
+zp
+Rk
+uO
+uO
+Ah
+Hb
+ni
+WW
+Xq
+Ws
+Hb
+oD
+cd
+cd
+"}
+(53,1,1) = {"
+cd
+cd
+Gh
+Gh
+jS
+jS
+jS
+Ij
+jS
+KO
+LC
+wY
+jS
+wZ
+IV
+cd
+oR
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Gh
+Gh
+Gh
+WS
+ny
+DS
+Rk
+mf
+Hb
+qw
+Rk
+xZ
+Rk
+ey
+XT
+Hb
+Hb
+tX
+Rk
+Rk
+Hb
+Hb
+Hb
+cd
+cd
+"}
+(54,1,1) = {"
+cd
+cd
+cd
+Gh
+Gh
+Yr
+jS
+jS
+jS
+Jx
+wE
+wY
+wZ
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Ha
+Ha
+Ha
+Rk
+dP
+Fy
+Tl
+Rk
+Rk
+Rk
+WB
+WB
+Ah
+rU
+tX
+Rk
+fx
+Hb
+Hb
+Hb
+cd
+cd
+"}
+(55,1,1) = {"
+cd
+cd
+cd
+cd
+Gh
+Gh
+IV
+cd
+nL
+cd
+cd
+Wl
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Ha
+Ha
+Ha
+Rk
+Rk
+pi
+Hb
+Hb
+Ha
+Vv
+Ha
+Hb
+Hb
+Hb
+tX
+fx
+Hb
+Hb
+Cp
+wd
+cd
+cd
+"}
+(56,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Hb
+Ha
+Ha
+Ha
+Hb
+Ha
+Ha
+Hb
+Ha
+Hb
+wd
+Ui
+Hb
+kO
+Hb
+Ha
+Hb
+Hb
+Hb
+cd
+cd
+"}
+(57,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Hb
+Hb
+Hb
+Ko
+Hb
+eC
+Hb
+wd
+Hb
+Hb
+Ha
+Hb
+eC
+Ha
+Hb
+Hb
+Ko
+Hb
+Hb
+cd
+cd
+"}
+(58,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+wd
+Hb
+Hb
+Hb
+Je
+Hb
+Hb
+eC
+Hb
+BZ
+Hb
+Hb
+eC
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+cd
+cd
+"}
+(59,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+wd
+Hb
+Hb
+Hb
+cd
+cd
+"}
+(60,1,1) = {"
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+"}
