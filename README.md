@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://github.com/infinitystation/Baystation12/actions">
-    <img src="https://github.com/infinitystation/Baystation12/workflows/Run%20Tests/badge.svg"
+    <img src="https://github.com/infinitystation/Baystation12/actions/workflows/test.yml/badge.svg"
          alt="Build Status">
   </a>
   <a href="https://www.codefactor.io/repository/github/infinitystation/baystation12">

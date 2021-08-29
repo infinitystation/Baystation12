@@ -2,9 +2,9 @@
 	title = "Crewman"
 	total_positions = 12
 	spawn_positions = 12
-	department = "Civilian"
+	department = "Гражданский"
 	department_flag = CIV
-	supervisors = "Главой Персонала"
+	supervisors = "Главе Персонала"
 	selection_color = "#515151"
 //	economic_power = 6
 	announced = FALSE
@@ -25,6 +25,8 @@
 		/datum/mil_rank/civ/offduty,
 		/datum/mil_rank/civ/nt
 	)
+	min_goals = 2
+	max_goals = 7
 
 /datum/job/assistant/get_description_blurb()
 	return "Вы - Матрос... Или, по крайней мере, одна из его подпрофессий. От Вас не ждут серьезного участия в раунде. \

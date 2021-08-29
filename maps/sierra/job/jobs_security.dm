@@ -1,10 +1,10 @@
 /datum/job/warden
 	title = "Warden"
-	department = "Security"
+	department = "Охранный"
 	department_flag = SEC
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Главой Охраны"
+	supervisors = "Главе Службы безопасности"
 	economic_power = 8
 	minimal_player_age = 14
 	ideal_character_age = 35
@@ -45,12 +45,12 @@
 
 /datum/job/detective
 	title = "Criminal Investigator"
-	department = "Security"
+	department = "Охранный"
 	department_flag = SEC
 	hud_icon = "huddetective"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Head of Security"
+	supervisors = "Главе Службы безопасности"
 	economic_power = 5
 	minimal_player_age = 7
 	ideal_character_age = 35
@@ -89,15 +89,15 @@
 
 /datum/job/officer
 	title = "Security Guard"
-	department = "Security"
+	department = "Охранный"
 	department_flag = SEC
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Главой Охраны и Смотрителем (сержантом)"
+	supervisors = "Главе Службы безопасности и Смотрителю (сержанту)"
 	economic_power = 6
 	minimal_player_age = 10
 	ideal_character_age = 25
-	alt_titles = list()
+	alt_titles = list("Junior Guard")
 
 	skill_points = 20
 
@@ -131,16 +131,16 @@
 
 /datum/job/security_assistant
 	title = "Security Cadet"
-	department = "Security"
+	department = "Охранный"
 	department_flag = SEC
 
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Главой Охраны и остальным охранным персоналом"
+	supervisors = "Главе Службы безопасности и остальному охранному персоналу"
 	economic_power = 3
 	ideal_character_age = 21
 	selection_color = "#601c1c"
-	alt_titles = list("Junior Guard")
+	alt_titles = list("Security Recruit")
 
 	min_skill = list(	SKILL_BUREAUCRACY = SKILL_BASIC,
 	                    SKILL_COMBAT      = SKILL_BASIC,

@@ -26,11 +26,14 @@
 	#include "datums/uniforms_employee.dm"
 
 	#include "datums/reports/command.dm"
-	#include "datums/reports/corporate.dm"
-	#include "datums/reports/exploration.dm"
-	#include "datums/reports/science.dm"
-	#include "datums/reports/security.dm"
 	#include "datums/reports/deck.dm"
+	#include "datums/reports/engineering.dm"
+	#include "datums/reports/exploration.dm"
+	#include "datums/reports/general.dm"
+	#include "datums/reports/iaa.dm"
+	#include "datums/reports/medical.dm"
+	#include "datums/reports/security.dm"
+	#include "datums/reports/science.dm"
 
 	#include "datums/shackle_law_sets.dm"
 	#include "datums/supplypacks/engineering.dm"
@@ -136,7 +139,6 @@
 //	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 //  #include "../away_inf/tajsc/tajsciship.dm"
 
-	#include "../away/ascent_caulship/_ascent_caulship.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
@@ -149,6 +151,7 @@
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/verne/verne.dm"
 	#include "../away/voxship/voxship.dm"
+	// #include "../away/ascent_caulship/_ascent_caulship.dm"
 
 	#include "../random_ruins/exoplanet_ruins/playablecolony_inf/playablecolony.dm"
 

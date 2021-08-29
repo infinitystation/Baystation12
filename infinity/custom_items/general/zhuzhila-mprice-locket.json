@@ -1,0 +1,14 @@
+{
+	"ckey":             "zhuzhila",
+	"character_name":   "Marshall Price",
+	"item_path":        "/obj/item/clothing/accessory/locket",
+	"item_desc":        "This locket, you can see how it shimmers in shades of blue due to the refraction of light",
+	"item_icon_state":  "mprice_locket",
+	"additional_data":
+	{
+		"photo_path": "infinity/custom_items/rsc/zhuzhila.png",
+		"prewiew_scale": 64,
+		"sprite_offset": 80,
+		"message": "от друзей из \"Расикс\""
+	}
+}

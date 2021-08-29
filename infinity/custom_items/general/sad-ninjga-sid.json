@@ -1,0 +1,8 @@
+{
+  "ckey" :            "Sad Ninja Sid",
+  "character_name" :  "UWO-564",
+  "item_name" :       "tight bodysuit",
+  "item_desc" :       "Tight bodysuit that is meant to be worn by a clone or a vat-grown in lab. This one has an inscription on it's back and front \"UWO-564\".",
+  "item_icon_state" : "sad_ninja_sid_sidnie_UWO_under",
+  "item_path" :       "/obj/item/clothing/under"
+}

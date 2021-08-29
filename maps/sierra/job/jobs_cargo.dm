@@ -1,10 +1,10 @@
 /datum/job/qm
 	title = "Quartermaster"
-	department = "Supply"
+	department = "Снабжения"
 	department_flag = SUP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Главой Персонала"
+	supervisors = "Главе Персонала"
 	economic_power = 8
 	minimal_player_age = 7
 	ideal_character_age = 35
@@ -34,11 +34,11 @@
 
 /datum/job/cargo_tech
 	title = "Cargo Technician"
-	department = "Supply"
+	department = "Снабжения"
 	department_flag = SUP
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Завхозом и Главой Персонала"
+	supervisors = "Квартирмейстеру и Главе Персонала"
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/tech
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
@@ -64,11 +64,11 @@
 
 /datum/job/mining
 	title = "Prospector"
-	department = "Supply"
+	department = "Снабжения"
 	department_flag = SUP
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Завхозом и Главой Персонала"
+	supervisors = "Квартирмейстеру и Главе Персонала"
 	selection_color = "#515151"
 	economic_power = 7
 	ideal_character_age = 25
@@ -97,11 +97,11 @@
 
 /datum/job/cargo_assistant
 	title = "Cargo Assistant"
-	department = "Supply"
+	department = "Снабжения"
 	department_flag = SUP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Завхозом и Главой Персонала"
+	supervisors = "Квартирмейстеру и Главе Персонала"
 	ideal_character_age = 20
 	selection_color = "#515151"
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/assistant
@@ -118,7 +118,7 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
-							 
+
 /datum/job/cargo_tech/get_description_blurb()
 	return "Папа, мама, бабушка, дедушка, второй папа, всегда говорили Вам, что без хорошего образования Вы будете грузчиком. Однако они не ожидали, что Вы станете космическим грузчиком.\
 	Поздравляем, Вы стали ассистентом департамента снабжения. Бегайте по мелким поручениям Вашего начальника - Главы Персонала и старшего сотрудника склада - Квартирмейстер.\

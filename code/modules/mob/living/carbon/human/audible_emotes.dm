@@ -1,5 +1,5 @@
 /mob/living/proc/agony_scream()
-	if(stat || isMonkey())
+	if(stat || is_species(SPECIES_MONKEY))
 		return
 	var/scream_sound = null
 	var/message = null
@@ -26,7 +26,7 @@
 		custom_emote(2, message)
 
 /mob/living/proc/agony_moan()
-	if(stat || isMonkey())
+	if(stat || is_species(SPECIES_MONKEY))
 		return
 	var/moan_sound = null
 	var/message = null

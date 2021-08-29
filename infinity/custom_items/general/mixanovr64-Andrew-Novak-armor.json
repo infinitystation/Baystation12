@@ -1,0 +1,6 @@
+{
+  "ckey" :            "mixanovr64",
+  "character_name" :  "Andrew Novak",
+  "item_path" :       "/obj/item/clothingbag/mdsf_mixa",
+  "req_access" :      [ "ACCESS_GUARD" ]
+}

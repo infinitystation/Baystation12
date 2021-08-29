@@ -297,7 +297,6 @@
 		if(T.turf_is_crowded(user))
 			to_chat(user, "<span class='warning'>You can't climb there, the way is blocked.</span>")
 			return 0
-
 /obj/structure/railing/do_climb(var/mob/living/user)
 	. = ..()
 	if(.)

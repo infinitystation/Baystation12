@@ -1,6 +1,6 @@
 /obj/item/clothing/under/unchi_turtleneck
 	name = "old turtleneck"
-	desc = "Dark green, military turtleneck with camouflage cargo pants. They look worn, and the turtleneck looks like it suits more to the female figure."
+	desc = "Dark green, military turtleneck with army cargo pants. They look pretty worn, and seems like, turtleneck have been hemmed in some day."
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "unchi_turtleneck"
 	item_state = "unchi_turtleneck"

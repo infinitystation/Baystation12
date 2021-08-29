@@ -89,7 +89,7 @@ if write_cl['changes']:
         cl_contents.seek(0)
 
         #Push the newly generated changelog to the master branch so that it can be compiled
-        repo.create_file(f"html/changelogs_infinity/AutoChangeLog-pr-{pr_number}.yml", f"Автоматическое создание чейнджлога для ПРа #{pr_number} [Пропуск CI]", content=f'{cl_contents.read()}', branch='master', committer=InputGitAuthor(git_name, git_email))
+        repo.create_file(f"html/changelogs_infinity/AutoChangeLog-pr-{pr_number}.yml", f"Автоматическое создание чейнджлога для ПР #{pr_number} [Пропуск CI]", content=f'{cl_contents.read()}', branch='master', committer=InputGitAuthor(git_name, git_email))
     print("Done!")
 else:
     print("No CL changes detected!")

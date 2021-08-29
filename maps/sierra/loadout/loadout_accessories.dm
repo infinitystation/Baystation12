@@ -5,7 +5,10 @@
 /datum/gear/accessory/pilot_pin
 	display_name = "pilot's qualification pin"
 	path = /obj/item/clothing/accessory/solgov/specialty/pilot
-	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/adjutant, /datum/job/exploration_leader, /datum/job/explorer_pilot)
+	// [INF]
+	// allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/adjutant, /datum/job/exploration_leader, /datum/job/explorer_pilot)
+	allowed_skills = list(SKILL_PILOT = SKILL_EXPERT)
+	// [INF/] by hacso
 
 /datum/gear/accessory/armband_security
 	allowed_roles = SECURITY_ROLES
@@ -33,6 +36,11 @@
 	allowed_roles = RESEARCH_ROLES
 	allowed_branches = list(/datum/mil_branch/employee)
 	allowed_skills = list(SKILL_SCIENCE = SKILL_EXPERT)
+
+/datum/gear/accessory/penlight
+	display_name = "penlight"
+	path = /obj/item/device/flashlight/pen
+	allowed_roles = STERILE_ROLES
 
 /datum/gear/accessory/stethoscope
 	allowed_roles = STERILE_ROLES
@@ -67,3 +75,8 @@
 	flags = GEAR_HAS_SUBTYPE_SELECTION
 	custom_setup_proc = /obj/item/passport/proc/set_info
 	cost = 0
+
+/datum/gear/utility/holster_belt
+	display_name = "holser belt"
+	path = /obj/item/storage/belt/holster/general
+	allowed_roles = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, /datum/job/iaa, /datum/job/adjutant)

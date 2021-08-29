@@ -23,7 +23,8 @@
 		size += stored_message.size
 
 /datum/computer_file/data/email_account/New(_login, _fullname, _assignment)
-	login = _login
+	if(_login)
+		login = _login
 	if(_fullname)
 		fullname = _fullname
 	if(_assignment)

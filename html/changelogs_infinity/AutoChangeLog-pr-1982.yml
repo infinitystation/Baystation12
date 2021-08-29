@@ -1,4 +1,0 @@
-author: SidVeld
-delete-after: true
-changes:
-  - bugfix: Исправлен баг, связанный с тем, что некоторые автоматы не выдавали аккумуляторы.

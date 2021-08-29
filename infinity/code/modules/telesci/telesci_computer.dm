@@ -1,7 +1,8 @@
 /obj/machinery/computer/telescience
 	name = "\improper Telepad Control Console"
 	desc = "Used to teleport objects to and from the telescience telepad."
-	icon_screen = "teleport"
+	icon_screen = "telesci"
+	icon_keyboard = "telesci_key"
 	light_color = LIGHT_COLOR_BLUE
 	//circuit = /obj/item/stock_parts/circuitboard/telesci_console
 	var/sending = 1
@@ -249,7 +250,11 @@
 							log_msg = dd_limittext(log_msg, length(log_msg) - 2)
 							log_msg += ")"
 					log_msg += ", "
-				do_teleport(ROI, dest)
+				// ELAR's animation of human's telepoartation
+				if(ishuman(ROI))
+					animated_teleportation(ROI, dest)
+				else
+					do_teleport(ROI, dest)
 
 			if (dd_hassuffix(log_msg, ", "))
 				log_msg = dd_limittext(log_msg, length(log_msg) - 2)
@@ -260,7 +265,7 @@
 			updateDialog()
 
 /obj/machinery/computer/telescience/proc/teleport(mob/user)
-	if(rotation == null || angle == null || z_co == null)
+	if(rotation == null || angle == null || z_co == null || telepad == null)
 		temp_msg = "ERROR!<BR>Set a angle, rotation and sector."
 		return
 	if(power <= 0)
@@ -279,6 +284,49 @@
 		telefail()
 		temp_msg = "ERROR! Bad configuration provided by the user. Unable to charge the teleporter."
 		return
+	// Да если у тебя мастер науки, ты все равно огребешь за телепорты с кораблика на планету в другом конце карты
+	if(GLOB.using_map.use_overmap && !(z_co in GetConnectedZlevels(telepad.z)))
+		var/obj/item/stock_parts/building_material/material = telepad.get_component_of_type(/obj/item/stock_parts/building_material)
+		if(!(material && material.number_of_type(/obj/item/material/coin/diamond)!=0))
+			telefail()
+			temp_msg = "ERROR! Can not reach that sector. It's too far or need an upgrade!"
+			return
+		else
+			telepad.visible_message(SPAN_NOTICE("\The [telepad] shines brighter when it's diamond lens focuses bluespace power!"))
+			var/obj/effect/overmap/visitable/we = map_sectors["[telepad.z]"]
+			var/turf/T = get_turf(we)
+			var/located = FALSE
+			for(var/obj/effect/overmap/visitable/candidate in T)
+				if(candidate == we)
+					continue
+				if(z_co in candidate.map_z)
+					located = TRUE
+					break
+			// Мы не нашли цель в нашем секторе, попробуем более серьезные варианты.
+			if(!located)
+				var/obj/item/stock_parts/power/battery/battery = telepad.get_component_of_type(/obj/item/stock_parts/power/battery)
+				// Больше чем advanced меньше чем enchanced и да мы тратим энергию независимо от успеха
+				if(!(battery && battery.can_use_power_oneoff(telepad, (1500 / CELLRATE), LOCAL) && battery.use_power_oneoff(telepad, (1500 / CELLRATE), LOCAL)))
+					telefail()
+					temp_msg = "ERROR! Can not reach that sector. Not enough power buffer capacity!"
+					return
+				else
+					playsound(telepad, 'sound/machines/apc_nopower.ogg', 25, 0)
+					telepad.visible_message(SPAN_NOTICE("\The [telepad] makes an loud sound as it internal capacitor quickly loose it's power!"))
+					var/list/near_sectors = T.AdjacentTurfs()
+					for(var/turf/Z in near_sectors)
+						for(var/obj/effect/overmap/visitable/candidate in Z)
+							if(candidate == we)
+								continue
+							if(z_co in candidate.map_z)
+								located = TRUE
+								break
+						if(located)
+							break
+					if(!located)
+						telefail()
+						temp_msg = "ERROR! Can not reach that sector. Too far. You did your best..."
+						return
 	if(teles_left > 0)
 		doteleport(user)
 	else

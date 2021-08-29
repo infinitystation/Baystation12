@@ -174,7 +174,7 @@ for fileName in glob.glob(os.path.join(args.ymlDir, "*.yml")):
 targetDir = os.path.dirname(args.targetFile)
 
 with open(args.targetFile.replace('.htm', '.dry.htm') if args.dryRun else args.targetFile, 'w', encoding='utf-8') as changelog:
-    with open(os.path.join(targetDir, 'templates', 'header.html'), 'r', encoding='utf-8') as h:
+    with open(os.path.join(targetDir, 'templates', 'header_infinity.html'), 'r', encoding='utf-8') as h:
         for line in h:
             changelog.write(line)
 

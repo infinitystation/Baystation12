@@ -51,6 +51,7 @@
 		/obj/item/clothing/under/rank/field/tan,
 		/obj/item/clothing/under/rank/field/navy,
 		/obj/item/clothing/under/rank/field/green,
+		/obj/item/crowbar/prybar,
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack, /obj/item/storage/backpack/satchel/grey)),
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag, /obj/item/storage/backpack/messenger)),
 		new /datum/atom_creator/weighted(list(/obj/item/device/flashlight/upgraded, /obj/item/device/flashlight/flare, /obj/item/device/flashlight/flare/glowstick/random))
@@ -73,6 +74,7 @@
 		/obj/item/device/radio/headset/exploration,
 		/obj/item/device/radio/headset/exploration/alt,
 		/obj/item/device/binoculars,
+		/obj/item/crowbar/prybar,
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack, /obj/item/storage/backpack/satchel/grey)),
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag, /obj/item/storage/backpack/messenger)),
 		new /datum/atom_creator/weighted(list(/obj/item/device/flashlight, /obj/item/device/flashlight/flare, /obj/item/device/flashlight/flare/glowstick/random))
@@ -97,6 +99,7 @@
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/suit/storage/toggle/track,
 		/obj/item/clothing/head/helmet/nt/pilot,
+		/obj/item/crowbar/prybar,
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack, /obj/item/storage/backpack/satchel/grey)),
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag, /obj/item/storage/backpack/messenger)),
 		new /datum/atom_creator/weighted(list(/obj/item/device/flashlight, /obj/item/device/flashlight/flare, /obj/item/device/flashlight/flare/glowstick/random))
@@ -104,7 +107,7 @@
 
 /obj/structure/closet/secure_closet/explorer/medic
 	name = "field medic's locker"
-	req_access = list(access_explorer, list(access_el, access_medical))
+	req_access = list(access_explorer, list(access_el, access_field_med))
 
 /obj/structure/closet/secure_closet/explorer/medic/WillContain()
 	return list(
@@ -121,6 +124,7 @@
 		/obj/item/device/radio/headset/exploration/alt,
 		/obj/item/device/binoculars,
 		/obj/item/clothing/gloves/thick,
+		/obj/item/crowbar/prybar,
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack, /obj/item/storage/backpack/satchel/grey)),
 		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag, /obj/item/storage/backpack/messenger)),
 		new /datum/atom_creator/weighted(list(/obj/item/device/flashlight, /obj/item/device/flashlight/flare, /obj/item/device/flashlight/flare/glowstick/random))
@@ -128,7 +132,7 @@
 
 /obj/structure/closet/secure_closet/explorer/engineer
 	name = "field engineer's locker"
-	req_access = list(access_explorer, list(access_el, access_engine))
+	req_access = list(access_explorer, list(access_el, access_field_eng))
 
 /obj/structure/closet/secure_closet/explorer/engineer/WillContain()
 	return list(

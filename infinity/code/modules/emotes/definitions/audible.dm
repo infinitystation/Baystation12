@@ -80,8 +80,8 @@
 
 /decl/emote/audible/laugh
 	emote_sound = list(
-		MALE = 'infinity/sound/voice/laugh_male_1.ogg',
-		FEMALE = 'infinity/sound/voice/laugh_female_2.ogg')
+		MALE = list('infinity/sound/voice/laugh_male_1.ogg', 'infinity/sound/voice/laugh_male_2.ogg', 'infinity/sound/voice/laugh_male_3.ogg'),
+		FEMALE = list('infinity/sound/voice/laugh_female_1.ogg', 'infinity/sound/voice/laugh_female_2.ogg', 'infinity/sound/voice/laugh_female_3.ogg'))
 	sounded_species = SOUNDED_SPECIES
 
 /decl/emote/audible/laugh/resomi
