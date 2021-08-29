@@ -711,7 +711,7 @@
 /area/map_template/crashed_pods/pod_cargo)
 "jg" = (
 /obj/structure/bed/chair/comfy/captain,
-/obj/effect/landmark/corpse/commander,
+/obj/effect/landmark/deadcap,
 /obj/effect/decal/cleanable/blood,
 /obj/item/clothing/head/solgov/service/expedition/captain,
 /obj/effect/decal/cleanable/dirt,
@@ -1110,11 +1110,10 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/snacks/liquidfood,
-/obj/item/reagent_containers/food/snacks/liquidfood,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/random/smokes,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "mW" = (
@@ -1415,6 +1414,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/broken_cryo{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_cargo)
 "qp" = (
@@ -2440,15 +2442,15 @@
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
 "BQ" = (
-/obj/machinery/sleeper{
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
 	},
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/structure/broken_cryo{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_com)
@@ -2531,7 +2533,7 @@
 /area/map_template/crashed_pods/pod_com)
 "Dr" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpse/lar_maria/zhp_guard,
+/obj/effect/landmark/corpse/bridgeofficer,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "Ds" = (
@@ -2652,6 +2654,9 @@
 	icon_state = "warning"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/broken_cryo{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_cargo)
 "Fk" = (
@@ -2742,14 +2747,14 @@
 /turf/template_noop,
 /area/map_template/crashed_pods/pod_cargo)
 "GD" = (
-/obj/machinery/sleeper{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/structure/broken_cryo{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_com)
@@ -3382,6 +3387,10 @@
 "MY" = (
 /turf/simulated/shuttle/wall/corner/dark,
 /area/map_template/crashed_pods/pod_eng)
+"MZ" = (
+/obj/effect/landmark/explosion/light,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo)
 "Na" = (
 /obj/item/remains/mouse,
 /turf/template_noop,
@@ -7134,7 +7143,7 @@ UF
 vn
 Pa
 xR
-Hb
+MZ
 Hb
 Hb
 lc
