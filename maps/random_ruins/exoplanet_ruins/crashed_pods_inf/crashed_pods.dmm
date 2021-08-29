@@ -711,10 +711,10 @@
 /area/map_template/crashed_pods/pod_cargo)
 "jg" = (
 /obj/structure/bed/chair/comfy/captain,
-/obj/effect/landmark/deadcap,
 /obj/effect/decal/cleanable/blood,
 /obj/item/clothing/head/solgov/service/expedition/captain,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/gibspawner/human,
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
 "jl" = (
@@ -2533,7 +2533,7 @@
 /area/map_template/crashed_pods/pod_com)
 "Dr" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/landmark/corpse/bridgeofficer,
+/obj/effect/gibspawner/human,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "Ds" = (
@@ -2802,10 +2802,10 @@
 /turf/template_noop,
 /area/map_template/crashed_pods/pod_cargo)
 "Hj" = (
-/obj/effect/decal/cleanable/blood/gibs,
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 4
 	},
+/obj/effect/gibspawner/robot,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "Hp" = (
@@ -3219,7 +3219,6 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/obj/effect/landmark/corpse/miningstation/deadminer,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
@@ -3387,10 +3386,6 @@
 "MY" = (
 /turf/simulated/shuttle/wall/corner/dark,
 /area/map_template/crashed_pods/pod_eng)
-"MZ" = (
-/obj/effect/landmark/explosion/light,
-/turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
 "Na" = (
 /obj/item/remains/mouse,
 /turf/template_noop,
@@ -7143,7 +7138,7 @@ UF
 vn
 Pa
 xR
-MZ
+Hb
 Hb
 Hb
 lc
