@@ -14,7 +14,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_med)
 "aD" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust,
 /turf/template_noop,
 /area/map_template/crashed_pods)
@@ -38,7 +37,6 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
 "aX" = (
@@ -114,12 +112,10 @@
 "da" = (
 /obj/structure/grille/broken,
 /obj/structure/firedoor_assembly,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "dg" = (
 /obj/effect/floor_decal/industrial/outline/orange,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/map_template/crashed_pods/pod_cargo)
 "dt" = (
@@ -160,7 +156,6 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/archaeological_find/remains/robot,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
@@ -179,14 +174,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_med)
-"dS" = (
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
-/area/map_template/crashed_pods)
 "dX" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -229,7 +216,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_com)
 "ej" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
@@ -260,13 +246,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_eng)
-"et" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/handrail{
-	dir = 8
-	},
-/turf/template_noop,
-/area/map_template/crashed_pods)
 "ey" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -276,7 +255,6 @@
 	pixel_y = 27
 	},
 /obj/structure/handrail,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "eC" = (
@@ -392,7 +370,6 @@
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	dir = 5
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "fw" = (
@@ -450,6 +427,7 @@
 /obj/structure/closet/hydrant{
 	pixel_x = -27
 	},
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_com)
 "fN" = (
@@ -465,7 +443,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 9
 	},
@@ -485,10 +462,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "fX" = (
@@ -498,11 +477,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_hydro)
-"gb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
 "gl" = (
 /obj/structure/handrail{
 	dir = 4
@@ -535,7 +509,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 9
 	},
@@ -552,7 +525,6 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 6
 	},
@@ -564,7 +536,6 @@
 /turf/template_noop,
 /area/map_template/crashed_pods/pod_cargo)
 "hH" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/item/remains/lizard,
 /turf/simulated/floor/tiled,
 /area/map_template/crashed_pods/pod_cargo)
@@ -604,16 +575,11 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_med)
-"if" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
 "ih" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
 	name = "escape pod airlock"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "ip" = (
@@ -629,8 +595,6 @@
 /area/map_template/crashed_pods/pod_hydro)
 "ir" = (
 /obj/effect/decal/cleanable/vomit,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "it" = (
@@ -638,8 +602,6 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 22
 	},
@@ -663,7 +625,6 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "iy" = (
@@ -713,7 +674,6 @@
 /obj/structure/bed/chair/comfy/captain,
 /obj/effect/decal/cleanable/blood,
 /obj/item/clothing/head/solgov/service/expedition/captain,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
@@ -722,7 +682,6 @@
 	dir = 8;
 	name = "escape pod airlock"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 6
 	},
@@ -736,7 +695,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
@@ -767,7 +725,6 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/archaeological_find/remains/robot,
 /obj/structure/fireaxecabinet{
 	pixel_y = 28
@@ -822,7 +779,6 @@
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	dir = 6
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/arrow/rod,
 /turf/simulated/floor/plating,
 /area/map_template/crashed_pods/pod_cargo)
@@ -902,7 +858,6 @@
 /area/map_template/crashed_pods/pod_eng)
 "kY" = (
 /obj/machinery/atmospherics/unary/tank/air,
-/obj/effect/decal/cleanable/cobweb2,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -916,7 +871,6 @@
 /turf/simulated/floor/tiled/white,
 /area/map_template/crashed_pods/pod_hydro)
 "lb" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 5
 	},
@@ -924,7 +878,6 @@
 /area/map_template/crashed_pods)
 "lc" = (
 /obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/tiled,
 /area/map_template/crashed_pods/pod_cargo)
@@ -985,10 +938,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_eng)
-"ly" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
 "lM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -1035,7 +984,6 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/map_template/crashed_pods/pod_cargo)
 "mz" = (
@@ -1181,7 +1129,6 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/map_template/crashed_pods/pod_cargo)
 "nl" = (
@@ -1191,18 +1138,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_eng)
-"nw" = (
-/obj/item/device/flashlight/lamp/floodlamp{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
-"ny" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/liquid_fuel,
-/turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
 "nJ" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -1285,7 +1220,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/crashed_pods/pod_eng)
 "os" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/wall/corner/dark/ne,
 /area/map_template/crashed_pods/pod_med)
 "ox" = (
@@ -1301,24 +1235,16 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_med)
-"oD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stack/material/steel,
-/turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
 "oG" = (
 /obj/effect/floor_decal/techfloor/orange/corner,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "oK" = (
 /obj/structure/grille/broken,
-/obj/effect/decal/cleanable/dirt,
 /turf/template_noop,
 /area/map_template/crashed_pods/pod_cargo)
 "oN" = (
 /obj/item/caution/cone,
-/obj/effect/decal/cleanable/dirt,
 /turf/template_noop,
 /area/map_template/crashed_pods/pod_cargo)
 "oR" = (
@@ -1336,7 +1262,6 @@
 	dir = 1
 	},
 /obj/item/stock_parts/micro_laser,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "pi" = (
@@ -1413,7 +1338,6 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/broken_cryo{
 	dir = 4
 	},
@@ -1421,7 +1345,6 @@
 /area/map_template/crashed_pods/pod_cargo)
 "qp" = (
 /obj/item/ammo_magazine/pistol/small,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "qq" = (
@@ -1540,7 +1463,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_eng)
 "rs" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
 	},
@@ -1553,6 +1475,7 @@
 	inputting = 1;
 	outputting = 1
 	},
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "rR" = (
@@ -1581,7 +1504,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 5
 	},
@@ -1639,7 +1561,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/device/radio/intercom/map_preset/playablecolony2{
 	dir = 8;
 	pixel_x = 20
@@ -1749,7 +1670,6 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/map_template/crashed_pods/pod_cargo)
 "tn" = (
@@ -1779,7 +1699,6 @@
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	dir = 6
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "tF" = (
@@ -1791,14 +1710,12 @@
 	pixel_y = 27
 	},
 /obj/structure/handrail,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "tI" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_cargo)
 "tP" = (
@@ -1864,7 +1781,6 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_med)
 "uG" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/wall/corner/dark/ne,
 /area/map_template/crashed_pods/pod_com)
 "uI" = (
@@ -1887,7 +1803,6 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "uU" = (
@@ -1915,7 +1830,6 @@
 "vn" = (
 /obj/effect/decal/cleanable/filth,
 /obj/item/stock_parts/matter_bin,
-/obj/effect/decal/cleanable/dirt,
 /turf/template_noop,
 /area/map_template/crashed_pods/pod_cargo)
 "vv" = (
@@ -1930,7 +1844,6 @@
 /turf/simulated/floor/plating,
 /area/map_template/crashed_pods/pod_cargo)
 "vI" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/firedoor_assembly,
 /obj/structure/grille/broken,
 /turf/simulated/floor/plating,
@@ -1996,7 +1909,6 @@
 /turf/simulated/floor/plating,
 /area/map_template/crashed_pods)
 "wS" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/wall/corner/dark/nw,
 /area/map_template/crashed_pods/pod_med)
 "wY" = (
@@ -2075,7 +1987,6 @@
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
 "xR" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/map_template/crashed_pods/pod_cargo)
 "xV" = (
@@ -2120,7 +2031,6 @@
 /obj/structure/closet/hydrant{
 	pixel_x = -27
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_cargo)
 "yB" = (
@@ -2152,7 +2062,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/crashed_pods/pod_com)
 "yR" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust/corner,
 /turf/template_noop,
 /area/map_template/crashed_pods)
@@ -2178,7 +2087,6 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "yZ" = (
@@ -2194,7 +2102,6 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 5
 	},
@@ -2215,11 +2122,9 @@
 /area/map_template/crashed_pods/pod_hydro)
 "zf" = (
 /obj/effect/decal/cleanable/blood/tracks/body,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/map_template/crashed_pods/pod_cargo)
 "zi" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/item/arrow/rod,
 /turf/simulated/floor/tiled,
 /area/map_template/crashed_pods/pod_cargo)
@@ -2227,7 +2132,6 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/arrow/rod,
 /turf/simulated/floor/plating,
 /area/map_template/crashed_pods/pod_cargo)
@@ -2235,7 +2139,6 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 6
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/arrow/rod,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
@@ -2305,6 +2208,7 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced,
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
 "Ah" = (
@@ -2331,7 +2235,6 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 5
 	},
-/obj/effect/decal/cleanable/cobweb2,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_eng)
@@ -2383,7 +2286,6 @@
 	dir = 10
 	},
 /obj/structure/door_assembly,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "Bf" = (
@@ -2395,6 +2297,7 @@
 /obj/effect/floor_decal/corner/red/bordercee{
 	dir = 8
 	},
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "Bo" = (
@@ -2512,13 +2415,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_hydro)
-"CE" = (
-/obj/structure/sign/directions/medical{
-	dir = 8;
-	pixel_x = -32
-	},
-/turf/template_noop,
-/area/map_template/crashed_pods)
 "Dl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -2527,7 +2423,6 @@
 	dir = 4
 	},
 /obj/item/ammo_casing/pistol,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/corner,
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
@@ -2554,7 +2449,6 @@
 "Dy" = (
 /obj/item/crowbar,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
 "DJ" = (
@@ -2601,7 +2495,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/map_template/crashed_pods/pod_eng)
 "Ek" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 6
 	},
@@ -2623,7 +2516,6 @@
 /area/map_template/crashed_pods/pod_eng)
 "EA" = (
 /obj/effect/decal/cleanable/filth,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/stack/material/steel,
 /turf/template_noop,
 /area/map_template/crashed_pods/pod_cargo)
@@ -2632,7 +2524,6 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "EM" = (
@@ -2646,6 +2537,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
 "Fc" = (
@@ -2653,14 +2545,12 @@
 	dir = 8;
 	icon_state = "warning"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/broken_cryo{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_cargo)
 "Fk" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
@@ -2671,7 +2561,6 @@
 /turf/template_noop,
 /area/map_template/crashed_pods/pod_cargo)
 "FH" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 9
 	},
@@ -2706,10 +2595,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_eng)
-"Gh" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
-/area/map_template/crashed_pods)
 "Gr" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4
@@ -2778,7 +2663,6 @@
 /obj/item/storage/briefcase/inflatable,
 /obj/item/storage/briefcase/inflatable,
 /obj/item/storage/briefcase/inflatable,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/map_template/crashed_pods/pod_cargo)
 "GX" = (
@@ -2794,10 +2678,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_eng)
-"Ha" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
 "Hb" = (
 /turf/template_noop,
 /area/map_template/crashed_pods/pod_cargo)
@@ -2832,7 +2712,6 @@
 	dir = 8;
 	name = "escape pod airlock"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 10
 	},
@@ -2868,7 +2747,6 @@
 	dir = 8
 	},
 /obj/structure/closet/emcloset,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/map_template/crashed_pods/pod_cargo)
 "Ih" = (
@@ -3034,6 +2912,7 @@
 /obj/structure/sign/monkey_painting{
 	pixel_x = 28
 	},
+/obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_com)
 "Ke" = (
@@ -3120,12 +2999,12 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange,
 /obj/structure/handrail{
 	dir = 1
 	},
 /obj/machinery/light/xenon,
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "KL" = (
@@ -3162,7 +3041,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_med)
 "Lf" = (
-/obj/effect/decal/cleanable/cobweb,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
@@ -3209,11 +3087,6 @@
 /obj/machinery/light/xenon,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_eng)
-"Lj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
-/area/map_template/crashed_pods)
 "Lm" = (
 /obj/machinery/power/apc/inactive{
 	dir = 8;
@@ -3223,7 +3096,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/map_template/crashed_pods/pod_cargo)
 "Lz" = (
@@ -3246,7 +3118,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_hydro)
 "LT" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 8
 	},
@@ -3287,7 +3158,6 @@
 	dir = 8
 	},
 /obj/item/stock_parts/computer/hard_drive/cluster,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "MD" = (
@@ -3357,7 +3227,6 @@
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
 "MW" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 10
 	},
@@ -3511,7 +3380,6 @@
 /area/map_template/crashed_pods/pod_eng)
 "Ob" = (
 /obj/item/stock_parts/computer/battery_module/nano,
-/obj/effect/decal/cleanable/dirt,
 /turf/template_noop,
 /area/map_template/crashed_pods/pod_cargo)
 "Om" = (
@@ -3567,16 +3435,10 @@
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_eng)
-"OA" = (
-/obj/effect/decal/cleanable/filth,
-/obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
 "OD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "OM" = (
@@ -3587,14 +3449,6 @@
 	},
 /turf/space,
 /area/map_template/crashed_pods/pod_eng)
-"OO" = (
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
-/area/map_template/crashed_pods)
 "OR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -3619,14 +3473,7 @@
 /obj/structure/mopbucket,
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
-"Pf" = (
-/obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/firedoor_assembly,
-/turf/simulated/floor/plating,
 /area/map_template/crashed_pods/pod_cargo)
 "Pj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -3684,7 +3531,6 @@
 /area/map_template/crashed_pods/pod_eng)
 "PK" = (
 /obj/effect/decal/cleanable/blood/tracks/body,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "PM" = (
@@ -3716,7 +3562,6 @@
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 10
 	},
@@ -3944,7 +3789,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
@@ -4090,7 +3934,6 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 10
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/wirecutters,
 /obj/item/arrow/rod,
 /turf/simulated/floor/tiled/techfloor,
@@ -4147,8 +3990,6 @@
 /area/map_template/crashed_pods/pod_eng)
 "UF" = (
 /obj/item/stock_parts/computer/card_slot/broadcaster,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/map_template/crashed_pods/pod_cargo)
 "UK" = (
@@ -4233,14 +4074,8 @@
 /turf/template_noop,
 /area/map_template/crashed_pods)
 "Wq" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/wall/corner/dark/nw,
 /area/map_template/crashed_pods/pod_com)
-"Ws" = (
-/obj/structure/lattice,
-/obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
 "Wt" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -4255,7 +4090,6 @@
 "WB" = (
 /obj/structure/firedoor_assembly,
 /obj/structure/grille/broken,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "WI" = (
@@ -4275,11 +4109,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_med)
-"WS" = (
-/obj/item/stock_parts/power,
-/obj/effect/decal/cleanable/dirt,
-/turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
 "WV" = (
 /obj/structure/sign/directions/engineering{
 	dir = 4;
@@ -4295,7 +4124,6 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/map_template/crashed_pods/pod_cargo)
 "WX" = (
@@ -4303,12 +4131,12 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor/orange,
 /obj/structure/handrail{
 	dir = 1
 	},
 /obj/machinery/light/xenon,
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "WY" = (
@@ -4355,19 +4183,15 @@
 	dir = 8;
 	icon_state = "warning"
 	},
-/obj/machinery/seed_extractor,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_cargo)
 "Xv" = (
 /obj/item/device/binoculars,
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "Xy" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
@@ -4382,7 +4206,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_cargo)
 "XU" = (
@@ -4403,6 +4226,9 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/cobweb2,
+/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com)
 "XV" = (
@@ -4488,7 +4314,6 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/item/device/radio,
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com)
@@ -4507,7 +4332,6 @@
 /turf/simulated/shuttle/wall/corner/dark/nw,
 /area/map_template/crashed_pods/pod_hydro)
 "Zw" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 4
 	},
@@ -4558,9 +4382,9 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
+cd
+cd
+cd
 Hs
 FY
 WV
@@ -4606,11 +4430,11 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
+cd
 VM
 OM
 Sc
@@ -4660,8 +4484,8 @@ cd
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 Mo
 Sc
 Sc
@@ -4694,10 +4518,10 @@ cd
 cd
 cd
 Lz
-dS
-Gh
-Gh
-Gh
+JB
+cd
+cd
+cd
 cd
 cd
 cd
@@ -4712,8 +4536,8 @@ cd
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 Mo
 Sc
 mI
@@ -4740,8 +4564,8 @@ cd
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 YL
 cx
 cx
@@ -4762,10 +4586,10 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
 VM
 Sc
 MH
@@ -4816,8 +4640,8 @@ cd
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 OM
 KC
 Gg
@@ -4844,7 +4668,7 @@ cd
 cd
 cd
 cd
-Gh
+cd
 cx
 Bz
 MX
@@ -4867,9 +4691,9 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
+cd
+cd
+cd
 OM
 KC
 sR
@@ -4918,10 +4742,10 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
 vv
 Sc
 nV
@@ -4959,8 +4783,8 @@ AD
 Ma
 OD
 Dr
-ly
-ly
+mW
+mW
 iK
 ea
 cd
@@ -4970,10 +4794,10 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
 Mo
 Sc
 Ar
@@ -5024,8 +4848,8 @@ cd
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 Mo
 Sc
 Sc
@@ -5077,8 +4901,8 @@ cd
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 vv
 OM
 Sc
@@ -5104,7 +4928,7 @@ cd
 cd
 cd
 cd
-Gh
+cd
 cx
 xP
 sC
@@ -5130,9 +4954,9 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
+cd
+cd
+cd
 Wf
 jE
 ob
@@ -5208,8 +5032,8 @@ cd
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 YL
 cx
 cx
@@ -5261,13 +5085,13 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
 qz
-OO
-Gh
+jC
+cd
 yG
 cd
 cd
@@ -5554,11 +5378,11 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
+cd
 cd
 CB
 JB
@@ -5602,13 +5426,13 @@ Zw
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
+cd
+cd
+cd
 Xm
 Bo
 Bo
@@ -5652,13 +5476,13 @@ SR
 SR
 lb
 Zw
-Gh
-Gh
 cd
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
+cd
+cd
 BE
 Bo
 Bo
@@ -5708,10 +5532,10 @@ SR
 Zw
 cd
 cd
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
 Bo
 jO
 Pq
@@ -5761,8 +5585,8 @@ Xy
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 wS
 Bo
 Qp
@@ -5813,8 +5637,8 @@ Fk
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 Xm
 pN
 sj
@@ -5860,13 +5684,13 @@ SR
 SR
 FH
 Fk
-Gh
-Gh
 cd
 cd
 cd
 cd
-Gh
+cd
+cd
+cd
 Xm
 pN
 KR
@@ -5915,10 +5739,10 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
 os
 Bo
 lg
@@ -5965,13 +5789,13 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
+cd
+cd
+cd
 Bo
 NU
 kq
@@ -6020,9 +5844,9 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
+cd
+cd
+cd
 BE
 Bo
 Bo
@@ -6074,9 +5898,9 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
+cd
+cd
+cd
 Xm
 Bo
 Bo
@@ -6128,11 +5952,11 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Gh
-CE
+cd
+cd
+cd
+cd
+cd
 cd
 cd
 hL
@@ -6612,8 +6436,8 @@ cd
 cd
 cd
 Hb
-Ha
-Ha
+Hb
+Hb
 Hb
 pT
 Yi
@@ -6663,13 +6487,13 @@ cd
 cd
 cd
 cd
-Ha
-Ha
-Ha
 Hb
-Ha
 Hb
-Ha
+Hb
+Hb
+Hb
+Hb
+Hb
 Hb
 el
 Hb
@@ -6714,15 +6538,15 @@ cd
 cd
 cd
 cd
-Gh
+cd
 oN
-Ha
+Hb
 UK
 Hb
-Ha
+Hb
 dF
 Hb
-Ha
+Hb
 Hb
 wd
 Hb
@@ -6765,15 +6589,15 @@ cd
 cd
 Hb
 Hb
-Ha
-Ha
+Hb
+Hb
 Fy
 Tl
 Rk
 pi
-Ha
-Ha
-Ha
+Hb
+Hb
+Hb
 Hb
 VK
 Hb
@@ -6789,12 +6613,12 @@ Hb
 (44,1,1) = {"
 cd
 cd
-Gh
-Gh
-Gh
-Lj
-et
-Gh
+cd
+cd
+cd
+cd
+ZG
+cd
 Wm
 JB
 cd
@@ -6818,21 +6642,21 @@ cd
 Hb
 wd
 Hb
-nw
-Ha
-OA
+sz
+Hb
+wd
 pi
 qw
 Hb
 je
-Ha
-Ha
+Hb
+Hb
 Hb
 YI
 Hb
 Hb
 Hb
-Ws
+pi
 Rk
 Rk
 Rk
@@ -6840,10 +6664,10 @@ ag
 "}
 (45,1,1) = {"
 cd
-Gh
-Gh
-Gh
-Gh
+cd
+cd
+cd
+cd
 Yr
 jS
 jS
@@ -6868,18 +6692,18 @@ cd
 cd
 cd
 Ob
-Ha
-Ha
-Ha
-oD
-Ha
-Ha
+Hb
+Hb
+Hb
+Ko
+Hb
+Hb
 UK
 Rk
 Rk
 da
 ih
-Ws
+pi
 Ko
 Hb
 Hb
@@ -6893,8 +6717,8 @@ Rk
 (46,1,1) = {"
 cd
 cd
-Gh
-Gh
+cd
+cd
 jS
 jS
 jS
@@ -6922,8 +6746,8 @@ cd
 Hb
 Hb
 oN
-Ha
-OA
+Hb
+wd
 Rk
 Rk
 Rk
@@ -6940,12 +6764,12 @@ Hb
 xR
 xR
 Ib
-Pf
+vC
 "}
 (47,1,1) = {"
 cd
-Gh
-Gh
+cd
+cd
 Zt
 jS
 Lf
@@ -6970,11 +6794,11 @@ cd
 cd
 cd
 cd
-Gh
-OA
-Ha
-Ha
-Ha
+cd
+wd
+Hb
+Hb
+Hb
 yE
 Rk
 jJ
@@ -6983,21 +6807,21 @@ Uo
 Rk
 iv
 iv
-Ws
+pi
 Hb
 Rk
 Rk
 ag
 Hb
-if
-if
+eC
+eC
 kh
 vI
 "}
 (48,1,1) = {"
-Gh
-Gh
-Gh
+cd
+cd
+cd
 Yy
 jS
 Tw
@@ -7026,7 +6850,7 @@ cd
 Hb
 Hb
 sz
-Ha
+Hb
 DS
 Rk
 yY
@@ -7034,13 +6858,13 @@ PK
 MA
 AR
 hH
-if
+eC
 Hb
 Ko
 Rk
 Rk
 Rk
-Ws
+pi
 Hb
 Fc
 Rk
@@ -7048,8 +6872,8 @@ Rk
 "}
 (49,1,1) = {"
 cd
-Gh
-Gh
+cd
+cd
 Yr
 lO
 cH
@@ -7074,15 +6898,15 @@ cd
 cd
 cd
 cd
-Gh
-Ha
+cd
+Hb
 oN
 Na
-Ha
+Hb
 Tl
 vC
 pg
-gb
+eC
 EA
 Xv
 Hb
@@ -7099,9 +6923,9 @@ Rk
 fx
 "}
 (50,1,1) = {"
-Gh
-Gh
-Gh
+cd
+cd
+cd
 Yr
 lO
 Sv
@@ -7130,10 +6954,10 @@ cd
 Hb
 Hb
 wd
-Ha
-Ha
+Hb
+Hb
 hE
-Ws
+pi
 UF
 vn
 Pa
@@ -7142,18 +6966,18 @@ Hb
 Hb
 Hb
 lc
-Ha
-if
-Ws
+Hb
+eC
+pi
 Hb
 Hb
-Ws
+pi
 Hb
 "}
 (51,1,1) = {"
 cd
-Gh
-Gh
+cd
+cd
 Yy
 jS
 uU
@@ -7180,12 +7004,12 @@ cd
 cd
 cd
 Hb
-Ha
-Ha
+Hb
+Hb
 oK
-Ha
+Hb
 UK
-Ha
+Hb
 ir
 oG
 fn
@@ -7195,17 +7019,17 @@ Hb
 ip
 zf
 zi
-Ha
-Ws
-Ha
-Ha
+Hb
+pi
+Hb
+Hb
 cd
 cd
 "}
 (52,1,1) = {"
 cd
-Gh
-Gh
+cd
+cd
 li
 jS
 kY
@@ -7228,16 +7052,16 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-Ha
-Ha
+cd
+cd
+cd
+Hb
+Hb
 Tl
 vC
 zo
 GB
-Ws
+pi
 it
 zp
 Rk
@@ -7248,17 +7072,17 @@ Hb
 ni
 WW
 Xq
-Ws
+pi
 Hb
-oD
+Ko
 cd
 cd
 "}
 (53,1,1) = {"
 cd
 cd
-Gh
-Gh
+cd
+cd
 jS
 jS
 jS
@@ -7280,11 +7104,11 @@ cd
 cd
 cd
 cd
-Gh
-Gh
-Gh
-WS
-ny
+cd
+cd
+cd
+ip
+qw
 DS
 Rk
 mf
@@ -7310,8 +7134,8 @@ cd
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 Yr
 jS
 jS
@@ -7335,9 +7159,9 @@ cd
 cd
 cd
 cd
-Ha
-Ha
-Ha
+Hb
+Hb
+Hb
 Rk
 dP
 Fy
@@ -7363,8 +7187,8 @@ cd
 cd
 cd
 cd
-Gh
-Gh
+cd
+cd
 IV
 cd
 nL
@@ -7387,17 +7211,17 @@ cd
 cd
 cd
 cd
-Ha
-Ha
-Ha
+Hb
+Hb
+Hb
 Rk
 Rk
 pi
 Hb
 Hb
-Ha
+Hb
 Vv
-Ha
+Hb
 Hb
 Hb
 Hb
@@ -7441,21 +7265,21 @@ cd
 cd
 Hb
 Hb
-Ha
-Ha
-Ha
 Hb
-Ha
-Ha
 Hb
-Ha
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
 Hb
 wd
 Ui
 Hb
 kO
 Hb
-Ha
+Hb
 Hb
 Hb
 Hb
@@ -7502,10 +7326,10 @@ Hb
 wd
 Hb
 Hb
-Ha
+Hb
 Hb
 eC
-Ha
+Hb
 Hb
 Hb
 Ko
