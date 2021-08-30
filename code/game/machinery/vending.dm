@@ -909,11 +909,11 @@
 					/obj/item/storage/chewables/rollable/generic = 40,
 					/obj/item/storage/chewables/rollable/fine = 60,
 					//[INF]
-					/obj/item/storage/chewables/rollable/perception = 60,
-					/obj/item/storage/chewables/rollable/medical = 75,
-					/obj/item/storage/chewables/rollable/female = 60,
-					/obj/item/storage/chewables/rollable/honey = 60,
-					/obj/item/storage/chewables/rollable/coffee = 60,
+					/obj/item/storage/chewables/rollable/perception = 60, //inf
+					/obj/item/storage/chewables/rollable/medical = 75, //inf
+					/obj/item/storage/chewables/rollable/female = 60, //inf
+					/obj/item/storage/chewables/rollable/honey = 60, //inf
+					/obj/item/storage/chewables/rollable/coffee = 60, //inf
 					//[/INF]
 					/obj/item/storage/fancy/cigarettes = 45,
 					/obj/item/storage/fancy/cigarettes/luckystars = 50,
