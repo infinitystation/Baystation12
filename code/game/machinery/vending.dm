@@ -941,7 +941,7 @@
 		/obj/item/reagent_containers/ecig_cartridge/lemonlime = 15,
 		/obj/item/reagent_containers/ecig_cartridge/coffee = 15,
 		/obj/item/reagent_containers/ecig_cartridge/blanknico = 15,
-		obj/item/storage/chewables/rollable/perception = 60, //inf
+		/obj/item/storage/chewables/rollable/perception = 60, //inf
 		/obj/item/storage/chewables/rollable/medical = 75, //inf
 		/obj/item/storage/chewables/rollable/female = 60, //inf
 		/obj/item/storage/chewables/rollable/honey = 60, //inf
