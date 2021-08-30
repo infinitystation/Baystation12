@@ -92,7 +92,7 @@
 	build_inventory(populate_parts)
 
 /**
- *  Build src.produdct_records from the products lists
+ *  uild src.produdct_records from the products lists
  *
  *  src.products, src.contraband, src.premium, and src.prices allow specifying
  *  products that the vending machine is to carry without manually populating
@@ -861,11 +861,6 @@
 		/obj/item/storage/chewables/rollable/bad = 2,
 		/obj/item/storage/chewables/rollable/generic = 2,
 		/obj/item/storage/chewables/rollable/fine = 2,
-		/obj/item/storage/chewables/rollable/perception = 2, //inf
-		/obj/item/storage/chewables/rollable/medical = 2, //inf
-		/obj/item/storage/chewables/rollable/female = 2, //inf
-		/obj/item/storage/chewables/rollable/honey = 2, //inf
-		/obj/item/storage/chewables/rollable/coffee = 2, //inf
 		/obj/item/storage/fancy/cigarettes = 5,
 		/obj/item/storage/fancy/cigarettes/luckystars = 2,
 		/obj/item/storage/fancy/cigarettes/jerichos = 2,
@@ -913,11 +908,6 @@
 		/obj/item/storage/chewables/rollable/bad = 20,
 		/obj/item/storage/chewables/rollable/generic = 40,
 		/obj/item/storage/chewables/rollable/fine = 60,
-		/obj/item/storage/chewables/rollable/perception = 60, //inf
-		/obj/item/storage/chewables/rollable/medical = 75, //inf
-		/obj/item/storage/chewables/rollable/female = 60, //inf
-		/obj/item/storage/chewables/rollable/honey = 60, //inf
-		/obj/item/storage/chewables/rollable/coffee = 60, //inf
 		/obj/item/storage/fancy/cigarettes = 45,
 		/obj/item/storage/fancy/cigarettes/luckystars = 50,
 		/obj/item/storage/fancy/cigarettes/jerichos = 65,
