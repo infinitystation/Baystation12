@@ -567,7 +567,7 @@
 	//This looks like shit, but it's a lot easier to read/change this way.
 	var/total_mutations = rand(1,1+degree)
 	for(var/i = 0;i<total_mutations;i++)
-		switch(rand(0,11))
+		switch(rand(0,12))
 			if(0) //Plant cancer!
 				set_trait(TRAIT_ENDURANCE,get_trait(TRAIT_ENDURANCE)-rand(10,20),null,0)
 				source_turf.visible_message("<span class='danger'>\The [display_name] withers rapidly!</span>")
@@ -623,7 +623,29 @@
 						source_turf.visible_message("<span class='notice'>\The [display_name]'s glow dims...</span>")
 			if(11)
 				set_trait(TRAIT_TELEPORTING,1)
-
+			if(12)
+				if(!exude_gasses | rand(0,10))
+					exude_gasses = list()
+					source_turf.visible_message("<span class='notice'>exude_gasses is null</span>")
+				if(rand(0,5))
+					var/gas = pickweight(list(GAS_METHYL_BROMIDE = 5,
+										GAS_OXYGEN = 10,
+										GAS_NITROGEN = 5,
+										GAS_CO2 = 10,
+										GAS_N2O = 5,
+										GAS_METHANE = 5,
+										GAS_CHLORINE = 5,
+										GAS_AMMONIA = 3,
+										GAS_ALIEN = 1,
+										GAS_HYDROGEN = 3,
+										GAS_HELIUM = 1,
+										GAS_PHORON = 1
+											))
+					source_turf.visible_message("<span class='notice'>exude_gasses is [gas]</span>")
+					exude_gasses[gas] = rand(1,5)
+				else
+					source_turf.visible_message("<span class='notice'>exude_gasses is null</span>")
+					exude_gasses = null
 	return
 
 //Mutates a specific trait/set of traits.
@@ -658,6 +680,7 @@
 					else
 						chems[rid][i] = gene_chem[i]
 
+		if(GENE_OUTPUT) //INF added row
 			var/list/new_gasses = gene.values["[TRAIT_EXUDE_GASSES]"]
 			if(islist(new_gasses))
 				if(!exude_gasses) exude_gasses = list()
@@ -665,16 +688,16 @@
 				for(var/gas in exude_gasses)
 					exude_gasses[gas] = max(1,round(exude_gasses[gas]*0.8))
 
-			gene.values["[TRAIT_EXUDE_GASSES]"] = null
-			gene.values["[TRAIT_CHEMS]"] = null
+//			gene.values["[TRAIT_EXUDE_GASSES]"] = null //INF commented out this
+//			gene.values["[TRAIT_CHEMS]"] = null //INF commented out this
 
 		if(GENE_DIET)
 			var/list/new_gasses = gene.values["[TRAIT_CONSUME_GASSES]"]
 			consume_gasses |= new_gasses
-			gene.values["[TRAIT_CONSUME_GASSES]"] = null
+//			gene.values["[TRAIT_CONSUME_GASSES]"] = null //INF commented out this
 		if(GENE_METABOLISM)
 			has_mob_product = gene.values["mob_product"]
-			gene.values["mob_product"] = null
+//			gene.values["mob_product"] = null //INF commented out this
 
 	for(var/trait in gene.values)
 		set_trait(trait,gene.values["[trait]"])
@@ -694,9 +717,9 @@
 	switch(genetype)
 		if(GENE_BIOCHEMISTRY)
 			P.values["[TRAIT_CHEMS]"] =        chems
-			P.values["[TRAIT_EXUDE_GASSES]"] = exude_gasses
 			traits_to_copy = list(TRAIT_POTENCY)
 		if(GENE_OUTPUT)
+			P.values["[TRAIT_EXUDE_GASSES]"] = exude_gasses //INF place changed, was in GENE_BIOCHEMISTRY
 			traits_to_copy = list(TRAIT_PRODUCES_POWER,TRAIT_BIOLUM)
 		if(GENE_ATMOSPHERE)
 			traits_to_copy = list(TRAIT_HEAT_TOLERANCE,TRAIT_LOWKPA_TOLERANCE,TRAIT_HIGHKPA_TOLERANCE)
