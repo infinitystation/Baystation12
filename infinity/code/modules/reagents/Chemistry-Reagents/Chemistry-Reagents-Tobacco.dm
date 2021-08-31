@@ -1,7 +1,7 @@
 //Inf, снизу отсылка в сигаре из МГС 5
 /datum/reagent/tobacco/perception
 	name = "Herbal drugs and tobacco"
-	description = "Cut and process tobacco leaves along with herbal preparations.."
+	description = "Cut and process tobacco leaves along with herbal preparations."
 	taste_description = "tobacco, medicinal herbs and speeding up time?"
 	reagent_state = SOLID
 	color = "#684b3c"
@@ -69,7 +69,7 @@ datum/reagent/tobacco/female
 datum/reagent/tobacco/honey
 	name = "tobacco with honey"
 	description = "tobacco that has been processed in honey"
-	taste_description = "you can feel the sweetness of honey and the strength of tobacco."
+	taste_description = "the sweetness of honey and the strength of tobacco."
 	reagent_state = SOLID
 	color = "#684b3c"
 	scannable = 1
@@ -85,7 +85,7 @@ datum/reagent/tobacco/honey/affect_blood(var/mob/living/carbon/M, var/alien, var
 datum/reagent/tobacco/coffee
 	name = "tobacco with coffee"
 	description = "tobacco leaves that have been mixed with coffee powder"
-	taste_description = "you can taste sweet tobacco and energetic coffee."
+	taste_description = "sweet tobacco and energetic coffee."
 	reagent_state = SOLID
 	color = "#684b3c"
 	scannable = 1
