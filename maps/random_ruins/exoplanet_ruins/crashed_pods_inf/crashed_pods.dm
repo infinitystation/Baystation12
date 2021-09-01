@@ -64,6 +64,8 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 		signal might draw help, but even if you should be so lucky, you must survive long \
 		enough for it to arrive."
 
+/turf/template_noop/var/dirt
+
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor
 	name = "Crashed Pods Crew"
 
