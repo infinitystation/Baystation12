@@ -70,8 +70,8 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 
 /obj/effect/submap_landmark/joinable_submap/crashed_pods
 	name = "Crashed Survival Pods"
-	archetype = /decl/submap_archetype/crashed_pod
-	submap_datum_type = /datum/submap/crashed_pod
+	archetype = /decl/submap_archetype/crashed_pods
+	submap_datum_type = /datum/submap/crashed_pods
 
 /obj/effect/submap_landmark/joinable_submap/crashed_pods/New()
 	var/list/possible_ship_names = list(

@@ -301,9 +301,8 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/sleeper/survival_pod,
-/obj/machinery/computer/cryopod{
-	pixel_y = -23
+/obj/machinery/sleeper{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_med{
@@ -1690,8 +1689,8 @@
 	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
 	})
 "qq" = (
-/obj/machinery/sleeper/survival_pod{
-	dir = 1
+/obj/machinery/sleeper{
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -1933,7 +1932,9 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/sleeper/survival_pod,
+/obj/machinery/sleeper{
+	dir = 8
+	},
 /obj/machinery/computer/cryopod{
 	pixel_y = -23
 	},
@@ -2551,8 +2552,8 @@
 	requires_power = 0
 	})
 "yB" = (
-/obj/machinery/sleeper/survival_pod{
-	dir = 1
+/obj/machinery/sleeper{
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -4453,7 +4454,9 @@
 	dir = 8;
 	icon_state = "warning"
 	},
-/obj/machinery/sleeper/survival_pod,
+/obj/machinery/sleeper{
+	dir = 8
+	},
 /obj/machinery/computer/cryopod{
 	pixel_y = -23
 	},
@@ -5099,8 +5102,8 @@
 	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
 	})
 "VY" = (
-/obj/machinery/sleeper/survival_pod{
-	dir = 1
+/obj/machinery/sleeper{
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
