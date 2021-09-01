@@ -9,7 +9,7 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
 
 /area/map_template/crashed_pods
-	name = "\improper Crashed command Pod"
+	name = "\improper Crashed Pods"
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "crashed_pods"
 	turf_initializer = /decl/turf_initializer/maintenance
@@ -47,7 +47,7 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 	cell.has_distress_beacon = name
 
 /datum/job/submap/pods
-	title = "Stranded Survivor"
+	title = "Crashed Pods Crew Member"
 	info = "Your ship has been destroyed by a terrible disaster."
 	outfit_type = /decl/hierarchy/outfit/job/survivor
 	total_positions = 6
@@ -65,7 +65,7 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 		enough for it to arrive."
 
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor
-	name = "Stranded Survivor"
+	name = "Crashed Pods Crew Members"
 
 /obj/effect/submap_landmark/joinable_submap/crashed_pods
 	name = "Crashed Survival Pods"

@@ -1,32 +1,40 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "af" = (
 /turf/simulated/shuttle/wall/corner/dark,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ag" = (
 /turf/simulated/shuttle/wall/corner/dark,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "aj" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "az" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "aD" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "aE" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
 /obj/machinery/power/terminal{
 	dir = 8
-	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
@@ -37,8 +45,15 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 9
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "aX" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -48,7 +63,9 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "bI" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -59,10 +76,14 @@
 	},
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "cd" = (
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "cj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -80,17 +101,23 @@
 	dir = 8
 	},
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "cx" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "cF" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1
 	},
 /obj/item/gun/projectile/pistol,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "cH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4;
@@ -107,24 +134,40 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1
 	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal{
+	pixel_x = 8
+	},
+/obj/item/book/manual/chef_recipes,
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "da" = (
 /obj/structure/grille/broken,
 /obj/structure/firedoor_assembly,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "dg" = (
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "dt" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
 	name = "escape pod airlock"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "dA" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
@@ -137,17 +180,25 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "dB" = (
 /obj/item/tank/emergency/oxygen/double,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "dF" = (
 /obj/machinery/floodlight{
 	dir = 8
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "dP" = (
 /obj/effect/decal/cleanable/cobweb2,
 /obj/machinery/light/small{
@@ -158,7 +209,11 @@
 	},
 /obj/item/archaeological_find/remains/robot,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "dQ" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -173,7 +228,9 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "dX" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -201,7 +258,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "dY" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/floor_decal/borderfloor/full,
@@ -209,26 +268,33 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ea" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "ej" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "el" = (
 /obj/item/stock_parts/computer/scanner,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "ep" = (
-/obj/machinery/sleeper{
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
@@ -236,8 +302,11 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/cryopod,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "er" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -245,7 +314,9 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ey" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -256,10 +327,18 @@
 	},
 /obj/structure/handrail,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "eC" = (
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "eD" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -274,7 +353,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "eT" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -293,7 +374,9 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "eZ" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -303,7 +386,9 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "fg" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -330,7 +415,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "fm" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -356,7 +443,9 @@
 /obj/item/device/oxycandle,
 /obj/item/device/oxycandle,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "fn" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -371,7 +460,11 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "fw" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -391,10 +484,16 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "fx" = (
 /turf/simulated/shuttle/wall/corner/dark/se,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "fA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -410,13 +509,18 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/effect/decal/cleanable/vomit,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "fF" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "fM" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -429,7 +533,9 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "fN" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
@@ -447,7 +553,9 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "fT" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -469,14 +577,18 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "fX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "gl" = (
 /obj/structure/handrail{
 	dir = 4
@@ -486,7 +598,9 @@
 	pixel_x = -40
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "gy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -498,7 +612,9 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "gH" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -513,10 +629,14 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "gN" = (
 /turf/simulated/shuttle/wall/corner/dark/se,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "gT" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -529,16 +649,32 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "hE" = (
 /obj/structure/grille/broken,
 /obj/structure/firedoor_assembly,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "hH" = (
 /obj/item/remains/lizard,
 /turf/simulated/floor/tiled,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
+"hJ" = (
+/obj/item/stock_parts/matter_bin,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo{
+	requires_power = 0
+	})
 "hL" = (
 /obj/structure/disposaloutlet{
 	dir = 4
@@ -551,7 +687,9 @@
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "hM" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -564,7 +702,9 @@
 	},
 /obj/item/device/synthesized_instrument/guitar,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "hV" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -574,29 +714,45 @@
 	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ih" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
 	name = "escape pod airlock"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "ip" = (
 /obj/item/stock_parts/power,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "iq" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/black/diagonal,
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ir" = (
 /obj/effect/decal/cleanable/vomit,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "it" = (
 /obj/structure/grille/broken,
 /obj/effect/floor_decal/techfloor/orange{
@@ -606,7 +762,11 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "iu" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -616,7 +776,9 @@
 	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "iv" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -626,13 +788,19 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "iy" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "iE" = (
 /obj/structure/window/reinforced,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -646,7 +814,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "iK" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/borderfloor{
@@ -662,21 +832,29 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "je" = (
 /obj/structure/sign/directions/supply{
 	dir = 4;
 	pixel_x = 34
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "jg" = (
 /obj/structure/bed/chair/comfy/captain,
 /obj/effect/decal/cleanable/blood,
 /obj/item/clothing/head/solgov/service/expedition/captain,
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "jl" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -686,7 +864,9 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "jA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -699,21 +879,31 @@
 	dir = 8
 	},
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "jC" = (
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "jE" = (
 /obj/machinery/power/solar,
-/obj/effect/floor_decal/techfloor{
+/obj/structure/railing/mapped,
+/obj/effect/floor_decal/industrial/warning/dust{
 	dir = 6
 	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "jJ" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/closet/hydrant{
@@ -730,7 +920,11 @@
 	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "jO" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -747,10 +941,14 @@
 	pixel_x = -27
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "jS" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "jT" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -765,7 +963,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "kh" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -781,15 +981,21 @@
 	},
 /obj/item/arrow/rod,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "ki" = (
 /obj/machinery/atmospherics/omni/filter,
 /obj/item/material/twohanded/fireaxe,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/orange/border,
-/obj/random/toolbox,
+/obj/item/storage/toolbox,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "kq" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -799,7 +1005,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "kw" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -807,7 +1015,9 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "kE" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
@@ -820,7 +1030,9 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "kH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -830,7 +1042,9 @@
 	dir = 10
 	},
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "kO" = (
 /obj/structure/disposaloutlet{
 	dir = 4
@@ -844,18 +1058,27 @@
 /obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "kR" = (
 /obj/machinery/atmospherics/omni/filter,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/blue/border,
 /obj/machinery/light/small,
 /obj/structure/bed/roller,
+/obj/item/storage/box/bodybags,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "kT" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "kY" = (
 /obj/machinery/atmospherics/unary/tank/air,
 /obj/machinery/light/small{
@@ -869,18 +1092,26 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "lb" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 5
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "lc" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/tiled,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "lf" = (
 /obj/machinery/power/apc{
 	acid_melted = /obj/item/cell/crap/empty;
@@ -894,7 +1125,9 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "lg" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 1
@@ -913,14 +1146,20 @@
 	pixel_y = 30
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "li" = (
 /turf/simulated/shuttle/wall/corner/dark/ne,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ln" = (
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "lu" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/crowbar,
@@ -937,24 +1176,32 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "lM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "lO" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "lQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "lT" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 1
@@ -978,20 +1225,28 @@
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "mf" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "mz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "mD" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -1006,7 +1261,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "mI" = (
 /obj/machinery/power/smes/buildable{
 	charge = 50000;
@@ -1020,23 +1277,37 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/cobweb,
+/obj/structure/sign/warning/high_voltage{
+	pixel_y = 30
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "mQ" = (
+/obj/item/storage/backpack/dufflebag/eng,
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "mR" = (
 /obj/structure/window/reinforced,
-/obj/machinery/fabricator,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 4
 	},
+/obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "mV" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -1063,10 +1334,14 @@
 	},
 /obj/random/smokes,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "mW" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "mY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -1088,8 +1363,12 @@
 	},
 /obj/structure/closet,
 /obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/suit/space/void/mining,
+/obj/item/clothing/head/helmet/space/void/mining,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "ne" = (
 /obj/machinery/power/apc{
 	acid_melted = /obj/item/cell/crap/empty;
@@ -1103,7 +1382,9 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ni" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -1130,14 +1411,20 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "nl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "nJ" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -1164,7 +1451,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "nL" = (
 /obj/structure/sign/directions/evac{
 	dir = 8;
@@ -1174,7 +1463,9 @@
 	dir = 4
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "nM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1189,7 +1480,9 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "nV" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 1
@@ -1207,21 +1500,23 @@
 	pixel_y = 30
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ob" = (
 /obj/structure/sign/directions/engineering{
 	dir = 8;
 	pixel_x = -32
 	},
-/obj/machinery/power/solar_control,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/turf/template_noop,
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "os" = (
 /turf/simulated/shuttle/wall/corner/dark/ne,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ox" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -1234,19 +1529,33 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "oG" = (
 /obj/effect/floor_decal/techfloor/orange/corner,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "oK" = (
 /obj/structure/grille/broken,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "oN" = (
 /obj/item/caution/cone,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "oR" = (
 /obj/structure/handrail{
 	dir = 4
@@ -1256,18 +1565,28 @@
 	pixel_x = -40
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "pg" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
 /obj/item/stock_parts/micro_laser,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "pi" = (
 /obj/structure/lattice,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "pE" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -1280,23 +1599,33 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "pK" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning/dust,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "pN" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "pT" = (
 /obj/item/remains/xeno/charred,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "pY" = (
 /obj/machinery/door/airlock/engineering,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -1310,7 +1639,9 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "qc" = (
 /obj/structure/window/reinforced,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -1330,7 +1661,9 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "qf" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -1342,11 +1675,17 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "qp" = (
 /obj/item/ammo_magazine/pistol/small,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "qq" = (
 /obj/machinery/sleeper{
 	dir = 4
@@ -1355,18 +1694,26 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "qw" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "qz" = (
 /obj/structure/sign/directions/bridge{
 	dir = 8;
 	pixel_x = -32
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "qN" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -1393,7 +1740,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "qQ" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
@@ -1406,7 +1755,9 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "qW" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -1433,9 +1784,11 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/item/reagent_containers/food/snacks/meatballsoup,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "rl" = (
 /obj/structure/window/reinforced,
 /obj/machinery/fabricator,
@@ -1449,7 +1802,9 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "rq" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -1460,14 +1815,20 @@
 /obj/structure/closet/hydrant{
 	pixel_x = 25
 	},
+/obj/item/stack/material/steel/fifty,
+/obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "rs" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "ry" = (
 /obj/effect/floor_decal/borderfloor/full,
 /obj/machinery/power/smes/buildable{
@@ -1476,24 +1837,38 @@
 	outputting = 1
 	},
 /obj/effect/spider/stickyweb,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "rR" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "rU" = (
 /obj/structure/inflatable,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "rX" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "sb" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -1511,7 +1886,15 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
+"si" = (
+/obj/effect/decal/cleanable/filth,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo{
+	requires_power = 0
+	})
 "sj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4;
@@ -1529,15 +1912,17 @@
 /obj/item/storage/pill_bottle/assorted,
 /obj/item/roller,
 /obj/item/roller,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "sk" = (
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "sl" = (
-/obj/machinery/sleeper{
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
@@ -1545,14 +1930,22 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/cryopod,
+/obj/item/book/manual/stasis,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "sz" = (
 /obj/item/device/flashlight/lamp/floodlamp{
 	dir = 1
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "sC" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -1566,7 +1959,9 @@
 	pixel_x = 20
 	},
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "sG" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
@@ -1579,7 +1974,9 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "sJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -1607,11 +2004,15 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "sK" = (
 /obj/structure/inflatable/door,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "sR" = (
 /obj/structure/closet/crate,
 /obj/random/handgun,
@@ -1645,7 +2046,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "sW" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -1671,7 +2074,11 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "tn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -1683,7 +2090,9 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "to" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/crowbar,
@@ -1700,7 +2109,9 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "tF" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -1711,13 +2122,21 @@
 	},
 /obj/structure/handrail,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "tI" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "tP" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -1734,19 +2153,27 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "tW" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "tX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "uh" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -1758,7 +2185,9 @@
 	},
 /obj/machinery/light/xenon,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "up" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -1767,7 +2196,9 @@
 	},
 /obj/item/ammo_casing/pistol,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "uy" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -1778,11 +2209,16 @@
 /obj/structure/closet/hydrant{
 	pixel_x = -27
 	},
+/obj/item/book/manual/medical_diagnostics_manual,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "uG" = (
 /turf/simulated/shuttle/wall/corner/dark/ne,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "uI" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4
@@ -1794,7 +2230,9 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "uO" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
@@ -1804,7 +2242,11 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "uU" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 1
@@ -1823,31 +2265,51 @@
 	pixel_y = 30
 	},
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "va" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "vn" = (
 /obj/effect/decal/cleanable/filth,
 /obj/item/stock_parts/matter_bin,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "vv" = (
 /turf/simulated/shuttle/wall/corner/dark/ne,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "vB" = (
 /turf/simulated/shuttle/wall/corner/dark,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "vC" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/structure/firedoor_assembly,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "vI" = (
 /obj/structure/firedoor_assembly,
 /obj/structure/grille/broken,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "vT" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -1857,22 +2319,32 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "wd" = (
 /obj/effect/decal/cleanable/filth,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "wu" = (
 /obj/structure/closet/crate/uranium,
 /obj/effect/floor_decal/industrial/warning/dust/corner,
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "wB" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "wC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1887,7 +2359,9 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "wE" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -1897,29 +2371,42 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "wI" = (
 /obj/effect/floor_decal/techfloor/corner,
+/obj/item/storage/box/glowsticks,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "wR" = (
 /obj/structure/table/standard,
 /obj/item/tank/air,
 /obj/item/tank/air,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "wS" = (
 /turf/simulated/shuttle/wall/corner/dark/nw,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "wY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "wZ" = (
 /turf/simulated/shuttle/wall/corner/dark/se,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "xe" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -1929,7 +2416,9 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "xm" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -1937,7 +2426,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/item/device/binoculars,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "xE" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -1956,11 +2447,14 @@
 	},
 /obj/machinery/light/small,
 /obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "xL" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -1971,9 +2465,10 @@
 /obj/structure/closet/hydrant{
 	pixel_x = -27
 	},
-/obj/item/reagent_containers/food/snacks/liquidfood,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "xP" = (
 /obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/borderfloor{
@@ -1985,10 +2480,16 @@
 	},
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "xR" = (
 /turf/simulated/floor/tiled,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "xV" = (
 /obj/machinery/disposal/deliveryChute{
 	dir = 1
@@ -2004,12 +2505,18 @@
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "xZ" = (
 /obj/machinery/portable_atmospherics/canister/empty,
 /obj/effect/floor_decal/borderfloor/full,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "yb" = (
 /obj/machinery/portable_atmospherics/canister/empty,
 /obj/machinery/atmospherics/portables_connector{
@@ -2020,7 +2527,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "yv" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -2032,7 +2541,11 @@
 	pixel_x = -27
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "yB" = (
 /obj/machinery/sleeper{
 	dir = 4
@@ -2044,10 +2557,16 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "yE" = (
 /turf/simulated/shuttle/wall/corner/dark/nw,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "yG" = (
 /obj/structure/disposaloutlet{
 	dir = 4
@@ -2060,18 +2579,18 @@
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "yR" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner,
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "yU" = (
 /obj/machinery/power/terminal{
 	dir = 8
-	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/effect/floor_decal/borderfloor{
@@ -2080,15 +2599,26 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 10
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "yY" = (
 /obj/structure/undies_wardrobe,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "yZ" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -2106,7 +2636,9 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "zb" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4
@@ -2119,29 +2651,47 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "zf" = (
 /obj/effect/decal/cleanable/blood/tracks/body,
 /turf/simulated/floor/tiled,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "zi" = (
 /obj/item/arrow/rod,
 /turf/simulated/floor/tiled,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "zo" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
 /obj/item/arrow/rod,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "zp" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 6
 	},
 /obj/item/arrow/rod,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "zI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -2161,12 +2711,16 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "zT" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Aa" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -2193,7 +2747,9 @@
 /obj/item/reagent_containers/food/snacks/liquidfood,
 /obj/item/reagent_containers/food/snacks/liquidfood,
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ag" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -2210,13 +2766,19 @@
 /obj/structure/window/reinforced,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Ah" = (
 /obj/structure/lattice,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/material/steel,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Am" = (
 /obj/item/pizzabox/meat,
 /obj/effect/floor_decal/techfloor/orange,
@@ -2226,7 +2788,9 @@
 	},
 /obj/machinery/light/xenon,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ar" = (
 /obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/borderfloor{
@@ -2236,8 +2800,22 @@
 	dir = 5
 	},
 /obj/effect/floor_decal/industrial/outline/blue,
+/obj/structure/sign/warning/engineering_access{
+	pixel_y = 31
+	},
+/obj/structure/sign/warning/nosmoking_2{
+	pixel_x = 30
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
+"Au" = (
+/obj/item/stack/material/steel,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo{
+	requires_power = 0
+	})
 "Ax" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -2253,8 +2831,11 @@
 /obj/item/storage/briefcase/inflatable,
 /obj/item/storage/briefcase/inflatable,
 /obj/structure/closet/crate,
+/obj/item/storage/box/glowsticks,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "AA" = (
 /obj/structure/table/standard,
 /obj/item/storage/briefcase/inflatable,
@@ -2262,7 +2843,9 @@
 /obj/item/storage/briefcase/inflatable,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "AD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -2270,8 +2853,11 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 8
 	},
+/obj/item/book/manual/solgov_law,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "AR" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -2287,7 +2873,11 @@
 	},
 /obj/structure/door_assembly,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Bf" = (
 /obj/machinery/portable_atmospherics/canister/empty,
 /obj/machinery/atmospherics/portables_connector{
@@ -2299,10 +2889,14 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Bo" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Bz" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -2321,15 +2915,23 @@
 	dir = 9
 	},
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "BE" = (
 /obj/machinery/atmospherics/unary/engine{
 	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
 	idle_power_usage = 0;
 	name = "broken rocket nozzle"
 	},
+/obj/structure/shuttle/engine/heater{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "BK" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -2343,7 +2945,9 @@
 	},
 /obj/item/ammo_casing/pistol,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "BQ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -2356,13 +2960,19 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "BZ" = (
 /obj/machinery/floodlight{
 	dir = 4
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Cc" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -2380,26 +2990,37 @@
 /obj/item/device/lightreplacer,
 /obj/item/mop/advanced,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Cp" = (
 /obj/item/stock_parts/micro_laser,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "CA" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/space_heater,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "CB" = (
 /obj/structure/sign/directions/medical{
 	dir = 4;
 	pixel_x = 32
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "CC" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -2414,7 +3035,9 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Dl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -2425,14 +3048,17 @@
 /obj/item/ammo_casing/pistol,
 /obj/effect/floor_decal/techfloor/corner,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Dr" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Ds" = (
-/obj/machinery/space_heater,
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -2440,17 +3066,41 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4
 	},
+/obj/structure/closet/hydrant{
+	pixel_x = 25
+	},
+/obj/structure/table/steel_reinforced{
+	pixel_x = 3
+	},
+/obj/machinery/chemical_dispenser/bar_soft/full{
+	dir = 8;
+	pixel_x = 3;
+	pixel_y = 4
+	},
+/obj/item/storage/box/glasses,
+/obj/item/storage/box/glasses/cocktail{
+	pixel_x = 4
+	},
+/obj/item/storage/box/glasses/shot{
+	pixel_x = 8
+	},
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Dt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Dy" = (
 /obj/item/crowbar,
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "DJ" = (
 /obj/structure/window/reinforced,
 /obj/machinery/fabricator,
@@ -2461,15 +3111,25 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "DS" = (
 /obj/machinery/atmospherics/unary/engine{
 	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
 	idle_power_usage = 0;
 	name = "broken rocket nozzle"
 	},
+/obj/structure/shuttle/engine/heater{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Eg" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -2487,19 +3147,25 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ei" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ek" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 6
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "En" = (
 /obj/machinery/door/airlock/engineering,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -2513,19 +3179,29 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "EA" = (
 /obj/effect/decal/cleanable/filth,
 /obj/item/stack/material/steel,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "EF" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "EM" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 8
@@ -2539,7 +3215,9 @@
 	},
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Fc" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -2549,52 +3227,84 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Fk" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
+"Fp" = (
+/obj/item/storage/toolbox/electrical,
+/turf/template_noop,
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "Fy" = (
 /obj/effect/decal/cleanable/greenglow,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "FH" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 9
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "FK" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "FY" = (
 /obj/machinery/power/solar,
 /obj/structure/railing/mapped,
-/obj/effect/floor_decal/techfloor{
+/obj/effect/floor_decal/industrial/warning/dust{
 	dir = 10
 	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "Gg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4;
 	icon_state = "map_universal"
 	},
-/obj/machinery/space_heater,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 1
 	},
+/obj/machinery/space_heater,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Gr" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4
@@ -2609,14 +3319,18 @@
 /obj/effect/floor_decal/corner/red/bordercorner2,
 /obj/item/ammo_magazine/pistol,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Gv" = (
 /obj/machinery/atmospherics/omni/filter,
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/corner/white/bordercorner,
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Gx" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -2626,11 +3340,17 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "GB" = (
 /obj/effect/decal/cleanable/spiderling_remains,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "GD" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -2642,7 +3362,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "GM" = (
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/borderfloor{
@@ -2664,7 +3386,11 @@
 /obj/item/storage/briefcase/inflatable,
 /obj/item/storage/briefcase/inflatable,
 /turf/simulated/floor/tiled,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "GX" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -2677,17 +3403,25 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Hb" = (
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Hj" = (
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 4
 	},
 /obj/effect/gibspawner/robot,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Hp" = (
 /obj/effect/floor_decal/borderfloor/full,
 /obj/machinery/power/smes/buildable{
@@ -2695,18 +3429,33 @@
 	inputting = 1;
 	outputting = 1
 	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Hs" = (
 /obj/machinery/power/solar,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/floor_decal/techfloor{
+/obj/effect/floor_decal/industrial/warning/dust{
 	dir = 9
 	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 5
+	},
+/obj/structure/sign/warning{
+	dir = 8;
+	pixel_x = 36
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "Ht" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -2716,13 +3465,33 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
+"Hw" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/obj/structure/shuttle/engine/heater{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/space,
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Hy" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "HY" = (
 /obj/structure/handrail{
 	dir = 8
@@ -2732,7 +3501,9 @@
 	pixel_x = 40
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "Ib" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -2748,7 +3519,11 @@
 	},
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/tiled,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Ih" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -2758,7 +3533,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ii" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
@@ -2771,7 +3548,9 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ij" = (
 /obj/machinery/portable_atmospherics/canister/empty,
 /obj/machinery/atmospherics/portables_connector{
@@ -2780,7 +3559,9 @@
 /obj/effect/floor_decal/borderfloor/full,
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "IH" = (
 /obj/structure/window/reinforced,
 /obj/machinery/fabricator,
@@ -2791,21 +3572,29 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "II" = (
 /obj/effect/decal/cleanable/filth,
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "IO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "IV" = (
 /obj/structure/handrail{
 	dir = 4
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "IW" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/effect/floor_decal/industrial/hatch/orange,
@@ -2814,7 +3603,9 @@
 	},
 /obj/machinery/light/xenon,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "IZ" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -2829,36 +3620,50 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Je" = (
 /obj/item/stock_parts/computer/hard_drive,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Jm" = (
 /obj/item/crowbar,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Jx" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
 	name = "escape pod airlock"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Jy" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "JB" = (
 /obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "JF" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -2885,7 +3690,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "JI" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -2893,14 +3700,18 @@
 	},
 /obj/machinery/seed_extractor,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "JL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/item/ammo_casing/pistol,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "JM" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -2914,7 +3725,9 @@
 	},
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Ke" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
@@ -2932,7 +3745,9 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Kg" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -2961,15 +3776,23 @@
 /obj/item/stock_parts/circuitboard/tray,
 /obj/item/stock_parts/circuitboard/tray,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ko" = (
 /obj/item/stack/material/steel,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Ku" = (
 /obj/item/circular_saw,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "KB" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 4
@@ -2988,12 +3811,16 @@
 	},
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "KC" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "KD" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -3006,12 +3833,16 @@
 /obj/machinery/light/xenon,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "KL" = (
 /obj/item/crowbar,
 /obj/effect/floor_decal/corner/black/diagonal,
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "KO" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -3025,7 +3856,9 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "KR" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 8
@@ -3039,13 +3872,12 @@
 	},
 /obj/structure/curtain/medical,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Lf" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
-	},
-/obj/structure/closet/hydrant{
-	pixel_x = -27
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -3074,7 +3906,9 @@
 /obj/item/reagent_containers/food/snacks/meat,
 /obj/item/reagent_containers/food/snacks/meat,
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Lh" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -3086,7 +3920,9 @@
 	},
 /obj/machinery/light/xenon,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Lm" = (
 /obj/machinery/power/apc/inactive{
 	dir = 8;
@@ -3097,14 +3933,20 @@
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Lz" = (
 /obj/structure/sign/directions/bridge{
 	dir = 4;
 	pixel_x = 32
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "LC" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -3116,28 +3958,40 @@
 	},
 /obj/machinery/light/xenon,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "LT" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 8
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "Ma" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Mo" = (
 /obj/machinery/atmospherics/unary/engine{
 	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
 	idle_power_usage = 0;
 	name = "broken rocket nozzle"
 	},
+/obj/structure/shuttle/engine/heater{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Mz" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -3152,14 +4006,20 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "MA" = (
 /obj/effect/floor_decal/techfloor/orange/corner{
 	dir = 8
 	},
 /obj/item/stock_parts/computer/hard_drive/cluster,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "MD" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3190,17 +4050,15 @@
 /obj/item/stack/cable_coil/white,
 /obj/structure/closet/crate/solar,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "MH" = (
 /obj/machinery/power/terminal{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -3217,21 +4075,31 @@
 /obj/item/storage/briefcase/inflatable,
 /obj/item/storage/briefcase/inflatable,
 /obj/structure/closet/crate,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "MI" = (
 /obj/machinery/atmospherics/omni/filter,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "MW" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 10
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "MX" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -3251,17 +4119,27 @@
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "MY" = (
 /turf/simulated/shuttle/wall/corner/dark,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Na" = (
 /obj/item/remains/mouse,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Ni" = (
 /turf/simulated/shuttle/wall/corner/dark/se,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Nn" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -3276,7 +4154,9 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Nr" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3293,8 +4173,11 @@
 /obj/item/clothing/suit/space/emergency,
 /obj/item/clothing/mask/gas/half,
 /obj/item/clothing/mask/gas/radical,
+/obj/item/storage/box/glowsticks,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "NC" = (
 /obj/machinery/door/airlock/external{
 	dir = 8;
@@ -3309,7 +4192,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "NK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -3320,7 +4205,9 @@
 	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "NU" = (
 /obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/borderfloor{
@@ -3332,7 +4219,9 @@
 	},
 /obj/effect/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "NZ" = (
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/industrial/hatch/orange,
@@ -3377,11 +4266,17 @@
 	},
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ob" = (
 /obj/item/stock_parts/computer/battery_module/nano,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Om" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -3389,10 +4284,14 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Oq" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Oy" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -3420,7 +4319,9 @@
 	},
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Oz" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -3434,13 +4335,17 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "OD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "OM" = (
 /obj/machinery/atmospherics/unary/engine{
 	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
@@ -3448,33 +4353,45 @@
 	name = "broken rocket nozzle"
 	},
 /turf/space,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "OR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "OU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "OY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Pa" = (
 /obj/structure/mopbucket,
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Pj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -3490,8 +4407,11 @@
 /obj/structure/curtain/open/shower/engineering{
 	pixel_y = -32
 	},
+/obj/structure/cable/yellow,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Pq" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -3513,26 +4433,46 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "PF" = (
 /obj/effect/floor_decal/borderfloor/full,
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "PJ" = (
-/obj/machinery/sleeper{
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
 	},
+/obj/machinery/cryopod,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "PK" = (
 /obj/effect/decal/cleanable/blood/tracks/body,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
+"PL" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/hydroponics,
+/obj/item/book/manual/hydroponics_pod_people,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "PM" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -3550,10 +4490,21 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 8
 	},
-/obj/random/toolbox,
-/obj/item/stack/material/steel/fifty,
+/obj/machinery/power/solar_control{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "PT" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
@@ -3566,7 +4517,9 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "PV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -3584,7 +4537,9 @@
 	},
 /mob/living/simple_animal/hostile/meat/horror,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Qe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -3599,7 +4554,9 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Qf" = (
 /obj/structure/handrail{
 	dir = 8
@@ -3609,16 +4566,27 @@
 	pixel_x = 40
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "Ql" = (
 /obj/item/crowbar,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Qn" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Qp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -3637,7 +4605,9 @@
 	},
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "QF" = (
 /obj/structure/sign/emergonly{
 	pixel_y = 27
@@ -3648,19 +4618,31 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "QQ" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/item/storage/backpack/dufflebag/eng,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
+"Rc" = (
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo{
+	requires_power = 0
+	})
 "Rk" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Rn" = (
 /obj/structure/window/reinforced,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -3684,8 +4666,11 @@
 /obj/item/storage/briefcase/inflatable,
 /obj/item/storage/briefcase/inflatable,
 /obj/item/storage/briefcase/inflatable,
+/obj/item/storage/box/glowsticks,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ru" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -3704,10 +4689,14 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Sc" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "So" = (
 /obj/structure/closet/crate/large/hydroponics,
 /obj/item/seeds/potatoseed,
@@ -3734,8 +4723,12 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/black/diagonal,
+/obj/item/reagent_containers/glass/beaker,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Sr" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3751,7 +4744,9 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Sv" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 8
@@ -3766,23 +4761,31 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Sy" = (
 /obj/effect/decal/cleanable/flour,
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "SE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "SR" = (
 /obj/structure/inflatable/wall,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "Te" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3794,7 +4797,9 @@
 	},
 /obj/item/device/radio/map_preset,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Th" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -3812,8 +4817,13 @@
 	dir = 9
 	},
 /obj/machinery/light/small,
+/obj/structure/cable/green,
+/obj/item/stack/cable_coil/green,
+/obj/item/stack/cable_coil/green,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Tl" = (
 /obj/machinery/atmospherics/unary/engine{
 	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
@@ -3821,7 +4831,11 @@
 	name = "broken rocket nozzle"
 	},
 /turf/space,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "To" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -3832,7 +4846,9 @@
 	},
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Tw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -3877,7 +4893,9 @@
 	},
 /obj/item/reagent_containers/food/snacks/meatsteak,
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "TI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -3897,7 +4915,9 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "TW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -3917,11 +4937,17 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ui" = (
 /obj/item/stock_parts/matter_bin,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Ul" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -3929,7 +4955,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/item/device/binoculars,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Uo" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 10
@@ -3937,14 +4965,20 @@
 /obj/item/wirecutters,
 /obj/item/arrow/rod,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Up" = (
 /obj/effect/wallframe_spawn/reinforced_phoron/prepainted,
 /obj/machinery/door/firedoor{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Uw" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -3961,8 +4995,11 @@
 /obj/item/clothing/suit/space/emergency,
 /obj/item/clothing/mask/gas/half,
 /obj/item/clothing/mask/gas/radical,
+/obj/item/storage/box/glowsticks,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Uy" = (
 /obj/structure/window/reinforced,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -3976,26 +5013,50 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "UB" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 4;
+	dir = 1;
+	icon_state = "1-4"
 	},
+/obj/item/book/manual/atmospipes,
+/obj/item/book/manual/engineering_guide,
+/obj/item/book/manual/engineering_construction,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
+"UC" = (
+/obj/item/storage/box/glowsticks,
+/turf/template_noop,
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "UF" = (
 /obj/item/stock_parts/computer/card_slot/broadcaster,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "UK" = (
 /obj/structure/grille,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "UO" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -4003,31 +5064,47 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/corner/black/diagonal,
 /turf/simulated/floor/tiled/white,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "UP" = (
 /turf/simulated/shuttle/wall/corner/dark/se,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "UQ" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Vv" = (
 /obj/structure/sign/directions/supply{
 	dir = 8;
 	pixel_x = -34
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "VK" = (
 /obj/item/stack/material/steel,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "VM" = (
 /turf/simulated/shuttle/wall/corner/dark/nw,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "VY" = (
 /obj/machinery/sleeper{
 	dir = 4
@@ -4039,17 +5116,28 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Wf" = (
 /obj/machinery/power/solar,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/floor_decal/techfloor{
+/obj/effect/floor_decal/industrial/warning/dust{
 	dir = 5
 	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/obj/structure/sign/warning{
+	dir = 4;
+	pixel_x = -36
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "Wl" = (
 /obj/structure/disposaloutlet{
 	dir = 4
@@ -4062,7 +5150,9 @@
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Wm" = (
 /obj/structure/sign/directions/evac{
 	dir = 4;
@@ -4072,10 +5162,14 @@
 	dir = 8
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "Wq" = (
 /turf/simulated/shuttle/wall/corner/dark/nw,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Wt" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -4086,12 +5180,18 @@
 	},
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "WB" = (
 /obj/structure/firedoor_assembly,
 /obj/structure/grille/broken,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "WI" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/crowbar,
@@ -4108,14 +5208,18 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "WV" = (
 /obj/structure/sign/directions/engineering{
 	dir = 4;
 	pixel_x = 32
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "WW" = (
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/borderfloor{
@@ -4125,7 +5229,11 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "WX" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -4138,7 +5246,9 @@
 /obj/machinery/light/xenon,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "WY" = (
 /obj/structure/largecrate/animal/cat,
 /obj/effect/floor_decal/industrial/warning/dust/corner{
@@ -4146,7 +5256,9 @@
 	},
 /obj/effect/floor_decal/industrial/outline/green,
 /turf/simulated/floor/plating,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "Xb" = (
 /obj/effect/floor_decal/borderfloor/full,
 /obj/machinery/power/smes/buildable{
@@ -4154,8 +5266,14 @@
 	inputting = 1;
 	outputting = 1
 	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Xl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4;
@@ -4169,45 +5287,69 @@
 	dir = 1
 	},
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "Xm" = (
 /obj/machinery/atmospherics/unary/engine{
 	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
 	idle_power_usage = 0;
 	name = "broken rocket nozzle"
 	},
+/obj/structure/shuttle/engine/heater{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/space,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Xq" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled/dark/monotile,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Xv" = (
 /obj/item/device/binoculars,
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Xy" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "XS" = (
 /obj/structure/mopbucket,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "XT" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/orange,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "XU" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
@@ -4230,7 +5372,9 @@
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "XV" = (
 /obj/machinery/portable_atmospherics/canister/empty,
 /obj/machinery/atmospherics/portables_connector{
@@ -4241,7 +5385,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Yh" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -4258,91 +5404,162 @@
 	},
 /obj/machinery/light/xenon,
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Yi" = (
 /obj/item/stock_parts/computer/network_card/wired,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "Yn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Yr" = (
 /obj/machinery/atmospherics/unary/engine{
 	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
 	idle_power_usage = 0;
 	name = "broken rocket nozzle"
 	},
+/obj/structure/shuttle/engine/heater{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/space,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ys" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Yu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_eng)
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Yy" = (
 /obj/machinery/atmospherics/unary/engine{
 	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
 	idle_power_usage = 0;
 	name = "broken rocket nozzle"
 	},
+/obj/structure/shuttle/engine/heater{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "YI" = (
 /obj/item/stock_parts/console_screen,
 /turf/template_noop,
-/area/map_template/crashed_pods/pod_cargo)
+/area/map_template/crashed_pods/pod_cargo{
+	always_unpowered = 1;
+	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
+	requires_power = 0
+	})
 "YK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/item/device/radio,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/holofloor/tiled,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
 "YL" = (
 /obj/machinery/atmospherics/unary/engine{
 	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
 	idle_power_usage = 0;
 	name = "broken rocket nozzle"
 	},
+/obj/structure/shuttle/engine/heater{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/space,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
+"YV" = (
+/obj/machinery/atmospherics/unary/engine{
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship. Looks like this one was broken due emergency landing...";
+	idle_power_usage = 0;
+	name = "broken rocket nozzle"
+	},
+/obj/structure/shuttle/engine/heater{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/space,
+/area/map_template/crashed_pods/pod_eng{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Ze" = (
 /turf/simulated/shuttle/wall/corner/dark,
-/area/map_template/crashed_pods/pod_com)
+/area/map_template/crashed_pods/pod_com{
+	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
+	})
+"Zo" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Zt" = (
 /turf/simulated/shuttle/wall/corner/dark/nw,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "Zw" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 4
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "ZG" = (
 /obj/structure/handrail{
 	dir = 8
 	},
 /turf/template_noop,
-/area/map_template/crashed_pods)
+/area/map_template/crashed_pods{
+	ambience = list('sound/ambience/ambispace1.ogg','sound/ambience/ambispace2.ogg','sound/ambience/ambispace3.ogg')
+	})
 "ZO" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -4350,7 +5567,9 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ZW" = (
 /obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/borderfloor{
@@ -4366,13 +5585,17 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_med)
+/area/map_template/crashed_pods/pod_med{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 "ZZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro)
+/area/map_template/crashed_pods/pod_hydro{
+	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
+	})
 
 (1,1,1) = {"
 cd
@@ -4436,7 +5659,7 @@ cd
 cd
 cd
 VM
-OM
+YV
 Sc
 Sc
 Sc
@@ -4904,7 +6127,7 @@ cd
 cd
 cd
 vv
-OM
+YV
 Sc
 Sc
 Sc
@@ -5063,7 +6286,7 @@ cd
 cd
 cd
 cd
-cd
+Fp
 cd
 cd
 cd
@@ -6445,13 +7668,13 @@ Hb
 Hb
 Hb
 Hb
-Hb
-Ko
-Hb
-Hb
-Hb
-Hb
-Hb
+UC
+Au
+Rc
+Rc
+Rc
+Rc
+Rc
 cd
 "}
 (41,1,1) = {"
@@ -6498,12 +7721,12 @@ Hb
 el
 Hb
 Hb
-Hb
-Hb
-Ui
-Hb
-wd
-Hb
+Rc
+Rc
+hJ
+Rc
+si
+Rc
 cd
 "}
 (42,1,1) = {"
@@ -6550,12 +7773,12 @@ Hb
 Hb
 wd
 Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Ko
+Rc
+Rc
+Rc
+Rc
+Rc
+Au
 cd
 "}
 (43,1,1) = {"
@@ -6592,7 +7815,7 @@ Hb
 Hb
 Hb
 Fy
-Tl
+Hw
 Rk
 pi
 Hb
@@ -6931,8 +8154,8 @@ lO
 Sv
 Sy
 Aa
-OR
-CA
+PL
+Zo
 Oq
 Oq
 Oq
@@ -7165,7 +8388,7 @@ Hb
 Rk
 dP
 Fy
-Tl
+Hw
 Rk
 Rk
 Rk
@@ -7212,7 +8435,7 @@ cd
 cd
 cd
 Hb
-Hb
+UC
 Hb
 Rk
 Rk
