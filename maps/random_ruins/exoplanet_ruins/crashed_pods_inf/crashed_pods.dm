@@ -59,12 +59,13 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 /datum/job/submap/pods/New(var/datum/submap/_owner, var/abstract_job = FALSE)
 	..()
 	if(_owner) // Might be called from admin tools, etc
-		info = "Your station, the [_owner.name], has been destroyed by a terrible disaster, \
-		leaving you stranded in your survival pod on a hostile exoplanet. Your pod's distress \
-		signal might draw help, but even if you should be so lucky, you must survive long \
-		enough for it to arrive."
+		info = "Ващ корабль, [_owner.name], был потерпел крушение. \
+		Вам удалось спастись в случайной капсуле. Один из ваших подов \
+		постоянно отправляет сигнал бедствия. Никто не знает, сможете ли вы выжить до прибытия помощи..."
 
 /turf/template_noop/var/dirt
+
+/turf/template_noop/update dirt
 
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor
 	name = "Crashed Pods Crew"
