@@ -2209,7 +2209,6 @@
 /obj/structure/closet/hydrant{
 	pixel_x = -27
 	},
-/obj/item/book/manual/medical_diagnostics_manual,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_med{
 	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
@@ -2853,7 +2852,6 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 8
 	},
-/obj/item/book/manual/solgov_law,
 /turf/simulated/floor/holofloor/tiled,
 /area/map_template/crashed_pods/pod_com{
 	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
@@ -4463,16 +4461,6 @@
 	ambience = list('sound/ambience/ambispace3.ogg','sound/ambience/ambispace4.ogg','sound/ambience/ambispace5.ogg');
 	requires_power = 0
 	})
-"PL" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/portable_atmospherics/hydroponics,
-/obj/item/book/manual/hydroponics_pod_people,
-/turf/simulated/floor/tiled/techfloor,
-/area/map_template/crashed_pods/pod_hydro{
-	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
-	})
 "PM" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -5026,9 +5014,6 @@
 	dir = 1;
 	icon_state = "1-4"
 	},
-/obj/item/book/manual/atmospipes,
-/obj/item/book/manual/engineering_guide,
-/obj/item/book/manual/engineering_construction,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/crashed_pods/pod_eng{
 	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
@@ -8154,7 +8139,7 @@ lO
 Sv
 Sy
 Aa
-PL
+OR
 Zo
 Oq
 Oq
