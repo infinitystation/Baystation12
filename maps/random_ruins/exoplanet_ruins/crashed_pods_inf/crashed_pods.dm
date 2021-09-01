@@ -65,7 +65,7 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 		enough for it to arrive."
 
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor
-	name = "Crashed Pods Crew Members"
+	name = "Crashed Pods Crew"
 
 /obj/effect/submap_landmark/joinable_submap/crashed_pods
 	name = "Crashed Survival Pods"

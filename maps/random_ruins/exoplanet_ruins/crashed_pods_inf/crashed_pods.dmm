@@ -137,7 +137,6 @@
 /obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal{
 	pixel_x = 8
 	},
-/obj/item/book/manual/chef_recipes,
 /turf/simulated/floor/tiled/white,
 /area/map_template/crashed_pods/pod_hydro{
 	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
@@ -1931,7 +1930,6 @@
 	dir = 4
 	},
 /obj/machinery/cryopod,
-/obj/item/book/manual/stasis,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_hydro{
 	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
