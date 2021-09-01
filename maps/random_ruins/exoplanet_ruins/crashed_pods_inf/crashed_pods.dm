@@ -65,8 +65,6 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 
 /turf/template_noop/var/dirt
 
-/turf/template_noop/update dirt
-
 /obj/effect/submap_landmark/spawnpoint/crashed_pods_survivor
 	name = "Crashed Pods Crew"
 
