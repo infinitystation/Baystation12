@@ -301,7 +301,10 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/cryopod,
+/obj/machinery/sleeper/survival_pod,
+/obj/machinery/computer/cryopod{
+	pixel_y = -23
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_med{
 	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
@@ -1155,6 +1158,7 @@
 	})
 "ln" = (
 /obj/effect/decal/cleanable/blood,
+/obj/item/stock_parts/circuitboard/cryopodcontrol,
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/crashed_pods/pod_com{
 	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
@@ -1686,8 +1690,8 @@
 	ambience = list('sound/ambience/spookyspace1.ogg','sound/ambience/spookyspace2.ogg')
 	})
 "qq" = (
-/obj/machinery/sleeper{
-	dir = 4
+/obj/machinery/sleeper/survival_pod{
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -1929,7 +1933,10 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/machinery/cryopod,
+/obj/machinery/sleeper/survival_pod,
+/obj/machinery/computer/cryopod{
+	pixel_y = -23
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_hydro{
 	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
@@ -2544,8 +2551,8 @@
 	requires_power = 0
 	})
 "yB" = (
-/obj/machinery/sleeper{
-	dir = 4
+/obj/machinery/sleeper/survival_pod{
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -4446,7 +4453,10 @@
 	dir = 8;
 	icon_state = "warning"
 	},
-/obj/machinery/cryopod,
+/obj/machinery/sleeper/survival_pod,
+/obj/machinery/computer/cryopod{
+	pixel_y = -23
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/crashed_pods/pod_eng{
 	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
@@ -5089,8 +5099,8 @@
 	ambience = list('sound/ambience/ominous1.ogg','sound/ambience/ominous2.ogg','sound/ambience/ominous3.ogg')
 	})
 "VY" = (
-/obj/machinery/sleeper{
-	dir = 4
+/obj/machinery/sleeper/survival_pod{
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
