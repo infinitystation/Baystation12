@@ -16,7 +16,7 @@
 	var/chem_volume = 100
 	var/icon_on = "hookah"
 	var/lit = 0 // litghted status
-	var/tubes_amount = 3 // number of tubes 0 << X << inf
+	var/tubes_amount = 3
 	var/list/tubes = list()
 	var/genericmes = "<span class='notice'>USER lights NAME with the FLAME.</span>"
 	var/matchmes = "<span class='notice'>USER lights NAME with FLAME.</span>"
