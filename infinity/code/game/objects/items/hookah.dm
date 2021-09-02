@@ -264,7 +264,7 @@
 
 /obj/item/tube
 	name = "Hookah tube"
-	desc = "дудка"
+	desc = "Large tube connected to the hookah"
 	icon_state = "hookah_tube"
 	item_state = "hookah_tube"
 	icon = 'infinity/icons/obj/item/hookah.dmi'
