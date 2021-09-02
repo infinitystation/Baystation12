@@ -269,12 +269,6 @@
 	item_state = "hookah_tube"
 	icon = 'infinity/icons/obj/item/hookah.dmi'
 
-	item_icons = list(
-		slot_l_hand_str = 'infinity/icons/mob/onmob/items/lefthand.dmi',
-		slot_r_hand_str = 'infinity/icons/mob/onmob/items/righthand.dmi',
-	)
-
-
 	w_class = ITEM_SIZE_NO_CONTAINER
 
 	throw_range = 0
