@@ -18,7 +18,6 @@
 	var/lit = 0 // litghted status
 	var/tubes_amount = 3 // number of tubes 0 << X << inf
 	var/list/tubes = list()
-	var/list/tubesinhand = list()
 	var/genericmes = "<span class='notice'>USER lights NAME with the FLAME.</span>"
 	var/matchmes = "<span class='notice'>USER lights NAME with FLAME.</span>"
 	var/lightermes = "<span class='notice'>USER manages to light NAME with FLAME.</span>"
@@ -160,13 +159,13 @@
 		text = replacetext(text, "FLAME", "[W.name]")
 		light(text)
 	else if(istype(W, /obj/item/tube))
-		if(tubesinhand.Find(W) == 0)
+		var/obj/item/tube/T = W
+		if(T.par != src)
 			to_chat(user, SPAN_WARNING("This tube not from this hookah!"))
 			return
-		tubes.Add(W)
-		tubesinhand.Remove(W)
-		user.unEquip(W, src)
-		STOP_PROCESSING(SSobj, W)
+		tubes.Add(T)
+		user.unEquip(T, src)
+		STOP_PROCESSING(SSobj, T)
 		to_chat(user, SPAN_INFO("You put the tube in hookah."))
 	else if(istype(W, /obj/item/coal))
 		var/obj/item/coal/M = W
@@ -232,7 +231,6 @@
 		return
 
 	START_PROCESSING(SSobj, T)
-	tubesinhand.Add(T)
 	tubes.Remove(T)
 
 	to_chat(user, SPAN_INFO("You take's the smoking tube."))
@@ -308,7 +306,6 @@
 			par.contents.Add(src)
 
 		par.tubes.Add(src)
-		par.tubesinhand.Remove(src)
 		return PROCESS_KILL
 
 /obj/item/tube/Destroy()
