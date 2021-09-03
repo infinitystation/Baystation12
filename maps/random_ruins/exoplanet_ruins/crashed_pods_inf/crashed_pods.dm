@@ -39,14 +39,14 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 	icon_state = "pod_com"
 	sound_env = SMALL_ENCLOSED
 
-/decl/submap_archetype/crashed_pod
+/decl/submap_archetype/crashed_pods
 	descriptor = "crashed survival pods"
 	crew_jobs = list(/datum/job/submap/pods)
 
 /datum/submap/crashed_pod/sync_cell(var/obj/effect/overmap/visitable/cell)
 	cell.has_distress_beacon = name
 
-/datum/job/submap/pods
+/datum/job/submap/crashed_pods
 	title = "Stranded Survivor"
 	info = "Your ship has been destroyed by a terrible disaster."
 	outfit_type = /decl/hierarchy/outfit/job/survivor
@@ -56,7 +56,7 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 	name = OUTFIT_JOB_NAME("Survivor")
 	pda_type = null
 
-/datum/job/submap/pods/New(var/datum/submap/_owner, var/abstract_job = FALSE)
+/datum/job/submap/crashed_pods/New(var/datum/submap/_owner, var/abstract_job = FALSE)
 	..()
 	if(_owner) // Might be called from admin tools, etc
 		info = "Ващ корабль, [_owner.name], был потерпел крушение. \
