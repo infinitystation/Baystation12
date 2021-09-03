@@ -18,12 +18,12 @@
 	var/lit = 0 // litghted status
 	var/tubes_amount = 3
 	var/list/tubes = list()
-	var/genericmes = "<span class='notice'>USER lights NAME with the FLAME.</span>"
-	var/matchmes = "<span class='notice'>USER lights NAME with FLAME.</span>"
-	var/lightermes = "<span class='notice'>USER manages to light NAME with FLAME.</span>"
-	var/zippomes = "<span class='rose'>With much care, USER lights NAME with FLAME.</span>"
-	var/weldermes = "<span class='notice'>USER recklessly lights NAME with FLAME.</span>"
-	var/ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light NAME with the power of science.</span>"
+	var/genericmes = SPAN_INFO("USER lights NAME with the FLAME.")
+	var/matchmes = SPAN_INFO("USER lights NAME with FLAME.")
+	var/lightermes = SPAN_INFO("USER manages to light NAME with FLAME.")
+	var/zippomes = "<span class='rose'>With much care, USER lights NAME with FLAME."
+	var/weldermes = SPAN_INFO("USER recklessly lights NAME with FLAME.")
+	var/ignitermes = SPAN_INFO("USER fiddles with FLAME, and manages to light NAME with the power of science.")
 	var/list/filling
 	var/gas_consumption = 0.04
 
@@ -89,9 +89,6 @@
 			i.reagents.add_reagent(R, i.filling[R])
 		i.dropInto(get_turf(loc))
 
-
-
-// РАБОТАТЬ СЮДА!!!!Ё!!!!!
 	reagents.clear_reagents()
 	usr.visible_message(SPAN_INFO("[usr] take's tobacco leaves from hookah."), SPAN_INFO("You'r take tobacco leaves from hookah."))
 
@@ -172,11 +169,9 @@
 		if(smoketime + M.volume > maxsmoketime)
 			to_chat(user, SPAN_WARNING("Hookah is full of coal!"))
 			return
-		// user.unEquip(M, src)
 		qdel(M)
 		smoketime += M.volume
 		user.visible_message(SPAN_INFO("[user] add's coal in hookah."), SPAN_INFO("You added coal in hookah."))
-		// qdel(M)
 
 	else if(istype(W, /obj/item/tobacco))
 		if(W.reagents)
@@ -193,7 +188,7 @@
 /obj/item/hookah/proc/light(var/flavor_text = "[usr] lights the [name].")
 	if(!lit && smoketime)
 		if(submerged())
-			to_chat(usr, "<span class='warning'>You cannot light \the [src] underwater.</span>")
+			to_chat(usr, SPAN_WARNING("You cannot light \the [src] underwater."))
 			return
 
 		lit = 1
@@ -245,10 +240,10 @@
 				if(H.hand)
 					temp = H.organs_by_name[BP_L_HAND]
 				if(temp && !temp.is_usable())
-					to_chat(over, "<span class='notice'>You try to move your [temp.name], but cannot!</span>")
+					to_chat(over, SPAN_INFO("You try to move your [temp.name], but cannot!"))
 					return
 
-				to_chat(over, "<span class='notice'>You pick up the [src].</span>")
+				to_chat(over, SPAN_INFO("You pick up the [src]."))
 				usr.put_in_hands(src)
 	return
 
@@ -313,9 +308,9 @@
 	if(H == user && istype(H) && ready)
 		var/obj/item/blocked = H.check_mouth_coverage()
 		if(blocked)
-			to_chat(H, "<span class='warning'>\The [blocked] is in the way!</span>")
+			to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
 			return 1
-		to_chat(H, "<span class='notice'>You take a drag on your [name].</span>")
+		to_chat(H, SPAN_INFO("You take a drag on your [name]."))
 
 		playsound(H, 'infinity/sound/effects/inhale.ogg', 50, 0, -1)
 		smoke(5)
