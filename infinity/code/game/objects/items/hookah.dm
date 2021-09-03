@@ -27,7 +27,6 @@
 	var/list/filling
 	var/gas_consumption = 0.04
 
-
 /obj/item/hookah/New()
 	..()
 	desc = replacetext(desc, "AMOUNT", "[tubes_amount]")
