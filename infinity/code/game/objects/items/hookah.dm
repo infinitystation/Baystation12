@@ -21,7 +21,7 @@
 	var/genericmes = SPAN_INFO("USER lights NAME with the FLAME.")
 	var/matchmes = SPAN_INFO("USER lights NAME with FLAME.")
 	var/lightermes = SPAN_INFO("USER manages to light NAME with FLAME.")
-	var/zippomes = "<span class='rose'>With much care, USER lights NAME with FLAME."
+	var/zippomes = "<span class='rose'>With much care, USER lights NAME with FLAME.</span>"
 	var/weldermes = SPAN_INFO("USER recklessly lights NAME with FLAME.")
 	var/ignitermes = SPAN_INFO("USER fiddles with FLAME, and manages to light NAME with the power of science.")
 	var/list/filling
