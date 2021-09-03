@@ -18,12 +18,12 @@
 	var/lit = 0 // litghted status
 	var/tubes_amount = 3
 	var/list/tubes = list()
-	var/genericmes = SPAN_INFO("USER lights NAME with the FLAME.")
-	var/matchmes = SPAN_INFO("USER lights NAME with FLAME.")
-	var/lightermes = SPAN_INFO("USER manages to light NAME with FLAME.")
+	var/genericmes = "<span class='info'>USER lights NAME with the FLAME.</span>"
+	var/matchmes = "<span class='info'>USER lights NAME with FLAME.</span>"
+	var/lightermes = "<span class='info'>USER manages to light NAME with FLAME.</span>"
 	var/zippomes = "<span class='rose'>With much care, USER lights NAME with FLAME.</span>"
-	var/weldermes = SPAN_INFO("USER recklessly lights NAME with FLAME.")
-	var/ignitermes = SPAN_INFO("USER fiddles with FLAME, and manages to light NAME with the power of science.")
+	var/weldermes = "<span class='info'>USER recklessly lights NAME with FLAME.</span>"
+	var/ignitermes = "<span class='info'>USER fiddles with FLAME, and manages to light NAME with the power of science.</span>"
 	var/list/filling
 	var/gas_consumption = 0.04
 
