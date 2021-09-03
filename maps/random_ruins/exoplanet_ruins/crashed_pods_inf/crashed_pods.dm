@@ -9,45 +9,45 @@ GLOBAL_LIST_INIT(crashed_pods_areas, new)
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
 
 /area/map_template/crashed_pods
-	name = "\improper Crashed Pods"
+	name = "\improper Away Crashed Pods"
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "crashed_pods"
 	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/map_template/crashed_pods/pod_hydro
-	name = "\improper Crashed hydroponic Pod"
+	name = "\improper Crashed Hydroponic Pod"
 	icon_state = "pod_hydro"
 	sound_env = SMALL_ENCLOSED
 
 /area/map_template/crashed_pods/pod_cargo
-	name = "\improper Crashed cargo Pods"
+	name = "\improper Crashed Cargo Pods"
 	icon_state = "pod_cargo"
 	sound_env = LARGE_ENCLOSED
 
 /area/map_template/crashed_pods/pod_eng
-	name = "\improper Crashed engineering Pod"
+	name = "\improper Crashed Engineering Pod"
 	icon_state = "pod_eng"
 	sound_env = SMALL_ENCLOSED
 
 /area/map_template/crashed_pods/pod_med
-	name = "\improper Crashed medical Pod"
+	name = "\improper Crashed Medical Pod"
 	icon_state = "pod_med"
 	sound_env = SMALL_ENCLOSED
 
 /area/map_template/crashed_pods/pod_com
-	name = "\improper Crashed Pods"
+	name = "\improper Crashed Command Pod"
 	icon_state = "pod_com"
 	sound_env = SMALL_ENCLOSED
 
 /decl/submap_archetype/crashed_pod
 	descriptor = "crashed survival pods"
-	crew_jobs = list(/datum/job/submap/pod)
+	crew_jobs = list(/datum/job/submap/pods)
 
 /datum/submap/crashed_pod/sync_cell(var/obj/effect/overmap/visitable/cell)
 	cell.has_distress_beacon = name
 
 /datum/job/submap/pods
-	title = "Crashed Pods Crew Member"
+	title = "Stranded Survivor"
 	info = "Your ship has been destroyed by a terrible disaster."
 	outfit_type = /decl/hierarchy/outfit/job/survivor
 	total_positions = 6
