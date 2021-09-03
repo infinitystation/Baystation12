@@ -19,49 +19,37 @@
 /obj/item/tobacco/perception
 	name = "perception tobacco"
 	desc = "Cut and process tobacco leaves along with herbal preparations."
-	w_class = ITEM_SIZE_TINY
 
-	volume = 10
 	filling = list(/datum/reagent/tobacco/perception = 10)
 
 /obj/item/tobacco/medical
 	name = "medical tobacco"
 	desc = "Medicinal tobacco used for relaxation and concentration."
-	w_class = ITEM_SIZE_TINY
 
-	volume = 10
 	filling = list(/datum/reagent/tobacco/medical = 10)
 
 /obj/item/tobacco/strong
 	name = "strong tobacco"
 	desc = "Strong tobacco for strong men... or women, perhaps."
-	w_class = ITEM_SIZE_TINY
 
-	volume = 10
 	filling = list(/datum/reagent/tobacco/strong = 10)
 
 /obj/item/tobacco/female
 	name = "female tobacco"
 	desc = "Female tobacco for good lady's."
-	w_class = ITEM_SIZE_TINY
 
-	volume = 10
 	filling = list(/datum/reagent/tobacco/female = 10)
 
 /obj/item/tobacco/honey
 	name = "tobacco with honey"
 	desc = "Tobacco that has been processed in honey."
-	w_class = ITEM_SIZE_TINY
 
-	volume = 10
 	filling = list(/datum/reagent/tobacco/honey = 10)
 
 /obj/item/tobacco/coffee
 	name = "tobacco with coffee"
 	desc = "Tobacco leaves that have been mixed with coffee powder."
-	w_class = ITEM_SIZE_TINY
 
-	volume = 10
 	filling = list(/datum/reagent/tobacco/coffee = 10)
 
 /obj/item/tobacco/attackby(obj/item/I, mob/user)
