@@ -15,12 +15,12 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 
 /decl/submap_archetype/crashed_pod
 	descriptor = "crashed survival pod"
-	crew_jobs = list(/datum/job/submap/crashed_pod)
+	crew_jobs = list(/datum/job/submap/pod)
 
 /datum/submap/crashed_pod/sync_cell(var/obj/effect/overmap/visitable/cell)
 	cell.has_distress_beacon = name
 
-/datum/job/submap/crashed_pods
+/datum/job/submap/pod
 	title = "Stranded Survivor"
 	info = "Your ship has been destroyed by a terrible disaster."
 	outfit_type = /decl/hierarchy/outfit/job/survivor
@@ -40,12 +40,12 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 /obj/effect/submap_landmark/spawnpoint/crashed_pod_survivor
 	name = "Stranded Survivor"
 
-/obj/effect/submap_landmark/joinable_submap/crashed_pods
+/obj/effect/submap_landmark/joinable_submap/crashed_pod
 	name = "Crashed Survival Pod"
 	archetype = /decl/submap_archetype/crashed_pod
 	submap_datum_type = /datum/submap/crashed_pod
 
-/obj/effect/submap_landmark/joinable_submap/crashed_pods/New()
+/obj/effect/submap_landmark/joinable_submap/crashed_pod/New()
 	var/list/possible_ship_names = list(
 		"Hornet",		"Witchmoth",	"Planthopper",
 		"Mayfly",		"Locust",		"Cicada",
