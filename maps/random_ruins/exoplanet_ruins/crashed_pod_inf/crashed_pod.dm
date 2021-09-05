@@ -40,12 +40,12 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 /obj/effect/submap_landmark/spawnpoint/crashed_pod_survivor
 	name = "Stranded Survivor"
 
-/obj/effect/submap_landmark/joinable_submap/crashed_pod
+/obj/effect/submap_landmark/joinable_submap/pod
 	name = "Crashed Survival Pod"
 	archetype = /decl/submap_archetype/crashed_pod
 	submap_datum_type = /datum/submap/crashed_pod
 
-/obj/effect/submap_landmark/joinable_submap/crashed_pod/New()
+/obj/effect/submap_landmark/joinable_submap/pod/New()
 	var/list/possible_ship_names = list(
 		"Hornet",		"Witchmoth",	"Planthopper",
 		"Mayfly",		"Locust",		"Cicada",
