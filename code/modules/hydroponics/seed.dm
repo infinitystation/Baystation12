@@ -621,14 +621,11 @@
 							source_turf.visible_message("<span class='notice'>\The [display_name]'s glow </span><font color='[get_trait(TRAIT_BIOLUM_COLOUR)]'>changes colour</font>!")
 					else
 						source_turf.visible_message("<span class='notice'>\The [display_name]'s glow dims...</span>")
-			if(11)
-				set_trait(TRAIT_TELEPORTING,1)
-			if(12)
-				if(!exude_gasses | rand(0,10))
-					exude_gasses = list()
-					source_turf.visible_message("<span class='notice'>exude_gasses is null</span>")
-				if(rand(0,5))
-					var/gas = pickweight(list(GAS_METHYL_BROMIDE = 5,
+				if(prob(degree))
+					if(prob(80))
+						if(!exude_gasses | prob(90))
+							exude_gasses = list()
+						var/gas = pickweight(list(GAS_METHYL_BROMIDE = 5,
 										GAS_OXYGEN = 10,
 										GAS_NITROGEN = 5,
 										GAS_CO2 = 10,
@@ -641,11 +638,12 @@
 										GAS_HELIUM = 1,
 										GAS_PHORON = 1
 											))
-					source_turf.visible_message("<span class='notice'>exude_gasses is [gas]</span>")
-					exude_gasses[gas] = rand(1,5)
-				else
-					source_turf.visible_message("<span class='notice'>exude_gasses is null</span>")
-					exude_gasses = null
+						exude_gasses[gas] = rand(1,5)
+					else
+						exude_gasses = null			
+			if(11)
+				set_trait(TRAIT_TELEPORTING,1)
+
 	return
 
 //Mutates a specific trait/set of traits.

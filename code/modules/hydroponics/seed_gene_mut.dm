@@ -102,6 +102,26 @@
 				T.visible_message("<span class='notice'>\The [S.display_name]'s glow dims...</span>")
 	if(prob(60))
 		S.set_trait(TRAIT_PRODUCES_POWER, !S.get_trait(TRAIT_PRODUCES_POWER))
+	if(prob(30))
+		if(!exude_gasses | prob(90))
+			exude_gasses = list()
+		if(prob(80))
+			var/gas = pickweight(list(GAS_METHYL_BROMIDE = 5,
+										GAS_OXYGEN = 10,
+										GAS_NITROGEN = 5,
+										GAS_CO2 = 10,
+										GAS_N2O = 5,
+										GAS_METHANE = 5,
+										GAS_CHLORINE = 5,
+										GAS_AMMONIA = 3,
+										GAS_ALIEN = 1,
+										GAS_HYDROGEN = 3,
+										GAS_HELIUM = 1,
+										GAS_PHORON = 1
+											))
+			exude_gasses[gas] = rand(1,5)
+		else
+			exude_gasses = null		
 
 /decl/plantgene/atmosphere/mutate(var/datum/seed/S)
 	if(prob(60))
