@@ -2645,12 +2645,6 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
 /area/yacht/engine)
-"tZ" = (
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/turf/space,
-/area/space)
 "uW" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -6478,7 +6472,7 @@ aa
 aa
 aa
 aa
-tZ
+aa
 aa
 aa
 cs
