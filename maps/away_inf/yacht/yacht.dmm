@@ -1057,7 +1057,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "ci" = (
 /obj/machinery/power/solar_control,
@@ -1376,7 +1376,7 @@
 	dir = 4;
 	icon_state = "railing0-1"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "cN" = (
 /obj/structure/cable/yellow{
@@ -1397,7 +1397,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "cO" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1802,7 +1802,7 @@
 	dir = 8;
 	icon_state = "railing0-1"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "du" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -2167,7 +2167,7 @@
 	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "el" = (
 /obj/structure/cable/yellow{
@@ -2178,7 +2178,7 @@
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/mapped,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "em" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -2544,7 +2544,7 @@
 	},
 /obj/random/trash/space,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "kq" = (
 /obj/structure/table/marble,
@@ -2702,7 +2702,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "yo" = (
 /obj/effect/paint/sun,
@@ -2730,7 +2730,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "zA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -2763,7 +2763,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "Bu" = (
 /obj/machinery/door/blast/regular{
@@ -2881,7 +2881,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning/dust/corner,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "HD" = (
 /obj/effect/paint/sun,
@@ -2923,7 +2923,7 @@
 	dir = 8
 	},
 /obj/item/storage/toolbox/electrical,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "Jy" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -2992,7 +2992,7 @@
 	dir = 8;
 	icon_state = "railing0-1"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "PD" = (
 /obj/structure/disposalpipe/junction{
@@ -3091,7 +3091,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "Yy" = (
 /obj/structure/cable/yellow{
@@ -3115,7 +3115,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "YA" = (
 /obj/structure/cable/yellow{
@@ -3139,7 +3139,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "YJ" = (
 /obj/structure/bed/sofa/black/left{
