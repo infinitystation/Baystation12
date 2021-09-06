@@ -1043,22 +1043,21 @@
 "ch" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/railing/mapped{
-	dir = 1
-	},
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 9
 	},
-/turf/simulated/floor/airless,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "ci" = (
 /obj/machinery/power/solar_control,
@@ -1084,25 +1083,16 @@
 "ck" = (
 /obj/structure/table/steel,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/item/book/manual/engineering_guide,
 /obj/item/cell/hyper,
-/turf/simulated/floor/plating,
-/area/yacht/engine)
-"cl" = (
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/turf/simulated/floor/plating,
+/area/yacht/engine)
+"cl" = (
 /obj/machinery/power/apc/yacht{
 	dir = 1;
 	name = "Yacht engine";
@@ -1110,6 +1100,10 @@
 	pixel_y = 24
 	},
 /obj/machinery/portable_atmospherics/powered/pump/filled,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/plating,
 /area/yacht/engine)
 "cm" = (
@@ -1173,12 +1167,6 @@
 /turf/space,
 /area/yacht/engine)
 "ct" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/tracker,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
@@ -1186,6 +1174,12 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/tracker,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/airless,
 /area/yacht/engine)
 "cv" = (
@@ -1234,14 +1228,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/turf/simulated/floor/plating,
-/area/yacht/engine)
-"cA" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/turf/simulated/floor/plating,
+/area/yacht/engine)
+"cA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -1249,6 +1243,16 @@
 	dir = 1
 	},
 /obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/yacht/engine)
 "cB" = (
@@ -1343,58 +1347,36 @@
 	dir = 8;
 	pixel_x = 37
 	},
+/obj/structure/table/steel,
+/obj/random/cash,
 /turf/simulated/floor/airless,
 /area/yacht/engine)
 "cJ" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 8;
-	icon_state = "2-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "1-8"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning/dust/corner{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 8
 	},
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/mapped{
 	dir = 4;
 	icon_state = "railing0-1"
 	},
-/turf/simulated/floor/airless,
-/area/yacht/engine)
-"cM" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 1;
-	icon_state = "2-8"
-	},
-/obj/random/trash/space,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/airless,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "cN" = (
 /obj/structure/cable/yellow{
@@ -1406,17 +1388,16 @@
 /obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
-	dir = 4;
 	icon_state = "2-8"
+	},
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 1
-	},
-/turf/simulated/floor/airless,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "cO" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1434,6 +1415,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 1
 	},
 /turf/simulated/floor/airless,
 /area/yacht/engine)
@@ -1807,19 +1791,18 @@
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
-	dir = 1;
 	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/dust/corner,
-/turf/simulated/floor/airless,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "du" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -1906,28 +1889,6 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
-/area/yacht/engine)
-"dH" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 1;
-	icon_state = "2-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/airless,
 /area/yacht/engine)
 "dI" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -2193,34 +2154,31 @@
 /area/yacht/engine)
 "ek" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 1;
-	icon_state = "2-8"
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/obj/random/trash/space,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 10
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/mapped{
 	dir = 8;
 	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 10
-	},
-/turf/simulated/floor/airless,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "el" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
+	d1 = 1;
 	d2 = 8;
-	dir = 8;
-	icon_state = "2-8"
+	icon_state = "1-8"
 	},
+/obj/effect/floor_decal/industrial/warning/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/mapped,
-/obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/airless,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "em" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -2568,26 +2526,25 @@
 /area/yacht/living)
 "ip" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
 	dir = 1;
 	icon_state = "2-8"
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
+	},
 /obj/random/trash/space,
-/turf/simulated/floor/airless,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "kq" = (
 /obj/structure/table/marble,
@@ -2688,6 +2645,12 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
 /area/yacht/engine)
+"tZ" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/space,
+/area/space)
 "uW" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -2722,27 +2685,6 @@
 	},
 /turf/simulated/floor/airless,
 /area/yacht/bridge)
-"vK" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 1;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/airless,
-/area/yacht/engine)
 "xT" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
@@ -2760,14 +2702,13 @@
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
-	dir = 1;
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
-/turf/simulated/floor/airless,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "yo" = (
 /obj/effect/paint/sun,
@@ -2778,26 +2719,24 @@
 /area/yacht/engine)
 "zx" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
 	dir = 1;
 	icon_state = "2-8"
 	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
+	},
 /obj/effect/decal/cleanable/dirt,
-/obj/random/cash,
-/turf/simulated/floor/airless,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "zA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -2824,17 +2763,13 @@
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
-	dir = 1;
 	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/handrail{
-	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 8
 	},
-/turf/simulated/floor/airless,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "Bu" = (
 /obj/machinery/door/blast/regular{
@@ -2934,26 +2869,25 @@
 /area/yacht/engine)
 "Hz" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
 	dir = 1;
 	icon_state = "2-8"
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
+	},
 /obj/effect/floor_decal/industrial/warning/dust/corner,
-/turf/simulated/floor/airless,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "HD" = (
 /obj/effect/paint/sun,
@@ -2985,18 +2919,17 @@
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
-	dir = 1;
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+	dir = 8
 	},
-/turf/simulated/floor/airless,
+/obj/item/storage/toolbox/electrical,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "Jy" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -3051,21 +2984,21 @@
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
-	dir = 1;
 	icon_state = "1-2"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
-	},
+/obj/random/trash/space,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 4
 	},
-/turf/simulated/floor/airless,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "PD" = (
 /obj/structure/disposalpipe/junction{
@@ -3136,80 +3069,83 @@
 /obj/effect/floor_decal/corner/darkblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
+"UX" = (
+/obj/effect/wingrille_spawn/reinforced/full,
+/obj/machinery/door/firedoor,
+/obj/effect/paint/sun,
+/turf/simulated/floor/plating,
+/area/yacht/living)
 "WU" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
 /obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
 	dir = 1;
 	icon_state = "2-8"
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
+	},
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 4
 	},
-/turf/simulated/floor/airless,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "Yy" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
 	dir = 1;
 	icon_state = "2-8"
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
+	},
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 8
 	},
-/turf/simulated/floor/airless,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "YA" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
 /obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
 	dir = 1;
 	icon_state = "2-8"
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
+	},
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
-/turf/simulated/floor/airless,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "YJ" = (
 /obj/structure/bed/sofa/black/left{
@@ -3224,6 +3160,7 @@
 /area/yacht/living)
 "Zs" = (
 /obj/effect/wingrille_spawn/reinforced/full,
+/obj/effect/paint/sun,
 /turf/simulated/floor/plating,
 /area/yacht/living)
 "ZN" = (
@@ -6241,7 +6178,7 @@ cw
 cs
 YA
 cv
-cw
+aa
 cs
 Yy
 cv
@@ -6345,7 +6282,7 @@ ip
 cv
 aa
 cs
-dH
+zx
 cv
 aa
 aa
@@ -6443,11 +6380,11 @@ aa
 aa
 cw
 cs
-dH
+zx
 cv
 cw
 cs
-dH
+zx
 cv
 cw
 aa
@@ -6541,15 +6478,15 @@ aa
 aa
 aa
 aa
-aa
+tZ
 aa
 aa
 cs
-dH
+zx
 cv
 aa
 cs
-dH
+zx
 cv
 aa
 aa
@@ -6647,11 +6584,11 @@ aa
 aa
 cw
 cs
-dH
+zx
 cv
-cw
+aa
 cs
-dH
+zx
 cv
 cw
 aa
@@ -6749,11 +6686,11 @@ aa
 aa
 aa
 cs
-dH
+zx
 cv
-aa
+cw
 cs
-dH
+ip
 cv
 aa
 aa
@@ -6851,11 +6788,11 @@ aa
 aa
 cw
 cs
-dH
+zx
 cv
-cw
+aa
 cs
-dH
+zx
 cv
 cw
 aa
@@ -6953,13 +6890,13 @@ aa
 aa
 cw
 cs
-dH
+ip
 cv
 aa
 cs
 zx
 cv
-aa
+cw
 aa
 aa
 aa
@@ -7055,11 +6992,11 @@ aa
 aa
 cw
 cs
-cM
+zx
 cv
 cw
 cs
-vK
+zx
 cv
 cw
 aa
@@ -7258,13 +7195,13 @@ aa
 aa
 aa
 cw
-cw
+aa
 cN
 Ar
 Jh
 yj
 el
-cw
+aa
 aa
 aa
 aa
@@ -7558,9 +7495,9 @@ aa
 aa
 aA
 aA
-by
-by
-by
+UX
+UX
+UX
 Zs
 cc
 cc
