@@ -718,7 +718,9 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/machinery/microwave,
+/obj/machinery/microwave{
+	pixel_y = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
 "bA" = (
@@ -2616,19 +2618,17 @@
 /obj/random/trash/space,
 /turf/simulated/floor/airless,
 /area/yacht/engine)
-"kk" = (
-/obj/effect/paint/sun,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/wall/r_titanium,
-/area/yacht/engine)
 "kq" = (
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
 /obj/structure/table/marble,
-/obj/machinery/reagent_temperature/cooler,
+/obj/machinery/reagent_temperature/cooler{
+	pixel_x = 7
+	},
+/obj/machinery/reagent_temperature{
+	pixel_x = -7
+	},
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
 "ky" = (
@@ -2677,6 +2677,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
+"nu" = (
+/obj/effect/paint/sun,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/wall/r_titanium,
+/area/yacht/engine)
 "of" = (
 /obj/effect/paint/sun,
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
@@ -2704,16 +2711,28 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black,
 /turf/simulated/wall/r_titanium,
 /area/yacht/engine)
-"pR" = (
+"pg" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
-	dir = 1;
+	dir = 4;
 	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	dir = 4;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	dir = 1;
+	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust/corner{
-	dir = 1
+	dir = 8
 	},
 /turf/simulated/floor/airless,
 /area/yacht/engine)
@@ -2724,6 +2743,26 @@
 	},
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
+/area/yacht/engine)
+"uE" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	dir = 1;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 4
+	},
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "uW" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -2748,6 +2787,31 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet/green,
 /area/yacht/living)
+"vs" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	dir = 4;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	dir = 1;
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 1
+	},
+/turf/simulated/floor/airless,
+/area/yacht/engine)
 "vx" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -2779,6 +2843,13 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/airless,
+/area/yacht/engine)
+"wD" = (
+/obj/effect/paint/sun,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/simulated/wall/r_titanium,
 /area/yacht/engine)
 "xT" = (
 /obj/structure/extinguisher_cabinet{
@@ -2845,25 +2916,18 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/yacht/living)
-"Ag" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 1;
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
-	},
-/obj/effect/floor_decal/industrial/warning/dust{
+"Aa" = (
+/obj/structure/disposaloutlet{
 	dir = 8
 	},
-/obj/effect/floor_decal/industrial/warning/dust/corner{
+/obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/turf/simulated/floor/airless,
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 10
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/plating,
 /area/yacht/engine)
 "Ar" = (
 /obj/structure/cable/yellow{
@@ -2880,19 +2944,6 @@
 	dir = 8
 	},
 /turf/simulated/floor/airless,
-/area/yacht/engine)
-"Bk" = (
-/obj/structure/disposaloutlet{
-	dir = 8
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 10
-	},
-/obj/structure/railing/mapped,
-/turf/simulated/floor/plating,
 /area/yacht/engine)
 "Ca" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -2916,6 +2967,20 @@
 /area/yacht/living)
 "Db" = (
 /turf/simulated/floor/tiled/white,
+/area/yacht/living)
+"Dy" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	dir = 8;
+	icon_state = "pdoor0";
+	id_tag = "yachtlock";
+	name = "Meteor Shielding";
+	opacity = 0
+	},
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 4
+	},
+/turf/simulated/floor/airless,
 /area/yacht/living)
 "DA" = (
 /obj/machinery/fabricator{
@@ -2960,25 +3025,6 @@
 	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/white,
-/area/yacht/living)
-"GY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/toolcloset,
-/turf/simulated/floor/airless,
-/area/yacht/engine)
-"Hr" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 8;
-	icon_state = "pdoor0";
-	id_tag = "yachtlock";
-	name = "Meteor Shielding";
-	opacity = 0
-	},
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 4
-	},
-/turf/simulated/floor/airless,
 /area/yacht/living)
 "Hx" = (
 /obj/structure/railing/mapped{
@@ -3047,62 +3093,25 @@
 /obj/item/defibrillator/loaded,
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
-"Lr" = (
+"Mn" = (
+/obj/structure/disposalpipe/junction/mirrored{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/red,
+/area/yacht/living)
+"MB" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	dir = 1;
-	icon_state = "2-8"
+	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust/corner{
-	dir = 4
+	dir = 1
 	},
 /turf/simulated/floor/airless,
 /area/yacht/engine)
-"LX" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 1;
-	icon_state = "2-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/warning/dust/corner,
-/turf/simulated/floor/airless,
-/area/yacht/engine)
-"Mn" = (
-/obj/structure/table/marble,
-/obj/effect/floor_decal/corner/grey/diagonal{
-	dir = 4
-	},
-/obj/machinery/reagent_temperature,
-/turf/simulated/floor/tiled/white,
-/area/yacht/living)
 "Ol" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -3141,31 +3150,6 @@
 /obj/effect/floor_decal/spline/plain/brown,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
-"Rx" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	dir = 4;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 4;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	dir = 1;
-	icon_state = "2-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/warning/dust/corner{
-	dir = 1
-	},
-/turf/simulated/floor/airless,
-/area/yacht/engine)
 "Ry" = (
 /obj/structure/closet{
 	name = "gloves closet"
@@ -3196,30 +3180,7 @@
 	},
 /turf/space,
 /area/space)
-"Sj" = (
-/obj/structure/disposalpipe/junction/mirrored{
-	dir = 1
-	},
-/turf/simulated/floor/carpet/red,
-/area/yacht/living)
-"Tu" = (
-/obj/effect/floor_decal/corner/grey/diagonal{
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
-/obj/effect/submap_landmark/spawnpoint/yachtman_spawn,
-/turf/simulated/floor/tiled/white,
-/area/yacht/living)
-"Vp" = (
-/obj/effect/paint/sun,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/simulated/wall/r_titanium,
-/area/yacht/engine)
-"Wl" = (
+"SH" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -3240,22 +3201,47 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/warning/dust/corner{
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/airless,
 /area/yacht/engine)
-"WQ" = (
-/obj/structure/disposaloutlet{
+"SJ" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	dir = 4;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	dir = 1;
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/warning/dust/corner,
+/turf/simulated/floor/airless,
+/area/yacht/engine)
+"Tu" = (
+/obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
 	},
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 6
-	},
-/obj/structure/railing/mapped,
-/turf/simulated/floor/plating,
+/obj/effect/submap_landmark/spawnpoint/yachtman_spawn,
+/turf/simulated/floor/tiled/white,
+/area/yacht/living)
+"XJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/toolcloset,
+/turf/simulated/floor/airless,
 /area/yacht/engine)
 "YJ" = (
 /obj/structure/bed/sofa/black/left{
@@ -3268,6 +3254,19 @@
 	},
 /turf/simulated/floor/carpet/purple,
 /area/yacht/living)
+"Zd" = (
+/obj/structure/disposaloutlet{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 6
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/plating,
+/area/yacht/engine)
 "Zs" = (
 /obj/effect/wingrille_spawn/reinforced/full,
 /turf/simulated/floor/plating,
@@ -6186,7 +6185,7 @@ aa
 ch
 dt
 cJ
-Ag
+uE
 ek
 aa
 aa
@@ -6285,11 +6284,11 @@ aa
 aa
 cw
 cs
-Rx
+vs
 cv
 cw
 cs
-Wl
+pg
 cv
 cw
 aa
@@ -7203,11 +7202,11 @@ aa
 aa
 aa
 cs
-Lr
+SH
 cv
 aa
 cs
-LX
+SJ
 cv
 aa
 aa
@@ -7308,7 +7307,7 @@ cw
 cN
 Ar
 Jh
-pR
+MB
 el
 cw
 aa
@@ -7409,7 +7408,7 @@ cw
 cc
 cO
 dj
-GY
+XJ
 cI
 QT
 aa
@@ -7502,10 +7501,10 @@ aa
 aa
 aa
 aA
-Hr
-Hr
-Hr
-Hr
+Dy
+Dy
+Dy
+Dy
 cc
 cc
 cc
@@ -7620,7 +7619,7 @@ cc
 cc
 ez
 cc
-Bk
+Aa
 gI
 aa
 aa
@@ -7722,7 +7721,7 @@ dY
 cc
 ez
 cc
-Vp
+wD
 cc
 cc
 aa
@@ -7810,7 +7809,7 @@ aD
 aD
 bB
 Tu
-Mn
+zw
 bW
 aD
 cp
@@ -7824,7 +7823,7 @@ dZ
 en
 eA
 cc
-Vp
+wD
 cc
 cc
 cc
@@ -8620,7 +8619,7 @@ ah
 aE
 aM
 aV
-Sj
+Mn
 aV
 br
 aD
@@ -8946,7 +8945,7 @@ ej
 cc
 cc
 cc
-kk
+nu
 cc
 cc
 aa
@@ -9048,7 +9047,7 @@ cc
 cc
 cc
 cc
-WQ
+Zd
 QY
 aa
 aa
