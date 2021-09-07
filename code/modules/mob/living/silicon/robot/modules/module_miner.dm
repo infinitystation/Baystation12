@@ -29,7 +29,7 @@
 		/obj/item/storage/sheetsnatcher/borg,
 		/obj/item/gripper/miner,
 		/obj/item/device/scanner/gas,//INF
-		/obj/item/device/geiger,//INF
+        /obj/item/device/geiger,//INF
 		/obj/item/device/scanner/mining,
 		/obj/item/crowbar
 	)
