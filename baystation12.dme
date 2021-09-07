@@ -3814,6 +3814,7 @@
 #include "infinity\customs\darkred_headphones.dm"
 #include "infinity\customs\deadlizard.dm"
 #include "infinity\customs\diesiege.dm"
+#include "infinity\customs\dron240.dm"
 #include "infinity\customs\eguitar.dm"
 #include "infinity\customs\elloncake.dm"
 #include "infinity\customs\ensh_izh_arkosh_fol.dm"
