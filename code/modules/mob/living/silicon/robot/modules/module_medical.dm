@@ -29,6 +29,7 @@
 	equipment = list(
 		/obj/item/device/flash,
 		/obj/item/borg/sight/hud/med,
+		/obj/item/reagent_containers/spray/cleaner/drone,  //INF
 		/obj/item/device/scanner/health,
 		/obj/item/reagent_containers/borghypo/surgeon,
 		/obj/item/scalpel/manager,
@@ -105,6 +106,7 @@
 		/obj/item/crowbar,
 		/obj/item/device/flash,
 		/obj/item/borg/sight/hud/med,
+		/obj/item/reagent_containers/spray/cleaner/drone,  //INF
 		/obj/item/device/scanner/health,
 		/obj/item/device/scanner/reagent/adv,
 		/obj/item/robot_rack/body_bag,
