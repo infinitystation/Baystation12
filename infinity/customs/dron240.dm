@@ -27,6 +27,7 @@
 	icon_override = CUSTOM_ITEM_MOB
 	icon_state = "dron240_vox_rig"
 	custom = TRUE
+	online_slowdown = 0.3
 	piece_icon_state_overrides = list(
 		"helmet" = "dron240_vox_rig_helmet",
 		"chest" = "dron240_vox_rig_chest",
