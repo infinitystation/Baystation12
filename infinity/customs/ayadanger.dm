@@ -70,7 +70,6 @@
 
 /obj/item/clothingbag/ayadanger_sabi/Initialize()
 	. = ..()
-	// new /obj/item/clothing/mask/ayadanger_sabi(src)
 	new /obj/item/clothing/head/welding/ayadanger_sabi(src)
 	new /obj/item/clothing/shoes/ayadanger_sabi(src)
 	new /obj/item/clothing/suit/ayadanger_sabi(src)
