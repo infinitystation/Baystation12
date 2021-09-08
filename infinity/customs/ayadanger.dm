@@ -30,8 +30,20 @@
 	body_parts_covered = FULL_HEAD
 	flags_inv = BLOCKHEADHAIR
 	pull_mask = 1
+	flash_protection = FLASH_PROTECTION_MAJOR
+	tint = TINT_TWO
 	down_body_parts_covered = HEAD
 	trade_blacklisted = TRUE
+
+/obj/item/clothing/mask/ayadanger_sabi/adjust_mask(mob/user)
+	. = ..()
+	if(src.hanging)
+		flash_protection = FLASH_PROTECTION_NONE
+		tint = TINT_NONE
+	else
+		flash_protection = initial(flash_protection)
+		tint = initial(tint)
+
 
 /obj/item/clothing/shoes/ayadanger_sabi
 	name = "sabi-sandals"
