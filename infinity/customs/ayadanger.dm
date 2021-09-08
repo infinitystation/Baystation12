@@ -13,36 +13,24 @@
 	item_state = "ayadanger_sabito_uni"
 	trade_blacklisted = TRUE
 
-/obj/item/clothing/mask/ayadanger_sabi
+/obj/item/clothing/head/welding/ayadanger_sabi
 	name = "sabi-mask"
 	desc = "When you look at this mask, you can notice that it looks quite a bit like a fox. \
 			If you look at this mask twice, you may notice that it is welded to peach colored synthetic hair. \
 			It looks very soft, though."
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(
-		slot_wear_mask_str = CUSTOM_ITEM_MOB,
+		slot_head_str = CUSTOM_ITEM_MOB,
 		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
 		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT
 		)
 	icon_state = "ayadanger_sabito_mask"
 	item_state = "ayadanger_sabito_mask"
-	down_icon_state = "ayadanger_sabito_mask_up"
 	body_parts_covered = FULL_HEAD
-	flags_inv = BLOCKHEADHAIR
-	pull_mask = 1
-	flash_protection = FLASH_PROTECTION_MAJOR
 	tint = TINT_TWO
-	down_body_parts_covered = HEAD
+	flags_inv = BLOCKHEADHAIR
 	trade_blacklisted = TRUE
-
-/obj/item/clothing/mask/ayadanger_sabi/adjust_mask(mob/user)
-	. = ..()
-	if(src.hanging)
-		flash_protection = FLASH_PROTECTION_NONE
-		tint = TINT_NONE
-	else
-		flash_protection = initial(flash_protection)
-		tint = initial(tint)
+	sprite_sheets = list()
 
 
 /obj/item/clothing/shoes/ayadanger_sabi
@@ -82,7 +70,8 @@
 
 /obj/item/clothingbag/ayadanger_sabi/Initialize()
 	. = ..()
-	new /obj/item/clothing/mask/ayadanger_sabi(src)
+	// new /obj/item/clothing/mask/ayadanger_sabi(src)
+	new /obj/item/clothing/head/welding/ayadanger_sabi(src)
 	new /obj/item/clothing/shoes/ayadanger_sabi(src)
 	new /obj/item/clothing/suit/ayadanger_sabi(src)
 	new /obj/item/clothing/under/ayadanger_sabi(src)
