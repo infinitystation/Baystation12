@@ -1,5 +1,5 @@
 {
 	"ckey" :            "DRON240",
 	"character_name" :  "Ciharica",
-	"item_path" :       "/obj/item/custkit/dron240_rig"
+	"item_path" :       "/obj/item/rig/vox/dron240"
 }

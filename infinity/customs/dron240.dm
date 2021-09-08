@@ -51,8 +51,8 @@
 
 	trade_blacklisted = TRUE
 
-/obj/item/custkit/dron240_rig
-	name = "modkit for dark matter rig"
-	input = /obj/item/rig/vox
-	output = /obj/item/rig/vox/dron240
-	trade_blacklisted = TRUE
+// /obj/item/custkit/dron240_rig
+// 	name = "modkit for dark matter rig"
+// 	input = /obj/item/rig/vox
+// 	output = /obj/item/rig/vox/dron240
+// 	trade_blacklisted = TRUE
