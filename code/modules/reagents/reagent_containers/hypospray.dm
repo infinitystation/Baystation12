@@ -163,8 +163,8 @@
 /obj/item/reagent_containers/hypospray/autoinjector
 	name = "autoinjector"
 	desc = "A rapid and safe way to administer small amounts of drugs by untrained or trained personnel."
-	icon = 'icons/obj/syringe_inf.dmi'
-	icon_state = "blue1"
+	icon = 'icons/obj/syringe.dmi'
+	icon_state = "injector"
 	item_state = "autoinjector"
 	amount_per_transfer_from_this = 5
 	volume = 5
@@ -188,7 +188,7 @@
 /obj/item/reagent_containers/hypospray/autoinjector/on_update_icon()
 	overlays.Cut()
 	if(reagents.total_volume > 0)
-		icon_state = "[initial(icon_state)]"
+		icon_state = "[initial(icon_state)]1"
 	else
 		icon_state = "[initial(icon_state)]0"
 	overlays+= overlay_image(icon,"injector_band",band_color,RESET_COLOR)
