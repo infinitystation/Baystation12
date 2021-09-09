@@ -245,4 +245,3 @@
 	band_color = COLOR_WHITE
 	starts_with = list()
 	matter = list(MATERIAL_PLASTIC = 150, MATERIAL_GLASS = 50)
-	
