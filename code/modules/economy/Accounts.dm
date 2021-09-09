@@ -98,6 +98,6 @@
 		return D
 
 /proc/get_account(var/account_number)
-	for(var/datum/money_account/D in all_money_accounts)
+	for(var/datum/money_account/D in all_money_accounts+GLOB.away_money_accounts) //INF was "for(var/datum/money_account/D in all_money_accounts)"
 		if(D.account_number == account_number)
 			return D
