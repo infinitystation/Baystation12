@@ -103,8 +103,8 @@
 	if(prob(60))
 		S.set_trait(TRAIT_PRODUCES_POWER, !S.get_trait(TRAIT_PRODUCES_POWER))
 	if(prob(30))
-		if(!exude_gasses | prob(90))
-			exude_gasses = list()
+		if(!S.exude_gasses | prob(90))
+			S.exude_gasses = list()
 		if(prob(80))
 			var/gas = pickweight(list(GAS_METHYL_BROMIDE = 5,
 										GAS_OXYGEN = 10,
@@ -119,9 +119,9 @@
 										GAS_HELIUM = 1,
 										GAS_PHORON = 1
 											))
-			exude_gasses[gas] = rand(1,5)
+			S.exude_gasses[gas] = rand(1,5)
 		else
-			exude_gasses = null		
+			S.exude_gasses = null		
 
 /decl/plantgene/atmosphere/mutate(var/datum/seed/S)
 	if(prob(60))
