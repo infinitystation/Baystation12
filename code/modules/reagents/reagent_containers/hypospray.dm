@@ -202,42 +202,42 @@
 
 /obj/item/reagent_containers/hypospray/autoinjector/detox
 	name = "autoinjector (antitox)"
-	band_color = COLOR_GREEN
+	band_color = "#00a000"
 	starts_with = list(/datum/reagent/dylovene = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/pain
 	name = "autoinjector (painkiller)"
-	band_color = COLOR_PURPLE
+	band_color = "#cb68fc"
 	starts_with = list(/datum/reagent/tramadol = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/brute
 	name = "autoinjector (anti-injury)"
-	band_color = COLOR_NT_RED
+	band_color = "#bf0000"
 	starts_with = list(/datum/reagent/bicaridine = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/burn
 	name = "autoinjector (anti-burn)"
-	band_color = COLOR_SUN
+	band_color = "#ffa800"
 	starts_with = list(/datum/reagent/kelotane = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/inaprovaline
 	name = "autoinjector (inaprovaline)"
-	band_color = COLOR_SKY_BLUE
+	band_color = "#00bfff"
 	starts_with = list(/datum/reagent/inaprovaline = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/combatpain
 	name = "autoinjector (oxycodone)"
-	band_color = COLOR_DARK_GRAY
+	band_color = "#800080"
 	starts_with = list(/datum/reagent/tramadol/oxycodone = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/antirad
 	name = "autoinjector (anti-rad)"
-	band_color = COLOR_AMBER
+	band_color = "#408000"
 	starts_with = list(/datum/reagent/hyronalin = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/mindbreaker
 	name = "autoinjector"
-	band_color = COLOR_DARK_GRAY
+	band_color = "#b31008"
 	starts_with = list(/datum/reagent/mindbreaker = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/empty
@@ -245,3 +245,4 @@
 	band_color = COLOR_WHITE
 	starts_with = list()
 	matter = list(MATERIAL_PLASTIC = 150, MATERIAL_GLASS = 50)
+	
