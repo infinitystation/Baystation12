@@ -488,6 +488,12 @@
 	materials = list(MATERIAL_STEEL = 20000, MATERIAL_ALUMINIUM = 10000, MATERIAL_PHORON = 2500)
 	req_tech = list(TECH_ENGINEERING = 2, TECH_MAGNET = 2)
 	build_path = /obj/item/mech_equipment/ionjets
+
+/datum/design/item/exosuit/circuit
+	name = "Exosuit circuit rack"
+	id = "mech_circuit_rack"
+	materials = list(MATERIAL_STEEL = 20000)
+	build_path = /obj/item/mech_equipment/mounted_system/circuit
 // End mechs.
 
 /datum/design/item/synthetic_flash

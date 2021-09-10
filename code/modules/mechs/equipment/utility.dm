@@ -240,7 +240,7 @@
 	//Check our layers
 	if(owner && (owner.hardpoints[HARDPOINT_HEAD] == src))
 		mech_layer = MECH_INTERMEDIATE_LAYER
-	else mech_layer = initial(mech_layer)	
+	else mech_layer = initial(mech_layer)
 
 #define CATAPULT_SINGLE 1
 #define CATAPULT_AREA   2
@@ -607,11 +607,11 @@
 	if (istype(C))
 		if (C.checked_use(movement_power * CELLRATE))
 			return TRUE
-		else 
+		else
 			deactivate()
 
 	return FALSE
-				
+
 /obj/item/mech_equipment/ionjets/attack_self(mob/user)
 	. = ..()
 	if (!.)
@@ -619,7 +619,7 @@
 
 	if (active)
 		deactivate()
-	else 
+	else
 		activate()
 
 /obj/item/mech_equipment/ionjets/CtrlClick(mob/user)
@@ -635,7 +635,7 @@
 	ion_trail.start()
 	active = TRUE
 	update_icon()
-	
+
 /obj/item/mech_equipment/ionjets/deactivate()
 	. = ..()
 	passive_power_use = 0 KILOWATTS
@@ -718,7 +718,7 @@
 	if(owner)
 		camera.c_tag = "[owner.name] camera feed"
 		invalidateCameraCache()
-	
+
 /obj/item/mech_equipment/camera/uninstalled()
 	. = ..()
 	camera.c_tag = "null"
@@ -740,7 +740,7 @@
 
 /obj/item/mech_equipment/camera/attackby(obj/item/W, mob/user)
 	. = ..()
-	
+
 	if(isScrewdriver(W))
 		var/list/all_networks = list()
 		for(var/network in GLOB.using_map.station_networks)
@@ -769,3 +769,29 @@
 
 /obj/item/mech_equipment/camera/get_hardpoint_maptext()
 	return "[english_list(camera.network)]: [active ? "ONLINE" : "OFFLINE"]"
+
+/obj/item/mech_equipment/mounted_system/circuit
+	name = "exosuit circuit rack"
+	icon_state = "mech_flash"
+	holding_type = null //We must get the holding item externally
+	desc = "A DIY circuit rack for exosuit. Circuitry not included."
+	restricted_hardpoints = list(HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER)
+	restricted_software = list(MECH_SOFTWARE_UTILITY)
+
+/obj/item/mech_equipment/mounted_system/circuit/attackby(obj/item/W, mob/user)
+	if(isCrowbar(W))
+		//Remove internal circuit
+		if(holding)
+			holding.canremove = 1
+			holding.dropInto(loc)
+			to_chat(user, SPAN_NOTICE("You take out \the [holding]."))
+			holding = null
+			playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
+		else to_chat(user, SPAN_WARNING("The frame is empty!"))
+	else if(istype(W, /obj/item/device/electronic_assembly/exo/exo_frame))
+		if(holding)
+			to_chat(user, SPAN_WARNING("There's already an assembly in there."))
+		else if(user.unEquip(W, src))
+			holding = W
+			holding.canremove = 0
+			playsound(loc, 'sound/items/Crowbar.ogg', 50, 1)
