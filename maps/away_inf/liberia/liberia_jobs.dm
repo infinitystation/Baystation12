@@ -56,7 +56,8 @@
 	)
 	give_psionic_implant_on_join = FALSE
 	skill_points = 24
-
+	economic_power = 11
+	
 	account_allowed = TRUE
 
 /datum/job/submap/merchant/equip(var/mob/living/carbon/human/H)
@@ -65,6 +66,7 @@
 	to_chat(H, "<b>Ответы на фразы</b>: <span class='danger'>[syndicate_code_response]</span>")
 	H.StoreMemory("<b>Кодовые Фразы</b>: [syndicate_code_phrase]", /decl/memory_options/system)
 	H.StoreMemory("<b>Ответы на фразы</b>: [syndicate_code_response]", /decl/memory_options/system)
+	setup_away_account(H)
 	return ..()
 
 /datum/job/submap/merchant_trainee/is_position_available()
@@ -92,7 +94,9 @@
 	whitelisted_species = null
 	blacklisted_species = list(SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_XENO)
 	alt_titles = list(
-		"Merchant Security" = /decl/hierarchy/outfit/job/liberia/merchant/security
+		"Merchant Security" = /decl/hierarchy/outfit/job/liberia/merchant/security,
+		"Merchant Engineer" = /decl/hierarchy/outfit/job/liberia/merchant/engineer,
+		"Merchant Medical" = /decl/hierarchy/outfit/job/liberia/merchant/doctor
 	)
 	outfit_type = /decl/hierarchy/outfit/job/liberia/merchant
 	allowed_branches = list(
@@ -120,6 +124,7 @@
 
 	give_psionic_implant_on_join = FALSE
 
+	economic_power = 4
 	skill_points = 24
 
 	account_allowed = TRUE
@@ -131,14 +136,14 @@
 /obj/effect/submap_landmark/spawnpoint/liberia/trainee
 	name = "Merchant Assistant"
 
-// /obj/effect/submap_landmark/spawnpoint/liberia/security
-// 	name = "Merchant Security"
+/obj/effect/submap_landmark/spawnpoint/liberia/security
+ 	name = "Merchant Security"
 
-// /obj/effect/submap_landmark/spawnpoint/liberia/engineer
-// 	name = "Merchant Engineer"
+/obj/effect/submap_landmark/spawnpoint/liberia/engineer
+ 	name = "Merchant Engineer"
 
-// /obj/effect/submap_landmark/spawnpoint/liberia/doctor
-// 	name = "Merchant Medical"
+/obj/effect/submap_landmark/spawnpoint/liberia/doctor
+ 	name = "Merchant Medical"
 
 /decl/hierarchy/outfit/job/liberia/merchant
 	name = OUTFIT_JOB_NAME("Merchant Assistant")
@@ -153,6 +158,17 @@
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	suit = /obj/item/clothing/suit/armor/pcarrier/light
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/decl/hierarchy/outfit/job/liberia/merchant/engineer
+	name = OUTFIT_JOB_NAME("Merchant Engineer")
+	uniform = /obj/item/clothing/under/civilian
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/decl/hierarchy/outfit/job/liberia/merchant/doctor
+	name = OUTFIT_JOB_NAME("Merchant Medical")
+	uniform = /obj/item/clothing/under/color/white
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	shoes = /obj/item/clothing/shoes/dress
 
 /decl/hierarchy/outfit/job/liberia/merchant/leader
 	name = OUTFIT_JOB_NAME("Merchant Leader - liberia")
