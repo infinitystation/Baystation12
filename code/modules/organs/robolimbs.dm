@@ -18,9 +18,9 @@ var/datum/robolimb/basic_robolimb
 	var/unavailable_at_chargen                                // If set, not available at chargen.
 	var/unavailable_at_fab = 1                                // If set, cannot be fabricated.
 	var/can_eat = 0
-	var/brute_mod = 1 //INF
-	var/speed_mod = 0 //INF
-	var/burn_mod = 1 //INF
+	var/brute_mod = 0.8 //INF
+	var/speed_mod = 0.2 //INF
+	var/burn_mod = 0.8 //INF
 	var/has_eyes = TRUE
 	var/can_feel_pain
 	var/skintone
@@ -70,9 +70,9 @@ var/datum/robolimb/basic_robolimb
 	unavailable_at_fab = 1
 //[INF]
 	applies_to_part = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT, BP_L_HAND, BP_R_HAND)
-	brute_mod = 0.7
-	burn_mod = 0.7
-	speed_mod = 0.18
+	brute_mod = 0.5
+	burn_mod = 0.5
+	speed_mod = 0.22
 //[/INF]
 
 /datum/robolimb/hephaestus/alt/monitor
