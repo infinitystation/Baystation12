@@ -13,7 +13,7 @@
 	var/smoketime = 0
 	var/maxsmoketime = 5000
 	var/tobacco_lit = 0
-	var/chem_volume = 20
+	var/chem_volume = 50
 	var/icon_on = "hookah"
 	var/lit = 0 // litghted status
 	var/tubes_amount = 3
