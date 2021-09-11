@@ -1,4 +1,3 @@
-
 /obj/item/clothing/head/helmet/space/rig/vox_rig/dron240
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
@@ -49,10 +48,4 @@
 		/obj/item/rig_module/cooling_unit
 		)
 
-	trade_blacklisted = TRUE
-
-/obj/item/custkit/dron240_rig
-	name = "modkit for dark matter rig"
-	input = /obj/item/rig/vox
-	output = /obj/item/rig/vox/dron240
 	trade_blacklisted = TRUE

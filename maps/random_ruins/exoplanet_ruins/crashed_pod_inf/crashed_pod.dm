@@ -24,10 +24,16 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 	title = "Stranded Survivor"
 	info = "Your ship has been destroyed by a terrible disaster."
 	outfit_type = /decl/hierarchy/outfit/job/survivor
+	economic_power = 4
 
 /decl/hierarchy/outfit/job/survivor
 	name = OUTFIT_JOB_NAME("Survivor")
 	pda_type = null
+
+
+/datum/job/submap/pod/equip(var/mob/living/carbon/human/H)
+	setup_away_account(H)
+	return ..()
 
 /datum/job/submap/pod/New(var/datum/submap/_owner, var/abstract_job = FALSE)
 	..()
