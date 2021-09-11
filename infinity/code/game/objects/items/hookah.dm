@@ -359,7 +359,17 @@
 	name = "Bar - Hookah"
 	contains = list(
 		/obj/item/hookah,
-		/obj/item/coal= 20
+		/obj/item/storage/box/large/coal = 2
 	)
 	cost = 20
 	containername = "Hookah crate"
+
+/obj/item/storage/box/large/coal
+	name = "coal for hookah"
+	desc = "A box with coals for a hookah."
+	icon_state = "largebox"
+	startswith = list(/obj/item/coal = 10)
+	w_class = ITEM_SIZE_LARGE
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	use_sound = 'sound/effects/storage/box.ogg'
