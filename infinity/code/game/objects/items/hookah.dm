@@ -173,7 +173,7 @@
 		smoketime += M.volume
 		user.visible_message(SPAN_INFO("[user] add's coal in hookah."), SPAN_INFO("You added coal in hookah."))
 
-	else if(istype(W, /obj/item/tobacco))
+	else if(istype(W, /obj/item/tobacco) || istype(W, /obj/item/reagent_containers/food/snacks/grown/dried_tobacco))
 		if(W.reagents)
 			if(reagents.total_volume == 0)
 				tobacco_lit = 0
@@ -324,7 +324,7 @@
 	par.smoketime -= amount
 	if(par.reagents && par.reagents.total_volume) // check if it has any reagents at all
 		var/mob/living/carbon/human/C = loc
-		par.reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2)
+		par.reagents.trans_to_mob(C, 0.1, CHEM_INGEST, 0.2)
 		add_trace_DNA(C)
 	else
 		to_chat(usr, SPAN_WARNING("You cant feel somethink inside of hookah smoke. Maybe tobacco is gone?"))
