@@ -13,7 +13,7 @@
 	var/smoketime = 0
 	var/maxsmoketime = 5000
 	var/tobacco_lit = 0
-	var/chem_volume = 100
+	var/chem_volume = 20
 	var/icon_on = "hookah"
 	var/lit = 0 // litghted status
 	var/tubes_amount = 3
@@ -248,7 +248,7 @@
 	return
 
 /obj/effect/effect/smoke/hookah
-	time_to_live = 15
+	time_to_live = 30
 	icon = 'infinity/icons/effects/smoke_hookah.dmi'
 	pixel_x = 0
 	pixel_y = 0
@@ -305,18 +305,18 @@
 	if (!par.lit)
 		to_chat(user, SPAN_WARNING("You try to drug the smoke, but feel only air from the room. Look's like hookah is'nt lighted."))
 		return
-	if(H == user && istype(H) && ready)
+	if(H == user && istype(H) && ready && ishuman(H))
 		var/obj/item/blocked = H.check_mouth_coverage()
 		if(blocked)
 			to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
 			return 1
 		to_chat(H, SPAN_INFO("You take a drag on your [name]."))
 
-		playsound(H, 'infinity/sound/effects/inhale.ogg', 50, 0, -1)
+		playsound(H, 'infinity/sound/effects/hookah.ogg', 50, 0, -1)
 		smoke(5)
 		add_trace_DNA(H)
 		ready = FALSE
-		addtimer(CALLBACK(src, .proc/set_ready), 2 SECONDS, TIMER_NO_HASH_WAIT)
+		addtimer(CALLBACK(src, .proc/set_ready), 4 SECONDS, TIMER_NO_HASH_WAIT)
 		return 1
 	return ..()
 

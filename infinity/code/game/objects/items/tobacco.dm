@@ -6,8 +6,8 @@
 	icon = 'icons/obj/hydroponics_products.dmi'
 	icon_state = "tobacco-product"
 	item_state = "tobacco-product"
-	var/volume = 10
-	var/list/filling = list(/datum/reagent/tobacco = 10)
+	var/volume = 5
+	var/list/filling = list(/datum/reagent/tobacco = 1)
 
 
 /obj/item/tobacco/New()
@@ -20,37 +20,37 @@
 	name = "perception tobacco"
 	desc = "Cut and process tobacco leaves along with herbal preparations."
 
-	filling = list(/datum/reagent/tobacco/perception = 10)
+	filling = list(/datum/reagent/tobacco/perception = 1, /datum/reagent/bicaridine/tobacco = 1)
 
 /obj/item/tobacco/medical
 	name = "medical tobacco"
 	desc = "Medicinal tobacco used for relaxation and concentration."
 
-	filling = list(/datum/reagent/tobacco/medical = 10)
+	filling = list(/datum/reagent/tobacco/medical = 1, /datum/reagent/paroxetine = 0.7)
 
 /obj/item/tobacco/strong
 	name = "strong tobacco"
 	desc = "Strong tobacco for strong men... or women, perhaps."
 
-	filling = list(/datum/reagent/tobacco/strong = 10)
+	filling = list(/datum/reagent/tobacco/strong = 1)
 
 /obj/item/tobacco/female
 	name = "female tobacco"
 	desc = "Female tobacco for good lady's."
 
-	filling = list(/datum/reagent/tobacco/female = 10)
+	filling = list(/datum/reagent/tobacco/female = 1)
 
 /obj/item/tobacco/honey
 	name = "tobacco with honey"
 	desc = "Tobacco that has been processed in honey."
 
-	filling = list(/datum/reagent/tobacco/honey = 10)
+	filling = list(/datum/reagent/tobacco/honey = 1)
 
 /obj/item/tobacco/coffee
 	name = "tobacco with coffee"
 	desc = "Tobacco leaves that have been mixed with coffee powder."
 
-	filling = list(/datum/reagent/tobacco/coffee = 10)
+	filling = list(/datum/reagent/tobacco/coffee = 1)
 
 /obj/item/tobacco/attackby(obj/item/I, mob/user)
 	if(is_type_in_list(I, list(/obj/item/paper/cig/, /obj/item/paper/, /obj/item/teleportation_scroll)))
