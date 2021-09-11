@@ -339,8 +339,12 @@
 		if(environment.get_by_flag(XGM_GAS_OXIDIZER) < par.gas_consumption)
 			par.extinguish()
 		else
+			var/datum/gas_mixture/produced = new
 			environment.remove_by_flag(XGM_GAS_OXIDIZER, par.gas_consumption)
-			environment.adjust_gas(GAS_CO2, 0.5*par.gas_consumption,0)
+			produced.adjust_gas(GAS_CO2, 0.5*par.gas_consumption,0)
+			produced.adjust_gas(GAS_SMOKE, 1, 0)
+			produced.temperature = T20C+60
+			environment.merge(produced)
 
 	smoke_map.start()
 

@@ -3795,6 +3795,7 @@
 #include "infinity\code\modules\webhooks\webhook_server_start.dm"
 #include "infinity\code\modules\webhooks\webhook_server_update.dm"
 #include "infinity\code\modules\webhooks\webhook_xeno_whitelist.dm"
+#include "infinity\code\modules\xgm\gases.dm"
 #include "infinity\code\modules\ZAS\Fire.dm"
 #include "infinity\code\procs\announce.dm"
 #include "infinity\code\procs\light_type.dm"
