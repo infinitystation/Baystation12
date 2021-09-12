@@ -18,9 +18,9 @@ var/datum/robolimb/basic_robolimb
 	var/unavailable_at_chargen                                // If set, not available at chargen.
 	var/unavailable_at_fab = 1                                // If set, cannot be fabricated.
 	var/can_eat = 0
-	var/brute_mod = 0.75 //INF
+	var/brute_mod = 1.2 //INF
 	var/speed_mod = 0.4 //INF
-	var/burn_mod = 0.75 //INF
+	var/burn_mod = 1.2 //INF
 	var/has_eyes = TRUE
 	var/can_feel_pain
 	var/skintone
