@@ -1,4 +1,0 @@
-author: KamSurvivor
-delete-after: true
-changes:
-  - bugfix: Фикс полос у инжекторов. Теперь они маркированы цветом своего препарата.
