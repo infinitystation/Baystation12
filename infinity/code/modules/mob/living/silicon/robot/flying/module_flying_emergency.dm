@@ -74,4 +74,3 @@
 		var/adding = min(PS.volume-PS.reagents.total_volume, 2*amount)
 		if(adding > 0)
 			PS.reagents.add_reagent(/datum/reagent/acid/polyacid, adding)
-	..()
