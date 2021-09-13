@@ -5520,6 +5520,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 5
 	},
+/obj/effect/submap_landmark/spawnpoint/liberia/engineer,
 /turf/simulated/floor/carpet/green,
 /area/liberia/guestroom1)
 "jI" = (
@@ -5528,6 +5529,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 9
 	},
+/obj/effect/submap_landmark/spawnpoint/liberia/engineer,
 /turf/simulated/floor/carpet/magenta,
 /area/liberia/guestroom2)
 "jJ" = (
@@ -5721,6 +5723,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
+/obj/effect/submap_landmark/spawnpoint/liberia/doctor,
 /turf/simulated/floor/carpet,
 /area/liberia/library)
 "kc" = (
@@ -6183,6 +6186,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/effect/submap_landmark/spawnpoint/liberia/doctor,
 /turf/simulated/floor/tiled/white,
 /area/liberia/medbay)
 "kV" = (
@@ -8155,6 +8159,7 @@
 	dir = 8;
 	pixel_x = -24
 	},
+/obj/effect/submap_landmark/spawnpoint/liberia/security,
 /turf/simulated/floor/carpet/blue,
 /area/liberia/personellroom1)
 "HQ" = (
@@ -9076,6 +9081,7 @@
 	},
 /obj/structure/bed/padded,
 /obj/item/bedsheet/hos,
+/obj/effect/submap_landmark/spawnpoint/liberia/security,
 /turf/simulated/floor/carpet/blue,
 /area/liberia/personellroom1)
 "Xe" = (
