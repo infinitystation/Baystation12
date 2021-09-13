@@ -18,9 +18,9 @@ var/datum/robolimb/basic_robolimb
 	var/unavailable_at_chargen                                // If set, not available at chargen.
 	var/unavailable_at_fab = 1                                // If set, cannot be fabricated.
 	var/can_eat = 0
-	var/brute_mod = 1 //INF
-	var/speed_mod = 0.4 //INF
-	var/burn_mod = 1 //INF
+	var/brute_mod = 1 //INF foler UPD
+	var/speed_mod = 0.4 //INF foler UPD
+	var/burn_mod = 1 //INF foler UPD
 	var/has_eyes = TRUE
 	var/can_feel_pain
 	var/skintone
@@ -41,7 +41,7 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_rook.dmi'
 	has_eyes = FALSE
 	unavailable_at_fab = 1
-
+	
 /datum/robolimb/bishop/alt
 	company = "Bishop Alt."
 	icon = 'icons/mob/human_races/cyberlimbs/bishop/bishop_alt.dmi'
@@ -56,6 +56,9 @@ var/datum/robolimb/basic_robolimb
 	company = "Hephaestus Industries"
 	desc = "This limb has a militaristic black and green casing with gold stripes."
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_main.dmi'
+	brute_mod = 0.8
+	burn_mod = 0.8
+	speed_mod = 0.1
 
 /datum/robolimb/hephaestus/alt
 	company = "Hephaestus Alt."
@@ -68,10 +71,10 @@ var/datum/robolimb/basic_robolimb
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_titan.dmi'
 	has_eyes = FALSE
 	unavailable_at_fab = 1
-//[INF]
+//[INF] foler UPD
 	applies_to_part = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT, BP_L_HAND, BP_R_HAND)
-	brute_mod = 0.5
-	burn_mod = 0.5
+	brute_mod = 0.7
+	burn_mod = 0.7
 	speed_mod = 0.22
 //[/INF]
 
@@ -132,6 +135,9 @@ var/datum/robolimb/basic_robolimb
 	desc = "A simple robotic limb with retro design. Seems rather stiff."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_economy.dmi'
 	unavailable_at_fab = 0
+	brute_mod = 0.9
+	burn_mod = 0.9
+	speed_mod = 0.
 
 /datum/robolimb/wardtakahashi/alt
 	company = "Ward-Takahashi Alt."
@@ -200,6 +206,9 @@ var/datum/robolimb/basic_robolimb
 	company = "Shellguard"
 	desc = "This limb has a sturdy and heavy build to it."
 	icon = 'icons/mob/human_races/cyberlimbs/shellguard/shellguard_main.dmi'
+	brute_mod = 0.8
+	burn_mod = 0.8
+	speed_mod = 0.19
 
 /datum/robolimb/shellguard/alt
 	company = "Shellguard Alt."
