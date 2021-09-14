@@ -56,9 +56,11 @@ var/datum/robolimb/basic_robolimb
 	company = "Hephaestus Industries"
 	desc = "This limb has a militaristic black and green casing with gold stripes."
 	icon = 'icons/mob/human_races/cyberlimbs/hephaestus/hephaestus_main.dmi'
+	//[inf]
 	brute_mod = 0.8
 	burn_mod = 0.8
 	speed_mod = 0.1
+	//[/inf]
 
 /datum/robolimb/hephaestus/alt
 	company = "Hephaestus Alt."
@@ -135,9 +137,11 @@ var/datum/robolimb/basic_robolimb
 	desc = "A simple robotic limb with retro design. Seems rather stiff."
 	icon = 'icons/mob/human_races/cyberlimbs/wardtakahashi/wardtakahashi_economy.dmi'
 	unavailable_at_fab = 0
+	//[inf]
 	brute_mod = 0.9
 	burn_mod = 0.9
-	speed_mod = 0.
+	speed_mod = 0.1
+	//[/inf]
 
 /datum/robolimb/wardtakahashi/alt
 	company = "Ward-Takahashi Alt."
@@ -206,9 +210,11 @@ var/datum/robolimb/basic_robolimb
 	company = "Shellguard"
 	desc = "This limb has a sturdy and heavy build to it."
 	icon = 'icons/mob/human_races/cyberlimbs/shellguard/shellguard_main.dmi'
+	//[inf]
 	brute_mod = 0.8
 	burn_mod = 0.8
 	speed_mod = 0.19
+	//[/inf]
 
 /datum/robolimb/shellguard/alt
 	company = "Shellguard Alt."
