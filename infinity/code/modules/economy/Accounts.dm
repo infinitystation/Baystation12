@@ -84,3 +84,4 @@ GLOBAL_LIST_EMPTY(away_money_accounts)
 			remembered_info += "<b>Создан:</b> [T.time], [T.date] в [T.get_source_name()]<br>"
 		H.StoreMemory(remembered_info, /decl/memory_options/system)
 		H.mind.initial_account = M		
+
