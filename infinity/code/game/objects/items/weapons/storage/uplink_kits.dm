@@ -135,6 +135,9 @@
 /obj/item/storage/box/syndie_kit/imp_emp
 	startswith = list(/obj/item/implanter/emp)
 
+/obj/item/storage/box/syndie_kit/fake_death
+	startswith = list(/obj/item/implanter/fake_death)
+
 /obj/item/storage/backpack/dufflebag/syndie_kit/space/heavy
 	startswith = list(
 		/obj/item/clothing/suit/space/void/merc/heavy/prepared,
