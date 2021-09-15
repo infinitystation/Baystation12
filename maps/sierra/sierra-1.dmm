@@ -10294,6 +10294,7 @@
 /area/hallway/primary/thirddeck/center)
 "qe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
+/obj/machinery/artifact_scanpad,
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
 "qf" = (
@@ -10969,8 +10970,6 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
 "rf" = (
-/obj/machinery/artifact,
-/obj/structure/anomaly_container,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4
 	},
@@ -10983,7 +10982,6 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
 "rh" = (
-/obj/machinery/artifact_scanpad,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -11049,6 +11047,8 @@
 	pixel_x = -18
 	},
 /obj/effect/floor_decal/industrial/danger,
+/obj/machinery/artifact,
+/obj/structure/anomaly_container,
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
 "rp" = (

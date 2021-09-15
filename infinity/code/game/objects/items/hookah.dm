@@ -359,7 +359,7 @@
 	name = "Bar - Hookah"
 	contains = list(
 		/obj/item/hookah,
-		/obj/item/coal= 20
+		/obj/item/coal = 20
 	)
 	cost = 20
 	containername = "Hookah crate"

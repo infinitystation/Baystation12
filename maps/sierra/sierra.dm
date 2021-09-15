@@ -145,6 +145,7 @@
 	#include "../away/lar_maria/lar_maria.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/meatstation/meatstation.dm"
+	#include "../away/mininghome/mininghome.dm"
 	#include "../away/miningstation/miningstation.dm"
 	#include "../away/scavver/scavver_gantry.dm"
 	#include "../away/skrellscoutship/skrellscoutship.dm"
