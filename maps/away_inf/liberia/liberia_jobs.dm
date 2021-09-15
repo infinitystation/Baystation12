@@ -162,7 +162,6 @@
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	suit = /obj/item/clothing/suit/armor/pcarrier/light
 	shoes = /obj/item/clothing/shoes/jackboots
-	id_types = list(/obj/item/card/id/liberia/merchant)
 	id_pda_assignment = "Merchant Security"
 	
 /decl/hierarchy/outfit/job/liberia/merchant/engineer
