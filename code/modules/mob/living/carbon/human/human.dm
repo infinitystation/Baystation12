@@ -755,7 +755,7 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 		return
 
 	var/turf/location = loc
-	
+
 	visible_message(SPAN_DANGER("\The [src] стошнило!"),SPAN_DANGER("Вас стошнило!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	if(istype(location, /turf/simulated))
@@ -1447,6 +1447,19 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 			legs_exposed = 0
 		if(C.body_parts_covered & FEET)
 			feet_exposed = 0
+
+	// [INF]
+	// We need this to hide flavor under underwear-type clothes
+	for (var/obj/item/underwear/U in src.worn_underwear)
+		if (U.body_parts_covered & UPPER_TORSO)
+			torso_exposed = FALSE
+		if (U.body_parts_covered & ARMS)
+			arms_exposed = FALSE
+		if(U.body_parts_covered & LEGS)
+			legs_exposed = FALSE
+		if(U.body_parts_covered & FEET)
+			feet_exposed = 0
+	// [/INF]
 
 	flavor_text = ""
 	for (var/T in flavor_texts)
