@@ -102,6 +102,8 @@
 				T.visible_message("<span class='notice'>\The [S.display_name]'s glow dims...</span>")
 	if(prob(60))
 		S.set_trait(TRAIT_PRODUCES_POWER, !S.get_trait(TRAIT_PRODUCES_POWER))
+
+//INF START
 	if(prob(30))
 		if(!S.exude_gasses | prob(90))
 			S.exude_gasses = list()
@@ -122,6 +124,7 @@
 			S.exude_gasses[gas] = rand(1,5)
 		else
 			S.exude_gasses = null		
+//INF END
 
 /decl/plantgene/atmosphere/mutate(var/datum/seed/S)
 	if(prob(60))
