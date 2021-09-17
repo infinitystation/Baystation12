@@ -465,7 +465,7 @@
 		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		exude_gasses[gas] = rand(3,9)
 		set_trait(TRAIT_EXUDE_GASSES, exude_gasses) //INF
-		
+
 	chems = list()
 	if(prob(80))
 		chems[/datum/reagent/nutriment] = list(rand(1,10),rand(10,20))
@@ -624,8 +624,8 @@
 					else
 						source_turf.visible_message("<span class='notice'>\The [display_name]'s glow dims...</span>")
 //INF START
-				if(prob(degree*5))		
-					if(prob(60))
+				if(prob(degree))
+					if(prob(80))
 						if(!exude_gasses || prob(90))
 							exude_gasses = list()
 						var/gas = pickweight(list(GAS_METHYL_BROMIDE = 5,
@@ -641,10 +641,9 @@
 										GAS_HELIUM = 1,
 										GAS_PHORON = 1
 											))
-						exude_gasses[gas] = rand(1,10)
+						exude_gasses[gas] = rand(1,5)
 					else
-						exude_gasses = null		
-					set_trait(TRAIT_EXUDE_GASSES, exude_gasses)
+						exude_gasses = null
 //INF END
 			if(11)
 				set_trait(TRAIT_TELEPORTING,1)
