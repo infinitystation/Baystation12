@@ -105,7 +105,7 @@
 
 //INF START
 	if(prob(30))
-		if(!exude_gasses || prob(90))
+		if(!S.exude_gasses || prob(90))
 			S.exude_gasses = list()
 		if(prob(80))
 			var/gas = pickweight(list(GAS_METHYL_BROMIDE = 5,
