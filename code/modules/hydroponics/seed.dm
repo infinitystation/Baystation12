@@ -623,7 +623,7 @@
 						source_turf.visible_message("<span class='notice'>\The [display_name]'s glow dims...</span>")
 				if(prob(degree))
 					if(prob(80))
-						if(!exude_gasses | prob(90))
+						if((!exude_gasses) | prob(90))
 							exude_gasses = list()
 						var/gas = pickweight(list(GAS_METHYL_BROMIDE = 5,
 										GAS_OXYGEN = 10,
