@@ -621,7 +621,8 @@
 							source_turf.visible_message("<span class='notice'>\The [display_name]'s glow </span><font color='[get_trait(TRAIT_BIOLUM_COLOUR)]'>changes colour</font>!")
 					else
 						source_turf.visible_message("<span class='notice'>\The [display_name]'s glow dims...</span>")
-				if(prob(degree))
+//INF START
+				if(prob(degree))		
 					if(prob(80))
 						if(!exude_gasses || prob(90))
 							exude_gasses = list()
@@ -641,6 +642,7 @@
 						exude_gasses[gas] = rand(1,5)
 					else
 						exude_gasses = null			
+//INF END
 			if(11)
 				set_trait(TRAIT_TELEPORTING,1)
 
