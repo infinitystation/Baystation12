@@ -567,7 +567,7 @@
 	//This looks like shit, but it's a lot easier to read/change this way.
 	var/total_mutations = rand(1,1+degree)
 	for(var/i = 0;i<total_mutations;i++)
-		switch(rand(0,12))
+		switch(rand(0,11))
 			if(0) //Plant cancer!
 				set_trait(TRAIT_ENDURANCE,get_trait(TRAIT_ENDURANCE)-rand(10,20),null,0)
 				source_turf.visible_message("<span class='danger'>\The [display_name] withers rapidly!</span>")
