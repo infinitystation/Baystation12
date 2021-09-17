@@ -57,7 +57,7 @@
 	give_psionic_implant_on_join = FALSE
 	skill_points = 24
 	economic_power = 11
-	
+
 	account_allowed = TRUE
 
 /datum/job/submap/merchant/equip(var/mob/living/carbon/human/H)
@@ -128,7 +128,7 @@
 	skill_points = 24
 
 	account_allowed = TRUE
-	
+
 /datum/job/submap/merchant_trainee/equip(var/mob/living/carbon/human/H)
 	setup_away_account(H)
 	outfit_type =  H.mind.role_alt_title!="Merchant Assistant" ? alt_titles[H.mind.role_alt_title] : outfit_type
@@ -163,20 +163,20 @@
 	suit = /obj/item/clothing/suit/armor/pcarrier/light
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_pda_assignment = "Merchant Security"
-	
+
 /decl/hierarchy/outfit/job/liberia/merchant/engineer
 	name = OUTFIT_JOB_NAME("Merchant Engineer")
 	uniform = /obj/item/clothing/under/civilian
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_pda_assignment = "Merchant Engineer"
-	
+
 /decl/hierarchy/outfit/job/liberia/merchant/doctor
 	name = OUTFIT_JOB_NAME("Merchant Medical")
 	uniform = /obj/item/clothing/under/color/white
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/dress
 	id_pda_assignment = "Merchant Medical"
-	
+
 /decl/hierarchy/outfit/job/liberia/merchant/leader
 	name = OUTFIT_JOB_NAME("Merchant Leader - liberia")
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
