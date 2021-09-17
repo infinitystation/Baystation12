@@ -1,0 +1,4 @@
+author: Zhuzhila
+delete-after: true
+changes:
+  - bugfix: 'Либерия: исправлен баг с невозможностью зайти за подпрофы ассистента'
