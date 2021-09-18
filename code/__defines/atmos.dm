@@ -124,8 +124,3 @@
 #define GAS_SULFUR				"sulfurdioxide"
 #define GAS_STEAM				"water"
 #define GAS_PHORON				"phoron"
-//[INF]
-
-#define GAS_SMOKE				"smoke"
-
-//[/INF]

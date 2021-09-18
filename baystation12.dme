@@ -83,6 +83,7 @@
 #include "code\__defines\xenoarcheaology.dm"
 #include "code\__defines\ZAS.dm"
 #include "code\__defines\zmimic.dm"
+#include "code\__defines\_inf\atoms.dm"
 #include "code\__defines\_inf\colors.dm"
 #include "code\__defines\_inf\culture.dm"
 #include "code\__defines\_inf\customs.dm"

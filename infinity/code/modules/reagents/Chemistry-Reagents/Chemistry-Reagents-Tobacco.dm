@@ -1,7 +1,6 @@
 /datum/reagent/bicaridine/tobacco
 	taste_description = "speeding up time?"
 
-//Inf, снизу отсылка в сигаре из МГС 5
 /datum/reagent/tobacco/perception
 	name = "Herbal drugs and tobacco"
 	description = "Cut and process tobacco leaves along with herbal preparations."
@@ -19,7 +18,6 @@
 	taste_description = "relax, concetration and tobacco"
 	scent = "relax and tobacco"
 	scent_range = 2
-//ifn медицинская травка для пациентов менталиста
 
 /datum/reagent/tobacco/strong
 	name = "Strong tobacco"
@@ -27,7 +25,6 @@
 	taste_description = "strong tobacco that hits the throat hard"
 	scent = "Strong tobacco"
 	scent_range = 10
-// inf Boss, try remember basic of CQC
 
 /datum/reagent/tobacco/strong/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -38,8 +35,6 @@
 	description = "female tobacco for good lady's"
 	taste_description = "weak tobacco that gently caresses the throat."
 	scent = "weak tobacco"
-//inf ladie's, we go viva la france
-// foler dont do cringe please (from hacso)
 
 /datum/reagent/tobacco/honey
 	name = "tobacco with honey"
