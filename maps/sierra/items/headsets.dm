@@ -10,6 +10,9 @@
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
+/obj/item/device/radio/headset/heads/hop
+	ks1type = /obj/item/device/encryptionkey/heads/hop/sierra
+
 /obj/item/device/radio/headset/heads/hop/alt
 	name = "head of personnel's bowman headset"
 	icon_state = "com_headset_alt"

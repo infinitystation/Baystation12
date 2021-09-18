@@ -57,6 +57,7 @@
 	if(joining.mind)
 		joining.mind.assigned_job = job
 		joining.mind.assigned_role = job.title
+		joining.mind.role_alt_title = job.get_alt_title_for(joining.client) //INF
 	joining.faction = name
 	job.current_positions++
 
@@ -76,7 +77,7 @@
 
 			// We need to make sure to use the abstract instance here; it's not the same as the one we were passed.
 			character.skillset.obtain_from_client(SSjobs.get_by_path(job.type), character.client)
-			job.equip(character, "")
+			job.equip(character, joining.mind ? joining.mind.role_alt_title : "") //INF was job.equip(character, "")
 			job.apply_fingerprints(character)
 			var/list/spawn_in_storage = SSjobs.equip_custom_loadout(character, job)
 			if(spawn_in_storage)
