@@ -28268,7 +28268,7 @@
 	},
 /obj/structure/closet/crate/freezer,
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "aYM" = (
 /turf/simulated/wall/prepainted,
 /area/maintenance/seconddeck/aftstarboard)
@@ -31509,7 +31509,7 @@
 /area/space)
 "bfk" = (
 /turf/simulated/wall/walnut,
-/area/space)
+/area/crew_quarters/game_room)
 "bfl" = (
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -33907,7 +33907,7 @@
 /obj/effect/fluid_mapped,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/aquarium,
-/area/space)
+/area/crew_quarters/game_room)
 "ccS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -34021,7 +34021,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "cyI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
@@ -34196,7 +34196,7 @@
 /obj/effect/fluid_mapped,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/aquarium,
-/area/space)
+/area/crew_quarters/game_room)
 "dal" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -34262,7 +34262,7 @@
 	pixel_y = 12
 	},
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "deW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -34567,6 +34567,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"ear" = (
+/turf/simulated/wall/r_wall/hull,
+/area/crew_quarters/game_room)
 "eaV" = (
 /obj/machinery/smartfridge/foods,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
@@ -34759,7 +34762,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "eCV" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -34874,7 +34877,7 @@
 /obj/item/stool/bar/padded,
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "ePA" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/table/rack,
@@ -35096,7 +35099,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "fxO" = (
 /obj/machinery/light/spot,
 /obj/effect/floor_decal/corner/blue/mono,
@@ -35119,7 +35122,7 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "fDc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -35210,7 +35213,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "fQH" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -35307,7 +35310,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/mahogany,
-/area/crew_quarters/lounge_big)
+/area/crew_quarters/game_room)
 "gfJ" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -35348,7 +35351,7 @@
 "gjJ" = (
 /obj/structure/sign/warning/internals_required,
 /turf/simulated/wall/walnut,
-/area/crew_quarters/lounge_big)
+/area/crew_quarters/game_room)
 "gkH" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -35416,7 +35419,7 @@
 /area/hallway/primary/seconddeck/center)
 "gww" = (
 /turf/simulated/floor/wood/mahogany,
-/area/space)
+/area/crew_quarters/game_room)
 "gyY" = (
 /obj/structure/lattice,
 /obj/structure/cable/green{
@@ -35664,7 +35667,7 @@
 	},
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/wood/mahogany,
-/area/space)
+/area/crew_quarters/game_room)
 "hrh" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -36006,7 +36009,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "ilr" = (
 /obj/structure/window/basic{
 	dir = 4
@@ -36034,6 +36037,9 @@
 /obj/effect/floor_decal/corner/lime/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
+"iut" = (
+/turf/simulated/wall/r_wall/prepainted,
+/area/crew_quarters/game_room)
 "izX" = (
 /obj/machinery/door/airlock/hatch/maintenance,
 /obj/structure/cable{
@@ -36175,7 +36181,7 @@
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/storage/box/donut,
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "iWB" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/crew_quarters/lounge_big)
@@ -36224,7 +36230,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/wood/mahogany,
-/area/space)
+/area/crew_quarters/game_room)
 "jhA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -36731,7 +36737,7 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "kAj" = (
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/borderfloorblack{
@@ -36957,7 +36963,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/wood/mahogany,
-/area/space)
+/area/crew_quarters/game_room)
 "lph" = (
 /obj/structure/bed/sofa/brown/left{
 	dir = 1
@@ -37144,7 +37150,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "lYR" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
@@ -37202,7 +37208,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/mahogany,
-/area/space)
+/area/crew_quarters/game_room)
 "mcO" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -37227,10 +37233,10 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "mhS" = (
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "mjR" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
@@ -37349,7 +37355,7 @@
 	icon_state = "rwindow"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "mCp" = (
 /obj/structure/flora/pottedplant/deskferntrim{
 	pixel_x = 5
@@ -37399,7 +37405,7 @@
 "mGH" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "mHE" = (
 /obj/structure/disposaloutlet,
 /obj/machinery/shield_diffuser,
@@ -37413,7 +37419,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "mHS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -37765,7 +37771,7 @@
 "nNI" = (
 /obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/wood/mahogany,
-/area/space)
+/area/crew_quarters/game_room)
 "nVM" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/rnd/xenobiology/entry)
@@ -38125,7 +38131,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "pbO" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -38933,7 +38939,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/mahogany,
-/area/space)
+/area/crew_quarters/game_room)
 "qZs" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 4
@@ -39280,13 +39286,13 @@
 	},
 /obj/structure/flora/pottedplant/tropical,
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "saF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/wood/mahogany,
-/area/space)
+/area/crew_quarters/game_room)
 "sca" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 1
@@ -39457,7 +39463,7 @@
 /obj/structure/table/woodentable_reinforced/walnut,
 /obj/item/deck/cards,
 /turf/simulated/floor/carpet/purple,
-/area/space)
+/area/crew_quarters/game_room)
 "sBT" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -40004,7 +40010,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/mahogany,
-/area/space)
+/area/crew_quarters/game_room)
 "tMp" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -40650,7 +40656,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "voG" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/janitor)
@@ -40696,7 +40702,7 @@
 /obj/effect/fluid_mapped,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/aquarium,
-/area/space)
+/area/crew_quarters/game_room)
 "vwM" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 6
@@ -41028,7 +41034,7 @@
 	},
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "wQb" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -41172,7 +41178,7 @@
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/effect/floor_decal/spline/fancy/black,
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "xgC" = (
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge_big)
@@ -41352,7 +41358,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "xMX" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -41361,7 +41367,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/mahogany,
-/area/space)
+/area/crew_quarters/game_room)
 "xNh" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -41376,7 +41382,7 @@
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
-/area/space)
+/area/crew_quarters/game_room)
 "xRQ" = (
 /obj/machinery/newscaster{
 	pixel_x = -26;
@@ -60349,17 +60355,17 @@ aam
 aam
 anw
 aQT
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
-aai
+ear
+ear
+ear
+ear
+ear
+ear
+ear
+ear
+ear
+ear
+ear
 aba
 abq
 abU
@@ -60550,7 +60556,7 @@ aam
 aam
 aam
 bfp
-aai
+ear
 bfk
 bfk
 bfk
@@ -60561,7 +60567,7 @@ bfk
 bfk
 bfk
 bfk
-aba
+ear
 aba
 abW
 abW
@@ -60752,7 +60758,7 @@ aam
 aam
 aam
 bfp
-aai
+ear
 bfk
 aYL
 fsP
@@ -60954,7 +60960,7 @@ aam
 aam
 alQ
 vkG
-aai
+ear
 bfk
 mHR
 mhS
@@ -61156,7 +61162,7 @@ aam
 aam
 aam
 aaK
-aai
+ear
 bfk
 cvq
 mGH
@@ -61358,7 +61364,7 @@ aam
 aam
 aam
 aaK
-aai
+ear
 bfk
 mHR
 dex
@@ -61369,7 +61375,7 @@ nNI
 mAF
 eOY
 xeM
-aYV
+iut
 aYV
 aYV
 aYV
@@ -61560,7 +61566,7 @@ aam
 aam
 aaK
 aai
-aai
+ear
 bfk
 sas
 fPm
@@ -61571,7 +61577,7 @@ hrb
 oZL
 eCr
 vnh
-aYV
+iut
 aWR
 aZC
 aZF
@@ -61763,16 +61769,16 @@ aam
 aaK
 mue
 aaa
-aaa
-aaa
-aaa
-aaa
+uqd
+uqd
+uqd
+uqd
 gjJ
 gdM
-aaa
-aaa
-aaa
-aaa
+bfk
+bfk
+bfk
+bfk
 aYV
 aYO
 aYQ
