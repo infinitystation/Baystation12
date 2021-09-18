@@ -458,13 +458,13 @@
 		consume_gasses = list()
 		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		consume_gasses[gas] = rand(3,9)
-		set_trait(TRAIT_CONSUME_GASSES, consume_gasses)
+		set_trait(TRAIT_CONSUME_GASSES, consume_gasses) //INF
 
 	if(prob(5))
 		exude_gasses = list()
 		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		exude_gasses[gas] = rand(3,9)
-		set_trait(TRAIT_EXUDE_GASSES, exude_gasses)
+		set_trait(TRAIT_EXUDE_GASSES, exude_gasses) //INF
 		
 	chems = list()
 	if(prob(80))
