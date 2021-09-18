@@ -1253,6 +1253,7 @@
 	set_trait(TRAIT_IDEAL_LIGHT, 6)
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+	set_trait(TRAIT_EXUDE_GASSES, exude_gasses) //INF
 
 /datum/seed/bamboo
 	name = "bamboo"

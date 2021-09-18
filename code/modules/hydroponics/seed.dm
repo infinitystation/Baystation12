@@ -458,12 +458,14 @@
 		consume_gasses = list()
 		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		consume_gasses[gas] = rand(3,9)
+		set_trait(TRAIT_CONSUME_GASSES, consume_gasses)
 
 	if(prob(5))
 		exude_gasses = list()
 		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		exude_gasses[gas] = rand(3,9)
-
+		set_trait(TRAIT_EXUDE_GASSES, exude_gasses)
+		
 	chems = list()
 	if(prob(80))
 		chems[/datum/reagent/nutriment] = list(rand(1,10),rand(10,20))
@@ -641,7 +643,8 @@
 											))
 						exude_gasses[gas] = rand(1,5)
 					else
-						exude_gasses = null			
+						exude_gasses = null		
+					set_trait(TRAIT_EXUDE_GASSES, exude_gasses)
 //INF END
 			if(11)
 				set_trait(TRAIT_TELEPORTING,1)
