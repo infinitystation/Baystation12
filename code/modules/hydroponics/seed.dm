@@ -624,8 +624,8 @@
 					else
 						source_turf.visible_message("<span class='notice'>\The [display_name]'s glow dims...</span>")
 //INF START
-				if(prob(degree))
-					if(prob(80))
+				if(prob(degree*5))
+					if(prob(60))
 						if(!exude_gasses || prob(90))
 							exude_gasses = list()
 						var/gas = pickweight(list(GAS_METHYL_BROMIDE = 5,
@@ -641,9 +641,10 @@
 										GAS_HELIUM = 1,
 										GAS_PHORON = 1
 											))
-						exude_gasses[gas] = rand(1,5)
+						exude_gasses[gas] = rand(1,10)
 					else
 						exude_gasses = null
+					set_trait(TRAIT_EXUDE_GASSES, exude_gasses)
 //INF END
 			if(11)
 				set_trait(TRAIT_TELEPORTING,1)
