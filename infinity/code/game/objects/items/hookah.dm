@@ -13,7 +13,7 @@
 	var/smoketime = 0
 	var/maxsmoketime = 5000
 	var/tobacco_lit = 0
-	var/chem_volume = 100
+	var/chem_volume = 50
 	var/icon_on = "hookah"
 	var/lit = 0 // litghted status
 	var/tubes_amount = 3
@@ -173,7 +173,7 @@
 		smoketime += M.volume
 		user.visible_message(SPAN_INFO("[user] add's coal in hookah."), SPAN_INFO("You added coal in hookah."))
 
-	else if(istype(W, /obj/item/tobacco))
+	else if(istype(W, /obj/item/tobacco) || istype(W, /obj/item/reagent_containers/food/snacks/grown/dried_tobacco))
 		if(W.reagents)
 			if(reagents.total_volume == 0)
 				tobacco_lit = 0
@@ -248,7 +248,7 @@
 	return
 
 /obj/effect/effect/smoke/hookah
-	time_to_live = 15
+	time_to_live = 30
 	icon = 'infinity/icons/effects/smoke_hookah.dmi'
 	pixel_x = 0
 	pixel_y = 0
@@ -305,18 +305,18 @@
 	if (!par.lit)
 		to_chat(user, SPAN_WARNING("You try to drug the smoke, but feel only air from the room. Look's like hookah is'nt lighted."))
 		return
-	if(H == user && istype(H) && ready)
+	if(H == user && istype(H) && ready && ishuman(H))
 		var/obj/item/blocked = H.check_mouth_coverage()
 		if(blocked)
 			to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
 			return 1
 		to_chat(H, SPAN_INFO("You take a drag on your [name]."))
 
-		playsound(H, 'infinity/sound/effects/inhale.ogg', 50, 0, -1)
+		playsound(H, 'infinity/sound/effects/hookah.ogg', 50, 0, -1)
 		smoke(5)
 		add_trace_DNA(H)
 		ready = FALSE
-		addtimer(CALLBACK(src, .proc/set_ready), 2 SECONDS, TIMER_NO_HASH_WAIT)
+		addtimer(CALLBACK(src, .proc/set_ready), 4 SECONDS, TIMER_NO_HASH_WAIT)
 		return 1
 	return ..()
 
@@ -324,7 +324,7 @@
 	par.smoketime -= amount
 	if(par.reagents && par.reagents.total_volume) // check if it has any reagents at all
 		var/mob/living/carbon/human/C = loc
-		par.reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2)
+		par.reagents.trans_to_mob(C, 0.1, CHEM_INGEST, 0.2)
 		add_trace_DNA(C)
 	else
 		to_chat(usr, SPAN_WARNING("You cant feel somethink inside of hookah smoke. Maybe tobacco is gone?"))
@@ -339,8 +339,12 @@
 		if(environment.get_by_flag(XGM_GAS_OXIDIZER) < par.gas_consumption)
 			par.extinguish()
 		else
+			var/datum/gas_mixture/produced = new
 			environment.remove_by_flag(XGM_GAS_OXIDIZER, par.gas_consumption)
-			environment.adjust_gas(GAS_CO2, 0.5*par.gas_consumption,0)
+			produced.adjust_gas(GAS_CO2, 0.5*par.gas_consumption,0)
+			produced.adjust_gas(GAS_SMOKE, 1, 0)
+			produced.temperature = T20C+60
+			environment.merge(produced)
 
 	smoke_map.start()
 
@@ -359,7 +363,17 @@
 	name = "Bar - Hookah"
 	contains = list(
 		/obj/item/hookah,
-		/obj/item/coal = 20
+		/obj/item/storage/box/large/coal = 2
 	)
 	cost = 20
 	containername = "Hookah crate"
+
+/obj/item/storage/box/large/coal
+	name = "coal for hookah"
+	desc = "A box with coals for a hookah."
+	icon_state = "largebox"
+	startswith = list(/obj/item/coal = 10)
+	w_class = ITEM_SIZE_LARGE
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = DEFAULT_LARGEBOX_STORAGE
+	use_sound = 'sound/effects/storage/box.ogg'
