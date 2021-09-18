@@ -277,6 +277,10 @@
 	name = "First Deck - Living - Cryogenic Storage - Upper"
 	icon_state = "cryo_up"
 
+/area/crew_quarters/unused_office
+	name = "First Deck - Living - Unused Office"
+	icon_state = "Sleep"
+
 /area/crew_quarters/dungeon_master_lounge
 	name = "First Deck - Living Room"
 	sound_env = MEDIUM_SOFTFLOOR
