@@ -124,7 +124,7 @@
 			S.exude_gasses[gas] = rand(1,5)
 		else
 			S.exude_gasses = null	
-			S.set_trait(TRAIT_EXUDE_GASSES, S.exude_gasses)
+		S.set_trait(TRAIT_EXUDE_GASSES, S.exude_gasses)
 
 /decl/plantgene/atmosphere/mutate(var/datum/seed/S)
 	if(prob(60))
