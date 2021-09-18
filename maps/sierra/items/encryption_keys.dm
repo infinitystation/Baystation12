@@ -18,10 +18,13 @@
 	icon_state = "rd_cypherkey"
 	channels = list("Science" = 1, "Command" = 1, "Exploration" = 1, "Hailing" = 1)
 
+/obj/item/device/encryptionkey/heads/hop/sierra
+	channels = list("Command" = 1, "Security" = 0, "Engineering" = 0, "Science" = 0, "Medical" = 0, "Supply" = 1, "Service" = 1, "Exploration" = 0, "Hailing" = 0)
+
 /obj/item/device/encryptionkey/sierra_adjutant
 	name = "adjutant's encryption key"
 	icon_state = "com_cypherkey"
-	channels = list("Command" = 1, "Engineering" = 1, "Exploration" = 1)
+	channels = list("Command" = 1, "Security" = 0, "Engineering" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Exploration" = 0, "Hailing" = 0)
 
 /obj/item/device/encryptionkey/heads/ai_integrated
 	name = "ai integrated encryption key"
