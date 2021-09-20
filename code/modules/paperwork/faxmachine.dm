@@ -261,3 +261,19 @@ GLOBAL_LIST_EMPTY(adminfaxes)	//cache for faxes that have been sent to admins
 		if(check_rights((R_ADMIN|R_MOD),0,C))
 			to_chat(C, msg)
 			sound_to(C, sound(pick(send_or_reseive_sounds), volume = 50))
+
+// [INF]
+/obj/machinery/photocopier/faxmachine/AltClick(mob/user)
+	if (scan)
+		if (ishuman(user))
+			user.put_in_hands(scan)
+			to_chat(user, SPAN_NOTICE("You eject \the [scan] from \the [src]."))
+		else
+			scan.dropInto(loc)
+		scan = null
+		authenticated = FALSE
+		return TOPIC_REFRESH
+	else
+		to_chat(user, SPAN_WARNING("There is no card in fax!"))
+		return
+// [/INF]

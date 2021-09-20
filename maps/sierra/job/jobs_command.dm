@@ -150,7 +150,7 @@
 		access_sec_doors, access_medical, access_network,
 		access_maint_tunnels, access_eva, access_expedition_shuttle, access_expedition_shuttle_helm,
 		access_guppy, access_hangar, access_petrov, access_petrov_helm,
-		access_guppy_helm
+		access_guppy_helm, access_explorer, access_el
 	)
 
 	minimal_access = list()
@@ -430,7 +430,7 @@
 		access_heads, access_bridge, access_janitor, access_kitchen, access_actor, access_cargo,
 		access_RC_announce, access_keycard_auth, access_guppy, access_guppy_helm,
 		access_external_airlocks, access_expedition_shuttle, access_eva, access_hangar,
-		access_explorer, access_expedition_shuttle_helm, access_gun
+		access_explorer, access_expedition_shuttle_helm, access_gun, access_bar
 	)
 
 	minimal_access = list()

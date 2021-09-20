@@ -303,6 +303,12 @@
 	icon_state = "toilet"
 	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+
+/area/crew_quarters/game_room
+	name = "Second deck - living - Lounge - Game room"
+	icon_state = "game_room_inf"
+	sound_env = SMALL_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 /*
 /area/crew_quarters/showers
 	name = "Second Deck - Living - Private Showers"
