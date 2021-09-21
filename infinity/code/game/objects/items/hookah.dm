@@ -8,8 +8,8 @@
 	icon = 'infinity/icons/obj/item/hookah.dmi'
 	desc = "A hookah with a jar of water at the bottom. AMOUNT tubes come out through it.\n"
 	w_class = ITEM_SIZE_LARGE
-	icon_state = "hookah"
-	item_state = "hookah"
+	icon_state = "hookah_0"
+	item_state = "hookah_0"
 	var/smoketime = 0
 	var/maxsmoketime = 5000
 	var/tobacco_lit = 0
@@ -60,6 +60,8 @@
 		user.visible_message(SPAN_INFO("[user] shut off the hookah"))
 
 	lit = 0
+	icon_state = "hookah_0"
+	item_state = "hookah_0"
 	remove_extension(src, /datum/extension/scent)
 	update_flavour()
 	STOP_PROCESSING(SSobj, src)
@@ -198,6 +200,17 @@
 			if(lit || tobacco_lit)
 				to_chat(usr, SPAN_WARNING("Immediately after you put the leave in the tray, it lit up."))
 				qdel(W)
+	else if(istype(W, /obj/item/storage/box/large/coal))
+		var/obj/item/storage/box/large/coal/B = W
+		var/k = round((maxsmoketime-smoketime)/500)
+		if(k==0)
+			return
+		smoketime += 500*k
+		for(var/i, i<k, i++)
+			qdel(B.contents[1])
+
+		src.visible_message(SPAN_INFO("[user] puts [k] coal in hookah"), SPAN_INFO("You put [k] coal in hookah"))
+
 	update_flavour()
 	..()
 
@@ -214,6 +227,8 @@
 		damtype = "burn"
 		var/turf/T = get_turf(src)
 		T.visible_message(flavor_text)
+		icon_state = "hookah_1"
+		item_state = "hookah_1"
 		START_PROCESSING(SSobj, src)
 		set_scent_by_reagents(src)
 		update_flavour()
@@ -338,7 +353,7 @@
 		smoke(5)
 		add_trace_DNA(H)
 		ready = FALSE
-		update_flavour()
+		par.update_flavour()
 		addtimer(CALLBACK(src, .proc/set_ready), 4 SECONDS, TIMER_NO_HASH_WAIT)
 		return 1
 	return ..()
@@ -378,7 +393,7 @@
 	name = "Coal"
 	desc = "Coal used in hookah's for make smoke"
 	w_class = ITEM_SIZE_SMALL
-	icon = 'infinity/icons/obj/item/coal.dmi'
+	icon = 'infinity/icons/obj/item/hookah.dmi'
 	icon_state = "coal"
 	item_state = "coal"
 
@@ -399,6 +414,7 @@
 	desc = "A box with coals for a hookah."
 	icon_state = "largebox"
 	startswith = list(/obj/item/coal = 10)
+	can_hold = list(/obj/item/coal)
 	w_class = ITEM_SIZE_LARGE
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
