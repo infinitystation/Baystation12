@@ -557,6 +557,11 @@ datum/category_item/player_setup_item/proc/prune_occupation_prefs()
 /datum/preferences/proc/GetPlayerAltTitle(datum/job/job)
 	return (job.title in player_alt_titles) ? player_alt_titles[job.title] : job.title
 
+//[INF]
+/datum/job
+	var/wikiname = ""
+//[/INF]
+
 #undef JOB_LEVEL_NEVER
 #undef JOB_LEVEL_LOW
 #undef JOB_LEVEL_MEDIUM
