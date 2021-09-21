@@ -6,7 +6,7 @@
 /obj/item/hookah
 	name = "Hookah"
 	icon = 'infinity/icons/obj/item/hookah.dmi'
-	desc = "A hookah with a jar of water at the bottom. AMOUNT tubes come out through it."
+	desc = "A hookah with a jar of water at the bottom. AMOUNT tubes come out through it.\n"
 	w_class = ITEM_SIZE_LARGE
 	icon_state = "hookah"
 	item_state = "hookah"
@@ -18,6 +18,7 @@
 	var/lit = 0 // litghted status
 	var/tubes_amount = 3
 	var/list/tubes = list()
+	var/list/tubes_archive = list()
 	var/genericmes = "<span class='info'>USER lights NAME with the FLAME.</span>"
 	var/matchmes = "<span class='info'>USER lights NAME with FLAME.</span>"
 	var/lightermes = "<span class='info'>USER manages to light NAME with FLAME.</span>"
@@ -26,20 +27,31 @@
 	var/ignitermes = "<span class='info'>USER fiddles with FLAME, and manages to light NAME with the power of science.</span>"
 	var/list/filling
 	var/gas_consumption = 0.04
+	var/list/item_status = list("There is very little coal inside", "Here is a quarter of the full tobacco", "Half full of coal", "Almost full of coal", "Full of coal")
 
 /obj/item/hookah/New()
 	..()
-	desc = replacetext(desc, "AMOUNT", "[tubes_amount]")
 	atom_flags |= ATOM_FLAG_NO_REACT // so it doesn't react until you light it
 	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 100
+	update_flavour()
 
 	var/obj/item/tube/T
 	for(var/i in 1 to tubes_amount)
 		T = new(src)
 		tubes.Add(T)
 
+	tubes_archive = tubes
+
 	for(var/R in filling)
 		reagents.add_reagent(R, filling[R])
+
+/obj/item/hookah/proc/update_flavour()
+	var/ndesc = initial(desc)
+	ndesc = replacetext(ndesc, "AMOUNT", "[tubes_amount]")
+	ndesc += lit ? "It looks lit up\n" : "It looks unlit\n"
+	ndesc += smoketime < 500 ? "There is no coal inside\n" : item_status[round(smoketime/(maxsmoketime/5), 1)] + "\n"
+	ndesc += reagents.total_volume > 0 ? "There's tobacco here" : "There is no tobacco here"
+	desc = ndesc
 
 /obj/item/hookah/proc/extinguish(var/mob/user, var/no_message = FALSE)
 	if(!no_message && !user)
@@ -49,6 +61,7 @@
 
 	lit = 0
 	remove_extension(src, /datum/extension/scent)
+	update_flavour()
 	STOP_PROCESSING(SSobj, src)
 
 /obj/item/hookah/verb/ejectcoal()
@@ -73,6 +86,7 @@
 
 	if(smoketime > 0)
 		to_chat(usr, SPAN_WARNING("There are small coal crumbs left in the hookah, which it is not possible to extract!"))
+	update_flavour()
 
 /obj/item/hookah/verb/ejecttobacco()
 	set src in view(1)
@@ -91,6 +105,7 @@
 
 	reagents.clear_reagents()
 	usr.visible_message(SPAN_INFO("[usr] take's tobacco leaves from hookah."), SPAN_INFO("You'r take tobacco leaves from hookah."))
+	update_flavour()
 
 /obj/item/hookah/verb/removetobacco()
 	set src in view(1)
@@ -102,7 +117,7 @@
 
 	reagents.clear_reagents()
 	usr.visible_message(SPAN_WARNING("[usr] empties the hookah from tobacco leaves!"), SPAN_WARNING("You have emptied the hookah!"))
-
+	update_flavour()
 
 /obj/item/hookah/verb/removecoal()
 	set src in view(1)
@@ -113,7 +128,7 @@
 	smoketime = 0
 
 	usr.visible_message(SPAN_WARNING("[usr] empties the hookah from coal!"), SPAN_WARNING("You have emptied the hookah!"))
-
+	update_flavour()
 
 /obj/item/hookah/verb/turnofff()
 	set src in view(1)
@@ -183,6 +198,7 @@
 			if(lit || tobacco_lit)
 				to_chat(usr, SPAN_WARNING("Immediately after you put the leave in the tray, it lit up."))
 				qdel(W)
+	update_flavour()
 	..()
 
 /obj/item/hookah/proc/light(var/flavor_text = "[usr] lights the [name].")
@@ -200,13 +216,15 @@
 		T.visible_message(flavor_text)
 		START_PROCESSING(SSobj, src)
 		set_scent_by_reagents(src)
+		update_flavour()
 
 
 /obj/item/hookah/Destroy()
 	. = ..()
 	if(lit)
 		STOP_PROCESSING(SSobj, src)
-
+	for(var/obj/item/tube/T in tubes_archive)
+		qdel(T)
 
 /obj/item/hookah/water_act(var/depth)
 	..()
@@ -283,6 +301,10 @@
 	return
 
 /obj/item/tube/Process()
+	if(QDELETED(src))
+		STOP_PROCESSING(SSobj, src)
+		return
+
 	var/turf/T0 = get_turf(par)
 	var/turf/T1 = get_turf(src)
 	if(T0 != T1 && get_dist(T1, T0) > 1)
@@ -305,7 +327,7 @@
 	if (!par.lit)
 		to_chat(user, SPAN_WARNING("You try to drug the smoke, but feel only air from the room. Look's like hookah is'nt lighted."))
 		return
-	if(H == user && istype(H) && ready && ishuman(H))
+	if(H == user && istype(H) && ready && H.check_has_mouth())
 		var/obj/item/blocked = H.check_mouth_coverage()
 		if(blocked)
 			to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
@@ -316,6 +338,7 @@
 		smoke(5)
 		add_trace_DNA(H)
 		ready = FALSE
+		update_flavour()
 		addtimer(CALLBACK(src, .proc/set_ready), 4 SECONDS, TIMER_NO_HASH_WAIT)
 		return 1
 	return ..()
@@ -323,9 +346,12 @@
 /obj/item/tube/proc/smoke(amount)
 	par.smoketime -= amount
 	if(par.reagents && par.reagents.total_volume) // check if it has any reagents at all
-		var/mob/living/carbon/human/C = loc
-		par.reagents.trans_to_mob(C, 0.1, CHEM_INGEST, 0.2)
-		add_trace_DNA(C)
+		if(ishuman(loc))
+			var/mob/living/carbon/human/C = loc
+			par.reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2)
+			add_trace_DNA(C)
+		else
+			reagents.remove_any(REM)
 	else
 		to_chat(usr, SPAN_WARNING("You cant feel somethink inside of hookah smoke. Maybe tobacco is gone?"))
 		return
