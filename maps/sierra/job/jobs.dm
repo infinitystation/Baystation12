@@ -144,3 +144,6 @@
 
 /datum/map/sierra
 	default_assistant_title = "Crewman"
+
+/datum/job
+	var/wikiname = ""

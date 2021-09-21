@@ -23,6 +23,7 @@
 /datum/job/janitor
 	title = "Janitor"
 	department = "Обслуживания"
+	wikiname = "Уборщик"
 	department_flag = SRV
 
 	total_positions = 2
@@ -47,6 +48,7 @@
 /datum/job/chef
 	title = "Chef"
 	department = "Обслуживания"
+	wikiname = "Повар"
 	department_flag = SRV
 	total_positions = 1
 	spawn_positions = 1
@@ -74,6 +76,7 @@
 	department = "Обслуживания"
 	department_flag = SRV
 	supervisors = "Главе Персонала"
+	wikiname = "Бармен"
 	ideal_character_age = 30
 	selection_color = "#515151"
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/service/bartender

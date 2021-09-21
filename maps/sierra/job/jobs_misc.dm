@@ -3,6 +3,7 @@
 	total_positions = 12
 	spawn_positions = 12
 	department = "Гражданский"
+	wikiname = "Пассажир"
 	department_flag = CIV
 	supervisors = "Главе Персонала"
 	selection_color = "#515151"
@@ -39,6 +40,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "установленными Вам законами"
+	wikiname = "Робот"
 
 /datum/job/cyborg/get_description_blurb()
 	return "Ты - мозги на колесиках. Есть у тебя личность или ты просто продвинутая команда - определяет твой тип это так же влияет на твое устройство - Киборги сделаны из мозга органика, Роботы - позитронного (искусственного) мозга, Дроны - простой печатной платы, не способной к владению личности.\

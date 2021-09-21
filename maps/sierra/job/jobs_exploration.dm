@@ -1,6 +1,7 @@
 /datum/job/exploration_leader
 	title = "Exploration Leader"
 	department = "Экспедиционный"
+	wikiname = "Лидер экспедиционной команды"
 	department_flag = EXP
 
 	total_positions = 1
@@ -43,6 +44,7 @@
 /datum/job/explorer
 	title = "Explorer"
 	department = "Экспедиционный"
+	wikiname = "Исследователь"
 	department_flag = EXP
 	total_positions = 3
 	spawn_positions = 3
@@ -81,6 +83,7 @@
 /datum/job/explorer_pilot
 	title = "Expeditionary Pilot"
 	department = "Экспедиционный"
+	wikiname = "Пилот Экспедиции"
 	department_flag = EXP
 	total_positions = 1
 	spawn_positions = 1

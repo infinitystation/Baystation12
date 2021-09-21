@@ -1,6 +1,7 @@
 /datum/job/senior_engineer
 	title = "Senior Engineer"
 	department = "Инженерный"
+	wikiname = "Старший инженер"
 	department_flag = ENG
 	supervisors = "Главному Инженеру"
 	selection_color = "#5b4d20"
@@ -51,6 +52,7 @@
 /datum/job/engineer
 	title = "Engineer"
 	department = "Инженерный"
+	wikiname = "Инженер"
 	department_flag = ENG
 	supervisors = "Главному и Старшему инженеру"
 	selection_color = "#5b4d20"
@@ -108,6 +110,7 @@
 /datum/job/engineer_trainee
 	title = "Engineer Trainee"
 	department = "Инженерный"
+	wikiname = "Инженер-стажёр"
 	department_flag = ENG
 	supervisors = "Главному инженеру и остальным инженерам"
 	selection_color = "#5b4d20"
@@ -156,6 +159,7 @@
 /datum/job/infsys
 	title = "Information Technician"
 	department = "Инженерный"
+	wikiname = "Информационный Техник"
 	department_flag = ENG
 	supervisors = "Главному и Старшему инженерам"
 	selection_color = "#5b4d20"

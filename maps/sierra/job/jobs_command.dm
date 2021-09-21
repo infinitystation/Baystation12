@@ -2,6 +2,7 @@
 	title = "Captain"
 	department = "Командный"
 	supervisors = "Центральному Командованию"
+	wikiname = "Капитан"
 	department_flag = COM
 	head_position = 1
 	minimal_player_age = 21
@@ -46,6 +47,7 @@
 	title = "Head of Personnel"
 	supervisors = "Капитану"
 	department = "Командный"
+	wikiname = "Глава персонала"
 	department_flag = COM|SRV
 	head_position = 1
 	total_positions = 1
@@ -109,6 +111,7 @@
 	title = "Research Director"
 	supervisors = "Капитану"
 	department = "Научный"
+	wikiname = "Директор исследований"
 	department_flag = SCI|COM
 	head_position = 1
 	total_positions = 1
@@ -172,6 +175,7 @@
 	supervisors = "Капитану"
 	head_position = 1
 	department = "Медицинский"
+	wikiname = "Главный врач"
 	department_flag = MED|COM
 	total_positions = 1
 	spawn_positions = 1
@@ -232,6 +236,7 @@
 	supervisors = "Капитану"
 	head_position = 1
 	department = "Инженерный"
+	wikiname = "Главный инженер"
 	department_flag = ENG|COM
 	total_positions = 1
 	spawn_positions = 1
@@ -302,6 +307,7 @@
 	supervisors = "Капитану"
 	head_position = 1
 	department = "Охранный"
+	wikiname = "Глава службы безопасности"
 	department_flag = SEC|COM
 	total_positions = 1
 	spawn_positions = 1
@@ -357,6 +363,7 @@
 /datum/job/iaa
 	title = "Internal Affairs Agent"
 	department = "Командный"
+	wikiname = "Агент Внутренних Дел"
 	department_flag = SPT
 	total_positions = 2
 	spawn_positions = 2
@@ -402,6 +409,7 @@
 /datum/job/adjutant
 	title = "Adjutant"
 	department = "Командный"
+	wikiname = "Адъютант"
 	department_flag = SPT
 	total_positions = 2
 	spawn_positions = 2

@@ -2,6 +2,7 @@
 	title = "Surgeon"
 	supervisors = "Главному врачу"
 	department = "Медицинский"
+	wikiname = "Хирург"
 	department_flag = MED
 
 	minimal_player_age = 14
@@ -61,6 +62,7 @@
 	title = "Doctor"
 	supervisors = "Главному Врачу"
 	department = "Медицинский"
+	wikiname = "Врач"
 	department_flag = MED
 
 	total_positions = 3
@@ -111,6 +113,7 @@
 	title = "Intern"
 	supervisors = "Главному Врачу и остальному медицинскому персоналу"
 	department = "Медицинский"
+	wikiname = "Интерн"
 	department_flag = MED
 
 	total_positions = 2
@@ -154,6 +157,7 @@
 	title = "Chemist"
 	supervisors = "Главному Врачу"
 	department = "Медицинский"
+	wikiname = "Химик"
 
 	department_flag = MED
 
@@ -188,6 +192,7 @@
 	title = "Counselor"
 	supervisors = "Главному Врачу"
 	department = "Медицинский"
+	wikiname = "Консультант"
 
 	department_flag = MED
 

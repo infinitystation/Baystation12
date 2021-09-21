@@ -419,7 +419,7 @@
 				dat += "<li>[B.name]: [job.get_ranks(B.name)]"
 		dat += "<hr style='clear:left;'>"
 		if(config.wikiurl)
-			dat += "<a href='?src=\ref[src];job_wiki=[rank]'>Open wiki page in browser</a>"
+			dat += "<a href='?src=\ref[src];job_wiki=[job.wikiname ? job.wikiname : rank]'>Open wiki page in browser</a>"
 
 		var/description = job.get_description_blurb()
 		if(description)
