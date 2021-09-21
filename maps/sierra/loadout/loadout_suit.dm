@@ -78,8 +78,9 @@
 	allowed_branches = list(/datum/mil_branch/contractor)
 
 /datum/gear/suit/militaryjacket
-	display_name = "military jacket"
+	display_name = "military jacket selection"
 	path = /obj/item/clothing/suit/storage/tgbomber/militaryjacket
+	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/suit/sec_jacket
 	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
