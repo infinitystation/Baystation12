@@ -59,3 +59,9 @@
 	icon_state = "balaclava_grey"
 	item_state = "balaclava_grey"
 	down_icon_state = "balaclava_grey_r"
+
+/obj/item/clothing/mask/balaclava/humanized/white
+	name = "white balaclava"
+	icon_state = "balaclava_white"
+	item_state = "balaclava_white"
+	down_icon_state = "balaclava_white_r"
