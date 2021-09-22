@@ -1,0 +1,6 @@
+{
+  "ckey" :            "Foltynis",
+  "character_name" :  "Angeline Rose",
+  "item_path" :       "/obj/item/clothingbag/rex",
+  "req_titles" :       [ "Security Guard" ]
+  }

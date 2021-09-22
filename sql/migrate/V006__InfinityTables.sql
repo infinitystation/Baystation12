@@ -14,9 +14,9 @@ CREATE TABLE IF NOT EXISTS `erro_messages` (
   `lasteditor` varchar(32) DEFAULT NULL,
   `edits` text,
   PRIMARY KEY (`id`),
-  KEY `idx_msg_ckey_time` (`targetckey`,`timestamp`, `deleted`),
-  KEY `idx_msg_type_ckeys_time` (`type`,`targetckey`,`adminckey`,`timestamp`, `deleted`),
-  KEY `idx_msg_type_ckey_time_odr` (`type`,`targetckey`,`timestamp`, `deleted`)
+  KEY `idx_msg_ckey_time` (`targetckey`,`timestamp`),
+  KEY `idx_msg_type_ckeys_time` (`type`,`targetckey`,`adminckey`,`timestamp`),
+  KEY `idx_msg_type_ckey_time_odr` (`type`,`targetckey`,`timestamp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -48,4 +48,20 @@ CREATE TABLE `erro_admin_tickets` (
   `inround_id` int(11),
   `open_date` date,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Table structure for table `erro_connection_log`
+--
+DROP TABLE IF EXISTS `erro_connection_log`;
+CREATE TABLE IF NOT EXISTS `erro_connection_log`
+(
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`datetime` DATETIME DEFAULT now() NOT NULL,
+	`server_ip` VARCHAR(32) NOT NULL,
+	`server_port` INT(5) UNSIGNED NOT NULL,
+	`ckey` VARCHAR(32) NOT NULL,
+	`ip` VARCHAR(32) NOT NULL,
+	`computerid` VARCHAR(32) NOT NULL,
+	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

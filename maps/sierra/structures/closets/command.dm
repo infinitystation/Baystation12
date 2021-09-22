@@ -65,8 +65,8 @@
 		/obj/item/storage/box/PDAs,
 		/obj/item/storage/box/ids,
 		/obj/item/clothing/head/beret/infinity/captain,
-		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/captain, /obj/item/storage/backpack/satchel/cap)),
-		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/captain, /obj/item/storage/backpack/messenger/com))
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/command, /obj/item/storage/backpack/satchel/com)),
+		new /datum/atom_creator/weighted(list(/obj/item/storage/backpack/dufflebag/com, /obj/item/storage/backpack/messenger/com))
 	)
 /obj/structure/closet/secure_closet/hop/sierra
 	name = "head of personnel's locker"

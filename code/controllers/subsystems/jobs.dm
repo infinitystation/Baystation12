@@ -492,7 +492,7 @@ SUBSYSTEM_DEF(jobs)
 			H.forceMove(truf)
 			var/obj/structure/bed/b = locate(/obj/structure/bed) in truf
 			if(istype(b) && !joined_late)
-				H.Sleeping(15)
+				H.Sleeping(3)
 				b.buckle_mob(H)
 		//[/INF]
 		else
@@ -546,7 +546,7 @@ SUBSYSTEM_DEF(jobs)
 	to_chat(H, "<font size = 3><b>Вы - [alt_title ? alt_title : rank].</b></font>")
 
 	if(job.supervisors)
-		to_chat(H, "<b>Вы напрямую отчитываетесь перед <b>[job.supervisors]</b>. Особые обстоятельства могут изменить это.</b>")
+		to_chat(H, "<b>Вы подчиняетесь <b>[job.supervisors]</b>. Особые обстоятельства могут изменить это.</b>")
 
 	to_chat(H, "<b>Чтобы общаться на частоте Вашего отдела, используйте префикс \":h\". Для остальных каналов, осмотрите свой наушник.</b>")
 

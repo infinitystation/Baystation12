@@ -110,7 +110,7 @@
 
 //Subtype that calls explosion on init to clear space for shuttles
 /obj/effect/shuttle_landmark/automatic/clearing
-	var/radius = 15
+	var/radius = LANDING_ZONE_RADIUS
 
 /obj/effect/shuttle_landmark/automatic/clearing/Initialize()
 	..()
@@ -149,6 +149,10 @@
 	mark.SetName("Beacon signal ([T.x],[T.y])")
 	T.hotspot_expose(1500, 5)
 	update_icon()
+
+	var/obj/effect/overmap/sector = map_sectors["[z]"]
+	if(sector)
+		command_announcement.Announce("Нашей дальней станцией обнаружения была зафиксирована активация межпространственного сигнализатора в вашем секторе. Квадрат активации: [sector.x]-[sector.y].", "Автоматический рапорт", zlevels = GLOB.using_map.station_levels)
 
 /obj/item/device/spaceflare/on_update_icon()
 	if(active)

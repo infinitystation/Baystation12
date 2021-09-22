@@ -29,13 +29,13 @@
 /obj/machinery/power/supermatter
 	name = "supermatter core"
 	desc = "A strangely translucent and iridescent crystal. <span class='danger'>You get headaches just from looking at it.</span>"
-	icon = 'icons/obj/engine.dmi'
-	icon_state = "darkmatter"
+	icon = 'icons/obj/supermatter.dmi'
+	icon_state = "supermatter"
 	density = TRUE
 	anchored = FALSE
 	light_outer_range = 4
 
-	layer = ABOVE_OBJ_LAYER
+	layer = ABOVE_HUMAN_LAYER
 
 	var/nitrogen_retardation_factor = 0.15	//Higher == N2 slows reaction more
 	var/thermal_release_modifier = 10000		//Higher == more heat released during reaction
@@ -53,7 +53,7 @@
 
 	var/gasefficency = 0.25
 
-	var/base_icon_state = "darkmatter"
+	var/base_icon_state = "supermatter"
 
 	var/last_power
 	var/damage = 0

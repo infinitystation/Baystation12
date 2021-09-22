@@ -1,5 +1,10 @@
 /var/server_name = "Infinity RU"
 
+//inf #define RECOMMENDED_VERSION 513 // Определено в code/_macros_inf.dm и используется там же
+#define FAILED_DB_CONNECTION_CUTOFF 25
+#define THROTTLE_MAX_BURST 15 SECONDS
+#define SET_THROTTLE(TIME, REASON) throttle[1] = base_throttle + (TIME); throttle[2] = (REASON);
+
 /var/game_id = null
 
 GLOBAL_VAR(href_logfile)
@@ -67,11 +72,25 @@ GLOBAL_VAR(href_logfile)
 
 	return match
 
-//inf("Already defined") #define RECOMMENDED_VERSION 512
-/world/New()
 
-	enable_debugger()
-	//set window title
+/proc/stack_trace(msg)
+	CRASH(msg)
+
+
+/proc/enable_debugging(mode, port)
+	CRASH("auxtools not loaded")
+
+
+/proc/auxtools_expr_stub()
+	return
+
+
+/world/New()
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (debug_server)
+		call(debug_server, "auxtools_init")()
+		enable_debugging()
+
 	name = "[server_name] - [GLOB.using_map.full_name]"
 
 	//logs
@@ -109,12 +128,18 @@ GLOBAL_VAR(href_logfile)
 #endif
 	Master.Initialize(10, FALSE)
 
-//inf("Already defined") #undef RECOMMENDED_VERSION
+
+/world/Del()
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (debug_server)
+		call(debug_server, "auxtools_shutdown")()
+	callHook("shutdown")
+	return ..()
+
 
 GLOBAL_LIST_EMPTY(world_topic_throttle)
 GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
-#define SET_THROTTLE(TIME, REASON) throttle[1] = base_throttle + (TIME); throttle[2] = (REASON);
-#define THROTTLE_MAX_BURST 15 SECONDS
+
 
 /world/Topic(T, addr, master, key)
 	to_file(diary, "TOPIC: \"[T]\", from:[addr], master:[master], key:[key][log_end]")
@@ -165,7 +190,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 		s["players"] = 0
 		s["stationtime"] = stationtime2text()
 		s["roundduration"] = roundduration2text()
-		s["map"] = replacetext(GLOB.using_map.full_name, "\improper", "") //Done to remove the non-UTF-8 text macros 
+		s["map"] = replacetext(GLOB.using_map.full_name, "\improper", "") //Done to remove the non-UTF-8 text macros
 
 		var/active = 0
 		var/list/players = list()
@@ -455,7 +480,6 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 			return "Metrics not ready"
 		return GLOB.prometheus_metrics.collect()
 
-#undef SET_THROTTLE
 
 /world/Reboot(var/reason)
 	spawn(0)
@@ -479,9 +503,6 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 
 	..(reason)
 
-/world/Del()
-	callHook("shutdown")
-	return ..()
 
 /hook/startup/proc/loadMode()
 	world.load_mode()
@@ -619,7 +640,6 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	GLOB.world_qdel_log = file("[GLOB.log_directory]/qdel.log")
 	to_file(GLOB.world_qdel_log, "\n\nStarting up round ID [game_id]. [time_stamp()]\n---------------------")
 
-#define FAILED_DB_CONNECTION_CUTOFF 25
 var/failed_db_connections = 0
 var/failed_old_db_connections = 0
 
@@ -716,9 +736,7 @@ proc/establish_old_db_connection()
 	else
 		return 1
 
+//inf #undef RECOMMENDED_VERSION // Определено в code/_macros_inf.dm и используется там же
 #undef FAILED_DB_CONNECTION_CUTOFF
-
-/world/proc/enable_debugger()
-	var/dll = world.GetConfig("env", "EXTOOLS_DLL")
-	if (dll)
-		call(dll, "debug_initialize")()
+#undef THROTTLE_MAX_BURST
+#undef SET_THROTTLE

@@ -530,6 +530,17 @@
 			G.reagents.trans_to_obj(src, G.reagents.total_volume)
 		SetName("[G.name]-packed [initial(name)]")
 		qdel(G)
+	// [INF]
+	if (istype(W, /obj/item/tobacco))
+		if(W.reagents)
+			if (smoketime)
+				to_chat(user, SPAN_INFO("[src] is already packed."))
+				return
+			smoketime = 1000
+			W.reagents.trans_to_obj(src, W.reagents.total_volume)
+			SetName("[W.name]-packed [initial(name)]")
+			qdel(W)
+	// [/INF]
 
 	else if(istype(W, /obj/item/flame/lighter))
 		var/obj/item/flame/lighter/L = W

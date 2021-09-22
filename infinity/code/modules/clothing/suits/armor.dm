@@ -22,3 +22,7 @@
 		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED,
 	)
+
+/obj/item/clothing/suit/armor/Initialize()
+	. = ..()
+	LAZYADD(valid_accessory_slots, list(ACCESSORY_SLOT_OVER))

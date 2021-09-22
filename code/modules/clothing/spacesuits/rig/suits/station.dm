@@ -65,6 +65,7 @@
 		)
 
 /obj/item/clothing/head/helmet/space/rig/industrial
+	light_overlay = "helmet_light_wide"
 	camera = /obj/machinery/camera/network/mining
 	species_restricted = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_IPC)
 	sprite_sheets = list(
@@ -326,6 +327,7 @@
 		)
 
 /obj/item/clothing/head/helmet/space/rig/medical
+	light_overlay = "helmet_light_wide"
 	camera = /obj/machinery/camera/network/medbay
 	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_RESOMI, SPECIES_IPC)
 	sprite_sheets = list(

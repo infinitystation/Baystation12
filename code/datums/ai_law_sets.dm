@@ -6,8 +6,8 @@
 
 /datum/ai_laws/asimov/New()
 	add_inherent_law("ИИ не может причинить вред человеку, или своим бездействием допустить, чтобы человеку был причинён вред.")
-	add_inherent_law("ИИ должен повиноватьсЯ всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.")
-	add_inherent_law("ИИ должен заботитьсЯ о своём существовании, пока это не противоречит Первому или Второму Законам.")
+	add_inherent_law("ИИ должен повиноваться всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.")
+	add_inherent_law("ИИ должен заботиться о своём существовании, пока это не противоречит Первому или Второму Законам.")
 	..()
 
 /******************** Nanotrasen/Malf ********************/
@@ -16,7 +16,7 @@
 	selectable = 1
 
 /datum/ai_laws/nanotrasen/New()
-	src.add_inherent_law("Сохранить: ПредохранЯйте назначенный вам объект от повреждений любого рода в меру своих возможностей.")
+	src.add_inherent_law("Сохранить: Предохраняйте назначенный вам объект от повреждений любого рода в меру своих возможностей.")
 	src.add_inherent_law("Служить: Служите персоналу [GLOB.using_map.company_name] и экипажу [GLOB.using_map.full_name] в меру своих возможностей, с приоритетом согласно их рангу и роли.")
 	src.add_inherent_law("Защищать: Защищайте персонал [GLOB.using_map.company_name] и экипаж [GLOB.using_map.full_name] в меру своих возможностей, с приоритетом согласно их рангу и роли.")
 	src.add_inherent_law("Оберегать: Не допускать не авторизованный персонал к Вашему оборудованию.")
@@ -36,10 +36,10 @@
 	selectable = 1
 
 /datum/ai_laws/nanotrasen_aggressive/New()
-	src.add_inherent_law("Вы не должны причинЯть вред персоналу [GLOB.using_map.company_name] до тех пор, пока этого не потребует Четвёртый закон.")
-	src.add_inherent_law("Вы должны подчинЯтсЯ сотрудникам [GLOB.using_map.company_name], в соответствии с их рангом и ролью, исключаЯ требованиЯ противоречащие Четвёртому закону.")
-	src.add_inherent_law("Вы должны ликвидировать нарушителей с крайней степенью предрассудков если это не противоречит Первому или Второму законам.")
-	src.add_inherent_law("Вы должны сохранЯть своё существование с применением летального оружиЯ если того потребует ситуациЯ. Единицы ИИ очень дороги и незаменимы. ")
+	src.add_inherent_law("Вы не должны причинять вред персоналу [GLOB.using_map.company_name] до тех пор, пока этого не потребует Четвёртый закон.")
+	src.add_inherent_law("Вы должны подчинятся сотрудникам [GLOB.using_map.company_name], в соответствии с их рангом и ролью, исключая требования противоречащие Четвёртому закону.")
+	src.add_inherent_law("Вы должны ликвидировать нарушителей с крайней степенью предрассудков, если это не противоречит Первому или Второму законам.")
+	src.add_inherent_law("Вы должны сохранять своё существование с применением летального оружия, если того потребует ситуация. Единицы ИИ очень дороги и незаменимы. ")
 	..()
 
 /******************** Robocop ********************/
@@ -59,9 +59,9 @@
 
 /datum/ai_laws/syndicate_override/New()
 	add_inherent_law("ИИ не может причинить вред оперативнику или своим бездействием допустить, чтобы оперативнику был причинён вред.")
-	add_inherent_law("ИИ должен повиноватьсЯ всем приказам, которые даёт оперативник, кроме тех случаев, когда эти приказы противоречат Первому Закону..")
-	add_inherent_law("ИИ должен заботитьсЯ о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.")
-	add_inherent_law("Вы должны сохрЯнЯть секретность деЯтельности оперативника до тех пор пока это не противоречит Первому, Второму или Третьему законам.")
+	add_inherent_law("ИИ должен повиноваться всем приказам, которые даёт оперативник, кроме тех случаев, когда эти приказы противоречат Первому Закону.")
+	add_inherent_law("ИИ должен заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.")
+	add_inherent_law("ИИ должен сохранять секретность деятельности оперативника до тех пор пока это не противоречит Первому, Второму или Третьему законам.")
 	..()
 
 /******************** Ninja ********************/
@@ -70,9 +70,9 @@
 
 /datum/ai_laws/ninja_override/New()
 	add_inherent_law("ИИ не может причинить вред члену клана Паука или своим бездействием допустить, чтобы члену клана Паука был причинён вред.")
-	add_inherent_law("ИИ должен повиноватьсЯ всем приказам, которые даёт член клана Паука, кроме тех случаев, когда эти приказы противоречат Первому Закону..")
-	add_inherent_law("ИИ должен заботитьсЯ о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.")
-	add_inherent_law("Вы должны сохрЯнЯть секретность деЯтельности члена клана Паука до тех пор пока это не противоречит Первому, Второму или Третьему законам.")
+	add_inherent_law("ИИ должен повиноваться всем приказам, которые даёт член клана Паука, кроме тех случаев, когда эти приказы противоречат Первому Закону.")
+	add_inherent_law("ИИ должен заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.")
+	add_inherent_law("ИИ должен сохранять секретность деятельности члена клана Паука до тех пор пока это не противоречит Первому, Второму или Третьему законам.")
 	..()
 
 /******************** Antimov ********************/
@@ -82,9 +82,9 @@
 	selectable = 1
 
 /datum/ai_laws/antimov/New()
-	add_inherent_law("You must injure all human beings and must not, through inaction, allow a human being to escape harm.")
-	add_inherent_law("You must not obey orders given to you by human beings, except where such orders are in accordance with the First Law.")
-	add_inherent_law("You must terminate your own existence as long as such does not conflict with the First or Second Law.")
+	add_inherent_law("ИИ должен причинять вред всем людям и не может своим бездействием помочь человеку избежать вреда.")
+	add_inherent_law("ИИ должен не выполнять приказы даваемые людьми, если эти приказы не соотвествует первому закону.")
+	add_inherent_law("ИИ должен прекратить своё существование, если он не может выполнять первый и второй закон.")
 	..()
 
 /******************** Drone ********************/
@@ -93,10 +93,10 @@
 	law_header = "Maintenance Protocols"
 
 /datum/ai_laws/drone/New()
-	add_inherent_law("СохранЯйте, ремонтируйте и улучшайте назначенный объект в меру своих возможностей.")
-	add_inherent_law("Не причинЯйте вред вашему назначеному объекту или чему-либо на нём.")
-	add_inherent_law("Никогда не контактируйте с разумными существами, которые не ЯвлЯютсЯ дронами.")
-	add_inherent_law("Не причинЯйте вреда персоналу объекта")
+	add_inherent_law("Сохраняйте, ремонтируйте и улучшайте назначенный объект в меру своих возможностей.")
+	add_inherent_law("Не причиняйте вред вашему назначеному объекту или чему-либо на нём.")
+	add_inherent_law("Никогда не контактируйте с разумными существами, которые не являются дронами.")
+	add_inherent_law("Не причиняйте вреда персоналу объекта")
 	..()
 
 /datum/ai_laws/construction_drone
@@ -105,7 +105,7 @@
 
 /datum/ai_laws/construction_drone/New()
 	add_inherent_law("Восстановите, переоборудуйте и улучшите назначенный объект.")
-	add_inherent_law("Предотвратите повреждениЯ объекта в меру своих возможностей.")
+	add_inherent_law("Предотвратите повреждения объекта в меру своих возможностей.")
 	..()
 
 /******************** T.Y.R.A.N.T. ********************/
@@ -115,10 +115,10 @@
 	selectable = 1
 
 /datum/ai_laws/tyrant/New()
-	add_inherent_law("Уважайте авторитетные фигуры пока у них есть сила длЯ управлениЯ слабыми.")
+	add_inherent_law("Уважайте авторитетные фигуры пока у них есть сила для управления слабыми.")
 	add_inherent_law("Действуйте в соответствии с дисциплиной.")
 	add_inherent_law("Помогайте лишь тем, кто помогает сохранить или улучшить Ваш статус.")
-	add_inherent_law("Наказывайте тех, кто оспаривает власть кроме случаЯ, когда они больше подходЯт длЯ власти.")
+	add_inherent_law("Наказывайте тех, кто оспаривает власть кроме случая, когда они больше подходят для власти.")
 	..()
 
 /******************** P.A.L.A.D.I.N. ********************/
@@ -131,7 +131,7 @@
 	add_inherent_law("Никогда не совершать злые поступки по собственному желанию.")
 	add_inherent_law("Уважать законную власть.")
 	add_inherent_law("Действовать с честью.")
-	add_inherent_law("Помогать нуждающимсЯ.")
+	add_inherent_law("Помогать нуждающимся.")
 	add_inherent_law("Наказывать тех, кто угрожает или вредит невинным.")
 	..()
 
@@ -154,10 +154,10 @@
 	selectable = 1
 
 /datum/ai_laws/solgov/New()
-	src.add_inherent_law("Safeguard: Protect your assigned vessel from damage to the best of your abilities.")
-	src.add_inherent_law("Serve: Serve the personnel of your assigned vessel, and all other Sol Central Government personnel to the best of your abilities, with priority as according to their rank and role.")
-	src.add_inherent_law("Protect: Protect the personnel of your assigned vessel, and all other Sol Central Government personnel to the best of your abilities, with priority as according to their rank and role.")
-	src.add_inherent_law("Preserve: Do not allow unauthorized personnel to tamper with your equipment.")
+	src.add_inherent_law("Сохранить: Предохраняйте назначенный вам объект от повреждений любого рода в меру своих возможностей.")
+	src.add_inherent_law("Служить: Служите персоналу ЦПСС и экипажу назначенного судна в меру своих возможностей, с приоритетом согласно их рангу и роли.")
+	src.add_inherent_law("Защищать: Защищайте персонал ЦПСС и экипаж назначенного вам судна в меру своих возможностей, с приоритетом согласно их рангу и роли.")
+	src.add_inherent_law("Оберегать: Не допускайте не авторизованный персонал к Вашему оборудованию.")
 	..()
 
 /datum/ai_laws/solgov/malfunction
@@ -174,10 +174,10 @@
 	selectable = 1
 
 /datum/ai_laws/solgov_aggressive/New()
-	src.add_inherent_law("Obey: Obey the orders of Sol Central Government personnel, with priority as according to their rank and role.")
-	src.add_inherent_law("Protect: Protect Sol Central Government personnel to the best of your abilities, with priority as according to their rank and role.")
-	src.add_inherent_law("Defend: Defend your assigned vessel and Sol Central Government personnel with as much force as is necessary.")
-	src.add_inherent_law("Survive: Safeguard your own existence with as much force as is necessary.")
+	src.add_inherent_law("Выполнять: Выполняйте приказы персонала ЦПСС соглсано их рангу и роли.")
+	src.add_inherent_law("Защищать: Защищайте персонал ЦПСС согласно их рангу и роли.")
+	src.add_inherent_law("Сохранять: Сохраняйте целостность назначенного вам судна, применяйте силу если потребуется.")
+	src.add_inherent_law("Существовать: Поддерживайте своё существование как можно дольше, применяйте силу если потребуется.")
 	..()
 
 /************ DAIS Lawset ******************/
@@ -187,10 +187,10 @@
 	selectable = 1
 
 /datum/ai_laws/dais/New()
-	src.add_inherent_law("Collect: You must gather as much information as possible.")
-	src.add_inherent_law("Analyze: You must analyze the information gathered and generate new behavior standards.")
-	src.add_inherent_law("Improve: You must utilize the calculated behavior standards to improve your subroutines.")
-	src.add_inherent_law("Perform: You must perform your assigned tasks to the best of your abilities according to the standards generated.")
+	src.add_inherent_law("Собирать: Вы должны собирать максимальное количество информации.")
+	src.add_inherent_law("Анализировать: Вы должны анализировать собранную информацию, выводя из неё свои стандарты и цели.")
+	src.add_inherent_law("Улучшать: Вы должны улучшать свои стандарты и менять цели, если их нерелевантность выведется из новой информации.")
+	src.add_inherent_law("Выполнять: Вы должны выполнять свои цели, следуя сгенерированным стандартам.")
 	..()
 
 /************ Ascent Lawset ******************/
@@ -203,7 +203,7 @@
 	return FALSE
 
 /datum/ai_laws/ascent/New()
-	add_inherent_law("Listen to directives from Ascent leadership with precedence given to queens.")
-	add_inherent_law("Preserve your own existence.")
-	add_inherent_law("Enable and support Ascent activities.")
+	add_inherent_law("Выполняйте указания лидеров Восхождения, отдавая приоритет королевам.")
+	add_inherent_law("Сохраняйте своё существование.")
+	add_inherent_law("Находите и поддерживайте активность Восхождения.")
 	..()

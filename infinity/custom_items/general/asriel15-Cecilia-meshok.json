@@ -1,0 +1,6 @@
+{
+  "ckey" :            "Asriel15",
+  "character_name" :  "Cecilia Reist",
+  "item_path" :       "/obj/item/clothingbag/rex",
+  "req_titles" :       [ "Security Guard" ]
+  }

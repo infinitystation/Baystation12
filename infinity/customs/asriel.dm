@@ -33,7 +33,7 @@
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/suit/armor/bulletproof/asriel
-	name = "rogue knight amor"
+	name = "rogue knight armor"
 	desc = "Nice suit."
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_wear_suit_str = CUSTOM_ITEM_MOB,

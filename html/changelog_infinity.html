@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="changelog.css">
   <base target="_blank" />
   <script type='text/javascript'>
-  
+
 	function changeText(tagID, newText, linkTagID){
 		var tag = document.getElementById(tagID);
 		tag.innerHTML = newText;
@@ -16,8 +16,8 @@
 		linkTag.removeAttribute("href");
 		linkTag.removeAttribute("onclick");
 	}
-	
-  </script>  
+
+  </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
@@ -28,10 +28,11 @@
 		<td valign='top'>
 			<div align='center'><font size='3' color='#d3daeb'><b>Infinity Station</b></font></div>
 			<div align='center'><font size='3' color='#d3daeb'><b><i>Проект Космической Станции 13</i></b></font></div>
-			
+
 			<div align='center'><font size='3' color='#d3daeb'>Вики <a href="https://wiki.infinity-ss13.info/">RU</a>-<a href="https://wiki.baystation12.net/">EN</a> | <a href="https://github.com/infinitystation/Baystation12/">Исходник нашего кода</a></font></div>
-            <font size='2' color='#d3daeb'>Код лицензирован под <a href="http://www.gnu.org/licenses/agpl.html">AGPLv3</a>. Контент лицензирован под <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</font><br>
-			<font size='2' color='#d3daeb'><b>Присоединяйтесь к нашему <a href='https://discord.gg/N4atUkH'>серверу в Discord</a> :)</b></font>
+			<font size='2' color='#d3daeb'>Код лицензирован под <a href="http://www.gnu.org/licenses/agpl.html">AGPLv3</a>. Контент лицензирован под <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</font><br>
+			<font size='2' color='#d3daeb'><b>Присоединяйтесь к нашему <a href='https://discord.gg/N4atUkH'>серверу в Discord</a> :)</b></font><br>
+			<font size='2' color='#d3daeb'><b>Для жалоб и предложений посетите нашу <a href='https://forms.gle/RYtDzhzqT9ag2nD1A'>гугл-форму</a>.</b></font>
 			</td>
 	</tr>
 </table>
@@ -52,234 +53,159 @@
 </table></div>
 
 		<!--
-		
-		TO ADD AN ENTRY, ADD AND MAINTAIN YOUR OWN changelog/USERNAME.yml FILE. 
-		
+
+		TO ADD AN ENTRY, ADD AND MAINTAIN YOUR OWN changelog/USERNAME.yml FILE.
+
 		*** DO NOT MODIFY THIS FILE OR YOU WILL CAUSE MERGE CONFLICTS. ***
-		
+
 		-->
 		<div class="commit sansserif">
 
-			<h2 class="date">04 June 2021</h2>
+			<h2 class="date">20 September 2021</h2>
 			<h3 class="author">Обновление от Zhuzhila:</h3>
 			<ul class="changes bgimages16">
-				<li class="bugfix">поправил доступ в коридор у мостика, теперь там могут шляться все у кого есть доступ к Харону</li>
-				<li class="bugfix">починил помпы в шлюзе, теперь они корректно отсасывают атмосферу</li>
-				<li class="bugfix">добавил РД доступ в кабину пилота</li>
+				<li class="bugfix">Либерия: ассистент спавнится одетым</li>
+			</ul>
+
+			<h2 class="date">19 September 2021</h2>
+			<h3 class="author">Обновление от Mrbuble:</h3>
+			<ul class="changes bgimages16">
+				<li class="maptweak">В дормиториях правого пристроена игровая комната.</li>
+			</ul>
+			<h3 class="author">Обновление от Zhuzhila:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">если растение продуцирует газ - получает соответствующий трейт (нужно для корректной работы сканера растений)</li>
+				<li class="tweak">слегка повысил шанс получения трейта "продуцирование газа" при мутиации растения</li>
+			</ul>
+
+			<h2 class="date">18 September 2021</h2>
+			<h3 class="author">Обновление от Zhuzhila:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">пофикшен баг "одноразовости" записей некоторых генов на ботаническом диске</li>
+				<li class="tweak">мутации: добавлена возможность приобрести трейт продуцирования газа</li>
+				<li class="tweak">гены растений: трейт продуцирования газа перенесен в ген "OUTPUT"</li>
+				<li class="bugfix">Либерия: исправлен баг с невозможностью зайти за подпрофы ассистента</li>
+			</ul>
+
+			<h2 class="date">16 September 2021</h2>
+			<h3 class="author">Обновление от Kolergo:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Добавлена пара сканеров шахтёрскому модулю робота, спейсклинер мед. роботам и стазис-мешок летающему модулю быстрого реагирования.</li>
+			</ul>
+			<h3 class="author">Обновление от SidVeld:</h3>
+			<ul class="changes bgimages16">
+				<li class="maptweak">спотлайты теперь будут отображаться в редакторе карт</li>
+				<li class="tweak">Предметы категории underwear будут прикрывать определённые части тела</li>
+				<li class="rscadd">В аплинк добавлен имплант с зомби-порошком</li>
+				<li class="rscadd">Главе Персонала и Адъютанту выданы новые ключи для наушников</li>
+				<li class="maptweak">На третьей палубе скорректировано положение сканнера аномалий</li>
+				<li class="rscadd">Добавлена новая авейка в общий пулл Сьерры - mining home</li>
+				<li class="rscadd">Директору Исследований добавлен доступ на Харон</li>
+				<li class="rscadd">Адъютанту добавлен доступ в Бар</li>
+				<li class="tweak">Из Факса теперь можно легко достать карточку с помощью альт-клика</li>
+			</ul>
+
+			<h2 class="date">12 September 2021</h2>
+			<h3 class="author">Обновление от KamSurvivor:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Фикс полос у инжекторов. Теперь они маркированы цветом своего препарата.</li>
+			</ul>
+			<h3 class="author">Обновление от XDinka:</h3>
+			<ul class="changes bgimages16">
+				<li class="maptweak">Изменения проводков в техах, мелкое обновление Нью-Дормов, мелкие правки мостика.</li>
+			</ul>
+
+			<h2 class="date">08 September 2021</h2>
+			<h3 class="author">Обновление от Rex1273:</h3>
+			<ul class="changes bgimages16">
+				<li class="maptweak">Офис Главы Персонала перестроен.</li>
+			</ul>
+
+			<h2 class="date">07 September 2021</h2>
+			<h3 class="author">Обновление от XDinka:</h3>
+			<ul class="changes bgimages16">
+				<li class="maptweak">edited yacht. Добавлены предупредительные линии и поручни к солнечным панелям. На кухню добавлены химические нагреватели и охладители. Сама кухня получила небольшое расширение. Немного расширена соседняя комната с крио и шкафами; Добавлены новые мусорные юниты и пути для них. Провода солнечных панелей перекрашены.</li>
+			</ul>
+
+			<h2 class="date">04 September 2021</h2>
+			<h3 class="author">Обновление от HaCsO:</h3>
+			<ul class="changes bgimages16">
+				<li class="wip">Добавил кальян в игру. Можно заказать в карго.</li>
+			</ul>
+
+			<h2 class="date">01 September 2021</h2>
+			<h3 class="author">Обновление от Drakon341:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Новые типы табака добавлены в вендомат. Также один вид добавлен в аплинк.</li>
+			</ul>
+
+			<h2 class="date">24 August 2021</h2>
+			<h3 class="author">Обновление от uzername:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Воксы принимают предметы на обмен</li>
+			</ul>
+
+			<h2 class="date">21 August 2021</h2>
+			<h3 class="author">Обновление от Unchi-unchi-un-chi-chi:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Стулья в комнате совещаний голодека стали голограммой, не позволяя разбирать их на металл.</li>
+			</ul>
+
+			<h2 class="date">20 August 2021</h2>
+			<h3 class="author">Обновление от HaCsO:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Теперь значок пилота и повязки требуют не должности, а навыков</li>
+			</ul>
+
+			<h2 class="date">19 August 2021</h2>
+			<h3 class="author">Обновление от Drakon341:</h3>
+			<ul class="changes bgimages16">
+				<li class="soundadd">Добавлены целых две вариации смеха для кукол мужского и женского пола.</li>
+			</ul>
+			<h3 class="author">Обновление от Mazzik12:</h3>
+			<ul class="changes bgimages16">
+				<li class="maptweak">Карго перестреоно.</li>
+				<li class="maptweak">Добавлена новая комната для грузчиков.</li>
+				<li class="maptweak">Изменен провод подачи тока на Петров.</li>
+				<li class="maptweak">Добавлены огнетушители в ангар.</li>
 			</ul>
 			<h3 class="author">Обновление от uzername:</h3>
 			<ul class="changes bgimages16">
-				<li class="wip">Добавлена машина для создания монет и рецепты для нее. Рецепты стоит оценить в раунде по балансу</li>
-				<li class="rscadd">Добавлена машина для создания монет, подкласс автолата. Добавлена плата для машины в каталог исследователей. Определена последовательность постройки машины. Описаны рецепты монет для нее.</li>
+				<li class="maptweak">правка yacht.dmm: добавил джетпак, космобайк и аварийный шкафчик со скафандром в маш.отделении (слотов на яхту два, а скафандр был один. теперь будет еще один, но попроще).</li>
 			</ul>
 
-			<h2 class="date">03 June 2021</h2>
-			<h3 class="author">Обновление от SidVeld:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Добавлено два новых костюма для Patreon-лодаута.</li>
-				<li class="rscdel">Восхождение отключено.</li>
-			</ul>
-
-			<h2 class="date">31 May 2021</h2>
-			<h3 class="author">Обновление от Archemagus:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Добавлен двухстороний вент. Опять. В шлюз инженерки...</li>
-				<li class="maptweak">Шлюз в инженерку перемаплен</li>
-				<li class="experiment">Новый вент может делать странные вещи в плане производительности</li>
-				<li class="balance">Шлюзы теперь работают более чем в 5 раз быстрее.</li>
-				<li class="balance">Вся вентеляция стала работать в 3 раза лучше... Потребляя при этом в 3 раза больше энергии. Таков путь.</li>
-			</ul>
-			<h3 class="author">Обновление от SidVeld:</h3>
-			<ul class="changes bgimages16">
-				<li class="balance">Отключен раундом-ивент с ксенофагами.</li>
-			</ul>
-
-			<h2 class="date">29 May 2021</h2>
-			<h3 class="author">Обновление от uzername:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Aghrassh содержит серебро</li>
-				<li class="balance">Aghrassh сложнее выращивать</li>
-			</ul>
-
-			<h2 class="date">28 May 2021</h2>
-			<h3 class="author">Обновление от Drakon341:</h3>
-			<ul class="changes bgimages16">
-				<li class="tweak">Правим репорты, и всё с ними связанное. Теперь можно удобно делать репорты в программе...</li>
-			</ul>
-			<h3 class="author">Обновление от SidVeld:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">Исправлена проблема с отображением станпрода в руках.</li>
-			</ul>
-
-			<h2 class="date">27 May 2021</h2>
-			<h3 class="author">Обновление от SidVeld:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Плата телепорта вернулась в аплинк наёмников. Ищите в разделе "Девайсы".</li>
-				<li class="rscadd">Набор тяжёлой брони вернулся в аплинк наёмников и предателей. Ищите в разделе "Броня".</li>
-				<li class="rscadd">На Десперадо наёмников появился недостающий элемент телепорта -  Телепорт-пад.</li>
-				<li class="maptweak">Исправлен сегмент труб на Десперадо.</li>
-				<li class="bugfix">Исправлен баг, связанный с тем, что некоторые автоматы не выдавали аккумуляторы.</li>
-			</ul>
-
-			<h2 class="date">22 May 2021</h2>
-			<h3 class="author">Обновление от Zhuzhila:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">правка невозможности зайти в морг криминалисту,</li>
-				<li class="bugfix">правка соединения главной энергосети второй и первой палуб,</li>
-				<li class="maptweak">Мостик: добавил СМЕС, а также изолировал энергосеть от остальной части корабля,</li>
-				<li class="maptweak">Лазарет: в шкафчик СМО добавил сканер здоровья,</li>
-				<li class="maptweak">Телепортная: переключил на главную энергосеть,</li>
-				<li class="maptweak">РНД: добавил бластдуры на вход в ксенобио на третей палубе,</li>
-				<li class="maptweak">Сьерра: все СМЕСы подключены к главной энергосети,</li>
-				<li class="maptweak">Сьерра: все щиты подключены к главной энергосети,</li>
-				<li class="maptweak">Дормы: убрал гридеры, не красиво, мешают ерпшить,</li>
-			</ul>
-
-			<h2 class="date">29 April 2021</h2>
-			<h3 class="author">Обновление от AlexMorgan3817:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">Фикс рантайма не дававшего разложить обычные РИГи.</li>
-			</ul>
-			<h3 class="author">Обновление от bear1ake & Laxesh ft. Spookerton & quardbreak:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Спавн away-локаций (далее авейки) теперь учитывает онлайн на момент инициализации мастер-контроллера на сервере. Считайте, прямо на старте сервера.</li>
-				<li class="rscadd">Добавлено оповещение о близком конце раунда для дискорд-сервера.</li>
-				<li class="rscadd">Возвращена играбельная колония.</li>
-				<li class="tweak">Бюджет авеек для Сьерры повышен до 7.5 очков. Наслаждайтесь наводнением авеек в небольшой онлайн.</li>
-				<li class="balance">Большая часть небольших не населенных авеек теперь имеет небольшую стоимость.</li>
-				<li class="balance">Авейки с игроками имеют стоимость в игроках, сравнимую с их количеством слотов для входа в игру.</li>
-			</ul>
-
-			<h2 class="date">28 April 2021</h2>
-			<h3 class="author">Обновление от AlexMorgan3817:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">Теперь можно легко сделать кастомный РИГ не трогая код, лишь залив спрайты и расписав JSON-префаб.</li>
-			</ul>
-			<h3 class="author">Обновление от SidVeld:</h3>
-			<ul class="changes bgimages16">
-				<li class="rscadd">В лодауте теперь можно взять "просто паспорт" от Сола или ГКК.</li>
-			</ul>
-
-			<h2 class="date">22 April 2021</h2>
-			<h3 class="author">Обновление от SidVeld:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">Исправлена проблема с микроволновкой, которую привозили каргошаттлом. Теперь в ней будут появляться необходимые для работы комплектующие.</li>
-			</ul>
-
-			<h2 class="date">18 April 2021</h2>
-			<h3 class="author">Обновление от Niga2012:</h3>
-			<ul class="changes bgimages16">
-				<li class="balance">Доступные адхерантам работы изменены.</li>
-			</ul>
-			<h3 class="author">Обновление от SidVeld:</h3>
-			<ul class="changes bgimages16">
-				<li class="experiment">Таяры и Резоми получили свои ксенопоспорта. В будущем будут меняться, дорабатываться и перерабатываться.</li>
-			</ul>
-
-			<h2 class="date">17 April 2021</h2>
-			<h3 class="author">Обновление от AlexMorgan3817:</h3>
-			<ul class="changes bgimages16">
-				<li class="tweak">Переработан код для изменения темы интерфейса.</li>
-			</ul>
-			<h3 class="author">Обновление от Archemagus:</h3>
-			<ul class="changes bgimages16">
-				<li class="imageadd">Альтернативная версия длинных волос для человеческих дам. (по колено где то)</li>
-			</ul>
-			<h3 class="author">Обновление от Coltrane97:</h3>
-			<ul class="changes bgimages16">
-				<li class="imageadd">Респрайт ньюскастера в стиле голограммы.</li>
-			</ul>
-			<h3 class="author">Обновление от Niga2012:</h3>
-			<ul class="changes bgimages16">
-				<li class="balance">Снова новый баланс авейкарт. Теперь должно быть ровно две.</li>
-			</ul>
-			<h3 class="author">Обновление от Zhuzhila:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">зафикшен доступ к airalarm и APC</li>
-				<li class="maptweak">добавлена всякая мелочевка, пинцет, нагреватель и охладитель, пораспихивал пару ложек/вилок в разные места</li>
-				<li class="maptweak">заменил ломающуюся надувную стенку на шлюз</li>
-			</ul>
-
-			<h2 class="date">15 April 2021</h2>
-			<h3 class="author">Обновление от SidVeld:</h3>
-			<ul class="changes bgimages16">
-				<li class="maptweak">Медбей: В комнату с кроватями для пациентов проведены трубы. Добавлена подставка на тайл с мешками и автокомпрессом.</li>
-				<li class="maptweak">Медбей: Дисплей переставлен в другое место. Пересечения с лампами не будет.</li>
-				<li class="rscadd">Медбей: Окна кабинета СМО теперь тоже имеют закрывающиеся створки.</li>
-				<li class="rscadd">Медбей: В некоторых комнатах появились чёрные ручки.</li>
-				<li class="rscadd">Медбей: В кабинет псионика добавлена ручка и листы бумаги.</li>
-				<li class="rscadd">Медбей: Добавлена кнопка вызова медиков. Находится она у входа в медбей.</li>
-				<li class="rscdel">Медбей: Удалено 3 спасательных мешка из медицинского склада. С их учётом у медбея их было аж 14 штук.</li>
-				<li class="rscadd">Кабинеты Глав: Добавлены настенные сейфы в спальне ГП и кабинете СМО.</li>
-				<li class="maptweak">Карго: Дисплей переставлен в другое место. Пересечения с лампами не будет.</li>
-				<li class="maptweak">Вторая палуба: Садик перед мостиком получил некоторые изменения. Декали убраны, а заборчик находится *внутри* сада.</li>
-				<li class="rscadd">Вторая палуба: в хранилище плат добавлен принтер интегралок. Семья теперь в сборе.</li>
-				<li class="maptweak">Харон: Удалены некоторые handrails, добавлен душ, смещены некоторые окна, переставлены лампы и провода.</li>
-				<li class="maptweak">Харон: Конвееры слегка переделаны. Теперь у каждого конвеера есть рычаги, а сами ленты переименованы для самых маленьких.</li>
-				<li class="rscdel">Харон: Удалены блюспейс-фаера с Харона. Они и так были в раздевалке исследователей</li>
-				<li class="rscdel">Харон: Удалены рации с Харона. Они и так есть в шкафчиках у исследователей</li>
-				<li class="rscdel">Харон: Удален обогреватель с Харона. Он и так ждёт исследователей в ангаре у бура и в хранилище с доп. канистрами.</li>
-				<li class="rscdel">Харон: Удален портативный насос с Харона. Он и так ждёт исследователей в ангаре у бура и в хранилище с доп. канистрами.</li>
-				<li class="rscdel">Харон: Удален один из трёх зарядников.</li>
-				<li class="rscdel">Харон: Удален handrail под зищитными створками в носовой части Харона. Безумного Макса не будет.</li>
-				<li class="rscdel">Харон: Удален handrails в грузовом отсеке. Цыганей в другой раз будем перевозить.</li>
-				<li class="rscdel">Харон: Удалены заготовки под реле. Без них жили хорошо, а если понадобится - попросят сделать инженеров/учёных.</li>
-				<li class="bugfix">Харон: Удален Delviery Chute с тайла, где должна происходить выгрузка с внешного конвеера. Случайных залётов девочек с каре в трубу не будет.</li>
-				<li class="balance">Харон: Стеллаж, на котором случайно спавнились вещи заменён на ящик, в котором гарантированно будет появляться ящик с инструментами, платой APC и аккумулятором.</li>
-				<li class="balance">Харон: Канистра углекислого газа заменена на пустую канистру для углекислого газа.</li>
-				<li class="balance">Гупп: Добавлена пустая канистра для углекислого газа.</li>
-				<li class="balance">Ангар: В помещении с канистрой H2 удалена канистра с углекислым газом. И у Харона и у Гуппа есть свои собственные.</li>
-			</ul>
-
-			<h2 class="date">14 April 2021</h2>
-			<h3 class="author">Обновление от SidVeld:</h3>
-			<ul class="changes bgimages16">
-				<li class="wip">Добавлен Сжимающий Корсет, позволяющий залезать персонажам в Вентиляцию. Находится он в разделе "Девайсы и Инструменты." Аплинка.</li>
-			</ul>
-
-			<h2 class="date">11 April 2021</h2>
-			<h3 class="author">Обновление от Drakon341:</h3>
-			<ul class="changes bgimages16">
-				<li class="spellcheck">Теперь можно хоть узнать что профы делают...</li>
-			</ul>
-
-			<h2 class="date">10 April 2021</h2>
-			<h3 class="author">Обновление от Archemagus:</h3>
-			<ul class="changes bgimages16">
-				<li class="spellcheck">Теперь уведомления о банах работают лучше</li>
-			</ul>
-			<h3 class="author">Обновление от Niga2012:</h3>
-			<ul class="changes bgimages16">
-				<li class="balance">Изменена стоимость населенных авеек в сторону уменьшения.</li>
-				<li class="bugfix">Теперь кассета будет спавниться у барменов адхерантов и ГБС</li>
-				<li class="bugfix">Теперь Сентенель может запустить свой РАСТ.</li>
-			</ul>
-			<h3 class="author">Обновление от Zhuzhila:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">fixed APCs access on bearcat, available only for crewmans and first mate</li>
-				<li class="maptweak">AirAlarm available only for crewmans and first mate</li>
-			</ul>
-
-			<h2 class="date">09 April 2021</h2>
+			<h2 class="date">13 August 2021</h2>
 			<h3 class="author">Обновление от polerno:</h3>
 			<ul class="changes bgimages16">
-				<li class="spellcheck">Убрал везде букву "х" в слове "унатхи" в фракциях</li>
+				<li class="bugfix">теперь перила не дают проходить сквозь стены</li>
 			</ul>
 
-			<h2 class="date">08 April 2021</h2>
-			<h3 class="author">Обновление от DonaldoTHT:</h3>
+			<h2 class="date">07 August 2021</h2>
+			<h3 class="author">Обновление от Drakon341:</h3>
 			<ul class="changes bgimages16">
-				<li class="balance">В целях баланса, главы потеряли возможность становиться антагонистом</li>
+				<li class="rscadd">Добавлены справки об оказании мед. услуг в Report Editor.</li>
+				<li class="rscadd">Были добавлены паспорта для Калдарка, Бринкбёрна, Мирании и Авалона.</li>
 			</ul>
 
-			<h2 class="date">07 April 2021</h2>
-			<h3 class="author">Обновление от Archemagus:</h3>
+			<h2 class="date">06 August 2021</h2>
+			<h3 class="author">Обновление от hardstuck530:</h3>
 			<ul class="changes bgimages16">
-				<li class="balance">Откатили нерф флюкса</li>
+				<li class="rscadd">Добавлен паспорт ЦПСС для Колхиса, паспорта Эремуса и А`шранды, а также ксенопаспорт для Унати.</li>
 			</ul>
-			<h3 class="author">Обновление от Niga2012:</h3>
+			<h3 class="author">Обновление от polerno:</h3>
 			<ul class="changes bgimages16">
-				<li class="bugfix">Убрал спавн VoxBase из авеек</li>
+				<li class="bugfix">Теперь краску можно смыть</li>
+				<li class="experiment">Работа душа переработана.</li>
+			</ul>
+
+			<h2 class="date">05 August 2021</h2>
+			<h3 class="author">Обновление от HaCsO:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Хиджаб скрывает флавор головы</li>
+			</ul>
+			<h3 class="author">Обновление от polerno:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Выдаём никрозу винтовку которая может уничтожать лица, в принципе как все винтовки</li>
 			</ul>
 		</div>
 

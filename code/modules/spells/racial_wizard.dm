@@ -42,7 +42,8 @@
 	to_chat(user, "\The [src] crumbles in your hands.")
 	qdel(src)
 
-//RESOMI
+/*
+//RESOMI // Отключено на время ~bear1ake
 /spell/aoe_turf/conjure/summon/resomi
 	name = "Summon Nano Machines"
 	desc = "This spell summons nano machines from the wizard's body to help them."
@@ -64,6 +65,7 @@
 
 	summon_amt = 1
 	summon_type = list(/mob/living/simple_animal/hostile/commanded/nanomachine)
+*/
 
 /spell/aoe_turf/conjure/summon/resomi/before_cast()
 	..()

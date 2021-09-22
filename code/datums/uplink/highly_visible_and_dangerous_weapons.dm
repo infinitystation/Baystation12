@@ -42,6 +42,12 @@
 	antag_costs = list(MODE_MERCENARY = 20)
 	path = /obj/item/gun/energy/ionrifle/small
 
+/datum/uplink_item/item/visible_weapons/pikecube
+	name = "Pike Cube"
+	desc = "While it looks like a normal monkey cube, the animal produced is, instead, a space pike. \ Note: The space pike does not like you."
+	item_cost = 30
+	path = /obj/item/reagent_containers/food/snacks/monkeycube/wrapped/pikecube
+
 /datum/uplink_item/item/visible_weapons/energy_sword
 	name = "Energy Sword"
 	desc = "A hilt, that when activated, creates a solid beam of pure energy in the form of a sword. \
@@ -106,6 +112,21 @@
 	item_cost = 80
 	path = /obj/item/gun/projectile/automatic/assault_rifle
 	antag_roles = list(MODE_MERCENARY) //inf, was nothing
+
+/datum/uplink_item/item/visible_weapons/battlerifle
+	name = "Battle Rifle"
+	desc = "Predecessor to the Assault Rifle, works just as well as the new guns."
+	item_cost = 65
+	path = /obj/item/gun/projectile/automatic/battlerifle
+	antag_roles = list(MODE_MERCENARY)
+
+/datum/uplink_item/item/visible_weapons/semistrip
+	name = "Carbine Rifle"
+	desc = "For arming your comrades on the (not so) cheap!"
+	item_cost = 55
+	path = /obj/item/gun/projectile/automatic/semistrip
+	antag_roles = list(MODE_REVOLUTIONARY, MODE_MERCENARY)
+
 
 /datum/uplink_item/item/visible_weapons/advanced_energy_gun
 	name = "Advanced Energy Gun"
