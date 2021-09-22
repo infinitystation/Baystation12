@@ -10,6 +10,9 @@
 	w_class = ITEM_SIZE_LARGE
 	icon_state = "hookah_0"
 	item_state = "hookah_0"
+	randpixel = 0
+	health = 30
+	matter = list(MATERIAL_IRON = 65)
 	var/smoketime = 0
 	var/maxsmoketime = 5000
 	var/tobacco_lit = 0
@@ -33,7 +36,6 @@
 	..()
 	atom_flags |= ATOM_FLAG_NO_REACT // so it doesn't react until you light it
 	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 100
-	update_flavour()
 
 	var/obj/item/tube/T
 	for(var/i in 1 to tubes_amount)
@@ -45,13 +47,30 @@
 	for(var/R in filling)
 		reagents.add_reagent(R, filling[R])
 
-/obj/item/hookah/proc/update_flavour()
-	var/ndesc = initial(desc)
-	ndesc = replacetext(ndesc, "AMOUNT", "[tubes_amount]")
-	ndesc += lit ? "It looks lit up\n" : "It looks unlit\n"
-	ndesc += smoketime < 500 ? "There is no coal inside\n" : item_status[round(smoketime/(maxsmoketime/5), 1)] + "\n"
-	ndesc += reagents.total_volume > 0 ? "There's tobacco here" : "There is no tobacco here"
-	desc = ndesc
+/obj/item/hookah/throw_impact(atom/hit_atom)
+	if(QDELETED(src))
+		return
+
+	if(reagents.reagent_list.len > 0)
+		reagents.splash(hit_atom, reagents.total_volume)
+	visible_message(
+		SPAN_DANGER("\The [src] shatters from the impact!"),
+		SPAN_DANGER("You hear the sound of glass shattering!")
+	)
+	playsound(src.loc, pick(GLOB.shatter_sound), 100)
+	new /obj/item/material/shard(src.loc)
+	qdel(src)
+
+
+/obj/item/hookah/examine(mob/user, distance)
+	if(distance <= 1)
+		var/ndesc = initial(desc)
+		ndesc = replacetext(ndesc, "AMOUNT", "[tubes_amount]")
+		ndesc += lit ? "It looks lit up\n" : "It looks unlit\n"
+		ndesc += smoketime < 500 ? "There is no coal inside\n" : item_status[round(smoketime/(maxsmoketime/5), 1)] + "\n"
+		ndesc += reagents.total_volume > 0 ? "There's tobacco here" : "There is no tobacco here"
+		desc = ndesc
+	. = ..()
 
 /obj/item/hookah/proc/extinguish(var/mob/user, var/no_message = FALSE)
 	if(!no_message && !user)
@@ -63,7 +82,6 @@
 	icon_state = "hookah_0"
 	item_state = "hookah_0"
 	remove_extension(src, /datum/extension/scent)
-	update_flavour()
 	STOP_PROCESSING(SSobj, src)
 
 /obj/item/hookah/verb/ejectcoal()
@@ -88,7 +106,6 @@
 
 	if(smoketime > 0)
 		to_chat(usr, SPAN_WARNING("There are small coal crumbs left in the hookah, which it is not possible to extract!"))
-	update_flavour()
 
 /obj/item/hookah/verb/ejecttobacco()
 	set src in view(1)
@@ -107,7 +124,6 @@
 
 	reagents.clear_reagents()
 	usr.visible_message(SPAN_INFO("[usr] take's tobacco leaves from hookah."), SPAN_INFO("You'r take tobacco leaves from hookah."))
-	update_flavour()
 
 /obj/item/hookah/verb/removetobacco()
 	set src in view(1)
@@ -119,7 +135,6 @@
 
 	reagents.clear_reagents()
 	usr.visible_message(SPAN_WARNING("[usr] empties the hookah from tobacco leaves!"), SPAN_WARNING("You have emptied the hookah!"))
-	update_flavour()
 
 /obj/item/hookah/verb/removecoal()
 	set src in view(1)
@@ -130,7 +145,6 @@
 	smoketime = 0
 
 	usr.visible_message(SPAN_WARNING("[usr] empties the hookah from coal!"), SPAN_WARNING("You have emptied the hookah!"))
-	update_flavour()
 
 /obj/item/hookah/verb/turnofff()
 	set src in view(1)
@@ -211,7 +225,6 @@
 
 		src.visible_message(SPAN_INFO("[user] puts [k] coal in hookah"), SPAN_INFO("You put [k] coal in hookah"))
 
-	update_flavour()
 	..()
 
 /obj/item/hookah/proc/light(var/flavor_text = "[usr] lights the [name].")
@@ -231,7 +244,6 @@
 		item_state = "hookah_1"
 		START_PROCESSING(SSobj, src)
 		set_scent_by_reagents(src)
-		update_flavour()
 
 
 /obj/item/hookah/Destroy()
@@ -353,7 +365,6 @@
 		smoke(5)
 		add_trace_DNA(H)
 		ready = FALSE
-		par.update_flavour()
 		addtimer(CALLBACK(src, .proc/set_ready), 4 SECONDS, TIMER_NO_HASH_WAIT)
 		return 1
 	return ..()
