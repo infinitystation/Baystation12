@@ -63,13 +63,15 @@
 
 
 /obj/item/hookah/examine(mob/user, distance)
+	var/ndesc = initial(desc)
+	ndesc = replacetext(ndesc, "AMOUNT", "[tubes_amount]")
+	ndesc += lit ? "It looks lit up\n" : "It looks unlit\n"
+
 	if(distance <= 1)
-		var/ndesc = initial(desc)
-		ndesc = replacetext(ndesc, "AMOUNT", "[tubes_amount]")
-		ndesc += lit ? "It looks lit up\n" : "It looks unlit\n"
 		ndesc += smoketime < 500 ? "There is no coal inside\n" : item_status[round(smoketime/(maxsmoketime/5), 1)] + "\n"
 		ndesc += reagents.total_volume > 0 ? "There's tobacco here" : "There is no tobacco here"
-		desc = ndesc
+
+	desc = ndesc
 	. = ..()
 
 /obj/item/hookah/proc/extinguish(var/mob/user, var/no_message = FALSE)
