@@ -36,6 +36,7 @@
 	..()
 	atom_flags |= ATOM_FLAG_NO_REACT // so it doesn't react until you light it
 	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 100
+	desc = replacetext(desc, "AMOUNT", "[tubes_amount]")
 
 	var/obj/item/tube/T
 	for(var/i in 1 to tubes_amount)
@@ -63,16 +64,12 @@
 
 
 /obj/item/hookah/examine(mob/user, distance)
-	var/ndesc = initial(desc)
-	ndesc = replacetext(ndesc, "AMOUNT", "[tubes_amount]")
-	ndesc += lit ? "It looks lit up\n" : "It looks unlit\n"
-
-	if(distance <= 1)
-		ndesc += smoketime < 500 ? "There is no coal inside\n" : item_status[round(smoketime/(maxsmoketime/5), 1)] + "\n"
-		ndesc += reagents.total_volume > 0 ? "There's tobacco here" : "There is no tobacco here"
-
-	desc = ndesc
 	. = ..()
+	to_chat(user, lit ? "It looks lit up" : "It looks unlit")
+	if(distance <= 1)
+		to_chat(user, smoketime < 500 ? "There is no coal inside" : item_status[round(smoketime/(maxsmoketime/5), 1)])
+		to_chat(user, reagents.total_volume > 0 ? "There's tobacco here" : "There is no tobacco here")
+
 
 /obj/item/hookah/proc/extinguish(var/mob/user, var/no_message = FALSE)
 	if(!no_message && !user)
