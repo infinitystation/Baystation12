@@ -16,14 +16,14 @@
 	name = "Medical tobacco"
 	description = "medicinal tobacco used for relaxation and concentration."
 	taste_description = "relax, concetration and tobacco"
-	scent = "relax and tobacco"
+	scent = "tobacco"
 	scent_range = 2
 
 /datum/reagent/tobacco/strong
 	name = "Strong tobacco"
 	description = "Strong tobacco for strong men... or women, i don't know"
 	taste_description = "strong tobacco that hits the throat hard"
-	scent = "Strong tobacco"
+	scent = "strong tobacco"
 	scent_range = 10
 
 /datum/reagent/tobacco/strong/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
