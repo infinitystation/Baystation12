@@ -72,7 +72,7 @@
 // Pre-modified gloves
 
 /datum/gear/gloves/dress/modified
-	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_EROSAN)
+	whitelisted = list(SPECIES_TAJARA, SPECIES_UNATHI, SPECIES_YEOSA)
 
 // Vox clothing
 

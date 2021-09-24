@@ -9,7 +9,6 @@
 #define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hop, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos, /datum/job/representative, /datum/job/sea, /datum/job/pathfinder
 	species_to_job_blacklist = list(
 		/datum/species/unathi         = list(HUMAN_ONLY_JOBS, /datum/job/liaison, /datum/job/warden),
-		/datum/species/unathi/erosan  = list(HUMAN_ONLY_JOBS, /datum/job/liaison, /datum/job/warden),
 		/datum/species/skrell  = list(HUMAN_ONLY_JOBS),
 		/datum/species/machine = list(HUMAN_ONLY_JOBS),
 		/datum/species/tajaran = list(HUMAN_ONLY_JOBS),
@@ -22,7 +21,6 @@
 		/datum/species/nabber         = list(/datum/mil_branch/civilian),
 		/datum/species/skrell         = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps, /datum/mil_branch/skrell_fleet),
 		/datum/species/unathi         = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
-		/datum/species/unathi/erosan  = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
 		/datum/species/adherent       = list(/datum/mil_branch/civilian),
 		/datum/species/vox            = list(/datum/mil_branch/alien),
 		/datum/species/tajaran        = list(/datum/mil_branch/civilian, /datum/mil_branch/expeditionary_corps),
@@ -67,12 +65,6 @@
 			)
 		),
 		/datum/species/unathi = list(
-			/datum/mil_branch/expeditionary_corps = list(
-				/datum/mil_rank/ec/e3,
-				/datum/mil_rank/ec/e5
-			)
-		),
-		/datum/species/unathi/erosan = list(
 			/datum/mil_branch/expeditionary_corps = list(
 				/datum/mil_rank/ec/e3,
 				/datum/mil_rank/ec/e5
