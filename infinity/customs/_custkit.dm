@@ -35,7 +35,7 @@
 /obj/item/custkit/attackby(obj/item/I, mob/user, params)
 	var/delta = TimeOfGame - delay_time
 	if(delta <= delay)
-		to_chat(user, SPAN_WARNING("You must wait [time2text(delta)] until can use it again!"))
+		to_chat(user, SPAN_WARNING("You must wait [seconds_to_readable(round((delay - delta)/10, 1))] until can use it again!"))
 		return
 	var/t = is_unkit ? output : input
 	var/k = is_unkit ? input : output

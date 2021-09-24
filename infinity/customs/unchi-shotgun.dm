@@ -18,3 +18,4 @@
 	input = /obj/item/gun/projectile/shotgun/pump/combat/armory
 	output = /obj/item/gun/projectile/shotgun/pump/combat/armory/unchi
 	can_unkit = 1
+	delay = 10 MINUTES
