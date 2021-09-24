@@ -85,7 +85,6 @@
 		SPECIES_VOX_ARMALIS = 'icons/mob/species/vox/onmob_mask_vox_armalis.dmi',
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_mask_resomi.dmi',
 		SPECIES_UNATHI = 'infinity/icons/mob/species/unathi/onmob_mask_unathi.dmi',
-		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
 		)
 //[/INF]
 //In scaling order of utility and seriousness
@@ -259,7 +258,6 @@
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/mask.dmi',
 		SPECIES_UNATHI = 'icons/mob/onmob/Unathi/mask.dmi',
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_mask_resomi.dmi',
-		SPECIES_EROSAN = 'infinity/icons/mob/species/erosan/mask.dmi',
 		)
 //[/INF]
 
