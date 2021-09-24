@@ -6325,6 +6325,9 @@
 /obj/structure/table/wallf/steel{
 	dir = 4
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engineering_monitoring)
 "alJ" = (
@@ -6360,6 +6363,9 @@
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown2_7"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/lobby)
@@ -12829,6 +12835,9 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 8
 	},
+/obj/machinery/security_scanner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/engineering_monitoring)
 "awU" = (
@@ -13850,6 +13859,9 @@
 /obj/machinery/door/blast/regular/lockdown{
 	dir = 4;
 	id_tag = "lockdown2_7"
+	},
+/obj/machinery/security_scanner{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge/lobby)
@@ -30821,7 +30833,9 @@
 /area/chapel/office)
 "bdJ" = (
 /obj/structure/table/standard,
-/obj/machinery/reagent_temperature/cooler,
+/obj/machinery/reagent_temperature/cooler{
+	density = 0
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -38065,6 +38079,7 @@
 /obj/machinery/door/airlock/multi_tile/civilian{
 	frequency = 1379;
 	id_tag = "lounge1";
+	locked = 0;
 	name = "Lounge"
 	},
 /obj/machinery/door/firedoor,
