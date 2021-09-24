@@ -1,3 +1,14 @@
+/obj/item/clothing/under/unchi_turtleneck
+	name = "old turtleneck"
+	desc = "Dark green, military turtleneck with army cargo pants. They look pretty worn, and seems like, turtleneck have been hemmed in some day."
+	icon = CUSTOM_ITEM_OBJ
+	icon_state = "unchi_turtleneck"
+	item_state = "unchi_turtleneck"
+	worn_state = "unchi_turtleneck"
+	item_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB)
+	gender_icons = 1
+	trade_blacklisted = TRUE
+
 /obj/item/gun/projectile/shotgun/pump/combat/armory/unchi
 	name = "combat shotgun"
 	desc = "Built for close quarters combat, the Hephaestus Industries KS-40 is widely regarded as a weapon of choice for repelling boarders."

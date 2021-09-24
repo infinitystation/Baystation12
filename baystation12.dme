@@ -3874,6 +3874,7 @@
 #include "infinity\customs\tools.dm"
 #include "infinity\customs\true_gentleman.dm"
 #include "infinity\customs\unchi-shotgun.dm"
+#include "infinity\customs\unchi.dm"
 #include "infinity\customs\unchi_turtleneck.dm"
 #include "infinity\customs\vape.dm"
 #include "infinity\customs\vashuara.dm"
