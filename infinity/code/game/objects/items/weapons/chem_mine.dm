@@ -145,7 +145,7 @@
 
 		set_invisibility(INVISIBILITY_MAXIMUM)
 		detonator.activate()
-		spawn(50)
+		spawn(49)
 			qdel(src)
 
 
