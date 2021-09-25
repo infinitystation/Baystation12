@@ -37,7 +37,7 @@
 
 			if(do_after(user, 40))
 				activate()
-				src.anchored = 1
+				src.anchored = TRUE
 				icon_state = initial(icon_state) +"_act"
 				if(!user.unequip_item())
 					return
@@ -83,7 +83,7 @@
 					icon_state = initial(icon_state) +"_not_act"
 					stage = 1
 					active = 0
-					src.anchored = 0
+					src.anchored = FALSE
 					src.alpha = 255
 		else if(is_type_in_list(W, allowed_containers) && (!stage || stage==1) && path != 2)
 			path = 1
