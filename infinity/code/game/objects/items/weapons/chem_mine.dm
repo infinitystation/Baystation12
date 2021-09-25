@@ -1,12 +1,11 @@
 /obj/item/mine/chem_mine
 	name = "mine casing"
-	icon = 'icons/obj/weapons/other.dmi'
-	icon_state = "uglymine"
+	icon = 'infinity/icons/obj/mine.dmi'
+	icon_state = "mine"
 	desc = "A hand made chemical mine."
 	w_class = ITEM_SIZE_SMALL
 	force = 2.0
 	unacidable = TRUE
-	var/image_overlay = null
 	var/stage = 0
 	var/state = 0
 	var/path = 0
@@ -18,7 +17,6 @@
 	New()
 		..()
 		create_reagents(1000)
-		image_overlay = image('icons/obj/weapons/other.dmi', "uglymine")
 
 	attack_self(mob/user)
 		if(!stage || stage==1)
@@ -26,6 +24,7 @@
 				usr.put_in_hands(detonator)
 				detonator=null
 				stage=0
+				icon_state = initial(icon_state)
 			else if(beakers.len)
 				for(var/obj/B in beakers)
 					if(istype(B))
@@ -33,17 +32,18 @@
 						user.put_in_hands(B)
 			SetName("unsecured mine with [beakers.len] containers")
 		if (stage > 1)
-			activate()
 			add_fingerprint(user)
 			to_chat(user, "Planting mine...")
 
 			if(do_after(user, 40))
+				activate()
 				src.anchored = 1
-			if(!user.unequip_item())
-				return
-			user.drop_from_inventory(src)
-			user.visible_message("<span class='danger'>[user.name] finished planting mine")
-			log_game("[key_name(user)] planted [src.name]")
+				icon_state = initial(icon_state) +"_act"
+				if(!user.unequip_item())
+					return
+				user.drop_from_inventory(src)
+				user.visible_message("<span class='danger'>[user.name] finished planting mine")
+				log_game("[key_name(user)] planted [src.name]")
 
 	attackby(obj/item/W as obj, mob/user as mob)
 		if(istype(W,/obj/item/device/assembly/igniter) && (!stage || stage==1) && path != 2)
@@ -69,6 +69,7 @@
 					to_chat(user, "<span class='notice'>You lock the empty assembly.</span>")
 					SetName("fake mine")
 				playsound(src.loc, 'sound/items/Screwdriver.ogg', 25, -3)
+				icon_state = initial(icon_state) +"_not_act"
 				stage = 2
 			else if(stage == 2)
 				if(active && prob(95))
@@ -79,9 +80,11 @@
 					to_chat(user, "<span class='notice'>You unlock the assembly.</span>")
 					playsound(src.loc, 'sound/items/Screwdriver.ogg', 25, -3)
 					SetName("unsecured mine with [beakers.len] containers")
+					icon_state = initial(icon_state) +"_not_act"
 					stage = 1
 					active = 0
 					src.anchored = 0
+					src.alpha = 255
 		else if(is_type_in_list(W, allowed_containers) && (!stage || stage==1) && path != 2)
 			path = 1
 			if(beakers.len == 2)
@@ -94,9 +97,14 @@
 					to_chat(user, "<span class='notice'>You add \the [W] to the assembly.</span>")
 					beakers += W
 					stage = 1
-					SetName("unsecured grenade with [beakers.len] containers[detonator?" and detonator":""]")
+					SetName("unsecured mine with [beakers.len] containers[detonator?" and detonator":""]")
 				else
 					to_chat(user, "<span class='warning'>\The [W] is empty.</span>")
+		else if(istype(W, /obj/item/device/paint_sprayer))
+			if(src.anchored)
+				playsound(get_turf(src), 'sound/effects/spray3.ogg', 30, 1, -6)
+				src.alpha = 50
+
 
 	activate(mob/user as mob)
 		if(active) return
@@ -108,10 +116,6 @@
 				log_and_message_admins("has primed \a [src].")
 
 		return
-
-	proc/primed(var/primed = 1)
-		if(active)
-			icon_state = initial(icon_state) + (primed?"_primed":"_active")
 
 	detonate()
 		if(!stage || stage<2) return
@@ -129,7 +133,7 @@
 		for(var/obj/item/reagent_containers/glass/G in beakers)
 			G.reagents.trans_to_obj(src, G.reagents.total_volume)
 
-		if(src.reagents.total_volume) //The possible reactions didnt use up all reagents.
+		if(src.reagents.total_volume)
 			var/datum/effect/effect/system/steam_spread/steam = new /datum/effect/effect/system/steam_spread()
 			steam.set_up(10, 0, get_turf(src))
 			steam.attach(src)
@@ -139,10 +143,10 @@
 				if( A == src ) continue
 				src.reagents.touch(A)
 
-		set_invisibility(INVISIBILITY_MAXIMUM) //Why am i doing this?
+		set_invisibility(INVISIBILITY_MAXIMUM)
 		detonator.activate()
-		spawn(50)		   //To make sure all reagents can work
-			qdel(src)	   //correctly before deleting the grenade.
+		spawn(50)
+			qdel(src)
 
 
 /obj/item/mine/chem_mine/examine(mob/user)
