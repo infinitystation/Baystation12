@@ -42,7 +42,7 @@
 				if(!user.unequip_item())
 					return
 				user.drop_from_inventory(src)
-				user.visible_message("<span class='danger'>[user.name] finished planting mine")
+				user.visible_message("<span class='danger'>[user.name] finished planting mine. </span>")
 				log_game("[key_name(user)] planted [src.name]")
 
 	attackby(obj/item/W as obj, mob/user as mob)
