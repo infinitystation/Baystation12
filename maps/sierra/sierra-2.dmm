@@ -2060,9 +2060,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head_big)
 "ael" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
@@ -2074,10 +2071,8 @@
 	dir = 1;
 	pixel_y = -20
 	},
-/obj/structure/flora/pottedplant/tropical,
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/game_room)
@@ -4976,13 +4971,13 @@
 	},
 /obj/structure/cable/green{
 	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge_big)
@@ -29416,7 +29411,7 @@
 	dir = 4
 	},
 /obj/machinery/vending/snack{
-	dir = 4
+	dir = 8
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/lounge_big)
@@ -29530,7 +29525,7 @@
 /obj/random/date_based/christmas/xmaslights,
 /obj/machinery/light,
 /obj/effect/floor_decal/spline/fancy/wood,
-/obj/structure/table/woodentable_reinforced/walnut,
+/obj/structure/flora/pottedplant/crystal,
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/lounge_big)
 "bbb" = (
@@ -34019,8 +34014,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/head_big)
 "cvq" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	dir = 8;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/game_room)
@@ -34467,6 +34468,12 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/game_room)
 "dSv" = (
@@ -34474,6 +34481,7 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/game_room)
 "dUI" = (
@@ -35281,9 +35289,11 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/sleep/bunk_big)
 "gjJ" = (
-/obj/structure/sign/warning/internals_required,
-/turf/simulated/wall/walnut,
-/area/crew_quarters/lounge_big)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/crew_quarters/game_room)
 "gkH" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -35680,7 +35690,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
-/obj/structure/flora/pottedplant/crystal,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge_big)
 "hEA" = (
@@ -37453,6 +37462,9 @@
 	dir = 4
 	},
 /obj/structure/reagent_dispensers/water_cooler,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/lounge_big)
 "ngY" = (
@@ -37553,7 +37565,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/engineering/materials_storage)
 "nLg" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
@@ -38822,12 +38833,19 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head_big)
 "rkg" = (
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
 	},
-/turf/space,
-/area/space)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/wood/mahogany,
+/area/crew_quarters/lounge_big)
 "rmJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -39263,15 +39281,6 @@
 /turf/simulated/floor/tiled,
 /area/hydroponics/storage)
 "sED" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
@@ -39284,8 +39293,17 @@
 	},
 /obj/structure/cable/green{
 	d2 = 8;
-	dir = 4;
+	dir = 1;
 	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	dir = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/game_room)
@@ -40146,6 +40164,7 @@
 /obj/structure/window/reinforced{
 	health = null
 	},
+/obj/structure/table/woodentable_reinforced/walnut,
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/lounge_big)
 "uzc" = (
@@ -40208,13 +40227,6 @@
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/game_room)
 "uJL" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
@@ -40358,11 +40370,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
 "vdR" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/lounge_big)
 "vhZ" = (
@@ -40599,21 +40607,21 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "vYV" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 4
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
-/obj/structure/table/woodentable_reinforced/walnut,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/flora/pottedplant/tropical,
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/lounge_big)
 "wbe" = (
@@ -40786,6 +40794,12 @@
 	dir = 1
 	},
 /obj/structure/closet/athletic_mixed,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	dir = 1;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/lounge_big)
 "wSK" = (
@@ -60635,7 +60649,7 @@ aam
 aam
 aam
 aam
-rkg
+aam
 aam
 aam
 aMh
@@ -61442,7 +61456,7 @@ aaa
 aaa
 aaa
 aaa
-gjJ
+aaa
 aaa
 aaa
 aaa
@@ -63464,7 +63478,7 @@ crk
 sED
 uJL
 vYV
-vdR
+vGN
 aSb
 pTr
 aZm
@@ -63665,7 +63679,7 @@ aed
 uJA
 cvq
 dSg
-vGN
+rkg
 vGN
 oQr
 oAY
@@ -63865,9 +63879,9 @@ vMJ
 ghx
 tSi
 vKY
-cvq
+gjJ
 dSv
-vGN
+vdR
 vJh
 oQr
 okY
