@@ -9,6 +9,8 @@
 	limb_blend = ICON_MULTIPLY
 	tail_blend = ICON_MULTIPLY
 
+	spawn_flags = SPECIES_IS_RESTRICTED
+
 //we need to change almost all things below
 /*
 	darksight_range = 3
