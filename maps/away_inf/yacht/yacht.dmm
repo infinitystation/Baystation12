@@ -485,6 +485,7 @@
 /obj/structure/disposalpipe/junction/mirrored{
 	dir = 4
 	},
+/obj/item/hookah,
 /turf/simulated/floor/wood/walnut,
 /area/yacht/living)
 "bb" = (
@@ -2338,6 +2339,8 @@
 /obj/structure/table/rack{
 	dir = 8
 	},
+/obj/item/storage/box/large/coal,
+/obj/item/storage/box/large/coal,
 /turf/simulated/floor/plating,
 /area/yacht/engine)
 "eC" = (
