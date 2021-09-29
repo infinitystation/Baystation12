@@ -1906,6 +1906,12 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 5
 	},
+/obj/item/storage/box/large/coal,
+/obj/item/storage/box/large/coal,
+/obj/item/storage/box/large/coal,
+/obj/item/storage/box/large/coal,
+/obj/item/hookah,
+/obj/item/hookah,
 /turf/simulated/floor/wood/ebony,
 /area/crew_quarters/bar)
 "adU" = (
