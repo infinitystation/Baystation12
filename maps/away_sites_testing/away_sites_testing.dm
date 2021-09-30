@@ -29,26 +29,6 @@
 	#include "../away/scavver/scavver_gantry.dm"
 	#include "../away/voxship/voxship.dm"
 
-//[INF]
-//	#include "../away_inf/adherent_base/adherent_base.dm"		// (оч поломано) - flood system is too slow.
-	#include "../away_inf/ascent/ascent.dm"						// - Нужно доработать
-	#include "../away_inf/bearcat/bearcat.dm"					// (SIERRA INCLUDED)
-	#include "../away_inf/blueriver/blueriver.dm"				// (SIERRA INCLUDED)
-//	#include "../away_inf/gunboat/gunboat.dm"					// (оч поломано) - TORCH, doesn't maintenance (someone want to change it?)
-	#include "../away_inf/liberia/liberia.dm"					// (SIERRA INCLUDED)	// - Не тестируется
-//	#include "../away_inf/marksman/marksman.dm"					// (оч поломано) - TORCH, doesn't maintenance (someone want to change it?)
-//	#include "../away_inf/merchant/merchant.dm"					// (оч поломано) - WIP, doesn't maintenance (someone want to change it?)
-	#include "../away_inf/mining/mining.dm"						// (SIERRA INCLUDED)
-	#include "../away_inf/rubbidu/rubbidu.dm"					// - WIP, doesn't maintenance (someone want to change it?)
-//	#include "../away_inf/salvagers/salvagers.dm"				// (оч поломано) - WIP
-	#include "../away_inf/sentinel/sentinel.dm"					// (SIERRA INCLUDED)	// - Не тестируется
-	#include "../away_inf/shipcrash/shipcrash.dm"				// - Отключено
-	#include "../away_inf/skrellscoutship/skrellscoutship.dm"	//
-	#include "../away_inf/smugglers/smugglers.dm"				// (SIERRA INCLUDED)
-	#include "../away_inf/white_star/white_star.dm"				// - WIP
-	#include "../away_inf/yacht/yacht.dm"						// (SIERRA INCLUDED)
-//[/INF]
-
 	#define using_map_DATUM /datum/map/away_sites_testing
 
 #elif !defined(MAP_OVERRIDE)
