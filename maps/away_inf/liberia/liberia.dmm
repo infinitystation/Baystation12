@@ -1478,7 +1478,7 @@
 /area/liberia/mule)
 "cC" = (
 /obj/structure/table/reinforced,
-/obj/item/paper/sierrau/merchant,
+/obj/item/paper/liberia/merchant,
 /turf/simulated/floor/carpet/blue2,
 /area/liberia/mule)
 "cD" = (
@@ -6567,7 +6567,7 @@
 /turf/simulated/floor/plating,
 /area/liberia/bar)
 "lv" = (
-/obj/machinery/vending/medical/sierra{
+/obj/machinery/vending/medical{
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/machinery/door/firedoor,

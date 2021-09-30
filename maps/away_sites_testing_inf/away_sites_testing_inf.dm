@@ -44,10 +44,10 @@
 	#include "../away_inf/rubbidu/rubbidu.dm"					// - WIP, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/salvagers/salvagers.dm"				// (оч поломано) - WIP
 //	#include "../away_inf/sentinel/sentinel.dm"					// (SIERRA INCLUDED)	// - Не тестируется
-	#include "../away_inf/shipcrash/shipcrash.dm"				// - Отключено
+// старое поломаное Г	#include "../away_inf/shipcrash/shipcrash.dm"				// - Отключено
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"	//
 	#include "../away_inf/smugglers/smugglers.dm"				// (SIERRA INCLUDED)
-//	#include "../away_inf/white_star/white_star.dm"				// - WIP
+// старое поломаное Г	#include "../away_inf/white_star/white_star.dm"				// - WIP
 	#include "../away_inf/yacht/yacht.dm"						// (SIERRA INCLUDED)
 //[/INF]
 
