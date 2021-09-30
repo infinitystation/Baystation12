@@ -23,26 +23,26 @@
  * ======
  */
 
-/var/const/access_skrellscoutship_inf = "ACCESS_SKRELLSCOUT"
-/var/const/access_skrellscoutship_inf_captain = "ACCESS_SKRELLSCOUT_CAPTAIN"
+/var/const/access_skrellscoutship = "ACCESS_SKRELLSCOUT"
+/var/const/access_skrellscoutship_captain = "ACCESS_SKRELLSCOUT_CAPTAIN"
 
 /datum/access/skrellscoutship
-	id = access_skrellscoutship_inf
+	id = access_skrellscoutship
 	desc = "SSV Crewman"
 	region = ACCESS_REGION_NONE
 
 /datum/access/skrellscoutship_captain
-	id = access_skrellscoutship_inf_captain
+	id = access_skrellscoutship_captain
 	desc = "SSV Captain"
 	region = ACCESS_REGION_NONE
 
 /obj/item/card/id/skrellscoutship
 	color = COLOR_GRAY40
 	detail_color = "#7331c4"
-	access = list(access_skrellscoutship_inf)
+	access = list(access_skrellscoutship)
 
 /obj/item/card/id/skrellscoutship/captain
-	access = list(access_skrellscoutship_inf, access_skrellscoutship_inf_captain)
+	access = list(access_skrellscoutship, access_skrellscoutship_captain)
 	extra_details = list("goldstripe")
 
 /*
@@ -145,4 +145,3 @@
 /decl/hierarchy/outfit/job/skrellscoutship/leader
 	name = "Xilvuxix Captain"
 	id_types = list(/obj/item/card/id/skrellscoutship/captain)
-

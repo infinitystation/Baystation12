@@ -1,11 +1,11 @@
 /obj/machinery/computer/shuttle_control/explore/skrellscoutship
 	name = "SSV control console"
-	req_access = list(access_skrellscoutship_inf)
+	req_access = list(access_skrellscoutship)
 	shuttle_tag = "Skrellian Scout"
 
 /obj/machinery/computer/shuttle_control/explore/skrellscoutshuttle
 	name = "SSV Shuttle control console"
-	req_access = list(access_skrellscoutship_inf)
+	req_access = list(access_skrellscoutship)
 	shuttle_tag = "Skrellian Shuttle"
 
 /obj/effect/overmap/visitable/ship/landable/skrellscoutship

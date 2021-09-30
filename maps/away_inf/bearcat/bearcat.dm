@@ -160,7 +160,7 @@
 	dock_target = "bearcat_shuttle"
 	current_location = "nav_bearcat_port_dock_shuttle"
 	logging_home_tag = "nav_bearcat_port_dock_shuttle"
-	logging_access = access_bearcat_inf
+	logging_access = access_bearcat
 	range = 1
 	fuel_consumption = 3
 	warmup_time = 7
@@ -174,4 +174,3 @@
 	name = "Port Shuttle Dock"
 	landmark_tag = "nav_bearcat_port_dock_shuttle"
 	docking_controller = "bearcat_dock_port"
-

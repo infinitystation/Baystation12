@@ -2,7 +2,7 @@
 	name = "Scout - Skrellian Ship"
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 	base_turf = /turf/space
-	req_access = list(access_skrellscoutship_inf)
+	req_access = list(access_skrellscoutship)
 
 /area/ship/skrellscoutship/solars
 	name = "Scout - Solar Area"
@@ -79,4 +79,4 @@
 	requires_power = 0
 	base_turf = /turf/simulated/floor/plating
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-	req_access = list(access_skrellscoutship_inf)
+	req_access = list(access_skrellscoutship)

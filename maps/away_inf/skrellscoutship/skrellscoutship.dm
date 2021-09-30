@@ -75,10 +75,10 @@
 	name = "NULL"
 
 /obj/machinery/power/apc/skrell
-	req_access = list(access_skrellscoutship_inf)
+	req_access = list(access_skrellscoutship)
 
 /obj/machinery/alarm/skrell
-	req_access = list(access_skrellscoutship_inf)
+	req_access = list(access_skrellscoutship)
 	target_temperature = T0C+40
 
 /obj/machinery/alarm/skrell/Initialize()
@@ -97,7 +97,7 @@
 	_fully_charged = TRUE
 
 /obj/machinery/vending/medical/skrell
-	req_access = list(access_skrellscoutship_inf)
+	req_access = list(access_skrellscoutship)
 
 /obj/machinery/suit_storage_unit/skrell
 	name = "Black Voidsuit Storage Unit"
@@ -106,7 +106,7 @@
 	boots = /obj/item/clothing/shoes/magboots
 	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/gas/half
-	req_access = list(access_skrellscoutship_inf)
+	req_access = list(access_skrellscoutship)
 	islocked = 1
 
 /obj/machinery/suit_storage_unit/skrell/white
