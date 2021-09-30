@@ -16,7 +16,7 @@
 	#include "../away/derelict/derelict.dm"
 	//#include "../away/bearcat/bearcat.dm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
-	#include "../away/smugglers/smugglers.dm"
+	//#include "../away/smugglers/smugglers.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/magshield/magshield.dm"
 	#include "../away/slavers/slavers_base.dm"
@@ -31,7 +31,7 @@
 	#include "../away/scavver/scavver_gantry.dm"
 	#include "../away/voxship/voxship.dm"
 
-//[INF]
+	// Юнит тесты Инфинити
 //	#include "../away_inf/adherent_base/adherent_base.dm"		// (оч поломано) - flood system is too slow.
 	#include "../away_inf/ascent/ascent.dm"						// - Нужно доработать
 	#include "../away_inf/bearcat/bearcat.dm"					// (SIERRA INCLUDED)
@@ -49,7 +49,6 @@
 	#include "../away_inf/smugglers/smugglers.dm"				// (SIERRA INCLUDED)
 // старое поломаное Г	#include "../away_inf/white_star/white_star.dm"				// - WIP
 	#include "../away_inf/yacht/yacht.dm"						// (SIERRA INCLUDED)
-//[/INF]
 
 	#define using_map_DATUM /datum/map/away_sites_testing
 
