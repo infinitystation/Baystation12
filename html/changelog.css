@@ -59,7 +59,7 @@ a img {border:none;}
 }
 .hidden {display:none;}
 .indrop {
-	margin:2px 0 0 0;
+	margin:2px 0 0;
 	clear:both;
 	background:#fff;
 	border:1px solid #ddd;

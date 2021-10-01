@@ -27,7 +27,7 @@
 	float: left;
 	width: 16px;
 	height: 16px;
-	margin: 2px 2px 0 2px;
+	margin: 2px 2px 0;
 	background-image: url(uiIcons16.png);
 }
 
@@ -36,7 +36,7 @@
 	float: left;
 	width: 16px;
 	height: 16px;
-	margin: 2px 2px 0 2px;
+	margin: 2px 2px 0;
 	background-image: url(uiLinkPendingIcon.gif);
 }
 
@@ -231,9 +231,9 @@
 .uiIcon16.icon-grip-solid-horizontal { background-position: -48px -224px; }
 .uiIcon16.icon-gripsmall-diagonal-se { background-position: -64px -224px; }
 .uiIcon16.icon-grip-diagonal-se { background-position: -80px -224px; }
-.uiIcon16.icon-batt_full { background-image: url(c_max.gif); background-position: 0px 0px }
-.uiIcon16.icon-batt_disc { background-image: url(c_discharging.gif); background-position: 0px 0px }
-.uiIcon16.icon-batt_chrg { background-image: url(c_charging.gif); background-position: 0px 0px }
+.uiIcon16.icon-batt_full { background-image: url(c_max.gif); background-position: 0 0 }
+.uiIcon16.icon-batt_disc { background-image: url(c_discharging.gif); background-position: 0 0 }
+.uiIcon16.icon-batt_chrg { background-image: url(c_charging.gif); background-position: 0 0 }
 .uiIcon16.icon-close64 { background-image: url(uiIcons64.png); background-position: -128px -64px; width: 64px; height: 64px; }
 
 .mapIcon16 {

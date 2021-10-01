@@ -86,7 +86,7 @@ if (!Array.prototype.indexOf)
         }
         return -1;
     };
-};
+}
 
 if (!String.prototype.format)
 {
@@ -108,7 +108,7 @@ if (!String.prototype.format)
         });
     };
     String.prototype.format.regex = new RegExp("{-?[0-9]+}", "g");
-};
+}
 
 Object.size = function(obj) {
     var size = 0, key;
@@ -124,7 +124,7 @@ if(!window.console) {
             return false;
         }
     };
-};
+}
 
 String.prototype.toTitleCase = function () {
     var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|of|on|or|the|to|vs?\.?|via)$/i;
