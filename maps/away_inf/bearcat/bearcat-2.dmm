@@ -1161,7 +1161,7 @@
 "bY" = (
 /obj/structure/lattice,
 /turf/space,
-/area/ship/scrap/crew/hallway/starboard)
+/area/ship/scrap/dock)
 "bZ" = (
 /obj/machinery/door/blast/regular{
 	density = 0;

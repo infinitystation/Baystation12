@@ -2747,7 +2747,7 @@
 /area/ship/scrap/escape_port)
 "kV" = (
 /turf/simulated/floor/reinforced/airless,
-/area/space)
+/area/ship/scrap/maintenance/storage)
 "oj" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
@@ -2758,6 +2758,10 @@
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/ship/scrap/escape_star)
+"rN" = (
+/obj/effect/paint/brown,
+/turf/simulated/wall/r_wall,
+/area/ship/scrap/maintenance/storage)
 "sa" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
@@ -9238,8 +9242,8 @@ ed
 ep
 eG
 ea
-yN
-yN
+rN
+rN
 aa
 aa
 aa
@@ -9361,7 +9365,7 @@ eq
 ea
 ea
 dW
-yN
+rN
 aa
 aa
 aa
@@ -9483,7 +9487,7 @@ er
 eH
 eQ
 dW
-yN
+rN
 aa
 aa
 aa
@@ -9605,7 +9609,7 @@ es
 eI
 eR
 dW
-yN
+rN
 aa
 aa
 aa
@@ -9849,7 +9853,7 @@ eu
 eK
 eT
 dW
-yN
+rN
 aa
 aa
 aa
@@ -9971,7 +9975,7 @@ ev
 eL
 eU
 dW
-yN
+rN
 aa
 aa
 aa
