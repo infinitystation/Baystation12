@@ -33,7 +33,7 @@
 
 	// Юнит тесты Инфинити
 //	#include "../away_inf/adherent_base/adherent_base.dm"		// (оч поломано) - flood system is too slow.
-	#include "../away_inf/ascent/ascent.dm"						// - Нужно доработать
+//	#include "../away_inf/ascent/ascent.dm"						// - Нужно доработать
 	#include "../away_inf/bearcat/bearcat.dm"					// (SIERRA INCLUDED)
 	#include "../away_inf/blueriver/blueriver.dm"				// (SIERRA INCLUDED)
 //	#include "../away_inf/gunboat/gunboat.dm"					// (оч поломано) - TORCH, doesn't maintenance (someone want to change it?)
