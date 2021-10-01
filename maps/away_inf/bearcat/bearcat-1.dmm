@@ -17,7 +17,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/usedup,
-/area/space)
+/area/ship/scrap/cargo/lower)
 "ad" = (
 /obj/machinery/door/airlock/external/bolted/cycling{
 	id_tag = "cargo_out"
@@ -2251,7 +2251,7 @@
 "em" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/usedup,
-/area/space)
+/area/ship/scrap/maintenance/eva)
 "en" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -2735,12 +2735,16 @@
 /obj/random/advdevice,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo/lower)
+"kD" = (
+/obj/effect/paint/brown,
+/turf/simulated/wall/r_wall,
+/area/ship/scrap/broken2)
 "kH" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/space)
+/area/ship/scrap/escape_port)
 "kV" = (
 /turf/simulated/floor/reinforced/airless,
 /area/space)
@@ -2748,6 +2752,16 @@
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/broken1)
+"pa" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/ship/scrap/escape_star)
+"sa" = (
+/obj/effect/paint/brown,
+/turf/simulated/wall/r_wall,
+/area/ship/scrap/gambling)
 "vU" = (
 /obj/effect/floor_decal/corner/beige{
 	dir = 10;
@@ -2774,14 +2788,30 @@
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/maintenance/eva)
+"FC" = (
+/obj/effect/paint/brown,
+/turf/simulated/wall/r_wall,
+/area/ship/scrap/crew/dorms2)
+"FK" = (
+/turf/simulated/floor/reinforced/airless,
+/area/ship/scrap/crew/dorms2)
 "GU" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/cargo/lower)
+"Lo" = (
+/turf/simulated/floor/reinforced/airless,
+/area/ship/scrap/crew/dorms1)
+"NQ" = (
+/turf/simulated/floor/reinforced/airless,
+/area/ship/scrap/gambling)
 "UZ" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
-/area/space)
+/area/ship/scrap/crew/dorms1)
+"ZC" = (
+/turf/simulated/floor/reinforced/airless,
+/area/ship/scrap/crew/dorms3)
 
 (1,1,1) = {"
 aa
@@ -8577,15 +8607,15 @@ aa
 aa
 aa
 aa
-UZ
-UZ
-UZ
-UZ
-UZ
-kV
-UZ
-UZ
-UZ
+vY
+vY
+vY
+vY
+sa
+NQ
+sa
+kD
+kD
 aa
 aa
 aa
@@ -8698,7 +8728,7 @@ aa
 aa
 aa
 aa
-UZ
+vY
 vY
 ah
 ah
@@ -8716,10 +8746,10 @@ dk
 oj
 oj
 oj
-UZ
-UZ
-UZ
-UZ
+yN
+yN
+yN
+yN
 aa
 aa
 aa
@@ -8842,7 +8872,7 @@ ea
 ea
 ea
 yN
-UZ
+yN
 aa
 aa
 aa
@@ -8964,7 +8994,7 @@ eb
 en
 eE
 ea
-UZ
+yN
 aa
 aa
 aa
@@ -9086,7 +9116,7 @@ ec
 eo
 eF
 ea
-UZ
+yN
 aa
 aa
 aa
@@ -9208,8 +9238,8 @@ ed
 ep
 eG
 ea
-UZ
-UZ
+yN
+yN
 aa
 aa
 aa
@@ -9331,7 +9361,7 @@ eq
 ea
 ea
 dW
-UZ
+yN
 aa
 aa
 aa
@@ -9430,7 +9460,7 @@ aa
 aa
 aa
 aa
-UZ
+vY
 vY
 al
 al
@@ -9453,7 +9483,7 @@ er
 eH
 eQ
 dW
-UZ
+yN
 aa
 aa
 aa
@@ -9575,7 +9605,7 @@ es
 eI
 eR
 dW
-UZ
+yN
 aa
 aa
 aa
@@ -9819,7 +9849,7 @@ eu
 eK
 eT
 dW
-UZ
+yN
 aa
 aa
 aa
@@ -9941,7 +9971,7 @@ ev
 eL
 eU
 dW
-UZ
+yN
 aa
 aa
 aa
@@ -10063,7 +10093,7 @@ ew
 dZ
 dZ
 dZ
-UZ
+Bu
 aa
 aa
 aa
@@ -10185,7 +10215,7 @@ ex
 eM
 eV
 dZ
-UZ
+Bu
 aa
 aa
 aa
@@ -10284,7 +10314,7 @@ aa
 aa
 aa
 aa
-UZ
+aq
 GU
 ao
 ao
@@ -10307,7 +10337,7 @@ ey
 eN
 eW
 dY
-UZ
+Bu
 aa
 aa
 aa
@@ -10406,7 +10436,7 @@ aa
 aa
 aa
 aa
-kH
+pa
 ap
 ax
 aH
@@ -10429,7 +10459,7 @@ ez
 eO
 eX
 dY
-UZ
+Bu
 aa
 aa
 aa
@@ -10528,7 +10558,7 @@ aa
 aa
 aa
 aa
-kH
+pa
 ap
 ax
 aI
@@ -10551,7 +10581,7 @@ eA
 dZ
 dZ
 Bu
-UZ
+Bu
 aa
 aa
 aa
@@ -10650,7 +10680,7 @@ aa
 aa
 aa
 aa
-kH
+pa
 ap
 ax
 aI
@@ -10667,12 +10697,12 @@ dh
 dt
 dE
 xc
-UZ
+Bu
 Bu
 eB
 Bu
-UZ
-UZ
+Bu
+Bu
 aa
 aa
 aa
@@ -10772,7 +10802,7 @@ aa
 aa
 aa
 aa
-kH
+pa
 ap
 ax
 aI
@@ -10894,7 +10924,7 @@ aa
 aa
 aa
 aa
-kH
+pa
 ap
 ax
 aJ
@@ -11016,7 +11046,7 @@ aa
 aa
 aa
 aa
-UZ
+aq
 aq
 ay
 ay
@@ -11139,22 +11169,22 @@ aa
 aa
 aa
 aa
+aq
+aq
+aq
 UZ
 UZ
+Lo
 UZ
 UZ
-UZ
-kV
-UZ
-UZ
-UZ
-kV
-UZ
-UZ
-UZ
-kV
-UZ
-UZ
+FC
+FK
+FC
+xc
+xc
+ZC
+xc
+xc
 aa
 aa
 aa

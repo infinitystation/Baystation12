@@ -1,6 +1,6 @@
 #if !defined(using_map_DATUM)
 
-	// Нет необходимости в копипасты - это обычный авей сайтес тестинг.area
+	// Нет необходимости в копипасте - это обычный авей сайтес тестинг
 	// Но с другими инклудами
 	#include "../away_sites_testing/away_sites_testing_lobby.dm"
 	#include "../away_sites_testing/away_sites_testing_define.dm"
@@ -41,7 +41,7 @@
 //	#include "../away_inf/marksman/marksman.dm"					// (оч поломано) - TORCH, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/merchant/merchant.dm"					// (оч поломано) - WIP, doesn't maintenance (someone want to change it?)
 	#include "../away_inf/mining/mining.dm"						// (SIERRA INCLUDED)
-	#include "../away_inf/rubbidu/rubbidu.dm"					// - WIP, doesn't maintenance (someone want to change it?)
+// старое поломаное Г	#include "../away_inf/rubbidu/rubbidu.dm"					// - WIP, doesn't maintenance (someone want to change it?)
 //	#include "../away_inf/salvagers/salvagers.dm"				// (оч поломано) - WIP
 //	#include "../away_inf/sentinel/sentinel.dm"					// (SIERRA INCLUDED)	// - Не тестируется
 // старое поломаное Г	#include "../away_inf/shipcrash/shipcrash.dm"				// - Отключено
