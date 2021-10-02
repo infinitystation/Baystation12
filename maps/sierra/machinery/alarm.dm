@@ -4,6 +4,3 @@
 /obj/machinery/alarm/monitor/isolation/xenobio //just for a managment
 
 /obj/machinery/alarm/monitor/isolation/petrov //just for a managment
-
-/obj/machinery/alarm/merchant
-	req_access = list(access_merchant)

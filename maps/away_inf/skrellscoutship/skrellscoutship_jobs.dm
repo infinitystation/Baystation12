@@ -145,4 +145,3 @@
 /decl/hierarchy/outfit/job/skrellscoutship/leader
 	name = "Xilvuxix Captain"
 	id_types = list(/obj/item/card/id/skrellscoutship/captain)
-

@@ -8,7 +8,6 @@ on:
   pull_request:
     branches:
       - master
-      - merge-02-05-2021
       - testing
 env:
   BYOND_MAJOR: "514"
@@ -70,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        map_path: [example, sierra, torch, bearcat_inf, away_sites_testing]
+        map_path: [example, sierra, torch, bearcat_inf, away_sites_testing, away_sites_testing_inf]
     steps:
       - uses: actions/checkout@v2.3.4
       - name: Setup Cache

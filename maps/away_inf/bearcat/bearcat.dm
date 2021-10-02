@@ -174,4 +174,3 @@
 	name = "Port Shuttle Dock"
 	landmark_tag = "nav_bearcat_port_dock_shuttle"
 	docking_controller = "bearcat_dock_port"
-

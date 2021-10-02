@@ -70,7 +70,7 @@
 /obj/machinery/computer/ship/helm{
 	req_access = list(3074)
 	},
-/obj/machinery/alarm/merchant{
+/obj/machinery/alarm{
 	pixel_y = 25;
 	req_access = list(3074)
 	},
@@ -189,11 +189,10 @@
 /turf/simulated/floor/tiled,
 /area/salvage/bridge)
 "az" = (
-/obj/machinery/alarm/merchant{
+/obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -25;
-	req_access = list(3075);
-	req_access = newlist()
+	req_access = list(3075)
 	},
 /obj/machinery/light{
 	dir = 8
@@ -544,7 +543,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/alarm/merchant{
+/obj/machinery/alarm{
 	pixel_y = 25;
 	req_access = list(3074);
 	req_access = newlist()
@@ -2011,7 +2010,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/salvage/storage)
 "dl" = (
-/obj/machinery/alarm/merchant{
+/obj/machinery/alarm{
 	pixel_y = 25;
 	req_access = list(3074);
 	req_access = newlist()
@@ -2147,7 +2146,7 @@
 	dir = 8;
 	icon_state = "railing0-1"
 	},
-/obj/machinery/alarm/merchant{
+/obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -20;
 	req_access = list(3074);
@@ -3183,7 +3182,7 @@
 	},
 /obj/item/device/flashlight,
 /obj/item/device/flashlight,
-/obj/machinery/alarm/merchant{
+/obj/machinery/alarm{
 	pixel_y = 25;
 	req_access = list(3074)
 	},

@@ -132,12 +132,11 @@
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/liberia/liberia.dm"
 	#include "../away_inf/mining/mining.dm"
-	#include "../away_inf/sentinel/sentinel.dm"
+// НЕ ПРОШЕЛ ЮНИТ ТЕСТЫ!!!	#include "../away_inf/sentinel/sentinel.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/yacht/yacht.dm"
 //	#include "../away_inf/ascent/ascent.dm"
 //	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
-//  #include "../away_inf/tajsc/tajsciship.dm"
 
 	#include "../away/casino/casino.dm"
 	#include "../away/derelict/derelict.dm"
