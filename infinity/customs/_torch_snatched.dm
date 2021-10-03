@@ -5,13 +5,11 @@
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(slot_head_str = CUSTOM_ITEM_MOB)
 
-
 /obj/item/clothing/accessory/medal/custom/solgov
 	name = "master solgov medal"
 	desc = "You shouldn't be seeing this."
 	icon = CUSTOM_ITEM_OBJ
 	accessory_icons = list(slot_w_uniform_str = CUSTOM_ITEM_MOB, slot_wear_suit_str = CUSTOM_ITEM_MOB)
-
 
 /obj/item/clothing/accessory/medal/custom/solgov/gold/crest
 	name = "solar honor medal"
