@@ -1,5 +1,5 @@
 //	This file used to snatch other maps code. I hate all of you lazy us ~Laxesh
-
+/*
 //	TORCH
 #include "..\torch\items\clothing\ec_skillbadges.dm"
 #include "..\torch\items\clothing\solgov-accessory.dm"
@@ -20,3 +20,4 @@
 #include "..\torch\structures\signs.dm"
 //	INF(Torch required)
 #include "..\torch\items\clothing\solgov-infinity.dm"
+*/
