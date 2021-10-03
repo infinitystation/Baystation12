@@ -62,6 +62,9 @@
 	#include "items/clothing/override.dm"
 	#include "items/clothing/storages.dm"
 
+	#include "items/clothing/torched/solgov-accessory.dm"
+	#include "items/clothing/torched/solgov-under.dm"
+
 	#include "job/access.dm"
 	#include "job/jobs.dm"
 	#include "job/outfits.dm"
