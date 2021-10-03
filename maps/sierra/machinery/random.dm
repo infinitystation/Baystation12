@@ -20,7 +20,7 @@ Random item spawning
 	icon_state = "gift2"
 
 /obj/random/maintenance/solgov/clean/spawn_choices()
-	return list(/obj/random/solgov = 3,
+	return list(/obj/item/clothing/under/solgov/pt/expeditionary = 3,
 				/obj/random/maintenance/clean = 800)
 
 /obj/random/hostile/xenobio
