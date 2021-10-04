@@ -3,10 +3,6 @@
 
 	#include "away_sites_testing_define.dm"
 
-	//[INF]	Customs-require	looking in example dir
-	#include "../example/compile_required_snatch.dm"
-	//[/INF]
-
 	#include "blank.dmm"
 
 	#include "../away/empty.dmm"

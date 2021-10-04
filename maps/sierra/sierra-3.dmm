@@ -3075,7 +3075,7 @@
 	name = "Chief of Astronavigation"
 	},
 /obj/item/device/radio/off,
-/obj/item/clothing/head/soft/solgov/fleet{
+/obj/item/clothing/head/soft/rainbow{
 	pixel_x = -8;
 	pixel_y = 5
 	},

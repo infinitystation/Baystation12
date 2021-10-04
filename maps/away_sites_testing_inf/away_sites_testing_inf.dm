@@ -4,9 +4,6 @@
 	// Но с другими инклудами
 	#include "../away_sites_testing/away_sites_testing_lobby.dm"
 	#include "../away_sites_testing/away_sites_testing_define.dm"
-	// Customs-require	looking in example dir
-	#include "../example/compile_required_snatch.dm"
-	/////////////////////////////////////////////////
 	#include "../away_sites_testing/blank.dmm"
 
 	// Беевские авейки которые мы используем (и которые не конфликтуют с нашими авейками)

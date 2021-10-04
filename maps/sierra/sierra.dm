@@ -18,8 +18,6 @@
 	#include "sierra_turfs.dm"
 	#include "sierra_unit_testing.dm"
 
-	#include "sierra_snatch.dm"
-
 	#include "datums/uniforms.dm"
 	#include "datums/uniforms_civilian.dm"
 	#include "datums/uniforms_contractor.dm"
@@ -61,6 +59,12 @@
 	#include "items/clothing/exploration.dm"
 	#include "items/clothing/override.dm"
 	#include "items/clothing/storages.dm"
+	#include "items/clothing/ec_skillbadges.dm"
+
+	#include "items/clothing/torched/solgov-accessory.dm"
+	#include "items/clothing/torched/solgov-armor.dm"
+	#include "items/clothing/torched/solgov-suit.dm"
+	#include "items/clothing/torched/solgov-under.dm"
 
 	#include "job/access.dm"
 	#include "job/jobs.dm"
@@ -128,16 +132,17 @@
 	#include "sierra-5.dmm"
 	#include "../away/empty.dmm"
 
+//	#include "../away_inf/ascent/ascent.dm"
 	#include "../away_inf/bearcat/bearcat.dm"
 	#include "../away_inf/blueriver/blueriver.dm"
 	#include "../away_inf/liberia/liberia.dm"
 	#include "../away_inf/mining/mining.dm"
 // НЕ ПРОШЕЛ ЮНИТ ТЕСТЫ!!!	#include "../away_inf/sentinel/sentinel.dm"
+//	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/yacht/yacht.dm"
-//	#include "../away_inf/ascent/ascent.dm"
-//	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 
+	// #include "../away/ascent_caulship/_ascent_caulship.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/errant_pisces/errant_pisces.dm"
@@ -151,7 +156,6 @@
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/verne/verne.dm"
 	#include "../away/voxship/voxship.dm"
-	// #include "../away/ascent_caulship/_ascent_caulship.dm"
 
 	#include "../random_ruins/exoplanet_ruins/playablecolony_inf/playablecolony.dm"
 
