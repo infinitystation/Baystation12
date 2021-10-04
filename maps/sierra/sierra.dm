@@ -64,6 +64,8 @@
 	#include "items/clothing/ec_skillbadges.dm"
 
 	#include "items/clothing/torched/solgov-accessory.dm"
+	#include "items/clothing/torched/solgov-armor.dm"
+	#include "items/clothing/torched/solgov-suit.dm"
 	#include "items/clothing/torched/solgov-under.dm"
 
 	#include "job/access.dm"
