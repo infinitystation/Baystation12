@@ -18,8 +18,6 @@
 	#include "sierra_turfs.dm"
 	#include "sierra_unit_testing.dm"
 
-	#include "sierra_snatch.dm"
-
 	#include "datums/uniforms.dm"
 	#include "datums/uniforms_civilian.dm"
 	#include "datums/uniforms_contractor.dm"
