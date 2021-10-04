@@ -28,7 +28,6 @@
 /**************
 ranks - marines
 **************/
-
 /obj/item/clothing/accessory/solgov/rank/get_fibers()
 	return null
 
@@ -67,3 +66,33 @@ ranks - marines
 /obj/item/clothing/accessory/solgov/rank/fleet/officer/wo1_monkey
 	name = "makeshift ranks (WO-1 warrant officer 1)"
 	desc = "Insignia denoting the mythical rank of Warrant Officer. Too bad it's obviously fake."
+
+/*************
+specialty pins
+*************/
+/obj/item/clothing/accessory/solgov/specialty
+	name = "speciality blaze"
+	desc = "A color blaze denoting fleet personnel in some special role. This one is silver."
+	icon_state = "marinerank_command"
+	slot = ACCESSORY_SLOT_INSIGNIA
+	icon_state = "fleetspec"
+
+/obj/item/clothing/accessory/solgov/specialty/get_fibers()
+	return null
+
+/obj/item/clothing/accessory/solgov/specialty/pilot
+	name = "pilot's qualification pin"
+	desc = "An iron pin denoting the qualification to fly SCG spacecraft."
+	icon_state = "pin_pilot"
+
+/*****************
+armour attachments
+*****************/
+/obj/item/clothing/accessory/armor/tag/solgov
+	name = "\improper SCG Flag"
+	desc = "An emblem depicting the Sol Central Government's flag."
+	icon_override = 'maps/torch/icons/obj/obj_accessories_solgov.dmi'
+	icon = 'maps/torch/icons/obj/obj_accessories_solgov.dmi'
+	accessory_icons = list(slot_w_uniform_str = 'maps/torch/icons/mob/onmob_accessories_solgov.dmi', slot_wear_suit_str = 'maps/torch/icons/mob/onmob_accessories_solgov.dmi')
+	icon_state = "solflag"
+	slot = ACCESSORY_SLOT_ARMOR_M

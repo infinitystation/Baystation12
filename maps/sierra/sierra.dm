@@ -61,6 +61,7 @@
 	#include "items/clothing/exploration.dm"
 	#include "items/clothing/override.dm"
 	#include "items/clothing/storages.dm"
+	#include "items/clothing/ec_skillbadges.dm"
 
 	#include "items/clothing/torched/solgov-accessory.dm"
 	#include "items/clothing/torched/solgov-under.dm"
