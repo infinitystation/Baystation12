@@ -7091,9 +7091,6 @@
 /obj/structure/window/reinforced/holowindow{
 	dir = 1
 	},
-/obj/structure/sign/double/solgovflag/right{
-	dir = 1
-	},
 /obj/structure/grille,
 /turf/simulated/floor/holofloor/reinforced,
 /area/holodeck/source_military)
@@ -7104,9 +7101,6 @@
 	},
 /obj/structure/window/reinforced/holowindow{
 	dir = 4
-	},
-/obj/structure/sign/double/solgovflag/left{
-	dir = 1
 	},
 /obj/structure/grille,
 /turf/simulated/floor/holofloor/reinforced,
