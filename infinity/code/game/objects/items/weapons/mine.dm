@@ -17,5 +17,6 @@
 		T.hotspot_expose(700,125)
 
 /obj/item/mine/Crossed(AM as mob|obj)
-	if(active)
-		detonate()
+	if(!istype(AM, /mob/observer))
+		if(active)
+			detonate()
