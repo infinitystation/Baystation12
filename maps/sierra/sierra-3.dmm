@@ -33778,9 +33778,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
 "bdK" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -42446,6 +42443,9 @@
 /obj/random/date_based/christmas/xmaslights,
 /obj/structure/bed/chair/comfy/brown{
 	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
