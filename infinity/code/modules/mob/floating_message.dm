@@ -65,6 +65,7 @@ GLOBAL_LIST_EMPTY(floating_chat_colors)
 	I.maptext_height = CHAT_MESSAGE_HEIGHT
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART
 	I.pixel_w = -round(I.maptext_width/2) + 16
+    I.vis-flags = VIS_HIDE
 
 	style = "font-family: 'Small Fonts'; -dm-text-outline: 1px black; font-size: [size]px; line-height: 1.1; [style]"
 	I.maptext = "<center><span style=\"[style]\">[message]</span></center>"
