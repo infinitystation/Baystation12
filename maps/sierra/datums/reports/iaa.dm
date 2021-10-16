@@ -79,7 +79,7 @@
 	title = "Рапорт об инцидентах с cотрудниками-синтетиками"
 	available_on_ntnet = 1
 
-/datum/computer_file/report/recipient/iaa/incident_assets/generate_fields()
+/datum/computer_file/report/recipient/iaa/incident_synthstaff/generate_fields()
 	..()
 	var/list/heads_fields = list()
 	add_field(/datum/report_field/simple_text, "Судно", GLOB.using_map.station_name)
