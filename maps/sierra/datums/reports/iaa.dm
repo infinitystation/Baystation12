@@ -82,7 +82,7 @@
 /datum/computer_file/report/recipient/iaa/incident_synthstaff/generate_fields()
 	..()
 	var/list/heads_fields = list()
-	add_field(/datum/report_field/simple_text, "Судно", GLOB.using_map.station_name)
+	add_field(/datum/report_field/simple_text, "Судно")
 	add_field(/datum/report_field/date, "Дата")
 	add_field(/datum/report_field/time, "Время")
 	add_field(/datum/report_field/pencode_text, "Описание инцидента", required = 1)
