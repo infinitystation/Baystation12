@@ -42,7 +42,7 @@
 /decl/security_level/default/sierradept/code_green/switching_down_to()
 	security_announcement_green.Announce("Все угрозы для судна и его экипажа были устранены. \
 	Персоналу следует вернуться к выполнению рабочих обязанностей в штатном режиме.", \
-	"Внимание! Зелёный код")
+	"Внимание! Код угрозы понижен до Зелёного")
 	notify_station()
 	GLOB.using_map.unlock_secure_areas()
 	GLOB.using_map.unlock_high_secure_areas()
@@ -63,14 +63,14 @@
 	alert_border = "alert_border_violet"
 
 /decl/security_level/default/sierradept/code_violet/switching_up_to()
-	security_announcement_up.Announce("На судне находятся нелокализованные вредоносные патогены. \
+	security_announcement_up.Announce("На судне обнаружена серьёзная медицинская угроза. \
 	Всему медицинскому персоналу требуется обратиться к вышестоящим сотрудникам для получения инструкций. \
-	Не-медицинскому персоналу следует выполнять инструкции от медицинского персонала.", "Внимание! Фиолетовый код")
+	Не-медицинскому персоналу следует выполнять инструкции от медицинского персонала.", "Внимание! Код угрозы повышен до Фиолетового")
 	notify_station()
 	GLOB.using_map.toggle_crew_sensors(2)
 
 /decl/security_level/default/sierradept/code_violet/switching_down_to()
-	security_announcement_down.Announce("На судне находятся нелокализованные вредоносные патогены. \
+	security_announcement_down.Announce("На судне обнаружена серьёзная медицинская угроза. \
 	Всему медицинскому персоналу требуется обратиться к вышестоящим сотрудникам для получения инструкций. \
 	Не-медицинскому персоналу следует выполнять инструкции от медицинского персонала.", "Внимание! Код угрозы понижен до Фиолетового")
 	notify_station()
@@ -93,16 +93,16 @@
 	psionic_control_level = PSI_IMPLANT_LOG
 
 /decl/security_level/default/sierradept/code_orange/switching_up_to()
-	security_announcement_up.Announce("Тяжелые нарушения в работе оборудования и повреждение переборок. \
+	security_announcement_up.Announce("Судно имеет серьёзные структурные повреждения, а также испытывает отказы множества систем. \
 	Всему инженерному персоналу требуется обратиться к вышестоящим сотрудникам для получения инструкций. \
 	Весь не-инженерный персонал должен покинуть затронутые повреждениями отсеки. Рекомендуется ношение скафандров и \
-	следование указаниям инженерного персонала.", "Внимание! Оранжевый код")
+	следование указаниям инженерного персонала.", "Внимание! Код угрозы повышен до Оранжевого")
 	notify_station()
 	GLOB.using_map.lock_high_secure_areas()
 	GLOB.using_map.toggle_crew_sensors(1)
 
 /decl/security_level/default/sierradept/code_orange/switching_down_to()
-	security_announcement_down.Announce("Тяжелые нарушения в работе оборудования и повреждение переборок. \
+	security_announcement_down.Announce("Судно имеет серьёзные структурные повреждения, а также испытывает отказы множества систем. \
 	Всему инженерному персоналу требуется обратиться к вышестоящим сотрудникам для получения инструкций. \
 	Весь не-инженерный персонал должен покинуть затронутые повреждениями отсеки. Рекомендуется ношение скафандров и \
 	следование указаниям инженерного персонала.", "Внимание! Код угрозы понижен до Оражевого")
@@ -125,14 +125,14 @@
 	psionic_control_level = PSI_IMPLANT_LOG
 
 /decl/security_level/default/sierradept/code_blue/switching_up_to()
-	security_announcement_up.Announce("По новой информации на судне может присутствовать угроза для безопасности экипажа. \
+	security_announcement_up.Announce("На борту судна предположительно присутствует угроза безопасности экипажа и самого судна. \
 	Всей охране требуется обратиться к вышестоящим сотрудникам для получения указаний; \
-	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Синий код")
+	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Код угрозы повышен до Синего")
 	notify_station()
 	GLOB.using_map.lock_high_secure_areas()
 
 /decl/security_level/default/sierradept/code_blue/switching_down_to()
-	security_announcement_down.Announce("Потенциальная угроза для экипажа. \
+	security_announcement_down.Announce("Прямая угроза экипажу и судну отстуствует. На судне предоложительно могут оставатся другие угрозы безопасности экипажа и самого судна. \
 	Всей охране требуется обратиться к вышестоящим сотрудникам для получения указаний; \
 	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Код угрозы понижен до Синего")
 	notify_station()
@@ -155,10 +155,10 @@
 	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/redalert1.ogg'))
 
 /decl/security_level/default/sierradept/code_red/switching_up_to()
-	security_announcement_red.Announce("На судно объявлено чрезвычайное положение. \
+	security_announcement_red.Announce("Присутствует прямая угроза безопасности экипажа и самого судна. \
 	Весь экипаж должен обратиться к главам для получения инструкций. \
 	Охране разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", \
-	"Внимание! Красный код")
+	"Внимание! Код угрозы повышен до Красного")
 	notify_station()
 	GLOB.using_map.unbolt_saferooms()
 	GLOB.using_map.lock_secure_areas()
@@ -191,7 +191,7 @@
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
 
 /decl/security_level/default/sierradept/code_delta/switching_up_to()
-	security_announcement_delta.Announce("Внимание всему персоналу! На судне обнаружено взрывное устройство \
+	security_announcement_delta.Announce("Внимание всему экипажу! На судне обнаружено взрывное устройство \
 	большой мощности с активированным обратным отсчетом. Весь экипаж должен следовать инструкциям глав и охраны. \
 	Это не учебная тревога.", "Внимание! Код Дельта")
 	notify_station()
