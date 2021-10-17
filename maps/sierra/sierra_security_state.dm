@@ -125,14 +125,14 @@
 	psionic_control_level = PSI_IMPLANT_LOG
 
 /decl/security_level/default/sierradept/code_blue/switching_up_to()
-	security_announcement_up.Announce("На борту судна предположительно присутствует угроза безопасности экипажа и самого судна. \
+	security_announcement_up.Announce("На борту судна предположительно присутствует угроза безопасности для экипажа и самого судна. \
 	Всей охране требуется обратиться к вышестоящим сотрудникам для получения указаний; \
 	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Код угрозы повышен до Синего")
 	notify_station()
 	GLOB.using_map.lock_high_secure_areas()
 
 /decl/security_level/default/sierradept/code_blue/switching_down_to()
-	security_announcement_down.Announce("Прямая угроза экипажу и судну отстуствует. На судне предоложительно могут оставатся другие угрозы безопасности экипажа и самого судна. \
+	security_announcement_down.Announce("Прямая угроза экипажу и судну отстуствует. На судне всё ещё может оставаться угроза безопасности для экипажа и самого судна. \
 	Всей охране требуется обратиться к вышестоящим сотрудникам для получения указаний; \
 	разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", "Внимание! Код угрозы понижен до Синего")
 	notify_station()
@@ -155,7 +155,7 @@
 	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/misc/redalert1.ogg'))
 
 /decl/security_level/default/sierradept/code_red/switching_up_to()
-	security_announcement_red.Announce("Присутствует прямая угроза безопасности экипажа и самого судна. \
+	security_announcement_red.Announce("Присутствует прямая угроза безопасности для экипажа и самого судна. \
 	Весь экипаж должен обратиться к главам для получения инструкций. \
 	Охране разрешено обыскивать сотрудников и отсеки, а так же держать оружие на виду.", \
 	"Внимание! Код угрозы повышен до Красного")
