@@ -9,7 +9,7 @@
 
 /datum/computer_file/report/recipient/exp/planet/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Экспедиционный департамент")
+	add_field(/datum/report_field/text_label/header, "ИКН \"Сьерра\" - Экспедиционный департамент")
 	add_field(/datum/report_field/text_label/instruction, "Следующие колонки заполняются членом, входящего в состав экспедиционной команды, после возвращения с планеты на Сьерру.")
 	add_field(/datum/report_field/number, "Номер отчета")
 	add_field(/datum/report_field/simple_text, "Местоположение", required = 1)
@@ -34,7 +34,7 @@
 
 /datum/computer_file/report/recipient/exp/fauna/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Экспедиционный департамент")
+	add_field(/datum/report_field/text_label/header, "ИКН \"Сьерра\" - Экспедиционный департамент")
 	add_field(/datum/report_field/text_label/instruction, "Следующие колонки заполняются членом, входящего в состав экспедиционной команды, после открытия и изучения инопланетной жизни.")
 	add_field(/datum/report_field/number, "Номер рапорта")
 	add_field(/datum/report_field/simple_text, "Местоположение", required = 1)
@@ -57,7 +57,7 @@
 
 /datum/computer_file/report/recipient/exp/flora/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "ИКН Сьерра - Экспедиционный департамент")
+	add_field(/datum/report_field/text_label/header, "ИКН \"Сьерра\" - Экспедиционный департамент")
 	add_field(/datum/report_field/text_label/instruction, "Следующие колонки заполняются членом, входящего в состав экспедиционной команды, после открытия и изучения инопланетной жизни.")
 	add_field(/datum/report_field/number, "Номер рапорта")
 	add_field(/datum/report_field/simple_text, "Местоположение", required = 1)
