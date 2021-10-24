@@ -14859,9 +14859,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 4
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -15327,9 +15324,6 @@
 /obj/effect/floor_decal/steeldecal/steel_decals6,
 /obj/random/date_based/christmas/xmaslights{
 	dir = 1
-	},
-/obj/machinery/security_scanner{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/aft)
@@ -16289,9 +16283,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 4
 	},
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -16706,9 +16697,6 @@
 	dir = 4
 	},
 /obj/random/date_based/christmas/xmaslights,
-/obj/machinery/security_scanner{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/aft)
 "aCP" = (
@@ -19764,7 +19752,6 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/entry)
 "aGV" = (
@@ -19777,7 +19764,6 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/entry)
 "aGW" = (
@@ -33641,12 +33627,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
-"bdu" = (
-/obj/machinery/constructable_frame/computerframe{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel_ridged,
-/area/shuttle/escape_pod/escape_pod5/station)
 "bdv" = (
 /obj/structure/bed/chair/shuttle/blue{
 	dir = 8
@@ -37457,7 +37437,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/infirmary)
 "fpQ" = (
@@ -38607,9 +38586,6 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
-/obj/machinery/security_scanner/unwrenched,
 /obj/machinery/security_scanner/unwrenched,
 /obj/machinery/security_scanner/unwrenched,
 /obj/machinery/security_scanner/unwrenched,
@@ -42075,7 +42051,6 @@
 /obj/random/date_based/christmas/doorwreath{
 	dir = 1
 	},
-/obj/machinery/security_scanner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/infirmary)
 "tYh" = (
@@ -52637,7 +52612,7 @@ aXL
 aXL
 bbi
 bbi
-bdu
+bfs
 beo
 bfs
 bbi
