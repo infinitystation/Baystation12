@@ -44,7 +44,7 @@
 	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 //	#include "../away_inf/liberia/liberia.dm" - Не тестируется
 //	#include "../away_inf/patrol/patrol.dm"
-//	#include "../away_inf/ascent/ascent.dm" - Нужно доработать
+	#include "../away_inf/ascent/ascent.dm" // нужно доработать
 //[/INF]
 
 	#define using_map_DATUM /datum/map/away_sites_testing

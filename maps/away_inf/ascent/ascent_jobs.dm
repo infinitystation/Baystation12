@@ -5,7 +5,7 @@
 	id = WEBHOOK_SUBMAP_LOADED_ASCENT_INF
 
 /decl/submap_archetype/ascent_seedship_inf
-	descriptor = "Damaged Ascent colony ship"
+	descriptor = "Ascent's Colony Ship"
 	map = DAMAGED_ASCENT_COLONY_SHIP_NAME
 	blacklisted_species = null
 	whitelisted_species = null
@@ -80,12 +80,16 @@
 /datum/job/submap/ascent_inf
 	title = "Ascent gyne"
 	total_positions = 1
-	supervisors = "самой собой"
-	info = "You are the Gyne of an independent Ascent vessel. Your hunting has brought you to this remote sector full of crawling primitives. Impose your will, found a new nest, and bring prosperity to your lineage."
+	supervisors = "youself"
+	info = "You are Gyna on your own independent vessel. Your path has led you to this remote sector full of primitive bioforms. \
+	\
+	Show everyone your greatness, crush all those who dare to oppose you, establish your new nest here and bring prosperity to your lineage. \
+    Your radars picked up a large ship equipped with a bluespace engine, until you find out who owns it, it's better not to give yourself away with vigorous activity. \
+    Your ship was damaged during the bluespace jump, you need to restore it to fully function."
 	outfit_type = /decl/hierarchy/outfit/job/ascent
 	minimal_player_age = 21
 	blacklisted_species = null
-	whitelisted_species = null
+	whitelisted_species = list("kharmaan gyne") // возможно нужно поменять
 	loadout_allowed = FALSE
 	is_semi_antagonist = TRUE
 	var/requires_supervisor = FALSE
@@ -150,7 +154,7 @@
 /datum/job/submap/ascent_inf/alate
 	title = "Ascent alate"
 	total_positions = 2
-	supervisors = "Гииной"
+	supervisors = "your Gyne"
 	info = "You are an Alate of an independent Ascent vessel. Your Gyne has directed you to this remote sector full of crawling primitives. Follow her instructions and bring prosperity to your nest-lineage."
 	set_species_on_join = SPECIES_MANTID_ALATE
 	outfit_type = /decl/hierarchy/outfit/job/ascent/tech
@@ -163,7 +167,7 @@
 
 /datum/job/submap/ascent_inf/drone
 	title = "Ascent drone"
-	supervisors = "Гииной"
+	supervisors = "your Gyne"
 	total_positions = 1
 	info = "You are a Machine Intelligence of an independent Ascent vessel. The Gyne you assist, and her children, have wandered into this sector full of primitive bioforms. Try to keep them alive, and assist where you can."
 	set_species_on_join = /mob/living/silicon/robot/flying/ascent

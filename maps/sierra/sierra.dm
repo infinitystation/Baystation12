@@ -135,7 +135,7 @@
 	#include "../away_inf/sentinel/sentinel.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/yacht/yacht.dm"
-//	#include "../away_inf/ascent/ascent.dm"
+	#include "../away_inf/ascent/ascent.dm"
 //	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 //  #include "../away_inf/tajsc/tajsciship.dm"
 
@@ -152,7 +152,7 @@
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/verne/verne.dm"
 	#include "../away/voxship/voxship.dm"
-	// #include "../away/ascent_caulship/_ascent_caulship.dm"
+// #include "../away/ascent_caulship/_ascent_caulship.dm"
 
 	#include "../random_ruins/exoplanet_ruins/playablecolony_inf/playablecolony.dm"
 

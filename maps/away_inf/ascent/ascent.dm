@@ -1,4 +1,4 @@
-#define DAMAGED_ASCENT_COLONY_SHIP_NAME "\improper Damaged Ascent seedship"
+#define DAMAGED_ASCENT_COLONY_SHIP_NAME "\improper Ascent's Colony Ship"
 
 #include "ascent_areas.dm"
 #include "ascent_jobs.dm"
@@ -11,7 +11,7 @@
 	description = "A small Ascent colony ship. Looks like it was damaged."
 	prefix = "maps/away_inf/"
 	suffixes = list("ascent/ascent-1.dmm")
-	spawn_cost = 1000 // Отключено до лучших времен. Было 2 ~Laxesh
+	spawn_cost = 2000 // Отключено до лучших времен. Было 2 ~Laxesh
 	spawn_weight = 50 //HABITABLE SHIPS SPAWN
 	shuttles_to_initialise = list(
 		/datum/shuttle/autodock/overmap/ascent_inf,
