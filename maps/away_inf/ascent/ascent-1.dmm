@@ -7,9 +7,9 @@
 "ag" = (/turf/simulated/wall/r_wall/ascent,/area/ship/ascent_inf/wing_starboard)
 "ah" = (/turf/simulated/wall/r_wall/ascent,/area/ship/ascent_inf/fore_starboard_prow)
 "ai" = (/obj/machinery/recharge_station/ascent,/obj/effect/submap_landmark/spawnpoint/ascent_seedship_inf/drone,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/wing_starboard)
-"aj" = (/turf/simulated/wall/ascent,/area/ship/ascent_inf/wing_starboard)
+"aj" = (/turf/simulated/wall/r_wall/ascent,/area/ship/ascent_inf/aft_starboard_jut)
 "ak" = (/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/wing_starboard)
-"al" = (/turf/simulated/wall/ascent,/area/ship/ascent_inf/fore_starboard_spike)
+"al" = (/turf/simulated/wall/r_wall/ascent,/area/ship/ascent_inf/fore_starboard_spike)
 "am" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 10},/obj/machinery/door/airlock/external/bolted/ascent{airlock_type = "Internal"; frequency = 1331; id_tag = "ascent_inf_starboard_inner"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_starboard)
 "an" = (/obj/machinery/atmospherics/unary/vent_pump/on/ascent,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/wing_starboard)
 "ao" = (/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,/turf/simulated/floor/ascent,/area/ship/ascent_inf/fore_starboard_jut)
@@ -19,7 +19,6 @@
 "as" = (/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_starboard_prow)
 "at" = (/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,/turf/simulated/floor/ascent,/area/ship/ascent_inf/aft_starboard_jut)
 "au" = (/obj/machinery/chem_master{color = "PURPLE"; name = "chemical analyzer"},/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_starboard_prow)
-"av" = (/turf/simulated/wall/ascent,/area/ship/ascent_inf/hydroponics_starboard)
 "aw" = (/obj/machinery/atmospherics/portables_connector,/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_starboard)
 "ax" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/wing_starboard)
 "ay" = (/obj/machinery/door/airlock/ascent,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/wing_starboard)
@@ -98,7 +97,6 @@
 "bT" = (/obj/structure/table/steel_reinforced,/obj/effect/landmark/explosion/light,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_starboard_prow)
 "bU" = (/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/manifold/hidden/supply{dir = 4},/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/cyan{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/effect/catwalk_plated/ascent,/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/manifold/hidden{dir = 4},/turf/simulated/floor/ascent,/area/ship/ascent_inf/habitation)
 "bV" = (/obj/random/trash/space,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/aft_starboard_jut)
-"bW" = (/turf/simulated/wall/ascent,/area/ship/ascent_inf/wing_port)
 "bX" = (/obj/structure/window/phoronreinforced{dir = 8},/obj/structure/window/phoronreinforced{dir = 1},/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/shuttle_starboard)
 "bY" = (/obj/machinery/atmospherics/unary/vent_pump/on/ascent{dir = 1; level = 2},/obj/structure/cable/cyan,/obj/machinery/power/apc/hyper/ascent/south,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/hydroponics_starboard)
 "bZ" = (/obj/structure/window/phoronreinforced{dir = 8},/obj/structure/window/phoronreinforced{dir = 1},/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
@@ -128,7 +126,6 @@
 "cx" = (/obj/machinery/light/ascent/damaged,/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{dir = 1; id_tag = "ascent_inf_seedship_fore_pumps"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/fore_hallway)
 "cy" = (/turf/simulated/wall/r_wall/ascent,/area/ship/ascent_inf/fore_port_prow)
 "cz" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 5},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/structure/cable/cyan{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 5},/turf/simulated/floor/ascent,/area/ship/ascent_inf/habitation)
-"cA" = (/turf/simulated/wall/ascent,/area/ship/ascent_inf/hydroponics_port)
 "cB" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 5},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_starboard_spike)
 "cC" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 6},/turf/simulated/floor/ascent,/area/ship/ascent_inf/hydroponics_starboard)
 "cD" = (/obj/machinery/atmospherics/unary/vent_pump/on/ascent,/obj/structure/cable/cyan{d2 = 2; icon_state = "0-2"},/obj/machinery/power/apc/hyper/ascent/north,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
@@ -163,7 +160,7 @@
 "dg" = (/obj/structure/window/phoronreinforced{dir = 1},/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
 "dh" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "di" = (/obj/machinery/light/ascent/damaged{dir = 1},/obj/effect/decal/cleanable/blood/ascent,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/fore_hallway)
-"dj" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden,/obj/structure/inflatable/wall,/turf/simulated/floor/ascent,/area/ship/ascent_inf/hydroponics_starboard)
+"dj" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden,/turf/simulated/floor/ascent,/area/ship/ascent_inf/hydroponics_starboard)
 "dk" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/effect/catwalk_plated/ascent,/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/alarm/ascent{dir = 8; pixel_x = 24},/obj/structure/inflatable/wall,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_port_prow)
 "dl" = (/obj/structure/table/steel_reinforced,/obj/item/stack/nanopaste,/obj/item/stack/nanopaste,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/wing_starboard)
 "dm" = (/obj/structure/window/phoronreinforced{dir = 1},/obj/structure/window/phoronreinforced{dir = 4},/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
@@ -238,7 +235,7 @@
 "eD" = (/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable/cyan{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden,/obj/effect/landmark/carnage_mark,/turf/simulated/floor/ascent,/area/ship/ascent_inf/wing_port)
 "eE" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/manifold/hidden{dir = 4},/obj/structure/cable/cyan{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
 "eF" = (/obj/machinery/door/airlock/external/bolted/ascent{frequency = 1331; id_tag = "ascent_inf_port_dock_outer"},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/wing_port)
-"eG" = (/turf/simulated/wall/ascent,/area/ship/ascent_inf/fore_hallway)
+"eG" = (/turf/simulated/wall/r_wall/ascent,/area/ship/ascent_inf/fore_hallway)
 "eH" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
 "eI" = (/obj/machinery/light/ascent/damaged{dir = 8},/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/bridge)
 "eJ" = (/obj/machinery/hologram/holopad/longrange/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/bridge)
@@ -261,7 +258,6 @@
 "fa" = (/obj/machinery/airlock_sensor{frequency = 1331; id_tag = "ascent_inf_starboard_sensor"; pixel_x = -24; pixel_y = 0},/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{dir = 1; id_tag = "ascent_inf_starboard_pump"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_starboard)
 "fb" = (/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{dir = 1; id_tag = "ascent_inf_starboard_pump"},/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_starboard)
 "fc" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{dir = 2; id_tag = "ascent_inf_starboard_pump_out_internal"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_starboard)
-"fd" = (/turf/simulated/floor/airless,/area/ship/ascent_inf/hydroponics_starboard)
 "fe" = (/obj/machinery/door/airlock/external/bolted/ascent{frequency = 1331; id_tag = "ascent_inf_port_outer"},/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
 "ff" = (/obj/structure/window/phoronreinforced{dir = 4},/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
 "fg" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{id_tag = "ascent_inf_shuttle_starboard_vent_inner"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/wing_starboard)
@@ -275,7 +271,6 @@
 "fo" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/structure/bed/chair/padded/purple/ascent{dir = 4},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
 "fp" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
 "fq" = (/obj/structure/window/phoronreinforced{dir = 1},/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/shuttle_port)
-"fr" = (/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "fs" = (/obj/machinery/atmospherics/unary/vent_pump/on/ascent,/obj/structure/window/phoronreinforced{dir = 1},/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/shuttle_port)
 "ft" = (/obj/machinery/door/airlock/ascent{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
 "fu" = (/obj/machinery/power/terminal,/obj/structure/cable/cyan{d2 = 8; icon_state = "0-8"},/obj/effect/catwalk_plated/ascent,/obj/structure/cable/cyan{d1 = 2; d2 = 4; icon_state = "2-4"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_starboard)
@@ -300,7 +295,7 @@
 "fN" = (/obj/structure/table/steel_reinforced,/obj/item/storage/box/water/ascent,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/fore_port_prow)
 "fO" = (/obj/structure/reagent_dispensers/water_cooler/ascent,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/fore_port_prow)
 "fP" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_port_prow)
-"fQ" = (/turf/simulated/wall/ascent,/area/ship/ascent_inf/fore_port_spike)
+"fQ" = (/turf/simulated/wall/r_wall/ascent,/area/ship/ascent_inf/fore_port_spike)
 "fR" = (/obj/structure/bed/chair/padded/purple/ascent/gyne,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/fore_port_prow)
 "fS" = (/obj/structure/window/phoronreinforced,/obj/structure/window/phoronreinforced{dir = 8},/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
 "fT" = (/obj/machinery/light/ascent/damaged{dir = 1},/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/fore_port_prow)
@@ -319,7 +314,7 @@
 "gg" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/turf/simulated/floor/ascent,/area/ship/ascent_inf/fore_hallway)
 "gh" = (/obj/structure/window/phoronreinforced,/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
 "gi" = (/obj/machinery/atmospherics/omni/mixer,/turf/simulated/floor/ascent,/area/ship/ascent_inf/hydroponics_starboard)
-"gj" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 9},/obj/structure/inflatable/wall,/turf/simulated/floor/ascent,/area/ship/ascent_inf/hydroponics_starboard)
+"gj" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 9},/turf/simulated/floor/ascent,/area/ship/ascent_inf/hydroponics_starboard)
 "gk" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/portable_atmospherics/canister/methyl_bromide,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "gl" = (/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "gm" = (/obj/structure/bed/chair/padded/purple/ascent{dir = 1},/obj/effect/landmark/explosion/light,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/bridge)
@@ -348,7 +343,7 @@
 "gJ" = (/obj/machinery/door/airlock/ascent,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/turf/simulated/floor/ascent,/area/ship/ascent_inf/wing_port)
 "gK" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/effect/catwalk_plated/ascent,/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden{dir = 9},/turf/simulated/floor/ascent,/area/ship/ascent_inf/wing_port)
 "gL" = (/obj/machinery/portable_atmospherics/canister/empty,/obj/machinery/atmospherics/portables_connector,/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
-"gM" = (/obj/structure/cable/cyan{icon_state = "0-8"},/obj/machinery/power/ascent_reactor/damaged,/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
+"gM" = (/obj/structure/cable/cyan{icon_state = "0-8"},/obj/machinery/power/ascent_reactor,/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
 "gN" = (/obj/effect/catwalk_plated/ascent,/obj/structure/cable/cyan,/obj/machinery/power/terminal{dir = 8},/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
 "gO" = (/obj/effect/catwalk_plated/ascent,/obj/structure/cable/cyan,/obj/machinery/power/smes/buildable/preset/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
 "gP" = (/obj/machinery/atmospherics/pipe/manifold/hidden{dir = 4},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/hydroponics_starboard)
@@ -450,16 +445,15 @@
 "iH" = (/obj/machinery/atmospherics/portables_connector{dir = 4},/obj/machinery/portable_atmospherics/canister/empty,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
 "iI" = (/obj/effect/landmark/explosion/light,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/habitation)
 "iJ" = (/obj/machinery/light/ascent/damaged{dir = 4},/obj/machinery/atmospherics/unary/vent_pump/high_volume/shuttle{dir = 1; id_tag = "ascent_inf_starboard_pump"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_starboard)
-"iK" = (/obj/effect/catwalk_plated/ascent,/obj/effect/landmark/explosion/medium,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "iL" = (/obj/machinery/embedded_controller/radio/airlock/docking_port{dir = 4; frequency = 1331; id_tag = "ascent_inf_port_dock"; pixel_x = -20; pixel_y = 0; tag_airpump = "ascent_inf_port_dock_pump"; tag_chamber_sensor = "ascent_inf_port_dock_sensor"; tag_exterior_door = "ascent_inf_port_dock_outer"; tag_interior_door = "ascent_inf_port_dock_inner"},/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/wing_port)
 "iM" = (/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/shuttle_port)
 "iN" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/visible/universal,/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
-"iO" = (/obj/effect/landmark/explosion/light,/obj/effect/decal/cleanable/vomit,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/wing_port)
+"iO" = (/obj/effect/decal/cleanable/vomit,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/wing_port)
 "iP" = (/obj/machinery/atmospherics/unary/vent_scrubber/on/ascent,/obj/machinery/alarm/ascent{dir = 4; pixel_x = -24},/obj/structure/window/phoronreinforced{dir = 1},/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/shuttle_port)
 "iQ" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/door/airlock/external/bolted/ascent{airlock_type = "Internal"; frequency = 1331; id_tag = "ascent_inf_dock_starboard_internal"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/fore_starboard_prow)
 "iR" = (/obj/structure/hygiene/sink/ascent{pixel_y = -13},/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/fore_starboard_jut)
 "iS" = (/obj/structure/bed/chair/padded/purple/ascent{dir = 8},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/shuttle_port)
-"iT" = (/obj/structure/table/rack/dark,/obj/item/rig/mantid,/obj/machinery/light/ascent/damaged{dir = 1},/obj/structure/window/phoronreinforced{dir = 8},/obj/machinery/door/window/southright{color = "PURPLE"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/bridge)
+"iT" = (/obj/structure/table/rack/dark,/obj/item/rig/mantid,/obj/machinery/light/ascent/damaged{dir = 1},/obj/structure/window/phoronreinforced{dir = 8},/obj/machinery/door/window/southright{color = "PURPLE"},/obj/item/gun/energy/particle,/turf/simulated/floor/ascent,/area/ship/ascent_inf/bridge)
 "iU" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 4},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/machinery/alarm/ascent{dir = 1; pixel_y = -24},/turf/simulated/floor/ascent,/area/ship/ascent_inf/bridge)
 "iV" = (/obj/machinery/atmospherics/portables_connector{dir = 1},/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/shuttle_port)
 "iW" = (/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/machinery/portable_atmospherics/canister/empty,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/shuttle_port)
@@ -513,7 +507,6 @@
 "jS" = (/obj/machinery/light/ascent/damaged{dir = 4},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/shuttle_port)
 "jT" = (/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/shuttle_port)
 "jU" = (/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
-"jV" = (/turf/simulated/floor/airless,/area/ship/ascent_inf/hydroponics_port)
 "jW" = (/obj/machinery/light/ascent/damaged{dir = 1},/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/shuttle_port)
 "jX" = (/obj/machinery/atmospherics/pipe/manifold/hidden{dir = 4},/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "jY" = (/obj/machinery/light/ascent/damaged,/obj/machinery/botany/editor,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
@@ -521,11 +514,9 @@
 "ka" = (/obj/machinery/biogenerator,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "kb" = (/obj/machinery/portable_atmospherics/hydroponics/ascent,/obj/machinery/atmospherics/portables_connector{dir = 1},/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "kc" = (/obj/effect/landmark/explosion/light,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/fore_port_prow)
-"kd" = (/obj/effect/landmark/explosion/medium,/turf/simulated/floor/airless,/area/ship/ascent_inf/hydroponics_starboard)
 "ke" = (/obj/structure/table/rack/dark,/obj/item/rpd,/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
-"kf" = (/obj/machinery/portable_atmospherics/hydroponics/ascent,/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/effect/landmark/explosion/medium,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "kg" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/portable_atmospherics/canister/methyl_bromide,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_starboard)
-"kh" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/structure/inflatable/wall,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
+"kh" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/manifold/hidden/supply,/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "ki" = (/obj/effect/landmark/explosion/light,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/shuttle_port)
 "kj" = (/obj/effect/wallframe_spawn/reinforced_phoron/ascent_inf,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_starboard_jut)
 "kk" = (/obj/machinery/light/ascent/damaged{dir = 8},/obj/effect/landmark/explosion/light,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_starboard_jut)
@@ -539,15 +530,14 @@
 "ks" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden{dir = 4},/obj/machinery/portable_atmospherics/canister/methyl_bromide,/turf/simulated/floor/ascent,/area/ship/ascent_inf/hydroponics_starboard)
 "kt" = (/obj/item/storage/bag/trash/purple/ascent,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/fore_port_prow)
 "ku" = (/obj/structure/table/rack/dark,/obj/item/rig/mantid/gyne,/turf/simulated/floor/ascent,/area/ship/ascent_inf/bridge)
-"kv" = (/obj/structure/table/rack/dark,/obj/machinery/light/ascent/damaged,/obj/machinery/door/window/northright{color = "PURPLE"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/bridge)
-"kw" = (/obj/structure/table/rack/dark,/obj/item/rig/mantid/nabber,/turf/simulated/floor/ascent,/area/ship/ascent_inf/habitation)
-"kx" = (/obj/structure/table/rack/dark,/obj/item/tank/mantid/reactor/oxygen,/turf/simulated/floor/ascent,/area/ship/ascent_inf/habitation)
+"kv" = (/obj/structure/table/rack/dark,/obj/machinery/light/ascent/damaged,/obj/machinery/door/window/northright{color = "PURPLE"},/obj/item/rig/mantid,/obj/item/gun/energy/particle,/turf/simulated/floor/ascent,/area/ship/ascent_inf/bridge)
+"kx" = (/obj/structure/table/rack/dark,/turf/simulated/floor/ascent,/area/ship/ascent_inf/habitation)
 "ky" = (/obj/structure/bed/chair/padded/purple/ascent{dir = 1},/obj/effect/landmark/explosion/light,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/aft_starboard_jut)
 "kz" = (/obj/machinery/light/ascent/damaged,/obj/structure/table/rack/dark,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/bridge)
 "kA" = (/obj/effect/catwalk_plated/ascent,/obj/structure/table/rack/dark,/obj/item/material/knife/kitchen/cleaver/ascent,/obj/item/stack/medical/bruise_pack,/obj/item/tank/mantid/oxygen,/obj/item/tank/mantid/oxygen,/obj/item/tank/mantid/oxygen,/obj/machinery/alarm/ascent{dir = 8; pixel_x = 24},/turf/simulated/floor/ascent,/area/ship/ascent_inf/fore_starboard_jut)
 "kB" = (/obj/effect/catwalk_plated/ascent,/obj/structure/cable/cyan{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/inflatable/wall,/turf/simulated/floor/ascent,/area/ship/ascent_inf/aft_starboard_jut)
 "kC" = (/obj/structure/table/rack/dark,/obj/item/tank/jetpack/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/habitation)
-"kD" = (/obj/structure/table/rack/dark,/obj/machinery/alarm/ascent{dir = 1; pixel_y = -24},/obj/item/gun/energy/particle,/turf/simulated/floor/ascent,/area/ship/ascent_inf/habitation)
+"kD" = (/obj/structure/table/rack/dark,/obj/machinery/alarm/ascent{dir = 1; pixel_y = -24},/turf/simulated/floor/ascent,/area/ship/ascent_inf/habitation)
 "kE" = (/obj/effect/shuttle_landmark/automatic,/turf/space,/area/space)
 "kF" = (/obj/item/material/shard/phoron,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/bridge)
 "kG" = (/obj/effect/catwalk_plated/ascent,/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 9},/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_starboard_prow)
@@ -585,17 +575,12 @@
 "lm" = (/obj/random/trash/space,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_starboard_spike)
 "ln" = (/obj/random/trash/space,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/fore_starboard_spike)
 "lo" = (/obj/random/trash/space,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/fore_starboard_prow)
-"lp" = (/obj/random/trash/space,/turf/simulated/floor/airless,/area/ship/ascent_inf/hydroponics_starboard)
-"lq" = (/obj/effect/catwalk_plated/ascent,/obj/random/trash/space,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_starboard)
+"lp" = (/obj/machinery/ion_engine{dir = 8},/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_starboard)
 "lr" = (/obj/machinery/light/ascent/damaged,/obj/random/trash/space,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/fore_starboard_prow)
-"ls" = (/obj/machinery/atmospherics/omni/mixer,/obj/random/trash/space,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
-"lt" = (/obj/effect/decal/cleanable/greenglow,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
+"ls" = (/obj/machinery/atmospherics/omni/mixer,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "lu" = (/obj/random/trash/space,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/fore_port_spike)
-"lv" = (/obj/machinery/atmospherics/unary/vent_scrubber/on/ascent{dir = 8},/obj/effect/decal/cleanable/greenglow,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
+"lv" = (/obj/machinery/atmospherics/unary/vent_scrubber/on/ascent{dir = 8},/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "lw" = (/obj/random/trash/space,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/fore_port_spike)
-"lx" = (/obj/random/trash/space,/turf/simulated/floor/tiled/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
-"ly" = (/obj/random/trash/space,/turf/simulated/floor/airless,/area/ship/ascent_inf/hydroponics_port)
-"lz" = (/obj/random/trash/space,/turf/simulated/floor/ascent/airless,/area/ship/ascent_inf/hydroponics_port)
 "lA" = (/obj/item/reagent_containers/food/snacks/meat/syntiflesh,/turf/space,/area/space)
 "lB" = (/obj/machinery/atmospherics/portables_connector{dir = 1},/obj/machinery/portable_atmospherics/canister/oxygen,/turf/simulated/floor/ascent,/area/ship/ascent_inf/engineering)
 "lC" = (/obj/machinery/access_button/airlock_interior{command = "cycle_exterior"; frequency = 1331; master_tag = "ascent_inf_port_shuttle_dock"; pixel_x = 24},/obj/effect/catwalk_plated/ascent,/obj/machinery/door/airlock/external/bolted/ascent{frequency = 1331; id_tag = "ascent_inf_port_outer"},/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_port)
@@ -606,7 +591,7 @@
 "me" = (/obj/effect/catwalk_plated/ascent,/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 9},/turf/simulated/floor/ascent,/area/ship/ascent_inf/aft_starboard_jut)
 "mx" = (/obj/machinery/recharge_station/ascent,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/shuttle_port)
 "mV" = (/obj/machinery/atmospherics/unary/vent_pump/on/ascent,/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/aft_starboard_jut)
-"mY" = (/turf/simulated/wall/ascent,/area/ship/ascent_inf/fore_starboard_jut)
+"mY" = (/turf/simulated/wall/r_wall/ascent,/area/ship/ascent_inf/fore_starboard_jut)
 "na" = (/obj/effect/catwalk_plated/ascent,/turf/simulated/floor/ascent,/area/ship/ascent_inf/aft_starboard_jut)
 "nh" = (/obj/machinery/atmospherics/pipe/manifold/hidden{dir = 8},/turf/simulated/floor/ascent,/area/ship/ascent_inf/shuttle_starboard)
 "oL" = (/turf/simulated/floor/tiled/ascent,/area/ship/ascent_inf/hydroponics_starboard)
@@ -726,37 +711,37 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbXaaaaaaaaaaaaaadNabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabeLaaaaaaaaaaaaaaeMabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababaaaaaaaaaaaaaaabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYaaabEkabababadadadabababEkabaalWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYmYaaabMZawabgAidvFCdaUabwuNJabaalWlWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYeQaaabsFzAabfwinRIiniqabnhUXabaaeSlWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYeQaaababcTabaeaeaeaeaeabVRababaaeSlWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYaoaomYmYaaUQapwXGlGsaeSpaeIZeByUadaaaalWlWatatlWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYqGVzbaaoaaaaadbHaeaeaeaeaeaeaeaeadaaaaattrildAlWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYkjkjmYqGqGqGaoaaaaadMYdHeadHepexeCfuNvadaaaaatbVtrtrlWatatatlWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYkkeQklZhreaRmYmYaaababeNabeOePamabbKababaalWlWzVbVtrOfFOtrkylWlWlWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYkmeQknhwExyxeRmYmYeWabababfafbiJabababeWlWlWGZbVFdtrwMbVmVdAnalWeXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahAaamYmYeQeQklZhtwqGgSOumYaaeWeWabeofcwOabeWeWaalWJCJCnaIfgalJNOmenanalWeXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacasasasasasmYmYhyeQkrZhiRXkTLkAmYaaaaeYgqieitXagqeZaaaalWCWCWnaNRnaRKkBwBgpnalWeXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacacauaBaFbTaXacacacacacacacacKhacacacacacaciEiGiEajajajajajajajajajajajpyajajajavavavavavavavavavaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAaAaAaAaAaLalalalalacbiblblblblbliccEcMcOcPcUcVblcZblblifblblacfvfgfvajiBancGbgigajaiajaiZnaWdlajajQYoVEwlDaqavaqaqavaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAaAaAaAaAaAaAaAcplmaPlnbhdTacdwbldCdGdIbldJdLOJdMdIdRcVlocZblloblhgbliQjqjrjsbqbxfWgGgHbIcjbIaCbIbIcqakdrbBoLoLoLaJdSbCdSgPavavavavavlpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAaAaAaAaLdQaLcpaPlnaPcucwcBhjkLblblifblblblblblhVjQjQjQjQkGblkHblblblahagagagazazazaNazazazaKbJbSaOcraxaxayaDaEaHaThLdecCdjdzdzfZlqgckdfdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAaAaAaAaAaAdVaLalalalalalalackJkKkLlobllohglrkMkNkOblihblloblahahahahahbbazazazdqcYbcbehoazazazhOaZcIigakagbYeffXksgbfYgigjhqhqhqkglqgclpfdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacacackPkQblifblackRhHkTkUahaQbGaQaQchcmchcWbbazckbmckbebccYckbmckazhvakcIakjyagBXBXcbcbcbcbBXBXkqkqkqkqkqkqfdlpfdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafGkVkWkXkYkYkZacaciaahahahhFVrkCAsbbbbbbbbazazfLgmfHbebciufLhBfHazazjfcIakagBXgLgLgLhzeVhshPBXBXfVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeGeGacacacacaciaacLNbpTOaQcWbtbrbrbEbrbrbFbbazeIbebebecYbcbebebebeiTazagcKagagBXdbdfdndydydydycsfCBXfVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYaaabEkabababadadadabababEkabaaajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYmYaaabMZawabgAidvFCdaUabwuNJabaaajajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYeQaaabsFzAabfwinRIiniqabnhUXabaaeSajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYeQaaababcTabaeaeaeaeaeabVRababaaeSajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYaoaomYmYaaUQapwXGlGsaeSpaeIZeByUadaaaaajajatatajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYqGVzbaaoaaaaadbHaeaeaeaeaeaeaeaeadaaaaattrildAajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYkjkjmYqGqGqGaoaaaaadMYdHeadHepexeCfuNvadaaaaatbVtrtrlWatatatajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYkkeQklZhreaRmYmYaaababeNabeOePamabbKababaaajajzVbVtrOfFOtrkyajajajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamYkmeQknhwExyxeRmYmYeWabababfafbiJabababeWajajGZbVFdtrwMbVmVdAnaajeXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahAaamYmYeQeQklZhtwqGgSOumYaaeWeWabeofcwOabeWeWaaajJCJCnaIfgalJNOmenanaajeXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahasasasasasmYmYhyeQkrZhiRXkTLkAmYaaaaeYgqieitXagqeZaaaaajCWCWnaNRnaRKkBwBgpnaajeXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahahauaBaFbTaXacahahahahahahahKhahahahahahahiEiGiEagagagagagagagagagagagpyagagagkqkqkqkqkqkqkqkqkqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAaAaAaAaAaLalalalalahbiblblblblbliccEcMcOcPcUcVblcZblblifblblahfvfgfvagiBancGbgigagaiagaiZnaWdlagagQYoVEwlDaqkqaqaqkqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAaAaAaAaAaAaAaAcplmaPlnbhdTahdwbldCdGdIbldJdLOJdMdIdRcVlocZblloblhgbliQjqjrjsbqbxfWgGgHbIcjbIaCbIbIcqakdrbBoLoLoLaJdSbCdSgPkqkqkqkqkqlpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAaAaAaAaLdQaLcpaPlnaPcucwcBhjkLblblifblblblblblhVjQjQjQjQkGblkHblblblahagagagazazazaNazazazaKbJbSaOcraxaxayaDaEaHaThLdecCdjdzdzfZgcgckqlpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAaAaAaAaAaAdVaLalalalalalalahkJkKkLlobllohglrkMkNkOblihblloblahahahahahbbazazazdqcYbcbehoazazazhOaZcIigakagbYeffXksgbfYgigjhqhqhqkggcgckqlpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahahahkPkQblifblahkRhHkTkUahaQbGaQaQchcmchcWbbazckbmckbebccYckbmckazhvakcIakjyagBXBXcbcbcbcbBXBXkqkqkqkqkqkqkqkqlpaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafGkVkWkXkYkYkZahahiaahahahhFVrkCAsbbbbbbbbazazfLgmfHbebciufLhBfHazazjfcIakagBXgLgLgLhzeVhshPBXBXfVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeGeGahahahahahiaahLNbpTOaQcWbtbrbrbEbrbrbFbbazeIbebebecYbcbebebebeiTazagcKagagBXdbdfdndydydydycsfCBXfVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeGembDeweGcncJkSdibdbpctaQiIbNbbbuccbujgczbrbOiUbRbRcgbebcbvjCbmbefMcobfdudtdOBXegdsbweddKbZdgdmdsdsBXfVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadDelgBeqeresetezggggcfggdPbrbUebbzbAbzbbiIbbeKeKeKeJfBdZbkbofMhtbekucociekeneneueEfEgyeveeecgMffdsfkBXgCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadDelgBeqeresetezggggcfggdPbrbUebbzbAbzbbiIbbazeKeKeJfBdZbkbofMhtbekucociekeneneueEfEgyeveeecgMffdsfkBXgCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeGgrcxgreGhDjkbpdEhEbpbdaQbbbNbbfJgRfJiIbtbrbObRbRbRfFbebcbLjDfUbefMcocadudvjiBXegdsbMgOgNfSghhUdsdsBXfVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahAeGeGaSaSaSaSaSaYaSQTbpTOaQdFczbrbrfAbrbrcFbbazeIbeiubebebcbebebekFkvazbPgxbPbPBXgUgVjndsdsdsdsdsdsBXfVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagQafaGcvcRcSdkaSaSaYcycycykwkxkDuVbbbbbbbbazazfLfKfHbebcbefLfKfHazazjJgzjBjKbPgXjMlBhQhNkejzBXBXfVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaSaSaSdUehkceieiaSejeAfNfOcyaQbGaQaQdBdYdBdFbbazckfIckbebcbeckfIckazjAbQgzbQiObPBXBXcbcbcbcbBXBXAjAjAjAjAjAjAjAjgYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkhkhkhkhkhkhkhlfQfQfQfQfQfQaSdUfPehfReieieifTgFgWhbhceieieieicycycycycybbazazazdxbefDjokzazazazhRcdgzkobQbPcDcHcXdhdpdhlsgegfgfgfgkglgkcAltaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkhkhkhkhkhmhkhkhiluhihnhphrhuehlahChChCeieilaeieieilleiiieikceieieieicybPbPbPazazazaNazazazhShTjxdaeDdcdcddkhgngolvglgZhehfhhhhhMiKglcAfraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkhkhkhkhkhkhkhllwhGlbluhIhJaShKeihWeihWeieikthXhXhXhYhXhXhXhYhXlchXhZcedodWdXgEjdjFjGjIgIgJgIgIgIgIgKkobQaMjhlxjhjmjwjUjwjXcAcAcAlyjVlzaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkhlhlfQfQfQfQfQfQfQaSibeieieilahYeieihCldhCaSlehChCaShClfhCeiaSfhfibWiLlgclbQjHbQbWbQlhkplijLhxljbWjYjZkalEkbcAkbkfcAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaSaSiyhChChCaSaSimimimimaSimimimaSaIaSaSaSaSeyeFbWbWbWbWaMaMaMbWbWbWaMaMbWbWbWbWcAcAcAcAcAcAcAcAcAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaSimimimimaSaaaaaaaaaaaaaaaaaaaaaakIkIkIkIfelCkIkIkIkIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahAeGeGcycycycycyaYcyQTbpTOaQdFczbrbrfAbrbrcFbbazeIbeiubebebcbebebekFkvazbPgxbPbPBXgUgVjndsdsdsdsdsdsBXfVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagQafaGcvcRcSdkcycyaYcycycykxkxkDuVbbbbbbbbazazfLfKfHbebcbefLfKfHazazjJgzjBjKbPgXjMlBhQhNkejzBXBXfVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacycycydUehkceieicyejeAfNfOcyaQbGaQaQdBdYdBdFbbazckfIckbebcbeckfIckazjAbQgzbQiObPBXBXcbcbcbcbBXBXAjAjAjAjAjAjAjAjgYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkhkhkhkhkhkhkhlfQfQfQfQfQfQcydUfPehfReieieifTgFgWhbhceieieieicycycycycybbazazazdxbefDjokzazazazhRcdgzkobQbPcDcHcXdhdpdhlsgegfgfgfgkglgkAjgYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkhkhkhkhkhmhkhkhiluhihnhphrhuehlahChChCeieilaeieieilleiiieikceieieieicybPbPbPazazazaNazazazhShTjxdaeDdcdcddkhgngolvglgZhehfhhhhhMglglAjgYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkhkhkhkhkhkhkhllwhGlbluhIhJcyhKeihWeihWeieikthXhXhXhYhXhXhXhYhXlchXhZcedodWdXgEjdjFjGjIgIgJgIgIgIgIgKkobQaMjhjhjhjmjwjUjwjXAjAjAjAjAjgYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahkhlhlfQfQfQfQfQfQfQcyibeieieilahYeieihCldhCaSlehChCaShClfhCeicyfhfibPiLlgclbQjHbQbPbQlhkplijLhxljbPjYjZkalEkbAjkbkbAjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacycyiyhChChCcycyimimimimcyimimimcyaIcycycycyeyeFbPbPbPbPaMaMaMbPbPbPaMaMbPbPbPbPAjAjAjAjAjAjAjAjAjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacyimimimimcyaaaaaaaaaaaaaaaaaaaaaakIkIkIkIfelCkIkIkIkIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakIeTeTkIkIkIeTeTeTkIjNjOaVfygvkIfmeUkIikikikkIkIcNikikkIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalAaakIfqfqfqjWfqfsfqfxkIfjiHbjflfnkIfofpkIiPQmoUjajbQyWIWIkIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakIkIiziMiMiSiXiYiZftfzgdkIgspEkIgtguftguiwgwgDcQcQcQkIkIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
