@@ -206,3 +206,11 @@
 		"Menu 9" = /obj/item/storage/mre/menu9,
 		"Menu 10" = /obj/item/storage/mre/menu10)
 	gear_tweaks += new /datum/gear_tweak/path(mre_list)
+
+/datum/gear/toy_katana
+	display_name = "replica katana"
+	description = "Ah, I see you're a man of culture as well."
+	path = /obj/item/toy/katana
+	required_donate_level = 2
+	cost = 0
+	price = 5
