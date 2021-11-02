@@ -89,18 +89,19 @@
 	outfit_type = /decl/hierarchy/outfit/job/ascent
 	minimal_player_age = 21
 	blacklisted_species = null
-	whitelisted_species = list("kharmaan gyne") // возможно нужно поменять
+	whitelisted_species = list(SPECIES_MANTID_GYNE)
 	loadout_allowed = FALSE
 	is_semi_antagonist = TRUE
 	var/requires_supervisor = FALSE
 	var/set_species_on_join = SPECIES_MANTID_GYNE
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
-					SKILL_PILOT = SKILL_ADEPT,
+	min_skill = list(SKILL_EVA = SKILL_EXPERT,
+					SKILL_PILOT = SKILL_PROF,
 					SKILL_HAULING = SKILL_ADEPT,
 					SKILL_COMBAT = SKILL_ADEPT,
-					SKILL_WEAPONS = SKILL_ADEPT,
+					SKILL_WEAPONS = SKILL_EXPERT,
 					SKILL_SCIENCE = SKILL_ADEPT,
-					SKILL_MEDICAL = SKILL_BASIC)
+					SKILL_MEDICAL = SKILL_ADEPT,
+					SKILL_ANATOMY = SKILL_ADEPT)
 
 /datum/job/submap/ascent_inf/is_position_available()
 	. = ..()
@@ -153,17 +154,21 @@
 
 /datum/job/submap/ascent_inf/alate
 	title = "Ascent alate"
-	total_positions = 2
+	total_positions = 3
 	supervisors = "your Gyne"
 	info = "You are an Alate of an independent Ascent vessel. Your Gyne has directed you to this remote sector full of crawling primitives. Follow her instructions and bring prosperity to your nest-lineage."
 	set_species_on_join = SPECIES_MANTID_ALATE
 	outfit_type = /decl/hierarchy/outfit/job/ascent/tech
+	whitelisted_species = list(SPECIES_MANTID_ALATE)
+	loadout_allowed = FALSE
+	is_semi_antagonist = TRUE
 	requires_supervisor = "Ascent gyne"
-	min_skill = list(SKILL_EVA = SKILL_ADEPT,
-					SKILL_HAULING = SKILL_ADEPT,
-					SKILL_COMBAT = SKILL_ADEPT,
-					SKILL_WEAPONS = SKILL_ADEPT,
-					SKILL_MEDICAL = SKILL_BASIC)
+	min_skill = list(SKILL_EVA = SKILL_PROF,
+					SKILL_HAULING = SKILL_EXPERT,
+					SKILL_COMBAT = SKILL_EXPERT,
+					SKILL_WEAPONS = SKILL_EXPERT,
+					SKILL_MEDICAL = SKILL_ADEPT)
+
 
 /datum/job/submap/ascent_inf/drone
 	title = "Ascent drone"
@@ -172,6 +177,9 @@
 	info = "You are a Machine Intelligence of an independent Ascent vessel. The Gyne you assist, and her children, have wandered into this sector full of primitive bioforms. Try to keep them alive, and assist where you can."
 	set_species_on_join = /mob/living/silicon/robot/flying/ascent
 	requires_supervisor = "Ascent gyne"
+	loadout_allowed = FALSE
+	is_semi_antagonist = TRUE
+	whitelisted_species = list(SPECIES_MANTID_ALATE)
 
 /*
 /datum/job/submap/ascent_inf/msw
