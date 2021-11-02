@@ -6,7 +6,7 @@
 	item_state = null
 	suit_type = "support exosuit"
 	armor = list(
-		melee = ARMOR_MELEE_MAJOR,
+		melee = ARMOR_MELEE_VERY_HIGH,
 		bullet = 1.1 * ARMOR_BALLISTIC_RESISTANT,
 		laser = 1.1 * ARMOR_LASER_RIFLES,
 		energy = ARMOR_ENERGY_RESISTANT,
@@ -234,7 +234,7 @@
 	name = "gyne combat exosuit"
 	armor = list(
 		melee = ARMOR_MELEE_VERY_HIGH,
-		bullet = ARMOR_BALLISTIC_RIFLE,
+		bullet = ARMOR_BALLISTIC_AP,
 		laser = ARMOR_LASER_RIFLES,
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_RESISTANT,
