@@ -1,8 +1,0 @@
-{
-  "ckey" :            "unchi",
-  "character_name" :  "Svara Bloom",
-  "item_name" :       "Rose",
-  "item_desc" :       "A classic black guitar with a red rose pattern and metal strings, it also has a leather, shabby belt with the initials \"S.B. Kersy\".",
-  "item_icon_state" : "unchi_guitar",
-  "item_path" :       "/obj/item/device/synthesized_instrument/guitar"
-  }
