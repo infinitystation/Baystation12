@@ -184,10 +184,3 @@
 			output += "<center><a href='?_src_=holder;addnoteempty=1'>\[Add Note\]</a></center>"
 		output += ruler
 	show_browser(usr, output, "window=show_notes;size=900x500")
-
-/client/verb/self_notes()
-	set name = "View Admin Remarks"
-	set category = "OOC"
-	set desc = "View the notes that admins have written about you"
-
-	show_note(usr.ckey)
