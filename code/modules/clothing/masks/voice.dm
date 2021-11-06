@@ -6,6 +6,7 @@
 
 /obj/item/clothing/mask/chameleon/voice
 	name = "gas mask"
+	flags_inv = HIDEFACE
 	desc = "A face-covering mask that can be connected to an air supply. It seems to house some odd electronics."
 	var/obj/item/voice_changer/changer
 	origin_tech = list(TECH_ESOTERIC = 4)
