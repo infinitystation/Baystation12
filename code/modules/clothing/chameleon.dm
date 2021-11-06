@@ -74,10 +74,11 @@
 /obj/item/clothing/mask/chameleon
 	name = "mask"
 	icon_state = "fullgas"
-	item_state = "gas_alt"
+	item_state = "fullgas"
 	desc = "It looks like a plain gask mask, but on closer inspection, it seems to have a small dial inside."
 	origin_tech = list(TECH_ESOTERIC = 3)
 	item_flags = ITEM_FLAG_INVALID_FOR_CHAMELEON
+	flags_inv = HIDEEYES|HIDEFACE|HIDEEARS
 
 /obj/item/clothing/mask/chameleon/Initialize()
 	. = ..()
