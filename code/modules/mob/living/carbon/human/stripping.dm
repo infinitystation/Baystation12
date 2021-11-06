@@ -20,15 +20,27 @@
 		stripping = TRUE
 
 	switch (slot_to_strip_text)
-		if ("pockets")
+
+		if ("left_pocket")
 			if (stripping)
-				visible_message(SPAN_DANGER("\The [user] is trying to empty [src]'s pockets!"))
+				visible_message(SPAN_DANGER("\The [user] is trying to empty [src]'s left pocket!"))
 				if (do_after(user, strip_delay, src, do_flags = DO_DEFAULT | DO_PUBLIC_PROGRESS))
-					empty_pockets(user)
+					empty_pockets(user, slot_l_store)
 			else
-				visible_message(SPAN_DANGER("\The [user] is trying to stuff \a [held] into \the [src]'s pocket!"))
+				visible_message(SPAN_DANGER("\The [user] is trying to stuff \a [held] into \the [src]'s left pocket!"))
 				if (do_after(user, strip_delay, src, do_flags = DO_DEFAULT | DO_PUBLIC_PROGRESS))
-					place_in_pockets(held, user)
+					place_in_pockets(held, user, slot_l_store)
+			return
+
+		if ("right_pocket")
+			if (stripping)
+				visible_message(SPAN_DANGER("\The [user] is trying to empty [src]'s right pocket!"))
+				if (do_after(user, strip_delay, src, do_flags = DO_DEFAULT | DO_PUBLIC_PROGRESS))
+					empty_pockets(user, slot_r_store)
+			else
+				visible_message(SPAN_DANGER("\The [user] is trying to stuff \a [held] into \the [src]'s right pocket!"))
+				if (do_after(user, strip_delay, src, do_flags = DO_DEFAULT | DO_PUBLIC_PROGRESS))
+					place_in_pockets(held, user, slot_r_store)
 			return
 
 		if ("sensors")
@@ -83,19 +95,6 @@
 			holder.remove_accessory(user, A)
 			return
 
-		else
-			var/obj/item/located_item = locate(slot_to_strip_text) in src
-			if (isunderwear(located_item))
-				var/obj/item/underwear/UW = located_item
-				visible_message(
-					SPAN_DANGER("\The [user] starts trying to remove \the [src]'s [UW.name]!"),
-					SPAN_WARNING("You start trying to remove \the [src]'s [UW.name]!")
-				)
-				if (UW.DelayedRemoveUnderwear(user, src))
-					admin_attack_log(user, src, "Stripped \an [UW] from \the [holder].", "Was stripped of \an [UW] from \the [holder].", "stripped \an [UW] from \the [holder] of")
-					user.put_in_active_hand(UW)
-				return
-
 	var/obj/item/target_slot = get_equipped_item(text2num(slot_to_strip_text))
 	if (stripping)
 		if (!istype(target_slot))  // They aren't holding anything valid and there's nothing to remove, why are we even here?
@@ -123,24 +122,21 @@
 		else if (!equip_to_slot_if_possible(held, text2num(slot_to_strip_text), del_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE))
 			user.put_in_active_hand(held)
 
-/mob/living/carbon/human/proc/empty_pockets(mob/living/user)
-	if (!r_store && !l_store)
+/mob/living/carbon/human/proc/empty_pockets(mob/living/user, var/slot)
+	var/slot_item = get_equipped_item(slot)
+	if (!slot_item)
 		to_chat(user, SPAN_WARNING("\The [src] has nothing in their pockets."))
 		return
-	if (r_store)
-		unEquip(r_store)
-	if (l_store)
-		unEquip(l_store)
-	visible_message(SPAN_DANGER("\The [user] empties [src]'s pockets!"))
+	if (slot_item)
+		unEquip(slot_item)
+	visible_message(SPAN_DANGER("\The [user] empties [src]'s pocket!"))
 
-/mob/living/carbon/human/proc/place_in_pockets(obj/item/I, var/mob/living/user)
+/mob/living/carbon/human/proc/place_in_pockets(obj/item/I, var/mob/living/user, var/slot)
+	var/slot_item = get_equipped_item(slot)
 	if(!user.unEquip(I))
 		return
-	if(!r_store)
-		if(equip_to_slot_if_possible(I, slot_r_store, del_on_fail=0, disable_warning=1, redraw_mob=1))
-			return
-	if(!l_store)
-		if(equip_to_slot_if_possible(I, slot_l_store, del_on_fail=0, disable_warning=1, redraw_mob=1))
+	if(!slot_item)
+		if(equip_to_slot_if_possible(I, slot, del_on_fail=0, disable_warning=1, redraw_mob=1))
 			return
 	to_chat(user, "<span class='warning'>You are unable to place [I] in [src]'s pockets.</span>")
 	user.put_in_active_hand(I)

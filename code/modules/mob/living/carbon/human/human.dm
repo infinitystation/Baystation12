@@ -216,56 +216,176 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 /mob/living/carbon/human/var/co2overloadtime = null
 /mob/living/carbon/human/var/temperature_resistance = T0C+75
 
+/mob/living/carbon/human/proc/check_obscured_slots()
+	var/list/obscured = list()
+
+	if(wear_suit)
+		if(wear_suit.flags_inv & HIDEGLOVES)
+			obscured |= slot_gloves
+		if(wear_suit.flags_inv & HIDEJUMPSUIT)
+			obscured |= slot_w_uniform
+		if(wear_suit.flags_inv & HIDESHOES)
+			obscured |= slot_shoes
+
+	if(head)
+		if(head.flags_inv & HIDEMASK)
+			obscured |= slot_wear_mask
+		if(head.flags_inv & HIDEEYES)
+			obscured |= slot_glasses
+		if(head.flags_inv & HIDEEARS)
+			obscured |= slot_r_ear
+			obscured |= slot_l_ear
+
+	if(wear_mask)
+		if(wear_mask.flags_inv & HIDEEYES)
+			obscured |= slot_glasses
+		if(wear_mask.flags_inv & HIDEEARS)
+			obscured |= slot_r_ear
+			obscured |= slot_l_ear
+
+	if(obscured.len > 0)
+		return obscured
+	else
+		return null
 
 /mob/living/carbon/human/show_inv(mob/user as mob)
 	if(user.incapacitated()  || !user.Adjacent(src) || !user.IsAdvancedToolUser())
 		return
 
 	user.set_machine(src)
-	var/dat = "<B><HR><FONT size=3>[name]</FONT></B><BR><HR>"
 
-	for(var/entry in species.hud.gear)
-		var/list/slot_ref = species.hud.gear[entry]
-		if((slot_ref["slot"] in list(slot_l_store, slot_r_store)))
-			continue
-		var/obj/item/thing_in_slot = get_equipped_item(slot_ref["slot"])
-		dat += "<BR><B>[slot_ref["name"]]:</b> <a href='?src=\ref[src];item=[slot_ref["slot"]]'>[istype(thing_in_slot) ? thing_in_slot : "nothing"]</a>"
-		if(istype(thing_in_slot, /obj/item/clothing))
-			var/obj/item/clothing/C = thing_in_slot
-			if(C.accessories.len)
-				dat += "<BR><A href='?src=\ref[src];item=tie;holder=\ref[C]'>Remove accessory</A>"
-	dat += "<BR><HR>"
+	var/list/obscured = check_obscured_slots()
+	var/can_breathe_internally = istype(wear_mask, /obj/item/clothing/mask)
 
-	if(species.hud.has_hands)
-		dat += "<BR><b>Left hand:</b> <A href='?src=\ref[src];item=[slot_l_hand]'>[istype(l_hand) ? l_hand : "nothing"]</A>"
-		dat += "<BR><b>Right hand:</b> <A href='?src=\ref[src];item=[slot_r_hand]'>[istype(r_hand) ? r_hand : "nothing"]</A>"
+	var/dat = "<meta charset='UTF-8'><table><tr><td>"
 
-	// Do they get an option to set internals?
-	if(istype(wear_mask, /obj/item/clothing/mask) || istype(head, /obj/item/clothing/head/helmet/space))
-		if(istype(back, /obj/item/tank) || istype(belt, /obj/item/tank) || istype(s_store, /obj/item/tank))
-			dat += "<BR><A href='?src=\ref[src];item=internals'>Toggle internals.</A>"
-
-	var/obj/item/clothing/under/suit = w_uniform
-	// Other incidentals.
-	if(istype(suit))
-		dat += "<BR><b>Pockets:</b> <A href='?src=\ref[src];item=pockets'>Empty or Place Item</A>"
-		if(suit.has_sensor == 1)
-			dat += "<BR><A href='?src=\ref[src];item=sensors'>Set sensors</A>"
-		if (suit.has_sensor && user.get_multitool())
-			dat += "<BR><A href='?src=\ref[src];item=lock_sensors'>[suit.has_sensor == SUIT_LOCKED_SENSORS ? "Unl" : "L"]ock sensors</A>"
+	//hands
 	if(handcuffed)
-		dat += "<BR><A href='?src=\ref[src];item=[slot_handcuffed]'>Handcuffed</A>"
+		dat += {"<B>Left Hand:</B></td><td><font color=red>Handcuffed</font></td></tr>
+				<tr><td><B>Right Hand</B></td><td><font color=red>Handcuffed</font></td></tr>
+				<tr><td><B><font color=red>Handcuffed:</font></B></td><td><A href='?src=\ref[src];item=[slot_handcuffed]'>Remove</A></td></tr>"}
+	else
+		dat += {"<B>Left Hand:</B></td><td><A href='?src=\ref[src];item=[slot_l_hand]'>[l_hand ? l_hand : "<font color=grey>Empty</font>"]</A></td></tr>
+				<tr><td><B>Right Hand:</B></td><td><A href='?src=\ref[src];item=[slot_r_hand]'>[r_hand ? r_hand : "<font color=grey>Empty</font>"]</A></td></tr>"}
+	dat += "<tr><td>&nbsp;</td></tr>"
 
-	for(var/entry in worn_underwear)
-		var/obj/item/underwear/UW = entry
-		dat += "<BR><a href='?src=\ref[src];item=\ref[UW]'>Remove \the [UW]</a>"
+	//back
+	dat += "<tr><td><B>Back:</B></td><td><A href='?src=\ref[src];item=[slot_back]'>[back ? back : "<font color=grey>Empty</font>"]</A>"
+	if(can_breathe_internally && istype(back, /obj/item/tank))
+		dat += "&nbsp;<A href='?src=\ref[src];item=internals'>[internal ? "Disable Internals" : "Set Internals"]</A>"
+	dat += "</td></tr><tr><td>&nbsp;</td></tr>"
 
-	dat += "<BR><A href='?src=\ref[src];refresh=1'>Refresh</A>"
-	dat += "<BR><A href='?src=\ref[user];mach_close=mob[name]'>Close</A>"
+	//head
+	dat += "<tr><td><B>Head:</B></td><td><A href='?src=\ref[src];item=[slot_head]'>[head ? head : "<font color=grey>Empty</font>"]</A>"
 
-	show_browser(user, dat, text("window=mob[name];size=340x540"))
-	onclose(user, "mob[name]")
-	return
+	//mask
+	if(slot_wear_mask in obscured)
+		dat += "<tr><td><font color=grey><B>Mask:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
+	else
+		dat += "<tr><td><B>Mask:</B></td><td><A href='?src=\ref[src];item=[slot_wear_mask]'>[wear_mask ? wear_mask : "<font color=grey>Empty</font>"]</A>"
+
+	//eyes
+	if(slot_glasses in obscured)
+		dat += "<tr><td><font color=grey><B>Eyes:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
+	else
+		dat += "<tr><td><B>Eyes:</B></td><td><A href='?src=\ref[src];item=[slot_glasses]'>[glasses ? glasses : "<font color=grey>Empty</font>"]</A></td></tr>"
+
+	//ears
+	if(slot_l_ear in obscured)
+		dat += "<tr><td><font color=grey><B>Left Ear:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
+	else
+		dat += "<tr><td><B>Left Ear:</B></td><td><A href='?src=\ref[src];item=[slot_l_ear]'>[l_ear ? l_ear : "<font color=grey>Empty</font>"]</A></td></tr>"
+	if(slot_r_ear in obscured)
+		dat += "<tr><td><font color=grey><B>Right Ear:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
+	else
+		dat += "<tr><td><B>Right Ear:</B></td><td><A href='?src=\ref[src];item=[slot_r_ear]'>[r_ear ? r_ear : "<font color=grey>Empty</font>"]</A></td></tr>"
+	dat += "<tr><td>&nbsp;</td></tr>"
+
+	//suit
+	dat += "<tr><td><B>Exosuit:</B></td><td><A href='?src=\ref[src];item=[slot_wear_suit]'>[wear_suit ? wear_suit : "<font color=grey>Empty</font>"]</A></td></tr>"
+	if(wear_suit)
+		if (istype(wear_suit, /obj/item/clothing))
+			var/obj/item/clothing/exosuit = wear_suit
+			//accessories
+			if(exosuit.accessories.len)
+				dat += "<tr><td>&nbsp;&#8627;<B>Accessories:</b></td><td><A href='?src=\ref[src];item=tie;holder=\ref[exosuit]'>Remove Accessory</a></td></tr>"
+		dat += "<tr><td>&nbsp;&#8627;<B>Suit Storage:</B></td><td><A href='?src=\ref[src];item=[slot_s_store]'>[s_store ? s_store : "<font color=grey>Empty</font>"]</A>"
+		if(can_breathe_internally && istype(s_store, /obj/item/tank))
+			dat += "&nbsp;<A href='?src=\ref[src];item=internals'>[internal ? "Disable Internals" : "Set Internals"]</A>"
+		dat += "</td></tr>"
+	else
+		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Suit Storage:</B></font></td></tr>"
+
+	//shoes
+	if(slot_shoes in obscured)
+		dat += "<tr><td><font color=grey><B>Shoes:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
+	else
+		dat += "<tr><td><B>Shoes:</B></td><td><A href='?src=\ref[src];item=[slot_shoes]'>[shoes	? shoes	: "<font color=grey>Empty</font>"]</A></td></tr>"
+
+	//gloves
+	if(slot_gloves in obscured)
+		dat += "<tr><td><font color=grey><B>Gloves:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
+	else
+		dat += "<tr><td><B>Gloves:</B></td><td><A href='?src=\ref[src];item=[slot_gloves]'>[gloves ? gloves : "<font color=grey>Empty</font>"]</A></td></tr>"
+
+	//uniform
+	if(slot_w_uniform in obscured)
+		dat += "<tr><td><font color=grey><B>Uniform:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
+	else
+		dat += "<tr><td><B>Uniform:</B></td><td><A href='?src=\ref[src];item=[slot_w_uniform]'>[w_uniform ? w_uniform : "<font color=grey>Empty</font>"]</A></td></tr>"
+
+	if(!w_uniform || (slot_w_uniform in obscured))
+		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Belt:</B></font></td></tr>"
+		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>ID:</B></font></td></tr>"
+		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Pockets:</B></font></td></tr>"
+		dat += "<tr><td><font color=grey>&nbsp;&#8627;<B>Suit Sensors:</B></font></td></tr>"
+	else
+		if(istype(w_uniform, /obj/item/clothing/under))
+			var/obj/item/clothing/under/suit = w_uniform
+			//accessories
+			if(suit.accessories.len)
+				dat += "<tr><td>&nbsp;&#8627;<B>Accessories:</b></td><td><A href='?src=\ref[src];item=tie;holder=\ref[suit]'>Remove Accessory</a></td></tr>"
+			//sensors
+			if (suit.has_sensor)
+				dat += "<tr><td>&nbsp;&#8627;<B>Suit Sensors:</b></td>"
+
+				if (suit.has_sensor == SUIT_HAS_SENSORS)
+					dat += "<td><A href='?src=\ref[src];item=sensors'>Set sensors</A>"
+				else
+					dat += "<td><font color=grey>Sensors Locked</font>"
+
+				if (user.get_multitool())
+					dat += "&nbsp;<A href='?src=\ref[src];item=lock_sensors'>[suit.has_sensor == SUIT_LOCKED_SENSORS ? "Unlock Sensors" : "Lock Sensors"]</A></td></tr>"
+				else
+					dat += "&nbsp;<font color=yellow>Need Multitool to [suit.has_sensor == SUIT_LOCKED_SENSORS ? "Unlock Sensors" : "Lock Sensors"]</font></td></tr>"
+
+		//belt
+		dat += "<tr><td>&nbsp;&#8627;<B>Belt:</B></td><td><A href='?src=\ref[src];item=[slot_belt]'>[belt ? belt : "<font color=grey>Empty</font>"]</A>"
+		if(can_breathe_internally && istype(belt, /obj/item/tank))
+			dat += "&nbsp;<A href='?src=\ref[src];item=internals'>[internal ? "Disable Internals" : "Set Internals"]</A></td></tr>"
+
+		//ID
+		dat += "<tr><td>&nbsp;&#8627;<B>ID:</B></td><td><A href='?src=\ref[src];item=[slot_wear_id]'>[wear_id ? wear_id : "<font color=grey>Empty</font>"]</A></td></tr>"
+
+		//pockets
+		dat += "<tr><td>&nbsp;&#8627;<B>Pockets:</B></td><td><A href='?src=\ref[src];item=left_pocket'>"
+		if(l_store)
+			dat += "Left (Full)"
+		else
+			dat += "<font color=grey>Left (Empty)</font>"
+
+		dat += "</A>&nbsp;<A href='?src=\ref[src];item=right_pocket'>"
+		if(r_store)
+			dat += "Right (Full)"
+		else
+			dat += "<font color=grey>Right (Empty)</font>"
+		dat += "</A></td></tr>"
+
+	dat += {"</table>"}
+
+	var/datum/browser/popup = new(user, "mob\ref[src]", "[src]", 500, 550)
+	popup.set_content(dat)
+	popup.open()
 
 // called when something steps onto a human
 // this handles mulebots and vehicles
@@ -441,10 +561,6 @@ GLOBAL_LIST_EMPTY(compatable_genomes_owners)
 		return min(., ..(user, GLOB.physical_state, href_list))
 
 /mob/living/carbon/human/OnTopic(mob/user, href_list)
-	if (href_list["refresh"])
-		show_inv(user)
-		return TOPIC_HANDLED
-
 	if(href_list["item"])
 		if(!handle_strip(href_list["item"],user,locate(href_list["holder"])))
 			show_inv(user)
