@@ -89,7 +89,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/ascent
 	minimal_player_age = 21
 	blacklisted_species = null
-	whitelisted_species = list(SPECIES_MANTID_GYNE)
+	whitelisted_species = list("Kharmaan Gyne")
 	loadout_allowed = FALSE
 	is_semi_antagonist = TRUE
 	var/requires_supervisor = FALSE
@@ -159,7 +159,7 @@
 	info = "You are an Alate of an independent Ascent vessel. Your Gyne has directed you to this remote sector full of crawling primitives. Follow her instructions and bring prosperity to your nest-lineage."
 	set_species_on_join = SPECIES_MANTID_ALATE
 	outfit_type = /decl/hierarchy/outfit/job/ascent/tech
-	whitelisted_species = list(SPECIES_MANTID_ALATE)
+	whitelisted_species = list("Kharmaan Gyne")
 	loadout_allowed = FALSE
 	is_semi_antagonist = TRUE
 	requires_supervisor = "Ascent gyne"
@@ -179,7 +179,7 @@
 	requires_supervisor = "Ascent gyne"
 	loadout_allowed = FALSE
 	is_semi_antagonist = TRUE
-	whitelisted_species = list(SPECIES_MANTID_ALATE)
+	whitelisted_species = list("Kharmaan Gyne")
 
 /*
 /datum/job/submap/ascent_inf/msw
