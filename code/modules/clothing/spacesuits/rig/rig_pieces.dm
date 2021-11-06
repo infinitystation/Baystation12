@@ -5,7 +5,7 @@
 /obj/item/clothing/head/helmet/space/rig
 	name = "helmet"
 	item_flags = ITEM_FLAG_THICKMATERIAL
-	flags_inv = 		 HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
+	flags_inv = 		 HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR|HIDEMASK
 	body_parts_covered = HEAD|FACE|EYES
 	heat_protection =    HEAD|FACE|EYES
 	cold_protection =    HEAD|FACE|EYES
@@ -44,7 +44,7 @@
 	heat_protection =    UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	cold_protection =    UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	// HIDEJUMPSUIT no longer needed, see "hides_uniform" and "update_component_sealed()" in rig.dm
-	flags_inv =          HIDETAIL | CLOTHING_BULKY
+	flags_inv =          HIDEJUMPSUIT|HIDETAIL|CLOTHING_BULKY
 	item_flags =         ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_AIRTIGHT
 	//will reach 10 breach damage after 25 laser carbine blasts, 3 revolver hits, or ~1 PTR hit. Completely immune to smg or sts hits.
 	breach_threshold = 38
