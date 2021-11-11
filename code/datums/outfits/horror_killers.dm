@@ -12,7 +12,7 @@
 	r_hand = /obj/item/material/twohanded/fireaxe
 
 	id_slot = slot_wear_id
-	id_types = list(/obj/item/card/id/centcom/station)
+	id_types = list(/obj/item/card/id/centcom/NtPass/station)
 	id_pda_assignment = "Tunnel Clown!"
 
 /decl/hierarchy/outfit/masked_killer

@@ -2265,7 +2265,7 @@
 	dir = 4;
 	icon_state = "console"
 	},
-/obj/item/card/id/centcom,
+/obj/item/card/id/centcom/NtPass,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},

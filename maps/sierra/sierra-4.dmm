@@ -977,7 +977,7 @@
 /area/shuttle/administration/centcom)
 "afG" = (
 /obj/structure/table/standard,
-/obj/item/card/id/centcom,
+/obj/item/card/id/centcom/NtPass,
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"

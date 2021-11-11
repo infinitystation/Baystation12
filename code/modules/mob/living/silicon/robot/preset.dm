@@ -23,7 +23,7 @@
 
 /mob/living/silicon/robot/combat/nt
 	laws = /datum/ai_laws/nanotrasen_aggressive
-	idcard = /obj/item/card/id/centcom/ERT
+	idcard = /obj/item/card/id/centcom/ERT/commando
 	silicon_radio = /obj/item/device/radio/borg/ert
 
 /mob/living/silicon/robot/flying/ascent

@@ -46,17 +46,24 @@
 	icon_state = "yellow"
 	requires_power = 0
 	dynamic_lighting = 1
-	req_access = list(access_cent_general)
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/map_template/rescue_base/base
 	name = "\improper Barracks"
 	icon_state = "yellow"
+	req_access = list(access_cent_general)
+	dynamic_lighting = 0
+
+/area/map_template/rescue_base/office
+	name = "\improper Office"
+	icon_state = "red"
+	req_access = list(access_cent_captain)
 	dynamic_lighting = 0
 
 /area/map_template/rescue_base/start
 	name = "\improper Response Team Base"
 	icon_state = "shuttlered"
+	req_access = list(access_cent_general)
 	base_turf = /turf/unsimulated/floor/rescue_base
 
 //Objects

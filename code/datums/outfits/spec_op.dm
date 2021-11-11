@@ -12,7 +12,7 @@
 	gloves = /obj/item/clothing/gloves/thick/combat
 
 	id_slot = slot_wear_id
-	id_types = list(/obj/item/card/id/centcom/ERT)
+	id_types = list(/obj/item/card/id/centcom/ERT/commando)
 	id_desc = "Special operations ID."
 	id_pda_assignment = "Special Operations Officer"
 

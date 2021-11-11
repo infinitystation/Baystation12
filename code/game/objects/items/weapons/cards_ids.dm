@@ -141,7 +141,7 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/emag/Initialize()
 	. = ..()
 	set_extension(src,/datum/extension/chameleon/emag)
-	
+
 /obj/item/card/emag/get_antag_info()
 	. = ..()
 	. += "You can use this cryptographic sequencer in order to subvert electronics or forcefully open doors you don't have access to. These actions are irreversible and the card only has a limited number of charges!"
@@ -355,7 +355,7 @@ var/const/NO_EMAG_ACT = -50
 				id.military_branch = new_branch
 				id.military_rank = null
 			return
-	
+
 	to_chat(client, SPAN_WARNING("Input, must be an existing branch - [var_value] is invalid"))
 
 /decl/vv_set_handler/id_card_military_rank
@@ -384,7 +384,7 @@ var/const/NO_EMAG_ACT = -50
 		if(new_rank)
 			id.military_rank = new_rank
 			return
-	
+
 	to_chat(client, SPAN_WARNING("Input must be an existing rank belonging to military_branch - [var_value] is invalid"))
 
 /obj/item/card/id/silver
@@ -441,11 +441,13 @@ var/const/NO_EMAG_ACT = -50
 	detail_color = COLOR_COMMAND_BLUE
 	extra_details = list("goldstripe")
 
-/obj/item/card/id/centcom/New()
+/obj/item/card/id/centcom/NtPass
+
+/obj/item/card/id/centcom/NtPass/New()
 	access = get_all_centcom_access()
 	..()
 
-/obj/item/card/id/centcom/station/New()
+/obj/item/card/id/centcom/NtPass/station/New()
 	..()
 	access |= get_all_station_access()
 
@@ -454,15 +456,21 @@ var/const/NO_EMAG_ACT = -50
 	assignment = "Emergency Response Team"
 
 /obj/item/card/id/centcom/ERT/New()
+	access = get_all_station_access() | access_cent_general
 	..()
-	access |= get_all_station_access()
+
+/obj/item/card/id/centcom/ERT/commando/New()
+	..()
+	access |= get_all_centcom_access()
 /*inf dev stuff	access |= list(
 		access_security, access_medical, access_engine, access_network, access_maint_tunnels,
 		access_emergency_storage, access_bridge, access_janitor, access_kitchen,
 		access_cargo, access_mailsorting, access_RC_announce, access_keycard_auth,
 		access_external_airlocks, access_eva, access_cent_creed
 		)*/
-
+/*/obj/item/card/id/centcom
+  /obj/item/card/id/centcom/station
+  /obj/item/card/id/centcom/ERT*/
 /obj/item/card/id/foundation_civilian
 	name = "operant registration card"
 	desc = "A registration card in a faux-leather case. It marks the named individual as a registered, law-abiding psionic."

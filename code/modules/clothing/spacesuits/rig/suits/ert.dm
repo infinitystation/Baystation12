@@ -9,7 +9,7 @@
 	boot_type = /obj/item/clothing/shoes/magboots/rig/ert
 	glove_type = /obj/item/clothing/gloves/rig/ert
 
-	req_access = list(access_cent_specops)
+	req_access = list(access_cent_general)
 
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,

@@ -7,7 +7,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 	id_slot = slot_wear_id
-	id_types = list(/obj/item/card/id/centcom/station)
+	id_types = list(/obj/item/card/id/centcom/NtPass/station)
 	pda_slot = slot_r_store
 	pda_type = /obj/item/modular_computer/pda/heads
 

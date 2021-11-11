@@ -25,7 +25,7 @@
 	suit = /obj/item/clothing/suit/hgpirate
 
 	id_slot = slot_wear_id
-	id_types = list(/obj/item/card/id/centcom/station)
+	id_types = list(/obj/item/card/id/centcom/NtPass/station)
 	id_pda_assignment = "Admiral"
 
 /decl/hierarchy/outfit/merchant

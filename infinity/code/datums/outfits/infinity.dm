@@ -25,7 +25,7 @@
 	head = /obj/item/clothing/head/helmet/daft_punk
 	gloves = /obj/item/clothing/gloves/daft_punk
 	id_slot = slot_wear_id
-	id_types = list(/obj/item/card/id/centcom/station)
+	id_types = list(/obj/item/card/id/centcom/NtPass/station)
 	id_pda_assignment = "DJ"
 */
 
@@ -37,7 +37,7 @@
 	gloves = /obj/item/clothing/gloves/thick/combat/marine
 	r_pocket = /obj/item/tank/emergency/oxygen/double
 	id_slot = slot_wear_id
-	id_types = list(/obj/item/card/id/centcom/station)
+	id_types = list(/obj/item/card/id/centcom/NtPass/station)
 	id_pda_assignment = "PMC"
 	back = /obj/item/storage/backpack/satchel/pocketbook
 	backpack_contents = list(/obj/item/storage/firstaid/individual/military/troops = 1,
