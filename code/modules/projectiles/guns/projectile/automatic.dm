@@ -273,6 +273,10 @@
 	else
 		to_chat(user, "\The [launcher] is empty.")
 
+/obj/item/gun/projectile/automatic/bullpup_rifle/toggle_safety(mob/user)
+    . = ..()
+    launcher.toggle_safety(user)
+
 /obj/item/gun/projectile/automatic/l6_saw
 	name = "L6 machine gun"
 	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. Has 'Aussec Armoury- 2281' engraved on the reciever." //probably should refluff this
