@@ -30,19 +30,19 @@ var/can_call_ert
 				return
 
 	var/reason = input("What is the reason for dispatching this Emergency Response Team?", "Dispatching Emergency Response Team")
-		
+
 	if(!reason && alert("You did not input a reason. Continue anyway?",,"Yes", "No") != "Yes")
 		return
-	
+
 	if(send_emergency_team)
 		to_chat(usr, SPAN_DANGER("Looks like someone beat you to it!"))
 		return
-	
+
 	if(reason)
 		message_admins("[key_name_admin(usr)] is dispatching an Emergency Response Team for the reason: [reason]", 1)
 	else
 		message_admins("[key_name_admin(usr)] is dispatching an Emergency Response Team.", 1)
-		
+
 	log_admin("[key_name(usr)] used Dispatch Response Team.")
 	trigger_armed_response_team(1, reason)
 
@@ -128,6 +128,14 @@ proc/trigger_armed_response_team(var/force = 0, var/reason = "")
 
 	GLOB.ert.reason = reason //Set it even if it's blank to clear a reason from a previous ERT
 
+//[INF] a part of add_antagonist() code
+	if(GLOB.ert.base_to_load)
+		var/datum/map_template/base = new GLOB.ert.base_to_load()
+		report_progress("Loading map template '[base]' for [GLOB.ert.role_text]...")
+		GLOB.ert.base_to_load = null
+		base.load_new_z()
+		GLOB.ert.get_starting_locations()
+//[/INF]
 	can_call_ert = 0 // Only one call per round, gentleman.
 	send_emergency_team = 1
 
