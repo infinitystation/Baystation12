@@ -516,10 +516,15 @@
 //[INF]
 	can_hold = list(
 		/obj/item/grenade,
+		/obj/item/device/flash,
 		/obj/item/handcuffs,
 		/obj/item/ammo_casing/shotgun,
 		/obj/item/ammo_magazine,
 		/obj/item/magnetic_ammo,
+		/obj/item/melee/baton,
+		/obj/item/melee/telebaton,
+		/obj/item/device/megaphone,
+		/obj/item/reagent_containers/spray/pepper
 		)
 //[/INF]
 /* INF | А надо ли? ~bear1ake
