@@ -136,12 +136,14 @@
 	name = "asset protection command armor"
 	desc = "A set of armor worn by many corporate and private asset protection forces. Has blue highlights."
 	icon_state = "ertarmor_cmd"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
+	body_parts_covered = FULL_TORSO|ARMS|LEGS
+	cold_protection = FULL_TORSO|ARMS|LEGS
+	heat_protection = FULL_TORSO|ARMS|LEGS
 	armor = list(
-		melee = ARMOR_MELEE_KNIVES,
-		bullet = ARMOR_BALLISTIC_PISTOL,
+		melee = ARMOR_MELEE_MAJOR,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
 		laser = ARMOR_LASER_MAJOR,
-		energy = ARMOR_ENERGY_SMALL,
+		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_PADDED
 		)
 
