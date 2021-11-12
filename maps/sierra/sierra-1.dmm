@@ -6075,6 +6075,7 @@
 	dir = 6
 	},
 /obj/effect/floor_decal/corner/purple/bordercorner2,
+/obj/machinery/suit_cycler/science,
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "kg" = (
