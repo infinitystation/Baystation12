@@ -756,10 +756,10 @@ var/global/floorIsLava = 0
 	set category = "Special Verbs"
 	set name = "Announce"
 	set desc="Announce your desires to the world"
-	if(!check_rights(0))	return
+	if(!check_rights(R_ADMIN))	return
 
 	var/message = input("Global message to send:", "Admin Announce", null, null) as message
-	message = sanitize(message, 500, extra = 0)
+	message = sanitize(message, 1000, encode = 0, extra = 0)
 	if(message)
 		message = replacetext(message, "\n", "<br>") // required since we're putting it in a <p> tag
 		to_world("<span class=notice><b>[usr.key] Announces:</b><p style='text-indent: 50px'>[message]</p></span>")
