@@ -244,6 +244,8 @@ datum/signal
 		if(!job)
 			job = "?"
 
+		message = sanitize(message, 500)
+
 		newsign.data["mob"] = null
 		newsign.data["mobtype"] = /mob/living/carbon/human
 		if(source in S.stored_names)
@@ -272,4 +274,3 @@ datum/signal
 		var/pass = S.relay_information(newsign, /obj/machinery/telecomms/hub)
 		if(!pass)
 			S.relay_information(newsign, /obj/machinery/telecomms/broadcaster) // send this simple message to broadcasters
-
