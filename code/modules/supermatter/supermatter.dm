@@ -208,6 +208,7 @@
 
 	// Effect 1: Radiation, weakening to all mobs on Z level
 	for(var/z in affected_z)
+		CHECK_TICK
 		SSradiation.z_radiate(locate(1, 1, z), DETONATION_RADS, 1)
 
 	for(var/mob/living/mob in GLOB.living_mob_list_)
@@ -217,6 +218,8 @@
 		if(!(TM.z in affected_z))
 			continue
 
+		CHECK_TICK
+
 		mob.Weaken(DETONATION_MOB_CONCUSSION)
 		to_chat(mob, SPAN_DANGER("An invisible force slams you against the ground!"))
 
@@ -224,6 +227,8 @@
 	for(var/obj/machinery/power/apc/A in SSmachines.machinery)
 		if(!(A.z in affected_z))
 			continue
+
+		CHECK_TICK
 
 		// Overloads lights
 		if(prob(DETONATION_APC_OVERLOAD_PROB))
@@ -235,9 +240,13 @@
 		else
 			A.energy_fail(round(DETONATION_SHUTDOWN_APC * random_change))
 
+	CHECK_TICK
+
 	for(var/obj/machinery/power/smes/buildable/S in SSmachines.machinery)
 		if(!(S.z in affected_z))
 			continue
+
+		CHECK_TICK
 		// Causes SMESes to shut down for a bit
 		var/random_change = rand(100 - DETONATION_SHUTDOWN_RNG_FACTOR, 100 + DETONATION_SHUTDOWN_RNG_FACTOR) / 100
 		S.energy_fail(round(DETONATION_SHUTDOWN_SMES * random_change))
@@ -247,10 +256,12 @@
 	for(var/obj/machinery/power/solar/S in SSmachines.machinery)
 		if(!(S.z in affected_z))
 			continue
+		CHECK_TICK
 		if(prob(DETONATION_SOLAR_BREAK_CHANCE))
 			S.set_broken(TRUE)
 
 
+	CHECK_TICK
 
 	// Effect 4: Medium scale explosion
 	spawn(0)
