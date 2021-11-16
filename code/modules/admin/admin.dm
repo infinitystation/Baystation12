@@ -94,6 +94,13 @@ var/global/floorIsLava = 0
 	if(M.client?.byond_version)
 		full_version = "[M.client.byond_version].[M.client.byond_build ? M.client.byond_build : "xxx"]"
 	body += "<br>\[<b>Byond version:</b> [full_version]\]"
+	if(M.client.discord_id)
+		if(length(M.client.discord_id) < 32)
+			body += "<br>\[<b>Discord:</b> <@[M.client.discord_id]>  <b>[M.client.discord_name]</b>\]"
+		else
+			body += "<br>\[<b>Discord: привязка не завершена!</b>\]"
+	else
+		body += "<br>\[<b>Discord: не привязан!</b>\]"
 	body += "<br><br>"
 	// INF END
 

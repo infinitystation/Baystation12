@@ -185,6 +185,9 @@ GUEST_BAN
 ## forum address
 # FORUMURL http://example.com
 
+## discord address
+# DISCORDURL http://example.com
+
 ## Wiki address
 # WIKIURL http://example.com
 
@@ -226,6 +229,9 @@ SOCKET_TALK 0
 USEALIENWHITELIST
 ## Uncomment to use the alien whitelist system with SQL instead. (requires the above uncommented aswell)
 #USEALIENWHITELIST_SQL
+
+## Minimum age of byond account that allowed to play withoud discord verification
+#MINIMUM_BYONDACC_AGE 10
 
 ## Password used for authorizing ircbot and other external tools.
 #COMMS_PASSWORD

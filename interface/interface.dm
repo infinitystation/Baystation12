@@ -47,6 +47,21 @@
 		to_chat(src, "<span class='warning'>The forum URL is not set in the server configuration.</span>")
 	return
 
+/client/verb/discord()
+	set name = "Discord"
+	set desc = "Join our Discord server."
+	set hidden = 1
+	log_admin("[key_name(src)] has pressed the \'DISCORD\' button!")
+
+	if( !config.discordurl )
+		to_chat(src, "<span class='warning'>The Discord URL is not set in the server configuration.</span>")
+		return
+
+	if(alert("This will invite you to our Discord server. Are you sure?", null, "Yes", "No") == "No")
+		return
+
+	send_link(src, config.discordurl)
+
 #define RULES_FILE "config/rules.html"
 /client/verb/rules()
 	set name = "Rules"

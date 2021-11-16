@@ -12,6 +12,8 @@ var/list/gamemode_cache = list()
 	var/twitch_censor = FALSE
 	var/list/twich_censor_list = list()
 
+	var/minimum_byondacc_age = 0
+
 	var/log_ooc = 0						// log OOC channel
 	var/log_access = 0					// log login/logout
 	var/log_say = 0						// log client say
@@ -97,6 +99,7 @@ var/list/gamemode_cache = list()
 	var/wikiurl
 	var/forumurl
 	var/githuburl
+	var/discordurl
 	var/issuereporturl
 	var/overflow_server_url
 
@@ -464,6 +467,9 @@ var/list/gamemode_cache = list()
 				if ("forumurl")
 					config.forumurl = value
 
+				if ("discordurl")
+					config.discordurl = value
+
 				if ("githuburl")
 					config.githuburl = value
 
@@ -472,6 +478,9 @@ var/list/gamemode_cache = list()
 
 				if ("overflow_server_url")
 					config.overflow_server_url = value
+
+				if("minimum_byondacc_age")
+					config.minimum_byondacc_age = text2num(value)
 
 				if ("ghosts_can_possess_animals")
 					config.ghosts_can_possess_animals = value

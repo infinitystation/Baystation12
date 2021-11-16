@@ -107,6 +107,12 @@
 		return 1
 
 	if(href_list["ready"])
+		if(config.minimum_byondacc_age && client.player_age <= config.minimum_byondacc_age)
+			if(!client.discord_id || (client.discord_id && length(client.discord_id) == 32))
+				client.load_player_discord(client)
+				to_chat(usr, "<span class='danger'>Вам необходимо привязать дискорд-профиль к аккаунту!</span>")
+				to_chat(usr, "<span class='warning'>Нажмите 'Привязка Discord' во вкладке 'Special Verbs' для получения инструкций.</span>")
+				return FALSE
 		if(GAME_STATE <= RUNLEVEL_LOBBY) // Make sure we don't ready up after the round has started
 			ready = text2num(href_list["ready"])
 		else
@@ -118,6 +124,12 @@
 			new_player_panel()
 
 	if(href_list["observe"])
+		if(config.minimum_byondacc_age && client.player_age <= config.minimum_byondacc_age)
+			if(!client.discord_id || (client.discord_id && length(client.discord_id) == 32))
+				client.load_player_discord(client)
+				to_chat(usr, "<span class='danger'>Вам необходимо привязать дискорд-профиль к аккаунту!</span>")
+				to_chat(usr, "<span class='warning'>Нажмите 'Привязка Discord' во вкладке 'Special Verbs' для получения инструкций.</span>")
+				return FALSE
 		if(GAME_STATE < RUNLEVEL_LOBBY)
 			to_chat(src, "<span class='warning'>Пожалуйста, подождите загрузки сервера.</span>")
 			return
@@ -184,6 +196,12 @@
 			return 1
 
 	if(href_list["late_join"])
+		if(config.minimum_byondacc_age && client.player_age <= config.minimum_byondacc_age)
+			if(!client.discord_id || (client.discord_id && length(client.discord_id) == 32))
+				client.load_player_discord(client)
+				to_chat(usr, "<span class='danger'>Вам необходимо привязать дискорд-профиль к аккаунту!</span>")
+				to_chat(usr, "<span class='warning'>Нажмите 'Привязка Discord' во вкладке 'Special Verbs' для получения инструкций.</span>")
+				return FALSE
 		if(GAME_STATE != RUNLEVEL_GAME)
 			to_chat(usr, SPAN_WARNING("Раунд или не начался или уже закончился..."))
 			return

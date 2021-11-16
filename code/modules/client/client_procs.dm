@@ -197,6 +197,7 @@
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
 	apply_fps(prefs.clientfps ? prefs.clientfps : config.clientfps)
+	load_player_discord(src)
 
 	. = ..()	//calls mob.Login()
 
@@ -524,3 +525,48 @@ client/verb/character_setup()
 
 		pct += delta
 		winset(src, "mainwindow.mainvsplit", "splitter=[pct]")
+
+/client/proc/load_player_discord(client/C)
+	establish_db_connection()
+	if(!dbcon.IsConnected())
+		return
+
+	var/sql_ckey = sql_sanitize_text(C.ckey)
+
+	var/DBQuery/query = dbcon.NewQuery("SELECT discord_id, discord_name FROM [sqlfdbkdbutil].player WHERE ckey = '[sql_ckey]'")
+	query.Execute()
+
+	if(query.NextRow())
+		discord_id = sanitize_text(query.item[1])
+		discord_name = sanitize_text(query.item[2])
+
+/client/verb/link_discord_account()
+	set name = "Привязка Discord"
+	set category = "Special Verbs"
+	set desc = "Привязать аккаунт Discord для удобного просмотра игровой статистики на нашем Discord-сервере."
+
+	if(!config.discordurl)
+		return
+
+	if(IsGuestKey(key))
+		to_chat(usr, "Гостевой аккаунт не может быть связан.")
+		return
+
+	load_player_discord(usr)
+
+	if(discord_id && length(discord_id) < 32)
+		to_chat(usr, "<span class='darkmblue'>Аккаунт Discord уже привязан! Чтобы отвязать используйте команду <span class='boldannounce'>!отвязать_аккаунт</span> в канале <b>#дом-бота<b> в Discord-сообществе!</span>")
+		return
+
+	var/token = md5("[world.time+rand(1000,1000000)]")
+	if(dbcon.IsConnected())
+		var/sql_ckey = sql_sanitize_text(ckey(key))
+		var/DBQuery/query_update_token = dbcon.NewQuery("UPDATE [sqlfdbkdbutil].player SET discord_id='[token]' WHERE ckey='[sql_ckey]'")
+
+		if(!query_update_token.Execute())
+			to_chat(usr, "<span class='warning'>Ошибка записи токена в БД! Обратитесь к администрации.</span>")
+			log_debug("link_discord_account: failed db update discord_id for ckey [ckey]")
+			return
+
+		to_chat(usr, "<span class='darkmblue'>Для завершения используйте команду <span class='boldannounce'>!привязать_аккаунт [token]</span> в канале <b>#дом-бота<b> в Discord-сообществе!</span>")
+		load_player_discord(usr)
