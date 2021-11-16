@@ -3231,9 +3231,6 @@
 "agn" = (
 /turf/simulated/wall/prepainted,
 /area/medical/surgery/second)
-"ago" = (
-/turf/simulated/wall/r_wall/hull,
-/area/shield/firstdeck)
 "agp" = (
 /turf/simulated/open,
 /area/maintenance/firstdeck/centralstarboard)
@@ -3892,27 +3889,12 @@
 /obj/structure/closet/secure_closet/freezer/meat/bearcat,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"aht" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/shield/firstdeck)
-"ahu" = (
-/obj/structure/table/rack,
-/obj/structure/railing/mapped,
-/obj/random/maintenance,
-/turf/simulated/floor/tiled/techfloor,
-/area/shield/firstdeck)
 "ahv" = (
-/obj/machinery/camera/network/engineering{
-	c_tag = "Shield Generator - First Deck"
-	},
 /obj/structure/table/rack,
 /obj/structure/railing/mapped,
 /obj/random/maintenance,
 /turf/simulated/floor/tiled/techfloor,
-/area/shield/firstdeck)
-"ahw" = (
-/turf/simulated/wall/prepainted,
-/area/shield/firstdeck)
+/area/maintenance/firstdeck/centralstarboard)
 "ahx" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -4602,16 +4584,12 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/staging)
 "aiG" = (
-/obj/machinery/power/shield_generator,
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
+/obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/shield/firstdeck)
+/area/maintenance/firstdeck/centralstarboard)
 "aiH" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -4619,13 +4597,8 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/shield/firstdeck)
+/area/maintenance/firstdeck/centralstarboard)
 "aiI" = (
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
@@ -5294,10 +5267,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/staging)
 "ajN" = (
-/obj/machinery/power/apc{
-	name = "south bump";
-	pixel_y = -24
-	},
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -24
@@ -5305,56 +5274,29 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 10
 	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
+/obj/random/closet,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/shield/firstdeck)
+/area/maintenance/firstdeck/centralstarboard)
 "ajO" = (
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 4
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/shield/firstdeck)
+/area/maintenance/firstdeck/centralstarboard)
 "ajP" = (
-/obj/machinery/door/airlock/engineering{
-	name = "First Deck Shield Generator";
-	req_access = newlist()
-	},
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
 /obj/machinery/door/firedoor,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/shield/firstdeck)
+/area/maintenance/firstdeck/centralstarboard)
 "ajQ" = (
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
 	},
 /obj/structure/cable{
 	d1 = 2;
@@ -57222,10 +57164,10 @@ aaa
 aam
 aaB
 aaB
-ago
-aht
-aht
-aht
+aaB
+xLj
+xLj
+xLj
 akU
 akU
 sMZ
@@ -57424,8 +57366,8 @@ aaa
 aam
 aaB
 aaB
-ago
-ahu
+aaB
+ahv
 aiG
 ajN
 akV
@@ -57626,7 +57568,7 @@ aaa
 aam
 aaB
 aaB
-ago
+aaB
 ahv
 aiH
 ajO
@@ -57828,9 +57770,9 @@ aaa
 aaB
 aaB
 aaB
-ago
-ahw
-ahw
+aaB
+agy
+agy
 ajP
 akV
 alR

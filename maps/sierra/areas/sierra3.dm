@@ -117,8 +117,6 @@
 	sound_env = SMALL_ENCLOSED
 	req_access = list(access_ai_upload)
 
-/area/shield/firstdeck
-	name = "First Deck - Shield Generator"
 	// Solars
 /area/maintenance/solar
 	name = "First Deck - Solar - Port"

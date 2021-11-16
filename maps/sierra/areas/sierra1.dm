@@ -67,9 +67,6 @@
  * =================
  */
 
-/area/shield/thirddeck
-	name = "Third Deck - Shield Generator"
-
 	// Storage
 /area/storage/primary
 	name = "Third Deck - Primary Tool Storage"
