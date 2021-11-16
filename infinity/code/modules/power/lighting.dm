@@ -40,6 +40,10 @@ UPDATE_ENVIROMENT_SOUND_MACRO_INHERITER(/obj/machinery/light/remove_bulb())
 	else
 		QDEL_NULL(sound_token)
 
+/obj/machinery/light/Destroy()
+	QDEL_NULL(sound_token)
+	return ..()
+
 /obj/item/light
 	var/enviroment_sound
 	var/enviroment_sound_range = 3
