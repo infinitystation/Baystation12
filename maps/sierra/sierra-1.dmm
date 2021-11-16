@@ -3493,7 +3493,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/power/emitter/anchored,
+/obj/machinery/power/emitter/anchored{
+	req_access = list("ACCESS_HANGAR")
+	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},

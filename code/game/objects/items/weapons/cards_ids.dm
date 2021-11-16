@@ -444,7 +444,7 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/card/id/centcom/NtPass
 
 /obj/item/card/id/centcom/NtPass/New()
-	access = get_all_centcom_access()
+	access = get_all_centcom_access() | access_iaa
 	..()
 
 /obj/item/card/id/centcom/NtPass/station/New()
@@ -456,7 +456,7 @@ var/const/NO_EMAG_ACT = -50
 	assignment = "Emergency Response Team"
 
 /obj/item/card/id/centcom/ERT/New()
-	access = get_all_station_access() | access_cent_general
+	access = get_all_station_access() | access_cent_general | access_iaa
 	..()
 
 /obj/item/card/id/centcom/ERT/commando/New()
@@ -468,9 +468,6 @@ var/const/NO_EMAG_ACT = -50
 		access_cargo, access_mailsorting, access_RC_announce, access_keycard_auth,
 		access_external_airlocks, access_eva, access_cent_creed
 		)*/
-/*/obj/item/card/id/centcom
-  /obj/item/card/id/centcom/station
-  /obj/item/card/id/centcom/ERT*/
 /obj/item/card/id/foundation_civilian
 	name = "operant registration card"
 	desc = "A registration card in a faux-leather case. It marks the named individual as a registered, law-abiding psionic."

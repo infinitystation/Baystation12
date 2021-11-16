@@ -560,11 +560,11 @@
 	},
 /area/map_template/rescue_base/base)
 "bo" = (
-/obj/structure/bed/padded,
-/obj/item/bedsheet/captain,
+/obj/structure/sign/nanotrasen{
+	pixel_y = 32
+	},
 /turf/unsimulated/floor{
-	dir = 1;
-	icon_state = "vault"
+	icon_state = "dark"
 	},
 /area/map_template/rescue_base/base)
 "bp" = (
@@ -589,14 +589,22 @@
 /obj/structure/closet{
 	name = "insignias closet"
 	},
-/obj/item/clothing/head/beret/solgov/fleet/medical,
-/obj/item/clothing/head/beret/solgov/fleet/medical,
-/obj/item/clothing/head/beret/solgov/fleet/medical,
-/obj/item/clothing/head/beret/solgov/fleet/medical,
 /obj/item/clothing/accessory/solgov/department/medical/fleet,
 /obj/item/clothing/accessory/solgov/department/medical/fleet,
 /obj/item/clothing/accessory/solgov/department/medical/fleet,
 /obj/item/clothing/accessory/solgov/department/medical/fleet,
+/obj/item/clothing/head/beret/solgov/fleet/medical{
+	name = "asset protection medical beret"
+	},
+/obj/item/clothing/head/beret/solgov/fleet/medical{
+	name = "asset protection medical beret"
+	},
+/obj/item/clothing/head/beret/solgov/fleet/medical{
+	name = "asset protection medical beret"
+	},
+/obj/item/clothing/head/beret/solgov/fleet/medical{
+	name = "asset protection medical beret"
+	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -702,11 +710,15 @@
 	},
 /area/map_template/rescue_base/base)
 "bD" = (
-/obj/structure/closet{
-	name = "emergency response team wardrobe"
+/obj/machinery/cryopod{
+	dir = 2
 	},
-/obj/item/clothing/accessory/solgov/fleet_patch/fifth,
-/obj/item/clothing/head/solgov/utility/fleet,
+/obj/structure/window/reinforced/crescent{
+	dir = 4
+	},
+/obj/structure/window/reinforced/crescent{
+	dir = 8
+	},
 /turf/unsimulated/floor{
 	dir = 1;
 	icon_state = "vault"
@@ -740,6 +752,11 @@
 /obj/structure/table/reinforced,
 /obj/machinery/recharger{
 	pixel_y = 4
+	},
+/obj/structure/sign/nanotrasen{
+	dir = 8;
+	icon_state = "NT";
+	pixel_x = 32
 	},
 /turf/unsimulated/floor{
 	dir = 1;
@@ -1346,6 +1363,11 @@
 /obj/item/device/paicard,
 /obj/item/device/paicard,
 /obj/item/device/paicard,
+/obj/structure/sign/nanotrasen{
+	dir = 8;
+	icon_state = "NT";
+	pixel_x = 32
+	},
 /turf/unsimulated/floor{
 	dir = 1;
 	icon_state = "vault"
@@ -1780,14 +1802,22 @@
 /obj/structure/closet{
 	name = "insignias closet"
 	},
-/obj/item/clothing/head/beret/solgov/fleet/security,
-/obj/item/clothing/head/beret/solgov/fleet/security,
-/obj/item/clothing/head/beret/solgov/fleet/security,
-/obj/item/clothing/head/beret/solgov/fleet/security,
 /obj/item/clothing/accessory/solgov/department/security/fleet,
 /obj/item/clothing/accessory/solgov/department/security/fleet,
 /obj/item/clothing/accessory/solgov/department/security/fleet,
 /obj/item/clothing/accessory/solgov/department/security/fleet,
+/obj/item/clothing/head/beret/solgov/fleet/security{
+	name = "asset protection security beret"
+	},
+/obj/item/clothing/head/beret/solgov/fleet/security{
+	name = "asset protection security beret"
+	},
+/obj/item/clothing/head/beret/solgov/fleet/security{
+	name = "asset protection security beret"
+	},
+/obj/item/clothing/head/beret/solgov/fleet/security{
+	name = "asset protection security beret"
+	},
 /turf/unsimulated/floor{
 	dir = 1;
 	icon_state = "vault"
@@ -3279,14 +3309,22 @@
 /obj/structure/closet{
 	name = "insignias closet"
 	},
-/obj/item/clothing/head/beret/solgov/fleet/engineering,
-/obj/item/clothing/head/beret/solgov/fleet/engineering,
-/obj/item/clothing/head/beret/solgov/fleet/engineering,
-/obj/item/clothing/head/beret/solgov/fleet/engineering,
 /obj/item/clothing/accessory/solgov/department/engineering/fleet,
 /obj/item/clothing/accessory/solgov/department/engineering/fleet,
 /obj/item/clothing/accessory/solgov/department/engineering/fleet,
 /obj/item/clothing/accessory/solgov/department/engineering/fleet,
+/obj/item/clothing/head/beret/solgov/fleet/engineering{
+	name = "asset protection engineering beret"
+	},
+/obj/item/clothing/head/beret/solgov/fleet/engineering{
+	name = "asset protection engineering beret"
+	},
+/obj/item/clothing/head/beret/solgov/fleet/engineering{
+	name = "asset protection engineering beret"
+	},
+/obj/item/clothing/head/beret/solgov/fleet/engineering{
+	name = "asset protection engineering beret"
+	},
 /turf/unsimulated/floor{
 	dir = 1;
 	icon_state = "vault"
@@ -3340,6 +3378,10 @@
 /obj/machinery/door/airlock/centcom{
 	name = "Emergency Insertion";
 	opacity = 1
+	},
+/obj/machinery/door/blast/regular{
+	id_tag = "teleporter";
+	name = "Emergency Insertion"
 	},
 /turf/unsimulated/floor{
 	dir = 8;
@@ -3444,10 +3486,25 @@
 	pixel_y = 4;
 	req_access = list("ACCESS_CENT_CAPTAIN")
 	},
+/obj/machinery/button/blast_door{
+	id_tag = "teleporter";
+	name = "Teleporter";
+	pixel_y = -4;
+	req_access = list("ACCESS_CENT_CAPTAIN")
+	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/map_template/rescue_base/office)
+"uf" = (
+/obj/structure/sign/nanotrasen{
+	pixel_y = 32
+	},
+/turf/unsimulated/floor{
+	dir = 8;
+	icon_state = "vault"
+	},
+/area/map_template/rescue_base/base)
 "uk" = (
 /obj/effect/paint/hull,
 /turf/simulated/wall/r_titanium,
@@ -3581,6 +3638,21 @@
 /obj/structure/table/rack,
 /obj/item/gun/energy/laser,
 /obj/item/gun/energy/laser,
+/turf/unsimulated/floor{
+	dir = 1;
+	icon_state = "vault"
+	},
+/area/map_template/rescue_base/base)
+"DC" = (
+/obj/machinery/cryopod{
+	dir = 1
+	},
+/obj/structure/window/reinforced/crescent{
+	dir = 4
+	},
+/obj/structure/window/reinforced/crescent{
+	dir = 8
+	},
 /turf/unsimulated/floor{
 	dir = 1;
 	icon_state = "vault"
@@ -4316,9 +4388,9 @@ aB
 aR
 ac
 bD
-am
-am
-bD
+bu
+bu
+DC
 ac
 aF
 aF
@@ -4382,10 +4454,10 @@ aB
 aB
 aS
 ac
-bo
-bu
-bu
-bo
+aF
+am
+am
+aF
 ac
 aF
 rw
@@ -4450,9 +4522,9 @@ ac
 ac
 ac
 bD
-am
-am
-bD
+bu
+bu
+DC
 ac
 cg
 QJ
@@ -4516,10 +4588,10 @@ aB
 aK
 aT
 ac
-bo
-bu
-bu
-bo
+aF
+am
+am
+aF
 ac
 aF
 YN
@@ -4584,9 +4656,9 @@ aB
 aU
 ac
 bD
-am
-am
-bD
+bu
+bu
+DC
 ac
 aF
 aF
@@ -4650,10 +4722,10 @@ aB
 aB
 aV
 ac
-bo
-bu
-bu
-bo
+aF
+am
+am
+aF
 ac
 el
 aF
@@ -5254,7 +5326,7 @@ am
 am
 am
 ac
-aF
+bo
 aF
 ac
 ac
@@ -5790,7 +5862,7 @@ ac
 ac
 ac
 ac
-am
+uf
 am
 ac
 ac
@@ -6000,7 +6072,7 @@ ac
 ac
 ac
 ac
-am
+uf
 df
 ac
 ac
@@ -6254,7 +6326,7 @@ aF
 aF
 aF
 ac
-aF
+bo
 bz
 aF
 aF

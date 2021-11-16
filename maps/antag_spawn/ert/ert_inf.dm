@@ -60,6 +60,10 @@
 	req_access = list(access_cent_captain)
 	dynamic_lighting = 0
 
+/area/map_template/rescue_base/torture
+	name = "\improper Torture"
+	icon_state = "red"
+
 /area/map_template/rescue_base/start
 	name = "\improper Response Team Base"
 	icon_state = "shuttlered"
