@@ -31,10 +31,10 @@
 		if("Shift")
 			set_moving_quickly()
 			return
-		if(",")
+		if(",", "=")
 			move_up()
 			return
-		if(".")
+		if(".", "-")
 			SelfMove(DOWN)
 			return
 		//Bodypart selections

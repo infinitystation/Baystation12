@@ -14,6 +14,8 @@
 	var/next_move_dir_add
 	/// On next move, subtract this dir from the move that would otherwise be done
 	var/next_move_dir_sub
+	//Hotkeys enabled/disabled, enabled by default
+	var/hotkeys = 1
 
 // Set a client's focus to an object and override these procs on that object to let it handle keypresses
 
@@ -58,7 +60,20 @@
 			var/key = macro_set[k]
 			var/command = macro_set[key]
 			winset(src, "[setname]-\ref[key]", "parent=[setname];name=[key];command=[command]")
-	winset(src, null, "map.focus=true input.background-color=[COLOR_INPUT_DISABLED] mainwindow.macro=default")
+	if(hotkeys)
+		winset(src, null, "map.focus=true input.background-color=[COLOR_INPUT_DISABLED] mainwindow.macro=default")
+	else
+		winset(src, null, "input.focus=true input.background-color=[COLOR_INPUT_ENABLED] mainwindow.macro=old_default")
+	//We do a little crutch here hehe~
+	winset(src, "old_default-\"F1\"", "parent=old_default;name=\"F1\";command=adminhelp")
 
-	//We do a little cruth here hehe~
-	winset(src, "default-\"F1\"", "parent=default;name=\"F1\";command=adminhelp")
+
+/client/verb/toggle_hotkeys()
+	set name = "Toggle Hotkeys"
+	set category = "OOC"
+
+	hotkeys = !hotkeys
+	if(hotkeys)
+		winset(src, null, "map.focus=true input.background-color=[COLOR_INPUT_DISABLED] mainwindow.macro=default")
+	else
+		winset(src, null, "input.focus=true input.background-color=[COLOR_INPUT_ENABLED] mainwindow.macro=old_default")
