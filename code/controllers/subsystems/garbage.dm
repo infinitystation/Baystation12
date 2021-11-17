@@ -243,7 +243,10 @@ SUBSYSTEM_DEF(garbage)
 	var/type = D.type
 	var/refID = "\ref[D]"
 
-	//del(D)
+	//We need to delete only clients so that they can be disconnected
+	//For everything else - log it and fix how their destructor works
+	if(isclient(D))
+		del(D)
 
 	tick = (TICK_USAGE-tick+((world.time-ticktime)/world.tick_lag*100))
 
