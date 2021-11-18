@@ -7048,9 +7048,7 @@
 /area/ship/patrol/engineering/fussion/control)
 "ng" = (
 /obj/machinery/fusion_fuel_injector/mapped{
-	anchored = 0;
 	dir = 4;
-	id_tag = null;
 	initial_id_tag = "fusion_injector_patrol"
 	},
 /turf/simulated/floor,
@@ -7280,8 +7278,7 @@
 /obj/effect/floor_decal/industrial/warning/half,
 /obj/machinery/recharger/wallcharger{
 	dir = 8;
-	pixel_x = 24;
-	pixel_y = -4
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/barracks)
@@ -7411,9 +7408,7 @@
 /area/ship/patrol/engineering/fussion/control)
 "nN" = (
 /obj/machinery/fusion_fuel_injector/mapped{
-	anchored = 0;
 	dir = 4;
-	id_tag = null;
 	initial_id_tag = "fusion_injector_patrol"
 	},
 /turf/simulated/floor/reinforced,
@@ -7655,6 +7650,11 @@
 	pixel_x = -22;
 	req_access = list("ACCESS_CAVALRY")
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "on" = (
@@ -7669,10 +7669,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
@@ -7681,7 +7681,7 @@
 	dir = 4;
 	initial_id_tag = "fusion_gyrotron_patrol"
 	},
-/obj/structure/cable/yellow{
+/obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -7824,12 +7824,21 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
 "oF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
@@ -7860,6 +7869,11 @@
 	name = "Chamber Containment";
 	pixel_y = 37
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/engineering/fussion/control)
 "oI" = (
@@ -7867,16 +7881,25 @@
 /obj/structure/closet/crate/radiation,
 /obj/item/stack/material/deuterium/fifty,
 /obj/item/stack/material/deuterium/fifty,
-/obj/item/stack/material/uranium/ten,
 /obj/item/stack/material/deuterium/fifty,
 /obj/item/stack/material/tritium/fifty,
 /obj/item/stack/material/tritium/fifty,
 /obj/item/stack/material/tritium/fifty,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "oJ" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
@@ -8286,11 +8309,12 @@
 	icon_state = "warning"
 	},
 /obj/machinery/light,
-/obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow{
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/power/port_gen/pacman/mrs,
+/obj/item/stack/material/tritium/ten,
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "pA" = (
@@ -8298,8 +8322,9 @@
 	dir = 1
 	},
 /obj/structure/cable/yellow{
+	d1 = 4;
 	d2 = 8;
-	icon_state = "0-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
@@ -8307,17 +8332,17 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "pC" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1;
 	icon_state = "warning"
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -24
 	},
 /obj/machinery/portable_atmospherics/canister/hydrogen/engine_setup,
 /turf/simulated/floor,
@@ -8901,6 +8926,10 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "LP" = (
@@ -9146,6 +9175,20 @@
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/patrol/crew/hallway/lower/port)
+"VG" = (
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id_tag = "fusion_observation_patrol"
+	},
+/obj/effect/wingrille_spawn/reinforced_phoron/full,
+/obj/effect/paint/dark_gunmetal,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/ship/patrol/engineering/fussion/control)
 "VH" = (
 /obj/effect/paint/meatstation/lab,
 /turf/simulated/wall/r_wall,
@@ -9310,11 +9353,13 @@
 /turf/simulated/wall/r_wall,
 /area/ship/patrol/engineering/fussion/control)
 "ZG" = (
-/obj/effect/paint/dark_gunmetal,
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
-/turf/simulated/wall/r_wall,
+/obj/machinery/portable_atmospherics/canister/helium{
+	start_pressure = 14999
+	},
+/turf/simulated/floor/plating,
 /area/ship/patrol/engineering/fussion/control)
 "ZX" = (
 /obj/machinery/pointdefense{
@@ -17709,7 +17754,7 @@ mE
 nd
 nJ
 md
-py
+VG
 pd
 py
 CI
