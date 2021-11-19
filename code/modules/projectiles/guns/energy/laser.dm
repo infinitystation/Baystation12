@@ -126,7 +126,7 @@ obj/item/gun/energy/retro
 	projectile_type = /obj/item/projectile/beam/xray/midlaser
 	charge_cost = 15
 	max_shots = 10
-	wielded_item_state = "gun_wielded"
+	wielded_item_state = "xray_wielded"
 	combustion = 0
 
 	bulk = GUN_BULK_CARABINE //inf
