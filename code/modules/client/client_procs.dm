@@ -1,7 +1,7 @@
 	////////////
 	//SECURITY//
 	////////////
-#define UPLOAD_LIMIT		7340032	//Restricts client uploads to the server to 3MB
+#define UPLOAD_LIMIT		5242880	//Restricts client uploads to the server to 3MB
 
 //#define TOPIC_DEBUGGING 1
 
