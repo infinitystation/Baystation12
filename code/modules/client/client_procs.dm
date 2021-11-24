@@ -533,7 +533,7 @@ client/verb/character_setup()
 
 	var/sql_ckey = sql_sanitize_text(C.ckey)
 
-	var/DBQuery/query = dbcon.NewQuery("SELECT discord_id, discord_name FROM [sqlfdbkdbutil].player WHERE ckey = '[sql_ckey]'")
+	var/DBQuery/query = dbcon.NewQuery("SELECT discord_id, discord_name FROM erro_player WHERE ckey = '[sql_ckey]'")
 	query.Execute()
 
 	if(query.NextRow())
@@ -561,7 +561,7 @@ client/verb/character_setup()
 	var/token = md5("[world.time+rand(1000,1000000)]")
 	if(dbcon.IsConnected())
 		var/sql_ckey = sql_sanitize_text(ckey(key))
-		var/DBQuery/query_update_token = dbcon.NewQuery("UPDATE [sqlfdbkdbutil].player SET discord_id='[token]' WHERE ckey='[sql_ckey]'")
+		var/DBQuery/query_update_token = dbcon.NewQuery("UPDATE erro_player SET discord_id='[token]' WHERE ckey='[sql_ckey]'")
 
 		if(!query_update_token.Execute())
 			to_chat(usr, "<span class='warning'>Ошибка записи токена в БД! Обратитесь к администрации.</span>")
