@@ -64,7 +64,7 @@
 	allowed = list(/obj/item/device/flashlight,/obj/item/device/lightreplacer,/obj/item/storage/bag/trash,/obj/item/grenade/chem_grenade/cleaner,/obj/item/reagent_containers/spray/cleaner, /obj/item/mop, /obj/item/reagent_containers/glass/bucket)
 
 /obj/item/clothing/suit/storage/tgbomber/militaryjacket
-	name = "military jacket"
+	name = "classic military jacket"
 	desc = "A canvas jacket styled classical American military garb. Feels sturdy, yet comfortable."
 	icon_state = "militaryjacket"
 
@@ -124,3 +124,48 @@
 	icon_state = "snakeskin"
 	item_state = "snakeskin"
 	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket/black
+	name = "black military jacket"
+	desc = "A canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_black"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket/white
+	name = "white military jacket"
+	desc = "A canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_white"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket/tan
+	name = "tan military jacket"
+	desc = "A canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_tan"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket/navy
+	name = "navy military jacket"
+	desc = "A canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_navy"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket/grey
+	name = "grey military jacket"
+	desc = "A canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_grey"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)

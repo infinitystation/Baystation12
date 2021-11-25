@@ -62,3 +62,7 @@
 	slot = slot_w_uniform
 	flags = GEAR_HAS_COLOR_SELECTION
 
+/datum/gear/tactical/balaclava/humanized
+	display_name = "balaclava - human's special"
+	path = /obj/item/clothing/mask/balaclava/humanized
+	flags = GEAR_HAS_SUBTYPE_SELECTION

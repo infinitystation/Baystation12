@@ -57,3 +57,10 @@
 	var/obj/item/stack/nanopaste/N = locate() in equipment
 	N.synths = list(nanite)
 
+// [INF]
+/obj/item/robot_module/research/build_emag()
+	if(ispath(emag))
+		new emag(src)
+		emag = locate(/obj/item/device/electronic_assembly) in src
+// [/INF]
+

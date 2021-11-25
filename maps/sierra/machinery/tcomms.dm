@@ -18,7 +18,8 @@
 		num2text(SCI_FREQ)   = list(access_tox, access_robotics, access_xenobiology, access_el),
 		num2text(SUP_FREQ)   = list(access_cargo),
 		num2text(SRV_FREQ)   = list(access_janitor, access_hydroponics),
-		num2text(EXP_FREQ)   = list(access_explorer, access_rd)
+		num2text(EXP_FREQ)   = list(access_explorer, access_rd),
+		num2text(HAIL_FREQ) = list(),
 	)
 
 /obj/machinery/telecomms/hub/preset

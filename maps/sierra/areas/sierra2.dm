@@ -22,6 +22,10 @@
 	name = "Second Deck - Maintenance"
 	icon_state = "maintcentral"
 
+/area/maintenance/seconddeck/xenobio
+	name = "Second Deck - Maintenance - Xenobio"
+	icon_state = "maintcentral"
+
 /area/maintenance/seconddeck/emergency
 	name = "Second Deck - Emergency Storage"
 	icon_state = "emergencystorage"
@@ -297,6 +301,12 @@
 /area/crew_quarters/head_big
 	name = "Second Deck - Living - Lounge - Restroom"
 	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+
+/area/crew_quarters/game_room
+	name = "Second deck - living - Lounge - Game room"
+	icon_state = "game_room_inf"
 	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 /*

@@ -54,7 +54,7 @@
 	icon_state = "purple"
 
 /area/liberia/bridge
-	name = "Bridge"
+	name = "Liberia - Bridge"
 	icon_state = "bridge"
 
 /area/liberia/cryo

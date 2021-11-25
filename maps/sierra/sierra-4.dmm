@@ -7091,9 +7091,6 @@
 /obj/structure/window/reinforced/holowindow{
 	dir = 1
 	},
-/obj/structure/sign/double/solgovflag/right{
-	dir = 1
-	},
 /obj/structure/grille,
 /turf/simulated/floor/holofloor/reinforced,
 /area/holodeck/source_military)
@@ -7104,9 +7101,6 @@
 	},
 /obj/structure/window/reinforced/holowindow{
 	dir = 4
-	},
-/obj/structure/sign/double/solgovflag/left{
-	dir = 1
 	},
 /obj/structure/grille,
 /turf/simulated/floor/holofloor/reinforced,
@@ -7197,7 +7191,8 @@
 /area/holodeck/source_military)
 "aTC" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/spline/plain/black{
 	dir = 8
@@ -7209,7 +7204,8 @@
 /area/holodeck/source_military)
 "aTD" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/corner/black{
 	dir = 4
@@ -7218,7 +7214,8 @@
 /area/holodeck/source_military)
 "aTE" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/corner/black{
 	dir = 1
@@ -7227,7 +7224,8 @@
 /area/holodeck/source_military)
 "aTF" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/spline/plain/black{
 	dir = 4
@@ -7266,7 +7264,8 @@
 /area/holodeck/source_plaza)
 "aUt" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/spline/plain/black{
 	dir = 10
@@ -7275,14 +7274,16 @@
 /area/holodeck/source_military)
 "aUu" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/spline/plain/black,
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/holodeck/source_military)
 "aUv" = (
 /obj/structure/bed/chair{
-	dir = 1
+	dir = 1;
+	holographic = 1
 	},
 /obj/effect/floor_decal/spline/plain/black{
 	dir = 6
