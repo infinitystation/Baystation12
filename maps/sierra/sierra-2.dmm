@@ -6100,16 +6100,9 @@
 /turf/simulated/wall/prepainted,
 /area/hallway/primary/seconddeck/aft)
 "aln" = (
-/obj/random/date_based/christmas/xmaslights{
-	dir = 1;
-	pixel_y = 24
-	},
 /obj/item/stool/bar/padded,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 9
-	},
-/obj/random/date_based/christmas/xmaslights{
-	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
@@ -6415,10 +6408,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/maintenance/abandoned_common)
 "alV" = (
-/obj/random/date_based/christmas/xmaslights{
-	dir = 1;
-	pixel_y = 24
-	},
 /obj/item/stool/bar/padded,
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -13390,6 +13379,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/effect/floor_decal/spline/fancy/wood/corner{
+	dir = 4
+	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
 "axR" = (
@@ -19836,6 +19828,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/machinery/vending/sovietsoda,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "aJd" = (
@@ -24847,11 +24840,6 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/open,
 /area/rnd/xenobiology/water_cell)
-"aSJ" = (
-/mob/living/simple_animal/hostile/scarybat,
-/obj/machinery/constructable_frame,
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/aftport)
 "aSK" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/blue{
 	dir = 1
@@ -25903,10 +25891,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/level1)
-"aUu" = (
-/mob/living/simple_animal/hostile/scarybat,
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/aftport)
 "aUw" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -28139,10 +28123,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
 "aYz" = (
-/obj/random/date_based/christmas/xmaslights{
-	dir = 1;
-	pixel_y = 24
-	},
 /obj/item/stool/bar/padded,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -34473,7 +34453,6 @@
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/game_room)
 "dSv" = (
-/obj/random/date_based/christmas/tree,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -34582,7 +34561,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "eaV" = (
-/obj/machinery/smartfridge/foods,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -34590,13 +34568,14 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 6
 	},
+/obj/machinery/smartfridge/foods,
 /obj/machinery/door/blast/shutters{
 	dir = 4;
 	id_tag = "cafe";
 	name = "Cafe Shutters"
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/cafe)
+/area/crew_quarters/galley)
 "egu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -34938,12 +34917,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
-"eTP" = (
-/obj/effect/floor_decal/spline/fancy/wood/corner{
-	dir = 4
-	},
-/turf/simulated/floor/wood/walnut,
-/area/crew_quarters/cafe)
 "eVQ" = (
 /obj/machinery/floodlight,
 /obj/effect/floor_decal/techfloor,
@@ -34967,17 +34940,6 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/center)
-"eZG" = (
-/obj/structure/table/woodentable_reinforced/walnut,
-/obj/machinery/fabricator/micro/bartender{
-	pixel_x = 4
-	},
-/obj/item/paper/sierra,
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 9
-	},
-/turf/simulated/floor/carpet/blue3,
-/area/crew_quarters/cafe)
 "fgK" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
@@ -35327,8 +35289,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/floor_decal/spline/fancy/wood/corner{
-	dir = 4
+/obj/effect/floor_decal/spline/fancy/wood{
+	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
@@ -35618,10 +35580,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftport)
 "hro" = (
-/obj/random/date_based/christmas/xmaslights{
-	dir = 1;
-	pixel_y = 24
-	},
 /obj/item/stool/bar/padded,
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -36246,12 +36204,16 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/locker_room)
 "jsV" = (
-/obj/structure/holoplant,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -20
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
+/obj/structure/table/woodentable_reinforced/walnut,
+/obj/machinery/fabricator/micro/bartender{
+	pixel_x = 4
+	},
+/obj/item/paper/sierra,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
 "jwJ" = (
@@ -36295,10 +36257,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/south)
 "jFQ" = (
-/obj/random/date_based/christmas/xmaslights{
-	dir = 1;
-	pixel_y = 24
-	},
 /obj/item/stool/bar/padded,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -36604,9 +36562,6 @@
 /area/hallway/primary/seconddeck/center)
 "kyz" = (
 /obj/effect/floor_decal/spline/fancy/wood{
-	dir = 8
-	},
-/obj/random/date_based/christmas/xmaslights{
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
@@ -36965,9 +36920,6 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 4
 	},
-/obj/random/date_based/christmas/xmaslights{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
 "lST" = (
@@ -37296,9 +37248,6 @@
 	pixel_x = 2;
 	pixel_y = -26;
 	req_access = list("ACCESS_KITCHEN")
-	},
-/obj/random/date_based/christmas/xmaslights{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
@@ -39575,6 +39524,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 6
 	},
+/obj/structure/holoplant,
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
 "tmP" = (
@@ -57180,7 +57130,7 @@ aSw
 aSw
 xmy
 eaV
-eZG
+aSw
 gpb
 arg
 mlC
@@ -57382,7 +57332,7 @@ hOm
 akA
 aln
 kyz
-eTP
+kyz
 axQ
 auo
 qUa
@@ -61656,7 +61606,7 @@ rYM
 amn
 aHn
 aVj
-aSJ
+aVP
 bdV
 rDW
 rDW
@@ -61859,7 +61809,7 @@ rYM
 aWj
 qhX
 bdV
-aUu
+bdV
 bdV
 bdV
 bdV
@@ -62060,7 +62010,7 @@ aEL
 vME
 aKl
 aVj
-aUu
+bdV
 bdV
 aTY
 aVP

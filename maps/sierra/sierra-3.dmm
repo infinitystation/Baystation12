@@ -30435,8 +30435,12 @@
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
-/obj/item/stack/material/aluminium/fifty,
-/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/steel{
+	amount = 30
+	},
+/obj/item/stack/material/steel{
+	amount = 30
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aVQ" = (
@@ -30456,7 +30460,13 @@
 	c_tag = "Research - Storage";
 	dir = 8
 	},
-/obj/structure/closet/firecloset,
+/obj/structure/table/rack,
+/obj/item/stack/material/plasteel{
+	amount = 20
+	},
+/obj/item/stack/material/plasteel{
+	amount = 20
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aVS" = (
@@ -31058,8 +31068,12 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/random/material_rnd_steel,
-/obj/random/material_rnd_glass,
+/obj/item/stack/material/glass{
+	amount = 30
+	},
+/obj/item/stack/material/glass{
+	amount = 30
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aXm" = (
@@ -31078,7 +31092,21 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/obj/item/stack/material/plasteel/fifty,
+/obj/item/stack/material/aluminium{
+	amount = 30
+	},
+/obj/item/stack/material/aluminium{
+	amount = 30
+	},
+/obj/item/stack/material/plastic{
+	amount = 20
+	},
+/obj/item/stack/material/plastic{
+	amount = 20
+	},
+/obj/item/stack/material/plastic{
+	amount = 20
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aXo" = (
@@ -32827,10 +32855,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/servers)
 "bbK" = (
-/obj/item/storage/mirror{
-	pixel_x = -32;
-	pixel_y = 1
-	},
 /obj/structure/hygiene/sink{
 	dir = 8;
 	pixel_x = -22
