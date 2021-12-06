@@ -23,8 +23,8 @@
 	req_access = list(access_explorer)
 	islocked = TRUE
 	isStripped = TRUE
-	mycolour = "#485D5E"
-	stripes_color = "#9966ff"
+	mycolour = COLOR_DARK_GRAY
+	stripes_color = COLOR_VIOLET
 
 
 /obj/machinery/suit_storage_unit/sierra/explorer/pilot
@@ -39,7 +39,7 @@
 	helmet = /obj/item/clothing/head/helmet/space/void/exploration/sierra/med
 	suit = /obj/item/clothing/suit/space/void/exploration/sierra/med
 	req_access = list(access_field_med)
-	stripes_color = "#5A96BB"
+	stripes_color = COLOR_LIGHT_CYAN
 
 
 /obj/machinery/suit_storage_unit/sierra/explorer/eng
@@ -47,4 +47,4 @@
 	helmet = /obj/item/clothing/head/helmet/space/void/exploration/sierra/eng
 	suit = /obj/item/clothing/suit/space/void/exploration/sierra/eng
 	req_access = list(access_field_eng)
-	stripes_color = "#C57D07"
+	stripes_color = COLOR_SUN
