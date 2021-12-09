@@ -110,10 +110,10 @@
 	to_chat(victim, "Корабль укомплектован персоналом из ЦПСС, сотрудниками Организации Экспедиционного Корпуса и наемными контрактниками.")
 	to_chat(victim, "Это неисследованная область космического пространства вдали от территории ЦПСС, поэтому Вы можете встретить лишь небольшие аванпосты и дрейфующие суда. Ни одно известное правительство не претендует на этот сектор.")
 	to_chat(victim, "<b>Полезные статьи:</b>")
-	to_chat(victim, "Устав (руководство по военке): https://wiki.infinity-ss13.info/index.php?title=Руководство_военного")
-	to_chat(victim, "Закон ЦПСС (действует на борту): https://wiki.infinity-ss13.info/index.php?title=Закон_ЦПСС")
-	to_chat(victim, "Доп.закон для военных: https://wiki.infinity-ss13.info/index.php?title=Военно-юридический_кодекс_ПСС")
-	to_chat(victim, "Униформа экипажа: https://wiki.infinity-ss13.info/index.php?title=Униформа_экипажа")
+	to_chat(victim, "Устав (руководство по военке): https://sierra.ss220.space/index.php?title=Руководство_военного")
+	to_chat(victim, "Закон ЦПСС (действует на борту): https://sierra.ss220.space/index.php?title=Закон_ЦПСС")
+	to_chat(victim, "Доп.закон для военных: https://sierra.ss220.space/index.php?title=Военно-юридический_кодекс_ПСС")
+	to_chat(victim, "Униформа экипажа: https://sierra.ss220.space/index.php?title=Униформа_экипажа")
 
 /datum/map/torch/send_welcome()
 	var/welcome_text = "<center><img src = sollogo.png /><br /><font size = 3><b>SEV Torch</b> Показания Сенсоров:</font><hr />"
