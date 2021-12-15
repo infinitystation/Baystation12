@@ -5,7 +5,7 @@
 	antag_roles = list(MODE_MERCENARY)
 
 /datum/uplink_item/item/services/assault_declaration/get_goods(var/obj/item/device/uplink/U, var/loc)
-	if(world.time > 5 MINUTES)
+	if(world.time > 10 MINUTES)
 		U.visible_message("[U.loc] buzzez and declares, \"Unable to teleport telecrystals.\"")
 		return 0
 	command_announcement.Announce("В секторе была замечена телепортация большого объема телекристаллов, использующихся Горлекскими Мародерами. Рекомендуется вызвать поддержку с ЦК для урегулирования ситуации.", "Показания датчиков [station_name()]" , msg_sanitized = 1, zlevels = GLOB.using_map.station_levels)
