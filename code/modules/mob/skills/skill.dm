@@ -7,11 +7,11 @@ GLOBAL_LIST_EMPTY(skills)
 	var/desc = "Placeholder skill"         // Generic description of this skill.
 
    	// Names for different skill values, in order from 1 up.
-	var/levels = list( 		"Unskilled"			= "Unskilled Description",
-							"Basic"				= "Basic Description",
-							"Trained"			= "Trained Description",
-							"Experienced"		= "Experienced Description",
-							"Master"		= "Professional Description")
+	var/levels = list( 	"Необученный"	= "Unskilled Description",
+						"Минимальный"	= "Basic Description",
+						"Обученный"		= "Trained Description",
+						"Опытный"		= "Experienced Description",
+						"Мастер"		= "Professional Description")
 	var/difficulty = SKILL_AVERAGE         //Used to compute how expensive the skill is
 	var/default_max = SKILL_ADEPT          //Makes the skill capped at this value in selection unless overriden at job level.
 	var/prerequisites                      // A list of skill prerequisites, if needed.
@@ -40,37 +40,37 @@ GLOBAL_LIST_EMPTY(skills)
 	return ID
 
 /decl/hierarchy/skill/organizational
-	name = "Organizational"
+	name = "Организационные"
 	ID	 = "1"
 	difficulty = SKILL_EASY
 	default_max = SKILL_MAX
 
 /decl/hierarchy/skill/general
-	name = "General"
+	name = "Общие"
 	ID	 = "2"
 	difficulty = SKILL_EASY
 	default_max = SKILL_MAX
 
 /decl/hierarchy/skill/service
-	name = "Service"
+	name = "Сервис"
 	ID	 = "service"
 	difficulty = SKILL_EASY
 	default_max = SKILL_MAX
 
 /decl/hierarchy/skill/security
-	name = "Security"
+	name = "Безопасность"
 	ID	 = "security"
 
 /decl/hierarchy/skill/engineering
-	name = "Engineering"
+	name = "Инженерия"
 	ID	 = "engineering"
 
 /decl/hierarchy/skill/research
-	name = "Research"
+	name = "Исследование"
 	ID	 = "research"
 
 /decl/hierarchy/skill/medical
-	name = "Medical"
+	name = "Медицина"
 	ID	 = "medical"
 	difficulty = SKILL_HARD
 
@@ -79,67 +79,67 @@ GLOBAL_LIST_EMPTY(skills)
 
 /decl/hierarchy/skill/organizational/bureaucracy
 	ID = "bureaucracy"
-	name = "Bureaucracy"
-	desc = "Your ability to write and complete paperwork, navigate complex organiztions, and understand laws and regulations."
-	levels = list( "Unskilled"			= "You can usually fill out basic paperwork, if with a few errors. You have a vague understanding of the law, gleaned mostly from the news and personal experience.",
-						"Basic"				= "You are familiar with the paperwork needed to do your job, and can navigate it well. You have some understanding of the law as it applies to you and those around you.",
-						"Trained"			= "You can navigate most paperwork thrown at you, even if you are unfamiliar with it. You have a good working understanding of the law and any regulations or procedures relevant to you.",
-						"Experienced"		= "With your experience, you can easily create paperwork for any eventuality, and write reports which are clear and understandable. You have an excellent knowledge of the law, possibly including formal legal training.",
-						"Master"		= "You can make paperwork dance to your bidding, and navigate the most byzantine bureaucratic structures with ease and familiarity. Your reports are works of literature. Your knowledge of the law is both broad and intimate, and you may be certified to practice law.")
+	name = "Бюрократия"
+	desc = "Ваша способность составлять и заполнять документы, ориентироваться в сложных организационных структурах, понимать законы и нормативные акты."
+	levels = list( 	"Необученный"	= "Обычно вы можете заполнить основные документы, хотя и с некоторыми ошибками. Вы имеете смутное представление о законе, почерпнутое в основном из новостей и личного опыта.",
+					"Минимальный"	= "Вы знакомы с бумажной работой, необходимой для выполнения вашей работы, и можете хорошо в ней ориентироваться. Вы имеете некоторое представление о законах, применимых к вам и окружающим вас людям.",
+					"Обученный"		= "Вы можете ориентироваться в большинстве брошенных вам документов, даже если вы с ними незнакомы. Вы хорошо разбираетесь в законодательстве и любых нормативных актах или процедурах, имеющих к вам отношение.",
+					"Опытный"		= "Благодаря своему опыту вы легко сможете составить документы на любой случай, а также написать отчеты, которые будут ясны и понятны. Вы отлично разбираетесь в законодательстве, возможно, имеете формальное юридическое образование.",
+					"Мастер"		= "Вы можете заставить бумагу плясать под вашу дудку и с легкостью и знанием дела ориентироваться в самых запутанных бюрократических структурах. Ваши отчеты - это литературные произведения. Ваши знания закона обширны и глубоки, и вы можете быть сертифицированы для юридической практики.")
 
 /decl/hierarchy/skill/organizational/finance
 	ID = "finance"
-	name = "Finance"
-	desc = "Your ability to manage money and investments."
-	levels = list( "Unskilled"			= "Your understanding of money starts and ends with personal finance. While you are able to perform basic transactions, you get lost in the details, and can find yourself ripped off on occasion.<br>- You get some starting money. Its amount increases with level.<br>- You can use the verb \"Appraise\" to see the value of different objects.",
-						"Basic"				= "You have some limited understanding of financial transactions, and will generally be able to keep accurate records. You have little experience with investment, and managing large sums of money will likely go poorly for you.",
-						"Trained"			= "You are good at managing accounts, keeping records, and arranging transactions. You have some familiarity with mortgages, insurance, stocks, and bonds, but may be stumped when facing more complicated financial devices.",
-						"Experienced"		= "With your experience, you are familiar with any financial entities you may run across, and are a shrewd judge of value. More often than not, investments you make will pan out well.",
-						"Master"		= "You have an excellent knowledge of finance, will often make brilliant investments, and have an instinctive feel for interstellar economics. Financial instruments are weapons in your hands. You likely have professional experience in the finance industry.")
+	name = "Финансы"
+	desc = "Ваша способность управлять деньгами и инвестициями."
+	levels = list( 	"Необученный"	= "Ваше понимание денег начинается и заканчивается личными финансами. Хотя вы способны выполнять основные операции, вы теряетесь в деталях и можете оказаться обманутым.<br>- Вы получаете немного стартовых денег. Их количество увеличивается с ростом уровня.<br>- Вы можете использовать действие \"Оценить\", чтобы узнать стоимость различных объектов.",
+					"Минимальный"	= "Вы имеете ограниченное представление о финансовых операциях и, как правило, способны вести точные записи. У вас мало опыта в инвестировании, и управление крупными суммами денег, скорее всего, пройдет для вас неудачно.",
+					"Обученный"		= "Вы умеете управлять счетами, вести учет и организовывать сделки. Вы немного знакомы с ипотекой, страхованием, акциями и облигациями, но можете оказаться в тупике, столкнувшись с более сложными финансовыми устройствами.",
+					"Опытный"		= "Благодаря своему опыту вы знакомы с любыми финансовыми организациями, с которыми можете столкнуться, и умеете тонко оценивать стоимость. Чаще всего ваши инвестиции оказываются удачными.",
+					"Мастер"		= "Вы отлично разбираетесь в финансах, часто делаете блестящие инвестиции и инстинктивно чувствуете межзвездную экономику. Финансовые инструменты - это оружие в ваших руках. Скорее всего, у вас есть профессиональный опыт в финансовой сфере.")
 
 // Category: General
 
 /decl/hierarchy/skill/general/EVA
 	ID = "EVA"
-	name = "Extra-vehicular activity"
-	desc = "This skill describes your skill and knowledge of space-suits and working in vacuum."
-	levels = list( "Unskilled"			= "You have basic safety training common to people who work in space: You know how to put on and seal your internals, and you can probably struggle into a space suit if you really need to, though you'll be clumsy at it. You're still prone to mistakes that may leave you trying to breathe vacuum.<br>- You can remove hardsuits. Its speed increases with level.<br>- You will always get floored when you enter gravity area from space. This chance decreases with level.<br>- You are likely to slip. This chance decreases with level.",
-						"Basic"				= "You have had thorough basic training in EVA operations, and are unlikely to make novice mistakes. However, you have little experience working in vacuum.",
-						"Trained"			= "You can comfortably use a space suit and do so regularly in the course of your work. Checking your internals is second nature to you, and you don't panic in an emergency.<br>- You can fully operate jetpacks.",
-						"Experienced"		= "You can use all kinds of space suits, including specialized versions. Your years of experience in EVA keep you from being disoriented in space, and you have experience using a jetpack to move around. <br>- You cannot slip anymore.",
-						"Master"		= "You are just as much at home in a vacuum as in atmosphere. You probably do your job almost entirely EVA.<br>- You cannot get floored anymore.<br>- You get bonus speed in zero-G.")
+	name = "Внекорабельная Деятельность"
+	desc = "Этот навык описывает ваши умения и знания о скафандрах и работе в вакууме."
+	levels = list( 	"Необученный"	= "У вас есть базовая подготовка по технике безопасности, обычная для людей, работающих в космосе: Вы знаете, как надевать и герметизировать свои внутренние устройства, и, вероятно, сможете влезть в скафандр, если это действительно необходимо, хотя и будете неуклюжи в этом. Вы все еще склонны к ошибкам, которые могут привести к тому, что вы будете пытаться дышать вакуумом.<br>- Вы можете снимать защитные костюмы. Скорость снятия увеличивается с уровнем.<br>- Вы всегда будете падать, при вхождении в зону гравитации. Этот шанс уменьшается с уровнем.",
+					"Минимальный"	= "Вы прошли тщательную базовую подготовку по операциям ВКД и вряд ли совершите ошибки новичка. Однако у вас мало опыта работы в вакууме.",
+					"Обученный"		= "Вы можете комфортно пользоваться скафандром и регулярно делаете это в ходе своей работы. Для вас проверка внутренних устройств - вторая натура, и вы не паникуете в экстренных ситуациях.<br>- Вы можете полностью управлять реактивными ранцами.",
+					"Опытный"		= "Вы можете использовать все виды скафандров, включая специализированные версии. Ваш многолетний опыт в ВКД позволяет вам не дезориентироваться в космосе, и у вас есть опыт использования реактивного ранца для передвижения.<br>- Вы больше не будете поскальзываться.",
+					"Мастер"		= "Вы так же хорошо чувствуете себя в вакууме, как и в атмосфере. Вероятно, вы выполняете свою работу почти полностью в ВКД.<br>- Вы больше не будете падать, при входе в зону гравитации.<br>- Вы получаете бонусную скорость при невесомости.")
 
 /decl/hierarchy/skill/general/EVA/mech
 	ID = "exosuit"
-	name = "Exosuit Operation"
-	desc = "Allows you to operate exosuits well."
-	levels = list("Untrained" = "You are unfamiliar with exosuit controls, and if you attempt to use them you are liable to make mistakes.",
-		"Trained" = "You are proficient in exosuit operation and safety, and can use them without penalties.")
+	name = "Эксплуатация Экзокостюма"
+	desc = "Позволяет хорошо управлять экзокостюмами."
+	levels = list(	"Необученный" 	= "Вы не знакомы с управлением экзокостюмом, и если вы попытаетесь использовать его, вы можете совершить ошибки.",
+					"Обученный" 	= "Вы владеете навыками эксплуатации и безопасности экзокостюмов и можете использовать их без штрафов.")
 	prerequisites = list(SKILL_EVA = SKILL_ADEPT)
 	default_max = SKILL_BASIC
 	difficulty = SKILL_AVERAGE
 
 /decl/hierarchy/skill/general/pilot
 	ID = "pilot"
-	name = "Piloting"
-	desc = "Describes your experience and understanding of piloting spacecraft, from small and short-range pods to corvette sized vessels."
-	levels = list( "Unskilled"			= "You know what a spacecraft is, and you might have an abstract understanding of the differences between various ships. If your department is involved in the use of spacecraft, you know roughly what their capabilities are. You might be able to fly a spacecraft in a videogame. If you were to take the Helm of a smaller vessel, you might be able to move it with proper guidance.<br>- Travel time between tranisition decreases with level.<br>- You can fly ships but their movement might be randomized.<br>- The speed of your ship hitting carps will increase with level.",
-						"Basic"				= "You can pilot a small, short-range craft safely, but larger ships are out of your area of expertise. You are by no means an expert, and probably don't have much training. Skills of this level are typical for deck crew.<br>- You can operate small shuttlecraft without error.<br>- You can completely avoid meteors on slow speed while using tiny shuttlecrafts such as the GUP.",
-						"Trained"			= "You are a trained pilot, and can safely operate anything from a small craft to a corvette. You can spend extended periods of time piloting a spacecraft, and you're versed in the abilities of different ships, and what makes them function. You can do basic maintenance on smaller vessels, and perform most basic maneuvers. You can use armed spacecraft. You can make basic calculations relating to piloting. Skills of this level are typical for newer pilots. You have probably received formal piloting training.<br>- You can operate large ships without error.<br>- You can mostly avoid meteors on slow speed using any shuttlecrafts.",
-						"Experienced"		= "You are an experienced pilot, and can safely take the helm of many types of craft. You could probably live in a spacecraft, and you're very well versed in essentially everything related to space-faring vessels. Not only can you fly a ship, but you can perform difficult maneuvers, and make most calculations related to piloting a spacecraft. You can maintain a ship. Skills of this level are typical for very experienced pilots. You have received formal piloting training.<br>- You can somewhat avoid meteors on normal speed while using tiny shuttlecrafts.",
-						"Master"		= "Not only are you an exceptional pilot, but you have mastered peripheral functions such as stellar navigation and bluespace jump plotting. You have experience performing complex maneuvers, managing squadrons of small craft, and operating in hostile environments.<br>- You can mostly avoid meteors on normal speed using any shuttlecrafts.<br>- Less meteors will hit the ship while passing through meteor fields.")
+	name = "Пилотирование"
+	desc = "Описывает ваш опыт и понимание пилотирования космических кораблей, от небольших и ближних капсул до кораблей размером с корвет."
+	levels = list( 	"Необученный"	= "Вы знаете, что такое космический корабль, и, возможно, имеете абстрактное представление о различиях между различными кораблями. Если ваш отдел занимается использованием космических кораблей, вы примерно знаете, каковы их возможности. Возможно, вы умеете управлять космическим кораблем в видеоигре. Если бы вам пришлось взять в руки штурвал небольшого корабля, вы могли бы управлять им при надлежащем руководстве.<br>- Время в пути между пересадками уменьшается с ростом уровня.<br>- Вы можете управлять кораблями, но их движение может быть случайно.<br>- Скорость вашего корабля, поражающего карпов, увеличивается с уровнем.",
+					"Минимальный"	= "Вы можете безопасно управлять небольшими кораблями малой дальности, но более крупные корабли - не в вашей компетенции. Вы ни в коем случае не эксперт и, вероятно, не имеете большой подготовки. Навыки этого уровня типичны для палубной команды.<br>- Вы можете безошибочно управлять небольшими челноками.<br>- Вы можете полностью избежать метеоров на медленной скорости, используя крошечные челноки, такие как Гуппи.",
+					"Обученный"		= "Вы опытный пилот и можете безопасно управлять любым кораблем - от небольшого судна до корвета. Вы можете проводить длительные периоды времени, управляя космическим кораблем, и разбираетесь в возможностях различных кораблей и в том, как они функционируют. Вы можете проводить базовое техническое обслуживание небольших кораблей и выполнять большинство базовых маневров. Вы можете использовать вооруженные космические корабли. Вы можете производить основные расчеты, связанные с пилотированием. Навыки этого уровня характерны для начинающих пилотов. Вероятно, вы прошли формальное обучение пилотированию.<br>- Вы можете управлять большими кораблями без ошибок.<br>- Вы можете в основном избегать метеоров на медленной скорости, используя любые челноки.",
+					"Опытный"		= "Вы опытный пилот и можете безопасно управлять многими типами кораблей. Вы, вероятно, могли бы жить в космическом корабле, и вы очень хорошо разбираетесь практически во всем, что связано с космическими кораблями. Вы можете не только управлять кораблем, но и выполнять сложные маневры, а также производить большинство расчетов, связанных с пилотированием космического корабля. Вы можете обслуживать корабль. Навыки этого уровня характерны для очень опытных пилотов. Вы прошли формальное обучение пилотированию.<br>- Вы можете в некоторой степени избежать метеоров на нормальной скорости, используя крошечные челноки.",
+					"Мастер"		= "Вы не только исключительный пилот, но и освоили такие периферийные функции, как звездная навигация и прокладка прыжков в голубое пространство. У вас есть опыт выполнения сложных маневров, управления эскадрильями малых кораблей и работы во враждебном окружении.<br>- Вы можете избегать метеоров на нормальной скорости, используя любые челноки.<br>- Во время прохождения через метеоритные поля в корабль будет попадать меньше метеоров.")
 	difficulty = SKILL_AVERAGE
 	default_max = SKILL_ADEPT
 
 /decl/hierarchy/skill/general/hauling
 	ID = "hauling"
-	name = "Athletics"
-	desc = "Your ability to perform tasks requiring great strength, dexterity, or endurance."
-	levels = list( "Unskilled"			= "You are not used to manual labor, tire easily, and are likely not in great shape. Extended heavy labor may be dangerous for you.<br>- You can pull objects but start to generate Lactate after tiring out. Your strength increases with level.<br>- You can throw objects. Their speed, thrown distance, and force increases with level.<br>- You can sprint, the stamina consumption rate is lowered with each level.<br>- You can leap by clicking on a distant target with grab intent, leap range is increased and chances of falling over are decreased with each level.",
-						"Basic"				= "You have some familiarity with manual labor, and are in reasonable physical shape. Tasks requiring great dexterity or strength may still elude you.<br>- You can throw \"huge\" items or normal-sized mobs without getting weakened.",
-						"Trained"			= "You have sufficient strength and dexterity for more strenuous tasks, and can perform physical labor for longer periods without tiring.",
-						"Experienced"		= "You likely have experience with heavy work in trying physical conditions, and are in excellent shape. You may visit the gym frequently.",
-						"Master"		= "You are in excellent shape. You're well-adapted to performing heavy physical labor, and may have requested extra PT.")
+	name = "Атлетика"
+	desc = "Ваша способность выполнять задачи, требующие большой силы, ловкости или выносливости."
+	levels = list( 	"Необученный"	= "Вы не привыкли к ручному труду, легко устаете и, скорее всего, не в лучшей форме. Длительный тяжелый труд может быть опасен для вас.<br>- Вы можете тянуть предметы, но после усталости начинаете вырабатывать лактат. Ваша сила увеличивается с ростом уровня.<br>- Вы можете бросать предметы. Их скорость, дальность броска и сила увеличиваются с уровнем.<br>- Вы можете спринтовать, скорость расхода выносливости снижается с каждым уровнем.<br>- Вы можете прыгнуть, нажав на удаленную цель с намерением схватить ее, дальность прыжка увеличивается, а шансы упасть уменьшаются с каждым уровнем.",
+					"Минимальный"	= "Вы знакомы с ручным трудом и находитесь в хорошей физической форме. Задачи, требующие большой ловкости или силы, все еще могут вам не удаваться.<br>- Вы можете бросать \"огромные\" предметы или мобов нормального размера без ослабления.",
+					"Обученный"		= "У вас достаточно силы и ловкости для более напряженных задач, и вы можете выполнять физическую работу в течение длительного времени без усталости.",
+					"Опытный"		= "Скорее всего, у вас есть опыт долгой работы в тяжелых физических условиях, и вы находитесь в отличной форме. Вы можете часто посещать тренажерный зал.",
+					"Мастер"		= "Вы находитесь в отличной форме. Вы хорошо приспособлены к выполнению тяжелой физической работы, и, возможно, вам требуется дополнительная физическая нагрузка.")
 	difficulty = SKILL_AVERAGE
 //[INF]
 /decl/hierarchy/skill/general/hauling/get_cost(var/level)
@@ -157,47 +157,47 @@ GLOBAL_LIST_EMPTY(skills)
 //[/INF]
 /decl/hierarchy/skill/general/computer
 	ID = "computer"
-	name = "Information Technology"
-	desc = "Describes your understanding of computers, software and communication. Not a requirement for using computers, but definitely helps. Used in telecommunications and programming of computers and AIs."
-	levels = list( "Unskilled"			= "You know how to use the computers and communication devices that you grew up with. You can use a computer console, a handheld or wall-mounted radio, and your headset, as well as your PDA. You know what an AI is, but you may see them as either \"people made of silicon\" or \"only machines\"; you know they have to obey their laws, but you don't know much about how or why they work.",
-						"Basic"				= "You know the basics of programming, but you're not very good at it and couldn't do it professionally. You have a pretty good idea of what makes AIs tick. You understand how information is stored in a computer, and you can fix simple computer problems. You're computer-literate, but you still make mistakes. If you tried to subvert the AI, you might make mistakes in wording your new laws.<br>- The antagonist access decryption program has a chance to avoid tripping alarms and working more effectively. This increases with level.",
-						"Trained"			= "At this level, you're probably working with computers on a daily basis. You understand and can repair the telecommunications network. Your understanding of AI programming and psychology lets you fix problems with the AIs or cyborgs--or create problems, if you so desire. You can program computers and AIs and change their laws effectively.<br>- You can fully operate the Network Monitor, E-mail Administration, and AI Management Programs.",
-						"Experienced"		= "You have years of experience with computer networks, AI systems, telecommunications, and sysadmin tasks. You know the systems used on a daily basis intimately, and can diagnose complex problems.<br>- The antagonist dos program gives extra fake attacking nodes to the system log.<br>- You can use the command line on modular computers (type \"man\" for a list).",
-						"Master"		= "People are probably starting to wonder whether you might be a computer yourself. Computer code is your first language; you relate to AIs as easily as (probably more easily than) organics. You could build a telecommunications network from the ground up.")
+	name = "Информационные Технологии"
+	desc = "Описывает ваше понимание компьютеров, программного обеспечения и коммуникации. Не является обязательным навыком для использования компьютеров, но определенно помогает. Используется в телекоммуникациях и программировании компьютеров и ИИ."
+	levels = list( 	"Необученный"	= "Вы умеете пользоваться компьютерами и коммуникационными устройствами, с которыми выросли. Вы умеете пользоваться компьютерной консолью, портативным или настенным радиоприемником, гарнитурой, а также КПК. Вы знаете, что такое ИИ, но можете воспринимать их либо как \"людей из кремния\", либо как \"всего лишь машины\"; вы знаете, что они должны подчиняться своим законам, но мало знаете о том, как и почему они работают.",
+					"Минимальный"	= "Вы знаете основы программирования, но не очень хорошо в этом разбираетесь и не смогли бы заниматься этим профессионально. У вас есть довольно хорошее представление о том, что заставляет ИИ работать. Вы понимаете, как информация хранится в компьютере, и можете устранить простые компьютерные проблемы. Вы компьютерно грамотны, но все равно допускаете ошибки. Если вы попытаетесь подменить ИИ, вы можете допустить ошибки в формулировке ваших новых законов.<br>- Программа расшифровки доступа антагониста имеет шанс избежать срабатывания сигнализации и работать более эффективно. Этот показатель увеличивается с уровнем.",
+					"Обученный"		= "На этом уровне вы, вероятно, ежедневно работаете с компьютерами. Вы понимаете и можете ремонтировать телекоммуникационные сети. Ваше понимание программирования и психологии ИИ позволяет вам устранять проблемы с ИИ или киборгами - или создавать проблемы, если вам так хочется. Вы можете программировать компьютеры и ИИ и эффективно изменять их законы.<br>- Вы можете полноценно работать с программами Network Monitor, E-mail Administration и AI Management.",
+					"Опытный"		= "У вас есть многолетний опыт работы с компьютерными сетями, системами искусственного интеллекта, телекоммуникациями и задачами сисадмина. Вы досконально знаете системы, используемые ежедневно, и можете диагностировать сложные проблемы.<br>- Программа-антагонист DoS выдает дополнительные поддельные атакующие узлы в системный журнал.<br>- Вы можете использовать командную строку на модульных компьютерах (введите \"man\" для получения списка).",
+					"Мастер"		= "Люди, вероятно, начинают задаваться вопросом, не являетесь ли вы сами компьютером. Компьютерный код - ваш родной язык; вы общаетесь с ИИ так же легко, как с органикой (возможно, даже легче, чем с ней). Вы можете построить телекоммуникационную сеть с нуля.")
 
 // Category: Service
 
 /decl/hierarchy/skill/service/botany
 	ID = "botany"
-	name = "Botany"
-	desc = "Describes how good a character is at growing and maintaining plants."
-	levels = list( "Unskilled"			= "You know next to nothing about plants. While you can attempt to plant, weed, or harvest, you are just as likely to kill the plant instead.",
-						"Basic"				= "You've done some gardening. You can water, weed, fertilize, plant, and harvest, and you can recognize and deal with pests. You may be a hobby gardener.<br>- You can safely plant and weed normal plants.<br>- You can tell weeds and pests apart from each other.",
-						"Trained"			= "You are proficient at botany, and can grow plants for food or oxygen production. Your plants will generally survive and prosper. You know the basics of manipulating plant genes.<br>- You can safely plant and weed exotic plants.<br>- You can operate xenoflora machines. The sample's degradation decreases with skill level.",
-						"Experienced"		= "You're a botanist or farmer, capable of running a facility's hydroponics farms or doing botanical research. You are adept at creating custom hybrids and modified strains.",
-						"Master"		= "You're a specialized botanist. You can care for even the most exotic, fragile, or dangerous plants. You can use gene manipulation machinery with precision, and are often able to avoid the degradation of samples.")
+	name = "Ботаника"
+	desc = "Описывает, насколько хорошо персонаж умеет выращивать и ухаживать за растениями."
+	levels = list( 	"Необученный"	= "Вы почти ничего не знаете о растениях. Хотя вы можете попытаться посадить, прополоть или собрать урожай, вы с такой же вероятностью можете убить растение.",
+					"Минимальный"	= "Вы занимались садоводством. Вы умеете поливать, пропалывать, удобрять, сажать и собирать урожай, а также распознавать и устранять вредителей. Вы можете быть садоводом-любителем.<br>- Вы можете спокойно сажать и пропалывать обычные растения.<br>- Вы можете отличить друг от друга сорняки и вредителей.",
+					"Обученный"		= "Вы разбираетесь в ботанике и можете выращивать растения для получения пищи или кислорода. Ваши растения, как правило, выживают и процветают. Вы знаете основы манипулирования генами растений.<br>- Вы можете безопасно сажать и пропалывать экзотические растения.<br>- Вы можете управлять машинами ксенофлоры. Деградация образца уменьшается с ростом квалификации.",
+					"Опытный"		= "Вы ботаник или фермер, способный управлять гидропонной фермой предприятия или проводить ботанические исследования. Вы умеете создавать индивидуальные гибриды и модифицированные штаммы.",
+					"Мастер"		= "Вы специализированный ботаник. Вы можете ухаживать даже за самыми экзотическими, хрупкими или опасными растениями. Вы можете с точностью использовать механизмы генной манипуляции и часто способны избежать порчи образцов.")
 
 /decl/hierarchy/skill/service/cooking
 	ID = "cooking"
-	name = "Cooking"
-	desc = "Describes a character's skill at preparing meals and other consumable goods. This includes mixing alcoholic beverages."
-	levels = list( "Unskilled"			= "You barely know anything about cooking, and stick to vending machines when you can. The microwave is a device of black magic to you, and you avoid it when possible.",
-						"Basic"				= "You can make simple meals and do the cooking for your family. Things like spaghetti, grilled cheese, or simple mixed drinks are your usual fare.<br>- You can safely use the blender.",
-						"Trained"			= "You can make most meals while following instructions, and they generally turn out well. You have some experience with hosting, catering, and/or bartending.<br>- You can fully operate the drink dispensers.",
-						"Experienced"		= "You can cook professionally, keeping an entire crew fed easily. Your food is tasty and you don't have a problem with tricky or complicated dishes. You can be depended on to make just about any commonly-served drink.",
-						"Master"		= "Not only are you good at cooking and mixing drinks, but you can manage a kitchen staff and cater for special events. You can safely prepare exotic foods and drinks that would be poisonous if prepared incorrectly.")
+	name = "Кулинария"
+	desc = "Описывает умение персонажа готовить еду и другие расходные материалы. Сюда входит смешивание алкогольных напитков."
+	levels = list( 	"Необученный"	= "Вы почти ничего не знаете о приготовлении пищи и при возможности пользуетесь торговыми автоматами. Микроволновая печь для вас - это прибор черной магии, и вы избегаете ее, когда это возможно.",
+					"Минимальный"	= "Вы можете готовить простые блюда и заниматься кулинарией для своей семьи. Такие вещи, как спагетти, жареный сыр или простые смешанные напитки - это ваши обычные блюда.<br>- Вы можете смело использовать блендер.",
+					"Обученный"		= "Вы можете приготовить большинство блюд, следуя инструкциям, и, как правило, они получаются хорошо. У вас есть некоторый опыт работы в сфере приема гостей, кейтеринга и/или барменского искусства.<br>- Вы можете полностью управлять автоматами с напитками.",
+					"Опытный"		= "Вы умеете готовить профессионально, легко обеспечивая питанием целую команду. Ваша еда вкусна, и у вас нет проблем с запутанными или сложными блюдами. На вас можно положиться в приготовлении практически любого распространенного напитка.",
+					"Мастер"		= "Вы не только хорошо готовите и смешиваете напитки, но и можете управлять персоналом кухни и обслуживать специальные мероприятия. Вы можете безопасно готовить экзотические блюда и напитки, которые при неправильном приготовлении могут быть ядовитыми.")
 
 // Category: Security
 
 /decl/hierarchy/skill/security/combat
 	ID = "combat"
-	name = "Close Combat"
-	desc = "This skill describes your training in hand-to-hand combat or melee weapon usage. While expertise in this area is rare in the era of firearms, experts still exist among athletes."
-	levels = list( "Unskilled"			= "You can throw a punch or a kick, but it'll knock you off-balance. You're inexperienced and have probably never been in a serious hand-to-hand fight. In a fight, you might panic and run, grab whatever's nearby and blindly strike out with it, or (if the other guy is just as much of a beginner as you are) make a fool out of yourself.<br>- You can disarm, grab, and hit. Their success chance depends on the fighters' skill difference.<br>- The chance of falling over when tackled is reduced with level.",
-						"Basic"				= "You either have some experience with fistfights, or you have some training in a martial art. You can handle yourself if you really have to, and if you're a security officer, can handle a stun baton at least well enough to get the handcuffs onto a criminal.",
-						"Trained"			= "You have had close-combat training, and can easily defeat unskilled opponents. Close combat may not be your specialty, and you don't engage in it more than needed, but you know how to handle yourself in a fight.<br>- You can parry with weapons. This increases with level.<br>- You can do grab maneuvers (pinning, dislocating).<br>- You can grab targets when leaping at them and not fall over, if your species is able to do so.",
-						"Experienced"		= "You're good at hand-to-hand combat. You've trained explicitly in a martial art or as a close combatant as part of a military or police unit. You can use weaponry competently and you can think strategically and quickly in a melee. You're in good shape and you spend time training.",
-						"Master"		= "You specialize in hand-to-hand combat. You're well-trained in a practical martial art, and in good shape. You spend a lot of time practicing. You can take on just about anyone, use just about any weapon, and usually come out on top. You may be a professional athlete or special forces member.")
+	name = "Ближний Бой"
+	desc = "Этот навык описывает вашу подготовку в рукопашном бою или использовании оружия ближнего боя. Хотя в эпоху огнестрельного оружия опыт в этой области редок, среди спортсменов все еще есть эксперты."
+	levels = list( 	"Необученный"	= "Вы можете ударить кулаком или ногой, но это выведет вас из равновесия. Вы неопытны и, вероятно, никогда не участвовали в серьезном рукопашном бою. В драке вы можете запаниковать и убежать, схватить все, что попадется под руку, и вслепую нанести удар, или (если другой парень такой же новичок, как и вы) выставить себя дураком.<br>- Вы можете обезоружить, схватить и ударить. Шанс на успех зависит от разницы в навыках бойцов.<br>- Шанс упасть при захвате уменьшается с уровнем.",
+					"Минимальный"	= "У вас либо есть опыт участия в потасовках, либо вы обучены какому-либо боевому искусству. Вы можете справиться с собой, если это действительно необходимо, а если вы сотрудник службы безопасности, то можете обращаться с электрошоковой дубинкой, по крайней мере, достаточно хорошо, чтобы надеть наручники на преступника.",
+					"Обученный"		= "Вы прошли обучение ближнему бою и можете легко победить неумелых противников. Возможно, ближний бой не является вашей специализацией, и вы не участвуете в нем чаще, чем это необходимо, но вы знаете, как вести себя в драке.<br>- Вы можете парировать с помощью оружия. Это улучшается с уровнем.<br>- Вы можете выполнять маневры захвата (прижатие, вывих).<br>- Вы можете хватать цели при прыжке на них и не падать, если ваш вид способен на это.",
+					"Опытный"		= "Вы хорошо владеете рукопашным боем. Вы прошли специальную подготовку по боевым искусствам или в качестве бойца ближнего боя в составе военного или полицейского подразделения. Вы умеете грамотно пользоваться оружием и способны мыслить стратегически и быстро в ближнем бою. Вы в хорошей форме и уделяете время тренировкам.",
+					"Мастер"		= "Вы специализируетесь на рукопашном бое. Вы хорошо обучены практическому боевому искусству и находитесь в хорошей форме. Вы проводите много времени на тренировках. Вы можете сразиться практически с любым человеком, использовать практически любое оружие и, как правило, выходить победителем. Вы можете быть профессиональным спортсменом или сотрудником спецназа.")
 
 /decl/hierarchy/skill/security/combat/get_cost(var/level)
 	switch(level)
@@ -212,13 +212,13 @@ GLOBAL_LIST_EMPTY(skills)
 
 /decl/hierarchy/skill/security/weapons
 	ID = "weapons"
-	name = "Weapons Expertise"
-	desc = "This skill describes your expertise with and knowledge of weapons. A low level in this skill implies knowledge of simple weapons, for example flashes. A high level in this skill implies knowledge of complex weapons, such as unconfigured grenades, riot shields, pulse rifles or bombs. A low-medium level in this skill is typical for security officers, a high level of this skill is typical for special agents and soldiers."
-	levels = list( "Unskilled"			= "You know how to recognize a weapon when you see one. You can point a gun and shoot it, though results vary wildly. You might forget the safety, you can't control burst recoil well, and you don't have trained reflexes for gun fighting.<br>- You might fire your weapon randomly.",
-						"Basic"				= "You know how to handle weapons safely, and you're comfortable using simple weapons. Your aim is decent and you can usually be trusted not to do anything stupid with a weapon you are familiar with, but your training isn't automatic yet and your performance will degrade in high-stress situations.<br>- You can use firearms. Their accuracy and spread depend on your skill level.",
-						"Trained"			= "You have had extensive weapons training, or have used weapons in combat. Your aim is better now. You are familiar with most types of weapons and can use them in a pinch. You have an understanding of tactics, and can be trusted to stay calm under fire. You may have military or police experience and you probably carry a weapon on the job.<br>-You have a chance to automatically unsafety a gun when firing on harm intent.",
-						"Experienced"		= "You've used firearms and other ranged weapons in high-stress situations, and your skills have become automatic. Your aim is good.<br>-You will automatically unsafety a gun when firing it on harm intent.<br>-You can perform tactical and speed reloads. The time taken decreases with level.",
-						"Master"		= "You are an exceptional shot with a variety of weapons, from simple to exotic. You use a weapon as naturally as though it were a part of your own body. You may be a sniper or special forces operator of some kind.<br>- You get extra accuracy for sniper rifles.<br>- You automatically eject shells from bolt-action firearms.")
+	name = "Оружейный Опыт"
+	desc = "Этот навык описывает ваш опыт и знание оружия. Низкий уровень этого навыка подразумевает знание простого оружия, например, светошумовых гранат. Высокий уровень этого навыка подразумевает знание сложного оружия, такого как неконфигурированные гранаты, щиты от беспорядков, импульсные винтовки или бомбы. Низкий-средний уровень этого навыка характерен для сотрудников службы безопасности, высокий уровень этого навыка характерен для специальных агентов и солдат."
+	levels = list( 	"Необученный"	= "Вы умеете распознавать оружие, когда видите его. Вы можете навести пистолет и выстрелить из него, хотя результаты могут быть самыми разными. Вы можете забыть о предохранителе, не можете хорошо контролировать отдачу при выстреле, и у вас нет натренированных рефлексов для боя с оружием.<br>- Вы можете произвольно выстрелить из своего оружия.",
+					"Минимальный"	= "Вы знаете, как безопасно обращаться с оружием, и вам удобно пользоваться простым оружием. Вы хорошо целитесь, и обычно вам можно доверять, что вы не наделаете глупостей с оружием, с которым вы знакомы, но ваша подготовка еще не доведена до автоматизма, и в ситуациях высокого стресса ваши показатели будут снижаться.<br>- Вы можете использовать огнестрельное оружие. Его точность и разброс зависят от вашего уровня мастерства.",
+					"Обученный"		= "Вы прошли обширную подготовку по владению оружием или использовали его в бою. Теперь вы лучше целитесь. Вы знакомы с большинством видов оружия и можете использовать его в случае необходимости. Вы разбираетесь в тактике, и вам можно доверять в том, что вы сохраните спокойствие под огнем. Возможно, у вас есть опыт работы в армии или полиции, и вы, вероятно, носите оружие на работе.<br>-У вас есть возможность автоматически снять оружие с предохранителя при стрельбе с намерением причинить вред.",
+					"Опытный"		= "Вы использовали огнестрельное и другое стрелковое оружие в стрессовых ситуациях, и ваши навыки стали автоматическими. Вы хорошо прицеливаетесь.<br>-Вы автоматически снимаете оружие с предохранителя, если стреляете из него с намерением причинить вред.<br>-Вы можете выполнять тактическую и скоростную перезарядку. Время перезарядки уменьшается с уровнем.",
+					"Мастер"		= "Вы превосходно стреляете из различных видов оружия, от простого до экзотического. Вы используете оружие так естественно, как будто оно является частью вашего собственного тела. Вы можете быть снайпером или оператором спецназа.<br>- Вы получаете дополнительную точность для снайперских винтовок.<br>- Вы автоматически выбрасываете гильзы из оружия с продольно-скользящим затвором.")
 
 /decl/hierarchy/skill/security/weapons/get_cost(var/level)
 	switch(level)
@@ -235,13 +235,13 @@ GLOBAL_LIST_EMPTY(skills)
 
 /decl/hierarchy/skill/security/forensics
 	ID = "forensics"
-	name = "Forensics"
-	desc = "Describes your skill at performing forensic examinations and identifying vital evidence. Does not cover analytical abilities, and as such isn't the only indicator for your investigation skill. Note that in order to perform autopsy, the surgery skill is also required."
-	levels = list( "Unskilled"			= "You know that detectives solve crimes. You may have some idea that it's bad to contaminate a crime scene, but you're not too clear on the details.",
-						"Basic"				= "You know how to avoid contaminating a crime scene. You know how to bag the evidence without contaminating it unduly.",
-						"Trained"			= "You are trained in collecting forensic evidence - fibers, fingerprints, the works. You know how autopsies are done, and might've assisted performing one.<br>- You can more easily detect fingerprints.<br>- You no longer contaminate evidence.",
-						"Experienced"		= "You're a pathologist, or detective. You've seen your share of bizarre cases, and spent a lot of time putting pieces of forensic puzzle together, so you're faster now.<br>- You can notice additional details upon examining, such as fibers, partial prints, and gunshot residue.",
-						"Master"		= "You're a big name in forensic science. You might be an investigator who cracked a famous case, or you published papers on new methods of forensics. Either way, if there's a forensic trail, you will find it, period.<br>- You can notice traces of wiped off blood.")
+	name = "Криминалистика"
+	desc = "Описывает ваше умение проводить судебно-медицинскую экспертизу и выявлять важные улики. Не охватывает аналитические способности и как таковой не является единственным показателем вашего навыка расследования. Обратите внимание, что для проведения вскрытия также требуется навык хирургии."
+	levels = list( 	"Необученный"	= "Вы знаете, что детективы раскрывают преступления. Возможно, вы догадываетесь, что загрязнять место преступления нехорошо, но вы не слишком хорошо понимаете детали.",
+					"Минимальный"	= "Вы знаете, как избежать загрязнения места преступления. Вы знаете, как упаковать улики, не загрязняя их чрезмерно.",
+					"Обученный"		= "Вы обучены сбору криминалистических улик - волокон, отпечатков пальцев, всего прочего. Вы знаете, как проводятся вскрытия, и, возможно, помогали проводить их.<br>- Вы можете легче обнаружить отпечатки пальцев.<br>- Вы больше не загрязняете улики.",
+					"Опытный"		= "Вы патологоанатом или детектив. Вы видели свою долю странных случаев и провели много времени, собирая вместе кусочки судебно-медицинской головоломки, так что теперь вы быстрее.<br>- При осмотре можно заметить дополнительные детали, такие как волокна, частичные отпечатки и следы выстрела.",
+					"Мастер"		= "Вы - известная личность в области криминалистики. Возможно, вы следователь, раскрывший знаменитое дело, или вы опубликовали работы по новым методам криминалистики. В любом случае, если есть криминалистический след, вы его найдете, и точка.<br>- Можно заметить следы стертой крови.")
 
 
 /decl/hierarchy/skill/security/forensics/get_cost(var/level)
@@ -257,98 +257,98 @@ GLOBAL_LIST_EMPTY(skills)
 
 /decl/hierarchy/skill/engineering/construction
 	ID = "construction"
-	name = "Construction"
-	desc = "Your ability to construct various buildings, such as walls, floors, tables and so on. Note that constructing devices such as APCs additionally requires the Electronics skill. A low level of this skill is typical for janitors, a high level of this skill is typical for engineers."
-	levels = list( "Unskilled"			= "You can break furniture, disassemble chairs and tables, bash your way through a window, open a crate, or pry open an unpowered airlock. You can recognize and use basic hand tools and inflatable barriers, though not very well.<br>- You can attempt to construct items above your skill level, success chance increases with level.",
-						"Basic"				= "You can dismantle or build a wall or window, redecorate a room, and replace floor tiles and carpeting. You can safely use a welder without burning your eyes, and using hand tools is second nature to you.<br>- You can construct items from Steel, Wood and Plastic.<br>- You can examine certain circuit boards to learn more about the machines they're used to build.",
-						"Trained"			= "You can build, repair, or dismantle most things, but will occasionally make mistakes and have things not come out the way you expected.<br>- You can construct items from Bronze, Gold, Osmium, Plasteel, Platinum, Reinforced Glass, Sandstone, Silver, Deuterium, Metallic Hydrogen, Phoron, Phoron Glass, Tritium, and Uranium.<br>- You can construct furnitures.<br>- You can construct simple objects such as light fixtures, crude weapons, and wall-mounted frames.<br>- You can safely use the plasmacutter to deconstruct structures.<br>- You can examine machines to learn more about them.<br>- You can examine machine circuit boards to see a list of parts needed to build that machine.",
-						"Experienced"		= "You know how to seal a breach, rebuild broken piping, and repair major damage. You know the basics of structural engineering.<br>- You can construct items from Osmium-Carbide Plasteel, Titanium, Diamond and make complex objects such as machine and weapon frames.",
-						"Master"		= "You are a construction worker or engineer. You could pretty much rebuild the installation or ship from the ground up, given supplies, and you're efficient and skilled at repairing damage.")
+	name = "Конструирование"
+	desc = "Ваша способность строить различные сооружения, такие как стены, полы, столы и так далее. Обратите внимание, что для конструирования таких устройств, как ЛКП, дополнительно требуются навыки электроники. Низкий уровень этого навыка характерен для уборщиков, высокий - для инженеров."
+	levels = list( 	"Необученный"	= "Вы можете сломать мебель, разобрать стулья и столы, пробить окно, открыть ящик или открыть неработающий шлюз. Вы можете распознать и использовать основные ручные инструменты и надувные барьеры, хотя и не очень хорошо.<br>- Вы можете попытаться создать предмет выше вашего уровня мастерства, шанс успеха увеличивается с уровнем.",
+					"Минимальный"	= "Вы можете разобрать или построить стену или окно, переделать комнату, заменить напольную плитку и ковровое покрытие. Вы можете безопасно пользоваться сварочным аппаратом, не ослепляя глаза, а использование ручных инструментов стало для вас привычным делом.<br>- Вы можете конструировать предметы из стали, дерева и пластика.<br>- Вы можете осмотреть некоторые печатные платы, чтобы узнать больше о машинах, для создания которых они используются.",
+					"Обученный"		= "Вы можете строить, ремонтировать или разбирать большинство вещей, но иногда будете совершать ошибки и делать все не так, как вы ожидали.<br>- Вы можете создавать предметы из бронзы, золота, осмия, пластали, платины, армированного стекла, песчаника, серебра, дейтерия, металлического водорода, форона, форонового стекла, трития и урана.<br>- Вы можете строить мебель.<br>- Вы можете конструировать простые предметы, такие как светильники, грубое оружие и настенные рамки.<br>- Вы можете безопасно использовать плазморез для разрушения конструкций.<br>- Вы можете осмотреть механизмы, чтобы узнать о них больше.<br>- Вы можете осмотреть печатные платы механизма, чтобы увидеть список деталей, необходимых для сборки этой машины.",
+					"Опытный"		= "Вы знаете, как заделывать пробоины, восстанавливать сломанные трубопроводы и устранять крупные повреждения. Вы знаете основы строительного проектирования.<br>- Вы можете создавать предметы из карбидо-осмиевой пластали, титана, алмаза и делать сложные объекты, такие как рамы машин и оружия.",
+					"Мастер"		= "Вы строитель или инженер. Вы можете практически восстановить установку или корабль с нуля, если вам дадут припасы, и вы эффективно и умело устраняете повреждения.")
 	difficulty = SKILL_EASY
 
 /decl/hierarchy/skill/engineering/electrical
 	ID = "electrical"
-	name = "Electrical Engineering"
-	desc = "This skill describes your knowledge of electronics and the underlying physics. A low level of this skill implies you know how to lay out wiring and configure powernets, a high level of this skill is required for working complex electronic devices such as circuits or bots."
-	levels = list( "Unskilled"			= "You know that electrical wires are dangerous and getting shocked is bad; you can see and report electrical malfunctions such as broken wires or malfunctioning APCs. You can change a light bulb, and you know how to replace a battery or charge up the equipment you normally use.<br>- Every time you open the hacking panel, wires are randomized.<br>- Every time you pulse a wire, there is a chance you pulse a different one.<br>- Every time you cut a wire, there is a chance you cut/mend extra ones.<br>- You can misconnect remote signalling devices.",
-						"Basic"				= "You can do basic wiring; you can lay cable for solars or the engine. You can repair broken wiring and build simple electrical equipment like light fixtures or APCs. You know the basics of circuits and understand how to protect yourself from electrical shock. You can probably hack a vending machine.<br>- Every time you open the hacking panel, some wires might be duplicated.",
-						"Trained"			= "You can repair and build electrical equipment and do so on a regular basis. You can troubleshoot an electrical system and monitor the installation power grid. You can probably hack an airlock.<br>- You can safely hack machines.",
-						"Experienced"		= "You can repair, build, and diagnose any electrical devices with ease. You know your way around APCs, SMES units, and monitoring software, and take apart or hack most objects.<br>- You can safely place remote signaling devices.<br>- You can examine one or two wires on the hacking panel.",
-						"Master"		= "You are an electrical engineer or the equivalent. You can design, upgrade, and modify electrical equipment and you are good at maximizing the efficiency of your power network. You can hack anything on the installation you can deal with power outages and electrical problems easily and efficiently.<br>- You can examine most wires on the hacking panel.")
+	name = "Электротехника"
+	desc = "Этот навык описывает ваши знания в области электроники и лежащей в ее основе физики. Низкий уровень этого навыка подразумевает, что вы знаете, как проложить проводку и настроить электросети, высокий уровень этого навыка требуется для работы со сложными электронными устройствами, такими как схемы или боты."
+	levels = list( 	"Необученный"	= "Вы знаете, что электрические провода опасны, а поражение током - это плохо; вы можете увидеть и сообщить о неисправностях в электрооборудовании, таких как оборванные провода или неисправные ЛКП. Вы можете поменять лампочку и знаете, как заменить аккумулятор или зарядить оборудование, которым обычно пользуетесь.<br>- Каждый раз, когда вы открываете панель взлома, провода располагаются в случайном порядке.<br>- Каждый раз, когда вы подаете импульс на провод, есть вероятность, что вы подаете импульс на другой провод.<br>- Каждый раз, когда вы перерезаете провод, есть вероятность, что вы перережете/почините лишние.<br>- Вы можете неправильно отключить удаленные устройства сигнализации.",
+					"Минимальный"	= "Вы можете делать базовую проводку; вы можете прокладывать кабель для солярок или двигателя. Вы можете ремонтировать сломанную проводку и собирать простое электрооборудование, например, светильники или ЛКП. Вы знаете основы электрических схем и понимаете, как защитить себя от поражения электрическим током. Возможно, вы сможете взломать торговый автомат.<br>- Каждый раз, когда вы открываете панель взлома, некоторые провода могут дублироваться.",
+					"Обученный"		= "Вы можете ремонтировать и собирать электрооборудование и делать это на регулярной основе. Вы можете устранять неполадки в электрических системах и следить за электросетью установки. Возможно, вы сможете взломать шлюз.<br>- Вы можете безопасно взламывать машины.",
+					"Опытный"		= "Вы можете с легкостью ремонтировать, собирать и диагностировать любые электрические устройства. Вы знаете толк в ЛКП, блоках SMES и программах мониторинга, а также разбираете или взламываете большинство предметов.<br>- Вы можете безопасно размещать дистанционные сигнальные устройства.<br>- Вы можете осмотреть один или два провода на панели взлома.",
+					"Мастер"		= "Вы инженер-электрик или эквивалентное образование. Вы можете проектировать, модернизировать и модифицировать электрооборудование, и у вас хорошо получается максимально эффективно использовать электросеть. Вы можете взломать любую установку, легко и эффективно справляетесь с перебоями в подаче электроэнергии и проблемами с электричеством.<br>- Вы можете осмотреть большинство проводов на панели взлома.")
 
 /decl/hierarchy/skill/engineering/atmos
 	ID = "atmos"
-	name = "Atmospherics"
-	desc = "Describes your knowledge of piping, air distribution and gas dynamics."
-	levels = list( "Unskilled"			= "You know that the air monitors flash orange when the air is bad and red when it's deadly. You know that a flashing fire door means danger on the other side. You know that some gases are poisonous, that pressure has to be kept in a safe range, and that most creatures need oxygen to live. You can use a fire extinguisher or deploy an inflatable barrier.<br>- RPD may give out random pipes, chance decreases with levels. <br>- You cannot recompress pipes with the RPD.",
-						"Basic"				= "You know how to read an air monitor, how to use an air pump, how to analyze the atmosphere in a space, and how to help seal a breach. You can lay piping and work with gas tanks and canisters. If you work with the engine, you can set up the cooling system. You can use a fire extinguisher easily and place inflatable barriers so that they allow convenient access and airtight breach containment.<br>- You can recompress pipes with the RPD.",
-						"Trained"			= "You can run the atmospherics system. You know how to monitor the air quality across the installation detect problems, and fix them. You're trained in dealing with fires, breaches, and gas leaks, and may have exosuit or fire gear training.<br>- You can use the RPD safely.",
-						"Experienced"		= "Your atmospherics experience lets you find, diagnose, and fix breaches efficiently. You can manage complex atmospherics systems without fear of making mistakes, and are proficient with all monitoring and pumping equipment at your disposal.<br>- You can dispense a larger selection of pipes from the RPD.",
-						"Master"		= "You are an atmospherics specialist. You monitor, modify, and optimize the installation atmospherics system, and you can quickly and easily deal with emergencies. You can modify atmospherics systems to do pretty much whatever you want them to. You can easily handle a fire or breach, and are proficient at securing an area and rescuing civilians, but you're equally likely to have simply prevented it from happening in the first place.")
+	name = "Атмосфера"
+	desc = "Описывает ваши знания в области трубопроводов, распределения воздуха и газодинамики."
+	levels = list( 	"Необученный"	= "Вы знаете, что мониторы воздуха мигают оранжевым, когда воздух плохой, и красным, когда он смертельно опасен. Вы знаете, что мигающая пожарная дверь означает опасность по ту сторону. Вы знаете, что некоторые газы ядовиты, что давление должно поддерживаться в безопасном диапазоне, и что большинству существ для жизни необходим кислород. Вы можете воспользоваться огнетушителем или развернуть надувной барьер.<br>- RPD может выдавать случайные трубки, шанс уменьшается с уровнем.<br>- С помощью RPD нельзя перекомпрессировать трубы.",
+					"Минимальный"	= "Вы знаете, как читать показания монитора воздуха, как использовать воздушный насос, как анализировать атмосферу в помещении и как помочь загерметизировать прорыв. Вы умеете прокладывать трубопроводы и работать с газовыми баллонами и канистрами. Если вы работаете с двигателем, вы можете установить систему охлаждения. Вы сможете легко пользоваться огнетушителем и размещать надувные барьеры так, чтобы они обеспечивали удобный доступ и герметичную изоляцию прорыва.<br>- Вы можете перекомпрессировать трубы с помощью RPD.",
+					"Обученный"		= "Вы можете управлять атмосферной системой. Вы знаете, как контролировать качество воздуха на всей территории установки, выявлять проблемы и устранять их. Вы обучены действиям в случае пожаров, прорывов и утечек газа, а также можете пройти подготовку по работе в экзокостюме или пожарном снаряжении.<br>- Вы можете безопасно использовать RPD.",
+					"Опытный"		= "Ваш опыт работы с атмосферой позволяет вам эффективно находить, диагностировать и устранять нарушения. Вы можете управлять сложными атмосферными системами, не боясь ошибиться, и умело используете все имеющееся в вашем распоряжении оборудование для мониторинга и откачки.<br>- Вы можете раздавать больший выбор труб из RPD.",
+					"Мастер"		= "Вы являетесь специалистом по атмосфере. Вы контролируете, изменяете и оптимизируете систему атмосферных систем установки, а также быстро и легко справляетесь с чрезвычайными ситуациями. Вы можете модифицировать атмосферные системы так, чтобы они делали практически все, что вы хотите. Вы легко справляетесь с пожаром или прорывом, умело охраняете территорию и спасаете гражданских, но с такой же вероятностью вы могли бы просто предотвратить его возникновение.")
 
 /decl/hierarchy/skill/engineering/engines
 	ID = "engines"
-	name = "Engines"
-	desc = "Describes your knowledge of the various engine types common on space stations, such as the PACMAN, singularity, supermatter or RUST engine."
-	levels = list( "Unskilled"			= "You know that \"delamination\" is a bad thing and that you should stay away from the singularity. You know the engine provides power, but you're unclear on the specifics. If you were to try to set up the engine, you would need someone to talk you through every detail--and even then, you'd probably make deadly mistakes.<br>- You can read the SM monitor readings with 40% error. This decreases with level.",
-						"Basic"				= "You know the basic theoretical principles of engine operation. You can try to set up the engine by yourself, but you are likely to need some assistance and supervision, otherwise you are likely to make mistakes. You are fully capable of running a PACMAN-type generator.",
-						"Trained"			= "You can set up the engine, and you probably won't botch it up too badly. You know how to protect yourself from radiation in the engine room. You can read the engine monitors and keep the engine going. An engine malfunction may stump you, but you can probably work out how to fix it... let's just hope you do so quickly enough to prevent serious damage.<br>- You can fully read the SM monitor readings.",
-						"Experienced"		= "You have years of experience with engines, and can set them up quickly and reliably. You're familiar with engine types other than the one you work with.<br>- You can examine the SM directly for its integrity.",
-						"Master"		= "Your engine is your baby and you know every minute detail of its workings. You can optimize the engine and you probably have your own favorite custom setup. You could build an engine from the ground up. When things go wrong, you know exactly what has happened and how to fix the problem. You can safely handle singularities and supermatter.<br>- You can examine the SM directly for an approximate number of its EER.")
+	name = "Генераторы"
+	desc = "Описывает ваше знание различных типов генераторов энергии, распространенных на космических станциях, таких как генератор PACMAN, сингулярность, суперматерия (СМ) или RUST."
+	levels = list( 	"Необученный"	= "Вы знаете, что \"расслоение\" - это плохо и что вам следует держаться подальше от сингулярности. Вы знаете, что генератор обеспечивает энергию, но не знаете специфики. Если бы вы попытались настроить генератор, вам бы понадобился кто-то, кто рассказал бы вам о каждой детали - и даже тогда вы, вероятно, допустили бы смертельные ошибки.<br>- Показания монитора СМ можно считать с погрешностью 40%. Этот показатель уменьшается с ростом уровня.",
+					"Минимальный"	= "Вы знаете основные теоретические принципы работы генератора. Вы можете попытаться настроить генератор самостоятельно, но, скорее всего, вам потребуется помощь и наблюдение, иначе вы можете наделать ошибок. Вы вполне способны запустить генератор типа PACMAN.",
+					"Обученный"		= "Вы можете настроить генератор и, скорее всего, не слишком сильно ошибетесь. Вы знаете, как защитить себя от радиации в машинном отделении. Вы можете считывать показания мониторов генератора и поддерживать его работу. Неисправность генератора может поставить вас в тупик, но вы, вероятно, сможете найти способ ее устранить... будем надеяться, что вы сделаете это достаточно быстро, чтобы предотвратить серьезные повреждения.<br>- Вы можете полностью понимать показания монитора СМ.",
+					"Опытный"		= "Вы имеете многолетний опыт работы с генераторами и можете быстро и надежно их настроить. Вы знакомы с другими типами генераторов, кроме тех, с которыми вы работаете.<br>- Вы можете непосредственно осмотреть кристалл СМ на предмет его целостности.",
+					"Мастер"		= "Ваш генератор - это ваш ребенок, и вы знаете каждую деталь его работы. Вы можете оптимизировать генератор и, вероятно, у вас есть своя любимая пользовательская настройка. Вы можете собрать генератор с нуля. Когда что-то идет не так, вы точно знаете, что произошло и как устранить проблему. Вы можете безопасно работать с сингулярностями и сверхматерией.<br>- Вы можете осмотреть непосредственно кристалл СМ для получения приблизительного числа его EER.")
 	difficulty = SKILL_HARD
 
 // Category: Research
 
 /decl/hierarchy/skill/research/devices
 	ID = "devices"
-	name = "Complex Devices"
-	desc = "Describes the ability to assemble complex devices, such as computers, circuits, printers, robots or gas tank assemblies (bombs). Note that if a device requires electronics or programming, those skills are also required in addition to this skill."
-	levels = list( "Unskilled"			= "You know how to use the technology that was present in whatever society you grew up in. You know how to tell when something is malfunctioning, but you have to call tech support to get it fixed.",
-						"Basic"				= "You use and repair high-tech equipment in the course of your daily work. You can fix simple problems, and you know how to use a circuit printer or autolathe. You can build simple robots such as cleanbots and medibots.",
-						"Trained"			= "You can build or repair an exosuit or cyborg chassis, use a protolathe and destructive analyzer, and build prosthetic limbs. You can safely transfer an MMI or posibrain into a cyborg chassis.<br>- You can attach robotic limbs. Its speed increases with level.<br>- You can perform cybernetics procedures if you have Trained Anatomy skill.",
-						"Experienced"		= "You have years of experience building or reverse-engineering complex devices. Your use of the lathes and destructive analyzers is efficient and methodical. You can design contraptions to order, and likely sell those designs at a profit.",
-						"Master"		= "You are an inventor or researcher. You can design, build, and modify equipment that most people don't even know exists. You are at home in the lab and the workshop and you've never met a gadget you couldn't take apart, put back together, and replicate.")
+	name = "Сложные Устройства"
+	desc = "Описывает способность собирать сложные устройства, такие как компьютеры, схемы, принтеры, роботы или газовые баллоны (бомбы). Обратите внимание, что если устройство требует электроники или программирования, эти навыки также необходимы в дополнение к данному умению."
+	levels = list( 	"Необученный"	= "Вы умеете пользоваться технологиями, которые существовали в том обществе, в котором вы выросли. Вы знаете, как определить, что что-то неисправно, но чтобы починить это, вам нужно позвонить в техподдержку.",
+					"Минимальный"	= "Вы используете и ремонтируете высокотехнологичное оборудование в ходе своей повседневной работы. Вы можете устранять простые неполадки и умеете пользоваться принтером для печатных схем или токарным станком. Вы можете создавать простых роботов, таких как роботы-чистильщики и медботы.",
+					"Обученный"		= "Вы можете создавать или ремонтировать экзокостюм или шасси киборга, пользоваться протолатом и деструктивным анализатором, а также создавать протезы конечностей. Вы можете безопасно переносить ММИ или позитронный мозг в шасси киборга.<br>- Вы можете прикрепить роботизированные конечности. Скорость увеличивается с уровнем.<br>- Вы можете выполнять процедуры кибернетики, если у вас есть навык \"Анатомия\" не ниже \"Обученный\".",
+					"Опытный"		= "Вы имеете многолетний опыт создания или реинжиниринга сложных устройств. Вы эффективно и методично используете токарные станки и деструктивные анализаторы. Вы можете конструировать устройства на заказ и, вероятно, продавать эти конструкции с прибылью.",
+					"Мастер"		= "Вы изобретатель или исследователь. Вы можете проектировать, создавать и модифицировать оборудование, о существовании которого большинство людей даже не подозревает. Вы чувствуете себя как дома в лаборатории и мастерской, и вы никогда не встречали устройства, которое нельзя было бы разобрать, собрать и повторить.")
 
 /decl/hierarchy/skill/research/science
 	ID = "science"
-	name = "Science"
-	desc = "Your experience and knowledge with scientific methods and processes."
-	levels = list( "Unskilled"			= "You know what science is and probably have a vague idea of the scientific method from your high school science classes.",
-						"Basic"				= "You keep up with scientific discoveries. You know a little about most fields of research. You've learned basic laboratory skills. You may read about science as a hobby; or you may be working in a field related to science and have learned about science that way. You could design a simple experiment.<br>- You can determine the presence of flora, fauna, and an atmosphere when scanning exoplanets.",
-						"Trained"			= "You are a scientist, perhaps a graduate student or post-graduate researcher. You can design an experiment, analyze your results, publish your data, and integrate what you've learned with the research of other scientists. Your laboratory skills are reliable, and you know how to find information you need when you research a new scientific topic. You can dissect exotic xenofauna without many issues.",
-						"Experienced"		= "You are a junior researcher. You can formulate your own questions, use the tools at hand to test your hypotheses, and investigate entirely new phenomena. You likely have a track record of success in publishing your conclusions and attracting funding.\
-																																																																										<br>- You can work with a telescience. It's efficiency increases with level.",	// INF
-						"Master"		= "You are a professional researcher, and you have made multiple new discoveries in your field. Your experiments are well-designed. You are known as an authority in your specialty and your papers often appear in prestigious journals. You may be coordinating the research efforts of a team of scientists, and likely know how to make your findings appealing to investors.\
-																																																																																																						<br>- You can interact with away levels using the telescience console.")	// INF
+	name = "Наука"
+	desc = "Ваш опыт и знания в области научных методов и процессов."
+	levels = list( 	"Необученный"	= "Вы знаете, что такое наука, и, вероятно, имеете смутное представление о научном методе, полученное на уроках естествознания в средней школе.",
+					"Минимальный"	= "Вы следите за научными открытиями. Вы знаете немного о большинстве областей исследований. Вы освоили основные лабораторные навыки. Вы можете читать о науке в качестве хобби; или вы можете работать в области, связанной с наукой, и узнавать о ней таким образом. Вы можете провести простой эксперимент.<br>- При сканировании экзопланет можно определить наличие флоры, фауны и атмосферы.",
+					"Обученный"		= "Вы - ученый, возможно, студент или аспирант. Вы можете провести эксперимент, проанализировать результаты, опубликовать свои данные и объединить полученные знания с исследованиями других ученых. Ваши лабораторные навыки надежны, и вы знаете, как найти информацию, необходимую вам при изучении новой научной темы. Вы можете препарировать экзотическую ксенофауну без особых проблем.",
+					"Опытный"		= "Вы являетесь младшим исследователем. Вы можете формулировать собственные вопросы, использовать имеющиеся инструменты для проверки своих гипотез и исследовать совершенно новые явления. Скорее всего, у вас есть опыт успешной публикации своих выводов и привлечения финансирования.\
+																																																																										<br>- Вы можете работать с телесайнс. Эффективность увеличивается с ростом уровня.",	// INF
+					"Мастер"		= "Вы профессиональный исследователь, и вы сделали множество новых открытий в своей области. Ваши эксперименты хорошо спланированы. Вы известны как авторитет в своей области, и ваши статьи часто появляются в престижных журналах. Возможно, вы координируете исследовательские усилия группы ученых и, скорее всего, знаете, как сделать ваши выводы привлекательными для инвесторов.\
+																																																																																																						<br>- Вы можете взаимодействовать с удаленными уровнями с помощью консоли телесайнс.")	// INF
 
 // Category: Medical
 
 /decl/hierarchy/skill/medical/medical
 	ID = "medical"
-	name = "Medicine"
-	desc = "Covers an understanding of the human body and medicine. At a low level, this skill gives a basic understanding of applying common types of medicine, and a rough understanding of medical devices like the health analyzer. At a high level, this skill grants exact knowledge of all the medicine available on the installation, as well as the ability to use complex medical devices like the body scanner or mass spectrometer."
-	levels = list( "Unskilled"			= "You know first aid, such as how to apply a bandage or ointment to an injury. You can use an autoinjector designed for civilian use, probably by reading the directions printed on it. You can tell when someone is badly hurt and needs a doctor; you can see whether someone has a badly broken bone, is having trouble breathing, or is unconscious. You may have trouble telling the difference between unconscious and dead at distance.<br>- You can use first aid supplies found in kits and pouches, including autoinjectors.",
-						"Basic"				= "You've taken a nursing or EMT course. You can stop bleeding, do CPR, apply a splint, take someone's pulse, apply trauma and burn treatments, and read a handheld health scanner. You probably know that Dylovene helps poisoning and Dexalin helps people with breathing problems; you can use a syringe or start an IV. You've been briefed on the symptoms of common emergencies like a punctured lung, appendicitis, alcohol poisoning, or broken bones, and though you can't treat them, you know that they need a doctor's attention. You can recognize most emergencies as emergencies and safely stabilize and transport a patient.<br>- You can fully operate Defibrillators, Health Analyzers, IV drips, and Syringes.<br>- You can comprehend most of a Body Scanner's readout.",
-						"Trained"			= "You are an experienced EMT, an experienced nurse, or a medical resident. You know how to treat most illnesses and injuries, though exotic illnesses and unusual injuries may still stump you. You have probably begun to specialize in some sub-field of medicine. In emergencies, you can think fast enough to keep your patients alive, and even when you can't treat a patient, you know how to find someone who can. You can use a full-body scanner, and you know something's off about a patient with an alien parasite or cortical borer.<br>- You can fully operate Sleepers and Body Scanners.<br>- You can apply splints without failing.<br>- You can perform simple surgery steps if you have Experienced Anatomy skill.",
-						"Experienced"		= "You are a senior nurse or paramedic, or a practicing doctor. You know how to use all of the medical devices available to treat a patient. Your deep knowledge of the body and medications will let you diagnose and come up with a course of treatment for most ailments. You can perform a full-body scan thoroughly and find important information.<br>- You can perform all surgery steps safely if you have Experienced Anatomy skill.",
-						"Master"		= "You are an experienced doctor or an expert nurse or EMT. You've seen almost everything there is to see when it comes to injuries and illness and even when it comes to something you haven't seen, you can apply your wide knowledge base to put together a treatment. In a pinch, you can do just about any medicine-related task, but your specialty, whatever it may be, is where you really shine.")
+	name = "Медицина"
+	desc = "Охватывает понимание человеческого тела и медицины. На низком уровне этот навык дает базовое понимание применения распространенных типов лекарств и приблизительное понимание медицинских приборов, таких как анализатор здоровья. На высоком уровне этот навык дает точное знание всех лекарств, доступных на установке, а также способность использовать сложные медицинские приборы, такие как сканер тела или масс-спектрометр."
+	levels = list( 	"Необученный"	= "Вы знаете, как оказать первую помощь, например, как наложить повязку или мазь на рану. Вы можете использовать автоинъектор, предназначенный для гражданского использования, вероятно, прочитав напечатанные на нем инструкции. Вы можете определить, когда кто-то сильно ранен и нуждается в помощи врача; вы можете увидеть, что у человека сильно сломана кость, ему трудно дышать или он находится без сознания. Вам может быть трудно отличить человека без сознания от мертвого на расстоянии.<br>- Вы можете использовать средства первой помощи, находящиеся в наборах и пакетах, включая автоинъекторы.",
+					"Минимальный"	= "Вы прошли курсы медсестер или врачей скорой помощи. Вы умеете останавливать кровотечение, делать искусственное дыхание, накладывать шину, измерять пульс, оказывать помощь при травмах и ожогах, читать показания портативного медицинского сканера. Вы наверняка знаете, что \"Диловен\" помогает при отравлениях, а \"Дексалин\" - при проблемах с дыханием; вы умеете пользоваться шприцем или ставить капельницу. Вас ознакомили с симптомами таких распространенных чрезвычайных ситуаций, как прокол легкого, аппендицит, отравление алкоголем или перелом костей, и хотя вы не умеете их лечить, вы знаете, что они требуют внимания врача. Вы можете распознать большинство чрезвычайных ситуаций как чрезвычайные и безопасно стабилизировать и транспортировать пациента.<br>- Вы можете полностью пользоваться дефибрилляторами, анализаторами состояния здоровья, капельницами и шприцами.<br>- Вы можете понять большую часть показаний сканера тела.",
+					"Обученный"		= "Вы опытный врач скорой помощи, опытная медсестра или медицинский ординатор. Вы знаете, как лечить большинство болезней и травм, хотя экзотические заболевания и необычные травмы могут поставить вас в тупик. Возможно, вы начали специализироваться в какой-либо области медицины. В чрезвычайных ситуациях вы можете думать достаточно быстро, чтобы сохранить жизнь пациентам, и даже если вы не можете вылечить пациента, вы знаете, как найти того, кто может это сделать. Вы умеете пользоваться сканером всего тела и знаете, что с пациентом, у которого инопланетный паразит или кортикальный бур, что-то не так.<br>- Вы можете полностью управлять усыпляющими устройствами и сканерами тела.<br>- Вы можете применять шину без проблем.<br>- Вы можете выполнять простые хирургические операции, если у вас есть навыки анатомии.",
+					"Опытный"		= "Вы - старшая медсестра или фельдшер, или практикующий врач. Вы знаете, как использовать все медицинские приборы для лечения пациента. Глубокое знание организма и лекарств позволит вам поставить диагноз и разработать курс лечения для большинства заболеваний. Вы можете тщательно провести сканирование всего тела и найти важную информацию.<br>- Вы можете безопасно выполнить все этапы операции, если у вас есть опыт работы с анатомией.",
+					"Мастер"		= "Вы опытный врач, медсестра или врач скорой помощи. Вы видели почти все, что можно увидеть, когда речь идет о травмах и болезнях, и даже если речь идет о чем-то, чего вы не видели, вы можете применить свою обширную базу знаний, чтобы составить лечение. В крайнем случае, вы можете выполнить практически любую задачу, связанную с медициной, но ваша специализация, какой бы она ни была, - это то, где вы действительно блистаете.")
 
 /decl/hierarchy/skill/medical/anatomy
 	ID = "anatomy"
-	name = "Anatomy"
-	desc = "Gives you a detailed insight of the human body. A high skill in this is required to perform surgery. This skill may also help in examining alien biology."
-	levels = list( "Unskilled"			= "You know what organs, bones, and such are, and you know roughly where they are. You know that someone who's badly hurt or sick may need surgery.",
-						"Basic"				= "You've taken an anatomy class and you've spent at least some time poking around inside actual people. You know where everything is, more or less. You could assist in surgery, if you have the required medical skills. If you have the forensics knowledge, you could perform an autopsy. If you really had to, you could probably perform basic surgery such as an appendectomy, but you're not yet a qualified surgeon and you really shouldn't--not unless it's an emergency. If you're a xenobiologist, you know how to take out slime cores.",
-						"Trained"			= "You have some training in anatomy. Diagnosing broken bones, damaged ligaments, shrapnel wounds, and other trauma is straightforward for you. You can splint limbs with a good chance of success, operate a defibrillator competently, and perform CPR well. Surgery is still outside your training.<br>- You can do surgery (requires Trained Medicine skill too) but you are very likely to fail at every step. Its speed increases with level.<br>- You can perform cybernethics procedures if you have Trained Complex Devices skill.",
-						"Experienced"		= "You're a surgical resident, or an experienced medical doctor. You can put together broken bones, fix a damaged lung, patch up a liver, or remove an appendix without problems. But tricky surgeries, with an unstable patient or delicate manipulation of vital organs like the heart and brain, are at the edge of your ability, and you prefer to leave them to specialized surgeons. You can recognize when someone's anatomy is noticeably unusual. You're trained in working with several species, but you're probably better at surgery on your own species.<br>- You can do all surgery steps safely, if you have Experienced Medicine skill too.",
-						"Master"		= "You are an experienced surgeon. You can handle anything that gets rolled, pushed, or dragged into the OR, and you can keep a patient alive and stable even if there's no one to assist you. You can handle severe trauma cases or multiple organ failure, repair brain damage, and perform heart surgery. By now, you've probably specialized in one field, where you may have made new contributions to surgical technique. You can detect even small variations in the anatomy of a patient--even a changeling probably wouldn't slip by your notice, provided you could get one on the operating table.<br>- The penalty from operating on improper operating surfaces is reduced.")
+	name = "Анатомия"
+	desc = "Дает подробное представление о человеческом теле. Высокий навык в этом деле необходим для проведения операций. Этот навык также может помочь в изучении биологии инопланетян."
+	levels = list( 	"Необученный"	= "Вы знаете, что такое органы, кости и т.п., и примерно знаете, где они находятся. Вы знаете, что человеку, который сильно ранен или болен, может понадобиться операция.",
+					"Минимальный"	= "Вы посещали занятия по анатомии и провели по крайней мере некоторое время, копаясь внутри настоящих людей. Вы знаете, где что находится, более или менее. Вы можете ассистировать в хирургии, если у вас есть необходимые медицинские навыки. Если у вас есть знания в области криминалистики, вы могли бы проводить вскрытие. Если бы вам действительно нужно было, вы могли бы провести базовую операцию, например, аппендэктомию, но вы еще не квалифицированный хирург, и вам не следует этого делать, если только это не чрезвычайная ситуация. Если вы ксенобиолог, вы знаете, как извлекать ядра слизи.",
+					"Обученный"		= "У вас есть некоторое образование в области анатомии. Диагностика переломов костей, поврежденных связок, осколочных ранений и других травм не представляет для вас сложности. Вы можете с большой вероятностью наложить шину на конечность, грамотно управлять дефибриллятором и хорошо делать искусственное дыхание. Хирургия все еще находится за пределами вашей подготовки.<br>- Вы можете делать операции (для этого также требуется навык \"Медицина\" не ниже \"Обученный\"), но с большой вероятностью вы потерпите неудачу на каждом этапе. Скорость операций увеличивается с уровнем.<br>- Вы можете выполнять процедуры кибернетики, если у вас есть навык \"Сложные устройства\" не ниже \"Обученный\".",
+					"Опытный"		= "Вы - ординатор хирургического отделения или опытный врач. Вы без проблем можете скрепить сломанные кости, вылечить поврежденное легкое, залатать печень или удалить аппендикс. Но сложные операции, связанные с нестабильным состоянием пациента или деликатными манипуляциями с жизненно важными органами, такими как сердце и мозг, находятся на грани ваших возможностей, и вы предпочитаете доверить их специализированным хирургам. Вы можете распознать, когда чья-то анатомия заметно необычна. Вы обучены работе с несколькими видами, но, вероятно, лучше оперируете представителей своего вида.<br>- Вы можете безопасно провести все операции, если у вас есть навык \"Медицина\" не ниже \"Опытный\".",
+					"Мастер"		= "Вы опытный хирург. Вы можете справиться со всем, что катят, толкают или тащат в операционную, и можете поддерживать жизнь и состояние пациента, даже если вам некому помочь. Вы можете справиться с тяжелыми травмами или отказом нескольких органов, восстановить повреждения мозга и провести операцию на сердце. К настоящему времени вы, вероятно, специализируетесь в одной области, где, возможно, внесли новый вклад в хирургическую технику. Вы можете обнаружить даже небольшие отклонения в анатомии пациента - даже генокрад, вероятно, не ускользнет от вашего внимания, если только вы сможете положить его на операционный стол.<br>- Снижается штраф за работу на ненадлежащих рабочих поверхностях.")
 
 /decl/hierarchy/skill/medical/chemistry
 	ID = "chemistry"
-	name = "Chemistry"
-	desc = "Experience with mixing chemicals, and an understanding of what the effect will be. This doesn't cover an understanding of the effect of chemicals on the human body, as such the medical skill is also required for medical chemists."
-	levels = list( "Unskilled"			= "You know that chemists work with chemicals; you know that they can make medicine or poison or useful chemicals. You probably know what an element is and have a vague idea of what a chemical reaction is from some chemistry class in your high school days.",
-						"Basic"				= "You can make basic chemicals or medication--things like space cleaner or anti-toxin. You have some training in safety and you won't blow up the lab... probably.<br>- You can safely use the industrial grinder but lose some ingredients. Its amount decreases with skill level.",
-						"Trained"			= "You can accurately measure out reagents, grind powders, and perform chemical reactions. You may still lose some product on occasion, but are unlikely to endanger yourself or those around you.<br>- You can fully operate the chem dispenser.",
-						"Experienced"		= "You work as a chemist, or else you are a doctor with training in chemistry. If you are a research chemist, you can create most useful chemicals; if you are a pharmacist, you can make most medications. At this stage, you're working mostly by-the-book. You can weaponize your chemicals by making grenades, smoke bombs, and similar devices.<br>- You can examine held containers for scannable reagents.",
-						"Master"		= "You specialized in chemistry or pharmaceuticals; you are either a medical researcher or professional chemist. You can create custom mixes and make even the trickiest of medications easily. You understand how your pharmaceuticals interact with the bodies of your patients. You are probably the originator of at least one new chemical innovation.<br>- You can examine held containers for all reagents.")
+	name = "Химия"
+	desc = "Опыт смешивания химических веществ и понимание того, каким будет эффект. Это не включает в себя понимание влияния химических веществ на человеческий организм, поскольку для медицинских химиков также требуется медицинский навык."
+	levels = list( 	"Необученный"	= "Вы знаете, что химики работают с химическими веществами; вы знаете, что они могут делать лекарства, яды или полезные химикаты. Вы, вероятно, знаете, что такое химический элемент и имеете смутное представление о том, что такое химическая реакция, из школьных уроков химии.",
+					"Минимальный"	= "Вы можете производить основные химикаты или лекарства - такие вещи, как очиститель пространства или антитоксин. У вас есть некоторый инструктаж по технике безопасности, и вы не взорвете лабораторию... возможно.<br>- Вы можете безопасно использовать промышленный измельчитесь, но при этом потеряете некоторые ингредиенты. Их количество уменьшается с ростом уровня мастерства.",
+					"Обученный"		= "Вы можете точно отмерять реактивы, измельчать порошки и проводить химические реакции. Иногда вы можете потерять часть продукта, но вряд ли подвергнете опасности себя или окружающих.<br>- Вы можете полностью управлять химическим дозатором.",
+					"Опытный"		= "Вы работаете химиком или являетесь врачом с химическим образованием. Если вы химик-исследователь, вы можете создавать большинство полезных химических веществ; если вы фармацевт, вы можете изготавливать большинство лекарств. На этом этапе вы работаете в основном по инструкции. Вы можете использовать свои химикаты в качестве оружия, создавая гранаты, дымовые шашки и другие подобные устройства.<br>- Вы можете осмотреть удерживаемые контейнеры на наличие сканируемых реагентов.",
+					"Мастер"		= "Вы специализировались на химии или фармацевтике; вы либо медицинский исследователь, либо профессиональный химик. Вы можете создавать индивидуальные смеси и легко изготавливать даже самые сложные лекарства. Вы понимаете, как ваши лекарства взаимодействуют с организмом ваших пациентов. Возможно, вы являетесь автором как минимум одной новой химической инновации.<br>- Вы можете осмотреть удерживаемые контейнеры для всех реагентов.")

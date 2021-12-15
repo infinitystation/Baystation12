@@ -182,7 +182,7 @@
 	dat += "<style>.Current,a.Current{background: #2f943c}</style>"
 	dat += "<style>.Unavailable{background: #d09000}</style>"
 	dat += "<tt><center>"
-	dat += "<b>Skill points remaining: [pref.points_by_job[job]].</b><hr>"
+	dat += "<b>Осталось очков навыков: [pref.points_by_job[job]].</b><hr>"
 	dat += "<hr>"
 	dat += "</center></tt>"
 
@@ -211,7 +211,7 @@
 	return JOINTEXT(dat)
 
 /datum/category_item/player_setup_item/occupation/proc/open_skill_setup(mob/user, datum/job/job)
-	panel = new(user, "skill-selection", "Skill Selection: [job.title]", 770, 850, src)
+	panel = new(user, "skill-selection", "Выбор Навыков: [job.title]", 925, 850, src)
 	panel.set_content(generate_skill_content(job))
 	panel.open()
 
