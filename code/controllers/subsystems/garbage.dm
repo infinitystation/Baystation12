@@ -3,8 +3,6 @@
 	if(istype(D,/atom/movable)) {\
 		var/atom/movable/AM = D; \
 		if(AM.loc != null) {\
-			crash_with("QDEL("+hint+"): "+AM.name+" was supposed to be in nullspace but isn't \
-						(LOCATION= "+AM.loc.name+" ("+AM.loc.x+","+AM.loc.y+","+AM.loc.z+") )! Destroy didn't do its job!"); \
 			AM.forceMove(null); \
 		} \
 	}
@@ -12,12 +10,12 @@
 SUBSYSTEM_DEF(garbage)
 	name = "Garbage"
 	priority = SS_PRIORITY_GARBAGE
-	wait = 25 SECONDS
+	wait = 2 SECONDS
 	flags = SS_POST_FIRE_TIMING | SS_BACKGROUND | SS_NO_INIT | SS_NEEDS_SHUTDOWN
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
 	init_order = SS_INIT_GARBAGE
 
-	var/list/collection_timeout = list(0, 150 SECONDS, 25 SECONDS)	// deciseconds to wait before moving something up in the queue to the next level
+	var/list/collection_timeout = list(0, 2 MINUTES, 10 SECONDS)	// deciseconds to wait before moving something up in the queue to the next level
 
 	//Stat tracking
 	var/delslasttick = 0            // number of del()'s we've done this tick
@@ -243,10 +241,7 @@ SUBSYSTEM_DEF(garbage)
 	var/type = D.type
 	var/refID = "\ref[D]"
 
-	//We need to delete only clients so that they can be disconnected
-	//For everything else - log it and fix how their destructor works
-	if(isclient(D))
-		del(D)
+	del(D)
 
 	tick = (TICK_USAGE-tick+((world.time-ticktime)/world.tick_lag*100))
 
@@ -309,7 +304,6 @@ SUBSYSTEM_DEF(garbage)
 	if(!D)
 		return
 	if(!istype(D))
-		crash_with("qdel() can only handle /datum (sub)types, was passed: [log_info_line(D)]")
 		del(D)
 		return
 	var/datum/qdel_item/I = SSgarbage.items[D.type]
@@ -342,14 +336,6 @@ SUBSYSTEM_DEF(garbage)
 					return
 				// Returning LETMELIVE after being told to force destroy
 				// indicates the objects Destroy() does not respect force
-				#ifdef TESTING
-				if(!I.no_respect_force)
-					crash_with("WARNING: [D.type] has been force deleted, but is \
-						returning an immortal QDEL_HINT, indicating it does \
-						not respect the force flag for qdel(). It has been \
-						placed in the queue, further instances of this type \
-						will also be queued.")
-				#endif
 				I.no_respect_force++
 
 				SSgarbage.PreQueue(D)
@@ -369,10 +355,6 @@ SUBSYSTEM_DEF(garbage)
 				SSgarbage.reference_find_on_fail["\ref[D]"] = TRUE
 				#endif
 			else
-				#ifdef TESTING
-				if(!I.no_hint)
-					crash_with("WARNING: [D.type] is not returning a qdel hint. It is being placed in the queue. Further instances of this type will also be queued.")
-				#endif
 				I.no_hint++
 				SSgarbage.PreQueue(D)
 	else if(D.gc_destroyed == GC_CURRENTLY_BEING_QDELETED)
@@ -400,7 +382,7 @@ SUBSYSTEM_DEF(garbage)
 			return
 
 		if(!skip_alert)
-			if(alert("Running this will lock everything up for about 5 minutes.  Would you like to begin the search?", "Find References", "Yes", "No") == "No")
+			if(UNLINT(alert("Running this will lock everything up for about 5 minutes.  Would you like to begin the search?", "Find References", "Yes", "No")) == "No")
 				running_find_references = null
 				return
 
@@ -413,15 +395,29 @@ SUBSYSTEM_DEF(garbage)
 	testing("Beginning search for references to a [type].")
 	last_find_references = world.time
 
-	DoSearchVar(GLOB) //globals
-	for(var/datum/thing in world) //atoms (don't believe its lies)
-		DoSearchVar(thing, "World -> [thing]")
+	//Yes we do actually need to do this. The searcher refuses to read weird lists
+	//And global.vars is a really weird list
+	var/list/normal_globals = list()
+	for(var/global_var in global.vars)
+		normal_globals[global_var] = global.vars[global_var]
+	DoSearchVar(normal_globals, "(global) -> ") //globals
+	testing("Finished searching globals")
 
-	for (var/datum/thing) //datums
-		DoSearchVar(thing, "World -> [thing]")
+	for(var/atom/atom_thing) //atoms
+		DoSearchVar(atom_thing, "World -> [atom_thing]")
+	testing("Finished searching atoms")
 
-	for (var/client/thing) //clients
-		DoSearchVar(thing, "World -> [thing]")
+	for (var/datum/datum_thing) //datums
+		DoSearchVar(datum_thing, "World -> [datum_thing]")
+	testing("Finished searching datums")
+
+#ifndef FIND_REF_SKIP_CLIENTS
+	// DO NOT RUN THIS ON A LIVE SERVER
+	// IT WILL CRASH!!!
+	for (var/client/client_thing) //clients
+		DoSearchVar(client_thing, "World -> [client_thing]")
+	testing("Finished searching clients")
+#endif
 
 	testing("Completed search for references to a [type].")
 	if(usr && usr.client)
@@ -455,11 +451,15 @@ SUBSYSTEM_DEF(garbage)
 #define GET_TYPEID(ref) ( ( (length(ref) <= 10) ? "TYPEID_NULL" : copytext(ref, 4, length(ref)-6) ) )
 #define IS_NORMAL_LIST(L) (GET_TYPEID("\ref[L]") == TYPEID_NORMAL_LIST)
 
-/datum/proc/DoSearchVar(X, Xname, recursive_limit = 64)
+/datum/proc/DoSearchVar(X, Xname, recursive_limit = 128)
 	if(usr && usr.client && !usr.client.running_find_references)
 		return
 	if (!recursive_limit)
 		return
+
+	#ifndef FIND_REF_NO_CHECK_TICK
+	CHECK_TICK
+	#endif
 
 	if(istype(X, /datum))
 		var/datum/D = X
@@ -470,6 +470,9 @@ SUBSYSTEM_DEF(garbage)
 		var/list/L = D.vars
 
 		for(var/varname in L)
+			#ifndef FIND_REF_NO_CHECK_TICK
+			CHECK_TICK
+			#endif
 			if (varname == "vars")
 				continue
 			var/variable = L[varname]
@@ -478,22 +481,25 @@ SUBSYSTEM_DEF(garbage)
 				testing("Found [src.type] \ref[src] in [D.type]'s [varname] var. [Xname]")
 
 			else if(islist(variable))
-				DoSearchVar(variable, "[Xname] -> list", recursive_limit-1)
+				DoSearchVar(variable, "[Xname] -> [varname] (list)", recursive_limit-1)
 
 	else if(islist(X))
 		var/normal = IS_NORMAL_LIST(X)
 		for(var/I in X)
+			#ifndef FIND_REF_NO_CHECK_TICK
+			CHECK_TICK
+			#endif
 			if (I == src)
 				testing("Found [src.type] \ref[src] in list [Xname].")
 
-			else if (I && !isnum(I) && normal && X[I] == src)
-				testing("Found [src.type] \ref[src] in list [Xname]\[[I]\]")
+			else if (I && !isnum(I) && normal)
+				if(X[I] == src)
+					testing("Found [src.type] \ref[src] in list [Xname]\[[I]\]")
+				else if(islist(X[I]))
+					DoSearchVar(X[I], "[Xname]\[[I]\]", recursive_limit-1)
 
 			else if (islist(I))
-				DoSearchVar(I, "[Xname] -> list", recursive_limit-1)
-
-#ifndef FIND_REF_NO_CHECK_TICK
-	CHECK_TICK
-#endif
+				var/list/Xlist = X
+				DoSearchVar(I, "[Xname]\[[Xlist.Find(I)]\] -> list", recursive_limit-1)
 
 #endif
