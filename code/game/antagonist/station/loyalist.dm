@@ -27,23 +27,40 @@ GLOBAL_DATUM_INIT(loyalists, /datum/antagonist/loyalists, new)
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap)
 	skill_setter = /datum/antag_skill_setter/station
 
-	faction = "loyalist"
+	faction = MODE_LOYALIST
 	ambitious = 0 //INF
 
 /datum/antagonist/loyalists/Initialize()
 	..()
-	welcome_text = "Вы верны [GLOB.using_map.company_name] телом и душой. Защищтите их интересы от заговорщиков среди экипажа."
-	faction_welcome = "Защитите интересы [GLOB.using_map.company_short] отпредателей-рецидивистов среди экипажа. Защищтите Глав ценой собственной жизни."
+	welcome_text = "Вы верны [GLOB.using_map.company_name] телом и душой. Защитите их интересы от заговорщиков среди экипажа."
+	faction_welcome = "Защитите интересы [GLOB.using_map.company_short] от предателей-рецидивистов среди экипажа. Защитите Глав ценой собственной жизни."
 	faction_descriptor = "[GLOB.using_map.company_name]"
 
 /datum/antagonist/loyalists/create_global_objectives()
 	if(!..())
 		return
+
+	var/objectives_count = round(count_living()/config.traitor_objectives_scaling) + 1
+
 	global_objectives = list()
 	for(var/mob/living/carbon/human/player in SSmobs.mob_list)
 		if(!player.mind || player.stat==2 || !(player.mind.assigned_role in SSjobs.titles_by_department(COM)))
 			continue
 		var/datum/objective/protect/loyal_obj = new
 		loyal_obj.target = player.mind
-		loyal_obj.explanation_text = "Protect [player.real_name], the [player.mind.assigned_role]."
+		loyal_obj.explanation_text = "Защитите [player.real_name], [player.mind.assigned_role]."
 		global_objectives += loyal_obj
+
+	for (var/count in 1 to objectives_count)
+		var/datum/objective/anti_revolution/additional_objective = null
+		switch (rand(1,100))
+			if (1 to 45)
+				additional_objective = new /datum/objective/anti_revolution/demote
+			if (46 to 89)
+				additional_objective = new /datum/objective/anti_revolution/brig
+			if (90 to 100)
+				additional_objective = new /datum/objective/anti_revolution/execute
+		if (!additional_objective.find_target(global_objectives))
+			qdel(additional_objective)
+			continue
+		global_objectives += additional_objective

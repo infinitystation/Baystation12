@@ -32,8 +32,8 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	welcome_text = "У вас в распоряжении есть книга, которая поможет вам основать культ. Используйте его предусмотрительно и помните - есть и другие."
 	victory_text = "Культ победил! Он преуспел в служении своим темным хозяевам!"
 	loss_text = "Персоналу удалось остановить культ!"
-	victory_feedback_tag = "win - cult win"
-	loss_feedback_tag = "loss - staff stopped the cult"
+	victory_feedback_tag = "Победа - Культ победил!"
+	loss_feedback_tag = "Поражение - Сотрудники остановили распространение культа!"
 	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
 	hard_cap = 5
 	hard_cap_round = 6
@@ -51,15 +51,13 @@ GLOBAL_DATUM_INIT(cult, /datum/antagonist/cultist, new)
 	var/cult_rating = 0
 	var/list/cult_rating_bounds = list(CULT_RUNES_1, CULT_RUNES_2, CULT_RUNES_3, CULT_GHOSTS_1, CULT_GHOSTS_2, CULT_GHOSTS_3)
 	var/max_cult_rating = 0
-	var/conversion_blurb = "Вы мельком видите мир Нар-Си, обитель крови. Теперь вы видите насколько хрупок мир, вы понимаете, что он должен быть открыт познанию того, Который Ожидаетт. Помогайте своим новым товарищам в их темных делах. Их цели - ваши, а ваши - их. Прежде всего Вы служете Темному. Возродите Его."
+	var/conversion_blurb = "Вы мельком видите мир Нар-Си, обитель крови. Теперь вы видите насколько хрупок мир, вы понимаете, что он должен быть открыт познанию того, Который Ожидает. Помогайте своим новым товарищам в их темных делах. Их цели - ваши, а ваши - их. Прежде всего Вы служете Темному. Возродите Его."
 
 	faction = "cult"
 	ambitious = 0 //INF
-//[INF]
-/datum/antagonist/cultist/create_objectives(var/datum/mind/cultist, override = 1)
+/datum/antagonist/cultist/create_objectives(var/datum/mind/cultist)
 	if(!..())
 		return
-//[/INF]
 /datum/antagonist/cultist/create_global_objectives()
 
 	if(!..())

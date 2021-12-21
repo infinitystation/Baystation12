@@ -6,7 +6,7 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	role_text_plural = "Changelings"
 	feedback_tag = "changeling_objective"
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap)
-	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/captain, /datum/job/hos)
+	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective, /datum/job/captain, /datum/job/hos, /datum/job/lawyer)
 	welcome_text = "Используйте say \"%LANGUAGE_PREFIX%g (сообщение)\", чтобы связаться с другими генокрадами.<br>\
 	Мы являемся частью общности - одним из сородичей, что трудится на её благо и ставить её интересы \
 	выше собственных, в том числе и жизни. Вместе, члены общности должны ассимилировать полезный генетический материал \
@@ -30,6 +30,54 @@ GLOBAL_DATUM_INIT(changelings, /datum/antagonist/changeling, new)
 	skill_setter = /datum/antag_skill_setter/station
 
 	faction = "changeling"
+
+/datum/antagonist/changeling/create_objectives(var/datum/mind/changeling)
+	if(!..())
+		return
+	var/objectives_count = round(count_living()/config.traitor_objectives_scaling) + 1
+	var/datum/objective/objective = null
+	for (var/count in 2 to objectives_count)
+		switch(rand(1,100))
+			if(1 to 30)
+				objective = new /datum/objective/harm()
+			if(31 to 50)
+				objective = new /datum/objective/assassinate()
+			if(51 to 61)
+				objective = new /datum/objective/debrain()
+			else
+				objective = new /datum/objective/steal()
+
+		objective.owner = changeling
+
+		if(istype(objective, /datum/objective/steal))
+			objective.find_target(changeling.objectives)
+		else if (!objective.find_target())
+			qdel(objective)
+			objective = new /datum/objective/steal()
+			objective.owner = changeling
+			objective.find_target(changeling.objectives)
+		changeling.objectives += objective
+
+	objective = new /datum/objective/absorb_pointly()
+	objective.owner = changeling
+	if(objective.find_target())
+		changeling.objectives += objective
+	else
+		qdel(objective)
+		to_chat(changeling.current, SPAN_LING("Мы не чувствуем жертв с полезными геномами. Стоит заняться чем-то ещё \
+		- например, создать условия, чтобы было проще охотиться."))
+
+	return
+
+/datum/antagonist/changeling/create_global_objectives(override = 1)
+	if(!..())
+		return 0
+	global_objectives = list()
+	global_objectives += new /datum/objective/changeling
+	global_objectives += new /datum/objective/changeling/evacuate
+	global_objectives += new /datum/objective/changeling/stealth
+
+	return 1
 
 /datum/antagonist/changeling/get_welcome_text(mob/recipient)
 	return replacetext(welcome_text, "%LANGUAGE_PREFIX%", recipient?.get_prefix_key(/decl/prefix/language) || ",")

@@ -156,7 +156,7 @@ var/global/list/additional_antag_types = list()
 /datum/game_mode/proc/startRequirements()
 	var/playerC = 0
 	for(var/mob/new_player/player in GLOB.player_list)
-		if((player.client)&&(player.ready))
+		if(player.client && player.ready)
 			playerC++
 
 	if(playerC < required_players)
@@ -340,10 +340,10 @@ var/global/list/additional_antag_types = list()
 
 /*	if(GLOB.clients.len > 0) // INF, нужна дополнительная статистика? ~bear1ake
 		SSstatistics.set_field("round_end_clients",GLOB.clients.len)
-	if(ghosts > 0) 
+	if(ghosts > 0)
 		SSstatistics.set_field("round_end_ghosts",ghosts)
 	if(surviving_humans > 0)
-		SSstatistics.set_field("survived_human",surviving_humans) 
+		SSstatistics.set_field("survived_human",surviving_humans)
 	if(surviving_total > 0)
 		SSstatistics.set_field("survived_total",surviving_total)
 	if(escaped_humans > 0)

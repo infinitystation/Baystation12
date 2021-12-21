@@ -41,3 +41,25 @@
 	end_on_antag_death = FALSE
 	antag_tags = list(MODE_ABDUCTOR, MODE_ABDUCTOR_SCI)
 	require_all_templates = TRUE
+
+/datum/game_mode/trizard
+	name = "Traitor & Wizard"
+	round_description = "Traitor and a wizard are about to end your carrier."
+	extended_round_description = "Traitor and a wizard are about to end your carrier."
+	config_tag = "trizard"
+	required_players = 9
+	required_enemies = 4
+	end_on_antag_death = FALSE
+	antag_tags = list(MODE_TRAITOR, MODE_WIZARD)
+	require_all_templates = TRUE
+
+/datum/game_mode/tralf
+	name = "Traitor & Malfunctioning AI"
+	round_description = "Traitor and a Malfunctioning AI are about to end your carrier."
+	extended_round_description = "Traitor and a Malfunctioning AI are about to end your carrier."
+	config_tag = "tralf"
+	required_players = 9
+	required_enemies = 4
+	end_on_antag_death = FALSE
+	antag_tags = list(MODE_TRAITOR, MODE_MALFUNCTION)
+	require_all_templates = TRUE

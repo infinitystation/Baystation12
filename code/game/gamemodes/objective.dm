@@ -21,12 +21,10 @@ var/global/list/all_objectives = list()
 	all_objectives -= src
 	..()
 
-/datum/objective/proc/find_target(override = 0) //inf, was: /datum/objective/proc/find_target()
+/datum/objective/proc/find_target()
 	var/list/possible_targets = list()
 	for(var/datum/mind/possible_target in SSticker.minds)
-		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) \
-//[INF]
-		&& possible_target.current.client.wishes_to_be_role(lowertext(owner.special_role)))
+		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD))
 			if(owner)
 				var/is_target = 0
 				for(var/datum/objective/O in owner.objectives)
@@ -34,9 +32,7 @@ var/global/list/all_objectives = list()
 						is_target = 1
 						break
 				if(!is_target)
-					possible_targets += possible_target
-//[/INF]
-//INF			possible_targets += possible_target
+					possible_targets |= possible_target
 	if(possible_targets.len > 0)
 		target = pick(possible_targets)
 
@@ -50,43 +46,47 @@ var/global/list/all_objectives = list()
 
 // Assassinate //
 
-/datum/objective/assassinate/find_target(override = 0) //inf, was: /datum/objective/assassinate/find_target()
+/datum/objective/assassinate/find_target()
 	..()
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Убить [target.current.real_name], [target.assigned_role]."
-	else
-//[INF]
-		if(override)
-			return 0
-		else
-//[/INF]
-			explanation_text = "Свободная Цель"
 	return target
 
 /datum/objective/assassinate/find_target_by_role(role, role_type = 0)
 	..(role, role_type)
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Убить [target.current.real_name],[!role_type ? target.assigned_role : target.special_role]."
-	else
-		explanation_text = "Свободная Цель"
 	return target
+
+// Anti Revolution //
+
+/datum/objective/anti_revolution/find_target(var/list/global_objectives)
+	var/list/possible_targets = list()
+	var/list/all_targets = SSticker.minds - GLOB.antag_list
+	for(var/datum/mind/possible_target in all_targets)
+		if(ishuman(possible_target.current) && (possible_target.current.stat != DEAD) && !(possible_target.assigned_role in SSjobs.titles_by_department(COM)))
+			var/is_target = 0
+			for(var/datum/objective/O in global_objectives)
+				if(possible_target == O.target)
+					is_target = 1
+					break
+			if(!is_target)
+				possible_targets |= possible_target
+	if(possible_targets.len > 0)
+		target = pick(possible_targets)
 
 // Execute //
 
-/datum/objective/anti_revolution/execute/find_target(override = 0) //inf, was: /datum/objective/anti_revolution/execute/find_target()
-	..()
-	if(target && target.current)
-		explanation_text = "[target.current.real_name], the [target.assigned_role] has extracted confidential information above their clearance. Execute \him[target.current]."
-	else
-		explanation_text = "Свободная Цель"
+/datum/objective/anti_revolution/execute/find_target(var/list/global_objectives)
+	..(global_objectives)
+	if(target?.current)
+		explanation_text = "[target.current.real_name], [target.assigned_role] похитил(а) конфиденциальную информацию, которая может навредить репутации [GLOB.using_map.company_name]. Устраните \him[target.current]."
 	return target
 
 /datum/objective/anti_revolution/execute/find_target_by_role(role, role_type = 0)
 	..(role, role_type)
-	if(target && target.current)
-		explanation_text = "[target.current.real_name], the [!role_type ? target.assigned_role : target.special_role] has extracted confidential information above their clearance. Execute \him[target.current]."
-	else
-		explanation_text = "Свободная Цель"
+	if(target?.current)
+		explanation_text = "[target.current.real_name], [!role_type ? target.assigned_role : target.special_role] похитил(а) конфиденциальную информацию, которая может навредить репутации [GLOB.using_map.company_name]. Устраните \him[target.current]."
 	return target
 
 // Brig //
@@ -94,80 +94,59 @@ var/global/list/all_objectives = list()
 /datum/objective/anti_revolution/brig
 	var/already_completed = 0
 
-/datum/objective/anti_revolution/brig/find_target(override = 0) //inf, was: /datum/objective/anti_revolution/brig/find_target()
-	..()
-	if(target && target.current)
-		explanation_text = "Brig [target.current.real_name], the [target.assigned_role] for 20 minutes to set an example."
-	else
-		explanation_text = "Свободная Цель"
+/datum/objective/anti_revolution/brig/find_target(var/list/global_objectives)
+	..(global_objectives)
+	if(target?.current)
+		explanation_text = "Добиться задержания [target.current.real_name], [target.assigned_role] в камере брига на 20 минут и более."
 	return target
 
 /datum/objective/anti_revolution/brig/find_target_by_role(role, role_type = 0)
 	..(role, role_type)
-	if(target && target.current)
-		explanation_text = "Brig [target.current.real_name], the [!role_type ? target.assigned_role : target.special_role] for 20 minutes to set an example."
-	else
-		explanation_text = "Свободная Цель"
+	if(target?.current)
+		explanation_text = "Добиться задержания [target.current.real_name], [!role_type ? target.assigned_role : target.special_role] в камере брига на 20 минут и более."
 	return target
 
 // Demote //
 
-/datum/objective/anti_revolution/demote/find_target(override = 0) //inf, was: /datum/objective/anti_revolution/demote/find_target()
-	..()
-	if(target && target.current)
-		explanation_text = "[target.current.real_name], the [target.assigned_role]  has been classified as harmful to [GLOB.using_map.company_name]'s goals. Demote \him[target.current] to assistant."
-	else
-		explanation_text = "Свободная Цель"
+/datum/objective/anti_revolution/demote/find_target(var/list/global_objectives)
+	..(global_objectives)
+	if(target?.current)
+		explanation_text = "[target.current.real_name], [target.assigned_role] был квалифицирован как угроза планам [GLOB.using_map.company_name]. Добейтесь понижения \him[target.current] до ассистента."
 	return target
 
 /datum/objective/anti_revolution/demote/find_target_by_role(role, role_type = 0)
 	..(role, role_type)
-	if(target && target.current)
-		explanation_text = "[target.current.real_name], the [!role_type ? target.assigned_role : target.special_role] has been classified as harmful to [GLOB.using_map.company_name]'s goals. Demote \him[target.current] to assistant."
-	else
-		explanation_text = "Свободная Цель"
+	if(target?.current)
+		explanation_text = "[target.current.real_name], [!role_type ? target.assigned_role : target.special_role] был квалифицирован как угроза планам [GLOB.using_map.company_name]'s. Добейтесь понижения \him[target.current] до ассистента."
 	return target
 
 // Debrain //
 
-/datum/objective/debrain/find_target(override = 0) //inf, was: /datum/objective/debrain/find_target()
+/datum/objective/debrain/find_target()
 	..()
-	if(target && target.current)
-		explanation_text = "Украсть мозг [target.current.real_name]."
-	else
-//[INF]
-		if(override)
-			return 0
-		else
-//[/INF]
-			explanation_text = "Свободная Цель"
+	if(target?.current)
+		explanation_text = "Украсть мозг [target.current.real_name], [target.assigned_role]."
 	return target
 
 /datum/objective/debrain/find_target_by_role(role, role_type = 0)
 	..(role, role_type)
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Украсть мозг [target.current.real_name], [!role_type ? target.assigned_role : target.special_role]."
-	else
-		explanation_text = "Свободная Цель"
 	return target
 
 // Protection, The opposite of killing a dude. //
 
-/datum/objective/protect/find_target(override = 0) //inf, was: /datum/objective/protect/find_target()
+/datum/objective/protect/find_target()
 	..()
-	if(target && target.current)
-		explanation_text = "Защитить [target.current.real_name], the [target.assigned_role]."
-	else
-		explanation_text = "Свободная Цель"
+	if(target?.current)
+		explanation_text = "Защитить [target.current.real_name], [target.assigned_role]."
 	return target
 
 
 /datum/objective/protect/find_target_by_role(role, role_type = 0)
 	..(role, role_type)
-	if(target && target.current)
-		explanation_text = "Protect [target.current.real_name], the [!role_type ? target.assigned_role : target.special_role]."
-	else
-		explanation_text = "Свободная Цель"
+	if(target?.current)
+		explanation_text = "Защитить [target.current.real_name], [!role_type ? target.assigned_role : target.special_role]."
 	return target
 
 // Hijack //
@@ -178,7 +157,7 @@ var/global/list/all_objectives = list()
 // Shuttle Escape //
 
 /datum/objective/escape
-	explanation_text = "Сбежать на шаттле или спасательной капсуле не будучи задержанным"
+	explanation_text = "Сбежать на спасательной капсуле не будучи задержанным"
 
 // Survive //
 
@@ -190,25 +169,16 @@ var/global/list/all_objectives = list()
 /datum/objective/brig
 	var/already_completed = 0
 
-/datum/objective/brig/find_target(override = 0)//inf, was:/datum/objective/brig/find_target()
+/datum/objective/brig/find_target()
 	..()
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Задержать [target.current.real_name], [target.assigned_role] в камере брига на 10 минут и более."
-	else
-//[INF]
-		if(override)
-			return 0
-		else
-//[/INF]
-			explanation_text = "Свободная Цель"
 	return target
 
 /datum/objective/brig/find_target_by_role(role, role_type = 0)
 	..(role, role_type)
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Задержать [target.current.real_name], [!role_type ? target.assigned_role : target.special_role] в камере брига на 10 минут и более."
-	else
-		explanation_text = "Свободная Цель"
 	return target
 
 // Harm a crew member, making an example of them //
@@ -216,32 +186,17 @@ var/global/list/all_objectives = list()
 /datum/objective/harm
 	var/already_completed = 0
 
-/datum/objective/harm/find_target(override = 0) //inf, was: /datum/objective/harm/find_target()
+/datum/objective/harm/find_target()
 	..()
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Преподать урок [target.current.real_name], [target.assigned_role]. Переломать кости, отрезать конечность или изуродовать лицо. Убедиться, что цель это переживет."
-	else
-//[INF]
-		if(override)
-			return 0
-		else
-//[/INF]
-			explanation_text = "Свободная Цель"
 	return target
 
 /datum/objective/harm/find_target_by_role(role, role_type = 0)
 	..(role, role_type)
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Преподать урок [target.current.real_name], [!role_type ? target.assigned_role : target.special_role]. Переломать кости, отрезать конечность или изуродовать лицо. Убедиться, что цель это переживет."
-	else
-		explanation_text = "Свободная Цель"
 	return target
-
-// Nuclear Explosion //
-
-/datum/objective/nuclear
-	explanation_text = "Уничтожить объект с помощью системы самоуничтожения."
-
 
 // Steal //
 
@@ -273,17 +228,15 @@ var/global/list/all_objectives = list()
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
 	)
 /original */
-//[INF]
 	var/global/possible_items[] = list(
 		"РЦД"									= /obj/item/rcd,
 //		"ракетый ранец"							= /obj/item/tank/jetpack,
-		"интеллекарту - желательно, с ИИ"		= /obj/item/aicard,
+		"ядро ИИ"								= /obj/structure/AIcore,
 		"уникальное мачете Лидера Экспедиции"	= /obj/item/material/hatchet/machete/deluxe,
 //		"магнитные ботинки"						= /obj/item/clothing/shoes/magboots,
 		"чертежи [station_name()]"				= /obj/item/blueprints,
 //		"полную канистру форона"				= /obj/item/tank,
-		"образец целого ядра слайма"			= /obj/item/slime_extract,
-		"мясо корги"							= /obj/item/reagent_containers/food/snacks/meat/corgi,
+		"мясо корги Главы Персонала"			= /obj/item/reagent_containers/food/snacks/meat/corgi,
 //		"комбенизон капитана"					= /obj/item/clothing/under/rank/captain,
 //		"комбенизон Директора Исследований"		= /obj/item/clothing/under/rank/research_director,
 //		"комбенизон Главного Инженера"			= /obj/item/clothing/under/rank/chief_engineer,
@@ -296,12 +249,28 @@ var/global/list/all_objectives = list()
 		"пинпоинтер"							= /obj/item/pinpointer,
 		"нагрудник аблятивной брони"			= /obj/item/clothing/suit/armor/laserproof,
 		"нагрудник баллистической брони"		= /obj/item/clothing/suit/armor/bulletproof,
-		"секретные документы АВД"				= /obj/item/documents
+		"гранатомёт из арсенала"				= /obj/item/gun/launcher/grenade,
+		"ионный пистолет"						= /obj/item/gun/energy/ionrifle/small,
+		"перчатки детектива"					= /obj/item/clothing/gloves/forensic,
+		"электролазер вардена"					= /obj/item/gun/energy/taser,
+		"секретные документы АВД"				= /obj/item/documents,
+		"револьвер капитана"					= /obj/item/gun/projectile/revolver/medium/captain,
+		"документацию капитана"					= /obj/item/folder/envelope/captain,
+		"плату квантового реле НТ"				= /obj/item/stock_parts/circuitboard/ntnet_relay,
+		"плату блюспейс двигателя"				= /obj/item/stock_parts/circuitboard/bluespacedrive,
+		"плату экстренного блюспейс реле"		= /obj/item/stock_parts/circuitboard/bluespacerelay,
+		"ИКС Директора Исследований"			= /obj/item/rig/hazmat/equipped,
+		"ИКС Капитана"							= /obj/item/rig/command/captain/equipped,
+		"ИКС Главы Службы Безопасности"			= /obj/item/rig/command/hos/equipped,
+		"ИКС Главы Персонала"					= /obj/item/rig/command/hop/equipped,
+		"ИКС Старшего Медицинского Офицера"		= /obj/item/rig/command/cmo/equipped,
+		"ИКС Старшего Инженера"					= /obj/item/rig/ce/equipped,
+		"Новое Аресианское Винтажное у Главы Персонала"   = /obj/item/reagent_containers/food/drinks/bottle/lordaniawine,
+		"карманное устройство телепортации"		= /obj/item/device/electronic_assembly/medium/default,
+		"диск ядерной аутентификации"			= /obj/item/disk/nuclear
 	)
-//[/INF]
 	var/global/possible_items_special[] = list(
-		/*"nuclear authentication disk" = /obj/item/disk/nuclear,*///Broken with the change to nuke disk making it respawn on z level change.
-		"a bluespace rift generator" = /obj/item/integrated_circuit/manipulation/bluespace_rift,//inf
+		"a bluespace rift generator" = /obj/item/integrated_circuit/manipulation/bluespace_rift,
 		"nuclear gun" = /obj/item/gun/energy/gun/nuclear,
 		"diamond drill" = /obj/item/pickaxe/diamonddrill,
 		"bag of holding" = /obj/item/storage/backpack/holding,
@@ -320,8 +289,14 @@ var/global/list/all_objectives = list()
 	return steal_target
 
 
-/datum/objective/steal/find_target(override = 0) //inf, was: /datum/objective/steal/find_target()
-	return set_target(pick(possible_items))
+/datum/objective/steal/find_target(var/list/used_objectives)
+    var/list/used_items = list()
+    for (var/datum/objective/steal/steal_objective in used_objectives)
+        if (istype(steal_objective))
+            used_items += steal_objective.target_name
+
+    var/list/currently_possible_items = possible_items - used_items
+    return set_target(pick(currently_possible_items))
 
 
 /datum/objective/steal/proc/select_target()
@@ -338,7 +313,7 @@ var/global/list/all_objectives = list()
 		if (!custom_name) return
 		target_name = custom_name
 		steal_target = custom_target
-		explanation_text = "Steal [target_name]."
+		explanation_text = "Украсть [target_name]."
 	else
 		set_target(new_target)
 	return steal_target
@@ -403,49 +378,55 @@ var/global/list/all_objectives = list()
 	else if(possible_targets.len > 0)
 		target = pick(possible_targets)
 
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Нам могут хорошо заплатить за [target.current.real_name], [target.assigned_role]. Необходимо взять товар живым и невредимым."
-	else
-		explanation_text = "Свободная Цель"
 	return target
 
 /datum/objective/heist/loot/choose_target()
-	var/loot = "an object"
-	switch(rand(1,8))
+	var/loot = null
+	switch(rand(1,10))
 		if(1)
 			target = /obj/structure/particle_accelerator
 			target_amount = 6
-			loot = "a complete particle accelerator"
+			loot = "тепло энерго генератор"
 		if(2)
 			target = /obj/machinery/the_singularitygen
 			target_amount = 1
-			loot = "a gravitational generator"
+			loot = "генератор гравитации"
 		if(3)
 			target = /obj/machinery/power/emitter
 			target_amount = 4
-			loot = "four emitters"
+			loot = "четере эмиттера"
 		if(4)
 			target = /obj/machinery/nuclearbomb
 			target_amount = 1
-			loot = "a nuclear bomb"
+			loot = "шесть урановых стержней"
 		if(5)
 			target = /obj/item/gun
 			target_amount = 6
-			loot = "six guns"
+			loot = "шесть единиц вооружения"
 		if(6)
 			target = /obj/item/gun/energy
 			target_amount = 4
-			loot = "four energy guns"
+			loot = "четыре энергетических пистолета модели LAEP90"
 		if(7)
 			target = /obj/item/gun/energy/laser
 			target_amount = 2
-			loot = "two laser guns"
+			loot = "два лазерных карабина модели G40E"
 		if(8)
 			target = /obj/item/gun/energy/ionrifle
 			target_amount = 1
-			loot = "an ion gun"
+			loot = "ионную винтовку"
+		if(9)
+			target = /obj/item/gun/projectile/revolver/medium/captain
+			target_amount = 1
+			loot = "револьвер капитана"
+		if(10)
+			target = /obj/structure/AIcore
+			target_amount = 1
+			loot = "ядро ии"
 
-	explanation_text = "It's a buyer's market out here. Steal [loot] for resale."
+	explanation_text = "В этой системе есть торговый хаб. Украдите [loot] для перепродажи."
 
 /datum/objective/heist/salvage/choose_target()
 	switch(rand(1,8))
@@ -489,6 +470,8 @@ var/global/list/all_objectives = list()
 /datum/objective/ninja_highlander
    explanation_text = "You aspire to be a Grand Master of the Spider Clan. Kill all of your fellow acolytes."
 
+// CULT //
+
 /datum/objective/cult/survive
 	explanation_text = "Наше учение должно жить.."
 	target_amount = 5
@@ -503,29 +486,86 @@ var/global/list/all_objectives = list()
 /datum/objective/cult/sacrifice
 	explanation_text = "Провести ритуал жертвоприношения во славу Нар-Си."
 
-/datum/objective/cult/sacrifice/find_target(override = 0) //inf, was: /datum/objective/cult/sacrifice/find_target()
+/datum/objective/cult/sacrifice/find_target()
 	var/list/possible_targets = list()
 	if(!possible_targets.len)
 		for(var/mob/living/carbon/human/player in GLOB.player_list)
-			if(player.mind && !(player.mind in GLOB.cult.current_antagonists) \
-			&& player.client.wishes_to_be_role(GLOB.cult.id)) //INF
+			if(player.mind && !(player.mind in GLOB.cult.current_antagonists))
 				possible_targets += player.mind
 	if(possible_targets.len > 0)
 		target = pick(possible_targets)
 	if(target) explanation_text = "Принести в жертву [target.name], [target.assigned_role]. Необходима руна жертвоприношения и три акколита для совершения ритуала."
 
-/datum/objective/rev/find_target(override = 0) //inf, was: /datum/objective/rev/find_target()
+// REVOLUTION //
+
+/datum/objective/rev/find_target()
 	..()
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Убить, пленить или завербовать [target.current.real_name], [target.assigned_role]."
-	else
-		explanation_text = "Свободная Цель"
 	return target
 
 /datum/objective/rev/find_target_by_role(role, role_type=0)
 	..(role, role_type)
-	if(target && target.current)
+	if(target?.current)
 		explanation_text = "Убить, пленить или завербовать [target.current.real_name], [!role_type ? target.assigned_role : target.special_role]."
+	return target
+/datum/objective/rev/capture_object
+	explanation_text = "Добиться полного контроля над Сьеррой"
+
+// Nuclear Explosion //
+/datum/objective/nuclear
+	explanation_text = "Активировать систему самоуничтожения объекта."
+
+/datum/objective/nuclear/steal
+	explanation_text = "Похитить важные документы с судна - чертежи, отчеты, корпоративные шифры."
+
+/datum/objective/nuclear/steal_AI
+	explanation_text = "Перезаписать ИИ на интеллекарту (если он есть)."
+
+/datum/objective/nuclear/researches
+	explanation_text = "Перезаписать все исследования на съемный носитель."
+
+/datum/objective/nuclear/kidnap
+	var/list/roles = list(/datum/job/captain, /datum/job/rd, /datum/job/scientist, /datum/job/chief_engineer, /datum/job/iaa, /datum/job/hos, /datum/job/hop, /datum/job/cmo)
+
+/datum/objective/nuclear/kidnap/proc/choose_target()
+	var/list/possible_targets = list()
+	var/list/priority_targets = list()
+
+	for(var/datum/mind/possible_target in SSticker.minds)
+		if(possible_target != owner && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) && (!possible_target.special_role))
+			possible_targets += possible_target
+			for(var/job_type in roles)
+				var/datum/job/role = SSjobs.get_by_path(job_type)
+				if(possible_target.assigned_role == role.title)
+					priority_targets += possible_target
+					continue
+
+	if(priority_targets.len > 0)
+		target = pick(priority_targets)
+
+	if(target?.current)
+		explanation_text = "Похитить [target.current.real_name] ([target.assigned_role]). Цель должна быть живой."
 	else
-		explanation_text = "Свободная Цель"
+		explanation_text = "Захвать по крайней мере одного высокопоставленного или обладающего ценными данными члена экипажа живым. Приоритет - ученые, главы, инженеры."
+	return target
+
+// CHANGELING //
+/datum/objective/changeling
+	explanation_text = "Действовать максимально скрытно, никто не должен о нас узнать."
+/datum/objective/changeling/evacuate
+	explanation_text = "Остайтесь на судне сколько возможно, покиньте его только в случае угрозы жизни."
+/datum/objective/changeling/stealth
+	explanation_text = "Не оставлять своих. Корпорация будет только рада пленить и изучить нас."
+
+/datum/objective/absorb_pointly/find_target()
+	..()
+	if(target?.current)
+		explanation_text = "Поглотить [target.current.real_name], [target.assigned_role] и покиньте объект в его облике."
+	return target
+
+/datum/objective/absorb_pointly/find_target_by_role(role, role_type = 0)
+	..(role, role_type)
+	if(target?.current)
+		explanation_text = "Поглотить [target.current.real_name], [!role_type ? target.assigned_role : target.special_role] и покиньте объект в его облике."
 	return target

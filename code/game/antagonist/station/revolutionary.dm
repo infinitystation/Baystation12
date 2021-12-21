@@ -34,7 +34,6 @@ GLOBAL_DATUM_INIT(revs, /datum/antagonist/revolutionary, new)
 	protected_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/detective)
 	ambitious = 0 //INF
 
-
 /datum/antagonist/revolutionary/create_global_objectives()
 	if(!..())
 		return
@@ -46,6 +45,9 @@ GLOBAL_DATUM_INIT(revs, /datum/antagonist/revolutionary, new)
 		rev_obj.target = player.mind
 		rev_obj.explanation_text = "Убить, захватить или обратить [player.real_name], [player.mind.assigned_role]."
 		global_objectives += rev_obj
+	var/datum/objective/rev/capture_object = new
+	capture_object.explanation_text = "Добиться полного контроля над Сьеррой"
+	global_objectives += capture_object
 
 /datum/antagonist/revolutionary/equip(var/mob/living/carbon/human/revolutionary_mob)
 	spawn_uplink(revolutionary_mob)

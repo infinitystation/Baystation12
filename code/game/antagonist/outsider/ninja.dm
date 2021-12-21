@@ -35,32 +35,25 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 	if(!..())
 		return
 
+	var/objectives_count = round(count_living()/config.traitor_objectives_scaling) + 1
 	var/objective_list = list(1,2,3,4,5)
-	for(var/i=rand(2,4),i>0,i--)
+	for(var/i in 1 to objectives_count)
 		switch(pick(objective_list))
 			if(1)//Kill
 				var/datum/objective/assassinate/ninja_objective = new
 				ninja_objective.owner = ninja
 				ninja_objective.target = ninja_objective.find_target()
-				if(ninja_objective.target != "Free Objective")
-					ninja.objectives += ninja_objective
-				else
-					i++
 				objective_list -= 1 // No more than one kill objective
 			if(2)//Steal
 				var/datum/objective/steal/ninja_objective = new
 				ninja_objective.owner = ninja
-				ninja_objective.target = ninja_objective.find_target()
+				ninja_objective.target = ninja_objective.find_target(ninja.objectives)
 				ninja.objectives += ninja_objective
 			if(3)//Protect
 				var/datum/objective/protect/ninja_objective = new
 				ninja_objective.owner = ninja
 				ninja_objective.target = ninja_objective.find_target()
-				if(ninja_objective.target != "Free Objective")
-					ninja.objectives += ninja_objective
-				else
-					i++
-					objective_list -= 3
+				objective_list -= 3
 			if(4)//Download
 				var/datum/objective/download/ninja_objective = new
 				ninja_objective.owner = ninja
@@ -71,11 +64,6 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 				var/datum/objective/harm/ninja_objective = new
 				ninja_objective.owner = ninja
 				ninja_objective.target = ninja_objective.find_target()
-				if(ninja_objective.target != "Free Objective")
-					ninja.objectives += ninja_objective
-				else
-					i++
-					objective_list -= 5
 
 	var/datum/objective/survive/ninja_objective = new
 	ninja_objective.owner = ninja
@@ -115,7 +103,7 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 
 /datum/antagonist/ninja/proc/generate_ninja_directive(side)
 	var/directive = "[side=="face"?"[GLOB.using_map.company_name]":"A criminal syndicate"] is your employer. "//Let them know which side they're on.
-	switch(rand(1,19))
+	switch(rand(1,14))
 		if(1)
 			directive += "Клан Паука официально не причастен к этой операции. Действуйте скрытно и оставайтесь в тени."
 		if(2)
@@ -126,33 +114,23 @@ GLOBAL_DATUM_INIT(ninjas, /datum/antagonist/ninja, new)
 			directive += "Клан Паука официально не причастен к этой операции. Уничтожьте всех, кто узнает о вас."
 		if(5)
 			directive += "На данный момент, мы сотрудничаем с [GLOB.using_map.company_name]. Убийства допускаются лишь в крайнем случае."
-//		if(6)
-//			directive += "Мы участвуем в юридическом споре по поводу [GLOB.using_map.station_name]. Если на борту присутствует адвокат, заставьте его сотрудничать по этому делу."
-//		if(7)
-//			directive += "Финансовый покровитель сделал предложение, от которого мы не можем отказаться. Обвините в преступной причастности во время операции."
-		if(8)
+		if(6)
 			directive += "Пусть никто не сомневается в милости Клана Паука. Обеспечьте безопасность всего второстепенного персонала, с которым вы столкнетесь."
-//		if(9)
-//			directive += "Свободный агент предложил выгодное деловое предложение. Обвините [GLOB.using_map.company_name] в причастности к операции."
-		if(10)
+		if(7)
 			directive += "Наша репутация находится под угрозой. Нанесите как можно меньше вреда гражданским и невинным."
-		if(11)
+		if(8)
 			directive += "Наша честь на кону. Используйте только благородную тактику, когда имеете дело с противниками."
-		if(12)
+		if(9)
 			directive += "В настоящее время, мы ведем переговоры с лидером группы наемников. Маскируйте убийства под несчастные случаи, самоубийства или другие естественные причины."
-//		if(13)
-//			directive += "Некоторые недовольные сотрудники [GLOB.using_map.company_name] поддерживают нашу деятельность. Остерегайте их от любого жестокого обращения со стороны командного состава."
-		if(14)
-			var/xenorace = pick(SPECIES_UNATHI,SPECIES_TAJARA, SPECIES_SKRELL)
+		if(10)
+			var/xenorace = pick(SPECIES_UNATHI,SPECIES_TAJARA, SPECIES_SKRELL, SPECIES_RESOMI)
 			directive += "Группа радикальных [xenorace] была верными сторонниками клана паука. Проявляйте милосердие к [xenorace], когда это возможно."
-		if(15)
+		if(11)
 			directive += "Клан Паука недавно был обвинен в религиозной бесчувственности. Попытайтесь поговорить с капелланом и доказать неправоту данных обвинений."
-		if(16)
+		if(12)
 			directive += "Клан Паука заключил сделку с конкурирующим производителем протезов. Постарайтесь показать протезы [GLOB.using_map.company_name] в плохом свете."
-		if(17)
+		if(13)
 			directive += "Клан Паука недавно начал вербовать новых агентов. Найдите подходящих кандидатов и оцените их поведение среди экипажа судна."
-		if(18)
+		if(14)
 			directive += "Группа освобождения киборгов выразила интерес к нашей службе. Докажите, что клан Паука милостив к синтетике."
-		else
-			directive += "В настоящее время нет специальных дополнительных инструкций."
 	return directive

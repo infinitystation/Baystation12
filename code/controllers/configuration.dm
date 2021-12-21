@@ -49,6 +49,7 @@ var/list/gamemode_cache = list()
 	var/vote_no_dead = 0				// dead people can't vote (tbi)
 	var/vote_no_dead_crew_transfer = 0	// dead people can't vote on crew transfer votes
 	var/traitor_scaling = 0 			//if amount of traitors scales based on amount of players
+	var/traitor_objectives_scaling = 12  //scales objectives for traitor
 	var/objectives_disabled = 0 			//if objectives are disabled or not
 	var/protect_roles_from_antagonist = 0// If security and such can be traitor/cult/other
 	var/continous_rounds = 0			// Gamemodes which end instantly will instead keep on going until the round ends by escape shuttle or nuke.
@@ -517,6 +518,9 @@ var/list/gamemode_cache = list()
 
 				if ("traitor_scaling")
 					config.traitor_scaling = 1
+
+				if ("traitor_objectives_scaling")
+					config.traitor_objectives_scaling = text2num(value)
 
 				if ("objectives_disabled")
 					if(!value)

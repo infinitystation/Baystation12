@@ -142,7 +142,7 @@
 	level_max = list(Sp_TOTAL = 1, Sp_SPEED = 1, Sp_POWER = 0)
 	hud_state = "wiz_parrot"
 
-/spell/targeted/shapeshift/corrupt_form
+/*/spell/targeted/shapeshift/corrupt_form
 	name = "Corrupt Form"
 	desc = "This spell shapes the wizard into a terrible, terrible beast."
 	feedback = "CF"
@@ -181,7 +181,7 @@
 						"maxHealth" = 125)
 			duration = 0
 			return "You revel in the corruption. There is no turning back."
-
+*/
 /spell/targeted/shapeshift/familiar
 	name = "Transform"
 	desc = "Transform into a familiar form. Literally."

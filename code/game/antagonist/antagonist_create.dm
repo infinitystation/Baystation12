@@ -2,7 +2,7 @@
 
 	if(!target)
 		return
-
+	GLOB.antag_list |= target
 	update_antag_mob(target, preserve_appearance)
 	if(!target.current)
 		remove_antagonist(target)

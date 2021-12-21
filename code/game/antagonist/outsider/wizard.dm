@@ -19,47 +19,38 @@ GLOBAL_DATUM_INIT(wizards, /datum/antagonist/wizard, new)
 	base_to_load = /datum/map_template/ruin/antag_spawn/wizard
 
 /datum/antagonist/wizard/create_objectives(var/datum/mind/wizard)
-
 	if(!..())
 		return
+	var/objectives_count = round(count_living()/config.traitor_objectives_scaling) + 1
+	var/datum/objective/objective = null
+	for (var/counter in 1 to objectives_count)
+		switch(rand(1,100))
+			if(1 to 20)
+				objective = new /datum/objective/assassinate()
+			if(21 to 30)
+				objective = new /datum/objective/debrain()
+			if(31 to 70)
+				objective = new /datum/objective/harm()
+			else
+				objective = new /datum/objective/steal()
 
-	var/kill
-	var/escape
-	var/steal
-//	var/hijack
+		objective.owner = wizard
 
-	switch(rand(1,99))
-		if(1 to 30)
-			escape = 1
-			kill = 1
-		if(31 to 60)
-			escape = 1
-			steal = 1
-		else
-			kill = 1
-			steal = 1
-//		else
-//			hijack = 1
+		if(istype(objective, /datum/objective/steal))
+			objective.find_target(wizard.objectives)
 
-	if(kill)
-		var/datum/objective/assassinate/kill_objective = new
-		kill_objective.owner = wizard
-		kill_objective.find_target()
-		wizard.objectives |= kill_objective
-	if(steal)
-		var/datum/objective/steal/steal_objective = new
-		steal_objective.owner = wizard
-		steal_objective.find_target()
-		wizard.objectives |= steal_objective
-	if(escape)
-		var/datum/objective/survive/survive_objective = new
-		survive_objective.owner = wizard
-		wizard.objectives |= survive_objective
-//	if(hijack)
-//		var/datum/objective/hijack/hijack_objective = new
-//		hijack_objective.owner = wizard
-//		wizard.objectives |= hijack_objective
-	return
+		else if (!objective.find_target())
+			qdel(objective)
+			objective = new /datum/objective/steal()
+			objective.owner = wizard
+			objective.find_target(wizard.objectives)
+
+		wizard.objectives += objective
+
+	var/datum/objective/survive/survive_objective = new
+	survive_objective.owner = wizard
+	wizard.objectives += survive_objective
+
 
 /datum/antagonist/wizard/update_antag_mob(var/datum/mind/wizard)
 	..()

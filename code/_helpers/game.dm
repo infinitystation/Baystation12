@@ -564,3 +564,11 @@ datum/projectile_data
 		viewX = text2num(viewrangelist[1])
 		viewY = text2num(viewrangelist[2])
 	return list(viewX, viewY)
+
+/proc/count_living()
+	var/counter = 0
+
+	for(var/client/C as anything in GLOB.clients)
+		if(isliving(C.mob))
+			counter++
+	return counter
