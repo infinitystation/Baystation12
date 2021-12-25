@@ -143,6 +143,7 @@
 //	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
 	#include "../away_inf/smugglers/smugglers.dm"
 	#include "../away_inf/yacht/yacht.dm"
+	#include "../away_inf/temple/temple.dm"
 
 	// #include "../away/ascent_caulship/_ascent_caulship.dm"
 	#include "../away/casino/casino.dm"
