@@ -436,3 +436,27 @@
 /area/medical/backstorage
 	name = "First Deck - Infirmary - Auxiliary Storage"
 	icon_state = "auxstorage"
+
+/area/port/tech3
+	name = "Port3"
+	icon_state = "janitor"
+
+/area/port/tech3/cen3
+	name = "Port33"
+	icon_state = "janitor"
+	req_access = list(access_cent_general)
+
+/area/port/tech3/sec
+	name = "Port3sec"
+	icon_state = "sec_hos"
+	req_access = list(access_security)
+
+/area/port/tech3/merch1
+	name = "Port3merch"
+	icon_state = "sec_hos"
+	req_access = list(access_merchant)
+
+/area/port/tech3/bar
+	name = "Port3bar"
+	icon_state = "sec_hos"
+	req_access = list(access_bar)

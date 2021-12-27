@@ -405,3 +405,12 @@
 	icon_state = "ai_cyborg"
 	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+
+/area/port/tech2
+	name = "Port2"
+	icon_state = "janitor"
+
+/area/port/tech2/cen2
+	name = "Port22"
+	icon_state = "janitor"
+	req_access = list(access_cent_general)

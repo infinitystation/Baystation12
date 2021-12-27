@@ -189,3 +189,17 @@
 	name = "Third Deck - Security - Fore Docks Checkpoint"
 	icon_state = "checkpoint1"
 	req_access = list(list(access_security, access_forensics_lockers))
+
+/area/port/tech1
+	name = "Port1"
+	icon_state = "janitor"
+
+/area/port/tech1/cen1
+	name = "Port11"
+	icon_state = "janitor"
+	req_access = list(access_cent_general)
+
+/area/port/tech1/cen1br
+	name = "Port12"
+	icon_state = "bridge"
+	req_access = list(access_bridge)

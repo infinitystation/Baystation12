@@ -458,3 +458,68 @@
 		to_chat(user,"This one belongs to Dr.[claimant], MD.")
 	else
 		to_chat(user,"The name is left blank for some reason.")
+
+/obj/structure/sign/tablo
+	name = "Flight info"
+	icon = 'infinity/icons/tablo.dmi'
+	icon_state = "tablo"
+
+/obj/structure/sign/korp11
+	name = "Hephaestus Industries"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "11"
+
+/obj/structure/sign/korp12
+	name = "Hephaestus Industries"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "12"
+
+/obj/structure/sign/korp21
+	name = "Einstein Engines"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "21"
+
+/obj/structure/sign/korp22
+	name = "Einstein Engines"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "22"
+
+/obj/structure/sign/korp31
+	name = "Zeng-Hu Pharmaceuticals"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "31"
+
+/obj/structure/sign/korp32
+	name = "Zeng-Hu Pharmaceuticals"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "32"
+
+/obj/structure/sign/korp41
+	name = "Robust Industries LLC"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "41"
+
+/obj/structure/sign/korp42
+	name = "Robust Industries LLC"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "42"
+
+/obj/structure/sign/korp51
+	name = "Deimos Advanced Information Systems"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "51"
+
+/obj/structure/sign/korp52
+	name = "Deimos Advanced Information Systems"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "52"
+
+/obj/structure/sign/korp61
+	name = "Vey-Med Limited"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "61"
+
+/obj/structure/sign/korp62
+	name = "Vey-Med Limited"
+	icon = 'infinity/icons/korp.dmi'
+	icon_state = "62"

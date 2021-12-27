@@ -2346,6 +2346,7 @@
 #include "code\modules\mob\living\simple_animal\friendly\lizard.dm"
 #include "code\modules\mob\living\simple_animal\friendly\mouse.dm"
 #include "code\modules\mob\living\simple_animal\friendly\mushroom.dm"
+#include "code\modules\mob\living\simple_animal\friendly\portovie_ludi.dm"
 #include "code\modules\mob\living\simple_animal\friendly\possum.dm"
 #include "code\modules\mob\living\simple_animal\friendly\slime.dm"
 #include "code\modules\mob\living\simple_animal\friendly\tomato.dm"
