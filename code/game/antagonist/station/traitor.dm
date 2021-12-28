@@ -4,7 +4,6 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 /datum/antagonist/traitor
 	id = MODE_TRAITOR
 	antaghud_indicator = "hud_traitor"
-	blacklisted_jobs = list(/datum/job/submap)
 	welcome_text = "<hr><u>Ваша роль подразумевает скрытную или (полу-скрытную) игру.</u> В первую очередь, \
 	вам требуется определить, кто вы. Возможны, Вы шпион, наемный убийца \
 	(не рекомендуется), амбициозный вор, поставщик оружия, террорист или даже кто-то иной - главное, \
