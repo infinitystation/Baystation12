@@ -37116,6 +37116,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/infirmary)
+"dpm" = (
+/mob/living/simple_animal/friendly/holorob,
+/turf/simulated/floor/tiled/freezer,
+/area/port/tech3)
 "dsy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -54132,7 +54136,7 @@ aaa
 nue
 mWt
 tMG
-tMG
+dpm
 jQu
 tMG
 vFl

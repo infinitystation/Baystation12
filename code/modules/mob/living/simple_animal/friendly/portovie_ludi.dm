@@ -11,13 +11,14 @@
 	speed = 0
 	maxHealth = 100
 	health = 100
+	faction = "Portovie ludi"
 	can_escape = TRUE
 	skin_material = MATERIAL_SKIN_FUR_ORANGE
 	ai_holder_type = /datum/ai_holder/simple_animal/passive/chel_portovie
 	say_list_type = /datum/say_list/chel_portovie
 
 /datum/ai_holder/simple_animal/passive/chel_portovie
-	speak_chance = 10
+	speak_chance = 30
 	wander = FALSE
 
 /datum/say_list/chel_portovie
@@ -281,10 +282,19 @@ mob/living/simple_animal/friendly/chel_portovie/mujick/muj2
 	icon_state = "trapFROG"
 	icon_living = "trapFROG"
 	icon_dead = "trapdeadFROG"
-	ai_holder_type = /datum/ai_holder/simple_animal/passive/trapFROG
+	maxHealth = 500
+	health = 500
+	a_intent = I_HURT
+	natural_weapon = /obj/item/natural_weapon/juggernaut/behemoth/frog
+	response_harm   = "жабий удар"
+	ai_holder_type = /datum/ai_holder/simple_animal/retaliate/trapFROG
 	say_list_type = /datum/say_list/trapFROG
+	faction = "Portovie ludi"
 
-/datum/ai_holder/simple_animal/passive/trapFROG
+/obj/item/natural_weapon/juggernaut/behemoth/frog
+	force = 15
+
+/datum/ai_holder/simple_animal/retaliate/trapFROG
 	speak_chance = 10
 	wander = FALSE
 
@@ -292,7 +302,114 @@ mob/living/simple_animal/friendly/chel_portovie/mujick/muj2
 	speak = list(
 		"Ква.",
 		"Ква-ква!.",
-		"Как же хорошо быть лягушкой. И девочкой.",
 		"Вот бы все остальные стали девочками-лягушками!",
 		"Медведь из озера любит меня!",
 		"И почему медведь из озера меня так любит?")
+
+/mob/living/simple_animal/friendly/holozeng
+	name = "Zeng-Hu hologram"
+	icon_state = "holo"
+	icon_living = "holo"
+	density = FALSE
+	maxHealth = 1000
+	health = 1000
+	anchored = TRUE
+	ai_holder_type = /datum/ai_holder/simple_animal/passive/holozeng
+	say_list_type = /datum/say_list/holozeng
+
+/datum/ai_holder/simple_animal/passive/holozeng
+	speak_chance = 10
+	wander = FALSE
+
+/datum/say_list/holozeng
+	speak = list("Добро пожаловать на площадку корпорации 'Зенг-Ху' - самого передового производителя фармацевтики и робототехники в Млечном пути! В рамках партнерства с 'НаноТрейзен', ИКН 'Сьерра' была оборудована передовым оборудованием и препаратами, часть из которых вы можете видеть на данных стендах! Представляем Вам 'звезду' этой выставки - 'ХимМастер 3000', на которой любой квалифицированный специалист сможет синтезировать любое нужное ему вещество, не боясь, что его процесс прервётся из-за окончания запасов! Вы спросите - а где же держать синтезированные препараты, если каждый из них имеет свою температуру хранения? А вот и наш ответ - умный холодильник для препаратов, химикатов и любых других товаров, требующих особых условий хранения. Разве это не чудесно? 'Зенг-Ху' - мы двигаем человечество в светлое будущее.")
+
+/mob/living/simple_animal/friendly/holohep
+	name = "Hephaestus Industries hologram"
+	icon_state = "holo"
+	icon_living = "holo"
+	density = FALSE
+	maxHealth = 1000
+	health = 1000
+	anchored = TRUE
+	ai_holder_type = /datum/ai_holder/simple_animal/passive/holohep
+	say_list_type = /datum/say_list/holohep
+
+/datum/ai_holder/simple_animal/passive/holohep
+	speak_chance = 10
+	wander = FALSE
+
+/datum/say_list/holohep
+	speak = list("Вы прибыли на площадку корпорации 'Гефестус Индастрис' - самого крупного и лучшего производителя вооружения и другого военного снаряжения, из тех, что Вы можете сыскать на человеческом пространстве. Мы и наши подчинённые, производим различное вооружение, как, к примеру, орудия для планетарных сооружений или те ослепляющие устройства на поясах различных ЧВК и высокопоставленных лиц, в том числе, и транс-корпораций. На наших стендах Вы можете увидеть модифицированную версию LAEP90 'Перун', производимого для Отдела Защиты Активов транс-корпорации 'НаноТрейзен', а также для различных организаций ЦПСС. Подробнее с другими объектами выставки ознакомьтесь непосредственно перед ними. 'Гефестус Индастрис' - безопасность есть приоритет.")
+
+/mob/living/simple_animal/friendly/holodei
+	name = "Deimos Advanced Information Systems hologram"
+	icon_state = "holo"
+	icon_living = "holo"
+	density = FALSE
+	maxHealth = 1000
+	health = 1000
+	anchored = TRUE
+	ai_holder_type = /datum/ai_holder/simple_animal/passive/holodei
+	say_list_type = /datum/say_list/holodei
+
+/datum/ai_holder/simple_animal/passive/holodei
+	speak_chance = 10
+	wander = FALSE
+
+/datum/say_list/holodei
+	speak = list("Да, Вы можете лицезреть нашу выставочную площадку. Мы - создаём мыслящие, и не очень, системы, как те бортовые ИИ, установленные на объектах, требующих дополнительного контроля и обеспечения помощи персоналу этих самых объектов. Большинство цифровых систем и систем, требующих обслуживания квалифицированными специалистам в сфере цифровых технологий - представляем именно мы, потому и признаны компанией номер один на территории ЦПСС. На наших стендах Вы сможете посмотреть на пустые оболочки ИИ, как изнутри, так и снаружи. Также мы представляем Вам нашего персонального помощника - ПИИ, или персональный искусственный интеллект, поставляемый на множество объектов транс-корпорации 'НаноТрейзен'. 'Деймос Адванцед Информэйшен Систем'- мы разрабатываем Ваше будущее.")
+
+/mob/living/simple_animal/friendly/holovey
+	name = "Vey-Med Limited hologram"
+	icon_state = "holo"
+	icon_living = "holo"
+	density = FALSE
+	maxHealth = 1000
+	health = 1000
+	anchored = TRUE
+	ai_holder_type = /datum/ai_holder/simple_animal/passive/holovey
+	say_list_type = /datum/say_list/holovey
+
+/datum/ai_holder/simple_animal/passive/holovey
+	speak_chance = 10
+	wander = FALSE
+
+/datum/say_list/holovey
+	speak = list("Доброго времени суток, уважаемый посетитель площадки транс-корпорации 'Вей-Мед'. Мы - скромная организация, производящая качественные протезы различных сфер назначения и не только. Если Вы когда-либо были в Медицинских Отделах большинства из ныне существующих и развивающихся организаций, Вы могли заметить и даже использовать наше великолепное медицинское оборудование! Для чуть более лучшего и конкретного ознакомления с продуктами наших трудов - обратитесь к информации на наших стендах. 'Вей-Мед' - как клетки в организме, мы соединяем жизнь и смерть.")
+
+/mob/living/simple_animal/friendly/holorob
+	name = "Robust Industries LLC hologram"
+	icon_state = "holo"
+	icon_living = "holo"
+	density = FALSE
+	maxHealth = 1000
+	health = 1000
+	anchored = TRUE
+	ai_holder_type = /datum/ai_holder/simple_animal/passive/holorob
+	say_list_type = /datum/say_list/holorob
+
+/datum/ai_holder/simple_animal/passive/holorob
+	speak_chance = 10
+	wander = FALSE
+
+/datum/say_list/holorob
+	speak = list("Здравствуй, путник! Беспокоишься, что в условиях корабельной жизни ты не сможешь насладиться теми самыми вкусами, которые ты пробовал в условиях планетарной атмосферы? Можешь отбросить сомнения, потому что 'Робуст ЛЛС' представляет огромный набор снэков, сладостей и напитков, и все из них производятся и хранятся для употребления на суднах, кораблях, и даже в вакууме.. но мы не советуем употребление шоколадных плиток в открытом космосе, конечно же. На данном стенде присутствует только малая доля нашей продукции, каждую из которых Вы можете протестировать на свой вкус!'Робуст ЛЛС' - вкус, достойный космоса!")
+
+/mob/living/simple_animal/friendly/holoeng
+	name = "Einstein Engines hologram"
+	icon_state = "holo"
+	icon_living = "holo"
+	density = FALSE
+	maxHealth = 1000
+	health = 1000
+	anchored = TRUE
+	ai_holder_type = /datum/ai_holder/simple_animal/passive/holoeng
+	say_list_type = /datum/say_list/holoeng
+
+/datum/ai_holder/simple_animal/passive/holoeng
+	speak_chance = 10
+	wander = FALSE
+
+/datum/say_list/holoeng
+	speak = list("Итак, Вы находитесь площади корпорации 'Энштейн Энджинс' - лучшего производителя двигателей для космических объектов различных размеров, и, конечно же, лучшего производителя дешёвой энергии во всём пространстве человеческой цивилизации. Если Вы когда-либо были на космических объектах и пользовались там какими-либо электроприборами, знайте, что, вероятнее всего, энергия, потребляемая ими, была произведена именно Нашим оборудованием, в том числе и не безызвестными реакторами на суперматерии, которыми так славится наша организация. В любом случае, как распоряжаться этой силой решать исключительно Вам и тем, кто покупает нашу продукцию. Если хотите, подробнее можете ознакомиться нашими продуктами на следующих стендах, но мы настоятельно не рекомендуем что-либо царапать, трогать и слишком долго смотреть на них. 'Энштейн Энджинс' - дайте нам точку опору, и мы перевернём весь мир.")

@@ -34088,6 +34088,10 @@
 	},
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/game_room)
+"cvY" = (
+/mob/living/simple_animal/friendly/holodei,
+/turf/simulated/floor/tiled/freezer,
+/area/port/tech2)
 "cxy" = (
 /obj/structure/sign/korp12,
 /turf/simulated/wall/r_wall/prepainted,
@@ -34379,6 +34383,13 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
+/area/port/tech2)
+"ddM" = (
+/obj/machinery/light/spot{
+	dir = 1
+	},
+/mob/living/simple_animal/friendly/holohep,
+/turf/simulated/floor/tiled/freezer,
 /area/port/tech2)
 "dec" = (
 /obj/item/paper/sierra,
@@ -34813,6 +34824,12 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
+/area/port/tech2)
+"ecg" = (
+/mob/living/simple_animal/friendly/holoeng{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/freezer,
 /area/port/tech2)
 "edZ" = (
 /obj/structure/window/reinforced,
@@ -38479,6 +38496,10 @@
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/galley)
+"ncV" = (
+/mob/living/simple_animal/friendly/holovey,
+/turf/simulated/floor/tiled/freezer,
+/area/port/tech2)
 "ndC" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
@@ -41935,6 +41956,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/engine_room)
+"uMZ" = (
+/mob/living/simple_animal/friendly/holozeng{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/port/tech2)
 "uUl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/spline/fancy/black/corner{
@@ -47260,7 +47287,7 @@ glU
 qoW
 jzi
 mUX
-jzi
+uMZ
 jzi
 jzi
 weF
@@ -47883,7 +47910,7 @@ lcK
 lkS
 hBM
 dzM
-sfF
+ddM
 jzi
 gKK
 lwB
@@ -51506,7 +51533,7 @@ iva
 jzi
 dXI
 vGt
-jzi
+ncV
 iva
 ebt
 kgi
@@ -51520,7 +51547,7 @@ iva
 jcU
 jsm
 wUG
-jzi
+cvY
 iva
 ebt
 tim
@@ -52922,7 +52949,7 @@ aam
 wHW
 oaX
 dNB
-iva
+jzi
 jzi
 jzi
 jzi
@@ -53124,7 +53151,7 @@ aam
 wHW
 azB
 dNB
-iva
+jzi
 xIb
 xIb
 xIb
@@ -53326,7 +53353,7 @@ aam
 wHW
 azB
 dNB
-iva
+ecg
 xIb
 neq
 vyC
@@ -53528,7 +53555,7 @@ aam
 wHW
 vEM
 dNB
-iva
+jzi
 xIb
 fDp
 nJU
@@ -53730,7 +53757,7 @@ aam
 wHW
 huN
 dNB
-iva
+jzi
 jzi
 jzi
 jzi
