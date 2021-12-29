@@ -191,7 +191,7 @@
 	req_access = list(list(access_security, access_forensics_lockers))
 
 /area/port/tech1
-	name = "Port1"
+	name = "Transit area"
 	icon_state = "janitor"
 
 /area/port/tech1/cen1
@@ -200,6 +200,6 @@
 	req_access = list(access_cent_general)
 
 /area/port/tech1/cen1br
-	name = "Port12"
+	name = "Control Area"
 	icon_state = "bridge"
 	req_access = list(access_bridge)
