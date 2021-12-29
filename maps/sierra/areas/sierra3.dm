@@ -442,21 +442,21 @@
 	icon_state = "janitor"
 
 /area/port/tech3/cen3
-	name = "Port33"
+	name = "Bar Area"
 	icon_state = "janitor"
 	req_access = list(access_cent_general)
 
 /area/port/tech3/sec
-	name = "Port3sec"
+	name = "Security Port"
 	icon_state = "sec_hos"
 	req_access = list(access_security)
 
 /area/port/tech3/merch1
-	name = "Port3merch"
+	name = "Merchant Port"
 	icon_state = "sec_hos"
 	req_access = list(access_merchant)
 
 /area/port/tech3/bar
-	name = "Port3bar"
+	name = "Bar Port"
 	icon_state = "sec_hos"
 	req_access = list(access_bar)

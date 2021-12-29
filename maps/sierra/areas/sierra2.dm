@@ -407,7 +407,7 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
 
 /area/port/tech2
-	name = "Port2"
+	name = "Chill Area"
 	icon_state = "janitor"
 
 /area/port/tech2/cen2
