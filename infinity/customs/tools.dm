@@ -1,4 +1,4 @@
-/obj/item/weapon/clothingbag/tools //yeah, that's aren't clothing, but it still can hold them.
+/obj/item/clothingbag/tools //yeah, that's aren't clothing, but it still can hold them.
 	New()
-		new /obj/item/weapon/wrench/power(src)
-		new /obj/item/weapon/wirecutters/power(src)
+		new /obj/item/wrench/power(src)
+		new /obj/item/wirecutters/power(src)

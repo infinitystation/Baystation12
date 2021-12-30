@@ -60,7 +60,7 @@
 			var/list/bits = list()
 			for(var/obj/item/organ/internal/organ in internal_organs)
 				bits += organ.get_visible_state()
-			for(var/obj/item/weapon/implant in implants)
+			for(var/obj/item/implant in implants)
 				bits += implant.name
 			if(bits.len)
 				wound_descriptors["[english_list(bits)] visible in the wounds"] = 1
@@ -92,11 +92,11 @@
 		. += "Bleeding"
 	if(status & ORGAN_BROKEN)
 		. += capitalize(broken_description)
-	if (implants.len)
+	if (implants && implants.len)
 		var/unknown_body = 0
 		for(var/I in implants)
-			var/obj/item/weapon/implant/imp = I
-			if(istype(I,/obj/item/weapon/implant))
+			var/obj/item/implant/imp = I
+			if(istype(I,/obj/item/implant))
 				if(imp.hidden)
 					continue
 				if (imp.known)
@@ -127,8 +127,7 @@
 		to_chat(user, "<span class='notice'>You find no visible wounds.</span>")
 
 	to_chat(user, "<span class='notice'>Checking skin now...</span>")
-	if(!do_mob(user, owner, 10))
-		to_chat(user, "<span class='notice'>You must stand still to check [owner]'s skin for abnormalities.</span>")
+	if(!do_after(user, 1 SECOND, owner))
 		return
 
 	var/list/badness = list()
@@ -143,8 +142,7 @@
 		to_chat(user, "<span class='warning'>[owner]'s skin is [english_list(badness)].</span>")
 
 	to_chat(user, "<span class='notice'>Checking bones now...</span>")
-	if(!do_mob(user, owner, 10))
-		to_chat(user, "<span class='notice'>You must stand still to feel [src] for fractures.</span>")
+	if(!do_after(user, 1 SECOND, owner))
 		return
 
 	if(status & ORGAN_BROKEN)
@@ -153,6 +151,11 @@
 	else
 		to_chat(user, "<span class='notice'>The [encased ? encased : "bones in the [name]"] seem to be fine.</span>")
 
+	for (var/obj/item/organ/internal/augment/A in internal_organs) // Locate any non-concealed augments
+		if (A.discoverable)
+			to_chat(user, SPAN_WARNING("You feel a foreign object inside of \the [owner]'s [name]!"))
+			owner.custom_pain("Your [name] hurts as your [A.name] is jostled inside it.", 20, affecting = src)
+			break
 	if(status & ORGAN_TENDON_CUT)
 		to_chat(user, "<span class='warning'>The tendons in [name] are severed!</span>")
 	if(dislocated == 2)

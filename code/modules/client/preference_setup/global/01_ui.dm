@@ -10,19 +10,19 @@
 	name = "UI"
 	sort_order = 1
 
-/datum/category_item/player_setup_item/player_global/ui/load_preferences(var/savefile/S)
-	S["UI_style"]		>> pref.UI_style
-	S["UI_style_color"]	>> pref.UI_style_color
-	S["UI_style_alpha"]	>> pref.UI_style_alpha
-	S["ooccolor"]		>> pref.ooccolor
-	S["clientfps"]		>> pref.clientfps
+/datum/category_item/player_setup_item/player_global/ui/load_preferences(datum/pref_record_reader/R)
+	pref.UI_style = R.read("UI_style")
+	pref.UI_style_color = R.read("UI_style_color")
+	pref.UI_style_alpha = R.read("UI_style_alpha")
+	pref.ooccolor = R.read("ooccolor")
+	pref.clientfps = R.read("clientfps")
 
-/datum/category_item/player_setup_item/player_global/ui/save_preferences(var/savefile/S)
-	S["UI_style"]		<< pref.UI_style
-	S["UI_style_color"]	<< pref.UI_style_color
-	S["UI_style_alpha"]	<< pref.UI_style_alpha
-	S["ooccolor"]		<< pref.ooccolor
-	S["clientfps"]		<< pref.clientfps
+/datum/category_item/player_setup_item/player_global/ui/save_preferences(datum/pref_record_writer/W)
+	W.write("UI_style", pref.UI_style)
+	W.write("UI_style_color", pref.UI_style_color)
+	W.write("UI_style_alpha", pref.UI_style_alpha)
+	W.write("ooccolor", pref.ooccolor)
+	W.write("clientfps", pref.clientfps)
 
 /datum/category_item/player_setup_item/player_global/ui/sanitize_preferences()
 	pref.UI_style		= sanitize_inlist(pref.UI_style, all_ui_styles, initial(pref.UI_style))
@@ -76,9 +76,9 @@
 			version_message = "\nВам необходимо использовать версию byond 511 или выше, чтобы использовать эту функцию. Версия [user.client.byond_version] слишком устарела."
 		if (world.byond_version < 511)
 			version_message += "\nВ настоящий момент, сервер не поддерживает эту функцию."
-		var/new_fps = input(user, "Выберите желаемое количество кадров в секунду.[version_message]\n(0 = синхронизация с ФПС сервера (текущий:[world.fps]))", "Глобальные Предпочтения") as num|null
+		var/new_fps = input(user, "Выберите желаемое количество кадров в секунду.[version_message]\n  0 = значение по умолчанию ([config.clientfps]) < РЕКОМЕНДОВАНО\n -1 = синхронизация с сервером (текущий:[world.fps])", "Глобальные Предпочтения") as num|null
 		if (isnum(new_fps) && CanUseTopic(user))
-			pref.clientfps = Clamp(new_fps, CLIENT_MIN_FPS, CLIENT_MAX_FPS)
+			pref.clientfps = Clamp(new_fps ? new_fps : config.clientfps, CLIENT_MIN_FPS, CLIENT_MAX_FPS)
 
 			var/mob/target_mob = preference_mob()
 			if(target_mob && target_mob.client)

@@ -1,10 +1,10 @@
 /decl/surgery_step/implant_removal_ghetto
 	name = "Remove foreign body from wound"
 	allowed_tools = list(
-		/obj/item/weapon/hemostat = 100,
-		/obj/item/weapon/wirecutters = 75,
-		/obj/item/weapon/material/knife = 50,
-		/obj/item/weapon/material/kitchen/utensil/fork = 20
+		/obj/item/hemostat = 100,
+		/obj/item/wirecutters = 75,
+		/obj/item/material/knife = 50,
+		/obj/item/material/kitchen/utensil/fork = 20
 	)
 	can_infect = 1
 	blood_level = 1

@@ -32,7 +32,7 @@
 		. += SB.buffs[skill_path]
 
 /datum/skillset/proc/obtain_from_mob(mob/mob)
-	if(!istype(mob) || !skills_transferable || !mob.skillset.skills_transferable)
+	if(!istype(mob) || !skills_transferable || !mob.skillset?.skills_transferable)
 		return
 	skill_list = mob.skillset.skill_list
 	default_value = mob.skillset.default_value
@@ -123,8 +123,8 @@
 		else
 			return max(0, 1 + (SKILL_DEFAULT - points) * factor)
 
-/mob/proc/do_skilled(base_delay, skill_path , atom/target = null, factor = 0.3)
-	return do_after(src, base_delay * skill_delay_mult(skill_path, factor), target)
+/mob/proc/do_skilled(base_delay, skill_path , atom/target = null, factor = 0.3, do_flags = DO_DEFAULT)
+	return do_after(src, base_delay * skill_delay_mult(skill_path, factor), target, do_flags)
 
 // A generic way of modifying success probabilities via skill values. Higher factor means skills have more effect. fail_chance is the chance at SKILL_NONE.
 /mob/proc/skill_fail_chance(skill_path, fail_chance, no_more_fail = SKILL_MAX, factor = 1)

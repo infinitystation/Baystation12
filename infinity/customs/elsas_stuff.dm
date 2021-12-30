@@ -17,7 +17,7 @@
 	icon = 'infinity/icons/customs/elsas/obj/elsas_stuff.dmi'
 	icon_state = "elsas_ring"
 
-/obj/item/weapon/gun/projectile/revolver/mateba/elsa
+/obj/item/gun/projectile/revolver/mateba/elsa
 	name = "Blood Ash"
 	desc = "Special edition mateba for detective with the emerald handle."
 
@@ -67,7 +67,7 @@
 	item_state = "headset"
 	ks1type = /obj/item/device/encryptionkey/heads/hos
 
-/obj/item/weapon/card/id/p_ctiminalist
+/obj/item/card/id/p_ctiminalist
 	name = "PC card"
 	desc = "Card of private criminalist."
 	color = COLOR_GRAY40
@@ -85,11 +85,11 @@
 	shoes = /obj/item/clothing/shoes/elsa
 	gloves = /obj/item/clothing/gloves/forensic/elsa
 	suit = /obj/item/clothing/suit/storage/det_trench/elsa
-	id_type = /obj/item/weapon/card/id/p_ctiminalist
+	id_types = list(/obj/item/card/id/p_ctiminalist)
 	backpack_contents = list (
-		/obj/item/weapon/gun/projectile/revolver/mateba/elsa = 1,
+		/obj/item/gun/projectile/revolver/mateba/elsa = 1,
 		/obj/item/clothing/ring/elsa 						 = 1,
-		/obj/item/weapon/storage/briefcase/crimekit 		 = 1,
+		/obj/item/storage/briefcase/crimekit 		 = 1,
 		/obj/item/clothing/accessory/storage/holster/thigh   = 1,
 		/obj/item/device/taperecorder					 	 = 1,
 		/obj/item/device/tape/random						 = 2,

@@ -54,7 +54,7 @@
 	suit = /obj/item/clothing/suit/space/void/exploration
 	helmet = /obj/item/clothing/head/helmet/space/void/exploration
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/gas/half
 	req_access = list(access_explorer)
 	islocked = 1
@@ -65,7 +65,7 @@
 	suit = /obj/item/clothing/suit/space/void/pilot
 	helmet = /obj/item/clothing/head/helmet/space/void/pilot
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/weapon/tank/oxygen
+	tank = /obj/item/tank/oxygen
 	mask = /obj/item/clothing/mask/breath
 	req_access = list(access_explorer, access_expedition_shuttle_helm)
 	islocked = 1
@@ -149,7 +149,7 @@
 			if(sendto.department == destination)
 				exit = sendto
 		var/replyorigin = input(user, "Please specify who the fax is coming from", "Origin") as text|null
-		var/obj/item/weapon/paper/admin/P = new /obj/item/weapon/paper/admin(user) //hopefully the null loc won't cause trouble for us
+		var/obj/item/paper/admin/P = new /obj/item/paper/admin(user) //hopefully the null loc won't cause trouble for us
 		P.admindatum = user.client.holder
 		P.origin = replyorigin
 		P.destination = exit
@@ -165,7 +165,7 @@
 			scan = null
 		else
 			var/obj/item/I = user.get_active_hand()
-			if (istype(I, /obj/item/weapon/card/id) && user.unEquip(I, src))
+			if (istype(I, /obj/item/card/id) && user.unEquip(I, src))
 				scan = I
 		authenticated = 0
 
@@ -192,38 +192,6 @@
 	check_weapons = 1	//checks if it can shoot people that have a weapon they aren't authorized to have
 	check_access = 1	//if this is active, the turret shoots everything that does not meet the access requirements
 	req_access = list(access_bridge)
-
-// lockdown b_doors
-/obj/machinery/door/blast/regular/lockdown
-	name = "Security Lockdown"
-	desc = "That looks like it doesn't open easily. \
-	But that one has NFC sign. May be my ID can help?"
-	req_access = list(list(access_sec_doors, access_engine, access_medical))
-	begins_closed = FALSE
-	icon_state = "pdoor0"
-
-/obj/machinery/door/blast/regular/lockdown/attackby(obj/item/weapon/C as obj, mob/user as mob)
-	. = ..(C, user)
-	if(isid(C) || istype(C, /obj/item/modular_computer/pda))
-		if(allowed(user))
-			for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
-				if(door.id_tag == id_tag)
-					INVOKE_ASYNC(door, /obj/machinery/door/proc/open)
-		return
-
-/obj/machinery/door/blast/regular/lockdown/attack_ai()
-	for(var/obj/machinery/door/blast/regular/lockdown/door in SSmachines.machinery)
-		if(door.id_tag == id_tag)
-			if(door.density)
-				INVOKE_ASYNC(door, /obj/machinery/door/proc/open)
-			else
-				INVOKE_ASYNC(door, /obj/machinery/door/proc/close)
-
-/obj/machinery/door/blast/regular/lockdown/AIMiddleClick(var/mob/AI)
-	return attack_ai(AI)
-
-/obj/machinery/door/blast/regular/lockdown/BorgCtrlClick(var/mob/AI)
-	return AIMiddleClick(AI)
 
 /turf/simulated/AIMiddleClick(var/mob/AI)
 	. = ..()

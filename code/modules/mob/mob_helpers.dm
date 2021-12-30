@@ -13,8 +13,14 @@
 		return FALSE //M is too small to wield this
 	return TRUE
 
-/mob/living/proc/isSynthetic()
-	return 0
+
+/mob/proc/isSynthetic()
+	return FALSE
+
+
+/mob/living/silicon/isSynthetic()
+	return TRUE
+
 
 /mob/living/carbon/human/isSynthetic()
 	if(isnull(full_prosthetic))
@@ -30,11 +36,10 @@
 	return istype(internal_organs_by_name[BP_BRAIN], /obj/item/organ/internal/mmi_holder)
 
 
-/mob/living/silicon/isSynthetic()
-	return 1
+/// Determine if the mob is the supplied species by text name, species path, or species instance name
+/mob/proc/is_species(datum/species/S)
+	return FALSE
 
-/mob/proc/isMonkey()
-	return 0
 
 /proc/islesserform(A)
 	if(istype(A, /mob/living/carbon/human))
@@ -51,46 +56,42 @@
 				return 1
 	return 0
 
-/mob/living/carbon/human/isMonkey()
-	return istype(species, /datum/species/monkey)
-
-proc/isdeaf(A)
-	if(isliving(A))
-		var/mob/living/M = A
-		return (M.sdisabilities & DEAFENED) || M.ear_deaf
-	return 0
-
-proc/hasorgans(A) // Fucking really??
-	return ishuman(A)
-
-proc/iscuffed(A)
-	if(istype(A, /mob/living/carbon))
-		var/mob/living/carbon/C = A
-		if(C.handcuffed)
-			return 1
-	return 0
-
-proc/hassensorlevel(A, var/level)
-	var/mob/living/carbon/human/H = A
-	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
-		var/obj/item/clothing/under/U = H.w_uniform
-		return U.sensor_mode >= level
-	return 0
-
-proc/getsensorlevel(A)
-	var/mob/living/carbon/human/H = A
-	if(istype(H) && istype(H.w_uniform, /obj/item/clothing/under))
-		var/obj/item/clothing/under/U = H.w_uniform
-		return U.sensor_mode
-	return SUIT_SENSOR_OFF
+/mob/living/carbon/is_species(datum/species/S)
+	if (!S) return FALSE
+	if (istext(S)) return species.name == S
+	if (ispath(S)) return species.name == initial(S.name)
+	return species.name == S.name
 
 
-/proc/is_admin(var/mob/user)
-	return check_rights(R_ADMIN, 0, user) != 0
+/**
+ * Checks if the target has a grab from the user
+ */
+/mob/proc/has_danger_grab(mob/user)
+	if (user == src || istype(user, /mob/living/silicon/robot) || istype(user, /mob/living/bot))
+		return TRUE
+
+	for (var/obj/item/grab/G in grabbed_by)
+		if (G.force_danger())
+			return TRUE
 
 
-/proc/hsl2rgb(h, s, l)
-	return //TODO: Implement
+/proc/isdeaf(mob/living/M)
+	return istype(M) && (M.ear_deaf || M.sdisabilities & DEAFENED)
+
+/proc/iscuffed(mob/living/carbon/C)
+	return istype(C) && C.handcuffed
+
+
+/proc/getsensorlevel(mob/living/carbon/human/H)
+	if (!istype(H) || !istype(H.w_uniform, /obj/item/clothing/under))
+		return SUIT_SENSOR_OFF
+	var/obj/item/clothing/under/U = H.w_uniform
+	return U.sensor_mode
+
+
+/proc/hassensorlevel(mob/living/carbon/human/H, level)
+	return getsensorlevel(H) >= level
+
 
 /*
 	Miss Chance
@@ -420,7 +421,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	set name = "a-intent"
 	set hidden = 1
 
-	if(ishuman(src) || isbrain(src) || isslime(src))
+	if(ishuman(src) || isbrain(src) || isslime(src) || ischorus(src))
 		switch(input)
 			if(I_HELP,I_DISARM,I_GRAB,I_HURT)
 				a_intent = input
@@ -465,7 +466,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	var/turf/sourceturf = get_turf(broadcast_source)
 	for(var/mob/M in targets)
 		if(!sourceturf || (get_z(M) in GetConnectedZlevels(sourceturf.z)))
-			M.show_message("<span class='info'>\icon[icon] [message]</span>", 1)
+			M.show_message("<span class='info'>[icon2html(icon, M)] [message]</span>", 1)
 
 /proc/mobs_in_area(var/area/A)
 	var/list/mobs = new
@@ -556,24 +557,24 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 		return SAFE_PERP
 
 	//Agent cards lower threatlevel.
-	var/obj/item/weapon/card/id/id = GetIdCard()
-	if(id && istype(id, /obj/item/weapon/card/id/syndicate))
+	var/obj/item/card/id/id = GetIdCard()
+	if(id && istype(id, /obj/item/card/id/syndicate))
 		threatcount -= 2
 	// A proper	CentCom id is hard currency.
-	else if(id && istype(id, /obj/item/weapon/card/id/centcom))
+	else if(id && istype(id, /obj/item/card/id/centcom))
 		return SAFE_PERP
 
 	if(check_access && !access_obj.allowed(src))
 		threatcount += 4
 
 	if(auth_weapons && !access_obj.allowed(src))
-		if(istype(l_hand, /obj/item/weapon/gun) || istype(l_hand, /obj/item/weapon/melee))
+		if(istype(l_hand, /obj/item/gun) || istype(l_hand, /obj/item/melee))
 			threatcount += 4
 
-		if(istype(r_hand, /obj/item/weapon/gun) || istype(r_hand, /obj/item/weapon/melee))
+		if(istype(r_hand, /obj/item/gun) || istype(r_hand, /obj/item/melee))
 			threatcount += 4
 
-		if(istype(belt, /obj/item/weapon/gun) || istype(belt, /obj/item/weapon/melee))
+		if(istype(belt, /obj/item/gun) || istype(belt, /obj/item/melee))
 			threatcount += 2
 
 		if(species.name != SPECIES_HUMAN)
@@ -585,7 +586,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			perpname = id.registered_name
 
 		var/datum/computer_file/report/crew_record/CR = get_crewmember_record(perpname)
-		if(check_records && !CR && !isMonkey())
+		if(check_records && !CR && !is_species(SPECIES_MONKEY))
 			threatcount += 4
 
 		if(check_arrest && CR && (CR.get_criminalStatus() == GLOB.arrest_security_status))

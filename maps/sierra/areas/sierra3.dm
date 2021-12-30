@@ -277,6 +277,10 @@
 	name = "First Deck - Living - Cryogenic Storage - Upper"
 	icon_state = "cryo_up"
 
+/area/crew_quarters/unused_office
+	name = "First Deck - Living - Unused Office"
+	icon_state = "Sleep"
+
 /area/crew_quarters/dungeon_master_lounge
 	name = "First Deck - Living Room"
 	sound_env = MEDIUM_SOFTFLOOR
@@ -365,7 +369,7 @@
 	name = "First Deck - Infirmary - Storage"
 	icon_state = "medbay4"
 
-/area/medical/infirmary
+/area/hallway/infirmary
 	name = "First Deck - Infirmary - Hallway"
 	icon_state = "medbay"
 /*
@@ -410,7 +414,7 @@
 /area/medical/sleeper
 	name = "First Deck - Infirmary - Emergency Treatment Center"
 	icon_state = "exam_room"
-	req_access = list(access_medical_equip)
+	req_access = list(list(access_medical_equip, access_field_med))
 
 /area/medical/surgery
 	name = "First Deck - Infirmary - Operating Theatre"

@@ -1,4 +1,4 @@
-/obj/item/weapon/robot_module/research
+/obj/item/robot_module/research
 	name = "research module"
 	display_name = "Research"
 	channels = list(
@@ -12,22 +12,23 @@
 	)
 	equipment = list(
 		/obj/item/device/flash,
-		/obj/item/weapon/portable_destructive_analyzer,
-		/obj/item/weapon/gripper/research,
-		/obj/item/weapon/gripper/no_use/loader,
+		/obj/item/portable_destructive_analyzer,
+		/obj/item/gripper/research,
+		/obj/item/gripper/no_use/loader,
 		/obj/item/device/robotanalyzer,
-		/obj/item/weapon/card/robot,
-		/obj/item/weapon/wrench,
-		/obj/item/weapon/screwdriver,
-		/obj/item/weapon/weldingtool/mini,
-		/obj/item/weapon/wirecutters,
-		/obj/item/weapon/crowbar,
-		/obj/item/weapon/scalpel/laser3,
-		/obj/item/weapon/circular_saw,
-		/obj/item/weapon/extinguisher/mini,
-		/obj/item/weapon/reagent_containers/syringe,
-		/obj/item/weapon/gripper/chemistry,
-		/obj/item/stack/nanopaste
+		/obj/item/card/robot,
+		/obj/item/wrench,
+		/obj/item/screwdriver,
+		/obj/item/weldingtool/mini,
+		/obj/item/wirecutters,
+		/obj/item/crowbar,
+		/obj/item/scalpel/laser3,
+		/obj/item/circular_saw,
+		/obj/item/extinguisher/mini,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/gripper/chemistry,
+		/obj/item/stack/nanopaste,
+		/obj/item/borg/sight/hud/sci  // INF
 	)
 	synths = list(
 		/datum/matter_synth/nanite = 10000
@@ -44,14 +45,22 @@
 		SKILL_BOTANY              = SKILL_EXPERT,
 		SKILL_ELECTRICAL          = SKILL_EXPERT
 	)
-/obj/item/weapon/robot_module/research/finalize_equipment()
+/obj/item/robot_module/research/finalize_equipment()
 	. = ..()
 	var/obj/item/stack/nanopaste/N = locate() in equipment
 	N.uses_charge = 1
 	N.charge_costs = list(1000)
 
-/obj/item/weapon/robot_module/research/finalize_synths()
+/obj/item/robot_module/research/finalize_synths()
 	. = ..()
 	var/datum/matter_synth/nanite/nanite = locate() in synths
 	var/obj/item/stack/nanopaste/N = locate() in equipment
 	N.synths = list(nanite)
+
+// [INF]
+/obj/item/robot_module/research/build_emag()
+	if(ispath(emag))
+		new emag(src)
+		emag = locate(/obj/item/device/electronic_assembly) in src
+// [/INF]
+

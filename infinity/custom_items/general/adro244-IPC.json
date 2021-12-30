@@ -1,0 +1,9 @@
+{
+    "ckey" :            "adro244",
+    "character_name" :  "Patron",
+    "item_path" :       "/obj/item/clothingbag/adro_ipc",
+    "req_access" :      [ "ACCESS_ENGINEERING" ],
+	"paper_title" :     "License",
+	"paper_stamp_type": "/obj/item/stamp/boss",
+	"paper_info" :      "[center][ntlogo][/center][br][center][large] Лицензия на хранение личного оружия.[/large][/center][br][center]Владелец[br]<b>Patron</b>[br][br]Оружие:[br]<b>Энергетический револьвер 'Sunshot'</b>[br][hr]"
+}

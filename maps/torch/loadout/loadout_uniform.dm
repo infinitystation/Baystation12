@@ -15,7 +15,7 @@
 	allowed_roles = list(/datum/job/roboticist)
 
 /datum/gear/uniform/suit
-	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIANDFORMAL_ROLES
 
 /datum/gear/uniform/scrubs
 	allowed_roles = STERILE_ROLES
@@ -31,10 +31,10 @@
 	allowed_roles = null //INF, WAS: FORMAL_ROLES
 
 /datum/gear/uniform/skirt
-	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIANDFORMAL_ROLES
 
 /datum/gear/uniform/skirt_c
-	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIANDFORMAL_ROLES
 
 /datum/gear/uniform/skirt_c/dress
 	allowed_roles = null //INF, WAS: FORMAL_ROLES
@@ -43,13 +43,13 @@
 	allowed_roles = null //INF, WAS: SEMIFORMAL_ROLES
 
 /datum/gear/uniform/formal_pants
-	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIANDFORMAL_ROLES
 
 /datum/gear/uniform/formal_pants/custom
-	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIANDFORMAL_ROLES
 
 /datum/gear/uniform/formal_pants/baggycustom
-	allowed_roles = null //INF, WAS: FORMAL_ROLES
+	allowed_roles = null //INF, WAS: SEMIANDFORMAL_ROLES
 
 /datum/gear/uniform/shorts
 	allowed_roles = null //INF, WAS: CASUAL_ROLES
@@ -79,4 +79,4 @@
 	allowed_roles = list(/datum/job/liaison)
 
 /datum/gear/uniform/corp_exec_jacket
-	allowed_roles = list(/datum/job/liaison, /datum/job/bodyguard)
+	allowed_roles = list(/datum/job/liaison)

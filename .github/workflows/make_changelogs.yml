@@ -1,4 +1,4 @@
-name: Make changelogs
+name: Создание Чейнджлога
 
 on:
   workflow_dispatch:
@@ -7,25 +7,25 @@ on:
     - master
 
 jobs:
-  MakeCL:
+  CreateCL:
     runs-on: ubuntu-latest
-    if: github.repository == 'infinitystation/Baystation12'
+    if: github.repository == 'infinitystation/Baystation12' # to prevent this running on forks
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      - name: Загрузка локальной среды
+        uses: actions/checkout@v2.4.0
         with:
           fetch-depth: 25
-      - name: Python Setup
-        uses: actions/setup-python@v1
+      - name: Настройка Python
+        uses: actions/setup-python@v2.3.1
         with:
           python-version: '3.x'
-      - name: Requirements Install
+      - name: Установка зависимостей
         run: |
           python -m pip install --upgrade pip
           pip install ruamel.yaml PyGithub
-      - name: Create CL
+      - name: Генерирование ЧЛ
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIT_EMAIL: "action@github.com"
-          GIT_NAME: "Embodiment of Changelogs" 
-        run: python tools/GenerateChangelog/generate_cl.py
+          GIT_EMAIL: ${{ secrets.BOT_EMAIL }}
+          GIT_NAME: ${{ secrets.BOT_NAME }} 
+        run: python tools/changelog/generate_cl_ru.py

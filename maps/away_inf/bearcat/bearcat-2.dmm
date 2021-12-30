@@ -72,7 +72,7 @@
 	name = "Sensor Shroud"
 	},
 /obj/item/device/radio,
-/obj/item/weapon/cell/high,
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/dark/usedup,
 /area/ship/scrap/command/bridge)
 "aj" = (
@@ -90,7 +90,7 @@
 	id_tag = "scraplock";
 	name = "External Lockdown"
 	},
-/obj/item/weapon/gun/energy/captain,
+/obj/item/gun/energy/captain,
 /turf/simulated/floor/tiled/dark/usedup,
 /area/ship/scrap/command/bridge)
 "al" = (
@@ -317,33 +317,33 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/obj/item/weapon/gun/energy/stunrevolver,
+/obj/item/gun/energy/stunrevolver,
 /obj/structure/closet/cabinet,
-/obj/item/weapon/storage/secure/briefcase,
+/obj/item/storage/secure/briefcase,
 /obj/item/device/taperecorder,
 /obj/item/device/camera,
-/obj/item/weapon/storage/backpack/dufflebag/syndie,
-/obj/item/weapon/storage/box/ammo/shotgunshells,
-/obj/item/weapon/handcuffs,
+/obj/item/storage/backpack/dufflebag/syndie,
+/obj/item/storage/box/ammo/shotgunshells,
+/obj/item/handcuffs,
 /turf/simulated/floor/wood,
 /area/ship/scrap/command/captain)
 "aL" = (
-/obj/item/weapon/bedsheet/captain,
+/obj/item/bedsheet/captain,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/item/weapon/gun/projectile/pistol/holdout,
+/obj/item/gun/projectile/pistol/holdout,
 /obj/structure/bed/padded,
 /obj/effect/submap_landmark/spawnpoint/captain,
 /turf/simulated/floor/wood,
 /area/ship/scrap/command/captain)
 "aM" = (
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/structure/table/woodentable,
 /obj/machinery/light_switch{
 	pixel_y = 25
 	},
 /obj/random/action_figure,
-/obj/item/weapon/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24;
@@ -513,7 +513,7 @@
 /obj/item/device/radio/intercom{
 	pixel_x = -32
 	},
-/obj/item/weapon/gun/projectile/shotgun/pump/combat{
+/obj/item/gun/projectile/shotgun/pump/combat{
 	desc = "When words don't strike hard enough.";
 	name = "Solid Argument"
 	},
@@ -537,8 +537,8 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/one,
-/obj/item/weapon/tank/oxygen,
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/one,
+/obj/item/tank/oxygen,
 /obj/item/clothing/mask/breath/emergency,
 /obj/machinery/power/apc/derelict/bearcat{
 	dir = 4;
@@ -652,7 +652,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/usedup,
-/area/space)
+/area/ship/scrap/dock)
 "bn" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -1113,7 +1113,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/usedup,
-/area/space)
+/area/ship/scrap/dock)
 "bT" = (
 /obj/structure/sign/warning/docking_area,
 /obj/effect/paint/brown,
@@ -1161,7 +1161,7 @@
 "bY" = (
 /obj/structure/lattice,
 /turf/space,
-/area/space)
+/area/ship/scrap/dock)
 "bZ" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -1188,6 +1188,7 @@
 	pixel_x = 24;
 	req_access = list("ACCESS_BEARCAT")
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/shuttle/outgoing)
 "cc" = (
@@ -1286,7 +1287,7 @@
 "co" = (
 /obj/structure/closet/walllocker/emerglocker/north,
 /obj/structure/bed/chair/wood,
-/obj/item/weapon/deck/tarot,
+/obj/item/deck/tarot,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/saloon)
 "cp" = (
@@ -1328,7 +1329,7 @@
 	dir = 9;
 	icon_state = "corner_white"
 	},
-/obj/machinery/media/jukebox,
+/obj/machinery/jukebox,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/saloon)
 "cv" = (
@@ -1341,7 +1342,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
@@ -1365,9 +1366,9 @@
 	pixel_y = 0
 	},
 /obj/item/trash/tray,
-/obj/item/weapon/circular_saw,
-/obj/item/weapon/material/kitchen/utensil/fork,
-/obj/item/weapon/material/kitchen/utensil/fork,
+/obj/item/circular_saw,
+/obj/item/material/kitchen/utensil/fork,
+/obj/item/material/kitchen/utensil/fork,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/saloon)
 "cz" = (
@@ -1375,7 +1376,7 @@
 	dir = 8;
 	icon_state = "bulb1"
 	},
-/obj/item/weapon/crowbar,
+/obj/item/crowbar,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/hallway/starboard)
 "cA" = (
@@ -1413,7 +1414,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/obj/item/weapon/soap,
+/obj/item/soap,
 /obj/structure/curtain/open/shower,
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/usedup,
@@ -1462,24 +1463,24 @@
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/saloon)
 "cJ" = (
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/saloon)
 "cK" = (
 /obj/structure/table/standard,
 /obj/random/smokes,
-/obj/item/weapon/material/ashtray/glass,
+/obj/item/material/ashtray/glass,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/obj/item/weapon/board,
+/obj/item/board,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/item/weapon/material/kitchen/utensil/spoon,
-/obj/item/weapon/material/kitchen/utensil/spoon,
+/obj/item/material/kitchen/utensil/spoon,
+/obj/item/material/kitchen/utensil/spoon,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/saloon)
 "cL" = (
@@ -1523,10 +1524,10 @@
 /obj/item/clothing/mask/breath/emergency,
 /obj/item/clothing/mask/breath/emergency,
 /obj/item/clothing/mask/breath/emergency,
-/obj/item/weapon/crowbar,
-/obj/item/weapon/tank/oxygen,
-/obj/item/weapon/tank/oxygen,
-/obj/item/weapon/tank/oxygen,
+/obj/item/crowbar,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
+/obj/item/tank/oxygen,
 /obj/machinery/light/small{
 	dir = 8;
 	icon_state = "bulb1"
@@ -1574,7 +1575,7 @@
 	dir = 8;
 	icon_state = "bulb1"
 	},
-/obj/item/weapon/towel,
+/obj/item/towel,
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/toilets)
@@ -1587,8 +1588,8 @@
 	opacity = 1
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
-/obj/item/weapon/material/kitchen/utensil/fork,
-/obj/item/weapon/material/kitchen/utensil/fork,
+/obj/item/material/kitchen/utensil/fork,
+/obj/item/material/kitchen/utensil/fork,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/toilets)
 "cT" = (
@@ -1695,7 +1696,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
@@ -1955,8 +1956,8 @@
 	pixel_x = -25
 	},
 /obj/structure/closet/wardrobe/mixed,
-/obj/item/weapon/storage/backpack/dufflebag/med,
-/obj/item/weapon/storage/belt/utility/full,
+/obj/item/storage/backpack/dufflebag/med,
+/obj/item/storage/belt/utility/full,
 /obj/machinery/power/apc/derelict/bearcat{
 	locked = 1;
 	name = "Dorms APC"
@@ -2145,7 +2146,7 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 32
 	},
-/obj/item/weapon/bedsheet/medical,
+/obj/item/bedsheet/medical,
 /obj/structure/curtain/open/privacy,
 /obj/structure/bed/padded,
 /obj/item/clothing/accessory/stethoscope,
@@ -2175,21 +2176,21 @@
 "dT" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/weapon/reagent_containers/glass/beaker{
+/obj/item/reagent_containers/glass/beaker{
 	pixel_x = 5
 	},
-/obj/item/weapon/book/manual/chef_recipes,
-/obj/item/weapon/reagent_containers/food/condiment/small/peppermill{
+/obj/item/book/manual/chef_recipes,
+/obj/item/reagent_containers/food/condiment/small/peppermill{
 	pixel_x = 3
 	},
-/obj/item/weapon/reagent_containers/food/condiment/enzyme,
-/obj/item/weapon/reagent_containers/glass/rag,
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/glass/rag,
 /obj/machinery/reagent_temperature/cooler,
-/obj/item/weapon/material/kitchen/utensil/spoon,
+/obj/item/material/kitchen/utensil/spoon,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/kitchen)
 "dU" = (
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/usedup,
@@ -2264,7 +2265,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo)
 "eb" = (
@@ -2299,7 +2300,7 @@
 /turf/simulated/wall,
 /area/ship/scrap/crew/medbay)
 "ee" = (
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /obj/structure/hygiene/sink{
 	dir = 8;
 	icon_state = "sink";
@@ -2321,10 +2322,10 @@
 	name = "pill cabinet";
 	pixel_x = 26
 	},
-/obj/item/weapon/storage/pill_bottle/antidexafen,
-/obj/item/weapon/storage/pill_bottle/tramadol,
-/obj/item/weapon/storage/pill_bottle/antitox,
-/obj/item/weapon/storage/pill_bottle/kelotane,
+/obj/item/storage/pill_bottle/antidexafen,
+/obj/item/storage/pill_bottle/tramadol,
+/obj/item/storage/pill_bottle/antitox,
+/obj/item/storage/pill_bottle/kelotane,
 /turf/simulated/floor/tiled/white,
 /area/ship/scrap/crew/medbay)
 "eh" = (
@@ -2352,10 +2353,10 @@
 	dir = 8;
 	icon_state = "bulb1"
 	},
-/obj/item/weapon/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/weapon/material/kitchen/rollingpin,
-/obj/item/weapon/reagent_containers/food/condiment/small/saltshaker{
+/obj/item/material/kitchen/rollingpin,
+/obj/item/reagent_containers/food/condiment/small/saltshaker{
 	pixel_x = -3;
 	pixel_y = 0
 	},
@@ -2634,9 +2635,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/glass_extra/straw,
+/obj/item/glass_extra/straw,
 /obj/item/toy/therapy_blue,
-/obj/item/weapon/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/white,
 /area/ship/scrap/crew/medbay)
 "ez" = (
@@ -2655,7 +2656,7 @@
 /turf/simulated/floor/usedup,
 /area/ship/scrap/crew/medbay)
 "eA" = (
-/obj/item/weapon/storage/pill_bottle/happy,
+/obj/item/storage/pill_bottle/happy,
 /obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
@@ -2664,7 +2665,7 @@
 	dir = 1;
 	name = "area power controller"
 	},
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/port)
 "eB" = (
 /obj/machinery/light/small{
@@ -2681,7 +2682,7 @@
 	icon_state = "intact"
 	},
 /obj/machinery/meter,
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/port)
 "eC" = (
 /obj/structure/cable{
@@ -2694,10 +2695,10 @@
 	icon_state = "intact"
 	},
 /obj/machinery/door/airlock/autoname/engineering/bearcat,
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/port)
 "eD" = (
-/obj/item/weapon/screwdriver,
+/obj/item/screwdriver,
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
@@ -2705,8 +2706,8 @@
 	dir = 10;
 	icon_state = "intact"
 	},
-/turf/simulated/floor/usedup,
-/area/space)
+/turf/simulated/floor/airless,
+/area/ship/scrap/maintenance/engine/port)
 "eE" = (
 /obj/structure/table/standard,
 /obj/machinery/microwave,
@@ -2728,8 +2729,8 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/kitchen)
 "eG" = (
@@ -2795,7 +2796,7 @@
 /obj/random/bomb_supply,
 /obj/random/bomb_supply,
 /obj/random/bomb_supply,
-/obj/item/weapon/storage/box/syringes,
+/obj/item/storage/box/syringes,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/cargo)
 "eM" = (
@@ -2836,20 +2837,20 @@
 /obj/structure/closet/medical_wall/filled{
 	pixel_y = -32
 	},
-/obj/item/weapon/tape_roll,
-/obj/item/weapon/retractor,
-/obj/item/weapon/scalpel,
+/obj/item/tape_roll,
+/obj/item/retractor,
+/obj/item/scalpel,
 /obj/machinery/power/apc/derelict/bearcat{
 	name = "Medbay APC"
 	},
-/obj/item/weapon/hemostat,
+/obj/item/hemostat,
 /turf/simulated/floor/tiled/white,
 /area/ship/scrap/crew/medbay)
 "eP" = (
 /obj/machinery/light,
 /obj/machinery/optable,
-/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/britcup,
-/obj/item/weapon/reagent_containers/glass/rag,
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/britcup,
+/obj/item/reagent_containers/glass/rag,
 /turf/simulated/floor/tiled/white,
 /area/ship/scrap/crew/medbay)
 "eQ" = (
@@ -2863,10 +2864,10 @@
 /obj/structure/sign/goldenplaque/medical{
 	pixel_x = 32
 	},
-/obj/item/weapon/storage/firstaid/adv,
+/obj/item/storage/firstaid/adv,
 /obj/random/medical,
 /obj/item/stack/medical/advanced/bruise_pack,
-/obj/item/weapon/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
 /obj/item/device/scanner/health,
 /obj/machinery/light/small{
 	dir = 4;
@@ -2883,8 +2884,8 @@
 	dir = 6;
 	icon_state = "intact"
 	},
-/turf/simulated/floor/usedup,
-/area/space)
+/turf/simulated/floor/airless,
+/area/ship/scrap/maintenance/engine/starboard)
 "eS" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -2896,15 +2897,15 @@
 	icon_state = "intact"
 	},
 /obj/machinery/door/airlock/autoname/engineering/bearcat,
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/starboard)
 "eT" = (
 /obj/machinery/light/small{
 	dir = 1;
 	icon_state = "bulb1"
 	},
-/obj/item/weapon/material/coin/gold,
-/obj/item/weapon/material/coin/silver,
+/obj/item/material/coin/gold,
+/obj/item/material/coin/silver,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -2915,7 +2916,7 @@
 	icon_state = "intact"
 	},
 /obj/machinery/meter,
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/starboard)
 "eU" = (
 /obj/structure/cable{
@@ -2926,7 +2927,7 @@
 	dir = 1;
 	name = "area power controller"
 	},
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/starboard)
 "eV" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -2934,7 +2935,7 @@
 	dir = 6;
 	icon_state = "intact"
 	},
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/port)
 "eW" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -2942,13 +2943,13 @@
 	dir = 4;
 	icon_state = "map"
 	},
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/port)
 "eX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/structure/lattice,
 /turf/space,
-/area/space)
+/area/ship/scrap/maintenance/engine/port)
 "eY" = (
 /turf/simulated/wall,
 /area/ship/scrap/crew/wash)
@@ -3049,7 +3050,7 @@
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /turf/space,
-/area/space)
+/area/ship/scrap/maintenance/engine/starboard)
 "fh" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall,
@@ -3060,7 +3061,7 @@
 	dir = 8;
 	icon_state = "map"
 	},
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/starboard)
 "fj" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -3068,7 +3069,7 @@
 	dir = 10;
 	icon_state = "intact"
 	},
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/starboard)
 "fk" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -3081,12 +3082,12 @@
 	dir = 1;
 	icon_state = "nozzle"
 	},
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/port)
 "fm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
-/turf/simulated/floor/usedup,
-/area/space)
+/turf/simulated/floor/airless,
+/area/ship/scrap/maintenance/engine/port)
 "fn" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/floodlight,
@@ -3322,7 +3323,7 @@
 	dir = 1;
 	icon_state = "nozzle"
 	},
-/turf/simulated/floor/usedup,
+/turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/starboard)
 "fD" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -3330,18 +3331,7 @@
 /obj/effect/paint/red,
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/maintenance/engine/starboard)
-"fE" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
-	},
-/turf/space,
-/area/space)
 "fF" = (
-/obj/structure/lattice,
 /obj/machinery/door/blast/regular{
 	density = 0;
 	icon_state = "pdoor0";
@@ -3349,8 +3339,8 @@
 	name = "External Blast Doors";
 	opacity = 0
 	},
-/turf/space,
-/area/space)
+/turf/simulated/floor/airless,
+/area/ship/scrap/maintenance/engine/port)
 "fG" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
@@ -3358,7 +3348,7 @@
 	icon_state = "intact"
 	},
 /turf/space,
-/area/space)
+/area/ship/scrap/maintenance/engine/port)
 "fH" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
@@ -3385,7 +3375,7 @@
 	dir = 9;
 	icon_state = "intact"
 	},
-/obj/item/weapon/storage/backpack/dufflebag,
+/obj/item/storage/backpack/dufflebag,
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/wash)
@@ -3491,7 +3481,7 @@
 	dir = 5;
 	icon_state = "intact"
 	},
-/obj/item/weapon/material/kitchen/utensil/spoon,
+/obj/item/material/kitchen/utensil/spoon,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/unused)
 "fT" = (
@@ -3517,15 +3507,15 @@
 	icon_state = "intact"
 	},
 /turf/space,
-/area/space)
+/area/ship/scrap/maintenance/engine/starboard)
 "fV" = (
 /obj/structure/closet,
 /obj/random/clothing,
 /obj/random/clothing,
 /obj/random/clothing,
 /obj/random/clothing,
-/obj/item/weapon/reagent_containers/glass/rag,
-/obj/item/weapon/clothingbag/rubbermask,
+/obj/item/reagent_containers/glass/rag,
+/obj/item/clothingbag/rubbermask,
 /obj/effect/floor_decal/corner/white/diagonal,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/wash)
@@ -3541,10 +3531,10 @@
 "fX" = (
 /obj/structure/table/standard,
 /obj/machinery/light/small,
-/obj/item/weapon/reagent_containers/spray/cleaner,
-/obj/item/weapon/storage/laundry_basket,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/storage/laundry_basket,
 /obj/effect/floor_decal/corner/white/diagonal,
-/obj/item/weapon/cell/high,
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/crew/wash)
 "fY" = (
@@ -3592,7 +3582,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/unused)
 "gc" = (
@@ -3605,7 +3595,7 @@
 /area/ship/scrap/unused)
 "gd" = (
 /obj/random/maintenance,
-/obj/item/weapon/clothingbag/rubbersuit,
+/obj/item/clothingbag/rubbersuit,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/unused)
 "ge" = (
@@ -3759,6 +3749,7 @@
 /area/ship/scrap/maintenance/hallway)
 "gu" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
 "gv" = (
@@ -3766,14 +3757,14 @@
 	pixel_y = 25
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/item/weapon/storage/backpack/dufflebag/syndie,
+/obj/item/storage/backpack/dufflebag/syndie,
 /mob/living/simple_animal/hostile/vagrant,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/hidden)
 "gw" = (
 /obj/structure/closet/crate,
 /obj/random/coin,
-/obj/item/weapon/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/hidden)
 "gx" = (
@@ -3784,7 +3775,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/reinforced/airless,
-/area/space)
+/area/ship/scrap/fire)
 "gy" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
@@ -3920,7 +3911,7 @@
 /turf/simulated/floor/usedup,
 /area/ship/scrap/hidden)
 "gH" = (
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
@@ -3932,9 +3923,9 @@
 "gI" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
-/obj/item/weapon/spacecash/bundle/c1000,
-/obj/item/weapon/storage/bible/booze,
-/obj/item/weapon/cell/high,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/storage/bible/booze,
+/obj/item/cell/high,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/hidden)
 "gJ" = (
@@ -4110,7 +4101,7 @@
 	dir = 1;
 	icon_state = "bulb1"
 	},
-/obj/item/weapon/crowbar,
+/obj/item/crowbar,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -4149,9 +4140,8 @@
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/hallway)
 "gV" = (
-/obj/effect/landmark/explosion/light,
-/turf/space,
-/area/space)
+/turf/simulated/floor/reinforced/airless,
+/area/ship/scrap/command/captain)
 "gW" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1;
@@ -4331,7 +4321,7 @@
 	icon_state = "corner_white"
 	},
 /obj/structure/closet/toolcloset,
-/obj/item/weapon/storage/backpack/dufflebag/eng,
+/obj/item/storage/backpack/dufflebag/eng,
 /obj/item/stack/material/glass/reinforced/fifty,
 /obj/item/stack/material/steel/fifty,
 /turf/simulated/floor/tiled/usedup,
@@ -4371,9 +4361,9 @@
 	dir = 8
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/metal,
-/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/metal,
-/obj/item/weapon/reagent_containers/chem_disp_cartridge/coffee{
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal,
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/metal,
+/obj/item/reagent_containers/chem_disp_cartridge/coffee{
 	name = "coffee canister"
 	},
 /turf/simulated/floor/tiled/usedup,
@@ -4387,7 +4377,7 @@
 /obj/structure/closet/hydrant{
 	pixel_y = 32
 	},
-/obj/item/weapon/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/engineering)
 "hs" = (
@@ -4399,12 +4389,15 @@
 "ht" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/hologram/holopad/longrange,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/shuttle/outgoing)
 "hu" = (
 /obj/structure/table/standard,
 /obj/machinery/cell_charger,
-/obj/item/weapon/storage/toolbox/electrical{
+/obj/item/storage/toolbox/electrical{
 	pixel_x = 7;
 	pixel_y = 4
 	},
@@ -4423,7 +4416,7 @@
 "hv" = (
 /obj/structure/table/standard,
 /obj/machinery/cell_charger,
-/obj/item/weapon/defibrillator/compact/loaded,
+/obj/item/defibrillator/compact/loaded,
 /obj/item/device/flashlight,
 /obj/structure/cable{
 	d1 = 1;
@@ -4571,7 +4564,7 @@
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
@@ -4697,7 +4690,7 @@
 /turf/space,
 /area/ship/scrap/maintenance/atmos)
 "hN" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/atmos)
 "hO" = (
@@ -4891,7 +4884,7 @@
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/power)
 "id" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/structure/lattice,
 /turf/space,
 /area/ship/scrap/maintenance/atmos)
@@ -5002,8 +4995,11 @@
 /area/ship/scrap/maintenance/atmos)
 "ip" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/storage/backpack/dufflebag,
-/obj/item/weapon/storage/backpack/dufflebag,
+/obj/item/storage/backpack/dufflebag,
+/obj/item/storage/backpack/dufflebag,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
 "iq" = (
@@ -5062,6 +5058,9 @@
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -20
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/shuttle/outgoing)
@@ -5205,9 +5204,12 @@
 /turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/aft)
 "iK" = (
-/obj/effect/landmark/explosion/medium,
-/turf/space,
-/area/space)
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/firedoor,
+/obj/effect/paint/brown,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/plating,
+/area/ship/scrap/shuttle/outgoing)
 "iL" = (
 /obj/machinery/atmospherics/omni/mixer{
 	tag_north = 1;
@@ -5314,12 +5316,12 @@
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/maintenance/atmos)
 "iU" = (
-/obj/machinery/atmospherics/valve/shutoff,
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -24;
 	req_access = list("ACCESS_BEARCAT")
 	},
+/obj/machinery/atmospherics/valve/shutoff/fuel,
 /turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/aft)
 "iV" = (
@@ -5520,7 +5522,7 @@
 /area/ship/scrap/maintenance/atmos)
 "js" = (
 /obj/machinery/atmospherics/valve/open,
-/obj/item/weapon/material/shard/phoron,
+/obj/item/material/shard/phoron,
 /turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/aft)
 "jt" = (
@@ -5607,7 +5609,6 @@
 /obj/item/device/multitool{
 	pixel_x = 5
 	},
-/obj/item/device/pipe_painter,
 /obj/item/clamp,
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/atmos)
@@ -5636,7 +5637,7 @@
 /turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/aft)
 "jG" = (
-/obj/item/weapon/material/shard/phoron,
+/obj/item/material/shard/phoron,
 /turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/aft)
 "jH" = (
@@ -5793,6 +5794,9 @@
 	pixel_x = 24;
 	req_access = list("ACCESS_BEARCAT")
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/shuttle/outgoing)
 "kb" = (
@@ -5800,7 +5804,7 @@
 	dir = 8;
 	icon_state = "bulb1"
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	pixel_y = 29
 	},
 /obj/structure/hygiene/sink{
@@ -5825,7 +5829,7 @@
 	dir = 2;
 	level = 2
 	},
-/obj/item/weapon/hemostat,
+/obj/item/hemostat,
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/machinery/alarm{
 	dir = 8;
@@ -5838,6 +5842,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/light,
 /obj/effect/landmark/carnage_mark,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/airless,
 /area/ship/scrap/shuttle/outgoing)
 "kd" = (
@@ -5851,6 +5858,7 @@
 	icon_state = "extinguisher_closed";
 	pixel_x = -23
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/outgoing)
 "ke" = (
@@ -5939,6 +5947,7 @@
 	dir = 4;
 	pixel_x = -23
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/outgoing)
 "kj" = (
@@ -5950,6 +5959,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch/maintenance,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/ship/scrap/shuttle/outgoing)
 "kk" = (
@@ -6024,6 +6034,7 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
 "kp" = (
@@ -6060,10 +6071,10 @@
 /obj/random/snack,
 /obj/random/snack,
 /obj/random/snack,
-/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,
-/obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle,
+/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+/obj/item/reagent_containers/food/drinks/cans/waterbottle,
 /obj/random/powercell,
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/light/small{
 	dir = 1;
@@ -6100,10 +6111,11 @@
 /obj/machinery/power/apc/derelict/bearcat{
 	name = "Shuttle"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
 "kv" = (
-/obj/item/weapon/ore/slag,
+/obj/item/ore/slag,
 /turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
 "kw" = (
@@ -6147,6 +6159,11 @@
 /area/ship/scrap/shuttle/outgoing)
 "kz" = (
 /obj/structure/shuttle/engine/propulsion/burst/left,
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 4;
+	icon_state = "map_injector";
+	use_power = 1
+	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
 "kA" = (
@@ -6166,8 +6183,8 @@
 /obj/item/device/spaceflare,
 /obj/item/device/spaceflare,
 /obj/item/device/radio,
-/obj/item/weapon/material/hatchet/machete/steel,
-/obj/item/weapon/tank/hydrogen,
+/obj/item/material/hatchet/machete/steel,
+/obj/item/tank/hydrogen,
 /turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
 "kD" = (
@@ -6183,9 +6200,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/obj/item/weapon/ore/coal,
-/obj/item/weapon/ore/coal,
-/obj/item/weapon/ore/iron,
+/obj/item/ore/coal,
+/obj/item/ore/coal,
+/obj/item/ore/iron,
 /obj/random/trash/space,
 /turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
@@ -6222,13 +6239,36 @@
 "kH" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/ore_box,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/airless,
 /area/ship/scrap/shuttle/outgoing)
+"lj" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "scraplock";
+	name = "External Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor/airless,
+/area/ship/scrap/maintenance/engine/starboard)
 "lX" = (
 /obj/item/stack/material/steel,
 /obj/structure/lattice,
 /turf/space,
 /area/ship/scrap/maintenance/power)
+"mp" = (
+/obj/structure/lattice,
+/turf/space,
+/area/ship/scrap/maintenance/engine/starboard)
+"ne" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/random/trash/space,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/airless,
+/area/ship/scrap/shuttle/outgoing)
 "nS" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
@@ -6245,6 +6285,10 @@
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/crew/hallway/port)
+"sa" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel,
+/turf/simulated/floor/airless,
+/area/ship/scrap/maintenance/engine/starboard)
 "so" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
@@ -6257,6 +6301,10 @@
 /obj/structure/lattice,
 /turf/space,
 /area/ship/scrap/maintenance/power)
+"tV" = (
+/obj/structure/lattice,
+/turf/space,
+/area/ship/scrap/crew/hallway/port)
 "uf" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 5;
@@ -6274,7 +6322,7 @@
 /obj/structure/lattice,
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
-/area/space)
+/area/ship/scrap/maintenance/atmos)
 "vN" = (
 /obj/effect/paint/red,
 /turf/simulated/wall/r_wall,
@@ -6283,10 +6331,18 @@
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/maintenance/atmos)
+"xO" = (
+/turf/simulated/floor/reinforced/airless,
+/area/ship/scrap/crew/cryo)
 "xU" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
-/area/space)
+/area/ship/scrap/maintenance/power)
+"yJ" = (
+/obj/effect/paint/brown,
+/obj/machinery/atmospherics/pipe/simple/hidden/universal,
+/turf/simulated/wall/titanium,
+/area/ship/scrap/shuttle/outgoing)
 "zT" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -6294,15 +6350,20 @@
 /obj/effect/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/reinforced/airless,
 /area/ship/scrap/maintenance/atmos)
+"Ag" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/paint/red,
+/turf/simulated/wall/r_wall,
+/area/ship/scrap/maintenance/engine/starboard)
 "Cs" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/paint/red,
 /turf/simulated/wall/r_wall,
-/area/space)
+/area/ship/scrap/maintenance/engine/port)
 "Dr" = (
 /obj/structure/closet/secure_closet/engineering_electrical/bearcat,
-/obj/item/weapon/cell/device/standard,
-/obj/item/weapon/cell/device/standard,
+/obj/item/cell/device/standard,
+/obj/item/cell/device/standard,
 /obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
@@ -6310,8 +6371,8 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 32
 	},
-/obj/item/weapon/cell/crap,
-/obj/item/weapon/cell/crap,
+/obj/item/cell/crap,
+/obj/item/cell/crap,
 /obj/machinery/power/apc/derelict/bearcat{
 	dir = 8;
 	name = "area power controller"
@@ -6334,12 +6395,19 @@
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/space,
 /area/space)
+"HN" = (
+/obj/effect/paint/brown,
+/obj/machinery/atmospherics/pipe/simple/hidden/red{
+	dir = 9
+	},
+/turf/simulated/wall/titanium,
+/area/ship/scrap/shuttle/outgoing)
 "HQ" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/reinforced/airless,
 /area/ship/scrap/maintenance/atmos)
 "IG" = (
-/obj/item/weapon/material/shard,
+/obj/item/material/shard,
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 8;
 	frequency = 1441;
@@ -6357,7 +6425,7 @@
 /obj/structure/fireaxecabinet{
 	pixel_y = 32
 	},
-/obj/item/weapon/cell/potato,
+/obj/item/cell/potato,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/fire)
 "JC" = (
@@ -6374,7 +6442,7 @@
 	},
 /obj/structure/table/standard,
 /obj/item/toy/prize/powerloader,
-/obj/item/weapon/material/ashtray/plastic,
+/obj/item/material/ashtray/plastic,
 /obj/machinery/recharger,
 /obj/structure/sign/poster{
 	pixel_y = 32
@@ -6383,7 +6451,7 @@
 /area/ship/scrap/maintenance/engineering)
 "Lp" = (
 /turf/simulated/floor/reinforced/airless,
-/area/space)
+/area/ship/scrap/comms)
 "Ly" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
@@ -6404,10 +6472,10 @@
 /obj/structure/closet/crate,
 /obj/random/loot,
 /obj/random/loot,
-/obj/item/weapon/disk/tech_disk,
-/obj/item/weapon/disk/tech_disk,
-/obj/item/weapon/disk/design_disk,
-/obj/item/weapon/cell/high,
+/obj/item/disk/tech_disk,
+/obj/item/disk/tech_disk,
+/obj/item/disk/design_disk,
+/obj/item/cell/high,
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -24;
@@ -6456,6 +6524,9 @@
 /obj/effect/decal/cleanable/molten_item,
 /turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/aft)
+"TY" = (
+/turf/simulated/floor/reinforced/airless,
+/area/ship/scrap/crew/toilets)
 "Ul" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
@@ -6464,6 +6535,10 @@
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
 /area/ship/scrap/crew/wash)
+"UA" = (
+/obj/structure/lattice,
+/turf/space,
+/area/ship/scrap/maintenance/engine/port)
 "Va" = (
 /obj/effect/paint/brown,
 /turf/simulated/wall/r_wall,
@@ -6472,6 +6547,9 @@
 /obj/effect/decal/cleanable/molten_item,
 /turf/simulated/floor/airless,
 /area/ship/scrap/maintenance/engine/aft)
+"Wv" = (
+/turf/simulated/floor/reinforced/airless,
+/area/ship/scrap/maintenance/power)
 "Yl" = (
 /obj/structure/lattice,
 /turf/simulated/wall/r_wall,
@@ -11661,7 +11739,7 @@ aa
 aa
 aa
 aa
-iK
+aa
 aa
 aa
 aa
@@ -11800,8 +11878,8 @@ aa
 aa
 aa
 aa
-xU
-xU
+dR
+dR
 Cs
 aa
 aa
@@ -11912,8 +11990,8 @@ kd
 kj
 ko
 ku
-bJ
-bJ
+yJ
+HN
 aa
 aa
 aa
@@ -11925,7 +12003,7 @@ dR
 dR
 dR
 fk
-fE
+fF
 aa
 aa
 aa
@@ -12149,7 +12227,7 @@ al
 bX
 bJ
 kG
-jJ
+ne
 jq
 bu
 kf
@@ -12158,7 +12236,7 @@ kq
 kw
 kC
 bJ
-gV
+aa
 aa
 aa
 aa
@@ -12269,7 +12347,7 @@ aa
 ae
 aG
 cb
-ae
+iK
 kH
 gu
 kt
@@ -12286,18 +12364,18 @@ aa
 aa
 aa
 aa
-bY
+UA
 dR
 eC
 dR
 fk
 fF
-bY
+UA
 aa
 aa
 aa
 aa
-xU
+wp
 vs
 sy
 hM
@@ -12402,23 +12480,23 @@ ks
 ky
 bJ
 bJ
-xU
-xU
-Lp
-xU
-xU
-xU
-bY
-bY
+km
+km
+TY
+km
+GG
+GG
+UA
+UA
 eD
 eX
 fm
 fG
-bY
-xU
-xU
+UA
+LW
+LW
 gx
-xU
+LW
 wp
 gY
 hx
@@ -12645,7 +12723,7 @@ bm
 aa
 aa
 aa
-xU
+km
 cr
 cE
 cR
@@ -12760,14 +12838,14 @@ aa
 aa
 aa
 aa
-xU
+Ly
 Ly
 kg
 bm
 aa
 aa
 aa
-Lp
+TY
 cs
 cF
 cS
@@ -12875,21 +12953,21 @@ aa
 aa
 aa
 aa
-xU
-xU
-xU
+Yv
+Yv
+Yv
 Lp
-xU
-xU
+Yv
+Yv
 aa
-xU
+Ly
 be
 kh
 bK
 bT
-bY
-bY
-xU
+tV
+tV
+km
 cr
 kb
 cT
@@ -12995,9 +13073,9 @@ aa
 aa
 aa
 aa
-xU
-xU
-xU
+Yv
+Yv
+Yv
 ar
 ar
 aN
@@ -13117,7 +13195,7 @@ aa
 aa
 aa
 aa
-xU
+Yv
 Yv
 Yv
 ar
@@ -13971,8 +14049,8 @@ aa
 aa
 aa
 aa
-Lp
-Lp
+gV
+gV
 aB
 aF
 aL
@@ -14093,8 +14171,8 @@ aa
 aa
 aa
 aa
-xU
-xU
+nS
+nS
 nS
 aC
 aM
@@ -14215,9 +14293,9 @@ aa
 aa
 aa
 aa
-xU
-xU
-xU
+nS
+nS
+nS
 aC
 aC
 aW
@@ -14260,7 +14338,7 @@ hg
 hg
 jA
 jM
-bY
+jV
 aa
 aa
 aa
@@ -14339,21 +14417,21 @@ aa
 aa
 aa
 aa
-xU
-xU
-xU
-Lp
-xU
-xU
+nS
+nS
+nS
+gV
+nS
+nS
 aa
-xU
+Ly
 be
 bG
 bK
 bT
 bY
 bY
-xU
+Ul
 cB
 cN
 de
@@ -14381,7 +14459,7 @@ iM
 jb
 jm
 hg
-bY
+jV
 aa
 aa
 aa
@@ -14468,14 +14546,14 @@ aa
 aa
 aa
 aa
-xU
+Ly
 Ly
 bH
 bS
 bY
 aa
 aa
-Lp
+xO
 cC
 cO
 df
@@ -14597,7 +14675,7 @@ bm
 bY
 bY
 aa
-xU
+Ul
 cD
 cP
 dg
@@ -14719,7 +14797,7 @@ aa
 aa
 aa
 aa
-xU
+Ul
 Ul
 cA
 dh
@@ -14740,7 +14818,7 @@ Va
 Va
 xU
 xU
-Lp
+Wv
 xU
 xU
 aa
@@ -14842,19 +14920,19 @@ aa
 aa
 aa
 aa
-xU
-xU
-Lp
-xU
-xU
+Ul
+Ul
+xO
+Ul
+Ul
 aa
-bY
-bY
+mp
+mp
 eR
 fg
-fm
+sa
 fU
-bY
+mp
 aa
 aa
 aa
@@ -14970,12 +15048,12 @@ aa
 aa
 aa
 aa
-bY
+mp
 eh
 eS
 fh
 fB
-fF
+lj
 aa
 aa
 aa
@@ -15341,7 +15419,7 @@ eh
 eh
 eh
 fD
-fE
+lj
 aa
 aa
 aa
@@ -15460,9 +15538,9 @@ aa
 aa
 aa
 aa
-xU
-xU
-Cs
+eh
+eh
+Ag
 aa
 aa
 aa

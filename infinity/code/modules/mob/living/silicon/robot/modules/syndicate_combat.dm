@@ -1,4 +1,4 @@
-/obj/item/weapon/robot_module/assault
+/obj/item/robot_module/assault
 	name = "assault robot module"
 	display_name = "Assault"
 	hide_on_manifest = 1
@@ -13,32 +13,32 @@
 	)
 	equipment = list(
 		/obj/item/device/flash,
-		/obj/item/weapon/melee/energy/sword,
-		/obj/item/weapon/gun/energy/pulse_burster,
-		/obj/item/weapon/crowbar/red,
-		/obj/item/weapon/card/emag/cyborg,
-		/obj/item/weapon/tank/jetpack/carbondioxide,
-		/obj/item/weapon/gun/energy/l6_saw,
-		/obj/item/weapon/pinpointer/nukeop
+		/obj/item/melee/energy/sword,
+		/obj/item/gun/energy/pulse_burster,
+		/obj/item/crowbar/red,
+		/obj/item/card/emag/cyborg,
+		/obj/item/tank/jetpack/carbondioxide,
+		/obj/item/gun/energy/l6_saw,
+		/obj/item/pinpointer/nukeop
 	)
 	var/id
 
-/obj/item/weapon/robot_module/assault/Initialize()
+/obj/item/robot_module/assault/Initialize()
 	for(var/decl/hierarchy/skill/skill in GLOB.skills)
 		skills[skill.type] = SKILL_EXPERT
 	. = ..()
 
-/obj/item/weapon/robot_module/assault/build_equipment(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/assault/build_equipment(var/mob/living/silicon/robot/R)
 	. = ..()
 	id = R.idcard
 	equipment += id
 
-/obj/item/weapon/robot_module/assault/finalize_equipment(var/mob/living/silicon/robot/R)
-	var/obj/item/weapon/tank/jetpack/carbondioxide/jetpack = locate() in equipment
+/obj/item/robot_module/assault/finalize_equipment(var/mob/living/silicon/robot/R)
+	var/obj/item/tank/jetpack/carbondioxide/jetpack = locate() in equipment
 	R.internals = jetpack
 	. = ..()
 
-/obj/item/weapon/robot_module/assault/Destroy()
+/obj/item/robot_module/assault/Destroy()
 	equipment -= id
 	id = null
 	. = ..()
@@ -55,11 +55,11 @@
 	modtype = "Assault"
 	lawchannel = "State"
 	laws = /datum/ai_laws/syndicate_override
-	idcard = /obj/item/weapon/card/id/syndicate
-	module = /obj/item/weapon/robot_module/assault
+	idcard = /obj/item/card/id/syndicate
+	module = /obj/item/robot_module/assault
 	silicon_radio = /obj/item/device/radio/borg/syndicate
 	spawn_sound = 'sound/mecha/nominalsyndi.ogg'
-	cell = /obj/item/weapon/cell/super
+	cell = /obj/item/cell/super
 	pitch_toggle = 0
 
 /mob/living/silicon/robot/mercenary
@@ -75,7 +75,7 @@
 //Equipment
 
 
-/obj/item/weapon/gun/energy/pulse_burster
+/obj/item/gun/energy/pulse_burster
 	name = "burst pulse pistol"
 	desc = "A modified pulse pistol, capable of shooting short bursts of pulses. This one is cyborg-mounted."
 	icon = 'icons/obj/guns/pulse_pistol.dmi'
@@ -97,7 +97,7 @@
 
 	charge_cost = 40
 
-/obj/item/weapon/gun/energy/l6_saw
+/obj/item/gun/energy/l6_saw
 	name = "L6 machine gun"
 	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. This one is modified to make ammo out of internal cell."
 	icon = 'icons/obj/guns/saw.dmi'
@@ -123,12 +123,12 @@
 
 	charge_cost = 80 //This shit is ROBUST
 
-/obj/item/weapon/card/emag/cyborg/proc/get_external_power_supply()
+/obj/item/card/emag/cyborg/proc/get_external_power_supply()
 	if(isrobot(loc) || istype(loc, /obj/item/rig_module) || istype(loc, /obj/item/mech_equipment))
 		return loc.get_cell()
 
-/obj/item/weapon/card/emag/cyborg/resolve_attackby(atom/A, mob/user)
-	var/obj/item/weapon/cell/external = get_external_power_supply()
+/obj/item/card/emag/cyborg/resolve_attackby(atom/A, mob/user)
+	var/obj/item/cell/external = get_external_power_supply()
 
 	if(external.charge < 250)
 		to_chat(user, "<span class='warning'>System Error: Not enough power.</span>")

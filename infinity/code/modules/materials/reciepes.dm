@@ -27,23 +27,28 @@
 
 /datum/stack_recipe/mainkraft/papercup
 	title = "paper water cup"
-	result_type = /obj/item/weapon/reagent_containers/food/drinks/sillycup
+	result_type = /obj/item/reagent_containers/food/drinks/sillycup
 	req_amount = 1
 	time = 10
 
 /datum/stack_recipe/mainkraft/beaker
 	title = "iron bowl"
-	result_type = /obj/item/weapon/reagent_containers/glass/beaker/large/mitoll
+	result_type = /obj/item/reagent_containers/glass/beaker/large/mitoll
 	req_amount = 6
 	difficulty = 1
 	time = 60
 
 /datum/stack_recipe/mainkraft/laserframe
 	title = "laser frame"
-	result_type = /obj/item/weapon/laserframe
+	result_type = /obj/item/laserframe
 	req_amount = 15
 	time = 45
 	difficulty = 2
+
+/datum/stack_recipe/chem_mine
+	title = "mine casing"
+	result_type = /obj/item/mine/chem_mine
+	difficulty = 3
 
 /material/steel/generate_recipes(var/reinforce_material)
 	. = ..()

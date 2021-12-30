@@ -5,21 +5,21 @@
 
 /obj/machinery/computer/modular/preset/full
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/power/apc,
-		/obj/item/weapon/stock_parts/computer/card_slot,
-		/obj/item/weapon/stock_parts/computer/ai_slot
+		/obj/item/stock_parts/power/apc,
+		/obj/item/stock_parts/computer/card_slot,
+		/obj/item/stock_parts/computer/ai_slot
 		)
 
 /obj/machinery/computer/modular/preset/aislot
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/power/apc,
-		/obj/item/weapon/stock_parts/computer/ai_slot
+		/obj/item/stock_parts/power/apc,
+		/obj/item/stock_parts/computer/ai_slot
 		)
 
 /obj/machinery/computer/modular/preset/cardslot
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/power/apc,
-		/obj/item/weapon/stock_parts/computer/card_slot
+		/obj/item/stock_parts/power/apc,
+		/obj/item/stock_parts/computer/card_slot
 		)
 
 /obj/machinery/computer/modular/preset/Initialize()
@@ -106,7 +106,6 @@
 
 /obj/machinery/computer/modular/preset/civilian
 	default_software = list(
-		/datum/computer_file/program/newsbrowser,
 		/datum/computer_file/program/camera_monitor,
 		/datum/computer_file/program/records,
 		/datum/computer_file/program/email_client,
@@ -155,7 +154,6 @@
 /obj/machinery/computer/modular/preset/library
 	default_software = list(
 		/datum/computer_file/program/nttransfer,
-		/datum/computer_file/program/newsbrowser,
 		/datum/computer_file/program/email_client,
 		/datum/computer_file/program/library,
 		/datum/computer_file/program/wordprocessor
@@ -182,8 +180,8 @@
 // Research
 /obj/machinery/computer/modular/preset/research
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/power/apc,
-		/obj/item/weapon/stock_parts/computer/ai_slot
+		/obj/item/stock_parts/power/apc,
+		/obj/item/stock_parts/computer/ai_slot
 	)
 	default_software = list(
 		/datum/computer_file/program/ntnetmonitor,
@@ -198,8 +196,8 @@
 // Administrator
 /obj/machinery/computer/modular/preset/sysadmin
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/power/apc,
-		/obj/item/weapon/stock_parts/computer/ai_slot
+		/obj/item/stock_parts/power/apc,
+		/obj/item/stock_parts/computer/ai_slot
 	)
 	default_software = list(
 		/datum/computer_file/program/ntnetmonitor,
@@ -214,9 +212,9 @@
 // Command
 /obj/machinery/computer/modular/preset/command
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/power/apc,
-		/obj/item/weapon/stock_parts/computer/nano_printer,
-		/obj/item/weapon/stock_parts/computer/card_slot
+		/obj/item/stock_parts/power/apc,
+		/obj/item/stock_parts/computer/nano_printer,
+		/obj/item/stock_parts/computer/card_slot
 	)
 	default_software = list(
 		/datum/computer_file/program/comm,
@@ -232,15 +230,14 @@
 // Security
 /obj/machinery/computer/modular/preset/security
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/computer/nano_printer,
-		/obj/item/weapon/stock_parts/power/apc
+		/obj/item/stock_parts/computer/nano_printer,
+		/obj/item/stock_parts/power/apc
 	)
 
 // Civilian
 /obj/machinery/computer/modular/preset/civilian
 	default_software = list(
 		/datum/computer_file/program/nttransfer,
-		/datum/computer_file/program/newsbrowser,
 		/datum/computer_file/program/camera_monitor,
 		/datum/computer_file/program/email_client,
 		/datum/computer_file/program/supply,
@@ -251,15 +248,15 @@
 // Offices
 /obj/machinery/computer/modular/preset/civilian/professional
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/computer/nano_printer,
-		/obj/item/weapon/stock_parts/power/apc
+		/obj/item/stock_parts/computer/nano_printer,
+		/obj/item/stock_parts/power/apc
 	)
 
 //Dock control
 /obj/machinery/computer/modular/preset/dock
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/computer/nano_printer,
-		/obj/item/weapon/stock_parts/power/apc
+		/obj/item/stock_parts/computer/nano_printer,
+		/obj/item/stock_parts/power/apc
 	)
 	default_software = list(
 		/datum/computer_file/program/nttransfer,
@@ -273,10 +270,10 @@
 // ERT
 /obj/machinery/computer/modular/preset/ert
 	uncreated_component_parts = list(
-		/obj/item/weapon/stock_parts/power/apc,
-		/obj/item/weapon/stock_parts/computer/ai_slot,
-		/obj/item/weapon/stock_parts/computer/nano_printer,
-		/obj/item/weapon/stock_parts/computer/card_slot
+		/obj/item/stock_parts/power/apc,
+		/obj/item/stock_parts/computer/ai_slot,
+		/obj/item/stock_parts/computer/nano_printer,
+		/obj/item/stock_parts/computer/card_slot
 	)
 	default_software = list(
 		/datum/computer_file/program/nttransfer,
@@ -294,9 +291,14 @@
 		/datum/computer_file/program/merchant,
 		/datum/computer_file/program/wordprocessor,
 		/datum/computer_file/program/nttransfer,
-		/datum/computer_file/program/newsbrowser,
 		/datum/computer_file/program/email_client,
 		/datum/computer_file/program/wordprocessor,
 		/datum/computer_file/program/library
 	)
 //[/INF]
+
+/obj/machinery/computer/modular/preset/filemanager
+	default_software = list(
+		/datum/computer_file/program/wordprocessor
+	)
+	autorun_program = /datum/computer_file/program/filemanager

@@ -3,8 +3,7 @@
 	name = "automatic pipe layer"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "pipe_d"
-	layer = BELOW_OBJ_LAYER
-	density = 1
+	density = TRUE
 	var/turf/old_turf
 	var/old_dir
 	var/on = 0
@@ -13,7 +12,7 @@
 	var/P_type_t = ""
 	var/max_metal = 50
 	var/metal = 10
-	var/obj/item/weapon/wrench/W
+	var/obj/item/wrench/W
 	var/list/Pipes = list("regular pipes"=0,"scrubbers pipes"=31,"supply pipes"=29,"heat exchange pipes"=2, "fuel pipes"=45)
 
 /obj/machinery/pipelayer/New()

@@ -1,8 +1,8 @@
 /datum/job/senior_engineer
 	title = "Senior Engineer"
-	department = "Engineering"
+	department = "Инженерный"
 	department_flag = ENG
-	supervisors = "Главным Инженером"
+	supervisors = "Главному Инженеру"
 	selection_color = "#5b4d20"
 
 	total_positions = 1
@@ -50,9 +50,9 @@
 
 /datum/job/engineer
 	title = "Engineer"
-	department = "Engineering"
+	department = "Инженерный"
 	department_flag = ENG
-	supervisors = "Главным и Старшим инженерами"
+	supervisors = "Главному и Старшему инженеру"
 	selection_color = "#5b4d20"
 
 	total_positions = 4
@@ -107,9 +107,9 @@
 
 /datum/job/engineer_trainee
 	title = "Engineer Trainee"
-	department = "Engineering"
+	department = "Инженерный"
 	department_flag = ENG
-	supervisors = "Главным и остальными инженерами"
+	supervisors = "Главному инженеру и остальным инженерам"
 	selection_color = "#5b4d20"
 
 	total_positions = 2
@@ -117,7 +117,7 @@
 	ideal_character_age = 20
 	economic_power = 3
 
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/maints
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/engineering/engineer/trainee
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
 	allowed_ranks = list(/datum/mil_rank/civ/nt, /datum/mil_rank/civ/contractor)
 
@@ -155,9 +155,9 @@
 
 /datum/job/infsys
 	title = "Information Technician"
-	department = "Engineering"
+	department = "Инженерный"
 	department_flag = ENG
-	supervisors = "Главным и Старшим инженерами"
+	supervisors = "Главному и Старшему инженерам"
 	selection_color = "#5b4d20"
 
 	total_positions = 1
@@ -181,7 +181,7 @@
 	access = list(	access_maint_tunnels, access_network,
 			       	access_tech_storage, access_emergency_storage, access_tcomsat)
 	minimal_access = list()
-	
+
 /datum/job/infsys/get_description_blurb()
 	return "Вы когда-нибудь хотели стать человеком, который сутками сидит на попе смирно и начинает проявлять признаки бурной деятельности, когда всё идёт коту под хвост?\
 	Поздравляю, Вы приняты на должность информационного техника. Сидите на попе смирно, серфите NTNet, истерите, когда связь внезапно обрывается, становитесь главным Hackerman-ом этой смены."

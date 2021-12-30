@@ -51,6 +51,13 @@
 #define ORGAN_BRITTLE    (1<<12) // The organ takes additional blunt damage. If robotic, cannot be repaired through normal means.
 #define ORGAN_CRYSTAL    (1<<13) // The organ does not suffer laser damage, but shatters on droplimb.
 
+// Flags for proc/take_organ_damage
+#define ORGAN_DAMAGE_SHARP       (1 << 0) // Damage should be treated as sharp when applied
+#define ORGAN_DAMAGE_EDGE        (1 << 1) // Damage should be treated as edged when applied
+#define ORGAN_DAMAGE_FLESH_ONLY  (1 << 2) // Damage should not be applied to robotic organs
+#define ORGAN_DAMAGE_ROBOT_ONLY  (1 << 3) // Damage should not be applied to flesh organs
+#define ORGAN_DAMAGE_SILICON_EMP (1 << 4) // Damage should be treated as bypassing armor for silicons
+
 // Organ flag defines.
 #define ORGAN_FLAG_CAN_AMPUTATE   (1<<0) // The organ can be amputated.
 #define ORGAN_FLAG_CAN_BREAK      (1<<1) // The organ can be broken.
@@ -76,8 +83,8 @@
 // that dealing just enough burn damage to kill the player will cause the given
 // proportion of their max blood volume to be lost
 // (e.g. 0.6 == 60% lost if 200 burn damage is taken).
-#define FLUIDLOSS_WIDE_BURN 0.6 //for burns from heat applied over a wider area, like from fire
-#define FLUIDLOSS_CONC_BURN 0.4 //for concentrated burns, like from lasers
+#define FLUIDLOSS_WIDE_BURN 0.15 //for burns from heat applied over a wider area, like from fire
+#define FLUIDLOSS_CONC_BURN 0.1 //for concentrated burns, like from lasers
 
 // Damage above this value must be repaired with surgery.
 #define ROBOLIMB_SELF_REPAIR_CAP 30
@@ -96,4 +103,3 @@
 #define BLOOD_VOLUME_OKAY    70
 #define BLOOD_VOLUME_BAD     60
 #define BLOOD_VOLUME_SURVIVE 30
-

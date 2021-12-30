@@ -50,15 +50,33 @@
 	flash_range = 2
 	brightness = 15
 
+/obj/item/projectile/energy/flash/flare/on_hit(atom/target, blocked = 0, def_zone = null)
+	. = ..()
+	if(.)
+		var/mob/living/M = target
+		if(istype(M) && prob(33))
+			M.fire_stacks = max(2, M.fire_stacks)
+			M.IgniteMob()
+
 /obj/item/projectile/energy/flash/flare/on_impact(var/atom/A)
-	light_colour = pick("#e58775", "#ffffff", "#90ff90", "#a09030")
+	light_colour = pick("#e58775", "#ffffff", "#faa159", "#e34e0e")
 	set_light(1, 1, 4, 2, light_colour)
 	..() //initial flash
 
 	//residual illumination
 	new /obj/effect/effect/smoke/illumination(src.loc, rand(190,240), range=8, power=1, color=light_colour) //same lighting power as flare
 
-/obj/item/projectile/energy/electrode	//has more pain than a beam because it's harder to hit
+	var/turf/TO = get_turf(src)
+	var/area/AO = TO.loc
+	if(AO && (AO.area_flags & AREA_FLAG_EXTERNAL))
+		//Everyone saw that!
+		for(var/mob/living/mob in GLOB.living_mob_list_)
+			var/turf/T = get_turf(mob)
+			if(T && (T != TO) && (TO.z == T.z) && !mob.blinded)
+				to_chat(mob, SPAN_NOTICE("You see a bright light to \the [dir2text(get_dir(T,TO))]"))
+			CHECK_TICK
+				
+/obj/item/projectile/energy/electrode	//has more pain than a beam because it's harder to hit 
 	name = "electrode"
 	icon_state = "spark"
 	fire_sound = 'sound/weapons/Taser.ogg'
@@ -95,7 +113,6 @@
 	icon_state = "cbbolt"
 	damage = 10
 	damage_type = TOX
-	nodamage = 0
 	agony = 40
 	stutter = 10
 

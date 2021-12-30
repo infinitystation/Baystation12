@@ -3,9 +3,9 @@
 	desc = "Looks like some kind of slimy growth."
 	icon_state = "resin"
 
-	density = 1
-	opacity = 1
-	anchored = 1
+	density = TRUE
+	opacity = TRUE
+	anchored = TRUE
 	health = 200
 
 /obj/structure/alien/resin/Initialize()

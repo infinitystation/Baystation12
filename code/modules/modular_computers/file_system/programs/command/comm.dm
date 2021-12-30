@@ -12,7 +12,7 @@
 	nanomodule_path = /datum/nano_module/program/comm
 	extended_desc = "Used to command and control. Can relay long-range communications. This program can not be run on tablet computers."
 	required_access = access_bridge
-	requires_ntnet = 1
+	requires_ntnet = TRUE
 	size = 12
 	usage_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
 	network_destination = "long-range communication array"
@@ -99,6 +99,7 @@
 			option["silicon_allowed"] = EO.silicon_allowed
 			processed_evac_options[++processed_evac_options.len] = option
 	data["evac_options"] = processed_evac_options
+	data["lockdown_support"] = GLOB.using_map.lockdown_support // INF, нужно для отображения кнопки локдауна
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
@@ -127,13 +128,13 @@
 	var/datum/comm_message_listener/l = obtain_message_listener()
 	switch(href_list["action"])
 		if("sw_menu")
-			. = 1
+			. = TRUE
 			current_status = text2num(href_list["target"])
 		if("announce")
-			. = 1
+			. = TRUE
 			if(is_autenthicated(user) && !issilicon(usr) && ntn_comm)
 				if(user)
-					var/obj/item/weapon/card/id/id_card = user.GetIdCard()
+					var/obj/item/card/id/id_card = user.GetIdCard()
 					crew_announcement.announcer = GetNameAndAssignmentFromId(id_card)
 				else
 					crew_announcement.announcer = "Unknown"
@@ -150,7 +151,7 @@
 				spawn(600)//One minute cooldown
 					announcment_cooldown = 0
 		if("message")
-			. = 1
+			. = TRUE
 			if(href_list["target"] == "emagged")
 				if(program)
 					if(is_autenthicated(user) && program.computer.emagged() && !issilicon(usr) && ntn_comm)
@@ -187,7 +188,7 @@
 					spawn(300) //30 second cooldown
 						centcomm_message_cooldown = 0
 		if("evac")
-			. = 1
+			. = TRUE
 			if(is_autenthicated(user))
 				var/datum/evacuation_option/selected_evac_option = evacuation_controller.evacuation_options[href_list["target"]]
 				if (isnull(selected_evac_option) || !istype(selected_evac_option))
@@ -201,7 +202,7 @@
 					evacuation_controller.handle_evac_option(selected_evac_option.option_target, user)
 					ntnet_global.add_log("***[program.computer.get_network_tag()] [selected_evac_option.option_desc]***")
 		if("setstatus")
-			. = 1
+			. = TRUE
 			if(is_autenthicated(user) && ntn_cont)
 				switch(href_list["target"])
 					if("line1")
@@ -219,7 +220,7 @@
 					else
 						post_status(href_list["target"])
 		if("setalert")
-			. = 1
+			. = TRUE
 			if(is_autenthicated(user) && !issilicon(usr) && ntn_cont && ntn_comm)
 				var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 				var/decl/security_level/target_level = locate(href_list["target"]) in security_state.comm_console_security_levels
@@ -233,7 +234,7 @@
 
 			current_status = STATE_DEFAULT
 		if("viewmessage")
-			. = 1
+			. = TRUE
 			if(is_autenthicated(user) && ntn_comm)
 				current_viewing_message_id = text2num(href_list["target"])
 				for(var/list/m in l.messages)
@@ -241,14 +242,14 @@
 						current_viewing_message = m
 				current_status = STATE_VIEWMESSAGE
 		if("delmessage")
-			. = 1
+			. = TRUE
 			if(is_autenthicated(user) && ntn_comm && l != global_message_listener)
 				ntnet_global.add_log("***[program.computer.get_network_tag()] deleted [current_viewing_message]***")
 				l.Remove(current_viewing_message)
 			current_status = STATE_MESSAGELIST
 
 		if("printmessage")
-			. = 1
+			. = TRUE
 			if(is_autenthicated(user) && ntn_comm)
 				if(!program.computer.print_paper(current_viewing_message["contents"],current_viewing_message["title"]))
 					to_chat(usr, "<span class='notice'>Hardware Error: Printer was unable to print the selected file.</span>")
@@ -260,6 +261,29 @@
 			GLOB.using_map.bolt_saferooms()
 			to_chat(usr, "<span class='notice'>The console beeps, confirming the signal was sent to have the saferooms bolted.</span>")
 			ntnet_global.add_log("***[program.computer.get_network_tag()] bolted saferooms.***")
+		if("toggle_alert_border")
+			. = TRUE
+			if(is_autenthicated(user) && ntn_comm)
+				post_status("toggle_alert_border")
+		// [INF]
+		// Расширить до полноценного списка индивидуальных проков карты. Как реализовано например с эвакуацией
+		if("change_lights_auto")
+			if(!ntn_cont)
+				to_chat(usr, SPAN_WARNING("Консоль выдает предупреждающий звук. Кажется неполадки с сетью..."))
+				return
+			GLOB.using_map.reset_lights_automatics()
+		if("change_lockdown")
+			if(!ntn_cont)
+				to_chat(usr, SPAN_WARNING("Консоль выдает предупреждающий звук. Кажется неполадки с сетью..."))
+				return
+			GLOB.using_map.lockdown()
+			if(GLOB.using_map.lockdown)
+				ntnet_global.add_log("***[program.computer.get_network_tag()] активировал карантин на обьекте.***")
+				priority_announcement.Announce("Сохраняйте спокойствие и оставайтесь на местах. Врачи, инженеры, охрана - используйте карты доступа для временного открытия створок. На обьекте введен карантин.", "Введен карантин")
+			else
+				ntnet_global.add_log("***[program.computer.get_network_tag()] деактивировал карантин на обьекте.***")
+				priority_announcement.Announce("Карантин снят, возвращайтесь к обычному режиму передвижения. Проконсультируйтесь с главами, по ситуации на судне. Обратите внимание на текущий код угрозы.", "Карантин снят")
+		// [/INF]
 
 #undef STATE_DEFAULT
 #undef STATE_MESSAGELIST
@@ -318,7 +342,8 @@ var/last_message_id = 0
 			log_admin("STATUS: [key_name(usr)] set status screen message with: [data1] [data2]")
 		if("image")
 			status_signal.data["picture_state"] = data1
-
+		if("toggle_alert_border")
+			status_signal.data["toggle_alert_border"] = TRUE
 	frequency.post_signal(signal = status_signal)
 
 /proc/cancel_call_proc(var/mob/user)

@@ -4,8 +4,8 @@
 	icon = 'icons/obj/scrap/recycling.dmi'
 	icon_state = "grinder-o0"
 	layer = MOB_LAYER+1 // Overhead
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	use_power = 1
 	idle_power_usage = 300
 
@@ -53,7 +53,7 @@
 			cube.make_pile()
 
 /obj/machinery/pile_ripper/RefreshParts()
-	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		rating = M.rating
 
 /obj/machinery/pile_ripper/examine(mob/user)
@@ -77,14 +77,14 @@
 
 /obj/machinery/pile_ripper/attackby(obj/item/I, mob/user, params)
 	add_fingerprint(user)
-	if (istype(I, /obj/item/weapon/card/emag))
+	if (istype(I, /obj/item/card/emag))
 		emag_act(user)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	return ..()
 
 /obj/machinery/pile_ripper/emag_act(mob/user)
 	if(!emagged)
-		emagged = 1
+		emagged = TRUE
 		if(safety_mode)
 			safety_mode = 0
 			update_icon()
@@ -132,14 +132,14 @@
 	// Start shredding meat
 
 	var/slab_name = L.name
-	var/slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	var/slab_type = /obj/item/reagent_containers/food/snacks/meat
 
 	if(iscarbon(L))
 		if(istype(L,/mob/living/carbon/human))
-			slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
-			if(L.isMonkey())
-				slab_type = /obj/item/weapon/reagent_containers/food/snacks/meat/monkey
-		var/obj/item/weapon/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
+			slab_type = /obj/item/reagent_containers/food/snacks/meat/human
+			if(L.is_species(SPECIES_MONKEY))
+				slab_type = /obj/item/reagent_containers/food/snacks/meat/monkey
+		var/obj/item/reagent_containers/food/snacks/meat/new_meat = new slab_type(get_turf(get_step(src, 4)))
 		new_meat.name = "[slab_name] [new_meat.name]"
 		new_meat.reagents.add_reagent(/datum/reagent/nutriment, 10)
 	if(iscarbon(L))
@@ -149,4 +149,3 @@
 			C.adjustBruteLoss(45)
 		else
 			C.gib()
-

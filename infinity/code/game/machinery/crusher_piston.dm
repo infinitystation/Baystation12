@@ -6,9 +6,9 @@
 	desc = "A colossal piston used for crushing garbage."
 	icon = 'infinity/icons/obj/machines/crusher_base.dmi'
 	icon_state = "standalone"
-	anchored = 1
-	density = 1
-	opacity = 1
+	anchored = TRUE
+	density = TRUE
+	opacity = TRUE
 	//Just 300 Watts here. Power is drawn by the piston when it moves
 	use_power = 1
 	idle_power_usage = 300
@@ -58,17 +58,17 @@
 /*
 	//Create parts for crusher.
 	component_parts = list()
-	component_parts += new /obj/item/weapon/stock_parts/circuitboard/crusher(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/matter_bin(src)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
-	component_parts += new /obj/item/weapon/stock_parts/manipulator(src)
-	component_parts += new /obj/item/weapon/reagent_containers/glass/beaker(src)
-	component_parts += new /obj/item/weapon/reagent_containers/glass/beaker(src)
-	component_parts += new /obj/item/weapon/reagent_containers/glass/beaker(src)
+	component_parts += new /obj/item/stock_parts/circuitboard/crusher(src)
+	component_parts += new /obj/item/stock_parts/matter_bin(src)
+	component_parts += new /obj/item/stock_parts/matter_bin(src)
+	component_parts += new /obj/item/stock_parts/matter_bin(src)
+	component_parts += new /obj/item/stock_parts/matter_bin(src)
+	component_parts += new /obj/item/stock_parts/manipulator(src)
+	component_parts += new /obj/item/stock_parts/manipulator(src)
+	component_parts += new /obj/item/stock_parts/manipulator(src)
+	component_parts += new /obj/item/reagent_containers/glass/beaker(src)
+	component_parts += new /obj/item/reagent_containers/glass/beaker(src)
+	component_parts += new /obj/item/reagent_containers/glass/beaker(src)
 	RefreshParts()
 */
 	action_start_time = world.time
@@ -380,8 +380,8 @@
 	desc = "A colossal piston used for crushing garbage."
 	icon = 'icons/obj/machines/crusherpiston.dmi' //Placeholder TODO: Get a proper icon
 	icon_state = "piston_0"
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 	pixel_y = -64
 	var/stage = 0 //The stage of the piston
 	var/obj/machinery/crusher_base/crs_base //Crusher Base the piston is linked to
@@ -491,9 +491,9 @@
 /obj/effect/piston_blocker
 	name = "trash compactor piston"
 	desc = "A colossal piston used for crushing garbage."
-	density = 1
-	anchored = 1
-	opacity = 1
+	density = TRUE
+	anchored = TRUE
+	opacity = TRUE
 	mouse_opacity = 0
 
 //

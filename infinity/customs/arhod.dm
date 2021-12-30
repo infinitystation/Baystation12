@@ -14,7 +14,7 @@
 
 //a gun
 
-/obj/item/weapon/gun/energy/gun/secure/messith
+/obj/item/gun/energy/gun/secure/messith
 	name = "messith pistol"
 	desc = "Пистолет \"Мессит\" является усовершенствованной версией стандартного 'Сэрандаррита', переоборудованный \
 	под энерго-оружие. Данный пистолет выдаётся всем членам семьи 'Фусозай', как табельное оружие начиная со звания '\
@@ -36,19 +36,19 @@
 		)
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/gun/energy/gun/secure/messith/New()
+/obj/item/gun/energy/gun/secure/messith/New()
 	..()
 	Scale(0.8, 0.8)
 	Translate(-8, 0)
 
 /obj/item/custkit/messith
 	name = "messith customization kit"
-	input = /obj/item/weapon/gun/energy/gun/secure
-	output = /obj/item/weapon/gun/energy/gun/secure/messith
+	input = /obj/item/gun/energy/gun/secure
+	output = /obj/item/gun/energy/gun/secure/messith
 
 //zippo
 
-/obj/item/weapon/flame/lighter/zippo/custom/messotha
+/obj/item/flame/lighter/zippo/custom/messotha
 	name = "messotha zippo"
 	desc = "Темная зажигалка из, на удивление, теплого на ощупь металла с особой фиолетовой гравировкой. \
 	Выпускает необычное пурпурное пламя, непривычное для; природного явления. \

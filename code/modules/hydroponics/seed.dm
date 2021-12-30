@@ -12,7 +12,7 @@
 	var/roundstart                 // If set, seed will not display variety number.
 	var/mysterious                 // Only used for the random seed packets.
 	var/scanned                    // If it was scanned with a plant analyzer.
-	var/can_self_harvest = 0       // Mostly used for living mobs.
+	var/can_self_harvest = FALSE   // Mostly used for living mobs.
 	var/growth_stages = 0          // Number of stages the plant passes through before it is mature.
 	var/list/traits = list()       // Initialized in New()
 	var/list/mutants               // Possible predefined mutant varieties, if any.
@@ -25,6 +25,7 @@
 	var/has_mob_product
 	var/force_layer
 	var/req_CO2_moles    = 1.0// Moles of CO2 required for photosynthesis.
+	var/fruit_size = ITEM_SIZE_SMALL
 
 //[INF]
 	var/growing_icon	=	'icons/obj/hydroponics_growing.dmi'
@@ -99,10 +100,9 @@
 		return
 
 	var/datum/reagents/R = new/datum/reagents(100, GLOB.temp_reagents_holder)
-	if(chems.len)
-		for(var/rid in chems)
-			var/injecting = min(5,max(1,get_trait(TRAIT_POTENCY)/3))
-			R.add_reagent(rid,injecting)
+	for(var/rid in chems)
+		var/injecting = min(5,max(1,get_trait(TRAIT_POTENCY)/3))
+		R.add_reagent(rid,injecting)
 
 	var/datum/effect/effect/system/smoke_spread/chem/spores/S = new(name)
 	S.attach(T)
@@ -117,10 +117,10 @@
 		return
 
 	if(!istype(target))
-		if(istype(target, /mob/living/simple_animal/mouse))
+		if(istype(target, /mob/living/simple_animal/friendly/mouse))
 			new /obj/item/remains/mouse(get_turf(target))
 			qdel(target)
-		else if(istype(target, /mob/living/simple_animal/lizard))
+		else if(istype(target, /mob/living/simple_animal/friendly/lizard))
 			new /obj/item/remains/lizard(get_turf(target))
 			qdel(target)
 		return
@@ -158,15 +158,18 @@
 	if(!get_trait(TRAIT_STINGS))
 		return
 
-	if(chems && chems.len && target.reagents && length(target.organs))
+	if(length(chems) && target.reagents && length(target.organs))
 
 		var/obj/item/organ/external/affecting = pick(target.organs)
+		if (!affecting)
+			return
 
 		for(var/obj/item/clothing/C in list(target.head, target.wear_mask, target.wear_suit, target.w_uniform, target.gloves, target.shoes))
 			if(C && (C.body_parts_covered & affecting.body_part) && (C.item_flags & ITEM_FLAG_THICKMATERIAL))
 				affecting = null
 
-		if(!(target.species && target.species.species_flags & (SPECIES_FLAG_NO_EMBED|SPECIES_FLAG_NO_MINOR_CUT)))	affecting = null
+		if(!(target.species && target.species.species_flags & (SPECIES_FLAG_NO_EMBED|SPECIES_FLAG_NO_MINOR_CUT)))
+			affecting = null
 
 		if(affecting)
 			to_chat(target, "<span class='danger'>You are stung by \the [fruit] in your [affecting.name]!</span>")
@@ -455,12 +458,14 @@
 		consume_gasses = list()
 		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		consume_gasses[gas] = rand(3,9)
+		set_trait(TRAIT_CONSUME_GASSES, consume_gasses) //INF
 
 	if(prob(5))
 		exude_gasses = list()
 		var/gas = pick(GAS_OXYGEN,GAS_NITROGEN,GAS_PHORON,GAS_CO2)
 		exude_gasses[gas] = rand(3,9)
-
+		set_trait(TRAIT_EXUDE_GASSES, exude_gasses) //INF
+		
 	chems = list()
 	if(prob(80))
 		chems[/datum/reagent/nutriment] = list(rand(1,10),rand(10,20))
@@ -474,9 +479,11 @@
 			/datum/reagent/nanites,
 			/datum/reagent/water/holywater,
 			/datum/reagent/toxin/plantbgone,
-			/datum/reagent/chloralhydrate/beer2
+			/datum/reagent/chloralhydrate/beer2,
+			/datum/reagent/zombie
 			)
 		banned_chems += subtypesof(/datum/reagent/ethanol)
+		banned_chems += subtypesof(/datum/reagent/zombie)
 		banned_chems += subtypesof(/datum/reagent/tobacco)
 		banned_chems += typesof(/datum/reagent/drink)
 		banned_chems += typesof(/datum/reagent/nutriment)
@@ -616,6 +623,29 @@
 							source_turf.visible_message("<span class='notice'>\The [display_name]'s glow </span><font color='[get_trait(TRAIT_BIOLUM_COLOUR)]'>changes colour</font>!")
 					else
 						source_turf.visible_message("<span class='notice'>\The [display_name]'s glow dims...</span>")
+//INF START
+				if(prob(degree*5))		
+					if(prob(60))
+						if(!exude_gasses || prob(90))
+							exude_gasses = list()
+						var/gas = pickweight(list(GAS_METHYL_BROMIDE = 5,
+										GAS_OXYGEN = 10,
+										GAS_NITROGEN = 5,
+										GAS_CO2 = 10,
+										GAS_N2O = 5,
+										GAS_METHANE = 5,
+										GAS_CHLORINE = 5,
+										GAS_AMMONIA = 3,
+										GAS_ALIEN = 1,
+										GAS_HYDROGEN = 3,
+										GAS_HELIUM = 1,
+										GAS_PHORON = 1
+											))
+						exude_gasses[gas] = rand(1,10)
+					else
+						exude_gasses = null		
+					set_trait(TRAIT_EXUDE_GASSES, exude_gasses)
+//INF END
 			if(11)
 				set_trait(TRAIT_TELEPORTING,1)
 
@@ -633,7 +663,7 @@
 			for(var/trait in list(TRAIT_YIELD, TRAIT_ENDURANCE))
 				if(get_trait(trait) > 0) set_trait(trait,get_trait(trait),null,1,0.85)
 
-			if(!chems) chems = list()
+			LAZYINITLIST(chems)
 
 			var/list/gene_value = gene.values["[TRAIT_CHEMS]"]
 			for(var/rid in gene_value)
@@ -653,6 +683,7 @@
 					else
 						chems[rid][i] = gene_chem[i]
 
+		if(GENE_OUTPUT) //INF added row
 			var/list/new_gasses = gene.values["[TRAIT_EXUDE_GASSES]"]
 			if(islist(new_gasses))
 				if(!exude_gasses) exude_gasses = list()
@@ -660,16 +691,16 @@
 				for(var/gas in exude_gasses)
 					exude_gasses[gas] = max(1,round(exude_gasses[gas]*0.8))
 
-			gene.values["[TRAIT_EXUDE_GASSES]"] = null
-			gene.values["[TRAIT_CHEMS]"] = null
+//			gene.values["[TRAIT_EXUDE_GASSES]"] = null //INF commented out this
+//			gene.values["[TRAIT_CHEMS]"] = null //INF commented out this
 
 		if(GENE_DIET)
 			var/list/new_gasses = gene.values["[TRAIT_CONSUME_GASSES]"]
 			consume_gasses |= new_gasses
-			gene.values["[TRAIT_CONSUME_GASSES]"] = null
+//			gene.values["[TRAIT_CONSUME_GASSES]"] = null //INF commented out this
 		if(GENE_METABOLISM)
 			has_mob_product = gene.values["mob_product"]
-			gene.values["mob_product"] = null
+//			gene.values["mob_product"] = null //INF commented out this
 
 	for(var/trait in gene.values)
 		set_trait(trait,gene.values["[trait]"])
@@ -689,9 +720,9 @@
 	switch(genetype)
 		if(GENE_BIOCHEMISTRY)
 			P.values["[TRAIT_CHEMS]"] =        chems
-			P.values["[TRAIT_EXUDE_GASSES]"] = exude_gasses
 			traits_to_copy = list(TRAIT_POTENCY)
 		if(GENE_OUTPUT)
+			P.values["[TRAIT_EXUDE_GASSES]"] = exude_gasses //INF place changed, was in GENE_BIOCHEMISTRY
 			traits_to_copy = list(TRAIT_PRODUCES_POWER,TRAIT_BIOLUM)
 		if(GENE_ATMOSPHERE)
 			traits_to_copy = list(TRAIT_HEAT_TOLERANCE,TRAIT_LOWKPA_TOLERANCE,TRAIT_HIGHKPA_TOLERANCE)
@@ -760,14 +791,15 @@
 			if(has_mob_product)
 				product = new has_mob_product(get_turf(user),name)
 			else
-				product = new /obj/item/weapon/reagent_containers/food/snacks/grown(get_turf(user),name)
+				product = new /obj/item/reagent_containers/food/snacks/grown(get_turf(user),name)
+				product.w_class = fruit_size
 			. += product
 
 			if(get_trait(TRAIT_PRODUCT_COLOUR))
 				if(!istype(product, /mob))
 					product.color = get_trait(TRAIT_PRODUCT_COLOUR)
-					if(istype(product,/obj/item/weapon/reagent_containers/food))
-						var/obj/item/weapon/reagent_containers/food/food = product
+					if(istype(product,/obj/item/reagent_containers/food))
+						var/obj/item/reagent_containers/food/food = product
 						food.filling_color = get_trait(TRAIT_PRODUCT_COLOUR)
 
 			if(mysterious)
@@ -784,8 +816,8 @@
 			if(istype(product,/mob/living))
 				product.visible_message("<span class='notice'>The pod disgorges [product]!</span>")
 				handle_living_product(product)
-				if(istype(product,/mob/living/simple_animal/mushroom)) // Gross.
-					var/mob/living/simple_animal/mushroom/mush = product
+				if(istype(product,/mob/living/simple_animal/friendly/mushroom)) // Gross.
+					var/mob/living/simple_animal/friendly/mushroom/mush = product
 					mush.seed = src
 
 // When the seed in this machine mutates/is modified, the tray seed value

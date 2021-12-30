@@ -8,7 +8,7 @@
 	var/list/access_edit = list(list())                    //The access required to submit the report. See documentation below.
 	var/list/access = list(list())                         //The access required to view the report.
 	var/list/datum/report_field/fields = list()            //A list of fields the report comes with, in order that they should be displayed.
-	var/available_on_ntnet = 0                             //Whether this report type should show up on NTNet.
+	var/available_on_ntnet = FALSE                             //Whether this report type should show up on NTNet.
 	var/logo                                               //Can be set to a pencode logo for use with some display methods.
 
 /datum/computer_file/report/New()
@@ -22,7 +22,7 @@
 /*
 Access stuff. The report's access/access_edit should control whether it can be opened/submitted.
 For field editing or viewing, use the field's access/access_edit permission instead.
-The access system is based on "access patterns", lists of access values. 
+The access system is based on "access patterns", lists of access values.
 A user needs all access values in a pattern to be granted access.
 A user needs to only match one of the potentially several stored access patterns to be granted access.
 You must have access to have edit access.
@@ -113,7 +113,7 @@ If the override option is set to 0, the access supplied will instead be added as
 	return temp
 
 /datum/computer_file/report/proc/display_name()
-	return "Form [form_name]: [title]"
+	return "Форма [form_name]: [title]"
 
 //if access is given, will include access information by performing checks against it.
 /datum/computer_file/report/proc/generate_nano_data(list/given_access)

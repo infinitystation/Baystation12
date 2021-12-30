@@ -271,14 +271,14 @@
 	plane = MOB_PLANE
 	name = "cage"
 	desc = "An elongated cage with an unusual lever below."
-	density = 1
+	density = TRUE
 	var/contained
 
 /obj/structure/statue_cage/MouseDrop_T(atom/movable/dropping, mob/user)
 	if (istype(dropping, /mob/living/simple_animal/hostile/statue))
 		visible_message(SPAN_WARNING("[user] starts to put [dropping] into the cage."))
 		var/oloc = loc
-		if (do_mob(user, dropping, 5 SECONDS) && loc == oloc) // shitty but there's no good alternative
+		if (do_after(user, 5 SECONDS, dropping) && loc == oloc) // shitty but there's no good alternative
 			dropping.forceMove(src)
 			underlays = list(dropping)
 			visible_message(SPAN_NOTICE("[user] puts [dropping] in the cage."))

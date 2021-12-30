@@ -1,7 +1,7 @@
-/obj/item/weapon/storage/backpack/clown/full
+/obj/item/storage/backpack/clown/full
 	startswith = list(
 		/obj/item/clothing/shoes/clown_shoes,
 		/obj/item/clothing/mask/gas/clown_hat,
-		/obj/item/weapon/bikehorn,
+		/obj/item/bikehorn,
 		)
 	trade_blacklisted = TRUE

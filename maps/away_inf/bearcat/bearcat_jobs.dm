@@ -7,6 +7,7 @@
 	в глубинах неисследованного космоса. Капитан погиб, оставив Вас, некогда своего Первого Помощника на самого себя. Организуйте то, \
 	что осталось от вашего экипажа, и возможно, вам удастся продержаться достаточно долго, чтобы спастись или даже вернуться в порт."
 	required_language = LANGUAGE_SPACER
+	economic_power = 7
 
 /datum/job/submap/bearcat_crewman
 	title = "Independant Crewman"
@@ -17,7 +18,16 @@
 	в глубинах неисследованного космоса. Работайте сообща с Первым Помощником и оставшимся экипажем, и возможно, \
 	вам удастся продержаться достаточно долго, чтобы спастись или даже вернуться в порт."
 	required_language = LANGUAGE_SPACER
+	economic_power = 2
 
+/datum/job/submap/bearcat_captain/equip(var/mob/living/carbon/human/H)
+	setup_away_account(H)
+	return ..()
+	
+/datum/job/submap/bearcat_crewman/equip(var/mob/living/carbon/human/H)
+	setup_away_account(H)
+	return ..()
+	
 #define BEARCAT_OUTFIT_JOB_NAME(job_name) ("Bearcat - Job - " + job_name)
 
 /decl/hierarchy/outfit/job/bearcat
@@ -30,14 +40,14 @@
 
 /decl/hierarchy/outfit/job/bearcat/crew
 	name = BEARCAT_OUTFIT_JOB_NAME("Crew")
-	id_type = /obj/item/weapon/card/id/bearcat
+	id_types = list(/obj/item/card/id/bearcat)
 
 /decl/hierarchy/outfit/job/bearcat/captain
 	name = BEARCAT_OUTFIT_JOB_NAME("First Mate")
 	uniform = /obj/item/clothing/under/casual_pants/classicjeans
 	shoes = /obj/item/clothing/shoes/black
 	pda_type = /obj/item/modular_computer/pda/captain
-	id_type = /obj/item/weapon/card/id/bearcat_captain
+	id_types = list(/obj/item/card/id/bearcat_captain)
 
 /decl/hierarchy/outfit/job/bearcat/captain/post_equip(var/mob/living/carbon/human/H)
 	..()

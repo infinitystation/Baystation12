@@ -11,13 +11,13 @@
 			'infinity/sound/voice/gasp_female5.ogg', 'infinity/sound/voice/gasp_female6.ogg',
 			'infinity/sound/voice/gasp_female7.ogg'))
 	sounded_species = list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER,
-	SPECIES_MULE, SPECIES_BOOSTER,
+	SPECIES_MULE,
 	SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_EROSAN, SPECIES_TAJARA, SPECIES_RESOMI, SPECIES_VOX, SPECIES_SKRELL)
 
 /decl/emote/audible/whistle
 	emote_sound = 'infinity/sound/voice/whistle.ogg'
 	sounded_species = list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER,
-	SPECIES_MULE, SPECIES_BOOSTER,
+	SPECIES_MULE,
 	SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_EROSAN, SPECIES_TAJARA, SPECIES_RESOMI, SPECIES_VOX, SPECIES_IPC,
 	SPECIES_SKRELL)
 
@@ -34,7 +34,7 @@
 		'infinity/sound/voice/snore_5.ogg', 'infinity/sound/voice/snore_6.ogg',
 		'infinity/sound/voice/snore_7.ogg')
 	sounded_species = list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER,
-	SPECIES_MULE, SPECIES_BOOSTER,
+	SPECIES_MULE,
 	SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_EROSAN, SPECIES_TAJARA, SPECIES_RESOMI, SPECIES_VOX, SPECIES_SKRELL)
 
 /decl/emote/audible/yawn
@@ -56,7 +56,7 @@
 		MALE = 'infinity/sound/voice/cough_male.ogg',
 		FEMALE = 'infinity/sound/voice/cough_female.ogg')
 	sounded_species = list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER,
-	SPECIES_MULE, SPECIES_BOOSTER,
+	SPECIES_MULE,
 	SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_EROSAN, SPECIES_TAJARA, SPECIES_RESOMI, SPECIES_VOX, SPECIES_SKRELL)
 
 /decl/emote/audible/cough/resomi
@@ -75,13 +75,13 @@
 		MALE = 'infinity/sound/voice/sigh_male.ogg',
 		FEMALE = 'infinity/sound/voice/sigh_female.ogg')
 	sounded_species = list(SPECIES_HUMAN, SPECIES_VATGROWN, SPECIES_SPACER, SPECIES_TRITONIAN, SPECIES_GRAVWORLDER,
-	SPECIES_MULE, SPECIES_BOOSTER,
+	SPECIES_MULE,
 	SPECIES_UNATHI, SPECIES_YEOSA, SPECIES_EROSAN, SPECIES_TAJARA, SPECIES_RESOMI, SPECIES_VOX, SPECIES_SKRELL)
 
 /decl/emote/audible/laugh
 	emote_sound = list(
-		MALE = 'infinity/sound/voice/laugh_male_1.ogg',
-		FEMALE = 'infinity/sound/voice/laugh_female_2.ogg')
+		MALE = list('infinity/sound/voice/laugh_male_1.ogg', 'infinity/sound/voice/laugh_male_2.ogg', 'infinity/sound/voice/laugh_male_3.ogg'),
+		FEMALE = list('infinity/sound/voice/laugh_female_1.ogg', 'infinity/sound/voice/laugh_female_2.ogg', 'infinity/sound/voice/laugh_female_3.ogg'))
 	sounded_species = SOUNDED_SPECIES
 
 /decl/emote/audible/laugh/resomi

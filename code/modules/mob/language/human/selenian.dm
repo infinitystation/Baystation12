@@ -12,7 +12,7 @@
 		LANGUAGE_HUMAN_INDIAN = 25,
 		LANGUAGE_HUMAN_IBERIAN = 15,
 		LANGUAGE_HUMAN_RUSSIAN = 5,
-		LANGUAGE_LEGALESE = 15,
+		// LANGUAGE_LEGALESE = 15, // merge 02 05 2021
 		LANGUAGE_SPACER = 20,
 		LANGUAGE_HUMAN_AVALON = 25, //inf
 		LANGUAGE_HUMAN_MIRANIAN = 45, //inf
@@ -25,3 +25,4 @@
 		"hin", "deed", "accord", "caveat", "pledge", "rights", "et", "ex", "bono", "quo", "pro", "ad",
 		"ek", "aur", "ki", "ki", "ke", "de", "ki", "ne", "ek", "aar", "ain", "ki", "me", "dei", "dekh"
 	)
+	has_written_form = TRUE

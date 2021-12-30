@@ -27,7 +27,7 @@
 					D=Eval(D)
 					if(!isobject(D))
 						return null
-					if(!D.vars.Find(v.id.id_name))
+					if(!list_find(D.vars, v.id.id_name))
 						RaiseError(new/runtimeError/UndefinedVariable("[v.object.ToString()].[v.id.id_name]"))
 						return null
 					return Eval(D.vars[v.id.id_name])

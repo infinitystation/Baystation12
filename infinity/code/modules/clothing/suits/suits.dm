@@ -6,7 +6,7 @@
 	icon_state = "sc_labcoat"
 	item_state = "sc_labcoat"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
-	allowed = list(/obj/item/device/scanner/gas,/obj/item/stack/medical,/obj/item/weapon/reagent_containers/dropper,/obj/item/weapon/reagent_containers/syringe,/obj/item/weapon/reagent_containers/hypospray,/obj/item/device/scanner/health,/obj/item/device/flashlight/pen,/obj/item/weapon/reagent_containers/glass/bottle,/obj/item/weapon/reagent_containers/glass/beaker,/obj/item/weapon/reagent_containers/pill,/obj/item/weapon/storage/pill_bottle,/obj/item/weapon/paper)
+	allowed = list(/obj/item/device/scanner/gas,/obj/item/stack/medical,/obj/item/reagent_containers/dropper,/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/hypospray,/obj/item/device/scanner/health,/obj/item/device/flashlight/pen,/obj/item/reagent_containers/glass/bottle,/obj/item/reagent_containers/glass/beaker,/obj/item/reagent_containers/pill,/obj/item/storage/pill_bottle,/obj/item/paper)
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 50, rad = 0)
 
 /obj/item/clothing/suit/storage/toggle/civilian
@@ -42,7 +42,7 @@
 	armor = list(melee = 65, bullet = 30, laser = 50, energy = 10, bomb = 25, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	siemens_coefficient = 0.6
-	allowed = list(/obj/item/weapon/gun/energy,/obj/item/device/radio,/obj/item/weapon/reagent_containers/spray/pepper,/obj/item/weapon/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/weapon/gun/magnetic)
+	allowed = list(/obj/item/gun/energy,/obj/item/device/radio,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/gun/magnetic)
 
 /obj/item/clothing/suit/storage/tgbomber
 	name = "modern bomber jacket"
@@ -61,10 +61,10 @@
 	item_icons = list(slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
 	icon_state = "janitor_jacket"
 	body_parts_covered = UPPER_TORSO|ARMS
-	allowed = list(/obj/item/device/flashlight,/obj/item/device/lightreplacer,/obj/item/weapon/storage/bag/trash,/obj/item/weapon/grenade/chem_grenade/cleaner,/obj/item/weapon/reagent_containers/spray/cleaner, /obj/item/weapon/mop, /obj/item/weapon/reagent_containers/glass/bucket)
+	allowed = list(/obj/item/device/flashlight,/obj/item/device/lightreplacer,/obj/item/storage/bag/trash,/obj/item/grenade/chem_grenade/cleaner,/obj/item/reagent_containers/spray/cleaner, /obj/item/mop, /obj/item/reagent_containers/glass/bucket)
 
 /obj/item/clothing/suit/storage/tgbomber/militaryjacket
-	name = "military jacket"
+	name = "classic military jacket"
 	desc = "A canvas jacket styled classical American military garb. Feels sturdy, yet comfortable."
 	icon_state = "militaryjacket"
 
@@ -88,8 +88,84 @@
 	item_state = "admiral_tunic"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	valid_accessory_slots = list(ACCESSORY_SLOT_MEDAL)
-	allowed = list(/obj/item/weapon/gun/energy, /obj/item/weapon/gun/projectile, /obj/item/weapon/melee/baton)
+	allowed = list(/obj/item/gun/energy, /obj/item/gun/projectile, /obj/item/melee/baton)
 
 /obj/item/clothing/suit/storage/toggle/agent_jacket/security
 	name = "private security jacket"
 	desc = "A black leather jacket with \"SECURITY\" inscription at back. Belonged to a guard in a warehouse."
+
+
+/obj/item/clothing/suit/anime_white
+	name = "white dress"
+	desc = "Just a nice looking dress."
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi',
+		slot_r_hand_str = 'infinity/icons/mob/onmob/righthand.dmi',
+		slot_l_hand_str = 'infinity/icons/mob/onmob/lefthand.dmi')
+	icon_state = "anime_white"
+	item_state = "anime_white"
+
+/obj/item/clothing/suit/anime_blue
+	name = "blue dress"
+	desc = "Just a nice looking dress."
+	icon = 'infinity/icons/obj/clothing/obj_under.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi')
+	icon_state = "anime_blue"
+	item_state = "anime_blue"
+
+/obj/item/clothing/suit/snakeskin
+	name = "snakeskin coat"
+	desc = "A stylish snakeskin coat."
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi') //sprite by CeUvi#1236
+	icon_state = "snakeskin"
+	item_state = "snakeskin"
+	body_parts_covered = UPPER_TORSO|ARMS
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket/black
+	name = "black military jacket"
+	desc = "A canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_black"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket/white
+	name = "white military jacket"
+	desc = "A canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_white"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket/tan
+	name = "tan military jacket"
+	desc = "A canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_tan"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket/navy
+	name = "navy military jacket"
+	desc = "A canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_navy"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)
+
+/obj/item/clothing/suit/storage/tgbomber/militaryjacket/grey
+	name = "grey military jacket"
+	desc = "A canvas jacket. Feels sturdy, yet comfortable."
+	icon_state = "militaryjacket_grey"
+	icon = 'infinity/icons/obj/clothing/obj_suit.dmi'
+	item_icons = list(
+		slot_wear_suit_str = 'infinity/icons/mob/onmob/onmob_suit.dmi'
+	)

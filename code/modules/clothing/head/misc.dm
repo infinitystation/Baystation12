@@ -143,11 +143,18 @@
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
 	desc = "A working man's cap."
-	icon_state = "gentcap"
+	icon_state = "flatcap_white"
 	item_state_slots = list(
 		slot_l_hand_str = "det_hat",
 		slot_r_hand_str = "det_hat",
 		)
+	siemens_coefficient = 0.9
+
+
+/obj/item/clothing/head/mariner
+	name = "mariner's cap"
+	desc = "A cap loved by farmers, sailors and rabblerousers in the whole galaxy."
+	icon_state = "mariner_white"
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/head/pirate
@@ -193,6 +200,25 @@
 	desc = "For the gentleman of distinction."
 	body_parts_covered = 0
 
+/obj/item/clothing/head/bowlerhat/razor
+	name = "bowler-hat"
+	desc = "The brim of this hat is covered in thin razors."
+	sharp = TRUE
+	edge = TRUE
+	force = 10
+	throwforce = 60
+	throw_range = 9
+	throw_speed = 4
+	does_spin = FALSE
+	attack_verb = list("sliced", "torn", "cut")
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_PADDED
+		)
+
 /obj/item/clothing/head/beaverhat
 	name = "beaver hat"
 	icon_state = "beaver_hat"
@@ -207,6 +233,12 @@
 	name = "fedora"
 	icon_state = "fedora"
 	desc = "A sharp, stylish hat."
+
+/obj/item/clothing/head/panama
+	name = "panama hat"
+	icon_state = "panama"
+	desc = "A hat that makes you want to smuggle drugs."
+
 
 /obj/item/clothing/head/feathertrilby
 	name = "feather trilby"
@@ -346,3 +378,13 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	flash_protection = FLASH_PROTECTION_MAJOR
+
+/obj/item/clothing/head/beret/pcrc
+	name = "\improper PCRC beret"
+	desc = "A navy beret with the emblem of Proxima Centauri Risk Control, a private security firm. For agents that are more inclined towards style than safety."
+	icon_state = "beret_corporate_pcrc"
+
+/obj/item/clothing/head/beret/saare
+	name = "\improper SAARE beret"
+	desc = "A gray beret with the emblem of Strategic Assault and Asset Retention Enterprises, a private military corporation. For mercenaries that are more inclined towards style than safety."
+	icon_state = "beret_corporate_saare"

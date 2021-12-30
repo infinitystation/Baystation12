@@ -52,7 +52,7 @@
 	else
 		playsound(src, "heavystep", 20, 1)
 
-/obj/item/weapon/clothingbag/heph_set
+/obj/item/clothingbag/heph_set
 	name = "uniform package"
 	desc = "A utility bag stamped with a Hephaestus logo."
 	New()

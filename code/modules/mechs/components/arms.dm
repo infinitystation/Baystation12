@@ -8,6 +8,7 @@
 	var/action_delay = 15
 	var/obj/item/robot_parts/robot_component/actuator/motivator
 	power_use = 10
+	w_class = ITEM_SIZE_LARGE
 
 /obj/item/mech_component/manipulators/Destroy()
 	QDEL_NULL(motivator)
@@ -39,3 +40,10 @@
 	if(!motivator || !motivator.is_functional())
 		return SPAN_DANGER("disabled")
 	return ..()
+
+/obj/item/mech_component/manipulators/return_diagnostics(mob/user)
+	..()
+	if(motivator)
+		to_chat(user, SPAN_NOTICE(" Actuator Integrity: <b>[round((((motivator.max_dam - motivator.total_dam) / motivator.max_dam)) * 100)]%</b>"))
+	else
+		to_chat(user, SPAN_WARNING(" Actuator Missing or Non-functional."))

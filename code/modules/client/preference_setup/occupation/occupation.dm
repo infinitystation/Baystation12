@@ -22,29 +22,29 @@
 	sort_order = 1
 	var/datum/browser/panel
 
-/datum/category_item/player_setup_item/occupation/load_character(var/savefile/S)
-	from_file(S["alternate_option"], 	pref.alternate_option)
-	from_file(S["job_high"],			pref.job_high)
-	from_file(S["job_medium"],			pref.job_medium)
-	from_file(S["job_low"],				pref.job_low)
-	from_file(S["player_alt_titles"],	pref.player_alt_titles)
-	from_file(S["skills_saved"],		pref.skills_saved)
-	from_file(S["branches"],			pref.branches)
-	from_file(S["ranks"],				pref.ranks)
-	from_file(S["hiding_maps"],			pref.hiding_maps)
+/datum/category_item/player_setup_item/occupation/load_character(datum/pref_record_reader/R)
+	pref.alternate_option = R.read("alternate_option")
+	pref.job_high = R.read("job_high")
+	pref.job_medium = R.read("job_medium")
+	pref.job_low = R.read("job_low")
+	pref.player_alt_titles = R.read("player_alt_titles")
+	pref.skills_saved = R.read("skills_saved")
+	pref.branches = R.read("branches")
+	pref.ranks = R.read("ranks")
+	pref.hiding_maps = R.read("hiding_maps")
 	load_skills()
 
-/datum/category_item/player_setup_item/occupation/save_character(var/savefile/S)
+/datum/category_item/player_setup_item/occupation/save_character(datum/pref_record_writer/W)
 	save_skills()
-	to_file(S["alternate_option"],		pref.alternate_option)
-	to_file(S["job_high"],				pref.job_high)
-	to_file(S["job_medium"],			pref.job_medium)
-	to_file(S["job_low"],				pref.job_low)
-	to_file(S["player_alt_titles"],		pref.player_alt_titles)
-	to_file(S["skills_saved"],			pref.skills_saved)
-	to_file(S["branches"],				pref.branches)
-	to_file(S["ranks"],					pref.ranks)
-	to_file(S["hiding_maps"],			pref.hiding_maps)
+	W.write("alternate_option", pref.alternate_option)
+	W.write("job_high", pref.job_high)
+	W.write("job_medium", pref.job_medium)
+	W.write("job_low", pref.job_low)
+	W.write("player_alt_titles", pref.player_alt_titles)
+	W.write("skills_saved", pref.skills_saved)
+	W.write("branches", pref.branches)
+	W.write("ranks", pref.ranks)
+	W.write("hiding_maps", pref.hiding_maps)
 
 /datum/category_item/player_setup_item/occupation/sanitize_character()
 	if(!istype(pref.job_medium))		pref.job_medium = list()
@@ -156,6 +156,8 @@
 					bad_message = "<b>\[UNAVAILABLE]</b>"
 				else if(jobban_isbanned(user, title))
 					bad_message = "<b>\[BANNED]</b>"
+				else if (!job.is_species_whitelist_allowed(user.client))
+					bad_message = "\[WHITELIST RESTRICTED ([job.use_species_whitelist])]"
 				else if(!job.player_old_enough(user.client))
 					var/available_in_days = job.available_in_days(user.client)
 					bad_message = "\[IN [(available_in_days)] DAYS]"
@@ -328,7 +330,7 @@
 				set_to = JOB_LEVEL_NEVER
 			else if(set_to > JOB_LEVEL_NEVER)
 				set_to = JOB_LEVEL_HIGH
-		if(SetJob(user, set_job, set_to)) 
+		if(SetJob(user, set_job, set_to))
 			return (pref.equip_preview_mob ? TOPIC_REFRESH_UPDATE_PREVIEW : TOPIC_REFRESH)
 
 	else if(href_list["char_branch"])
@@ -374,10 +376,9 @@
 			return
 		var/value = text2num(href_list["newvalue"])
 		update_skill_value(J, S, value)
-		pref.ShowChoices(user) //Manual refresh to allow us to focus the panel, not the main window.
 		panel.set_content(generate_skill_content(J))
 		panel.open()
-		winset(user, panel.window_id, "focus=1") //Focuses the panel.
+		return TOPIC_REFRESH
 
 	else if(href_list["skillinfo"])
 		var/decl/hierarchy/skill/S = locate(href_list["skillinfo"])
@@ -393,7 +394,7 @@
 		show_browser(user, jointext(HTML, null), "window=\ref[user]skillinfo")
 
 	else if(href_list["job_info"])
-		
+
 		var/rank = href_list["job_info"]
 		var/datum/job/job = SSjobs.get_by_title(rank)
 
@@ -405,11 +406,11 @@
 		send_rsc(user, job.get_job_icon(), "job[ckey(rank)].png")
 		dat += "<img src=job[ckey(rank)].png width=96 height=96 style='float:left;'>"
 		if(job.department)
-			dat += "<b>Department:</b> [job.department]."
+			dat += "<b>Департамент:</b> [job.department]."
 			if(job.head_position)
-				dat += "You are in charge of this department."
+				dat += "Вы являетесь главой департамента."
 
-		dat += "You answer to <b>[job.supervisors]</b> normally."
+		dat += "Вы подчиняетесь <b>[job.supervisors]</b>."
 
 		if(job.allowed_branches)
 			dat += "You can be of following ranks:"
@@ -430,7 +431,7 @@
 
 	else if(href_list["job_wiki"])
 		var/rank = href_list["job_wiki"]
-		open_link(user,"[config.wikiurl][rank]")
+		send_link(user,"[config.wikiurl][rank]")
 
 	return ..()
 
@@ -442,7 +443,7 @@
 		pref.player_alt_titles[job.title] = new_title
 
 /datum/category_item/player_setup_item/occupation/proc/SetJob(mob/user, role, level)
-	
+
 	level = Clamp(level, JOB_LEVEL_HIGH, JOB_LEVEL_NEVER)
 	var/datum/job/job = SSjobs.get_by_title(role, TRUE)
 	if(!job)

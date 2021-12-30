@@ -5,6 +5,9 @@
 	name = "skrellian recon hardsuit chestpiece"
 	desc = "A powerful recon hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
 	species_restricted = list(SPECIES_SKRELL)
+	sprite_sheets = list(
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_chest_rig_skrell.dmi'
+	)
 
 /obj/item/clothing/head/helmet/space/rig/ert/skrell
 	name = "skrellian recon hardsuit helmet"
@@ -12,26 +15,33 @@
 	light_overlay = "helmet_light_dual"
 	species_restricted = list(SPECIES_SKRELL)
 	sprite_sheets = list(
-		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_skrell.dmi'
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_head_rig_skrell.dmi'
 	)
 
 /obj/item/clothing/shoes/magboots/rig/ert/skrell
 	name = "skrellian recon hardsuit boots"
 	desc = "A powerful recon hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
 	species_restricted = list(SPECIES_SKRELL)
+	sprite_sheets = list(
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_feet_rig_skrell.dmi'
+	)
 
 /obj/item/clothing/gloves/rig/ert/skrell
 	name = "skrellian recon hardsuit gloves"
 	desc = "A powerful recon hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
+	siemens_coefficient = 0
 	species_restricted = list(SPECIES_SKRELL)
+	sprite_sheets = list(
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_hands_rig_skrell.dmi'
+	)
 
 
 
 //Skrell Baseline Suit
-/obj/item/weapon/rig/skrell
+/obj/item/rig/skrell
 	name = "skrellian recon hardsuit"
 	desc = "A powerful recon hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
-	icon_state = "hazard_rig"
+	icon_state = "skrell_standard_rig"
 	item_state = null
 	suit_type = "recon hardsuit"
 	armor = list(
@@ -46,20 +56,23 @@
 	online_slowdown = 0
 	offline_slowdown = 1
 	equipment_overlay_icon = null
-	air_type = /obj/item/weapon/tank/skrell
-	cell_type = /obj/item/weapon/cell/skrell
+	air_type = /obj/item/tank/skrell
+	cell_type = /obj/item/cell/skrell
 	chest_type = /obj/item/clothing/suit/space/rig/ert/skrell
 	helm_type = /obj/item/clothing/head/helmet/space/rig/ert/skrell
 	boot_type = /obj/item/clothing/shoes/magboots/rig/ert/skrell
 	glove_type = /obj/item/clothing/gloves/rig/ert/skrell
 	allowed = list(
-		/obj/item/weapon/gun,
+		/obj/item/gun,
 		/obj/item/ammo_magazine,
 		/obj/item/device/flashlight,
-		/obj/item/weapon/tank,
+		/obj/item/tank,
 		/obj/item/device/suit_cooling_unit
 	)
 	update_visible_name = TRUE
+	sprite_sheets = list(
+		SPECIES_SKRELL = 'icons/mob/species/skrell/onmob_back_rig_skrell.dmi'
+	)
 	initial_modules = list(
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/chem_dispenser/skrell,
@@ -69,10 +82,10 @@
 	req_access = list("ACCESS_SKRELLSCOUT")
 
 //Skrell Engineering Suit
-/obj/item/weapon/rig/skrell/eng
+/obj/item/rig/skrell/eng
 	name = "skrellian engineering hardsuit"
 	desc = "A powerful engineering hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
-	icon_state = "ert_engineer_rig"
+	icon_state = "skrell_eng_rig"
 	initial_modules = list(
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/chem_dispenser/skrell,
@@ -85,10 +98,10 @@
 	)
 
 //Skrell Medical Suit
-/obj/item/weapon/rig/skrell/med
+/obj/item/rig/skrell/med
 	name = "skrellian medical hardsuit"
 	desc = "A powerful medical hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
-	icon_state = "ert_medical_rig"
+	icon_state = "skrell_med_rig"
 	initial_modules = list(
 		/obj/item/rig_module/vision/nvg,
 		/obj/item/rig_module/chem_dispenser/skrell,
@@ -100,10 +113,10 @@
 	)
 
 //Skrell Combat Suit
-/obj/item/weapon/rig/skrell/sec
+/obj/item/rig/skrell/sec
 	name = "skrellian combat hardsuit"
 	desc = "A powerful combat hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
-	icon_state = "ert_security_rig"
+	icon_state = "skrell_standard_rig"
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RESISTANT,
@@ -122,10 +135,10 @@
 	)
 
 //Skrell Command Suit
-/obj/item/weapon/rig/skrell/cmd
+/obj/item/rig/skrell/cmd
 	name = "skrellian command hardsuit"
 	desc = "A powerful command hardsuit with integrated power supply and atmosphere. It's impressive design perfectly tailors to the user's body."
-	icon_state = "ert_commander_rig"
+	icon_state = "skrell_com_rig"
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RESISTANT,
@@ -175,7 +188,7 @@
 	)
 
 //Skrell Oxygen Generator
-/obj/item/weapon/tank/skrell
+/obj/item/tank/skrell
 	name = "skrellian gas reactor"
 	desc = "A skrellian gas processing plant that continuously synthesises oxygen."
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
@@ -184,13 +197,13 @@
 	var/gas_regen_amount = 1
 	var/gas_regen_cap = 75
 
-/obj/item/weapon/tank/skrell/Initialize()
+/obj/item/tank/skrell/Initialize()
 	starting_pressure = list("[refill_gas_type]" = 6 * ONE_ATMOSPHERE)
 	. = ..()
 
-/obj/item/weapon/tank/skrell/Process()
+/obj/item/tank/skrell/Process()
 	..()
-	var/obj/item/weapon/rig/holder = loc
+	var/obj/item/rig/holder = loc
 	if(air_contents.total_moles < gas_regen_cap && istype(holder) && holder.cell && holder.cell.use(charge_cost))
 		air_contents.adjust_gas(refill_gas_type, gas_regen_amount)
 
@@ -212,7 +225,7 @@
 	interface_desc = "An electrical cutting torch of Skrell design."
 
 // Self-charging power cell.
-/obj/item/weapon/cell/skrell
+/obj/item/cell/skrell
 	name = "skrellian microfusion cell"
 	desc = "An impossibly tiny fusion power engine of Skrell design."
 	icon = 'icons/obj/ascent.dmi'
@@ -221,14 +234,14 @@
 	w_class = ITEM_SIZE_NORMAL
 	var/recharge_amount = 12
 
-/obj/item/weapon/cell/skrell/Initialize()
+/obj/item/cell/skrell/Initialize()
 	START_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/item/weapon/cell/skrell/Destroy()
+/obj/item/cell/skrell/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/item/weapon/cell/skrell/Process()
+/obj/item/cell/skrell/Process()
 	if(charge < maxcharge)
 		give(recharge_amount)

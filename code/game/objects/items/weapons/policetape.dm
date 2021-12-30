@@ -36,9 +36,9 @@ var/list/tape_roll_applications = list()
 	name = "tape"
 	icon = 'icons/policetape.dmi'
 	icon_state = "tape"
-	layer = ABOVE_DOOR_LAYER
+	layer = BASE_ABOVE_OBJ_LAYER
 	randpixel = 0
-	anchored = 1
+	anchored = TRUE
 	var/lifted = 0
 	var/crumpled = 0
 	var/tape_dir = 0
@@ -206,12 +206,14 @@ var/list/tape_roll_applications = list()
 				for(var/dir in list(NORTH, SOUTH))
 					if (possible_dirs & dir)
 						TP.tape_dir += dir
+				TP.add_fingerprint(user)
 				TP.update_icon()
 			if(possible_dirs & (EAST|WEST))
 				var/obj/item/tape/TP = new tape_type(start)
 				for(var/dir in list(EAST, WEST))
 					if (possible_dirs & dir)
 						TP.tape_dir += dir
+				TP.add_fingerprint(user)
 				TP.update_icon()
 			start = null
 			update_icon()
@@ -227,7 +229,7 @@ var/list/tape_roll_applications = list()
 
 		var/can_place = 1
 		while (can_place)
-			if(cur.density == 1)
+			if(cur.density)
 				can_place = 0
 			else if (istype(cur, /turf/space))
 				can_place = 0
@@ -271,6 +273,7 @@ var/list/tape_roll_applications = list()
 					break
 			if(!tapetest)
 				var/obj/item/tape/T = new tape_type(cur)
+				T.add_fingerprint(user)
 				T.tape_dir = tape_dir
 				T.update_icon()
 				if(tape_dir & SOUTH)
@@ -290,6 +293,7 @@ var/list/tape_roll_applications = list()
 	if (istype(A, /obj/machinery/door/airlock))
 		var/turf/T = get_turf(A)
 		var/obj/item/tape/P = new tape_type(T)
+		P.add_fingerprint(user)
 		P.update_icon()
 		P.layer = ABOVE_DOOR_LAYER
 		to_chat(user, "<span class='notice'>You finish placing \the [src].</span>")
@@ -328,7 +332,7 @@ var/list/tape_roll_applications = list()
 			crumple()
 	return ..(mover)
 
-/obj/item/tape/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/tape/attackby(obj/item/W as obj, mob/user as mob)
 	breaktape(user)
 
 /obj/item/tape/attack_hand(mob/user as mob)

@@ -1,4 +1,4 @@
-/obj/item/weapon/cell/bluespace
+/obj/item/cell/bluespace
 	name = "bluespace power cell"
 	desc = "This special experimental power cell has both very large capacity, and ability to recharge itself by draining power from contained bluespace pocket."
 	origin_tech = list(TECH_POWER = 7, TECH_BLUESPACE = 7)

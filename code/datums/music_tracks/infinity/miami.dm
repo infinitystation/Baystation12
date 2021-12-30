@@ -1,6 +1,6 @@
-/music_track/miami
-	artist = "Jasper Byrne"
+/decl/audio/track/miami
+	author = "Jasper Byrne"
 	title = "Miami"
-	album = "Final Chapter"
-	song = 'infinity/sound/music/JohnnyCash_Hurt.ogg'
+	collection =  "Final Chapter"
+	source = 'infinity/sound/music/JohnnyCash_Hurt.ogg'
 	license = /decl/license/grandfathered

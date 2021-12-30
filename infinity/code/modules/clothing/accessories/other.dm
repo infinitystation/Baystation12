@@ -2,7 +2,7 @@
 	. = ..()
 
 	for(var/i = 0, i < slots, i++)
-		new /obj/item/ammo_casing/shotgun/pellet(hold)
+		new /obj/item/ammo_casing/shotgun/pellet(src)
 
 //Sprites from tgstation, specially for Parasoul's custom-item
 /obj/item/clothing/accessory/necklace/talisman

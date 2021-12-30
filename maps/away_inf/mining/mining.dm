@@ -41,7 +41,7 @@
 	accessibility_weight = 10
 	generate_mining_by_z = 1
 	apc_test_exempt_areas = list(
-//		/area/outpost/abandoned = NO_SCRUBBER,
+		/area/outpost/abandoned = NO_SCRUBBER,
 		/area/mine/explored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/mine/unexplored = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/outpost/mining/solar = NO_SCRUBBER|NO_VENT|NO_APC,

@@ -5,7 +5,7 @@
 /*
  * BASE TYPE
  */
-/obj/item/weapon/rig/command
+/obj/item/rig/command
 	name = "command HCM"
 	suit_type = "command hardsuit"
 	icon = 'maps/torch/icons/obj/uniques.dmi'
@@ -30,12 +30,12 @@
 	glove_type = /obj/item/clothing/gloves/rig/command
 
 	req_access = list(access_heads) //bridge
-	allowed = list(/obj/item/weapon/gun,
+	allowed = list(/obj/item/gun,
 				   /obj/item/ammo_magazine,
 				   /obj/item/device/flashlight,
-				   /obj/item/weapon/tank,
+				   /obj/item/tank,
 				   /obj/item/device/suit_cooling_unit,
-				   /obj/item/weapon/storage/secure/briefcase)
+				   /obj/item/storage/secure/briefcase)
 
 /obj/item/clothing/head/helmet/space/rig/command
 	light_overlay = "helmet_light_dual"
@@ -60,7 +60,7 @@
 	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC, SPECIES_TAJARA, SPECIES_RESOMI)
 
 
-/obj/item/weapon/rig/command/equipped
+/obj/item/rig/command/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
@@ -70,7 +70,7 @@
 /*
  * HEAD OF PERSONELL
  */
-/obj/item/weapon/rig/command/hop
+/obj/item/rig/command/hop
 	name = "HoP's HCM"
 	suit_type = "advanced command hardsuit"
 	desc = "A specialized hardsuit rig control module issued to ranking personnel command staff of the NanoTrasen and their peers."
@@ -88,7 +88,7 @@
 	chest_type = /obj/item/clothing/suit/space/rig/command/hop
 	helm_type = /obj/item/clothing/head/helmet/space/rig/command/hop
 
-	allowed = list(/obj/item/weapon/gun, /obj/item/ammo_magazine, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit, /obj/item/weapon/storage/secure/briefcase)
+	allowed = list(/obj/item/gun, /obj/item/ammo_magazine, /obj/item/device/flashlight, /obj/item/tank, /obj/item/device/suit_cooling_unit, /obj/item/storage/secure/briefcase)
 	req_access = list(access_hop)
 
 /obj/item/clothing/head/helmet/space/rig/command/hop
@@ -96,7 +96,7 @@
 /obj/item/clothing/suit/space/rig/command/hop
 	icon_state = "command_XO_rig"
 
-/obj/item/weapon/rig/command/hop/equipped
+/obj/item/rig/command/hop/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash/advanced,
@@ -106,7 +106,7 @@
 /*
  * COMMANDING OFFICER
  */
-/obj/item/weapon/rig/command/captain
+/obj/item/rig/command/captain
 	name = "captain's HCM"
 	suit_type = "advanced command hardsuit"
 	desc = "A specialized hardsuit rig control module issued to captains of the NanoTrasen."
@@ -123,7 +123,7 @@
 
 	chest_type = /obj/item/clothing/suit/space/rig/command/captain
 	helm_type = /obj/item/clothing/head/helmet/space/rig/command/captain
-	allowed = list(/obj/item/weapon/gun, /obj/item/ammo_magazine, /obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/suit_cooling_unit, /obj/item/weapon/storage/secure/briefcase)
+	allowed = list(/obj/item/gun, /obj/item/ammo_magazine, /obj/item/device/flashlight, /obj/item/tank, /obj/item/device/suit_cooling_unit, /obj/item/storage/secure/briefcase)
 
 	req_access = list(access_captain)
 
@@ -132,7 +132,7 @@
 /obj/item/clothing/suit/space/rig/command/captain
 	icon_state = "command_CO_rig"
 
-/obj/item/weapon/rig/command/captain/equipped
+/obj/item/rig/command/captain/equipped
 	initial_modules = list(
 //INF		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
@@ -143,7 +143,7 @@
 /*
  * CHIEF MEDICAL OFFICER
  */
-/obj/item/weapon/rig/command/cmo
+/obj/item/rig/command/cmo
 	name = "CMO's HCM"
 	suit_type = "medical command hardsuit"
 	desc = "A specialized hardsuit rig control module issued to ranking medical command staff of the NanoTrasen and their peers."
@@ -159,12 +159,12 @@
 	chest_type = /obj/item/clothing/suit/space/rig/command/cmo
 	helm_type = /obj/item/clothing/head/helmet/space/rig/command/cmo
 
-	allowed = list(/obj/item/weapon/gun,
+	allowed = list(/obj/item/gun,
 				   /obj/item/ammo_magazine,
 				   /obj/item/device/flashlight,
-				   /obj/item/weapon/tank,
+				   /obj/item/tank,
 			 	   /obj/item/device/suit_cooling_unit,
-				   /obj/item/weapon/storage/firstaid,
+				   /obj/item/storage/firstaid,
 				   /obj/item/device/scanner/health,
 				   /obj/item/stack/medical,
 				   /obj/item/roller)
@@ -178,7 +178,7 @@
 	icon_state = "command_med_rig"
 
 
-/obj/item/weapon/rig/command/cmo/equipped
+/obj/item/rig/command/cmo/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
@@ -191,7 +191,7 @@
 /*
 * CHIEF OF SECURITY
 */
-/obj/item/weapon/rig/command/hos
+/obj/item/rig/command/hos
 	name = "HoS' HCM"
 	suit_type = "security command hardsuit"
 	desc = "A specialized hardsuit rig control module issued to ranking security command staff of the NanoTrasen and their peers."
@@ -212,13 +212,13 @@
 	boot_type = /obj/item/clothing/shoes/magboots/rig/command/hos
 	glove_type = /obj/item/clothing/gloves/rig/command/hos
 
-	allowed = list(/obj/item/weapon/gun,
+	allowed = list(/obj/item/gun,
 	 			  /obj/item/ammo_magazine,
-	  			  /obj/item/weapon/handcuffs,
+	  			  /obj/item/handcuffs,
 	   			  /obj/item/device/flashlight,
-	    		  /obj/item/weapon/tank,
+	    		  /obj/item/tank,
 				  /obj/item/device/suit_cooling_unit,
-				  /obj/item/weapon/melee/baton)
+				  /obj/item/melee/baton)
 
 	req_access = list(access_hos)
 
@@ -247,7 +247,7 @@
 	species_restricted = list(SPECIES_HUMAN)
 
 
-/obj/item/weapon/rig/command/hos/equipped
+/obj/item/rig/command/hos/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
@@ -257,7 +257,7 @@
 /*
 * CHIEF SCIENCE OFFICER
 */
-/obj/item/weapon/rig/command/science
+/obj/item/rig/command/science
 	name = "research command HCM"
 	suit_type = "research command hardsuit"
 	desc = "A specialized hardsuit rig control module issued to ranking research officers of the Expeditionary Corps."
@@ -275,23 +275,23 @@
 	chest_type = /obj/item/clothing/suit/space/rig/command/science
 	helm_type = /obj/item/clothing/head/helmet/space/rig/command/science
 
-	allowed = list(/obj/item/weapon/gun,
+	allowed = list(/obj/item/gun,
 				   /obj/item/ammo_magazine,
 				   /obj/item/device/flashlight,
-				   /obj/item/weapon/tank,
+				   /obj/item/tank,
 				   /obj/item/device/suit_cooling_unit,
 			       /obj/item/stack/flag,
-				   /obj/item/weapon/storage/excavation,
+				   /obj/item/storage/excavation,
 				   /obj/item/device/scanner/health,
 				   /obj/item/device/measuring_tape,
 				   /obj/item/device/ano_scanner,
 				   /obj/item/device/depth_scanner,
 				   /obj/item/device/core_sampler,
 				   /obj/item/device/gps,
-				   /obj/item/weapon/pinpointer/radio,
+				   /obj/item/pinpointer/radio,
 				   /obj/item/device/radio/beacon,
-				   /obj/item/weapon/pickaxe/xeno,
-				   /obj/item/weapon/storage/bag/fossils,
+				   /obj/item/pickaxe/xeno,
+				   /obj/item/storage/bag/fossils,
 				   /obj/item/rig_module/grenade_launcher/light)
 
 	req_access = list(access_rd)
@@ -306,7 +306,7 @@
 /obj/item/clothing/gloves/rig/command/science
 
 
-/obj/item/weapon/rig/command/science/equipped
+/obj/item/rig/command/science/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,
@@ -317,7 +317,7 @@
 /*
 * EXPLORATION
 */
-/obj/item/weapon/rig/exploration
+/obj/item/rig/exploration
 	name = "heavy exploration HCM"
 	suit_type = "heavy exploration hardsuit"
 	desc = "Expeditionary Corps' Exoplanet Exploration Armored Unit, A-Unit for short. Built for more hostile (and hungry) environments, it features additional armor and powered exoskeleton."
@@ -337,10 +337,10 @@
 	boot_type = /obj/item/clothing/shoes/magboots/rig/command
 	glove_type = /obj/item/clothing/gloves/rig/command
 
-	allowed = list(/obj/item/weapon/gun,
+	allowed = list(/obj/item/gun,
 				   /obj/item/ammo_magazine,
 				   /obj/item/device/flashlight,
-				   /obj/item/weapon/tank,
+				   /obj/item/tank,
 				   /obj/item/device/suit_cooling_unit)
 
 	online_slowdown = 0.50
@@ -353,7 +353,7 @@
 	light_overlay = "yellow_double_light"
 	brightness_on = 0.8
 
-/obj/item/weapon/rig/exploration/equipped
+/obj/item/rig/exploration/equipped
 	initial_modules = list(
 		/obj/item/rig_module/maneuvering_jets,
 		/obj/item/rig_module/device/flash,

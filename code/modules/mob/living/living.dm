@@ -5,6 +5,13 @@
 	else
 		add_to_living_mob_list()
 
+	selected_image = image(icon('icons/misc/buildmode.dmi'), loc = src, icon_state = "ai_sel")
+
+/mob/living/examine(mob/user, distance, infix, suffix)
+	. = ..()
+	if (admin_paralyzed)
+		to_chat(user, SPAN_DEBUG("OOC: They have been paralyzed by staff. Please avoid interacting with them unless cleared to do so by staff."))
+
 //mob verbs are faster than object verbs. See mob/verb/examine.
 /mob/living/verb/pulled(atom/movable/AM as mob|obj in oview(1))
 	set name = "Pull"
@@ -109,11 +116,11 @@ default behaviour is:
 						to_chat(src, "<span class='danger'>You fail to push [tmob]'s fat ass out of the way.</span>")
 						now_pushing = 0
 						return
-				if(tmob.r_hand && istype(tmob.r_hand, /obj/item/weapon/shield/riot))
+				if(tmob.r_hand && istype(tmob.r_hand, /obj/item/shield/riot))
 					if(prob(99))
 						now_pushing = 0
 						return
-				if(tmob.l_hand && istype(tmob.l_hand, /obj/item/weapon/shield/riot))
+				if(tmob.l_hand && istype(tmob.l_hand, /obj/item/shield/riot))
 					if(prob(99))
 						now_pushing = 0
 						return
@@ -164,7 +171,7 @@ default behaviour is:
 
 /proc/swap_density_check(var/mob/swapper, var/mob/swapee)
 	var/turf/T = get_turf(swapper)
-	if(T.density)
+	if(T?.density)
 		return 1
 	for(var/atom/movable/A in T)
 		if(A == swapper)
@@ -190,12 +197,6 @@ default behaviour is:
 
 	return can_move_mob(tmob, 1, 0)
 
-/mob/living/verb/succumb()
-	set hidden = 1
-	if ((src.health < src.maxHealth/2)) // Health below half of maxhealth.
-		src.adjustBrainLoss(src.health + src.maxHealth * 2) // Deal 2x health in BrainLoss damage, as before but variable.
-		updatehealth()
-		to_chat(src, "<span class='notice'>You have given up life and succumbed to death.</span>")
 
 /mob/living/proc/updatehealth()
 	if(status_flags & GODMODE)
@@ -310,41 +311,41 @@ default behaviour is:
 	return
 
 //Recursive function to find everything a mob is holding.
-/mob/living/get_contents(var/obj/item/weapon/storage/Storage = null)
+/mob/living/get_contents(var/obj/item/storage/Storage = null)
 	var/list/L = list()
 
 	if(Storage) //If it called itself
 		L += Storage.return_inv()
 
 		//Leave this commented out, it will cause storage items to exponentially add duplicate to the list
-		//for(var/obj/item/weapon/storage/S in Storage.return_inv()) //Check for storage items
+		//for(var/obj/item/storage/S in Storage.return_inv()) //Check for storage items
 		//	L += get_contents(S)
 
-		for(var/obj/item/weapon/gift/G in Storage.return_inv()) //Check for gift-wrapped items
+		for(var/obj/item/gift/G in Storage.return_inv()) //Check for gift-wrapped items
 			L += G.gift
-			if(istype(G.gift, /obj/item/weapon/storage))
+			if(istype(G.gift, /obj/item/storage))
 				L += get_contents(G.gift)
 
 		for(var/obj/item/smallDelivery/D in Storage.return_inv()) //Check for package wrapped items
 			L += D.wrapped
-			if(istype(D.wrapped, /obj/item/weapon/storage)) //this should never happen
+			if(istype(D.wrapped, /obj/item/storage)) //this should never happen
 				L += get_contents(D.wrapped)
 		return L
 
 	else
 
 		L += src.contents
-		for(var/obj/item/weapon/storage/S in src.contents)	//Check for storage items
+		for(var/obj/item/storage/S in src.contents)	//Check for storage items
 			L += get_contents(S)
 
-		for(var/obj/item/weapon/gift/G in src.contents) //Check for gift-wrapped items
+		for(var/obj/item/gift/G in src.contents) //Check for gift-wrapped items
 			L += G.gift
-			if(istype(G.gift, /obj/item/weapon/storage))
+			if(istype(G.gift, /obj/item/storage))
 				L += get_contents(G.gift)
 
 		for(var/obj/item/smallDelivery/D in src.contents) //Check for package wrapped items
 			L += D.wrapped
-			if(istype(D.wrapped, /obj/item/weapon/storage)) //this should never happen
+			if(istype(D.wrapped, /obj/item/storage)) //this should never happen
 				L += get_contents(D.wrapped)
 		return L
 
@@ -375,11 +376,12 @@ default behaviour is:
 	src.updatehealth()
 
 // damage ONE external organ, organ gets randomly selected from damaged ones.
-/mob/living/proc/take_organ_damage(var/brute, var/burn, var/emp=0)
-	if(status_flags & GODMODE)	return 0	//godmode
+/mob/living/proc/take_organ_damage(brute = 0, burn = 0, flags = 0)
+	if(status_flags & GODMODE || !brute && !burn)
+		return
 	adjustBruteLoss(brute)
 	adjustFireLoss(burn)
-	src.updatehealth()
+	updatehealth()
 
 // heal MANY external organs, in random order
 /mob/living/proc/heal_overall_damage(var/brute, var/burn)
@@ -507,15 +509,15 @@ default behaviour is:
 	set category = "OOC"
 	set src in view()
 
-	if(config.allow_Metadata)
-		if(ooc_notes)
-			to_chat(usr, "[src]'s Metainfo:<br>[ooc_notes]")
-		else if(client)
-			to_chat(usr, "[src]'s Metainfo:<br>[client.prefs.metadata]")
-		else
-			to_chat(usr, "[src] does not have any stored infomation!")
+//	if(config.allow_Metadata)
+	if(ooc_notes)
+		to_chat(usr, "[src]'s Metainfo:<br>[ooc_notes]")
+	else if(client)
+		to_chat(usr, "[src]'s Metainfo:<br>[client.prefs.metadata]")
 	else
-		to_chat(usr, "OOC Metadata is not supported by this server!")
+		to_chat(usr, "[src] does not have any stored infomation!")
+//	else
+//		to_chat(usr, "OOC Metadata is not supported by this server!")
 
 	return
 
@@ -574,7 +576,7 @@ default behaviour is:
 
 	if (!isliving(pulling))
 		if(pulling.loc != loc && pulling.loc != old_loc) //inf
-			step(pulling, get_dir(pulling.loc, old_loc))
+			step_glide(pulling, get_dir(pulling.loc, old_loc), glide_size)
 			handle_dir_after_pull() //inf
 	else
 		var/mob/living/M = pulling
@@ -590,7 +592,7 @@ default behaviour is:
 			var/atom/movable/t = M.pulling
 			M.stop_pulling()
 			if(pulling.loc != loc && pulling.loc != old_loc) //inf
-				step(M, get_dir(pulling.loc, old_loc))
+				step_glide(M, get_dir(pulling.loc, old_loc), glide_size)
 				handle_dir_after_pull() //inf
 			if(t)
 				M.start_pulling(t)
@@ -646,7 +648,7 @@ default behaviour is:
 
 /mob/living/proc/process_resist()
 	//Getting out of someone's inventory.
-	if(istype(src.loc, /obj/item/weapon/holder))
+	if(istype(src.loc, /obj/item/holder))
 		escape_inventory(src.loc)
 		return
 
@@ -661,7 +663,7 @@ default behaviour is:
 		if(C.mob_breakout(src))
 			return TRUE
 
-/mob/living/proc/escape_inventory(obj/item/weapon/holder/H)
+/mob/living/proc/escape_inventory(obj/item/holder/H)
 	if(H != src.loc) return
 
 	var/mob/M = H.loc //Get our mob holder (if any).
@@ -673,20 +675,16 @@ default behaviour is:
 
 		// Update whether or not this mob needs to pass emotes to contents.
 		for(var/atom/A in M.contents)
-			if(istype(A,/mob/living/simple_animal/borer) || istype(A,/obj/item/weapon/holder))
+			if(istype(A,/mob/living/simple_animal/borer) || istype(A,/obj/item/holder))
 				return
 		M.status_flags &= ~PASSEMOTES
-	else if(istype(H.loc,/obj/item/clothing/accessory/storage/holster) || istype(H.loc,/obj/item/weapon/storage/belt/holster))
-		var/datum/extension/holster/holster = get_extension(src, /datum/extension/holster)
+	else if(istype(H.loc,/obj/item/clothing/accessory/storage/holster) || istype(H.loc,/obj/item/storage/belt/holster))
+		var/datum/extension/holster/holster = get_extension(H.loc, /datum/extension/holster)
 		if(holster.holstered == H)
 			holster.clear_holster()
 		to_chat(src, "<span class='warning'>You extricate yourself from \the [holster].</span>")
 		H.forceMove(get_turf(H))
 	else if(istype(H.loc,/obj))
-		if(istype(H.loc, /obj/machinery/cooker))
-			var/obj/machinery/cooker/C = H.loc
-			C.cooking_obj = null
-			C.check_cooking_obj()
 		to_chat(src, "<span class='warning'>You struggle free of \the [H.loc].</span>")
 		H.forceMove(get_turf(H))
 
@@ -697,6 +695,9 @@ default behaviour is:
 	if(buckled)
 		if(buckled.can_buckle)
 			buckled.user_unbuckle_mob(src)
+		else if (istype(buckled, /obj/effect/vine))
+			var/obj/effect/vine/V = buckled
+			spawn() V.manual_unbuckle(src)
 		else
 			to_chat(usr, "<span class='warning'>You can't seem to escape from \the [buckled]!</span>")
 			return
@@ -813,7 +814,9 @@ default behaviour is:
 	return 1
 
 /mob/living/reset_layer()
-	if(hiding)
+	if (jumping)
+		layer = VEHICLE_LOAD_LAYER
+	else if (hiding)
 		layer = HIDING_MOB_LAYER
 	else
 		..()
@@ -836,6 +839,8 @@ default behaviour is:
 	if(auras)
 		for(var/a in auras)
 			remove_aura(a)
+
+	qdel(selected_image)
 	return ..()
 
 /mob/living/proc/melee_accuracy_mods()
@@ -868,11 +873,13 @@ default behaviour is:
 	return TRUE
 
 /mob/living/handle_drowning()
+	var/turf/T = get_turf(src)
 	if(!can_drown() || !loc.is_flooded(lying))
+		return FALSE
+	if(!lying && T.above && !T.above.is_flooded() && T.above.CanZPass(src, UP) && can_overcome_gravity())
 		return FALSE
 	if(prob(5))
 		to_chat(src, SPAN_DANGER("You choke and splutter as you inhale water!"))
-	var/turf/T = get_turf(src)
 	T.show_bubbles()
 	return TRUE // Presumably chemical smoke can't be breathed while you're underwater.
 
@@ -908,3 +915,11 @@ default behaviour is:
 
 /mob/living/proc/InStasis()
 	return FALSE
+
+/mob/living/proc/jump_layer_shift()
+	jumping = TRUE
+	reset_layer()
+
+/mob/living/proc/jump_layer_shift_end()
+	jumping = FALSE
+	reset_layer()

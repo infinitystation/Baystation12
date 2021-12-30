@@ -1,7 +1,7 @@
 /datum/job/captain
 	title = "Captain"
-	department = "Command"
-	supervisors = "корпорацией"
+	department = "Командный"
+	supervisors = "Центральному Командованию"
 	department_flag = COM
 	head_position = 1
 	minimal_player_age = 21
@@ -44,8 +44,8 @@
 
 /datum/job/hop
 	title = "Head of Personnel"
-	supervisors = "Капитаном"
-	department = "Command"
+	supervisors = "Капитану"
+	department = "Командный"
 	department_flag = COM|SRV
 	head_position = 1
 	total_positions = 1
@@ -107,8 +107,8 @@
 
 /datum/job/rd
 	title = "Research Director"
-	supervisors = "Капитаном"
-	department = "Science"
+	supervisors = "Капитану"
+	department = "Научный"
 	department_flag = SCI|COM
 	head_position = 1
 	total_positions = 1
@@ -148,9 +148,9 @@
 		access_mining_station, access_xenobiology, access_RC_announce,
 		access_keycard_auth, access_xenoarch, access_heads,
 		access_sec_doors, access_medical, access_network,
-		access_maint_tunnels, access_eva, access_expedition_shuttle,
+		access_maint_tunnels, access_eva, access_expedition_shuttle, access_expedition_shuttle_helm,
 		access_guppy, access_hangar, access_petrov, access_petrov_helm,
-		access_guppy_helm
+		access_guppy_helm, access_explorer, access_el
 	)
 
 	minimal_access = list()
@@ -169,9 +169,9 @@
 
 /datum/job/cmo
 	title = "Chief Medical Officer"
-	supervisors = "Капитаном"
+	supervisors = "Капитану"
 	head_position = 1
-	department = "Medical"
+	department = "Медицинский"
 	department_flag = MED|COM
 	total_positions = 1
 	spawn_positions = 1
@@ -229,9 +229,9 @@
 
 /datum/job/chief_engineer
 	title = "Chief Engineer"
-	supervisors = "Капитаном"
+	supervisors = "Капитану"
 	head_position = 1
-	department = "Engineering"
+	department = "Инженерный"
 	department_flag = ENG|COM
 	total_positions = 1
 	spawn_positions = 1
@@ -299,9 +299,9 @@
 
 /datum/job/hos
 	title = "Head of Security"
-	supervisors = "Капитаном"
+	supervisors = "Капитану"
 	head_position = 1
-	department = "Security"
+	department = "Охранный"
 	department_flag = SEC|COM
 	total_positions = 1
 	spawn_positions = 1
@@ -356,11 +356,11 @@
 
 /datum/job/iaa
 	title = "Internal Affairs Agent"
-	department = "Support"
+	department = "Командный"
 	department_flag = SPT
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Центральным Командованием"
+	supervisors = "Центральному Командованию"
 	selection_color = "#2f2f7f"
 	economic_power = 15
 	minimal_player_age = 10
@@ -401,11 +401,11 @@
 
 /datum/job/adjutant
 	title = "Adjutant"
-	department = "Support"
+	department = "Командный"
 	department_flag = SPT
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Капитаном и остальными главами"
+	supervisors = "Капитану и остальным главам"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 18
 	economic_power = 7
@@ -430,7 +430,7 @@
 		access_heads, access_bridge, access_janitor, access_kitchen, access_actor, access_cargo,
 		access_RC_announce, access_keycard_auth, access_guppy, access_guppy_helm,
 		access_external_airlocks, access_expedition_shuttle, access_eva, access_hangar,
-		access_explorer, access_expedition_shuttle_helm, access_gun
+		access_explorer, access_expedition_shuttle_helm, access_gun, access_bar
 	)
 
 	minimal_access = list()

@@ -1,6 +1,6 @@
-/music_track/somebody
-	artist = "Gotye"
+/decl/audio/track/somebody
+	author = "Gotye"
 	title = "Somebody that i used to know"
-	album = "Placeholder"
-	song = 'infinity/sound/music/newyear/gotye_somebodythatiusedtoknow.ogg'
+	collection =  "Placeholder"
+	source = 'infinity/sound/music/newyear/gotye_somebodythatiusedtoknow.ogg'
 	license =  /decl/license/grandfathered

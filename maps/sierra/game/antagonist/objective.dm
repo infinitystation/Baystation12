@@ -9,10 +9,10 @@
 
 /datum/objective/steal/New()
 	possible_items |= list(
-		"личный револьвер капитана"				= /obj/item/weapon/gun/projectile/revolver/medium/captain,
-		"интеллекарту - желательно, с ИИ"		= /obj/item/weapon/aicard,
-		"мачете Лидера Экспедиции"				= /obj/item/weapon/material/hatchet/machete/deluxe,
+		"личный револьвер капитана"				= /obj/item/gun/projectile/revolver/medium/captain,
+		"интеллекарту - желательно, с ИИ"		= /obj/item/aicard,
+		"мачете Лидера Экспедиции"				= /obj/item/material/hatchet/machete/deluxe,
 		"секретные документы АВД"				= /obj/item/documents,
-		"РИГ Директора Исследований"			= /obj/item/weapon/rig/hazmat/equipped
+		"РИГ Директора Исследований"			= /obj/item/rig/hazmat/equipped
 	)
 	. = ..()

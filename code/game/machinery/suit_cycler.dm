@@ -2,8 +2,8 @@
 
 	name = "suit cycler unit"
 	desc = "An industrial machine for painting and refitting voidsuits."
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 
 	icon = 'icons/obj/suitstorage.dmi'
 	icon_state = "close"
@@ -43,7 +43,7 @@
 	)
 
 	//Species that the suits can be configured to fit.
-	var/list/species = list(SPECIES_HUMAN,SPECIES_SKRELL,SPECIES_UNATHI, SPECIES_RESOMI, SPECIES_TAJARA, SPECIES_EROSAN)
+	var/list/species = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_RESOMI, SPECIES_TAJARA)
 
 	var/decl/item_modifier/target_modification
 	var/target_species
@@ -138,7 +138,7 @@
 			return
 		to_chat(user, "You fit \the [I] into the suit cycler.")
 		helmet = I
-		
+
 		updateUsrDialog()
 		return
 
@@ -176,7 +176,7 @@
 	var/additional_modifications = list_values(decls_repository.get_decls(emagged_modifications))
 	available_modifications |= additional_modifications
 
-	emagged = 1
+	emagged = TRUE
 	safeties = 0
 	req_access = list()
 	updateUsrDialog()
@@ -335,7 +335,7 @@
 
 /obj/machinery/suit_cycler/proc/finished_job()
 	var/turf/T = get_turf(src)
-	T.visible_message("\icon[src]<span class='notice'>\The [src] pings loudly.</span>")
+	T.visible_message("[icon2html(src, viewers(get_turf(src)))]<span class='notice'>\The [src] pings loudly.</span>")
 	active = 0
 	updateUsrDialog()
 

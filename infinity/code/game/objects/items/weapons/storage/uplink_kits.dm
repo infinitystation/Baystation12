@@ -1,152 +1,155 @@
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/space_cheap
+/obj/item/storage/backpack/dufflebag/syndie_kit/space_cheap
 	startswith = list(
 		/obj/item/clothing/head/helmet/space/syndicate,
 		/obj/item/clothing/suit/space/syndicate,
 		/obj/item/clothing/mask/gas/syndicate,
-		/obj/item/weapon/tank/emergency/oxygen/double
+		/obj/item/tank/emergency/oxygen/double
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit
+/obj/item/storage/backpack/dufflebag/syndie_kit
 	max_w_class = ITEM_SIZE_HUGE
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/plastique
+/obj/item/storage/backpack/dufflebag/syndie_kit/plastique
 	startswith = list(
-		/obj/item/weapon/plastique = 6
+		/obj/item/plastique = 6
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/plastique/super
+/obj/item/storage/backpack/dufflebag/syndie_kit/plastique/super
 	startswith = list(
-		/obj/item/weapon/plastique/super = 3
+		/obj/item/plastique/super = 3
 		)
 
-/obj/item/weapon/storage/box/syndie_kit/poisons
+/obj/item/storage/box/syndie_kit/poisons
 	startswith = list(
-		/obj/item/weapon/reagent_containers/glass/beaker/vial/random/toxin/bioterror = 7
+		/obj/item/reagent_containers/glass/beaker/vial/random/toxin/bioterror = 7
 	)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/bioterror
+/obj/item/storage/backpack/dufflebag/syndie_kit/bioterror
 	startswith = list(
 		/obj/item/clothing/suit/space/void/merc/prepared,
 		/obj/item/clothing/mask/gas/syndicate,
-		/obj/item/weapon/tank/emergency/oxygen/double,
-		/obj/item/weapon/reagent_containers/spray/chemsprayer/bioterror,
-		/obj/item/weapon/grenade/chem_grenade/bioterror,
-		/obj/item/weapon/gun/projectile/pistol/military/alt
+		/obj/item/tank/emergency/oxygen/double,
+		/obj/item/reagent_containers/spray/chemsprayer/bioterror,
+		/obj/item/grenade/chem_grenade/bioterror,
+		/obj/item/gun/projectile/pistol/military/alt
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/pyro
+/obj/item/storage/backpack/dufflebag/syndie_kit/pyro
 	startswith = list(
 		/obj/item/clothing/suit/space/void/merc/heavy/prepared,
 		/obj/item/clothing/mask/gas/syndicate,
-		/obj/item/weapon/tank/emergency/oxygen/double,
-		/obj/item/weapon/flamethrower/full,
-		/obj/item/weapon/tank/phoron/full,
-		/obj/item/weapon/grenade/chem_grenade/fuelspray,
-		/obj/item/weapon/tank/flammable,
-		/obj/item/weapon/gun/projectile/pistol/military/alt
+		/obj/item/tank/emergency/oxygen/double,
+		/obj/item/flamethrower/full,
+		/obj/item/tank/phoron/full,
+		/obj/item/grenade/chem_grenade/fuelspray,
+		/obj/item/tank/flammable,
+		/obj/item/gun/projectile/pistol/military/alt
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/classic
+/obj/item/storage/backpack/dufflebag/syndie_kit/classic
 	startswith = list(
 		/obj/item/clothing/suit/armor/pcarrier/merc,
 		/obj/item/clothing/head/helmet/merc,
-		/obj/item/weapon/gun/projectile/automatic/assault_rifle,
-		/obj/item/weapon/grenade/frag/high_yield,
-		/obj/item/weapon/card/emag
+		/obj/item/gun/projectile/automatic/assault_rifle,
+		/obj/item/grenade/frag/high_yield,
+		/obj/item/card/emag
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/stealthy
+/obj/item/storage/backpack/dufflebag/syndie_kit/stealthy
 	startswith = list(
 		/obj/item/clothing/under/chameleon,
 		/obj/item/clothing/suit/chameleon,
 		/obj/item/clothing/shoes/chameleon,
 		/obj/item/clothing/head/chameleon,
 		/obj/item/clothing/mask/chameleon,
-		/obj/item/weapon/storage/box/syndie_kit/chameleon,
-		/obj/item/weapon/gun/energy/chameleon,
-		/obj/item/weapon/gun/projectile/pistol/military/alt,
-		/obj/item/weapon/stamp/chameleon,
-		/obj/item/weapon/pen/chameleon,
-		/obj/item/weapon/storage/box/syndie_kit/imp_freedom,
+		/obj/item/storage/box/syndie_kit/chameleon,
+		/obj/item/gun/energy/chameleon,
+		/obj/item/gun/projectile/pistol/military/alt,
+		/obj/item/stamp/chameleon,
+		/obj/item/pen/chameleon,
+		/obj/item/storage/box/syndie_kit/imp_freedom,
 		/obj/item/device/uplink_service/fake_crew_announcement,
-		/obj/item/weapon/card/emag
+		/obj/item/card/emag
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/sniper
+/obj/item/storage/backpack/dufflebag/syndie_kit/sniper
 	startswith = list(
 		/obj/item/clothing/under/det,
 		/obj/item/clothing/suit/storage/leather_jacket/armored,
-		/obj/item/weapon/gun/projectile/heavysniper,
-		/obj/item/weapon/storage/box/ammo/sniperammo,
+		/obj/item/gun/projectile/heavysniper,
+		/obj/item/storage/box/ammo/sniperammo,
 		/obj/item/clothing/glasses/thermal/syndi
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/spaceass
+/obj/item/storage/backpack/dufflebag/syndie_kit/spaceass
 	startswith = list(
 		/obj/item/clothing/suit/space/void/merc/prepared,
 		/obj/item/clothing/mask/gas/syndicate,
-		/obj/item/weapon/tank/oxygen,
-		/obj/item/weapon/gun/projectile/automatic/assault_rifle,
-		/obj/item/weapon/plastique/super,
-		/obj/item/weapon/card/emag
+		/obj/item/tank/oxygen,
+		/obj/item/gun/projectile/automatic/assault_rifle,
+		/obj/item/plastique/super,
+		/obj/item/card/emag
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/saboteur
+/obj/item/storage/backpack/dufflebag/syndie_kit/saboteur
 	startswith = list(
 		/obj/item/clothing/suit/armor/pcarrier/merc,
 		/obj/item/clothing/head/helmet/merc,
 		/obj/item/device/flashlight/flashdark,
 		/obj/item/device/chameleon,
-		/obj/item/weapon/gun/projectile/pistol/military/alt,
-		/obj/item/weapon/plastique = 2,
-		/obj/item/weapon/card/emag
+		/obj/item/gun/projectile/pistol/military/alt,
+		/obj/item/plastique = 2,
+		/obj/item/card/emag
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/medic
+/obj/item/storage/backpack/dufflebag/syndie_kit/medic
 	startswith = list(
 		/obj/item/clothing/suit/armor/pcarrier/merc,
 		/obj/item/clothing/head/helmet/merc,
-		/obj/item/weapon/storage/firstaid/combat,
-		/obj/item/weapon/storage/firstaid/surgery,
-		/obj/item/weapon/defibrillator/compact/combat/loaded,
-		/obj/item/weapon/gun/projectile/pistol/military/alt,
+		/obj/item/storage/firstaid/combat,
+		/obj/item/storage/firstaid/surgery,
+		/obj/item/defibrillator/compact/combat/loaded,
+		/obj/item/gun/projectile/pistol/military/alt,
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/heavy
+/obj/item/storage/backpack/dufflebag/syndie_kit/heavy
 	startswith = list(
 		/obj/item/clothing/suit/space/void/merc/heavy/prepared,
-		/obj/item/weapon/gun/projectile/automatic/l6_saw,
+		/obj/item/gun/projectile/automatic/l6_saw,
 		/obj/item/ammo_magazine/box/machinegun = 3,
-		/obj/item/weapon/grenade/frag/high_yield,
-		/obj/item/weapon/shield/energy
+		/obj/item/grenade/frag/high_yield,
+		/obj/item/shield/energy
 		)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/mag_shotgun
+/obj/item/storage/backpack/dufflebag/syndie_kit/mag_shotgun
 	startswith = list(
-		/obj/item/weapon/gun/projectile/shotgun/magazine,
+		/obj/item/gun/projectile/shotgun/magazine,
 		/obj/item/ammo_magazine/c12m/shock,
 		/obj/item/ammo_magazine/c12m = 2,
 		/obj/item/ammo_magazine/c12m/buckshot = 2
 		)
 
-/obj/item/weapon/storage/box/syndie_kit/imp_adr
-	startswith = list(/obj/item/weapon/implanter/adrenal)
+/obj/item/storage/box/syndie_kit/imp_adr
+	startswith = list(/obj/item/implanter/adrenal)
 
-/obj/item/weapon/storage/box/syndie_kit/imp_emp
-	startswith = list(/obj/item/weapon/implanter/emp)
+/obj/item/storage/box/syndie_kit/imp_emp
+	startswith = list(/obj/item/implanter/emp)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/space/heavy
+/obj/item/storage/box/syndie_kit/fake_death
+	startswith = list(/obj/item/implanter/fake_death)
+
+/obj/item/storage/backpack/dufflebag/syndie_kit/space/heavy
 	startswith = list(
 		/obj/item/clothing/suit/space/void/merc/heavy/prepared,
 		/obj/item/clothing/mask/gas/syndicate,
-		/obj/item/weapon/tank/emergency/oxygen/double,
+		/obj/item/tank/emergency/oxygen/double,
 		)
 
-/obj/item/weapon/storage/box/syndie_kit/chambox
+/obj/item/storage/box/syndie_kit/chambox
 	name = "chameleon box"
 	desc = "A small box with holoprojector, designed to carry your goods stealthy."
 
-/obj/item/weapon/storage/box/syndie_kit/chambox/afterattack(obj/item/target, mob/user , proximity)
+/obj/item/storage/box/syndie_kit/chambox/afterattack(obj/item/target, mob/user , proximity)
 	if(!proximity)
 		return
 	if(!target)
@@ -162,27 +165,27 @@
 	else
 		to_chat(user, "\The [target] is too big for \the [src] hologramm")
 
-/obj/item/weapon/storage/box/syndie_kit/chambox/attack_self(mob/user)
+/obj/item/storage/box/syndie_kit/chambox/attack_self(mob/user)
 	to_chat(user, "You can't fold [src] flat!")
 
-/obj/item/weapon/storage/box/syndie_kit/jaunter
+/obj/item/storage/box/syndie_kit/jaunter
 	startswith = list(/obj/item/device/syndietele,
 					  /obj/item/device/syndiejaunter)
 
-/obj/item/weapon/storage/backpack/dufflebag/syndie_kit/l6_saw
+/obj/item/storage/backpack/dufflebag/syndie_kit/l6_saw
 	startswith = list(
-		/obj/item/weapon/gun/projectile/automatic/l6_saw,
+		/obj/item/gun/projectile/automatic/l6_saw,
 		/obj/item/ammo_magazine/box/machinegun = 3
 		)
 
-/obj/item/weapon/storage/box/syndie_kit/gluon
+/obj/item/storage/box/syndie_kit/gluon
 	name = "box of gluon grenades"
 	desc = "A box containing 5 gluon grenades."
-	startswith = list(/obj/item/weapon/grenade/chem_grenade/gluon = 5)
+	startswith = list(/obj/item/grenade/chem_grenade/gluon = 5)
 
-/obj/item/weapon/storage/backpack/satchel/syndie_kit/constrictor_harness
+/obj/item/storage/backpack/satchel/syndie_kit/constrictor_harness
 	startswith = list(
 		/obj/item/clothing/suit/constrictor_harness,
-		/obj/item/weapon/tank/emergency/oxygen,
+		/obj/item/tank/emergency/oxygen,
 		/obj/item/clothing/mask/gas/half
 	)

@@ -14,7 +14,7 @@
 /obj/item/borg/sight
 	icon = 'icons/obj/decals.dmi'
 	icon_state = "securearea"
-	var/sight_mode = null
+	var/sight_mode = 0
 	var/hud_type
 
 
@@ -75,4 +75,19 @@
 
 /obj/item/borg/sight/hud/jani/Initialize()
 	. = ..()
+/obj/item/borg/sight/hud/jani/Initialize()
+	. = ..()
 	hud = new /obj/item/clothing/glasses/hud/janitor(src)
+
+// [INF]
+/obj/item/borg/sight/hud/sci
+	name = "science hud"
+	icon_state = "scihud"
+	icon = 'icons/obj/clothing/obj_eyes.dmi'
+	hud_type = HUD_SCIENCE
+
+/obj/item/borg/sight/hud/sci/Initialize()
+	. = ..()
+	hud = new /obj/item/clothing/glasses/hud/science(src)
+// [/INF]
+

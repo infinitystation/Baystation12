@@ -10,7 +10,7 @@
 	var/obj/item/clothing/C
 	C = new /obj/item/clothing/under/solgov/utility/expeditionary/monkey(src)
 	equip_to_appropriate_slot(C)
-	put_in_hands(new /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/punitelli)
+	put_in_hands(new /obj/item/reagent_containers/food/drinks/glass2/coffeecup/punitelli)
 	equip_to_appropriate_slot(new /obj/item/clothing/mask/smokable/cigarette/jerichos)
 
 /obj/random_multi/single_item/space_rabbit
@@ -21,4 +21,8 @@
 /mob/living/simple_animal/rabbit/space/sierra
 	name = "\improper Edwin"
 	desc = "The hippiest hop around. On it's back you can see a small black letters: Aldrin."
+
+	say_list_type = /datum/say_list/rabbit/sierra
+
+/datum/say_list/rabbit/sierra
 	emote_see = list("hops around","bounces up and down","says something in imaginated headset")

@@ -6,10 +6,10 @@
 
 	var/list/matter //Used to store information about the contents of the object.
 	var/w_class // Size of the object.
-	var/unacidable = 0 //universal "unacidabliness" var, here so you can use it in any obj.
+	var/unacidable = FALSE //universal "unacidabliness" var, here so you can use it in any obj.
 	var/throwforce = 1
-	var/sharp = 0		// whether this object cuts
-	var/edge = 0		// whether this object is more likely to dismember
+	var/sharp = FALSE		// whether this object cuts
+	var/edge = FALSE		// whether this object is more likely to dismember
 	var/in_use = 0 // If we have a user using us, this will be set on. We will check if the user has stopped using us, and thus stop updating and LAGGING EVERYTHING!
 	var/damtype = "brute"
 	var/armor_penetration = 0
@@ -189,3 +189,9 @@
 
 //For things to apply special effects after damaging an organ, called by organ's take_damage
 /obj/proc/after_wounding(obj/item/organ/external/organ, datum/wound)
+
+/**
+ * Test for if stepping on a tile containing this obj is safe to do, used for things like landmines and cliffs.
+ */
+/obj/proc/is_safe_to_step(mob/living/L)
+	return TRUE

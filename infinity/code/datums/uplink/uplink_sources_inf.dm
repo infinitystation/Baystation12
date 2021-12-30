@@ -6,7 +6,7 @@
 
 /decl/uplink_source/usb/setup_uplink_source(var/mob/M, var/amount)
 	var/obj/item/modular_computer/pda/P = find_in_mob(M, /obj/item/modular_computer/pda)
-	var/obj/item/weapon/computer_hardware/hard_drive/portable/uplink = new()
+	var/obj/item/computer_hardware/hard_drive/portable/uplink = new()
 	var/pda_pass = "[rand(100,999)] [pick(GLOB.greek_letters)]"
 	var/obj/item/device/uplink/T = new(uplink, M.mind, amount)
 	uplink.hidden_uplink = T
@@ -24,6 +24,6 @@
 			P.hard_drive.store_file(program)
 		to_chat(M, "<span class='notice'>A portable object teleportation relay has been installed in [uplink.name], inside your [P.name]. Simply enter the code \"[pda_pass]\" in your new program to unlock its hidden features.</span>")
 	else
-		var/obj/item/weapon/storage/backpack = M.equip_to_storage(uplink)
+		var/obj/item/storage/backpack = M.equip_to_storage(uplink)
 		to_chat(M, "<span class='notice'>A portable object teleportation relay has been installed in [uplink.name], in your [backpack.name]. Simply enter the code \"[pda_pass]\" in your new program to unlock its hidden features.</span>")
 	M.mind.StoreMemory("<B>Uplink passcode:</B> [pda_pass] ([uplink.name]).")

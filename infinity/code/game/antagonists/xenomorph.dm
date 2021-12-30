@@ -56,7 +56,7 @@ GLOBAL_DATUM_INIT(xenomorphs, /datum/antagonist/xenos, new)
 	..()
 
 /datum/antagonist/xenos/attempt_random_spawn()
-	if(config.aliens_allowed) ..()
+	..()
 
 /*
 /datum/antagonist/xenos/create_objectives(var/datum/mind/player)

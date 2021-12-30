@@ -5,9 +5,8 @@
 	icon = CUSTOM_ITEM_OBJ
 	item_icons = list(
 		slot_shoes_str = CUSTOM_ITEM_MOB,
-		slot_r_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_r_hand.dmi',
-		slot_l_hand_str = 'infinity/icons/customs/infinity_custom_guns_slot_l_hand.dmi',
-	)
+		slot_r_hand_str = CUSTOM_ITEM_INHANDS_RIGHT,
+		slot_l_hand_str = CUSTOM_ITEM_INHANDS_LEFT)
 	icon_state = "taushai_taj_boots"
 	item_state = "taushai_taj_boots"
 	trade_blacklisted = TRUE
@@ -49,7 +48,7 @@
 		)
 
 
-/obj/item/weapon/storage/backpack/industrial/taushai
+/obj/item/storage/backpack/industrial/taushai
 	name = "field backpack"
 	desc = "It's a tough backpack for the daily grind of field work."
 	icon = CUSTOM_ITEM_OBJ
@@ -60,26 +59,26 @@
 
 
 /obj/item/device/kit/suit/taushai
-	name = "Rajirra's voidsuit modification kit"
+	name = "taj scavenger's voidsuit modification kit"
 	desc = "A kit for modifying a voidsuit."
 	uses = 2
 	new_icon_file = CUSTOM_ITEM_OBJ
 	new_mob_icon_file = CUSTOM_ITEM_MOB
-	new_name = "Field engineer"
+	new_name = "scavenger"
 	new_desc = "An older protective voidsuit used for field work."
 	new_icon = "taushai_taj_field_engineer"
 	trade_blacklisted = TRUE
 
 
-/obj/item/weapon/clothingbag/taushai
+/obj/item/clothingbag/taushai
 	name = "clothing bag"
-	desc = "Rajirra's property"
+	desc = "Tajaran scavenger's property"
 	trade_blacklisted = TRUE
 
 
-/obj/item/weapon/clothingbag/taushai/New()
+/obj/item/clothingbag/taushai/New()
 	..()
 	new /obj/item/clothing/shoes/sandal/xeno/caligae/taushai(src)
 	new /obj/item/clothing/suit/storage/hooded/taushai(src)
-	new /obj/item/weapon/storage/backpack/industrial/taushai(src)
+	new /obj/item/storage/backpack/industrial/taushai(src)
 	new /obj/item/device/kit/suit/taushai(src)

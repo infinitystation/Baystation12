@@ -1,0 +1,6 @@
+{
+	"ckey" :            "wolforbykot",
+	"character_name" :  "Kegan Roar",
+	"item_path" :       "/obj/item/clothingbag/wolforbykot",
+	"req_titles" :       [ "Security Guard" ]
+	}

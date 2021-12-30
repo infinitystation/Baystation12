@@ -60,6 +60,7 @@
 	if(ispath(camera))
 		camera = new camera(src)
 		camera.set_status(0)
+		camera.is_helmet_cam = TRUE
 
 	if(camera)
 		camera.set_status(!camera.status)
@@ -76,12 +77,30 @@
 
 /obj/item/clothing/head/helmet/space/proc/update_tint()
 	if(tinted)
+/* [ORIG]
 		icon_state = "[initial(icon_state)]_dark"
+		item_state = "[initial(item_state)]_dark"
+[/ORIG] */
+
+// [INF] BS12 orig variant breaks helmet's sprites ~ SidVeld
+		icon_state = "[icon_state]_dark"
+		item_state = "[item_state]_dark"
+// [/INF]
+
 		flash_protection = FLASH_PROTECTION_MAJOR
 		flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 		tint = TINT_MODERATE
 	else
+/* [ORIG]
 		icon_state = initial(icon_state)
+		item_state = initial(item_state)
+[/ORIG] */
+
+// [INF] BS12 orig variant breaks helmet's sprites ~ SidVeld
+		icon_state = replacetext(icon_state, "_dark", "")
+		item_state = replacetext(item_state, "_dark", "")
+// [/INF]
+
 		flash_protection = FLASH_PROTECTION_NONE
 		flags_inv = HIDEEARS|BLOCKHAIR
 		tint = TINT_NONE
@@ -118,7 +137,7 @@
 	permeability_coefficient = 0
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
-	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank/emergency,/obj/item/device/suit_cooling_unit)
+	allowed = list(/obj/item/device/flashlight,/obj/item/tank/emergency,/obj/item/device/suit_cooling_unit)
 	armor = list(
 		bio = ARMOR_BIO_SHIELDED,
 		rad = ARMOR_RAD_SMALL

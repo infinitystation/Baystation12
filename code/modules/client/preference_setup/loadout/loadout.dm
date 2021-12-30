@@ -47,13 +47,13 @@ var/list/gear_datums = list()
 	var/current_tab = "General"
 	var/hide_unavailable_gear = 0
 
-/datum/category_item/player_setup_item/loadout/load_character(var/savefile/S)
-	from_file(S["gear_list"], pref.gear_list)
-	from_file(S["gear_slot"], pref.gear_slot)
+/datum/category_item/player_setup_item/loadout/load_character(datum/pref_record_reader/R)
+	pref.gear_list = R.read("gear_list")
+	pref.gear_slot = R.read("gear_slot")
 
-/datum/category_item/player_setup_item/loadout/save_character(var/savefile/S)
-	to_file(S["gear_list"], pref.gear_list)
-	to_file(S["gear_slot"], pref.gear_slot)
+/datum/category_item/player_setup_item/loadout/save_character(datum/pref_record_writer/W)
+	W.write("gear_list", pref.gear_list)
+	W.write("gear_slot", pref.gear_slot)
 
 /datum/category_item/player_setup_item/loadout/proc/valid_gear_choices(var/max_cost)
 	. = list()
@@ -127,7 +127,7 @@ var/list/gear_datums = list()
 		fcolor = "#e67300"
 	. += "<table align = 'center' width = 100%>"
 	. += "<tr><td colspan=3><center>"
-	. += "<a href='?src=\ref[src];prev_slot=1'>\<\<</a><b><font color = '[fcolor]'>\[[pref.gear_slot]\]</font> </b><a href='?src=\ref[src];next_slot=1'>\>\></a>"
+	. += "<a href='?src=\ref[src];prev_slot=1'>\<=</a><b><font color = '[fcolor]'>\[[pref.gear_slot]\]</font> </b><a href='?src=\ref[src];next_slot=1'>=\></a>"
 
 	if(config.max_gear_cost < INFINITY)
 		. += "<b><font color = '[fcolor]'>[total_cost]/[config.max_gear_cost]</font> loadout points spent.</b>"
@@ -180,7 +180,7 @@ var/list/gear_datums = list()
 			dd_insertObjectList(jobs, J)
 	var/list/valid_gear_list = valid_gear_choices() //INF
 	for(var/gear_name in LC.gear)
-		if(!valid_gear_list.Find(gear_name))//inf, was: if(!(gear_name in valid_gear_choices()))
+		if(!list_find(valid_gear_list, gear_name))//inf, was: if(!(gear_name in valid_gear_choices())) 
 			continue
 		var/list/entry = list()
 		var/datum/gear/G = LC.gear[gear_name]
@@ -339,29 +339,6 @@ var/list/gear_datums = list()
 		return TOPIC_REFRESH
 	return ..()
 
-/datum/category_item/player_setup_item/loadout/update_setup(var/savefile/preferences, var/savefile/character)
-	if(preferences["version"] < 14)
-		var/list/old_gear = character["gear"]
-		if(istype(old_gear)) // During updates data isn't sanitized yet, we have to do manual checks
-			if(!istype(pref.gear_list)) pref.gear_list = list()
-			if(!pref.gear_list.len) pref.gear_list.len++
-			pref.gear_list[1] = old_gear
-		return 1
-
-	if(preferences["version"] < 15)
-		if(istype(pref.gear_list))
-			// Checks if the key of the pref.gear_list is a list.
-			// If not the key is replaced with the corresponding value.
-			// This will convert the loadout slot data to a reasonable and (more importantly) compatible format.
-			// I.e. list("1" = loadout_data1, "2" = loadout_data2, "3" = loadout_data3) becomes list(loadout_data1, loadout_data2, loadaout_data3)
-			for(var/index = 1 to pref.gear_list.len)
-				var/key = pref.gear_list[index]
-				if(islist(key))
-					continue
-				var/value = pref.gear_list[key]
-				pref.gear_list[index] = value
-		return 1
-
 /datum/gear
 	var/display_name       //Name/index. Must be unique.
 	var/description        //Description of this gear. If left blank will default to the description of the pathed item.
@@ -424,12 +401,39 @@ var/list/gear_datums = list()
 	var/obj/item/item = spawn_item(H, H, metadata)
 	item.add_fingerprint(H)
 
-	var/atom/placed_in = H.equip_to_storage(item)
-	if(placed_in)
-		to_chat(H, "<span class='notice'>Placing \the [item] in your [placed_in.name]!</span>")
-	else if(H.equip_to_appropriate_slot(item))
-		to_chat(H, "<span class='notice'>Placing \the [item] in your inventory!</span>")
-	else if(H.put_in_hands(item))
-		to_chat(H, "<span class='notice'>Placing \the [item] in your hands!</span>")
+	// Roundstart augments require special handling in order to properly install
+	// Putting this in "spawn_on_mob" requires overriding a bunch of logic, so we hook into here instead
+	if (istype(item, /obj/item/organ/internal/augment))
+		var/obj/item/organ/internal/augment/A = item
+		var/obj/item/organ/external/affected = H.get_organ(A.parent_organ)
+		if (!affected)
+			to_chat(H, SPAN_WARNING("Failed to install \the [A]!"))
+			QDEL_NULL(A)
+		else
+			var/beep_boop = BP_IS_ROBOTIC(affected)
+			var/obj/item/organ/internal/I = H.internal_organs_by_name[A.organ_tag]
+			if (!(A.augment_flags & AUGMENTATION_MECHANIC) && beep_boop)
+				to_chat(H, SPAN_WARNING("\The [A] cannot be installed in a robotic part!"))
+				QDEL_NULL(A)
+			else if (!(A.augment_flags & AUGMENTATION_ORGANIC) && !beep_boop)
+				to_chat(H, SPAN_WARNING("\The [A] cannot be installed in an organic part!"))
+				QDEL_NULL(A)
+			else if(I && (I.parent_organ == A.parent_organ))
+				to_chat(H, SPAN_WARNING("\The [A] could not be installed because you can only have one [A.organ_tag] at a time."))
+				QDEL_NULL(A)
+			else
+				to_chat(H, SPAN_NOTICE("Installing \the [A] in your [affected.name]!"))
+				A.forceMove(H)
+				A.replaced(H, affected)
+				A.onRoundstart()
+				. = A
 	else
-		to_chat(H, "<span class='danger'>Dropping \the [item] on the ground!</span>")
+		var/atom/placed_in = H.equip_to_storage(item)
+		if(placed_in)
+			to_chat(H, SPAN_NOTICE("Placing \the [item] in your [placed_in.name]!"))
+		else if(H.equip_to_appropriate_slot(item))
+			to_chat(H, SPAN_NOTICE("Placing \the [item] in your inventory!"))
+		else if(H.put_in_hands(item))
+			to_chat(H, SPAN_NOTICE("Placing \the [item] in your hands!"))
+		else
+			to_chat(H, SPAN_DANGER("Dropping \the [item] on the ground!"))

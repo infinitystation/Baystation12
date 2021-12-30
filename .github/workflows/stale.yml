@@ -1,0 +1,64 @@
+name: Отметка устаревших отчётов и запросов на слияние
+
+on:
+  schedule:
+  - cron: "0 0 * * *"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+    - name: No priority
+      uses: actions/stale@v4
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        days-before-stale: 60
+        days-before-close: 7
+        stale-issue-message: Репорт простаивает **2 месяца**. Если не будет активности, репорт автоматически закроется через **1 неделю**.
+        stale-issue-label: Stale
+        exempt-issue-labels: Low,Medium,High,Unclosable
+        stale-pr-message: Пулл-реквест простаивает **2 месяца**. Если не будет активности, пулл-реквест автоматически закроется через **1 неделю**.
+        stale-pr-label: Stale
+        exempt-pr-labels: Low,Medium,High,Unclosable
+
+    - name: Low priority
+      uses: actions/stale@v4
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        only-labels: Low
+        days-before-stale: 90
+        days-before-close: 7
+        stale-issue-message: Репорт простаивает **3 месяца**. Если не будет активности, репорт автоматически закроется через **1 неделю**.
+        stale-issue-label: Stale
+        exempt-issue-labels: Unclosable
+        stale-pr-message: Пулл-реквест простаивает **2 месяца**. Если не будет активности, пулл-реквест автоматически закроется через **1 неделю**.
+        stale-pr-label: Stale
+        exempt-pr-labels: Unclosable
+
+    - name: Medium priority
+      uses: actions/stale@v4
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        only-labels: Medium
+        days-before-stale: 90
+        days-before-close: 14
+        stale-issue-message: Репорт простаивает **3 месяца**. Если не будет активности, репорт автоматически закроется через **2 недели**.
+        stale-issue-label: Stale
+        exempt-issue-labels: Unclosable
+        stale-pr-message: Пулл-реквест простаивает **3 месяца**. Если не будет активности, пулл-реквест автоматически закроется через **2 недели**.
+        stale-pr-label: Stale
+        exempt-pr-labels: Unclosable
+
+    - name: High priority
+      uses: actions/stale@v4
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        only-labels: High
+        days-before-stale: 90
+        days-before-close: 21
+        stale-issue-message: Репорт простаивает **3 месяца**. Если не будет активности, репорт автоматически закроется через **3 недели**.
+        stale-issue-label: Stale
+        exempt-issue-labels: Unclosable
+        stale-pr-message: Пулл-реквест простаивает **3 месяца**. Если не будет активности, пулл-реквест автоматически закроется через **3 недели**.
+        stale-pr-label: Stale
+        exempt-pr-labels: Unclosable

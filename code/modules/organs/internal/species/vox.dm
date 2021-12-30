@@ -32,12 +32,9 @@
 	color = "#0033cc"
 	var/global/list/gains_nutriment_from_inedible_reagents = list(
 		/datum/reagent/woodpulp =      3,
-		/datum/reagent/anfo/plus =     2,
 		/datum/reagent/ultraglue =     1,
-		/datum/reagent/anfo =          1,
 		/datum/reagent/coolant =       1,
-		/datum/reagent/lube =          1,
-		/datum/reagent/lube/oil =      1,
+		/datum/reagent/oil =      1,
 		/datum/reagent/space_cleaner = 1,
 		/datum/reagent/napalm =        1,
 		/datum/reagent/napalm/b =      1,
@@ -188,7 +185,7 @@
 /obj/item/organ/internal/voxstack/examine(mob/user)
 	. = ..()
 
-	var/user_vox = isspecies(user, SPECIES_VOX) || isspecies(user, SPECIES_VOX_ARMALIS)
+	var/user_vox = user.is_species(SPECIES_VOX) || user.is_species(SPECIES_VOX_ARMALIS)
 	if (istype(backup))
 		var/owner_viable = find_dead_player(ownerckey, TRUE)
 		if (user_vox)

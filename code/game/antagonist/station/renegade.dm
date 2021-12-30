@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(renegades, /datum/antagonist/renegade, new)
 	role_text = "Renegade"
 	role_text_plural = "Renegades"
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/submap)
-	restricted_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/hos, /datum/job/captain)
+	restricted_jobs = list(/datum/job/officer, /datum/job/warden, /datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/chief_engineer, /datum/job/rd, /datum/job/cmo)
 	welcome_text = "Something's going to go wrong today, you can just feel it. You're paranoid, you've got a gun, and you're going to survive."
 	antag_text = "You are a <b>minor</b> antagonist! Within the rules, \
 		try to protect yourself and what's important to you. You aren't here to <i>cause</i> trouble, \
@@ -26,24 +26,28 @@ GLOBAL_DATUM_INIT(renegades, /datum/antagonist/renegade, new)
 	skill_setter = /datum/antag_skill_setter/station
 
 	var/list/spawn_guns = list(
-		/obj/item/weapon/gun/energy/retro,
-		/obj/item/weapon/gun/energy/gun,
-		/obj/item/weapon/gun/energy/crossbow,
-		/obj/item/weapon/gun/energy/pulse_rifle/pistol,
-		/obj/item/weapon/gun/projectile/automatic,
-		/obj/item/weapon/gun/projectile/automatic/machine_pistol,
-		/obj/item/weapon/gun/projectile/automatic/sec_smg,
-		/obj/item/weapon/gun/projectile/pistol/magnum_pistol,
-		/obj/item/weapon/gun/projectile/pistol/military,
-		/obj/item/weapon/gun/projectile/pistol/military/alt,
-		/obj/item/weapon/gun/projectile/pistol/sec/lethal,
-		/obj/item/weapon/gun/projectile/pistol/holdout,
-		/obj/item/weapon/gun/projectile/revolver,
-		/obj/item/weapon/gun/projectile/revolver/medium,
-		/obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn,
-		/obj/item/weapon/gun/projectile/pistol/magnum_pistol,
-		/obj/item/weapon/gun/projectile/revolver/holdout,
-		/obj/item/weapon/gun/projectile/pistol/throwback
+		/obj/item/gun/energy/retro,
+		/obj/item/gun/energy/gun,
+		/obj/item/gun/energy/crossbow,
+		/obj/item/gun/energy/pulse_rifle/pistol,
+		/obj/item/gun/projectile/automatic,
+		/obj/item/gun/projectile/automatic/machine_pistol,
+		/obj/item/gun/projectile/automatic/sec_smg,
+		/obj/item/gun/projectile/pistol/magnum_pistol,
+		/obj/item/gun/projectile/pistol/military,
+		/obj/item/gun/projectile/pistol/military/alt,
+		/obj/item/gun/projectile/pistol/sec/lethal,
+		/obj/item/gun/projectile/pistol/holdout,
+		/obj/item/gun/projectile/revolver,
+		/obj/item/gun/projectile/revolver/medium,
+		/obj/item/gun/projectile/shotgun/doublebarrel/sawn,
+		/obj/item/gun/projectile/pistol/magnum_pistol,
+		/obj/item/gun/projectile/revolver/holdout,
+		/obj/item/gun/projectile/pistol/throwback,
+		/obj/item/gun/energy/xray/pistol,
+		/obj/item/gun/energy/toxgun,
+		/obj/item/gun/energy/incendiary_laser,
+		/obj/item/gun/projectile/pistol/magnum_pistol
 		)
 	ambitious = 0 //INF
 

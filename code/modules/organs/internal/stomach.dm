@@ -33,6 +33,10 @@
 	ingested.my_atom = owner
 	ingested.parent = owner
 
+/obj/item/organ/internal/stomach/robotize()
+	. = ..()
+	icon_state = "stomach-prosthetic"
+
 /obj/item/organ/internal/stomach/proc/can_eat_atom(var/atom/movable/food)
 	return !isnull(get_devour_time(food))
 
@@ -60,7 +64,7 @@
 			return DEVOUR_SLOW
 		else if(species.gluttonous & GLUT_ANYTHING) // Eat anything ever
 			return DEVOUR_FAST
-	else if(istype(food, /obj/item) && !istype(food, /obj/item/weapon/holder)) //Don't eat holders. They are special.
+	else if(istype(food, /obj/item) && !istype(food, /obj/item/holder)) //Don't eat holders. They are special.
 		var/obj/item/I = food
 		var/cost = I.get_storage_cost()
 		if(cost != ITEM_SIZE_NO_CONTAINER)
@@ -80,8 +84,8 @@
 /obj/item/organ/internal/stomach/attack_self(mob/user)
 	. = ..()
 	if(. && action_button_name == PUKE_ACTION_NAME && owner && !owner.incapacitated())
-		owner.vomit(deliberate = TRUE)
-//		refresh_action_button()
+		owner.empty_stomach()
+		refresh_action_button()
 
 /obj/item/organ/internal/stomach/return_air()
 	return null

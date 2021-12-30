@@ -1,9 +1,9 @@
 /mob
-	density = 1
+	density = TRUE
 	plane = DEFAULT_PLANE
 	layer = MOB_LAYER
 
-	appearance_flags = PIXEL_SCALE
+	appearance_flags = PIXEL_SCALE | LONG_GLIDE
 	animate_movement = 2
 	movable_flags = MOVABLE_FLAG_PROXMOVE
 
@@ -90,13 +90,13 @@
 	var/druggy = 0			//Carbon
 	var/confused = 0		//Carbon
 	var/sleeping = 0		//Carbon
-	var/resting = 0			//Carbon
+	var/resting = FALSE			//Carbon
 	var/lying = 0
 	var/lying_prev = 0
 
 	var/radio_interrupt_cooldown = 0
 
-	var/unacidable = 0
+	var/unacidable = FALSE
 	var/list/pinned = list()            // List of things pinning this creature to walls (see living_defense.dm)
 	var/list/embedded = list()          // Embedded items, since simple mobs don't have organs.
 	var/list/languages = list()         // For speaking/listening.
@@ -127,8 +127,8 @@
 	var/obj/buckled = null//Living
 	var/obj/item/l_hand = null//Living
 	var/obj/item/r_hand = null//Living
-	var/obj/item/weapon/back = null//Human/Monkey
-	var/obj/item/weapon/storage/s_active = null//Carbon
+	var/obj/item/back = null//Human/Monkey
+	var/obj/item/storage/s_active = null//Carbon
 	var/obj/item/clothing/mask/wear_mask = null//Carbon
 
 	var/list/grabbed_by = list()

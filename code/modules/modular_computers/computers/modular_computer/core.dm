@@ -3,6 +3,8 @@
 		last_power_usage = 0
 		return 0
 
+	handle_power() // Handles all power interaction
+
 	if(damage > broken_damage)
 		shutdown_computer()
 		return 0
@@ -60,7 +62,7 @@
 	STOP_PROCESSING(SSobj, src)
 	if(istype(stored_pen))
 		QDEL_NULL(stored_pen)
-	for(var/obj/item/weapon/stock_parts/computer/CH in src.get_all_components())
+	for(var/obj/item/stock_parts/computer/CH in src.get_all_components())
 		uninstall_component(null, CH)
 		qdel(CH)
 	return ..()
@@ -70,7 +72,7 @@
 		to_chat(user, "\The [src] was already emagged.")
 		return NO_EMAG_ACT
 	else
-		computer_emagged = 1
+		computer_emagged = TRUE
 		to_chat(user, "You emag \the [src]. It's screen briefly shows a \"OVERRIDE ACCEPTED: New software downloads available.\" message.")
 		return 1
 
@@ -102,19 +104,16 @@
 		return
 	if(processor_unit && (apc_power(0) || battery_power(0))) // Battery-run and charged or non-battery but powered by APC.
 		if(issynth)
-			to_chat(user, "You send an activation signal to \the [src], turning it on")
+			to_chat(user, "You send an activation signal to \the [src], turning it on.")
 		else
-			to_chat(user, "You press the power button and start up \the [src]")
+			to_chat(user, "You press the power button and start up \the [src].")
 		enable_computer(user)
 
 	else // Unpowered
 		if(issynth)
-			to_chat(user, "You send an activation signal to \the [src] but it does not respond")
+			to_chat(user, "You send an activation signal to \the [src] but it does not respond.")
 		else
-			to_chat(user, "You press the power button but \the [src] does not respond")
-	var/datum/extension/interactive/ntos/os = get_extension(src, /datum/extension/interactive/ntos)
-	if(os)
-		os.system_boot()
+			to_chat(user, "You press the power button but \the [src] does not respond.")
 
 /obj/item/modular_computer/proc/shutdown_computer(var/loud = 1)
 	QDEL_NULL_LIST(terminals)

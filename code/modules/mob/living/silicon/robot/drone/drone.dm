@@ -7,7 +7,7 @@ var/list/mob_hat_cache = list()
 		t_state = hat.item_state
 	var/key = "[t_state]_[offset_x]_[offset_y]"
 	if(!mob_hat_cache[key])            // Not ideal as there's no guarantee all hat icon_states
-		var/t_icon = default_onmob_icons[slot_head_str] // are unique across multiple dmis, but whatever.
+		var/t_icon = GLOB.default_onmob_icons[slot_head_str] // are unique across multiple dmis, but whatever.
 		if(hat.icon_override)
 			t_icon = hat.icon_override
 		else if(hat.item_icons && (slot_head_str in hat.item_icons))
@@ -30,14 +30,15 @@ var/list/mob_hat_cache = list()
 	universal_understand = TRUE
 	gender = NEUTER
 	pass_flags = PASS_FLAG_TABLE
+	faction = "silicon"
 	braintype = "Drone"
-	lawupdate = 0
-	density = 0
+	lawupdate = FALSE
+	density = FALSE
 	req_access = list(access_engine, access_robotics)
 	integrated_light_max_bright = 0.5
 	local_transmit = 1
 	possession_candidate = 1
-	speed = 2
+	speed = 0
 
 	can_pull_size = ITEM_SIZE_NORMAL
 	can_pull_mobs = MOB_PULL_SMALLER
@@ -55,12 +56,12 @@ var/list/mob_hat_cache = list()
 
 	//Used for self-mailing.
 	var/mail_destination = ""
-	var/module_type = /obj/item/weapon/robot_module/drone
+	var/module_type = /obj/item/robot_module/drone
 	var/obj/item/hat
 	var/hat_x_offset = 0
 	var/hat_y_offset = -13
 
-	holder_type = /obj/item/weapon/holder/drone
+	holder_type = /obj/item/holder/drone
 
 	//[inf]
 	speech_sounds = list(
@@ -144,10 +145,10 @@ var/list/mob_hat_cache = list()
 	name = "construction drone"
 	icon_state = "constructiondrone"
 	laws = /datum/ai_laws/construction_drone
-	module_type = /obj/item/weapon/robot_module/drone/construction
+	module_type = /obj/item/robot_module/drone/construction
 	hat_x_offset = 1
 	hat_y_offset = -12
-	density = 1
+	density = TRUE
 	can_pull_size = ITEM_SIZE_NO_CONTAINER
 	can_pull_mobs = MOB_PULL_SAME
 	speed = 1.2
@@ -197,7 +198,7 @@ var/list/mob_hat_cache = list()
 	update_icon()
 
 //Drones cannot be upgraded with borg modules so we need to catch some items before they get used in ..().
-/mob/living/silicon/robot/drone/attackby(var/obj/item/weapon/W, var/mob/user)
+/mob/living/silicon/robot/drone/attackby(var/obj/item/W, var/mob/user)
 
 	if(user.a_intent == I_HELP && istype(W, /obj/item/clothing/head))
 		if(hat)
@@ -214,7 +215,7 @@ var/list/mob_hat_cache = list()
 		to_chat(user, "<span class='danger'>\The [src] is hermetically sealed. You can't open the case.</span>")
 		return
 
-	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/modular_computer))
+	else if (istype(W, /obj/item/card/id)||istype(W, /obj/item/modular_computer))
 
 		if(stat == 2)
 
@@ -226,7 +227,10 @@ var/list/mob_hat_cache = list()
 				to_chat(user, "<span class='danger'>Access denied.</span>")
 				return
 
-			user.visible_message("<span class='danger'>\The [user] swipes \his ID card through \the [src], attempting to reboot it.</span>", "<span class='danger'>>You swipe your ID card through \the [src], attempting to reboot it.</span>")
+			user.visible_message(
+				SPAN_DANGER("\The [user] swipes \his ID card through \the [src], attempting to reboot it."),
+				SPAN_DANGER("You swipe your ID card through \the [src], attempting to reboot it.")
+			)
 			request_player()
 			return
 
@@ -263,8 +267,8 @@ var/list/mob_hat_cache = list()
 	var/time = time2text(world.realtime,"hh:mm:ss")
 	GLOB.lawchanges.Add("[time] <B>:</B> [user.name]([user.key]) emagged [name]([key])")
 
-	emagged = 1
-	lawupdate = 0
+	emagged = TRUE
+	lawupdate = FALSE
 	connected_ai = null
 	clear_supplied_laws()
 	clear_inherent_laws()
@@ -345,7 +349,7 @@ var/list/mob_hat_cache = list()
 	if(player.mob && player.mob.mind)
 		player.mob.mind.transfer_to(src)
 
-	lawupdate = 0
+	lawupdate = FALSE
 	to_chat(src, "<b>Systems rebooted</b>. Loading base pattern maintenance protocol... <b>loaded</b>.")
 	full_law_reset()
 	welcome_drone()

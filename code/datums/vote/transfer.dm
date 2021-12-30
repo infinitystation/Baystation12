@@ -7,15 +7,20 @@
 	question = "End the shift?"
 
 /datum/vote/transfer/can_run(mob/creator, automatic)
+	if(!(. = ..()))
+		return
 	if(!evacuation_controller || !evacuation_controller.should_call_autotransfer_vote())
 		return FALSE
-	if(GAME_STATE != RUNLEVEL_GAME)
-		return FALSE
-	if(automatic || check_rights(R_ADMIN, 0, creator))
-		return TRUE
+	if(!automatic && !config.allow_vote_restart && !isadmin(creator))
+		return FALSE // Admins and autovotes bypass the config setting.
+	if(check_rights(R_INVESTIGATE, 0, creator))
+		return //Mods bypass further checks.
 	var/decl/security_state/security_state = decls_repository.get_decl(GLOB.using_map.security_state)
 	if (!automatic && security_state.current_security_level_is_same_or_higher_than(security_state.high_security_level))
 		to_chat(creator, "The current alert status is too high to call for a crew transfer!")
+		return FALSE
+	if(GAME_STATE <= RUNLEVEL_SETUP)
+		to_chat(creator, "The crew transfer button has been disabled!")
 		return FALSE
 
 /datum/vote/transfer/setup_vote(mob/creator, automatic)
@@ -60,7 +65,7 @@
 	return config.allow_vote_restart ? "Allowed" : "Disallowed"
 
 /datum/vote/transfer/toggle(mob/user)
-	if(is_admin(user))
+	if(isadmin(user))
 		config.allow_vote_restart = !config.allow_vote_restart
 
 #undef CHOICE_TRANSFER

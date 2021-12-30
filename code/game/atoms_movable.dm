@@ -1,14 +1,14 @@
 /atom/movable
 	layer = OBJ_LAYER
 
-	appearance_flags = TILE_BOUND
+	appearance_flags = TILE_BOUND | LONG_GLIDE
 	glide_size = 8
 
 	var/waterproof = TRUE
 	var/movable_flags
 
 	var/last_move = null
-	var/anchored = 0
+	var/anchored = FALSE
 	// var/elevation = 2    - not used anywhere
 	var/move_speed = 10
 	var/l_move_time = 1
@@ -22,7 +22,6 @@
 	var/does_spin = TRUE // Does the atom spin when thrown (of course it does :P)
 
 /atom/movable/Destroy()
-	. = ..()
 	if(!(atom_flags & ATOM_FLAG_INITIALIZED))
 		crash_with("Was deleted before initalization")
 
@@ -44,6 +43,8 @@
 	if(virtual_mob && !ispath(virtual_mob))
 		qdel(virtual_mob)
 		virtual_mob = null
+
+	. = ..()
 
 /atom/movable/Bump(var/atom/A, yes)
 	if(!QDELETED(throwing))

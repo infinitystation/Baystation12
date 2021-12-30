@@ -27,3 +27,4 @@
 		"khaa", "kin", "kiy", "ky", "dei", "dekh", "nhi", "pne", "pr", "baar", "yon",
 		"men", "iyaa", "main", "apn"
 	)
+	has_written_form = TRUE

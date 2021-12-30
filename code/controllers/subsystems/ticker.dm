@@ -24,14 +24,18 @@ SUBSYSTEM_DEF(ticker)
 	var/restart_timeout = 1.5 MINUTES
 
 	var/scheduled_map_change = 0
-	var/force_ending = 0            //Overriding this variable will force game end. Can be used for build update or adminbuse.
 
 	var/list/minds = list()         //Minds of everyone in the game.
 	var/list/antag_pool = list()
 	var/looking_for_antags = 0
 
+	var/secret_force_mode = "secret"
+
+	///Set to TRUE when an admin forcefully ends the round.
+	var/forced_end = FALSE
+
 /datum/controller/subsystem/ticker/Initialize()
-	to_world("<B><FONT color='blue'>Добро пожаловать в лобби!</FONT></B>")
+	to_world("<span class='info'><B>Добро пожаловать в лобби!</B></span>")
 	to_world("Настройте своего персонажа и нажмите \"Ready\" для вступлению в игру с начала раунда через [round(pregame_timeleft/10)] секунд.")
 	return ..()
 
@@ -97,10 +101,13 @@ SUBSYSTEM_DEF(ticker)
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup() // Drafts antags who don't override jobs.
-		to_world("<FONT color='blue'><B>Приятной игры!</B></FONT>")
+		to_world("<span class='info'><B>Приятной игры!</B></span>")
 		send2maindiscord("Раунд с режимом [SSticker.master_mode] начался. Игроков: [GLOB.player_list.len].")
 		send2mainirc("Раунд с режимом [SSticker.master_mode] начался;. Игроков: [GLOB.player_list.len].")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
+
+		for (var/mob/new_player/player in GLOB.player_list)
+			player.new_player_panel()
 
 	if(!length(GLOB.admins))
 		send2adminirc("Раунд начался без администраторов в игре!")
@@ -384,8 +391,9 @@ Helpers
 	return 0
 
 /datum/controller/subsystem/ticker/proc/game_finished()
-	if(force_ending)
-		return 1
+	if (forced_end)
+		return TRUE
+
 	if(mode.explosion_in_progress)
 		return 0
 	if(config.continous_rounds)
@@ -394,6 +402,9 @@ Helpers
 		return mode.check_finished() || evacuation_controller.round_over() || universe_has_ended // && evacuation_controller.emergency_evacuation - since transfer shuttle don't really use this variable, it don't allow end round
 
 /datum/controller/subsystem/ticker/proc/mode_finished()
+	if (forced_end)
+		return TRUE
+
 	if(config.continous_rounds)
 		return mode.check_finished()
 	else
@@ -420,28 +431,9 @@ Helpers
 	for(var/client/C)
 		if(!C.credits)
 			C.RollCredits()
-	for(var/mob/Player in GLOB.player_list)
-		if(Player.mind && !isnewplayer(Player))
-			if(Player.stat != DEAD)
-				var/turf/playerTurf = get_turf(Player)
-				if(evacuation_controller.round_over() && evacuation_controller.emergency_evacuation)
-					if(isNotAdminLevel(playerTurf.z))
-						to_chat(Player, "<font color='blue'><b>Вам удалось выжить, но вы были брошены на [station_name()], [Player.real_name]...</b></font>")
-					else
-						to_chat(Player, "<font color='green'><b>Вам удалось пережить события на [station_name()], [Player.real_name]!</b></font>")
-				else if(isAdminLevel(playerTurf.z))
-					to_chat(Player, "<font color='green'><b>Вы успешно избежали событий на [station_name()], [Player.real_name].</b></font>")
-				else if(issilicon(Player))
-					to_chat(Player, "<font color='green'><b>Ваши системы сохранили свою функциональность после событий на [station_name()], [Player.real_name].</b></font>")
-				else
-					to_chat(Player, "<font color='blue'><b>Вы пережили очередную смену на [station_name()], [Player.real_name].</b></font>")
-			else
-				if(isghost(Player))
-					var/mob/observer/ghost/O = Player
-					if(!O.started_as_observer)
-						to_chat(Player, "<font color='red'><b>Вы не пережили события на [station_name()]...</b></font>")
-				else
-					to_chat(Player, "<font color='red'><b>Вы не пережили события на [station_name()]...</b></font>")
+
+	GLOB.using_map.roundend_player_status()
+
 	to_world("<br>")
 
 	for(var/mob/living/silicon/ai/aiPlayer in SSmobs.mob_list)
@@ -455,8 +447,9 @@ Helpers
 		if (aiPlayer.connected_robots.len)
 			var/robolist = "<b>Лояльными роботами ИИ были:</b> "
 			for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
-				robolist += "[robo.name][robo.stat ? " (Deactivated)" : ""] [(robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW) ? "(Played by: [robo.key])" : ""],"
-			to_world("[robolist]")
+				var/show_robot_key = robo.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW
+				robolist += " [robo.name][show_robot_key ? "(played by: [robo.key])" : ""][robo.stat ? " (deactivated)" : ""]," // INF, было minions += ...
+			to_world(robolist) // INF, было to_world(minions)
 
 	var/dronecount = 0
 

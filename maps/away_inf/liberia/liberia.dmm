@@ -34,15 +34,13 @@
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/effect/submap_landmark/joinable_submap/liberia,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "ae" = (
 /obj/item/device/scanner/health,
 /obj/item/device/serial,
 /obj/item/device/scanner/gas,
 /obj/item/device/scanner/mining,
-/obj/item/weapon/autopsy_scanner,
+/obj/item/autopsy_scanner,
 /obj/item/device/scanner/plant,
 /obj/item/device/scanner/price,
 /obj/item/device/scanner/xenobio,
@@ -59,8 +57,8 @@
 /area/liberia/merchantstorage)
 "af" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/rd,
-/obj/item/weapon/storage/secure/safe{
+/obj/item/bedsheet/rd,
+/obj/item/storage/secure/safe{
 	pixel_x = 34
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -69,7 +67,7 @@
 /area/liberia/captain)
 "ag" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/brown,
+/obj/item/bedsheet/brown,
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 22
@@ -82,7 +80,7 @@
 /area/liberia/personellroom2)
 "ah" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/brown,
+/obj/item/bedsheet/brown,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
@@ -117,6 +115,10 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/merchantstorage)
+"ao" = (
+/obj/effect/shuttle_landmark/nav_liberia/south,
+/turf/space,
+/area/space)
 "aq" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -284,7 +286,7 @@
 	dir = 1
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/storage/toolbox/electrical{
+/obj/item/storage/toolbox/electrical{
 	pixel_x = 7;
 	pixel_y = 4
 	},
@@ -330,7 +332,7 @@
 	name = "Radiation shields";
 	pixel_x = 24
 	},
-/obj/item/weapon/caution/cone,
+/obj/item/caution/cone,
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
@@ -375,10 +377,10 @@
 	dir = 5
 	},
 /obj/structure/table/standard,
-/obj/item/weapon/rcd,
-/obj/item/weapon/rcd_ammo/large,
-/obj/item/weapon/rcd_ammo/large,
-/obj/item/weapon/rcd_ammo/large,
+/obj/item/rcd,
+/obj/item/rcd_ammo/large,
+/obj/item/rcd_ammo/large,
+/obj/item/rcd_ammo/large,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringengines)
 "aO" = (
@@ -620,10 +622,10 @@
 /area/liberia/traidingroom)
 "bk" = (
 /obj/structure/table/steel,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/random/cash,
-/obj/item/weapon/spacecash/bundle/c1000{
+/obj/item/spacecash/bundle/c1000{
 	desc = "It's worth 13000 Thalers. Who the fuck made it?";
 	name = "13000 Thaler";
 	worth = 13000
@@ -639,7 +641,7 @@
 /area/liberia/traidingroom)
 "bl" = (
 /obj/structure/table/rack,
-/obj/item/weapon/storage/bag/cash,
+/obj/item/storage/bag/cash,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
@@ -655,9 +657,7 @@
 	},
 /obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "bn" = (
 /obj/structure/bed/chair/wood/walnut,
 /obj/effect/floor_decal/borderfloor{
@@ -708,14 +708,14 @@
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/effect/floor_decal/corner/brown/half,
-/obj/item/weapon/storage/pill_bottle/methylphenidate,
-/obj/item/weapon/storage/pill_bottle/three_eye,
-/obj/item/weapon/plastique,
-/obj/item/weapon/plastique,
-/obj/item/weapon/beartrap,
-/obj/item/weapon/beartrap,
-/obj/item/weapon/grenade/smokebomb,
-/obj/item/weapon/silencer,
+/obj/item/storage/pill_bottle/methylphenidate,
+/obj/item/storage/pill_bottle/three_eye,
+/obj/item/plastique,
+/obj/item/plastique,
+/obj/item/beartrap,
+/obj/item/beartrap,
+/obj/item/grenade/smokebomb,
+/obj/item/silencer,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/mule)
 "bs" = (
@@ -724,7 +724,7 @@
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/effect/floor_decal/corner/brown/half,
-/obj/item/weapon/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
 /obj/item/clothing/accessory/armorplate/tactical,
 /obj/item/clothing/mask/balaclava,
 /obj/item/clothing/mask/balaclava,
@@ -762,15 +762,15 @@
 /obj/machinery/door/window/brigdoor/southright{
 	req_access = newlist()
 	},
-/obj/item/weapon/storage/secure/briefcase,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/contraband/poster,
-/obj/item/weapon/material/knife/folding/combat/balisong,
-/obj/item/weapon/material/knife/folding/combat/balisong,
+/obj/item/storage/secure/briefcase,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/contraband/poster,
+/obj/item/material/knife/folding/combat/balisong,
+/obj/item/material/knife/folding/combat/balisong,
 /turf/simulated/floor/tiled/steel_grid,
 /area/liberia/mule)
 "bv" = (
@@ -790,19 +790,19 @@
 /obj/machinery/door/window/brigdoor/southright{
 	req_access = newlist()
 	},
-/obj/item/weapon/storage/firstaid/combat/special,
-/obj/item/weapon/storage/firstaid/surgery,
+/obj/item/storage/firstaid/combat/special,
+/obj/item/storage/firstaid/surgery,
 /obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
 /obj/item/auto_cpr,
 /obj/item/bodybag/rescue/loaded,
 /obj/item/bodybag/rescue/loaded,
-/obj/item/weapon/defibrillator/compact/combat/loaded,
-/obj/item/weapon/FixOVein/clot,
-/obj/item/weapon/bonesetter/bone_mender,
-/obj/item/weapon/circular_saw/plasmasaw,
-/obj/item/weapon/hemostat/pico,
-/obj/item/weapon/scalpel/laser1,
+/obj/item/defibrillator/compact/combat/loaded,
+/obj/item/FixOVein/clot,
+/obj/item/bonesetter/bone_mender,
+/obj/item/circular_saw/plasmasaw,
+/obj/item/hemostat/pico,
+/obj/item/scalpel/laser1,
 /turf/simulated/floor/tiled/steel_grid,
 /area/liberia/mule)
 "bw" = (
@@ -997,7 +997,7 @@
 	pixel_x = -7;
 	pixel_y = 32
 	},
-/obj/item/weapon/storage/secure/safe{
+/obj/item/storage/secure/safe{
 	pixel_x = 30
 	},
 /obj/machinery/power/smes/buildable{
@@ -1367,7 +1367,7 @@
 	dir = 4
 	},
 /obj/structure/table/mag,
-/obj/item/weapon/gun/projectile/pistol/holdout,
+/obj/item/gun/projectile/pistol/holdout,
 /obj/random/handgun,
 /obj/random/handgun,
 /obj/random/projectile,
@@ -1468,13 +1468,13 @@
 /area/liberia/mule)
 "cB" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/carpet/blue2,
 /area/liberia/mule)
 "cC" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper/sierrau/merchant,
+/obj/item/paper/liberia/merchant,
 /turf/simulated/floor/carpet/blue2,
 /area/liberia/mule)
 "cD" = (
@@ -1768,9 +1768,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "dc" = (
 /obj/structure/cable/blue{
 	d1 = 2;
@@ -1840,9 +1838,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "di" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
@@ -1870,12 +1866,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/liberia/atmos)
@@ -2016,17 +2012,13 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "dv" = (
 /obj/machinery/hologram/holopad/longrange,
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/effect/overmap/visitable/ship/liberia,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "dw" = (
 /obj/structure/closet/secure_closet/engineering_electrical/bearcat{
 	req_access = list()
@@ -2161,8 +2153,8 @@
 	pixel_y = 24
 	},
 /obj/structure/table/steel,
-/obj/item/weapon/storage/box/lights/mixed,
-/obj/item/weapon/reagent_containers/spray/cleaner,
+/obj/item/storage/box/lights/mixed,
+/obj/item/reagent_containers/spray/cleaner,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -2191,9 +2183,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "dI" = (
 /obj/machinery/computer/modular/preset/security{
 	dir = 8
@@ -2206,9 +2196,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "dJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -2236,12 +2224,10 @@
 /area/liberia/atmos)
 "dL" = (
 /obj/structure/table/glass,
-/obj/item/weapon/folder/blue,
+/obj/item/folder/blue,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "dM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -2373,8 +2359,8 @@
 	dir = 1
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/machinery/button/blast_door{
 	dir = 1;
 	id_tag = "merchantdesk";
@@ -2385,11 +2371,11 @@
 /obj/structure/filingcabinet/wallcabinet{
 	pixel_x = 28
 	},
-/obj/item/weapon/folder,
-/obj/item/weapon/folder,
-/obj/item/weapon/folder/blue,
-/obj/item/weapon/folder/red,
-/obj/item/weapon/hand_labeler,
+/obj/item/folder,
+/obj/item/folder,
+/obj/item/folder/blue,
+/obj/item/folder/red,
+/obj/item/hand_labeler,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/liberia/mule)
 "dV" = (
@@ -2530,9 +2516,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "ee" = (
 /obj/structure/closet/crate/freezer,
 /obj/random/snack,
@@ -2565,10 +2549,10 @@
 /area/liberia/mule)
 "eg" = (
 /obj/structure/table/mag,
-/obj/item/weapon/wirecutters/power,
-/obj/item/weapon/wrench/power,
+/obj/item/wirecutters/power,
+/obj/item/wrench/power,
 /obj/item/device/flashlight/upgraded,
-/obj/item/weapon/marshalling_wand,
+/obj/item/marshalling_wand,
 /obj/effect/floor_decal/corner/brown{
 	dir = 10
 	},
@@ -2645,9 +2629,7 @@
 	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "ep" = (
 /obj/machinery/atm{
 	pixel_y = -30
@@ -2689,17 +2671,17 @@
 "et" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/weapon/card/id{
+/obj/item/card/id{
 	access = list("ACCESS_MERCHANT");
 	desc = "A visitor's access card, this one is for the Merchant's Station.";
 	name = "Visitor's Card - Merchant's Station"
 	},
-/obj/item/weapon/card/id{
+/obj/item/card/id{
 	access = list("ACCESS_MERCHANT");
 	desc = "A visitor's access card, this one is for the Merchant's Station.";
 	name = "Visitor's Card - Merchant's Station"
 	},
-/obj/item/weapon/card/id{
+/obj/item/card/id{
 	access = list("ACCESS_MERCHANT");
 	desc = "A visitor's access card, this one is for the Merchant's Station.";
 	name = "Visitor's Card - Merchant's Station"
@@ -2865,7 +2847,7 @@
 	dir = 4;
 	pixel_y = 8
 	},
-/obj/item/weapon/tank/emergency/oxygen/double,
+/obj/item/tank/emergency/oxygen/double,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -2876,7 +2858,7 @@
 /area/liberia/atmos)
 "eG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/item/weapon/reagent_containers/glass/beaker/cryoxadone{
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
 	pixel_x = 7;
 	pixel_y = 1
 	},
@@ -2931,7 +2913,6 @@
 /obj/item/stack/material/steel{
 	amount = 10
 	},
-/obj/item/device/floor_painter,
 /obj/item/clothing/gloves/insulated/black,
 /obj/item/device/suit_cooling_unit,
 /obj/item/stack/material/aluminium/ten,
@@ -3205,7 +3186,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/liberia/mule)
 "fm" = (
 /obj/structure/closet/crate/uranium,
@@ -3321,13 +3302,13 @@
 	pixel_x = 24;
 	pixel_y = 4
 	},
-/obj/item/weapon/reagent_containers/ivbag/blood/OPlus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OPlus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/ivbag/blood/OMinus,
-/obj/item/weapon/reagent_containers/food/snacks/candy/donor,
-/obj/item/weapon/reagent_containers/food/snacks/candy/donor,
-/obj/item/weapon/reagent_containers/food/snacks/candy/donor,
+/obj/item/reagent_containers/ivbag/blood/OPlus,
+/obj/item/reagent_containers/ivbag/blood/OPlus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/ivbag/blood/OMinus,
+/obj/item/reagent_containers/food/snacks/candy/donor,
+/obj/item/reagent_containers/food/snacks/candy/donor,
+/obj/item/reagent_containers/food/snacks/candy/donor,
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
 	},
@@ -3353,8 +3334,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/cryo)
 "fx" = (
@@ -3415,7 +3396,7 @@
 "fB" = (
 /obj/machinery/light/small,
 /obj/machinery/portable_atmospherics/canister/nitrogen,
-/obj/item/weapon/tank/nitrogen,
+/obj/item/tank/nitrogen,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5;
@@ -3483,9 +3464,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "fK" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -3494,8 +3473,8 @@
 	pixel_y = 24
 	},
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10
 	},
@@ -3509,8 +3488,8 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/weapon/folder,
-/obj/item/weapon/folder,
+/obj/item/folder,
+/obj/item/folder,
 /turf/simulated/floor/tiled/monotile,
 /area/liberia/officeroom)
 "fM" = (
@@ -3529,9 +3508,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "fN" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
@@ -3785,7 +3762,7 @@
 /area/liberia/bar)
 "gl" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/storage/box/glasses/pint,
+/obj/item/storage/box/glasses/pint,
 /turf/simulated/floor/wood/ebony,
 /area/liberia/bar)
 "gm" = (
@@ -3816,9 +3793,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/liberia/toiletroom1)
 "go" = (
-/obj/machinery/computer/shuttle_control/merchant{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -3831,6 +3805,7 @@
 	pixel_x = -24
 	},
 /obj/structure/cable/blue,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/monotile,
 /area/liberia/officeroom)
 "gp" = (
@@ -3940,7 +3915,7 @@
 /area/liberia/bar)
 "gy" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/material/ashtray/bronze,
+/obj/item/material/ashtray/bronze,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -3952,7 +3927,7 @@
 /area/liberia/bar)
 "gz" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/reagent_containers/glass/rag,
+/obj/item/reagent_containers/glass/rag,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -4009,7 +3984,7 @@
 /area/liberia/hallway)
 "gE" = (
 /obj/structure/table/standard,
-/obj/item/weapon/towel/random,
+/obj/item/towel/random,
 /obj/machinery/power/apc/liberia{
 	dir = 8;
 	name = "west bump";
@@ -4043,7 +4018,7 @@
 	dir = 1;
 	pixel_y = 16
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	dir = 4;
 	pixel_x = -1;
 	pixel_y = 30
@@ -4058,7 +4033,7 @@
 	dir = 1;
 	pixel_y = 16
 	},
-/obj/item/weapon/storage/mirror{
+/obj/item/storage/mirror{
 	dir = 4;
 	pixel_x = -1;
 	pixel_y = 30
@@ -4071,8 +4046,8 @@
 /area/liberia/toiletroom1)
 "gI" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
@@ -4089,7 +4064,7 @@
 	eftpos_name = "Merchant EFTPOS scanner"
 	},
 /obj/item/stack/package_wrap/twenty_five,
-/obj/item/weapon/hand_labeler,
+/obj/item/hand_labeler,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
@@ -4120,7 +4095,7 @@
 /obj/item/clothing/under/lawyer/black,
 /obj/item/clothing/under/suit_jacket/navy,
 /obj/random/handgun,
-/obj/item/weapon/reagent_containers/food/drinks/bottle/premiumwine,
+/obj/item/reagent_containers/food/drinks/bottle/premiumwine,
 /turf/simulated/floor/wood/ebony,
 /area/liberia/captain)
 "gN" = (
@@ -4256,19 +4231,19 @@
 /turf/simulated/floor/wood/walnut,
 /area/liberia/bar)
 "gX" = (
-/obj/item/weapon/stool/padded/red,
+/obj/item/stool/padded/red,
 /obj/effect/floor_decal/spline/plain/brown{
 	dir = 10
 	},
 /turf/simulated/floor/wood/ebony,
 /area/liberia/bar)
 "gY" = (
-/obj/item/weapon/stool/padded/red,
+/obj/item/stool/padded/red,
 /obj/effect/floor_decal/spline/plain/brown,
 /turf/simulated/floor/wood/ebony,
 /area/liberia/bar)
 "gZ" = (
-/obj/item/weapon/stool/padded/red,
+/obj/item/stool/padded/red,
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/spline/plain/brown,
 /turf/simulated/floor/wood/ebony,
@@ -4336,8 +4311,7 @@
 	name = "merchant's locker";
 	req_access = list("ACCESS_MERCHANT")
 	},
-/obj/item/weapon/folder,
-/obj/item/weapon/book/manual/nt_sop,
+/obj/item/folder,
 /turf/simulated/floor/wood/ebony,
 /area/liberia/captain)
 "hh" = (
@@ -4368,7 +4342,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/liberia/personellroom2)
 "hk" = (
-/obj/machinery/media/jukebox/old,
+/obj/machinery/jukebox/old,
 /turf/simulated/floor/wood/walnut,
 /area/liberia/bar)
 "hl" = (
@@ -4460,8 +4434,8 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/clothing/suit/chef/classic,
-/obj/item/weapon/material/kitchen/rollingpin,
-/obj/item/weapon/material/knife/kitchen,
+/obj/item/material/kitchen/rollingpin,
+/obj/item/material/knife/kitchen,
 /turf/simulated/floor/tiled/freezer,
 /area/liberia/bar)
 "hw" = (
@@ -4495,7 +4469,7 @@
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	prices = list();
-	products = list(/obj/item/weapon/storage/fancy/cigarettes = 10, /obj/item/weapon/storage/box/matches = 10, /obj/item/weapon/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/simulated/floor/wood/walnut,
 /area/liberia/bar)
@@ -4517,8 +4491,8 @@
 /area/liberia/engineeringreactor)
 "hC" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/material/ashtray,
-/obj/item/weapon/storage/box/matches,
+/obj/item/material/ashtray,
+/obj/item/storage/box/matches,
 /obj/random/smokes,
 /turf/simulated/floor/carpet/red,
 /area/liberia/captain)
@@ -4527,7 +4501,7 @@
 /mob/living/simple_animal/tindalos{
 	name = "Eddy"
 	},
-/obj/item/weapon/crowbar/prybar,
+/obj/item/crowbar/prybar,
 /turf/simulated/floor/carpet/red,
 /area/liberia/captain)
 "hE" = (
@@ -4558,7 +4532,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
-/obj/item/weapon/crowbar/prybar,
+/obj/item/crowbar/prybar,
 /turf/simulated/floor/carpet,
 /area/liberia/personellroom2)
 "hH" = (
@@ -4602,7 +4576,7 @@
 /area/liberia/bar)
 "hL" = (
 /obj/structure/table/reinforced,
-/obj/item/weapon/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -4612,10 +4586,10 @@
 /turf/simulated/floor/tiled/freezer,
 /area/liberia/bar)
 "hM" = (
-/obj/item/weapon/stock_parts/computer/tesla_link,
-/obj/item/weapon/stock_parts/computer/tesla_link,
-/obj/item/weapon/stock_parts/computer/tesla_link,
-/obj/item/weapon/stock_parts/computer/tesla_link,
+/obj/item/stock_parts/computer/tesla_link,
+/obj/item/stock_parts/computer/tesla_link,
+/obj/item/stock_parts/computer/tesla_link,
+/obj/item/stock_parts/computer/tesla_link,
 /obj/structure/table/rack/dark,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/alarm/merchant{
@@ -4659,7 +4633,7 @@
 "hS" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/weapon/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/condiment/enzyme,
 /turf/simulated/floor/tiled/freezer,
 /area/liberia/bar)
 "hT" = (
@@ -4744,6 +4718,12 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/access_button/airlock_interior{
+	frequency = 1380;
+	master_tag = "liberia_solar_south";
+	name = "south liberia solar interior";
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/liberia/atmos)
@@ -4860,14 +4840,14 @@
 /area/liberia/engineeringengines)
 "in" = (
 /obj/structure/table/standard,
-/obj/item/weapon/defibrillator/compact/loaded,
+/obj/item/defibrillator/compact/loaded,
 /obj/item/device/flashlight,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringreactor)
 "io" = (
 /obj/structure/table/standard,
 /obj/machinery/cell_charger,
-/obj/item/weapon/storage/toolbox/electrical{
+/obj/item/storage/toolbox/electrical{
 	pixel_x = 7;
 	pixel_y = 4
 	},
@@ -4907,14 +4887,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringstorage)
 "ix" = (
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1380;
-	master_tag = "solar_merchant_airlock";
-	name = "interior access button";
-	pixel_x = -24;
-	req_access = list("ACCESS_MERCHANT")
-	},
 /obj/machinery/power/solar_control/autostart{
 	dir = 4
 	},
@@ -4934,9 +4906,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "iA" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -5064,27 +5034,21 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "iN" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "iO" = (
 /obj/machinery/computer/ship/helm{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "iP" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -5136,9 +5100,9 @@
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
 	frequency = 1380;
-	id_tag = "merchant_solar_outer";
+	id_tag = "liberia_solar_north_outer";
 	locked = 1;
-	name = "Solar External Access";
+	name = "North Liberia Solar External";
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/structure/cable/yellow{
@@ -5149,27 +5113,12 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringstorage)
 "iU" = (
-/obj/structure/catwalk,
-/obj/machinery/airlock_sensor{
-	frequency = 1380;
-	id_tag = "solar_merchant_sensor";
-	pixel_y = 24
-	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	id_tag = "solar_merchant_pump"
+	id_tag = "liberia_solar_north_pump"
 	},
+/obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	frequency = 1380;
-	id_tag = "solar_merchant_airlock";
-	pixel_y = -24;
-	req_access = list("ACCESS_MERCHANT");
-	tag_airpump = "solar_merchant_pump";
-	tag_chamber_sensor = "solar_merchant_sensor";
-	tag_exterior_door = "solar_merchant_outer";
-	tag_interior_door = "solar_merchant_inner"
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -5177,6 +5126,24 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	dir = 1;
+	frequency = 1380;
+	id_tag = "liberia_solar_north";
+	name = "Liberia Solar North Airlock Controller";
+	pixel_y = -24;
+	req_access = list();
+	tag_airpump = "liberia_solar_north_pump";
+	tag_chamber_sensor = "liberia_solar_north_sensor";
+	tag_exterior_door = "liberia_solar_north_outer";
+	tag_interior_door = "liberia_solar_north_inner"
+	},
+/obj/machinery/airlock_sensor{
+	frequency = 1380;
+	id_tag = "liberia_solar_north_sensor";
+	master_tag = "liberia_solar_north";
+	pixel_y = 24
 	},
 /turf/simulated/floor/plating,
 /area/liberia/engineeringstorage)
@@ -5188,14 +5155,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/merchantstorage)
 "iW" = (
-/obj/machinery/door/airlock/external{
-	autoset_access = 0;
-	frequency = 1380;
-	id_tag = "merchant_solar_inner";
-	locked = 1;
-	name = "Solar External Access";
-	req_access = list("ACCESS_MERCHANT")
-	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
 	},
@@ -5203,6 +5162,14 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external{
+	autoset_access = 0;
+	frequency = 1380;
+	id_tag = "liberia_solar_north_inner";
+	locked = 1;
+	name = "North Liberia Solar Interior";
+	req_access = list("ACCESS_MERCHANT")
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringstorage)
@@ -5228,9 +5195,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "iZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -5418,9 +5383,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "jy" = (
 /obj/structure/closet,
 /obj/random/shoes,
@@ -5431,13 +5394,11 @@
 /area/liberia/merchantstorage)
 "jz" = (
 /obj/structure/table/glass,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "jA" = (
 /obj/structure/closet/crate,
 /obj/random/loot,
@@ -5454,9 +5415,7 @@
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "jC" = (
 /obj/machinery/computer/ship/navigation{
 	dir = 8
@@ -5467,9 +5426,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "jD" = (
 /obj/structure/table/glass,
 /obj/machinery/photocopier/faxmachine{
@@ -5478,9 +5435,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "jE" = (
 /obj/random/action_figure,
 /obj/random/plushie,
@@ -5514,18 +5469,20 @@
 /area/liberia/guestroom1)
 "jH" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/green,
+/obj/item/bedsheet/green,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 5
 	},
+/obj/effect/submap_landmark/spawnpoint/liberia/engineer,
 /turf/simulated/floor/carpet/green,
 /area/liberia/guestroom1)
 "jI" = (
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/rd,
+/obj/item/bedsheet/rd,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 9
 	},
+/obj/effect/submap_landmark/spawnpoint/liberia/engineer,
 /turf/simulated/floor/carpet/magenta,
 /area/liberia/guestroom2)
 "jJ" = (
@@ -5601,9 +5558,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "jT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -5616,9 +5571,7 @@
 /obj/structure/cable/blue,
 /obj/effect/floor_decal/corner/blue/three_quarters,
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "jU" = (
 /obj/structure/bed/chair/wood/walnut,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -5719,11 +5672,12 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
+/obj/effect/submap_landmark/spawnpoint/liberia/doctor,
 /turf/simulated/floor/carpet,
 /area/liberia/library)
 "kc" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/storage/box/donut,
+/obj/item/storage/box/donut,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 6
 	},
@@ -5733,7 +5687,7 @@
 /obj/machinery/ion_engine{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/airless,
 /area/liberia/mule)
 "kg" = (
 /obj/machinery/door/airlock/civilian{
@@ -5985,8 +5939,8 @@
 /area/liberia/library)
 "kz" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/paper_bin,
-/obj/item/weapon/pen,
+/obj/item/paper_bin,
+/obj/item/pen,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -6012,11 +5966,8 @@
 /area/liberia/dockinghall)
 "kC" = (
 /obj/structure/table/steel,
-/obj/item/weapon/storage/toolbox/mechanical,
-/obj/item/weapon/storage/belt/utility/full,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/belt/utility/full,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -6181,6 +6132,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/effect/submap_landmark/spawnpoint/liberia/doctor,
 /turf/simulated/floor/tiled/white,
 /area/liberia/medbay)
 "kV" = (
@@ -6240,10 +6192,6 @@
 /turf/simulated/floor/tiled/white,
 /area/liberia/medbay)
 "lb" = (
-/obj/structure/sign/warning/airlock{
-	dir = 1;
-	pixel_y = -32
-	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 9
 	},
@@ -6261,6 +6209,12 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/access_button/airlock_interior{
+	frequency = 1380;
+	master_tag = "liberia_solar_north";
+	name = "north liberia solar interior";
+	pixel_y = -24
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringstorage)
 "lc" = (
@@ -6275,6 +6229,10 @@
 	},
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
+	},
+/obj/structure/sign/warning/airlock{
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/engineeringstorage)
@@ -6462,7 +6420,7 @@
 /area/liberia/atmos)
 "lo" = (
 /obj/structure/table/standard,
-/obj/item/weapon/defibrillator/loaded,
+/obj/item/defibrillator/loaded,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -6470,19 +6428,19 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/item/weapon/storage/firstaid/regular{
+/obj/item/storage/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/weapon/storage/firstaid/adv{
+/obj/item/storage/firstaid/adv{
 	pixel_x = -2
 	},
-/obj/item/weapon/storage/firstaid/fire{
+/obj/item/storage/firstaid/fire{
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/weapon/storage/firstaid/o2,
-/obj/item/weapon/storage/firstaid/toxin,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/toxin,
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
 	},
@@ -6524,11 +6482,11 @@
 /area/liberia/medbay)
 "ls" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/firstaid/surgery{
+/obj/item/storage/firstaid/surgery{
 	pixel_y = 6
 	},
 /obj/item/stack/medical/advanced/bruise_pack,
-/obj/item/weapon/reagent_containers/spray/sterilizine,
+/obj/item/reagent_containers/spray/sterilizine,
 /obj/structure/hygiene/sink{
 	dir = 4;
 	pixel_x = 22
@@ -6555,7 +6513,7 @@
 /turf/simulated/floor/plating,
 /area/liberia/bar)
 "lv" = (
-/obj/machinery/vending/medical/sierra{
+/obj/machinery/vending/medical{
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/machinery/door/firedoor,
@@ -6669,9 +6627,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "lR" = (
 /obj/machinery/vending/wallmed1{
 	pixel_x = 7;
@@ -6724,6 +6680,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/liberia/bar)
+"mt" = (
+/obj/effect/shuttle_landmark/nav_liberia/west,
+/turf/space,
+/area/space)
 "mu" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -6748,13 +6708,13 @@
 /area/liberia/engineeringreactor)
 "mO" = (
 /obj/structure/closet/crate/med_crate,
-/obj/item/weapon/storage/firstaid/fire,
-/obj/item/weapon/storage/firstaid/o2,
-/obj/item/weapon/storage/firstaid/regular,
-/obj/item/weapon/storage/firstaid/surgery,
-/obj/item/weapon/storage/firstaid/toxin,
-/obj/item/weapon/storage/firstaid/trauma,
-/obj/item/weapon/defibrillator,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/surgery,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/trauma,
+/obj/item/defibrillator,
 /obj/item/bodybag/cryobag,
 /obj/item/bodybag/cryobag,
 /obj/item/bodybag/rescue/loaded,
@@ -6762,7 +6722,7 @@
 /obj/item/roller,
 /obj/item/roller,
 /obj/item/auto_cpr,
-/obj/item/weapon/storage/box/freezer,
+/obj/item/storage/box/freezer,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -6839,6 +6799,10 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/liberia/library)
+"oo" = (
+/obj/effect/shuttle_landmark/nav_liberia/antag,
+/turf/space,
+/area/space)
 "op" = (
 /obj/structure/railing/mapped,
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -6854,7 +6818,7 @@
 "oD" = (
 /obj/effect/floor_decal/techfloor,
 /obj/structure/table/standard,
-/obj/item/weapon/folder,
+/obj/item/folder,
 /turf/simulated/floor/tiled/techfloor,
 /area/liberia/cryo)
 "oF" = (
@@ -6918,9 +6882,7 @@
 	},
 /obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "pB" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -7100,7 +7062,7 @@
 	},
 /obj/item/device/radio,
 /obj/item/device/flashlight,
-/obj/item/weapon/crowbar/prybar,
+/obj/item/crowbar/prybar,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/liberia/engineeringlobby)
@@ -7248,23 +7210,26 @@
 /obj/structure/catwalk,
 /obj/machinery/airlock_sensor{
 	frequency = 1380;
-	id_tag = "solar_merchant_sensor";
+	id_tag = "liberia_solar_south_sensor";
+	master_tag = "liberia_solar_south";
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
-	id_tag = "solar_merchant_pump"
+	id_tag = "liberia_solar_south_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	dir = 1;
 	frequency = 1380;
-	id_tag = "solar_merchant_airlock";
+	id_tag = "liberia_solar_south";
+	name = "Liberia Solar South Airlock Controller";
 	pixel_y = -24;
-	req_access = list("ACCESS_MERCHANT");
-	tag_airpump = "solar_merchant_pump";
-	tag_chamber_sensor = "solar_merchant_sensor";
-	tag_exterior_door = "solar_merchant_outer";
-	tag_interior_door = "solar_merchant_inner"
+	req_access = list();
+	tag_airpump = "liberia_solar_south_pump";
+	tag_chamber_sensor = "liberia_solar_south_sensor";
+	tag_exterior_door = "liberia_solar_south_outer";
+	tag_interior_door = "liberia_solar_south_inner"
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -7347,6 +7312,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/liberia/hallway)
+"tA" = (
+/obj/machinery/access_button/airlock_exterior{
+	frequency = 1380;
+	master_tag = "liberia_solar_north";
+	name = "north liberia solars exterior";
+	pixel_x = -10
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/liberia/engineeringstorage)
 "tI" = (
 /obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
@@ -7420,6 +7394,10 @@
 "ur" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/liberia/guestroom1)
+"uX" = (
+/obj/effect/shuttle_landmark/nav_liberia/north,
+/turf/space,
+/area/space)
 "vd" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -7439,12 +7417,23 @@
 	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "vv" = (
 /turf/space,
 /area/liberia/solar1)
+"vw" = (
+/obj/effect/shuttle_landmark/nav_liberia/east,
+/turf/space,
+/area/space)
+"vB" = (
+/obj/machinery/access_button/airlock_exterior{
+	frequency = 1380;
+	master_tag = "liberia_solar_south";
+	name = "south liberia solars exterior";
+	pixel_x = -10
+	},
+/turf/simulated/wall/r_wall/prepainted,
+/area/liberia/atmos)
 "vR" = (
 /obj/structure/cable/blue{
 	d1 = 1;
@@ -7457,9 +7446,9 @@
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
 	frequency = 1380;
-	id_tag = "merchant_solar_inner";
+	id_tag = "liberia_solar_south_inner";
 	locked = 1;
-	name = "Solar External Access";
+	name = "South Liberia Solar Interior";
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -7491,9 +7480,7 @@
 	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "wM" = (
 /obj/machinery/floodlight,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -7643,18 +7630,14 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "zn" = (
 /obj/effect/wallframe_spawn/reinforced/prepainted,
 /turf/simulated/floor/plating,
 /area/liberia/officeroom)
 "zq" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "zt" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -7787,9 +7770,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/full,
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "DL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -7845,12 +7826,12 @@
 /area/liberia/engineeringstorage)
 "Ep" = (
 /obj/structure/table/rack/dark,
-/obj/item/weapon/storage/box/gloves,
-/obj/item/weapon/storage/box/bloodpacks,
-/obj/item/weapon/storage/box/beakers,
-/obj/item/weapon/storage/box/masks,
-/obj/item/weapon/storage/box/syringes,
-/obj/item/weapon/storage/box/bodybags,
+/obj/item/storage/box/gloves,
+/obj/item/storage/box/bloodpacks,
+/obj/item/storage/box/beakers,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/bodybags,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/merchantstorage)
@@ -8010,7 +7991,7 @@
 /area/liberia/atmos)
 "GV" = (
 /obj/structure/janitorialcart,
-/obj/item/weapon/mop,
+/obj/item/mop,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/power/apc/liberia{
 	dir = 1;
@@ -8105,11 +8086,12 @@
 	dir = 9
 	},
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/ce,
+/obj/item/bedsheet/ce,
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24
 	},
+/obj/effect/submap_landmark/spawnpoint/liberia/security,
 /turf/simulated/floor/carpet/blue,
 /area/liberia/personellroom1)
 "HQ" = (
@@ -8131,9 +8113,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "HV" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/liberia/merchantstorage)
@@ -8149,7 +8129,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced,
 /area/liberia/merchantstorage)
 "Iw" = (
 /turf/simulated/wall/prepainted,
@@ -8196,16 +8176,14 @@
 "Jf" = (
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "JE" = (
 /obj/machinery/door/airlock/external{
 	autoset_access = 0;
 	frequency = 1380;
-	id_tag = "merchant_solar_outer";
+	id_tag = "liberia_solar_south_outer";
 	locked = 1;
-	name = "Solar External Access";
+	name = "South Liberia Solar External";
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/structure/cable/yellow{
@@ -8320,9 +8298,7 @@
 /area/liberia/solar2)
 "Lm" = (
 /turf/simulated/wall/prepainted,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "Lz" = (
 /turf/simulated/wall/prepainted,
 /area/liberia/toiletroom2)
@@ -8359,7 +8335,7 @@
 /area/liberia/officeroom)
 "Ml" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/weapon/material/ashtray/glass,
+/obj/item/material/ashtray/glass,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -8542,9 +8518,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "Qj" = (
 /obj/structure/cable/blue{
 	d1 = 4;
@@ -8628,9 +8602,7 @@
 /area/liberia/guestroom2)
 "Ro" = (
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "Rw" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/liberia/guestroom2)
@@ -8823,9 +8795,7 @@
 "Uc" = (
 /obj/effect/floor_decal/corner/blue,
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "Ue" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -8850,9 +8820,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "Ut" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 5
@@ -9030,7 +8998,8 @@
 	dir = 5
 	},
 /obj/structure/bed/padded,
-/obj/item/weapon/bedsheet/hos,
+/obj/item/bedsheet/hos,
+/obj/effect/submap_landmark/spawnpoint/liberia/security,
 /turf/simulated/floor/carpet/blue,
 /area/liberia/personellroom1)
 "Xe" = (
@@ -9147,9 +9116,7 @@
 	},
 /obj/effect/floor_decal/corner/blue/full,
 /turf/simulated/floor/tiled/dark,
-/area/liberia/bridge{
-	name = "Liberia - Bridge"
-	})
+/area/liberia/bridge)
 "ZN" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -17568,7 +17535,7 @@ aa
 aa
 aa
 aa
-aa
+mt
 aa
 aa
 aa
@@ -26616,7 +26583,7 @@ aa
 aa
 aa
 aa
-aa
+uX
 aa
 aa
 aa
@@ -26850,7 +26817,7 @@ iy
 IA
 IA
 IA
-IA
+tA
 iT
 ur
 aa
@@ -26868,7 +26835,7 @@ lh
 EG
 GP
 JE
-GP
+vB
 Uh
 lu
 lu
@@ -28112,7 +28079,7 @@ aa
 aa
 aa
 aa
-aa
+ao
 aa
 aa
 aa
@@ -37924,7 +37891,7 @@ aa
 aa
 aa
 aa
-aa
+oo
 aa
 aa
 aa
@@ -38577,7 +38544,7 @@ aa
 aa
 aa
 aa
-aa
+vw
 aa
 aa
 aa

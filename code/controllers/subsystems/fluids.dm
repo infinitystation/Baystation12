@@ -36,13 +36,14 @@ SUBSYSTEM_DEF(fluids)
 		active_fluids_copied_yet = FALSE
 		af_index = 1
 
+	var/dry_run = FALSE
 	var/flooded_a_neighbor // Not used, required by FLOOD_TURF_NEIGHBORS.
 	var/list/curr_sources = processing_sources
 	while (curr_sources.len)
 		var/turf/T = curr_sources[curr_sources.len]
 		curr_sources.len--
 
-		FLOOD_TURF_NEIGHBORS(T, FALSE)
+		FLOOD_TURF_NEIGHBORS(T, dry_run)
 
 		if (MC_TICK_CHECK)
 			return
@@ -73,7 +74,7 @@ SUBSYSTEM_DEF(fluids)
 				if(istype(current, /turf/simulated/open))
 					var/turf/T = GetBelow(F)
 					var/obj/effect/fluid/other = locate() in T
-					if(!istype(other) || other.fluid_amount < FLUID_MAX_DEPTH)
+					if((!istype(other) || other.fluid_amount < FLUID_MAX_DEPTH) && T.CanFluidPass(UP))
 						if(!other)
 							other = new /obj/effect/fluid(T)
 						F.equalizing_fluids += other
@@ -88,6 +89,9 @@ SUBSYSTEM_DEF(fluids)
 					continue
 				UPDATE_FLUID_BLOCKED_DIRS(T)
 				if((T.fluid_blocked_dirs & coming_from) || !T.CanFluidPass(coming_from))
+					continue
+				var/turf/current = get_turf(F)
+				if((F.fluid_amount + current.height) <= T.height) //Water cannot flow up height differences
 					continue
 				var/obj/effect/fluid/other = locate() in T.contents
 				if(other && (QDELETED(other) || other.fluid_amount <= FLUID_DELETING))

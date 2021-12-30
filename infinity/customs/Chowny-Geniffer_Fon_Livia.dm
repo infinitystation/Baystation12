@@ -1,4 +1,4 @@
-/obj/item/weapon/gun/launcher/net/geniffer
+/obj/item/gun/launcher/net/geniffer
 	icon = CUSTOM_ITEM_OBJ
 	icon_state = "netgun_geniffer"
 	item_icons = list(
@@ -13,23 +13,23 @@
 		)
 	trade_blacklisted = TRUE
 
-/obj/item/weapon/gun/launcher/net/geniffer/Initialize()
+/obj/item/gun/launcher/net/geniffer/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/launcher/net/geniffer/on_update_icon()
+/obj/item/gun/launcher/net/geniffer/on_update_icon()
 	overlays = list()
 	. = ..()
 	chambered ? (icon_state = "[initial(icon_state)]") : (icon_state = "[initial(icon_state)]_noammo")
 
-/obj/item/weapon/gun/launcher/net/geniffer/finish_loading(var/obj/item/weapon/net_shell/S, var/mob/user)
+/obj/item/gun/launcher/net/geniffer/finish_loading(var/obj/item/net_shell/S, var/mob/user)
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/launcher/net/attackby(obj/item/I, mob/user)
+/obj/item/gun/launcher/net/attackby(obj/item/I, mob/user)
 	. = ..()
 	update_icon()
 
-/obj/item/weapon/gun/launcher/net/attack_hand(mob/user)
+/obj/item/gun/launcher/net/attack_hand(mob/user)
 	. = ..()
 	update_icon()

@@ -20,10 +20,10 @@
 	name = "gravitational generator"
 	desc = "A device which produces a graviton field when set up."
 	icon = 'infinity/icons/obj/machines/gravity_gen.dmi'
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	use_power = 0
-	unacidable = 1
+	unacidable = TRUE
 
 	light_color = "#7de1e1"
 
@@ -198,7 +198,7 @@ GLOBAL_VAR(station_gravity_generator)
 		if(count == 5)
 			middle = P
 		if(count <= 3) // Their sprite is the top part of the generator
-			P.density = 0
+			P.density = FALSE
 			P.layer = MOB_LAYER + 0.1
 		if(count in list(2, 5, 7, 9))
 			lights += P
@@ -236,7 +236,7 @@ GLOBAL_VAR(station_gravity_generator)
 									SPAN_NOTICE("You begin to weld the damaged parts."))
 
 				playsound(loc, 'sound/items/Welder2.ogg', 50, 1)
-				var/obj/item/weapon/weldingtool/WT = I
+				var/obj/item/weldingtool/WT = I
 				if(!do_after(user, 15 SECONDS, middle) || !WT.remove_fuel(1, user) || broken_state != GRAV_NEEDS_WELDING)
 					return
 				health += 250

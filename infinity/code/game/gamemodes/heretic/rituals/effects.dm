@@ -4,9 +4,9 @@
 	icon = 'infinity/icons/effects/cult.dmi'
 	icon_state = "cultshield"
 	color = "#ff0000"
-	anchored = 1
-	density = 1
-	unacidable = 1
+	anchored = TRUE
+	density = TRUE
+	unacidable = TRUE
 	var/obj/effect/rune/rune
 	var/health
 	var/max_health = 200
@@ -43,7 +43,7 @@
 		to_chat(user, "<span class='notice'>You touch \the [src]. It feels wet and becomes harder the further you push your arm.</span>")
 
 /obj/effect/cultwall/attackby(var/obj/item/I, var/mob/living/user)
-	if(istype(I, /obj/item/weapon/nullrod))
+	if(istype(I, /obj/item/nullrod))
 		user.visible_message("<span class='notice'>\The [user] touches \the [src] with \the [I], and it disappears.</span>", "<span class='notice'>You disrupt the vile magic with the deadening field of \the [I].</span>")
 		qdel(src)
 	else if(I.force)

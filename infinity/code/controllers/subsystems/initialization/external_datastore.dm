@@ -25,7 +25,7 @@ SUBSYSTEM_DEF(exdata)
 
 /datum/controller/subsystem/exdata/proc/GetDS(dsname)
 	if(islist(stores) && length(stores))
-		if(stores.Find(dsname))
+		if(list_find(stores, dsname))
 			. = stores[dsname]
 			if(istype(., /datum/external_datastore))
 				var/datum/external_datastore/ds = .
@@ -37,5 +37,5 @@ SUBSYSTEM_DEF(exdata)
 	if(!key)
 		return
 	var/list/ds = GetDS(dsname)
-	if(ds?.Find(key))
+	if(ds && list_find(ds, key))
 		. = ds[key]

@@ -12,6 +12,7 @@
 	//first deck
 /area/bridge/hall/level_two
 	name = "Bridge - Hall - Upper"
+	req_access = list(access_sec_doors)
 	//second deck
 /area/bridge/hall/level_one
 	name = "Bridge - Hall - Lower"
@@ -23,6 +24,10 @@
 
 	//third deck
 /area/rnd/xenobiology/entry
+	name = "Xenobiology Access"
+	icon_state = "xeno_lab"
+
+/area/rnd/xenobiology/storage2
 	name = "Xenobiology Access"
 	icon_state = "xeno_lab"
 

@@ -4,6 +4,7 @@
 #include "liberia_jobs.dm"
 #include "liberia_shuttles.dm"
 #include "liberia_machinery.dm"
+#include "liberia_navpoints.dm"
 
 // Map template data.
 /datum/map_template/ruin/away_site/liberia //Основной файл
@@ -22,6 +23,10 @@
 	)
 
 	area_usage_test_exempted_root_areas = list(/area/liberia)
+	apc_test_exempt_areas = list(
+		/area/liberia/solar1 = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/liberia/solar2 = NO_SCRUBBER|NO_VENT|NO_APC
+	)
 
 // Overmap objects.
 /obj/effect/overmap/visitable/ship/liberia //Объект в Системе
@@ -34,6 +39,12 @@
 	known = 1
 	initial_restricted_waypoints = list(
 		"Mule" = list("nav_mule_start")
+	)
+	initial_generic_waypoints = list(
+		"nav_liberia_north",
+		"nav_liberia_east",
+		"nav_liberia_south",
+		"nav_liberia_west"
 	)
 
 /obj/effect/submap_landmark/joinable_submap/liberia
