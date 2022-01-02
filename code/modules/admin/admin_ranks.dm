@@ -20,7 +20,7 @@ var/list/admin_ranks = list()								//list of all ranks with associated rights
 		var/rank = ckeyEx(List[1])
 		switch(rank)
 			if(null,"")		continue
-			if("Removed")	continue				//Reserved
+			if("Удален")	continue				//Reserved
 
 		var/rights = 0
 		for(var/i=2, i<=List.len, i++)
