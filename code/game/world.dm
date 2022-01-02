@@ -193,6 +193,18 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 		s["roundduration"] = roundduration2text()
 		s["map"] = replacetext(GLOB.using_map.full_name, "\improper", "") //Done to remove the non-UTF-8 text macros
 
+		switch(GAME_STATE)
+			if(RUNLEVEL_INIT)
+				s["ticker_state"] = 0
+			if(RUNLEVEL_LOBBY)
+				s["ticker_state"] = 1
+			if(RUNLEVEL_SETUP)
+				s["ticker_state"] = 2
+			if(RUNLEVEL_GAME)
+				s["ticker_state"] = 3
+			if(RUNLEVEL_POSTGAME)
+				s["ticker_state"] = 4
+
 		var/active = 0
 		var/list/players = list()
 		var/list/admins = list()
