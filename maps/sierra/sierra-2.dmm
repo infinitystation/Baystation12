@@ -33719,9 +33719,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "bCg" = (
-/obj/machinery/door/airlock/civilian{
-	name = "Janitor Closet"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -33739,6 +33736,9 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/janitor{
+	name = "Janitor Closet"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/janitor)
 "bDV" = (
