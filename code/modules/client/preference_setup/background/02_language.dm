@@ -45,7 +45,7 @@
 		sanitize_alt_languages()
 		var/list/available_languages = allowed_languages - free_languages
 		if(!LAZYLEN(available_languages))
-			alert(user, "Нету доступных для выбора языков.")
+			alert(user, "Нет доступных для выбора языков.")
 		else
 			var/new_lang = input(user, "Выберите дополнительный язык", "Создание персонажа", null) as null|anything in available_languages
 			if(new_lang)
