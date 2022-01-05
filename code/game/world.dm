@@ -227,6 +227,8 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 			s["adminlist"] = list2params(admins)
 			s["active_players"] = active
 
+		if(input["format"] == "json")
+			return json_encode(s)
 		return list2params(s)
 
 	else if(T == "manifest")
