@@ -191,6 +191,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 		s["players"] = 0
 		s["stationtime"] = stationtime2text()
 		s["roundduration"] = roundduration2text()
+		s["roundtime"] = roundduration2text()
 		s["map"] = replacetext(GLOB.using_map.full_name, "\improper", "") //Done to remove the non-UTF-8 text macros
 
 		switch(GAME_STATE)
