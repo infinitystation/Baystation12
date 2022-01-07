@@ -76,6 +76,8 @@
 		if(istype(H))
 			species_restricted = list(H.species.get_bodytype(H))
 		kit.use(1,user)
+		if (item_state_slots["slot_suit"])
+			item_state_slots["slot_suit"] = item_state
 		return 1
 	return ..()
 
@@ -92,7 +94,7 @@
 // exosuit kits.
 /obj/item/device/kit/paint/use(amt, mob/user)
 	playsound(get_turf(user), 'sound/items/Screwdriver.ogg', 50, 1)
-	
+
 /obj/item/device/kit/paint/flames_red
 	name = "\"Firestarter\" exosuit customisation kit"
 	new_icon = "flames_red"

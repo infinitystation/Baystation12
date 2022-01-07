@@ -3378,11 +3378,16 @@
 	c_tag = "Supply office - Supply locker room";
 	dir = 4
 	},
-/obj/structure/bed/chair/office/brown{
-	dir = 4
-	},
 /obj/item/device/radio/intercom{
 	pixel_y = 26
+	},
+/obj/structure/table/standard,
+/obj/item/material/clipboard,
+/obj/item/sticky_pad/random,
+/obj/item/pen,
+/obj/item/paper_bin,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
@@ -18737,6 +18742,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
 "DU" = (
@@ -19468,6 +19475,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/structure/bed/chair/pew,
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
 "Fh" = (
@@ -22624,6 +22632,12 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/yellow/bordercorner2{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
 "Kd" = (
@@ -22997,9 +23011,6 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
 	},
-/obj/structure/bed/chair/office/brown{
-	dir = 8
-	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
 	pixel_y = 29
@@ -23016,22 +23027,20 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "KI" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
 	},
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/material/clipboard,
-/obj/item/sticky_pad/random,
-/obj/item/pen,
 /obj/machinery/newscaster{
 	pixel_y = 32
+	},
+/obj/structure/bed/chair/office/brown{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
@@ -26208,13 +26217,16 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 5
-	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
 	},
 /obj/structure/holoplant,
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/yellow/bordercorner2{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/office)
 "Qh" = (
@@ -28844,6 +28856,10 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/power)
+"Vh" = (
+/obj/structure/bed/chair/pew/left,
+/turf/simulated/floor/tiled,
+/area/quartermaster/suplocker_room)
 "Vi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -48520,7 +48536,7 @@ EM
 Fj
 Xx
 KI
-Xj
+Vh
 Sj
 Xx
 Ux
