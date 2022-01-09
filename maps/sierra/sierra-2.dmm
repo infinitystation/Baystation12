@@ -35878,9 +35878,6 @@
 /obj/structure/window/basic{
 	dir = 4
 	},
-/obj/random/date_based/christmas/xmaslights{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -38970,7 +38967,8 @@
 	dir = 9
 	},
 /obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge - Restroom"
+	c_tag = "Second Deck - Lounge - Restroom Back Entrance";
+	dir = 4
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head_big)
@@ -40143,10 +40141,6 @@
 	},
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge - Restroom Back Entrance";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/freezer,
