@@ -1,5 +1,0 @@
-author: SidVeld
-delete-after: true
-changes:
-  - bugfix: Исправлены спрайты эк-скафандров на ящерах.
-  - bugfix: Парамедики теперь получают комбинезон при спавне.
