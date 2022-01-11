@@ -214,6 +214,10 @@ var/global/list/empty_playable_ai_cores = list()
 
 /obj/structure/AIcore/deactivated/proc/load_ai(var/mob/living/silicon/ai/transfer, var/obj/item/aicard/card, var/mob/user)
 
+	if(!user.skill_check(SKILL_COMPUTER, SKILL_ADEPT))					//INF added the check
+		to_chat(user, "<span class='notice'>You look on \the [card.name], you look on \the [src.name], you do not understand what to do next</span>")
+		return
+		
 	if(!istype(transfer) || locate(/mob/living/silicon/ai) in src)
 		return
 

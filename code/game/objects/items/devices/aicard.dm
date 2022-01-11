@@ -87,6 +87,11 @@
 		to_chat(user, "<span class='danger'>ERROR:</span> AI [ai.name] is offline. Unable to download.")
 		return 0
 [/INF]*/
+
+	if(!user.skill_check(SKILL_COMPUTER, SKILL_ADEPT))					//INF added the check
+		to_chat(user, "<span class='notice'>You look on \the [ai.name], you look on \the [src.name], you do not understand what to do next</span>")
+		return 0
+
 	if(carded_ai)
 		to_chat(user, "<span class='danger'>Transfer failed:</span> Existing AI found on remote terminal. Remove existing AI to install a new one.")
 		return 0

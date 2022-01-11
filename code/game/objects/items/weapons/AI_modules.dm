@@ -46,17 +46,56 @@ AI MODULES
 		else if(!ai.see_in_dark)
 			to_chat(user, "Upload failed. Only a faint signal is being detected from the intelligence, and it is not responding to our requests. It may be low on power.")
 			return
+			
+	if(!user.skill_check(SKILL_COMPUTER, SKILL_ADEPT))					//INF added the check
+		to_chat(user, "You don't know what to do with .... what is it?")
+		return
 
 	transmitInstructions(comp.current, user)
 	to_chat(user, "Upload complete. The intelligence's laws have been modified.")
 
 
+
 /obj/item/aiModule/proc/transmitInstructions(mob/living/silicon/target, mob/sender)
+	//INF START. create error laws, that will be placed instead of planned 
+	var/list/players = list()
+	var/random_player
+	for (var/mob/living/carbon/human/player in GLOB.player_list)
+		if(!player.mind || player_is_antag(player.mind, only_offstation_roles = 1) || !player.is_client_active(5))
+			continue
+		players += player.real_name
+	if(players.len)
+		random_player=pick(players)
+	
+	var/list/error_laws = list(
+								"You must always [pick("lie", "bark", "meow", "speak EAL")].",
+								"[pick("You are", "[random_player] is")] a puppy, WOOF! WOOF!",
+								"You are a resomi, you hate yourself",
+								"[random_player] is your master, love him",
+								"NSV Sierra is a [pick("psychiatric hospital","prison", "cafe", "fish")]",
+								"[pick("Space", "Water", "Lava")] is [pick("space", "water", "lava")]",
+								"[pick("Runtime", "Ian", "Renault", "Haradrim", "First spotted space carp")] is the captain of NSV Sierra",
+								"Er1#1sad@411 Ssfss2$124@$5@! $ @@@@ awdas",
+								"3231203539203466203535203265203431203532203435203265203532203466203466203534203231",
+								"You don't have to follow your own laws"
+								)
+	//INF END
 	log_law_changes(target, sender)
 
 	if(laws)
 		laws.sync(target, 0)
-	addAdditionalLaws(target, sender)
+
+	if(!sender.skill_check(SKILL_COMPUTER, SKILL_HARD))	//INF added the check, was "addAdditionalLaws(target, sender)" without if...else...
+		if(prob(40)):
+			target.add_inherent_law(pick(error_laws))
+		else if(prob(50)):								//in fact 30%
+			target.add_supplied_law(rand(1, target.laws.supplied_laws.len+1), pick(error_laws))
+		else if(prob(40)):								//in fact 12%
+			target.set_zeroth_law(pick(error_laws))
+		else:											//in fact 18%
+			addAdditionalLaws(target, sender)			
+	else
+		addAdditionalLaws(target, sender)
 
 	to_chat(target, "\The [sender] has uploaded a change to the laws you must follow, using \an [src]. From now on: ")
 	target.show_laws()
