@@ -131,7 +131,7 @@
 	if(!GLOB.cult.can_become_antag(target.mind, 1))
 		to_chat(target, "<span class='danger'>Are you going insane?</span>")
 	else
-		GLOB.cult.add_antagonist(usr.mind, ignore_role = 1, do_not_equip = 1)
+		GLOB.cult.add_antagonist(target.mind, ignore_role = 1, do_not_equip = 1)
 
 /obj/effect/rune/teleport
 	cultname = "teleport"
