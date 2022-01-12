@@ -79,7 +79,7 @@
 	desc = "A strange dagger, the blade of which is always covered with a thick dark haze."
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
-	force = 6
+	force = 15
 	armor_penetration = 100
 	throwforce = 13
 	throw_speed = 1
