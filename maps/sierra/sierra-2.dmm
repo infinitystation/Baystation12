@@ -29033,7 +29033,9 @@
 /area/storage/tech)
 "aZX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/wall/r_wall/hull,
+/turf/simulated/wall/r_wall/hull{
+	can_open = 1
+	},
 /area/rnd/xenobiology/level1)
 "aZY" = (
 /obj/structure/sign/warning/radioactive{
@@ -40506,10 +40508,6 @@
 	},
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge - Restroom Back Entrance";
 	dir = 4
 	},
 /turf/simulated/floor/tiled/freezer,

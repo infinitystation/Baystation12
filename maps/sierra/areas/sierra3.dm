@@ -97,8 +97,8 @@
 	name = "First Deck - Command - IAA's Office"
 	req_access = list(access_iaa)
 
-/area/bridge/gun/energy
-	name = "First Deck - Abandoned Weapon Slot"
+/area/bridge/adjutants
+	name = "First Deck - Adjutants Room"
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "bridge_gun"
 

@@ -4482,7 +4482,7 @@
 /area/thruster/d1starboard)
 "aiw" = (
 /turf/simulated/wall/r_wall/hull,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "aix" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -6035,7 +6035,7 @@
 /area/space)
 "akJ" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "akK" = (
 /obj/machinery/computer/modular/preset/medical,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -6627,15 +6627,15 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/papershredder,
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "alG" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "alH" = (
 /obj/machinery/computer/modular/preset/supply_public,
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "alI" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7306,19 +7306,19 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "amJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "amK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "amL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -7348,7 +7348,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "amO" = (
 /obj/machinery/door/blast/shutters/open{
 	dir = 4;
@@ -8262,16 +8262,16 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "aob" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/microwave,
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "aoc" = (
 /obj/machinery/jukebox/old,
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "aof" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/paper_bin,
@@ -8280,7 +8280,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "aog" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -8290,7 +8290,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "aoh" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Security Maintenance";
@@ -9155,7 +9155,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /mob/living/simple_animal/hostile/retaliate/parrot/Poly,
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "apu" = (
 /obj/structure/bed/sofa/black{
 	dir = 4
@@ -9168,7 +9168,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "apv" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9176,13 +9176,13 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "apw" = (
 /obj/structure/bed/sofa/black/left{
 	dir = 6
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "apx" = (
 /obj/structure/bed/sofa/black/right,
 /obj/machinery/power/apc{
@@ -9200,14 +9200,14 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "apz" = (
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "apA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "apB" = (
 /obj/machinery/light_switch{
 	dir = 8;
@@ -9215,7 +9215,7 @@
 	pixel_y = -5
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "apC" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10033,7 +10033,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "ard" = (
 /obj/structure/table/woodentable/walnut,
 /obj/structure/cable/green{
@@ -10042,7 +10042,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "are" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10056,7 +10056,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "arf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10074,7 +10074,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "arg" = (
 /obj/machinery/door/airlock/command{
 	dir = 4;
@@ -10111,7 +10111,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "arh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -10710,7 +10710,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "asn" = (
 /obj/structure/closet/secure_closet/adjutant,
 /obj/item/modular_computer/tablet/lease/preset/command,
@@ -10720,14 +10720,14 @@
 	},
 /obj/item/device/flashlight,
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "aso" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "asp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -11356,13 +11356,6 @@
 "atx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 5
-	},
-/obj/machinery/computer/air_control{
-	input_tag = "test_in";
-	name = "Test Chamber Gas Monitor";
-	output_tag = "test_out";
-	sensor_name = "Test Chamber";
-	sensor_tag = "testchamber_sensor"
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
@@ -14723,15 +14716,18 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_two)
 "aAz" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/structure/disposalpipe/sortjunction/flipped{
+	dir = 4;
+	name = "Adjutants";
+	sort_type = "Adjutants"
 	},
-/obj/structure/disposalpipe/junction/mirrored,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_two)
 "aAA" = (
@@ -16119,6 +16115,10 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_two)
 "aCn" = (
@@ -16129,12 +16129,11 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack/corner,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/structure/disposalpipe/sortjunction/flipped{
+	dir = 8;
+	name = "Bridge Storage";
+	sort_type = "Bridge Storage"
 	},
-/obj/structure/disposalpipe/junction/mirrored,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_two)
 "aCo" = (
@@ -17737,7 +17736,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "aEd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
@@ -20407,7 +20406,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "aIb" = (
 /obj/structure/flora/pottedplant/large,
 /obj/effect/floor_decal/borderfloor{
@@ -29761,7 +29760,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/wall/r_wall/prepainted,
+/turf/simulated/wall/r_wall/prepainted{
+	can_open = 1
+	},
 /area/maintenance/firstdeck/foreport)
 "aUZ" = (
 /turf/simulated/wall/prepainted,
@@ -30462,14 +30463,6 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "aWf" = (
-/obj/machinery/button/blast_door{
-	dir = 1;
-	id_tag = "misclab";
-	name = "Test Chamber Blast Doors";
-	pixel_x = 6;
-	pixel_y = 25;
-	req_access = list("ACCESS_RESEARCH")
-	},
 /obj/machinery/atmospherics/omni/filter{
 	tag_east = 1;
 	tag_south = 2
@@ -30515,10 +30508,10 @@
 /obj/random/medical/lite,
 /obj/random/medical,
 /obj/item/reagent_containers/spray/sterilizine,
+/obj/machinery/light/small,
 /turf/simulated/floor/wood/walnut,
 /area/maintenance/firstdeck/foreport)
 "aWu" = (
-/obj/machinery/light/small,
 /obj/item/implanter,
 /obj/item/scalpel,
 /obj/item/reagent_containers/syringe/drugs,
@@ -31088,7 +31081,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/wall/r_wall/hull,
+/turf/simulated/wall/r_wall/hull{
+	can_open = 1
+	},
 /area/maintenance/firstdeck/foreport)
 "aXL" = (
 /turf/simulated/wall/r_wall/hull,
@@ -35922,7 +35917,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "bib" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -36184,7 +36179,7 @@
 /obj/item/device/flash,
 /obj/item/device/flashlight,
 /turf/simulated/floor/wood/walnut,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "bkb" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/random/date_based/christmas/xmaslights{
@@ -38634,33 +38629,18 @@
 /turf/simulated/floor/grass,
 /area/rnd/xenobiology/xenoflora)
 "iDJ" = (
-/obj/machinery/door/window/brigdoor/northright{
-	autoset_access = 0;
-	dir = 4;
-	name = "Test Chamber";
-	req_access = list("ACCESS_TOXINS")
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
 	},
-/obj/machinery/door/window/brigdoor/southright{
-	autoset_access = 0;
-	dir = 8;
-	name = "Test Chamber";
-	req_access = list("ACCESS_TOXINS")
-	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "misclab";
-	name = "Test Chamber Blast Doors";
-	opacity = 0
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "iDP" = (
-/obj/machinery/air_sensor{
-	id_tag = "testchamber_sensor"
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 8;
+	frequency = 1441;
+	icon_state = "map_injector";
+	id = "test_in";
+	use_power = 1
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/misc_lab)
@@ -38837,19 +38817,18 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
 "joI" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "misclab";
-	name = "Test Chamber Blast Doors";
-	opacity = 0
-	},
-/obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 4
+	dir = 1
 	},
-/turf/simulated/floor/plating,
+/obj/machinery/computer/air_control{
+	dir = 8;
+	input_tag = "test_in";
+	name = "Test Chamber Gas Monitor";
+	output_tag = "test_out";
+	sensor_name = "Test Chamber";
+	sensor_tag = "testchamber_sensor"
+	},
+/turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "joS" = (
 /obj/effect/floor_decal/techfloor{
@@ -39466,6 +39445,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tcommsat/chamber)
+"lsY" = (
+/turf/simulated/wall/r_wall/prepainted{
+	can_open = 1
+	},
+/area/maintenance/firstdeck/aftstarboard)
 "luw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/cyan{
@@ -39494,19 +39478,23 @@
 /turf/simulated/floor/blackgrid,
 /area/security/nuke_storage)
 "lvL" = (
-/obj/effect/wallframe_spawn/reinforced_phoron,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/obj/machinery/button/blast_door{
+	dir = 1;
 	id_tag = "misclab";
 	name = "Test Chamber Blast Doors";
-	opacity = 0
+	pixel_x = 6;
+	pixel_y = 25;
+	req_access = list("ACCESS_RESEARCH")
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
+/obj/machinery/button/ignition{
+	id_tag = "Xenobio";
+	pixel_x = 7;
+	pixel_y = 34
 	},
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "lwh" = (
 /obj/structure/cable/cyan{
@@ -39702,7 +39690,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/wall/r_wall/hull,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "lNl" = (
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/corner/lightgrey/bordercorner,
@@ -40849,19 +40837,19 @@
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/heads/office/hop)
 "pdo" = (
-/obj/machinery/atmospherics/unary/vent_pump/tank{
-	dir = 8;
-	external_pressure_bound = 0;
-	external_pressure_bound_default = 0;
-	id_tag = "test_out";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	internal_pressure_bound_default = 4000;
-	pressure_checks = 2;
-	pressure_checks_default = 2;
-	pump_direction = 0
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "misclab";
+	name = "Test Chamber Blast Doors";
+	opacity = 0
 	},
-/turf/simulated/floor/reinforced,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
 /area/rnd/misc_lab)
 "peL" = (
 /obj/structure/table/standard,
@@ -41142,6 +41130,9 @@
 	c_tag = "Research - Miscellaneous Test Chamber";
 	dir = 8;
 	network = list("Research","Miscellaneous Reseach")
+	},
+/obj/machinery/air_sensor{
+	id_tag = "testchamber_sensor"
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/misc_lab)
@@ -41487,6 +41478,9 @@
 	id_tag = "Xenobio";
 	pixel_y = 22
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor/reinforced,
 /area/rnd/misc_lab)
 "scp" = (
@@ -41723,7 +41717,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/wall/r_wall/prepainted,
-/area/bridge/gun/energy)
+/area/bridge/adjutants)
 "sDx" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -42377,6 +42371,21 @@
 	},
 /turf/simulated/open,
 /area/hallway/primary/firstdeck/central_stairwell)
+"uNG" = (
+/obj/effect/wallframe_spawn/reinforced_phoron,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "misclab";
+	name = "Test Chamber Blast Doors";
+	opacity = 0
+	},
+/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9
+	},
+/turf/simulated/floor/plating,
+/area/rnd/misc_lab)
 "uNP" = (
 /obj/machinery/seed_extractor,
 /obj/machinery/firealarm{
@@ -42408,14 +42417,29 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/misc_lab)
 "uOW" = (
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 8;
-	frequency = 1441;
-	icon_state = "map_injector";
-	id = "test_in";
-	use_power = 1
+/obj/machinery/door/window/brigdoor/northright{
+	autoset_access = 0;
+	dir = 4;
+	name = "Test Chamber";
+	req_access = list("ACCESS_TOXINS")
 	},
-/turf/simulated/floor/reinforced,
+/obj/machinery/door/window/brigdoor/southright{
+	autoset_access = 0;
+	dir = 8;
+	name = "Test Chamber";
+	req_access = list("ACCESS_TOXINS")
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "misclab";
+	name = "Test Chamber Blast Doors";
+	opacity = 0
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
 /area/rnd/misc_lab)
 "uRK" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -42743,8 +42767,17 @@
 /turf/simulated/floor/carpet/green,
 /area/medical/mentalhealth)
 "wck" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/machinery/atmospherics/unary/vent_pump/tank{
+	dir = 8;
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0;
+	id_tag = "test_out";
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	internal_pressure_bound_default = 4000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	pump_direction = 0
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/misc_lab)
@@ -65433,7 +65466,7 @@ aRE
 aUK
 pdo
 uOW
-nht
+uNG
 wyo
 cVa
 dsP
@@ -68227,7 +68260,7 @@ aaM
 aaV
 abG
 acz
-acy
+lsY
 kLx
 ijg
 afR
