@@ -12008,10 +12008,8 @@
 "avs" = (
 /obj/structure/flora/seaweed,
 /obj/structure/flora/seaweed/large,
-/mob/living/simple_animal/aquatic/fish/grump{
-	name = "Titus"
-	},
 /obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish,
 /turf/simulated/floor/aquarium,
 /area/crew_quarters/lounge_big)
 "avt" = (
@@ -28384,9 +28382,6 @@
 /area/engineering/engine_monitoring)
 "aYX" = (
 /obj/structure/flora/seaweed/glow,
-/mob/living/simple_animal/aquatic/fish{
-	name = "Marry"
-	},
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
 /area/crew_quarters/lounge_big)
@@ -34530,6 +34525,7 @@
 "dYM" = (
 /obj/structure/flora/seaweed/mid,
 /obj/effect/fluid_mapped,
+/mob/living/simple_animal/aquatic/fish/grump,
 /turf/simulated/floor/aquarium,
 /area/crew_quarters/lounge_big)
 "dZt" = (
@@ -38965,10 +38961,6 @@
 	},
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 9
-	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge - Restroom Back Entrance";
-	dir = 4
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head_big)
