@@ -14,6 +14,7 @@
 	trade_blacklisted = TRUE
 
 /obj/item/clothing/glasses/soulhuntercat/Initialize()
+	. = ..()
 	update_icon()
 
 /obj/item/clothing/glasses/soulhuntercat/attack_self(mob/user)
