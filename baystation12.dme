@@ -3870,6 +3870,7 @@
 #include "infinity\customs\sarov.dm"
 #include "infinity\customs\sidveld.dm"
 #include "infinity\customs\sivuha.dm"
+#include "infinity\customs\soulhuntercat.dm"
 #include "infinity\customs\sprites_kits.dm"
 #include "infinity\customs\stange_pill.dm"
 #include "infinity\customs\taushai.dm"
