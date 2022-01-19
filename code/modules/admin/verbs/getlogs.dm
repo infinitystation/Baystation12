@@ -23,8 +23,7 @@
 	set desc = "Give somebody access to any session logfiles saved to the /log/runtime/ folder."
 	set category = null
 
-	if(!src.holder)
-		to_chat(src, "<font color='red'>Only Admins may use this command.</font>")
+	if(!check_rights(R_DEBUG))
 		return
 
 	var/client/target = input(src,"Choose somebody to grant access to the server's runtime logs (permissions expire at the end of each round):","Grant Permissions",null) as null|anything in GLOB.clients
@@ -43,6 +42,9 @@
 	set name = ".getruntimelog"
 	set desc = "Retrieve any session logfiles saved by dreamdeamon."
 	set category = null
+
+	if(!check_rights(R_DEBUG))
+		return
 
 	var/path = browse_files("data/logs/runtime/")
 	if(!path)
@@ -63,6 +65,9 @@
 	set name = "Get Server Logs"
 	set desc = "Fetch logfiles from data/logs"
 	set category = "Admin"
+
+	if(!check_rights(R_ADMIN))
+		return
 
 	var/path = browse_files("data/logs/")
 	if(!path)
@@ -85,6 +90,9 @@
 	set category = "Admin"
 	set name = "Show Today Log" //INF, WAS "Show Server Log"
 	set desc = "Shows today's server log."
+
+	if(!check_rights(R_ADMIN))
+		return
 
 	var/path = "data/logs/[time2text(world.realtime,"YYYY/MM/DD")].log" //INF, WAS "YYYY/MM-Month/DD-Day"
 	if( fexists(path) )
