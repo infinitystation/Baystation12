@@ -39296,9 +39296,6 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 9
 	},
-/obj/machinery/camera/network/second_deck{
-	c_tag = "Second Deck - Lounge - Restroom"
-	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/head_big)
 "rOR" = (

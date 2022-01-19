@@ -14728,6 +14728,11 @@
 	name = "Adjutants";
 	sort_type = "Adjutants"
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_two)
 "aAA" = (
@@ -16133,6 +16138,11 @@
 	dir = 8;
 	name = "Bridge Storage";
 	sort_type = "Bridge Storage"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_two)
@@ -33267,9 +33277,8 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -24
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/lounge/upper)
@@ -33711,9 +33720,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
 "bdK" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -42592,6 +42598,10 @@
 /obj/random/date_based/christmas/xmaslights,
 /obj/structure/bed/chair/comfy/brown{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
