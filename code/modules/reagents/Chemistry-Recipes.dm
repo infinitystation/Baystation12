@@ -983,6 +983,18 @@
 	var/obj/item/stack/material/plasteel/P = new (get_turf(holder.my_atom))
 	P.amount = 5
 
+/datum/chemical_reaction/slime/glass
+	name = "Slime Glass"
+	result = null
+	required_reagents = list(/datum/reagent/water = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/metal
+
+/datum/chemical_reaction/slime/glass/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/stack/material/glass/G = new (get_turf(holder.my_atom))
+	G.amount = 15
+
 //Gold
 /datum/chemical_reaction/slime/crit
 	name = "Slime Crit"
@@ -1028,6 +1040,18 @@
 			if(prob(50))
 				for(var/j = 1, j <= rand(1, 3), j++)
 					step(B, pick(NORTH, SOUTH, EAST, WEST))
+
+/datum/chemical_reaction/slime/silver
+	name = "Slime Silver"
+	result = null
+	required_reagents = list(/datum/reagent/blood = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/silver
+
+/datum/chemical_reaction/slime/silver/on_reaction(var/datum/reagents/holder)
+	..()
+	var/obj/item/stack/material/silver/S = new (get_turf(holder.my_atom))
+	S.amount = 5
 
 //Blue
 /datum/chemical_reaction/slime/frost
