@@ -6,11 +6,11 @@
 	filling = list(/datum/reagent/tobacco/female = 1)
 
 /obj/item/clothing/mask/smokable/cigarette/nirvana
-    name = "cigarette"
-    brand = "\improper Nirvana Honeys"
-    icon_state = "cigoff"
-    type_butt = /obj/item/trash/cigbutt
-    filling = list(/datum/reagent/tobacco/honey = 1)
+	name = "cigarette"
+	brand = "\improper Nirvana Honeys"
+	icon_state = "cigoff"
+	type_butt = /obj/item/trash/cigbutt
+	filling = list(/datum/reagent/tobacco/honey = 1)
 
 /obj/item/clothing/mask/smokable/cigarette/mars
 	name = "cigarette"
