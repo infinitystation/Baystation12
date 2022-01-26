@@ -54,26 +54,29 @@
 		return
 
 	next_click = world.time + 1
-
 	var/list/modifiers = params2list(params)
-	if(modifiers["shift"] && modifiers["ctrl"])
-		CtrlShiftClickOn(A)
-		return 1
-	if(modifiers["ctrl"] && modifiers["alt"])
-		CtrlAltClickOn(A)
-		return 1
+	var/cone = TRUE
 	if(modifiers["middle"])
 		MiddleClickOn(A)
 		return 1
-	if(modifiers["shift"])
-		ShiftClickOn(A)
-		return 0
-	if(modifiers["alt"]) // alt and alt-gr (rightalt)
-		AltClickOn(A)
-		return 1
-	if(modifiers["ctrl"])
-		CtrlClickOn(A)
-		return 1
+
+	if(!A.InCone(src, dir))
+		cone = FALSE
+		if(modifiers["shift"] && modifiers["ctrl"])
+			CtrlShiftClickOn(A)
+			return 1
+		if(modifiers["ctrl"] && modifiers["alt"])
+			CtrlAltClickOn(A)
+			return 1
+		if(modifiers["shift"])
+			ShiftClickOn(A)
+			return 0
+		if(modifiers["alt"]) // alt and alt-gr (rightalt)
+			AltClickOn(A)
+			return 1
+		if(modifiers["ctrl"])
+			CtrlClickOn(A)
+			return 1
 
 	if(stat || paralysis || stunned || weakened || sleeping)
 		return
@@ -81,6 +84,9 @@
 	// Do not allow player facing change in fixed chairs
 	if(!istype(buckled) || buckled.buckle_movable)
 		face_atom(A) // change direction to face what you clicked on
+
+	if(cone)
+		return
 
 	if(!canClick()) // in the year 2000...
 		return

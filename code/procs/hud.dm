@@ -82,7 +82,7 @@ mob/proc/handle_hud_glasses() //Used in the life.dm of mobs that can use HUDs.
 	GLOB.jani_hud_users -= src
 
 mob/proc/in_view(var/turf/T)
-	return view(T)
+	return viewers(T)
 
 /mob/observer/eye/in_view(var/turf/T)
 	var/list/viewed = new

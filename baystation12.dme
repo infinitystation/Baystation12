@@ -3339,6 +3339,7 @@
 #include "infinity\code\datums\uplink\services.dm"
 #include "infinity\code\datums\vote\vote.dm"
 #include "infinity\code\game\atoms.dm"
+#include "infinity\code\game\fov.dm"
 #include "infinity\code\game\sound.dm"
 #include "infinity\code\game\antagonist\outsider\abductor.dm"
 #include "infinity\code\game\antagonist\station\changeling.dm"

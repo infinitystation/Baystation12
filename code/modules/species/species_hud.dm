@@ -2,6 +2,7 @@
 	var/icon              // If set, overrides ui_style.
 	var/has_a_intent = 1  // Set to draw intent box.
 	var/has_m_intent = 1  // Set to draw move intent box.
+	var/has_fixeye = 1
 	var/has_warnings = 1  // Set to draw environment warnings.
 	var/has_pressure = 1  // Draw the pressure indicator.
 	var/has_nutrition = 1 // Draw the nutrition indicator.

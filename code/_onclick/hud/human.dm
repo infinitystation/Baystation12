@@ -83,6 +83,17 @@
 		var/obj/screen/movement/M = using//inf
 		M.owner = mymob//inf
 
+	if(hud_data.has_fixeye)
+		using = new /obj/screen/fixeye()
+		using.SetName("fix eye")
+		using.icon = 'infinity/icons/mob/fixeye.dmi'
+		using.icon_state = "fixeye"
+		using.screen_loc = ui_fixeye
+		using.color = ui_color
+		using.alpha = ui_alpha
+		src.hotkeybuttons += using
+		target.fixeye = using
+
 	if(hud_data.has_drop)
 		using = new /obj/screen()
 		using.SetName("drop")
@@ -305,6 +316,9 @@
 	mymob.radio_use_icon.color = ui_color
 	mymob.radio_use_icon.alpha = ui_alpha
 
+	target.fov = new /obj/screen/fov(null)
+	hud_elements |= target.fov
+
 	mymob.client.screen = list()
 
 	mymob.client.screen += hud_elements
@@ -421,11 +435,8 @@
 
 /obj/screen/movement/Click(var/location, var/control, var/params)
 	if(istype(usr))
-	//[INF]
-		var/list/p = params2list(params)
-		if(p["ctrl"])
-			usr.face_direction()
-			update_icon()
-			return
-	//[/INF]
 		usr.set_next_usable_move_intent()
+
+/obj/screen/fixeye/Click(var/location, var/control, var/params)
+	if(istype(usr))
+		usr.face_direction()
