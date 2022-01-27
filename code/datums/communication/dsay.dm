@@ -6,7 +6,7 @@
 	config_setting = "dsay_allowed"
 	expected_communicator_type = /client
 	flags = COMMUNICATION_LOG_CHANNEL_NAME
-	log_proc = /proc/log_say
+	log_proc = /proc/log_ghostsay
 	mute_setting = MUTE_DEADCHAT
 	show_preference_setting = /datum/client_preference/show_dsay
 
@@ -102,7 +102,7 @@
 	dsay.flags |= COMMUNICATION_ADMIN_FOLLOW|COMMUNICATION_GHOST_FOLLOW // Add admin and ghost follow
 
 /decl/dsay_communication/say/adjust_channel(var/decl/communication_channel/dsay)
-	dsay.log_proc = /proc/log_say
+	dsay.log_proc = /proc/log_ghostsay
 	..()
 
 /decl/dsay_communication/emote/adjust_channel(var/decl/communication_channel/dsay)
@@ -122,12 +122,12 @@
 	return "<span class='name'>[stafftype]([communicator.key])</span> says, <span class='message linkify'>\"[message]\"</span>"
 
 /decl/dsay_communication/admin/adjust_channel(var/decl/communication_channel/dsay)
-	dsay.log_proc = /proc/log_say
+	dsay.log_proc = /proc/log_ghostsay
 	dsay.flags |= COMMUNICATION_ADMIN_FOLLOW  // Add admin follow
 	dsay.flags &= ~COMMUNICATION_GHOST_FOLLOW // Remove ghost follow
 
 /decl/dsay_communication/direct/adjust_channel(var/decl/communication_channel/dsay, var/communicator)
-	dsay.log_proc = /proc/log_say
+	dsay.log_proc = /proc/log_ghostsay
 	dsay.flags &= ~(COMMUNICATION_ADMIN_FOLLOW|COMMUNICATION_GHOST_FOLLOW) // Remove admin and ghost follow
 
 /decl/dsay_communication/direct/can_communicate()

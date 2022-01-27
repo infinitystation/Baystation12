@@ -18,7 +18,7 @@ SUBSYSTEM_DEF(inactivity)
 		client_list.len--
 //		if(!C.holder && C.is_afk(config.kick_inactive MINUTES) && !isobserver(C.mob)) inf@dev: bay
 		if((C.holder && check_rights(R_ADMIN, 0, C) || isnewplayer(C)) && C.is_afk(config.kick_inactive MINUTES))
-			log_access("AFK: [key_name(C)]")
+			log_misc("AFK: [key_name(C)]")
 //			to_chat(C, "<SPAN CLASS='warning'>You have been inactive for more than [config.kick_inactive] minute\s and have been disconnected.</SPAN>")
 			to_chat(C, SPAN_WARNING("Вы не проявляли активность в течение [config.kick_inactive] минут и были отсоеденены."))
 			if(C.holder && check_rights(R_ADMIN, 0, C))

@@ -18,13 +18,13 @@
 		return ..()
 
 	if (text2num(computer_id) == 2147483647) //this cid causes stickybans to go haywire
-		log_access("Failed Login (invalid cid): [key] [address]-[computer_id]")
+		log_adminwarn("Failed Login (invalid cid): [key] [address]-[computer_id]")
 		key_cache[key] = 0
 		return list("reason"="invalid login data", "desc"="Error: Could not check ban status, Please try again. Error message: Your computer provided an invalid Computer ID.)")
 
 	//Guest Checking
 	if(!config.guests_allowed && IsGuestKey(key))
-		log_access("Failed Login: [key] - Guests not allowed")
+		log_adminwarn("Failed Login: [key] [computer_id] [address] - Guests not allowed")
 		message_admins("<span class='notice'>Failed Login: [key] - Guests not allowed</span>")
 		key_cache[key] = 0
 		return list("reason"="guest", "desc"="\nReason: Guests not allowed. Please sign in with a byond account.")
@@ -41,7 +41,7 @@
 		//Ban Checking
 		. = CheckBan( ckey(key), computer_id, address )
 		if(.)
-			log_access("Failed Login: [key] [computer_id] [address] - Banned [.["reason"]]")
+			log_adminwarn("Failed Login: [key] [computer_id] [address] - Banned [.["reason"]]")
 			message_admins("<span class='notice'>Failed Login: [key] id:[computer_id] ip:[address] - Banned [.["reason"]]</span>")
 			key_cache[key] = 0
 			return .
@@ -53,7 +53,7 @@
 
 		if(!establish_db_connection())
 			error("Ban database connection failure. Key [ckeytext] not checked")
-			log_misc("Ban database connection failure. Key [ckeytext] not checked")
+			log_world("Ban database connection failure. Key [ckeytext] not checked")
 			key_cache[key] = 0
 			return
 
@@ -164,6 +164,5 @@
 
 		var/desc = "\nПричина:(Стикбан) Вы или другой пользователь этого устройства (или IP) с ником ([bannedckey]) были ограничены в доступе на сервер на неопределенный срок по причине:\n[ban["message"]]\n.  Выдавший блокировку: [ban["admin"]]\n. Если данная блокировка ошибочка, то обратитесь в раздел с судом на нашем дискорд-сервере.\n"
 		. = list("reason" = "Stickyban", "desc" = desc)
-		log_access("Failed Login: [key] [computer_id] [address] - StickyBanned [ban["message"]] Target Username: [bannedckey] Placed by [ban["admin"]]")
-
+		log_adminwarn("Failed Login: [key] [computer_id] [address] - Banned [.["message"]]")
 	return .

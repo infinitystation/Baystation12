@@ -313,7 +313,7 @@ proc/get_radio_key_from_channel(var/channel)
 				src.custom_emote(1, "[pick(speaking.signlang_verb)].")
 
 		if (speaking.flags & SIGNLANG)
-			log_say("[name]/[key] : SIGN: [message]")
+			log_say(message + "nonverbal", src)
 			return say_signlang(message, pick(speaking.signlang_verb), speaking)
 
 	if(T)
@@ -395,9 +395,9 @@ proc/get_radio_key_from_channel(var/channel)
 	//[/INF]
 
 	if(whispering)
-		log_whisper("[name]/[key] : [message]")
+		log_whisper(message, src)
 	else
-		log_say("[name]/[key] : [message]")
+		log_say(message, src)
 
 	flick_overlay(speech_bubble, speech_bubble_recipients, 50)
 	animate(speech_bubble, alpha = 255, time = 10, easing = CIRCULAR_EASING)

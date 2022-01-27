@@ -493,6 +493,8 @@ Helpers
 	//Ask the event manager to print round end information
 	SSevent.RoundEnd()
 
+
+
 	//Print a list of antagonists to the server log
 	var/list/total_antagonists = list()
 	//Look into all mobs in world, dead or alive
@@ -509,6 +511,11 @@ Helpers
 	log_game("Antagonists at round end were...")
 	for(var/i in total_antagonists)
 		log_game("[i]s[total_antagonists[i]].")
+
+	//make big obvious note in game logs that round ended (привет с ss220)
+	log_game("///////////////////////////////////////////////////////")
+	log_game("///////////////////// ROUND ENDED /////////////////////")
+	log_game("///////////////////////////////////////////////////////")
 
 /datum/controller/subsystem/ticker/proc/start_now(mob/user)
 	if(!(GAME_STATE == RUNLEVEL_LOBBY))

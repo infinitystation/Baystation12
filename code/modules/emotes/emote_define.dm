@@ -103,8 +103,7 @@
 	do_extra(user, target)
 //[INF]
 	if(ismob(user))
-		var/mob/U = user
-		log_emote("[U.real_name]/[U.key] : [use_3p]")
+		log_emote(use_3p, user)
 //[/INF]
 /decl/emote/proc/do_extra(var/atom/user, var/atom/target)
 	return

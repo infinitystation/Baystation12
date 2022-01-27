@@ -9,6 +9,8 @@
 
 GLOBAL_VAR(href_logfile)
 
+
+
 /hook/global_init/proc/generate_gameid()
 	if(game_id != null)
 		return
@@ -98,9 +100,11 @@ GLOBAL_VAR(href_logfile)
 	SetupLogs()
 	var/date_string = time2text(world.realtime, "YYYY/MM/DD")
 	diary = file("data/logs/[date_string].log")
-	to_file(diary, "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]")
+
 
 	GLOB.changelog_hash_infinity = md5('html/changelog_infinity.html')
+	GLOB.world_game_log = "[GLOB.log_directory]/game.log"
+	start_log(GLOB.world_game_log)
 
 	if(config && config.server_name != null && config.server_suffix && world.port > 0)
 		config.server_name += " #[(world.port % 1000) / 100]"
