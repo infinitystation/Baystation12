@@ -981,7 +981,9 @@
 /mob/on_update_icon()
 	return update_icons()
 
-/mob/proc/face_direction()
+/mob/verb/face_direction()
+	set name = "set-face-direction"
+	if(!iscarbon(src)) return
 	set_face_dir()
 
 	if(!facing_dir)

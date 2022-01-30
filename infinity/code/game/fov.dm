@@ -172,16 +172,15 @@ proc/cone(atom/center = usr, center_dir = NORTH, var/list/plist = oview(center))
 		if(change_use_fov)
 			usefov = 0
 
-/mob/living/proc/visualize_sound(var/list/recipients=null, var/sound_loc=src.loc)
-	if(!recipients)
-		for(var/mob/living/sup in viewers(world.view, src))
-			if(sup.client && (src in sup.client.hidden_mobs))
-				recipients.Add(sup.client)
+/mob/living/proc/visualize_sound()
+	var/sound_loc = src.loc
+	var/list/recipients = list()
+	for(var/mob/living/sup in viewers(world.view, src))
+		if(sup.client && (src in sup.client.hidden_mobs))
+			recipients.Add(sup.client)
 
 	if(isturf(src.loc) && recipients)
-		spawn(0)
-			footstep_animation(recipients, sound_loc)
-
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/footstep_animation, recipients, sound_loc), 1)
 
 proc/footstep_animation(var/list/recipients, var/loc)
 	var/image/I = image('infinity/icons/effects/footstep.dmi', "step")

@@ -7,6 +7,10 @@
 	buckle_dir = 0
 	buckle_lying = 0
 
+/obj/structure/bed/sofa/Click(location, control, params)
+	. = ..()
+	icon = turn(src.icon, 90)
+
 /obj/structure/bed/sofa/left
 	icon_state = "sofa_left"
 
