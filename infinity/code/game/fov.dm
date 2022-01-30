@@ -103,14 +103,18 @@ proc/cone(atom/center = usr, center_dir = NORTH, var/list/plist = oview(center))
 /mob/proc/update_vision_cone()
 	return
 
+
+/mob/living/proc/clear_cone_effect(var/image/I)
+	if(I)
+		qdel(I)
+
 /mob/living/carbon/human/update_vision_cone()
 	var/delay = 10
 	if(src.client)
 		var/image/I = null
 		for(I in src.client.hidden_atoms)
 			I.override = 0
-			spawn(delay)
-				qdel(I)
+			addtimer(CALLBACK(src, .proc/clear_cone_effect, I), delay)
 			delay += 10
 		check_fov()
 		src.client.hidden_atoms = list()
