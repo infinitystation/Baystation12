@@ -14,9 +14,6 @@
 /datum/species
 	var/standart_fov = FOV270
 
-/datum/species/tajaran
-	standart_fov = FOV360
-
 /obj/item/clothing
 	var/fovedit = FALSE
 	var/change_fov = FOV90
@@ -30,8 +27,8 @@
 	var/l_turn_time = 0
 	var/turn_delay = 4
 
-/mob/living/is_invisible_to(mob/living/viewer)
-	return (src.InCone(viewer, viewer.dir) || ..())
+// /mob/living/is_invisible_to(mob/living/viewer)
+// 	return (src.InCone(viewer, viewer.dir) || ..())
 
 /mob/UpdateLyingBuckledAndVerbStatus()
 	. = ..()
