@@ -66,8 +66,8 @@
 
 	if(aiming && aiming.aiming_at) tally += 5 // Iron sights make you slower, it's a well-known fact.
 
-	if(facing_dir) 
-		tally += 3 //Locking direction will slow you down.
+	if(facing_dir)
+		tally += 0.3 //Locking direction will slow you down.
 
 	if(MUTATION_FAT in src.mutations)
 		tally += 1.5

@@ -88,6 +88,7 @@
 #include "code\__defines\_inf\culture.dm"
 #include "code\__defines\_inf\customs.dm"
 #include "code\__defines\_inf\exdatastores.dm"
+#include "code\__defines\_inf\fov.dm"
 #include "code\__defines\_inf\gamemode.dm"
 #include "code\__defines\_inf\guns.dm"
 #include "code\__defines\_inf\items_clothing.dm"

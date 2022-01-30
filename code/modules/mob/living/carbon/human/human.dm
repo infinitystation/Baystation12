@@ -13,7 +13,7 @@
 	var/obj/item/rig/wearing_rig // This is very not good, but it's much much better than calling get_rig() every update_canmove() call.
 	var/list/stance_limbs
 	var/list/grasp_limbs
-	var/step_count = 1
+	var/step_count
 	var/dream_timer
 
 /mob/living/carbon/human/New(var/new_loc, var/new_species = null)

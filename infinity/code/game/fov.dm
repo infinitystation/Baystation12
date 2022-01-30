@@ -1,33 +1,25 @@
 /obj/screen/fov
 	icon = 'infinity/icons/effects/hide.dmi'
-	icon_state = "270"
+	icon_state = FOV270
 	name = " "
+	plane = HUD_PLANE
+	layer = UNDER_HUD_LAYER
 	screen_loc = "1,1"
 	mouse_opacity = 0
-
-#define OPPOSITE_DIR(D) turn(D, 180)
 
 /client
 	var/list/hidden_atoms = list()
 	var/list/hidden_mobs = list()
 
+/datum/species
+	var/standart_fov = FOV270
+
+/datum/species/tajaran
+	standart_fov = FOV360
+
 /obj/item/clothing
 	var/fovedit = FALSE
-
-/obj/item/clothing/proc/update_user_fov(var/mob/living/M, var/unequip = FALSE)
-	if(fovedit)
-		M.fov.icon_state = unequip ?  "270" : "90"
-		M.fov.update_icon()
-
-/obj/item/clothing/attack_hand(mob/user)
-	. = ..()
-	if(.)
-		update_user_fov(user, TRUE)
-
-/obj/item/clothing/equipped(mob/user)
-	. = ..()
-	if(fovedit)
-		update_user_fov(user)
+	var/change_fov = FOV90
 
 /mob/living/face_direction()
 	. = ..()
@@ -36,7 +28,7 @@
 
 /mob/living
 	var/l_turn_time = 0
-	var/turn_delay = 5
+	var/turn_delay = 4
 
 /mob/living/is_invisible_to(mob/living/viewer)
 	return (src.InCone(viewer, viewer.dir) || ..())
@@ -46,18 +38,19 @@
 	update_vision_cone()
 
 /mob/living/set_dir(dir, var/force_pass=TRUE)
-	if((src.l_turn_time+src.turn_delay) >= world.time && !force_pass) return MOVEMENT_ON_COOLDOWN
-	src.l_turn_time = world.time
+	if(src.l_turn_time >= world.time && !force_pass) return
+	src.l_turn_time = world.time+src.turn_delay
 	. = ..()
 	update_vision_cone()
 
 /mob/living/Move(a, b, flag)
 	. = ..()
-	for(var/mob/M in oview(src))
+	for(var/mob/M in oviewers(src))
 		M.update_vision_cone()
-
 	update_vision_cone()
+
 /atom/proc/InCone_raw(atom/center = usr, center_dir = NORTH, fov)
+	if(!fov) return FALSE
 	. = FALSE
 	var/rel_x = src.x - center.x
 	var/rel_y = src.y - center.y
@@ -84,7 +77,7 @@
 	return .
 
 /atom/proc/InCone(atom/center = usr, center_dir = NORTH)
-	if(ismob(src.loc)) return FALSE
+	if(!isturf(src) && !isturf(src.loc)) return FALSE
 
 	if(isliving(center))
 		var/mob/living/M = center
@@ -162,6 +155,12 @@ proc/cone(atom/center = usr, center_dir = NORTH, var/list/plist = oview(center))
 //Making these generic procs so you can call them anywhere.
 /mob/living/carbon/human/proc/show_cone(var/change_use_fov = 1)
 	if(src.fov)
+		var/fov_new = null
+		for(var/obj/item/clothing/C in list(glasses, wear_mask, head))
+			if(C && C.fovedit)
+				fov_new = C.change_fov
+
+		src.fov.icon_state = fov_new ? fov_new : species.standart_fov
 		src.fov.alpha = 255
 		if(change_use_fov)
 			usefov = 1
@@ -171,3 +170,26 @@ proc/cone(atom/center = usr, center_dir = NORTH, var/list/plist = oview(center))
 		src.fov.alpha = 0
 		if(change_use_fov)
 			usefov = 0
+
+/mob/living/proc/visualize_sound(var/list/recipients=null, var/sound_loc=src.loc)
+	if(!recipients)
+		for(var/mob/living/sup in viewers(world.view, src))
+			if(sup.client && (src in sup.client.hidden_mobs))
+				recipients.Add(sup.client)
+
+	if(isturf(src.loc) && recipients)
+		spawn(0)
+			footstep_animation(recipients, sound_loc)
+
+
+proc/footstep_animation(var/list/recipients, var/loc)
+	var/image/I = image('infinity/icons/effects/footstep.dmi', "step")
+	I.plane = HUD_PLANE
+	I.layer = HUD_ABOVE_ITEM_LAYER
+	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART
+
+	for(var/client/C in recipients)
+		I.loc = loc
+		C.images += I
+
+	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_images_from_clients, I, recipients), 6)

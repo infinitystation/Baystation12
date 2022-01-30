@@ -346,10 +346,10 @@ proc/get_radio_key_from_channel(var/channel)
 	// VOREStation Port End
 
 	var/list/speech_bubble_recipients = list()
-	for(var/mob/M in listening)
+	for(var/mob/living/M in listening)
 		if(M)
 			M.hear_say(message, verb, speaking, alt_name, italics, src, speech_sound, sound_vol)
-			if(M.client)
+			if(M.client && !(M.client in src.client.hidden_mobs))
 				speech_bubble_recipients += M.client
 
 
