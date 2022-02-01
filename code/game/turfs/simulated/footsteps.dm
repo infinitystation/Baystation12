@@ -29,8 +29,9 @@
 /turf/simulated/Entered(var/mob/living/carbon/human/H)
 	..()
 	if(istype(H))
-		H.step_count++
 		H.handle_footsteps()
+		H.step_count++
+
 /mob/living/carbon/human/proc/has_footsteps()
 	if(species.silent_steps || buckled || lying || throwing)
 		return //people flying, lying down or sitting do not step

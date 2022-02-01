@@ -56,6 +56,7 @@
 	next_click = world.time + 1
 	var/list/modifiers = params2list(params)
 	var/cone = TRUE
+	// [inf]
 	if(modifiers["middle"])
 		MiddleClickOn(A)
 		return 1
@@ -77,6 +78,7 @@
 		if(modifiers["ctrl"])
 			CtrlClickOn(A)
 			return 1
+	// [/inf]
 
 	if(stat || paralysis || stunned || weakened || sleeping)
 		return
@@ -85,7 +87,7 @@
 	if(!istype(buckled) || buckled.buckle_movable)
 		face_atom(A) // change direction to face what you clicked on
 
-	if(cone)
+	if(cone) // inf
 		return
 
 	if(!canClick()) // in the year 2000...

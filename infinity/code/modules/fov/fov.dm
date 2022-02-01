@@ -7,29 +7,6 @@
 	screen_loc = "1,1"
 	mouse_opacity = 0
 
-/client
-	var/list/hidden_atoms = list()
-	var/list/hidden_mobs = list()
-
-/datum/species
-	var/standart_fov = FOV270
-
-/obj/item/clothing
-	var/fovedit = FALSE
-	var/change_fov = FOV90
-
-/mob/living/face_direction()
-	. = ..()
-	if(fixeye)
-		fixeye.icon_state = facing_dir ? "fixeye_on" : "fixeye"
-
-/mob/living
-	var/l_turn_time = 0
-	var/turn_delay = 4
-
-// /mob/living/is_invisible_to(mob/living/viewer)
-// 	return (src.InCone(viewer, viewer.dir) || ..())
-
 /mob/UpdateLyingBuckledAndVerbStatus()
 	. = ..()
 	update_vision_cone()
@@ -156,12 +133,12 @@ proc/cone(atom/center = usr, center_dir = NORTH, var/list/plist = oview(center))
 //Making these generic procs so you can call them anywhere.
 /mob/living/carbon/human/proc/show_cone(var/change_use_fov = 1)
 	if(src.fov)
-		var/fov_new = null
+		var/fov_new = species.standart_fov
 		for(var/obj/item/clothing/C in list(glasses, wear_mask, head))
-			if(C && C.fovedit)
+			if(C && C.change_fov)
 				fov_new = C.change_fov
 
-		src.fov.icon_state = fov_new ? fov_new : species.standart_fov
+		src.fov.icon_state = fov_new
 		src.fov.alpha = 255
 		if(change_use_fov)
 			usefov = 1

@@ -83,6 +83,7 @@
 		var/obj/screen/movement/M = using//inf
 		M.owner = mymob//inf
 
+	//[inf]
 	if(hud_data.has_fixeye)
 		using = new /obj/screen/fixeye()
 		using.SetName("fix eye")
@@ -93,6 +94,7 @@
 		using.alpha = ui_alpha
 		src.hotkeybuttons += using
 		target.fixeye = using
+	//[/inf]
 
 	if(hud_data.has_drop)
 		using = new /obj/screen()
@@ -316,10 +318,11 @@
 	mymob.radio_use_icon.color = ui_color
 	mymob.radio_use_icon.alpha = ui_alpha
 
+	// [inf]
 	target.fov = new /obj/screen/fov(null)
 	target.fov.icon_state = target.species ? target.species.standart_fov : FOV270
 	hud_elements |= target.fov
-
+	// [/inf]
 	mymob.client.screen = list()
 
 	mymob.client.screen += hud_elements
