@@ -319,9 +319,10 @@
 	mymob.radio_use_icon.alpha = ui_alpha
 
 	// [inf]
-	target.fov = new /obj/screen/fov(null)
-	target.fov.icon_state = target.species ? target.species.standart_fov : FOV270
-	hud_elements |= target.fov
+	if(ishuman(mymob))
+		target.fov = new /obj/screen/fov(null)
+		target.fov.icon_state = target.species ? target.species.standart_fov : FOV270
+		hud_elements |= target.fov
 	// [/inf]
 	mymob.client.screen = list()
 

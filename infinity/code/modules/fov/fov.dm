@@ -55,7 +55,7 @@
 
 	if(isliving(center))
 		var/mob/living/M = center
-		if(!M.usefov) return FALSE
+		if(!M.usefov || !M.fov) return FALSE
 		return InCone_raw(center, OPPOSITE_DIR(center_dir), text2num(M.fov.icon_state))
 
 /mob/dead/InCone(mob/center = usr, center_dir = NORTH)
@@ -81,17 +81,14 @@ proc/cone(atom/center = usr, center_dir = NORTH, var/list/plist = oview(center))
 	return
 
 
-/mob/living/proc/clear_cone_effect(var/image/I)
-	if(I)
-		qdel(I)
 
 /mob/living/carbon/human/update_vision_cone()
 	var/delay = 10
-	if(src.client)
+	if(src.client && src.fov)
 		var/image/I = null
 		for(I in src.client.hidden_atoms)
 			I.override = 0
-			addtimer(CALLBACK(src, .proc/clear_cone_effect, I), delay)
+			addtimer(CALLBACK(null, /proc/qdel, I), delay)
 			delay += 10
 		check_fov()
 		src.client.hidden_atoms = list()
