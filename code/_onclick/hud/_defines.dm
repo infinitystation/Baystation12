@@ -55,7 +55,7 @@
 #define ui_holster "EAST-3:25, SOUTH+1:7"//inf
 #define ui_acti "EAST-2:26,SOUTH:5"
 #define ui_movi "EAST-3:24,SOUTH:5"
-#define ui_fixeye "EAST-4:28,SOUTH:5"
+#define ui_fixeye "EAST-4:28,SOUTH:5"//inf
 #define ui_zonesel "EAST-1:28,SOUTH:5"
 #define ui_acti_alt "EAST-1:28,SOUTH:5" //alternative intent switcher for when the interface is hidden (F12)
 #define ui_stamina "EAST-3:24,SOUTH+1:5"
