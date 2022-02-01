@@ -154,7 +154,7 @@ proc/cone(atom/center = usr, center_dir = NORTH, var/list/plist = oview(center))
 			recipients.Add(sup.client)
 
 	if(isturf(src.loc) && recipients)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/footstep_animation, recipients, sound_loc), 1)
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/footstep_animation, recipients, sound_loc))
 
 proc/footstep_animation(var/list/recipients, var/loc)
 	var/image/I = image('infinity/icons/effects/footstep.dmi', "step")
