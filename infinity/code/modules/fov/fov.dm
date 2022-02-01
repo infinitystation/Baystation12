@@ -11,8 +11,8 @@
 	. = ..()
 	update_vision_cone()
 
-/mob/living/set_dir(dir, var/force_pass=TRUE)
-	if(src.l_turn_time >= world.time && !force_pass) return
+/mob/living/set_dir(dir, force)
+	if(src.l_turn_time >= world.time && !force) return
 	src.l_turn_time = world.time+src.turn_delay
 	. = ..()
 	update_vision_cone()
