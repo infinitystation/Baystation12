@@ -21,5 +21,6 @@
 	var/obj/screen/fov/fov
 	var/usefov = 1
 
+
 // /mob/living/is_invisible_to(mob/living/viewer)
 // 	return (src.InCone(viewer, viewer.dir) || ..())
