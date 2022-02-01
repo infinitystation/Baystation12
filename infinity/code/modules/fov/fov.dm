@@ -69,7 +69,6 @@
 		else
 			return .
 
-
 proc/cone(atom/center = usr, center_dir = NORTH, var/list/plist = oview(center))
 	var/list/nlist = plist
 	for(var/atom/O in nlist)
@@ -79,8 +78,6 @@ proc/cone(atom/center = usr, center_dir = NORTH, var/list/plist = oview(center))
 
 /mob/proc/update_vision_cone()
 	return
-
-
 
 /mob/living/carbon/human/update_vision_cone()
 	var/delay = 10
