@@ -67,7 +67,3 @@
 	// var/max_nutrition = MAX_NUTRITION
 
 	var/image/selected_image = null // Used for buildmode AI control stuff.
-
-	var/obj/screen/fixeye
-	var/obj/screen/fov/fov
-	var/usefov = 1
