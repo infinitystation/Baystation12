@@ -10,7 +10,7 @@
 	ruin_tags_blacklist = RUIN_HABITAT|RUIN_WATER
 	surface_color = "#261e19"
 	water_color = "#c74d00"
-	habitability_distribution = HABITABILITY_BAD
+	habitability_distribution = HABITABILITY_IDEAL // HABITABILITY_BAD
 	has_trees = FALSE
 	flora_diversity = 3
 	fauna_types = list(/mob/living/simple_animal/thinbug, /mob/living/simple_animal/hostile/retaliate/beast/shantak/lava, /mob/living/simple_animal/hostile/retaliate/beast/charbaby)
