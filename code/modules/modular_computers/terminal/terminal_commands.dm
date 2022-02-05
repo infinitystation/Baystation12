@@ -574,6 +574,12 @@ INF*/
 			var/code = F.stored_data
 			if(!findtext(code, ";"))
 				return "<font color='#ff0000'>[name]: compile error, lack this ';'.</font>"
+			if(findtext(code, inp_file_name) || findtext(code, "alias"))
+				terminal.computer.get_component(PART_HDD).damage += 30
+				return "<font color='#ff0000'> compile error, possible recursion detected.</font>"
+			if(length(code) > 500)
+				terminal.computer.get_component(PART_HDD).damage += 10
+				return "<font color='#ff0000'> compile error, too much commands.</font>"
 
 			var/regex/RegexHTML = new("<\[^<>]*>", "g")
 			var/regex/RegexFileHTML = new("\\\[\[^\\\[\\\]]*\\\]", "g")

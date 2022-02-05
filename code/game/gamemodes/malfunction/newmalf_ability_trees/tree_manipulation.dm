@@ -136,14 +136,14 @@
 			var/obj/machinery/power/apc/A = N
 			var/obj/item/cell/cell = A.get_cell()
 			if(cell && cell.charge)
-				explosion_intensity = 4 + round((cell.charge / CELLRATE) / 100000)
+				explosion_intensity = 2 + round(((cell.charge / CELLRATE) / 100000) / 5)
 			else
 				to_chat(user, "<span class='notice'>ERROR: APC Malfunction - Cell depleted or removed. Unable to overload.</span>")
 				return
 		else if (istype(N, /obj/machinery/power/smes/buildable)) // SMES. These explode in a very very very big boom. Similar to magnetic containment failure when messing with coils.
 			var/obj/machinery/power/smes/buildable/S = N
 			if(S.charge && S.RCon)
-				explosion_intensity = 4 + round((S.charge / CELLRATE) / 100000)
+				explosion_intensity = round(((S.charge / CELLRATE) / 100000) / 200)
 			else
 				// Different error texts
 				if(!S.charge)
