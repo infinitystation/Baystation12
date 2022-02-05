@@ -193,9 +193,9 @@ GLOBAL_VAR_INIT(log_end, (ascii2text(13))) // CRLF for all logs
 			C = D.current.client
 	else if(istype(whom, /datum))
 		var/datum/D = whom
-		return "*invalid:[D.type]*"
+		return "*INVALID:[D.type]*"
 	else
-		return "*invalid*"
+		return "*INVALID*"
 
 	. = ""
 
@@ -209,7 +209,7 @@ GLOBAL_VAR_INIT(log_end, (ascii2text(13))) // CRLF for all logs
 			if(C)	. += "</a>"
 			else	. += " (DC)"
 	else
-		. += "*no key*"
+		. += "*INVALID*"
 
 	if(include_name && M)
 		var/name

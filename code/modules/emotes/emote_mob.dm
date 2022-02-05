@@ -59,6 +59,7 @@
 	for (var/obj/item/implant/I in src)
 		if (I.implanted)
 			I.trigger(act, src)
+	log_emote(message, src)
 
 /mob/proc/format_emote(var/emoter = null, var/message = null)
 	var/pretext
@@ -131,12 +132,12 @@
 		input = message
 
 	if(input)
-		message = format_emote(message, src)
+		message = format_emote(src, message)
 	else
 		return
 	message = process_chat_markup(message)
-	if (message)
-		log_emote(message, src)
+
+
 	//do not show NPC animal emotes to ghosts, it turns into hellscape
 	var/check_ghosts = client ? /datum/client_preference/ghost_sight : null
 	if(m_type == VISIBLE_MESSAGE)

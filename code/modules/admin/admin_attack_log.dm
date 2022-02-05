@@ -69,7 +69,6 @@
 			attack_location = get_turf(victim)
 
 	attack_log_repository.store_attack_log(attacker, victim, admin_message)
-	log_attack(attacker, victim, admin_message)
 	if(!notify_about_admin_attack_log(attacker, victim))
 		return
 
@@ -82,7 +81,7 @@
 		full_admin_message = "[key_name(victim)] [admin_message]"
 	full_admin_message = append_admin_tools(full_admin_message, attacker||victim, attack_location)
 	msg_admin_attack(full_admin_message)
-	log_attack(attacker, victim, admin_message)
+	log_attack(attacker, victim ? victim : attacker, admin_message+" "+zone_sel)
 
 // Only store attack logs if any of the involved subjects have (had) a client
 /proc/store_admin_attack_log(var/mob/attacker, var/mob/victim)
