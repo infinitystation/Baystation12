@@ -84,6 +84,24 @@
 
 /area/shuttle/petrov/ship
 	icon_state = "shuttlered"
+/area/shuttle/petrov/cockpit
+	name = "Shuttle - Petrov - Cockpit"
+	icon_state = "shuttlered"
+/area/shuttle/petrov/test_room
+	name = "Shuttle - Petrov - Test Room"
+	icon_state = "shuttlered"
+/area/shuttle/petrov/gas
+	name = "Shuttle - Petrov - Gas"
+	icon_state = "shuttlered"
+/area/shuttle/petrov/airlock
+	name = "Shuttle - Petrov - Airlock"
+	icon_state = "shuttlered"
+/area/shuttle/petrov/security
+	name = "Shuttle - Petrov - Security Room"
+	icon_state = "shuttlered"
+/area/shuttle/petrov/scan
+	name = "Shuttle - Petrov - Scan Room"
+	icon_state = "shuttlered"
 /area/shuttle/petrov/cell1
 	name = "Shuttle - Petrov - Isolation Cell 1"
 	icon_state = "shuttle"
