@@ -7422,6 +7422,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/structure/closet/secure_closet/guncabinet/sierra_armory/smg,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
 "amU" = (
