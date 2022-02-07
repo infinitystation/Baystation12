@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0 # Otherwise, we will fail to push refs
           ref: master
       - name: Настройка Python
-        uses: actions/setup-python@v2.3.1
+        uses: actions/setup-python@v2.3.2
         with:
           python-version: '3.x'
       - name: Установка зависимостей
