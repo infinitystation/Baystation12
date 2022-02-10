@@ -30402,6 +30402,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/storage)
 "aVR" = (
@@ -30409,7 +30410,11 @@
 	c_tag = "Research - Storage";
 	dir = 8
 	},
-/obj/structure/closet/firecloset,
+/obj/structure/table/rack,
+/obj/item/stack/material/glass/fifty,
+/obj/item/stack/material/glass{
+	amount = 10
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aVS" = (
@@ -31002,8 +31007,10 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/random/material_rnd_steel,
-/obj/random/material_rnd_glass,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/steel{
+	amount = 20
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aXm" = (
