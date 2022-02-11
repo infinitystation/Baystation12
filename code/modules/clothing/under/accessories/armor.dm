@@ -97,7 +97,7 @@
 	desc = "A plasteel-reinforced synthetic armor plate, providing good protection. Attaches to a plate carrier."
 	icon_state = "armor_medium"
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT,//INF before KNIVES
+		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
 		laser = ARMOR_LASER_SMALL,
 		energy = ARMOR_ENERGY_SMALL,
@@ -122,7 +122,7 @@
 	desc = "A ceramics-reinforced synthetic armor plate, providing state of of the art protection. Attaches to a plate carrier."
 	icon_state = "armor_merc"
 	armor = list(
-		melee = ARMOR_MELEE_MAJOR, //INF before RESISTANT
+		melee = ARMOR_MELEE_MAJOR,
 		bullet = ARMOR_BALLISTIC_RIFLE,
 		laser = ARMOR_LASER_MAJOR,
 		energy = ARMOR_ENERGY_RESISTANT,
@@ -167,13 +167,24 @@
 	desc = "A pair of tan arm pads reinforced with armor plating. Attaches to a plate carrier."
 	icon_state = "armguards_tan"
 
+/obj/item/clothing/accessory/armguards/tan/tactical
+	desc = "A pair of armored tactical arm pads with additional ablative coating. Attaches to a plate carrier."
+	icon_state = "armguards_tac"
+	armor = list(
+		melee = ARMOR_MELEE_KNIVES,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED
+		)
+
 /obj/item/clothing/accessory/armguards/merc
 	name = "heavy arm guards"
 	desc = "A pair of red-trimmed black arm pads reinforced with heavy armor plating. Attaches to a plate carrier."
 	icon_state = "armguards_merc"
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
-		bullet = ARMOR_BALLISTIC_PISTOL,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
 		laser = ARMOR_LASER_HANDGUNS,
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_PADDED
@@ -258,13 +269,24 @@
 	desc = "A pair of armored leg pads in tan. Attaches to a plate carrier."
 	icon_state = "legguards_tan"
 
+/obj/item/clothing/accessory/legguards/tan/tactical
+	desc = "A pair of armored tactical leg pads with additional ablative coating. Attaches to a plate carrier."
+	icon_state = "legguards_tac"
+	armor = list(
+		melee = ARMOR_MELEE_KNIVES,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED
+		)
+
 /obj/item/clothing/accessory/legguards/merc
 	name = "heavy leg guards"
 	desc = "A pair of heavily armored leg pads in red-trimmed black. Attaches to a plate carrier."
 	icon_state = "legguards_merc"
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
-		bullet = ARMOR_BALLISTIC_PISTOL,
+		bullet = ARMOR_BALLISTIC_RESISTANT,
 		laser = ARMOR_LASER_HANDGUNS,
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_PADDED
@@ -308,7 +330,7 @@
 		melee = ARMOR_MELEE_KNIVES,
 		bullet = ARMOR_BALLISTIC_SMALL,
 		laser = ARMOR_LASER_RIFLES,
-		energy = ARMOR_ENERGY_STRONG, //INF was RESISTANT
+		energy = ARMOR_ENERGY_STRONG,
 		bomb = ARMOR_BOMB_PADDED
 		)
 	siemens_coefficient = 0

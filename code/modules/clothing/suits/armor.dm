@@ -323,10 +323,21 @@
 
 /obj/item/clothing/suit/armor/pcarrier/tan/tactical
 	name = "tactical plate carrier"
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical, /obj/item/clothing/accessory/storage/pouches/large/tan)
+	desc = "A heavy tactical tan plate carrier vest. It can be equipped with armor plates, but provides no protection of its own."
+	icon_state = "pcarrier_tac"
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/tactical,
+	 							/obj/item/clothing/accessory/legguards/tan/tactical,
+	  							/obj/item/clothing/accessory/armguards/tan/tactical,
+	   							/obj/item/clothing/accessory/storage/pouches/large/tan)
 
 /obj/item/clothing/suit/armor/pcarrier/merc
-	starting_accessories = list(/obj/item/clothing/accessory/armorplate/merc, /obj/item/clothing/accessory/armguards/merc, /obj/item/clothing/accessory/legguards/merc, /obj/item/clothing/accessory/storage/pouches)
+	name = "mercenary plate carrier"
+	desc = "A heavy carrier vest in red-trimmed black. Mostly used by any sort of mercenary. It can be equipped with armor plates, but provides no protection of its own."
+	icon_state = "pcarrier_merc"
+	starting_accessories = list(/obj/item/clothing/accessory/armorplate/merc,
+								/obj/item/clothing/accessory/armguards/merc,
+								/obj/item/clothing/accessory/legguards/merc,
+								/obj/item/clothing/accessory/storage/pouches)
 
 
 //Modular specialty armor
