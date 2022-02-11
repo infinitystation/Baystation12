@@ -8006,9 +8006,6 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -24
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "mL" = (
@@ -16615,9 +16612,6 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -24
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "Ah" = (
@@ -17960,9 +17954,17 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "CG" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/quartermaster/office)
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/catwalk_plated,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 23
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/hangar)
 "CH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
@@ -19628,6 +19630,17 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/deckofficer)
+"Fu" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor,
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/quartermaster/storage)
 "Fv" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
@@ -23252,14 +23265,11 @@
 /turf/simulated/floor/reinforced,
 /area/maintenance/waterstore)
 "Lb" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -24
 	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/quartermaster/office)
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "Lc" = (
 /turf/simulated/floor/tiled/steel_ridged,
 /area/shuttle/escape_pod/escape_pod3/station)
@@ -28451,6 +28461,15 @@
 "TT" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/thruster/d3starboard)
+"TV" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled,
+/area/quartermaster/office)
 "TW" = (
 /obj/structure/table/rack,
 /obj/random/maintenance,
@@ -28772,13 +28791,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
-"UP" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/techfloor,
-/area/quartermaster/storage)
 "UR" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -29364,6 +29376,13 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
+"We" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/techfloor,
+/area/quartermaster/storage)
 "Wf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30623,17 +30642,6 @@
 /obj/effect/floor_decal/techfloor/corner,
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
-"YO" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor,
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/quartermaster/storage)
 "YP" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -30674,20 +30682,9 @@
 /turf/simulated/wall/r_titanium,
 /area/exploration_shuttle/airlock)
 "YV" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/catwalk_plated,
-/obj/machinery/light/spot{
-	dir = 4
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 23
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/hangar)
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled,
+/area/quartermaster/office)
 "YW" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
@@ -49420,8 +49417,8 @@ oE
 Wm
 yU
 ZR
-CG
-Lb
+YV
+TV
 BL
 UZ
 ES
@@ -50633,9 +50630,9 @@ xI
 za
 Ad
 Gt
-UP
+We
 EN
-YO
+Fu
 FC
 Gf
 HI
@@ -51438,7 +51435,7 @@ tS
 vl
 wp
 au
-au
+Lb
 Ag
 AK
 au
@@ -51448,7 +51445,7 @@ KH
 KH
 QT
 au
-au
+Lb
 mK
 OK
 HM
@@ -55058,8 +55055,8 @@ ii
 eE
 aF
 aF
-YV
-aF
+WH
+CG
 aF
 aF
 aF
