@@ -19,7 +19,7 @@
 	protected_jobs = list(/datum/job/iaa)
 
 /datum/antagonist/traitor
-	blacklisted_jobs = list(/datum/job/submap)
+	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap)
 	protected_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/hos, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/iaa, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
 
 /datum/antagonist/ert/equip(var/mob/living/carbon/human/player)
