@@ -19214,17 +19214,6 @@
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
-"EF" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor,
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/quartermaster/storage)
 "EG" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/borderfloor/corner{
@@ -28783,6 +28772,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
+"UP" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/techfloor,
+/area/quartermaster/storage)
 "UR" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -29643,13 +29639,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
-"WK" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled/techfloor,
-/area/quartermaster/storage)
 "WL" = (
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/white,
@@ -30632,6 +30621,17 @@
 	},
 /obj/effect/floor_decal/corner_techfloor_grid,
 /obj/effect/floor_decal/techfloor/corner,
+/turf/simulated/floor/tiled/techfloor,
+/area/quartermaster/storage)
+"YO" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor,
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
 "YP" = (
@@ -50633,9 +50633,9 @@ xI
 za
 Ad
 Gt
-WK
+UP
 EN
-EF
+YO
 FC
 Gf
 HI
