@@ -9302,7 +9302,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
 "oA" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/no_grille,
 /obj/structure/cable/green{
@@ -10596,7 +10595,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/random/date_based/christmas/xmaslights,
 /turf/simulated/floor/tiled,
@@ -11656,6 +11654,9 @@
 	icon_state = "1-4"
 	},
 /obj/effect/catwalk_plated,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/aft)
 "sf" = (
@@ -11673,6 +11674,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/effect/catwalk_plated,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/aft)
 "sg" = (
@@ -11729,6 +11733,9 @@
 	dir = 4
 	},
 /obj/effect/catwalk_plated,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/aft)
 "sk" = (
@@ -11742,6 +11749,9 @@
 	dir = 1
 	},
 /obj/effect/catwalk_plated,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/aft)
 "sl" = (
@@ -11757,6 +11767,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/aft)
@@ -12266,6 +12280,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "te" = (
@@ -12647,7 +12664,10 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/effect/catwalk_plated,
-/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/aft)
 "tF" = (
@@ -14223,6 +14243,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 9
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
 "wn" = (
@@ -15026,6 +15047,7 @@
 "xI" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/central_stairwell)
 "xJ" = (
@@ -15970,6 +15992,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
 "zb" = (
@@ -16550,6 +16573,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/central_stairwell)
 "Ae" = (
@@ -17205,6 +17229,9 @@
 /obj/effect/floor_decal/industrial/danger/corner{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "Bu" = (
@@ -17410,6 +17437,7 @@
 	name = "Sorting Office";
 	sort_tag = "Sorting Office"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "BM" = (
@@ -17956,8 +17984,7 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/industrial/danger,
 /obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
@@ -18494,6 +18521,9 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor/corner,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
 "Dy" = (
@@ -19184,6 +19214,17 @@
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
 /area/exploration_shuttle/airlock)
+"EF" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor,
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/quartermaster/storage)
 "EG" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/borderfloor/corner{
@@ -19248,6 +19289,7 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
 "EO" = (
@@ -20169,6 +20211,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
 "Gu" = (
@@ -20648,7 +20691,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
 "Hc" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/portable_atmospherics/powered/pump,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -22177,6 +22219,9 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
 "Jq" = (
@@ -22827,6 +22872,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
@@ -26164,6 +26212,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "Qe" = (
@@ -26377,6 +26428,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aft)
 "Qu" = (
@@ -26895,6 +26947,9 @@
 	dir = 4
 	},
 /obj/effect/catwalk_plated,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/aft)
 "Rm" = (
@@ -27488,6 +27543,9 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
 "Sn" = (
@@ -27976,6 +28034,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -28784,6 +28845,10 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light,
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "Va" = (
@@ -29141,6 +29206,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
 "VR" = (
@@ -29575,6 +29643,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"WK" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/techfloor,
+/area/quartermaster/storage)
 "WL" = (
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/white,
@@ -30340,6 +30415,9 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/firedoor,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
 "Yq" = (
@@ -30518,6 +30596,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/central_stairwell)
 "YK" = (
@@ -30984,6 +31063,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
@@ -48728,8 +48811,8 @@ tE
 qA
 oA
 Hc
-Lb
-CG
+xD
+Wm
 CI
 yY
 Dw
@@ -49337,8 +49420,8 @@ oE
 Wm
 yU
 ZR
-Wm
-xD
+CG
+Lb
 BL
 UZ
 ES
@@ -50550,9 +50633,9 @@ xI
 za
 Ad
 Gt
-Mb
+WK
 EN
-VQ
+EF
 FC
 Gf
 HI
