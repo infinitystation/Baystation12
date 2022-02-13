@@ -103,7 +103,6 @@
 	dynamic_lighting = 1
 	area_flags = AREA_FLAG_ION_SHIELDED
 	req_access = list(access_maint_tunnels)
-	sound_env = list('infinity/sound/SS2/music/02_elevator.ogg')
 
 /area/turbolift/sierra_top
 	name = "Elevator - First Deck"
