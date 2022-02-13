@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 25
       - name: Настройка Python
-        uses: actions/setup-python@v2.3.1
+        uses: actions/setup-python@v2.3.2
         with:
           python-version: '3.x'
       - name: Добавление пустых строк
