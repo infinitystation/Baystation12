@@ -33,6 +33,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/floodlight,
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo_l)
 "ah" = (
@@ -1627,7 +1628,6 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/eva)
 "dl" = (
-/obj/machinery/suit_storage_unit/pilot,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -1635,6 +1635,7 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/sierra/explorer,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "dn" = (
@@ -2042,7 +2043,6 @@
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/commissary)
 "dX" = (
-/obj/machinery/suit_storage_unit/explorer,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2053,6 +2053,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/sierra/explorer,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "dY" = (
@@ -2596,14 +2597,13 @@
 /area/maintenance/thirddeck/starboard)
 "eR" = (
 /obj/machinery/camera/network/expedition,
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/outline/blue,
+/obj/machinery/suit_storage_unit/sierra/explorer/med,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "eS" = (
@@ -3297,7 +3297,6 @@
 /obj/structure/sign/poster{
 	pixel_y = 30
 	},
-/obj/machinery/suit_cycler/exploration,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
@@ -3310,7 +3309,7 @@
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 5
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/sierra/explorer/eng,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "fT" = (
@@ -3379,11 +3378,16 @@
 	c_tag = "Supply office - Supply locker room";
 	dir = 4
 	},
-/obj/structure/bed/chair/office/brown{
-	dir = 4
-	},
 /obj/item/device/radio/intercom{
 	pixel_y = 26
+	},
+/obj/structure/table/standard,
+/obj/item/material/clipboard,
+/obj/item/sticky_pad/random,
+/obj/item/pen,
+/obj/item/paper_bin,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
@@ -3646,10 +3650,6 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/ship)
 "gs" = (
-/obj/machinery/floodlight{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/airlock_sensor/airlock_interior{
 	frequency = 1331;
 	id_tag = "calypso_shuttle_interior_sensor";
@@ -3660,6 +3660,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/sleeper/survival_pod{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/airlock)
 "gt" = (
@@ -6124,7 +6128,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/petrov/ship)
 "kj" = (
-/obj/machinery/suit_storage_unit/explorer,
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
@@ -6132,6 +6135,7 @@
 	dir = 10
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/sierra/explorer/pilot,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "kk" = (
@@ -6338,7 +6342,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "kz" = (
-/obj/machinery/suit_storage_unit/explorer,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -6346,6 +6349,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/suit_storage_unit/sierra/explorer,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "kA" = (
@@ -10294,6 +10298,7 @@
 /area/hallway/primary/thirddeck/center)
 "qe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
+/obj/machinery/artifact_scanpad,
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
 "qf" = (
@@ -10969,8 +10974,6 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
 "rf" = (
-/obj/machinery/artifact,
-/obj/structure/anomaly_container,
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4
 	},
@@ -10983,7 +10986,6 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
 "rh" = (
-/obj/machinery/artifact_scanpad,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -11049,6 +11051,8 @@
 	pixel_x = -18
 	},
 /obj/effect/floor_decal/industrial/danger,
+/obj/machinery/artifact,
+/obj/structure/anomaly_container,
 /turf/simulated/floor/reinforced,
 /area/shuttle/petrov/cell2)
 "rp" = (
@@ -18738,6 +18742,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
 "DU" = (
@@ -19469,6 +19475,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/structure/bed/chair/pew,
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
 "Fh" = (
@@ -21826,17 +21833,17 @@
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "IQ" = (
-/obj/machinery/optable,
-/obj/structure/hygiene/sink{
-	dir = 4;
-	pixel_x = 22
-	},
 /obj/effect/floor_decal/borderfloor{
 	color = null;
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
+	},
+/obj/machinery/vitals_monitor,
+/obj/item/device/radio/intercom/department/medbay{
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
@@ -21856,14 +21863,14 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
 "IS" = (
-/obj/machinery/floodlight{
-	dir = 4
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
 	pixel_x = -22
 	},
+/obj/machinery/sleeper/survival_pod{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/airlock)
 "IT" = (
@@ -21972,7 +21979,6 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "Ja" = (
-/obj/machinery/vitals_monitor,
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
@@ -21985,6 +21991,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
+/obj/machinery/optable,
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "Jb" = (
@@ -22625,6 +22632,12 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/yellow/bordercorner2{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
 "Kd" = (
@@ -22998,9 +23011,6 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
 	},
-/obj/structure/bed/chair/office/brown{
-	dir = 8
-	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
 	pixel_y = 29
@@ -23017,22 +23027,20 @@
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "KI" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
 	},
-/obj/structure/table/standard,
-/obj/item/paper_bin,
-/obj/item/material/clipboard,
-/obj/item/sticky_pad/random,
-/obj/item/pen,
 /obj/machinery/newscaster{
 	pixel_y = 32
+	},
+/obj/structure/bed/chair/office/brown{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
@@ -26209,13 +26217,16 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 5
-	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
 	},
 /obj/structure/holoplant,
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/yellow/bordercorner2{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/office)
 "Qh" = (
@@ -28498,13 +28509,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/center)
 "Um" = (
-/obj/item/device/radio/intercom/department/medbay{
-	dir = 4;
-	pixel_x = -22
-	},
-/obj/machinery/sleeper/survival_pod{
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloor{
 	color = null;
 	dir = 8
@@ -28518,6 +28522,10 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 10
+	},
+/obj/structure/hygiene/sink{
+	dir = 8;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
@@ -28848,6 +28856,10 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/power)
+"Vh" = (
+/obj/structure/bed/chair/pew/left,
+/turf/simulated/floor/tiled,
+/area/quartermaster/suplocker_room)
 "Vi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -29181,14 +29193,22 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/eva)
+"VW" = (
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
+/obj/effect/floor_decal/industrial/outline/blue,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/simulated/floor/tiled,
+/area/quartermaster/exploration)
 "VX" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/suit_cycler/pilot,
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
+/obj/structure/table/rack,
+/obj/item/tank/hydrogen,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "VY" = (
@@ -29528,10 +29548,10 @@
 /turf/simulated/floor/airless,
 /area/shuttle/petrov/ship)
 "WG" = (
-/obj/machinery/suit_storage_unit/explorer,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/suit_cycler/exploration/sierra,
 /turf/simulated/floor/tiled,
 /area/quartermaster/exploration)
 "WH" = (
@@ -29637,9 +29657,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/monitoring)
 "WS" = (
-/obj/machinery/sleeper/survival_pod{
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloor{
 	color = null;
 	dir = 8
@@ -29651,6 +29668,9 @@
 	c_tag = "Charon - Medical Compartment";
 	dir = 4;
 	pixel_y = 11
+	},
+/obj/machinery/sleeper{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
@@ -29701,9 +29721,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/thirddeck/foreport)
 "Xa" = (
-/obj/machinery/sleeper{
-	dir = 8
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 23
 	},
@@ -29727,6 +29744,9 @@
 	color = null
 	},
 /obj/effect/floor_decal/corner/paleblue/bordercorner2,
+/obj/structure/handrail{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/exploration_shuttle/medical)
 "Xd" = (
@@ -30234,6 +30254,11 @@
 "Yj" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/thirddeck/foreport)
+"Yk" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/floodlight,
+/turf/simulated/floor/tiled/monotile,
+/area/exploration_shuttle/cargo_l)
 "Yl" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -48511,7 +48536,7 @@ EM
 Fj
 Xx
 KI
-Xj
+Vh
 Sj
 Xx
 Ux
@@ -50509,7 +50534,7 @@ Kg
 dX
 gN
 Em
-WG
+VW
 gQ
 jd
 Gm
@@ -52318,7 +52343,7 @@ OS
 ao
 ZD
 cx
-sY
+Yk
 nc
 fP
 Hn

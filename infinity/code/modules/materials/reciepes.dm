@@ -45,6 +45,11 @@
 	time = 45
 	difficulty = 2
 
+/datum/stack_recipe/chem_mine
+	title = "mine casing"
+	result_type = /obj/item/mine/chem_mine
+	difficulty = 3
+
 /material/steel/generate_recipes(var/reinforce_material)
 	. = ..()
 	if(reinforce_material)	//recipies below don't support composite materials

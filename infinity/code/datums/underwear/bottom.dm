@@ -1,3 +1,6 @@
+/obj/item/underwear/bottom/long
+	body_parts_covered = LEGS
+
 datum/category_item/underwear/bottom/pantysnormfull
 	name = "Panties, alte"
 	underwear_name = "panties"
@@ -18,3 +21,6 @@ datum/category_item/underwear/bottom/pantyesshorts
 	icon = 'infinity/icons/mob/human.dmi'
 	icon_state = "pantyshorts"
 	has_color = TRUE
+
+/datum/category_item/underwear/bottom/longjon
+	underwear_type = /obj/item/underwear/bottom/long

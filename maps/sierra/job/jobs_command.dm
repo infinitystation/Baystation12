@@ -52,7 +52,7 @@
 	spawn_positions = 1
 	req_admin_notify = 1
 	minimal_player_age = 21
-	economic_power = 12
+	economic_power = 10
 	ideal_character_age = 45
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/hop
 	allowed_branches = list(
@@ -87,7 +87,7 @@
 		access_expedition_shuttle, access_guppy, access_seneng, access_senmed, access_hangar,
 		access_guppy_helm, access_expedition_shuttle_helm, access_explorer, access_el, access_tox,
 		access_tox_storage, access_research, access_mining, access_mining_office, access_mining_station,
-		access_xenobiology, access_xenoarch, access_petrov, access_petrov_helm, access_actor
+		access_xenobiology, access_xenoarch, access_petrov, access_petrov_helm, access_actor, access_warden
 	)
 
 	minimal_access = list()
@@ -114,7 +114,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	req_admin_notify = 1
-	economic_power = 20
+	economic_power = 10
 	minimal_player_age = 14
 	ideal_character_age = 60
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/rd
@@ -150,7 +150,7 @@
 		access_sec_doors, access_medical, access_network,
 		access_maint_tunnels, access_eva, access_expedition_shuttle, access_expedition_shuttle_helm,
 		access_guppy, access_hangar, access_petrov, access_petrov_helm,
-		access_guppy_helm
+		access_guppy_helm, access_explorer, access_el
 	)
 
 	minimal_access = list()
@@ -362,7 +362,7 @@
 	spawn_positions = 2
 	supervisors = "Центральному Командованию"
 	selection_color = "#2f2f7f"
-	economic_power = 15
+	economic_power = 10
 	minimal_player_age = 10
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/research/iaa
 	allowed_branches = list(
@@ -430,7 +430,7 @@
 		access_heads, access_bridge, access_janitor, access_kitchen, access_actor, access_cargo,
 		access_RC_announce, access_keycard_auth, access_guppy, access_guppy_helm,
 		access_external_airlocks, access_expedition_shuttle, access_eva, access_hangar,
-		access_explorer, access_expedition_shuttle_helm, access_gun
+		access_explorer, access_expedition_shuttle_helm, access_gun, access_bar
 	)
 
 	minimal_access = list()

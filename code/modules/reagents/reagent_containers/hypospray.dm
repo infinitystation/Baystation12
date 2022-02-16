@@ -163,8 +163,8 @@
 /obj/item/reagent_containers/hypospray/autoinjector
 	name = "autoinjector"
 	desc = "A rapid and safe way to administer small amounts of drugs by untrained or trained personnel."
-	icon = 'icons/obj/syringe_inf.dmi'
-	icon_state = "blue1"
+	icon = 'icons/obj/syringe.dmi'
+	icon_state = "injector"
 	item_state = "autoinjector"
 	amount_per_transfer_from_this = 5
 	volume = 5
@@ -188,7 +188,7 @@
 /obj/item/reagent_containers/hypospray/autoinjector/on_update_icon()
 	overlays.Cut()
 	if(reagents.total_volume > 0)
-		icon_state = "[initial(icon_state)]"
+		icon_state = "[initial(icon_state)]1"
 	else
 		icon_state = "[initial(icon_state)]0"
 	overlays+= overlay_image(icon,"injector_band",band_color,RESET_COLOR)
@@ -202,42 +202,42 @@
 
 /obj/item/reagent_containers/hypospray/autoinjector/detox
 	name = "autoinjector (antitox)"
-	band_color = COLOR_GREEN
+	band_color = COLOR_LIME //inf //was: COLOR_GREEN
 	starts_with = list(/datum/reagent/dylovene = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/pain
 	name = "autoinjector (painkiller)"
-	band_color = COLOR_PURPLE
+	band_color = COLOR_VIOLET //inf //was: COLOR_PURPLE
 	starts_with = list(/datum/reagent/tramadol = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/brute
 	name = "autoinjector (anti-injury)"
-	band_color = COLOR_NT_RED
+	band_color = COLOR_RED //inf //was: COLOR_NT_RED
 	starts_with = list(/datum/reagent/bicaridine = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/burn
 	name = "autoinjector (anti-burn)"
-	band_color = COLOR_SUN
+	band_color = COLOR_DARK_ORANGE //inf //was: COLOR_SUN
 	starts_with = list(/datum/reagent/kelotane = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/inaprovaline
 	name = "autoinjector (inaprovaline)"
-	band_color = COLOR_SKY_BLUE
+	band_color = COLOR_CYAN 
 	starts_with = list(/datum/reagent/inaprovaline = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/combatpain
 	name = "autoinjector (oxycodone)"
-	band_color = COLOR_DARK_GRAY
+	band_color = COLOR_PURPLE //inf //was: COLOR_DARK_GRAY
 	starts_with = list(/datum/reagent/tramadol/oxycodone = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/antirad
 	name = "autoinjector (anti-rad)"
-	band_color = COLOR_AMBER
+	band_color = COLOR_GOLD //inf //was: COLOR_AMBER
 	starts_with = list(/datum/reagent/hyronalin = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/mindbreaker
 	name = "autoinjector"
-	band_color = COLOR_DARK_GRAY
+	band_color = COLOR_NT_RED //inf //was: COLOR_DARK_GRAY
 	starts_with = list(/datum/reagent/mindbreaker = 5)
 
 /obj/item/reagent_containers/hypospray/autoinjector/empty

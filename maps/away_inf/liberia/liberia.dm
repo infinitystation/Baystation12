@@ -23,6 +23,10 @@
 	)
 
 	area_usage_test_exempted_root_areas = list(/area/liberia)
+	apc_test_exempt_areas = list(
+		/area/liberia/solar1 = NO_SCRUBBER|NO_VENT|NO_APC,
+		/area/liberia/solar2 = NO_SCRUBBER|NO_VENT|NO_APC
+	)
 
 // Overmap objects.
 /obj/effect/overmap/visitable/ship/liberia //Объект в Системе
@@ -53,9 +57,5 @@
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
-
-
-
-
 
 #undef WEBHOOK_SUBMAP_LOADED_LIBERIA
