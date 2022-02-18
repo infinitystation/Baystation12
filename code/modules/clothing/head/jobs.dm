@@ -155,12 +155,12 @@
 	desc = "An armored red beret adorned with the crest of corporate asset protection. Doesn't sacrifice style or safety."
 	icon_state = "beret_red"
 	armor = list(
-		melee = ARMOR_MELEE_VERY_HIGH, 
-		bullet = ARMOR_BALLISTIC_RIFLE, 
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_RIFLE,
 		laser = ARMOR_LASER_HANDGUNS,
-		energy = ARMOR_ENERGY_SMALL, 
-		bomb = ARMOR_BOMB_PADDED, 
-		bio = ARMOR_BIO_RESISTANT, 
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_RESISTANT,
 		rad = ARMOR_RAD_MINOR
 	)
 	siemens_coefficient = 0.9
@@ -174,3 +174,20 @@
 	name = "beret"
 	desc = "A simple, solid color beret. This one has no emblems or insignia on it."
 	icon_state = "beret_white"
+
+//engineering berets
+
+/obj/item/clothing/head/beret/engineer
+	name = "engineer beret"
+	desc = "An orange beret. Only real engineer can wear such stylish headdress"
+	icon_state = "eng_beret"
+
+/obj/item/clothing/head/beret/atmos_technician
+	name = "atmospheric technician beret"
+	desc = "A blue beret. Equipped with drawstrings, so it won't be blown off the head when you try to look into the ventilation"
+	icon_state = "atmos_beret"
+
+/obj/item/clothing/head/beret/senior_engineer
+	name = "senior engineer beret"
+	desc = "A light yellow beret. Emphasizes the status of a senior engineer"
+	icon_state = "se_beret"
