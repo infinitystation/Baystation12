@@ -34,7 +34,7 @@
 	create_record = 0
 	outfit_type = /decl/hierarchy/outfit/job/liberia/merchant/leader
 	whitelisted_species = null
-	blacklisted_species = list(SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_XENO)
+	blacklisted_species = list(SPECIES_VOX, SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_XENO)
 	allowed_branches = list(
 		/datum/mil_branch/civilian
 	)
