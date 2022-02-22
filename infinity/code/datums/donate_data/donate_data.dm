@@ -29,7 +29,7 @@ GLOBAL_LIST_EMPTY(donators_data)
 
 /datum/donator_data/proc/Update()
 	if(key)
-		var/list/rank_and_points = SSexdata.GetDataByKey(DATASTORE_DONATORS, key)
+		var/list/rank_and_points = SSexdata.GetDataByKey(DATASTORE_DONATORS, ckey(key))
 		if(islist(rank_and_points) && length(rank_and_points))
 			if(list_find(rank_and_points, "rank"))
 				rank = rank_and_points["rank"]
