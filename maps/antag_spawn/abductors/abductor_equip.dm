@@ -17,6 +17,7 @@
 	var/datum/effect/effect/system/spark_spread/sparks = new /datum/effect/effect/system/spark_spread()
 	sparks.set_up(5, 0, get_turf(target))
 	sparks.start()
+	target.forceMove(target_pos)
 	playsound(target.loc, "sparks", 50, 1)
 	playsound(target.loc, 'sound/effects/phasein.ogg', 25, 1)
 
