@@ -69,8 +69,8 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 5
+	dir = 5;
+	icon_state = "intact"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -82,8 +82,8 @@
 /area/outpost/mining)
 "ak" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	icon_state = "map";
-	dir = 1
+	dir = 1;
+	icon_state = "map"
 	},
 /obj/effect/floor_decal/corner/brown{
 	dir = 6
@@ -234,8 +234,8 @@
 "aE" = (
 /obj/structure/lattice,
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 1
+	dir = 1;
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped{
 	dir = 8;
@@ -248,22 +248,22 @@
 /area/outpost/mining/hangar)
 "aG" = (
 /obj/effect/floor_decal/corner/brown/three_quarters{
-	icon_state = "corner_white_three_quarters";
-	dir = 8
+	dir = 8;
+	icon_state = "corner_white_three_quarters"
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "aH" = (
 /obj/effect/floor_decal/corner/brown{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
 "aI" = (
 /obj/effect/floor_decal/corner/brown{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/machinery/light/small{
 	dir = 1;
@@ -273,8 +273,8 @@
 /area/outpost/mining/hangar)
 "aJ" = (
 /obj/effect/floor_decal/corner/brown/three_quarters{
-	icon_state = "corner_white_three_quarters";
-	dir = 1
+	dir = 1;
+	icon_state = "corner_white_three_quarters"
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/hangar)
@@ -294,8 +294,8 @@
 /area/outpost/mining/hangar)
 "aN" = (
 /obj/effect/floor_decal/industrial/danger/corner{
-	icon_state = "dangercorner";
-	dir = 1
+	dir = 1;
+	icon_state = "dangercorner"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
@@ -314,8 +314,8 @@
 /area/space)
 "aQ" = (
 /obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 4
+	dir = 4;
+	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
@@ -324,8 +324,8 @@
 /area/outpost/mining/hangar)
 "aS" = (
 /obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 8
+	dir = 8;
+	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
@@ -359,8 +359,8 @@
 /area/outpost/mining/hangar)
 "aW" = (
 /obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 4
+	dir = 4;
+	icon_state = "danger"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -447,8 +447,8 @@
 /area/outpost/mining/cenral)
 "bi" = (
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 1
+	dir = 1;
+	icon_state = "railing0-1"
 	},
 /turf/space,
 /area/space)
@@ -517,15 +517,15 @@
 	id_tag = "mbase_airlock_space_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/cee{
-	icon_state = "stripecee";
-	dir = 1
+	dir = 1;
+	icon_state = "stripecee"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining/cenral)
 "bq" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	icon_state = "map";
-	dir = 1
+	dir = 1;
+	icon_state = "map"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -533,8 +533,8 @@
 "br" = (
 /obj/structure/catwalk,
 /obj/machinery/airlock_sensor{
-	master_tag = "mbase_airlock_space";
 	id_tag = "mbase_airlock_space_sensor";
+	master_tag = "mbase_airlock_space";
 	pixel_x = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
@@ -542,8 +542,8 @@
 	id_tag = "mbase_airlock_space_pump"
 	},
 /obj/effect/floor_decal/industrial/warning/cee{
-	icon_state = "stripecee";
-	dir = 1
+	dir = 1;
+	icon_state = "stripecee"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining/cenral)
@@ -580,8 +580,8 @@
 "bw" = (
 /obj/structure/catwalk,
 /obj/structure/bed/chair/padded/brown{
-	icon_state = "chair_preview";
-	dir = 1
+	dir = 1;
+	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining/power)
@@ -633,12 +633,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/structure/bed/chair/wood/walnut{
-	icon_state = "wooden_chair_preview";
-	dir = 4
-	},
 /obj/structure/sign/poster{
 	pixel_y = 32
+	},
+/obj/structure/bed/chair/rounded/brown{
+	dir = 4
 	},
 /turf/simulated/floor/wood/walnut,
 /area/outpost/mining/recreation)
@@ -698,8 +697,8 @@
 	icon_state = "2-4"
 	},
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/inactive{
 	dir = 8;
@@ -920,8 +919,8 @@
 	pixel_x = 32
 	},
 /obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 8
+	dir = 8;
+	icon_state = "warninghalf"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
@@ -961,8 +960,8 @@
 	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
-	icon_state = "warningcorner";
-	dir = 8
+	dir = 8;
+	icon_state = "warningcorner"
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -996,8 +995,8 @@
 "ci" = (
 /obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 5
+	dir = 5;
+	icon_state = "intact"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
@@ -1027,8 +1026,8 @@
 /area/outpost/mining/cenral)
 "cm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 9
+	dir = 9;
+	icon_state = "intact"
 	},
 /obj/effect/catwalk_plated,
 /obj/machinery/alarm{
@@ -1049,8 +1048,8 @@
 "co" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 8
+	dir = 8;
+	icon_state = "map-scrubbers"
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/recreation)
@@ -1058,9 +1057,8 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/structure/bed/chair/padded/yellow{
-	icon_state = "chair_preview";
-	dir = 4
+/obj/structure/bed/sofa/r/yellow{
+	dir = 4;
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
@@ -1075,12 +1073,11 @@
 /area/outpost/mining/recreation)
 "cr" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
-	icon_state = "map_scrubber_on";
-	dir = 4
+	dir = 4;
+	icon_state = "map_scrubber_on"
 	},
-/obj/structure/bed/chair/padded/yellow{
-	icon_state = "chair_preview";
-	dir = 8
+/obj/structure/bed/sofa/l/yellow{
+	dir = 8;
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
@@ -1112,8 +1109,8 @@
 	pixel_y = 24
 	},
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
-	icon_state = "corner_white_three_quarters";
-	dir = 8
+	dir = 8;
+	icon_state = "corner_white_three_quarters"
 	},
 /obj/item/storage/firstaid/trauma,
 /obj/item/storage/firstaid/fire,
@@ -1122,8 +1119,8 @@
 "cx" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/corner/paleblue{
-	icon_state = "corner_white";
-	dir = 5
+	dir = 5;
+	icon_state = "corner_white"
 	},
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/o2,
@@ -1135,8 +1132,8 @@
 	pixel_y = 30
 	},
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
-	icon_state = "corner_white_three_quarters";
-	dir = 1
+	dir = 1;
+	icon_state = "corner_white_three_quarters"
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
@@ -1189,23 +1186,23 @@
 /area/outpost/mining/hangar)
 "cD" = (
 /obj/effect/floor_decal/industrial/danger/corner{
-	icon_state = "dangercorner";
-	dir = 4
+	dir = 4;
+	icon_state = "dangercorner"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
 "cE" = (
 /obj/effect/floor_decal/industrial/danger{
-	icon_state = "danger";
-	dir = 1
+	dir = 1;
+	icon_state = "danger"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/hangar)
 "cF" = (
 /obj/effect/floor_decal/industrial/danger/corner{
-	icon_state = "dangercorner";
-	dir = 8
+	dir = 8;
+	icon_state = "dangercorner"
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/monotile,
@@ -1247,8 +1244,8 @@
 /area/outpost/mining/cenral)
 "cL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 9
+	dir = 9;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining/cenral)
@@ -1279,9 +1276,8 @@
 /turf/simulated/floor/tiled,
 /area/outpost/mining/recreation)
 "cQ" = (
-/obj/structure/bed/chair/padded/yellow{
-	icon_state = "chair_preview";
-	dir = 4
+/obj/structure/bed/sofa/l/yellow{
+	dir = 4;
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
@@ -1293,9 +1289,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
 "cS" = (
-/obj/structure/bed/chair/padded/yellow{
-	icon_state = "chair_preview";
-	dir = 8
+/obj/structure/bed/sofa/r/yellow{
+	dir = 8;
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining/recreation)
@@ -1330,8 +1325,8 @@
 "cY" = (
 /obj/machinery/sleeper/survival_pod,
 /obj/effect/floor_decal/corner/paleblue{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
@@ -1386,8 +1381,8 @@
 	},
 /obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	icon_state = "map-supply";
-	dir = 1
+	dir = 1;
+	icon_state = "map-supply"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -1770,16 +1765,16 @@
 /area/outpost/mining/medical)
 "dB" = (
 /obj/machinery/light{
-	icon_state = "tube_map";
-	dir = 4
+	dir = 4;
+	icon_state = "tube_map"
 	},
 /obj/structure/bed/chair/padded/light{
-	icon_state = "chair_preview";
-	dir = 8
+	dir = 8;
+	icon_state = "chair_preview"
 	},
 /obj/effect/floor_decal/corner/paleblue{
-	icon_state = "corner_white";
-	dir = 6
+	dir = 6;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
@@ -1886,8 +1881,8 @@
 /area/outpost/mining/cenral)
 "dP" = (
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/corner/brown{
 	dir = 10
@@ -1955,16 +1950,16 @@
 /turf/simulated/floor/tiled,
 /area/outpost/mining/recreation)
 "dW" = (
-/obj/structure/bed/chair/padded/yellow,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/bed/chair/rounded/yellow,
 /turf/simulated/floor/tiled,
 /area/outpost/mining/recreation)
 "dX" = (
-/obj/structure/bed/chair/padded/yellow,
+/obj/structure/bed/chair/rounded/yellow,
 /turf/simulated/floor/tiled,
 /area/outpost/mining/recreation)
 "dY" = (
@@ -1987,8 +1982,8 @@
 	},
 /obj/structure/closet/crate/freezer/blood/small,
 /obj/effect/floor_decal/corner/paleblue{
-	icon_state = "corner_white";
-	dir = 10
+	dir = 10;
+	icon_state = "corner_white"
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
@@ -1997,8 +1992,8 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/paleblue{
-	icon_state = "corner_white";
-	dir = 10
+	dir = 10;
+	icon_state = "corner_white"
 	},
 /obj/structure/bed/roller,
 /turf/simulated/floor/tiled/white,
@@ -2010,8 +2005,8 @@
 	pixel_y = -20
 	},
 /obj/effect/floor_decal/corner/paleblue/three_quarters{
-	icon_state = "corner_white_three_quarters";
-	dir = 4
+	dir = 4;
+	icon_state = "corner_white_three_quarters"
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/mining/medical)
@@ -2059,12 +2054,12 @@
 /area/outpost/mining/atmos)
 "eh" = (
 /obj/machinery/atmospherics/unary/tank/air{
-	icon_state = "air_map";
-	dir = 8
+	dir = 8;
+	icon_state = "air_map"
 	},
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 8
+	dir = 8;
+	icon_state = "railing0-1"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining/atmos)
@@ -2114,8 +2109,8 @@
 "eo" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	icon_state = "map-supply";
-	dir = 8
+	dir = 8;
+	icon_state = "map-supply"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -2148,8 +2143,8 @@
 	dir = 4
 	},
 /obj/machinery/computer/modular/preset/civilian{
-	icon_state = "console";
-	dir = 1
+	dir = 1;
+	icon_state = "console"
 	},
 /obj/effect/floor_decal/corner/brown/half,
 /turf/simulated/floor/tiled/monotile,
@@ -2169,8 +2164,8 @@
 "et" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	icon_state = "map-supply";
-	dir = 4
+	dir = 4;
+	icon_state = "map-supply"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -2202,8 +2197,8 @@
 "ex" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/visible/red{
-	icon_state = "intact";
-	dir = 6
+	dir = 6;
+	icon_state = "intact"
 	},
 /obj/machinery/alarm{
 	dir = 4;
@@ -2246,8 +2241,8 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/corner/brown/three_quarters{
-	icon_state = "corner_white_three_quarters";
-	dir = 8
+	dir = 8;
+	icon_state = "corner_white_three_quarters"
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining)
@@ -2273,8 +2268,8 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/ore_box,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 10
+	dir = 10;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining)
@@ -2351,12 +2346,12 @@
 /area/outpost/mining/atmos)
 "eP" = (
 /obj/machinery/atmospherics/unary/tank/air{
-	icon_state = "air_map";
-	dir = 8
+	dir = 8;
+	icon_state = "air_map"
 	},
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 8
+	dir = 8;
+	icon_state = "railing0-1"
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor,
@@ -2369,8 +2364,8 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/inactive{
 	dir = 8;
@@ -2439,8 +2434,8 @@
 "eV" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 1
+	dir = 1;
+	icon_state = "map-scrubbers"
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining)
@@ -2486,8 +2481,8 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 6
+	dir = 6;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
@@ -2504,8 +2499,8 @@
 	pixel_y = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 9
+	dir = 9;
+	icon_state = "intact"
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/outpost/mining)
@@ -2571,8 +2566,8 @@
 "fh" = (
 /obj/structure/curtain/open/shower,
 /obj/structure/hygiene/toilet{
-	icon_state = "toilet00";
-	dir = 8
+	dir = 8;
+	icon_state = "toilet00"
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/outpost/mining/toilet)
@@ -2584,8 +2579,8 @@
 /area/outpost/mining/atmos)
 "fj" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
-	icon_state = "intact";
-	dir = 5
+	dir = 5;
+	icon_state = "intact"
 	},
 /obj/structure/cable,
 /obj/machinery/power/apc/inactive{
@@ -2665,8 +2660,8 @@
 /obj/item/material/kitchen/utensil/fork,
 /obj/item/material/kitchen/utensil/spoon,
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/inactive{
 	dir = 8;
@@ -2698,8 +2693,8 @@
 /area/outpost/mining/kitchen)
 "fx" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
-	icon_state = "map_scrubber_on";
-	dir = 4
+	dir = 4;
+	icon_state = "map_scrubber_on"
 	},
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -2754,8 +2749,8 @@
 /area/outpost/mining/voidsuits)
 "fD" = (
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/corner/brown{
 	dir = 9
@@ -2782,8 +2777,8 @@
 /area/outpost/mining)
 "fF" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	icon_state = "map";
-	dir = 8
+	dir = 8;
+	icon_state = "map"
 	},
 /obj/effect/floor_decal/corner/brown{
 	dir = 6
@@ -2828,8 +2823,8 @@
 "fL" = (
 /obj/structure/flora/pottedplant/aquatic,
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/inactive{
 	dir = 8;
@@ -2949,8 +2944,8 @@
 /area/outpost/mining)
 "fW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 6
+	dir = 6;
+	icon_state = "intact"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -3016,8 +3011,8 @@
 	},
 /obj/item/pickaxe,
 /obj/effect/floor_decal/corner/brown/three_quarters{
-	icon_state = "corner_white_three_quarters";
-	dir = 4
+	dir = 4;
+	icon_state = "corner_white_three_quarters"
 	},
 /obj/machinery/power/apc/inactive{
 	dir = 4;
@@ -3070,8 +3065,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/cee{
-	icon_state = "stripecee";
-	dir = 1
+	dir = 1;
+	icon_state = "stripecee"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
@@ -3097,8 +3092,8 @@
 	pixel_y = 0
 	},
 /obj/effect/floor_decal/industrial/warning/cee{
-	icon_state = "stripecee";
-	dir = 1
+	dir = 1;
+	icon_state = "stripecee"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
@@ -3113,8 +3108,8 @@
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 8
+	dir = 8;
+	icon_state = "warninghalf"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
@@ -3136,8 +3131,8 @@
 	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 8
+	dir = 8;
+	icon_state = "warninghalf"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
@@ -3148,13 +3143,13 @@
 	},
 /obj/structure/catwalk,
 /obj/machinery/airlock_sensor{
-	master_tag = "mbase_airlock";
 	id_tag = "mbase_airlock_sensor";
+	master_tag = "mbase_airlock";
 	pixel_x = 24
 	},
 /obj/effect/floor_decal/industrial/warning/half{
-	icon_state = "warninghalf";
-	dir = 8
+	dir = 8;
+	icon_state = "warninghalf"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining)
@@ -3166,12 +3161,12 @@
 	pixel_y = 0
 	},
 /obj/machinery/light/small/red{
-	icon_state = "bulb_map";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb_map"
 	},
 /obj/structure/bed/chair{
-	icon_state = "chair_preview";
-	dir = 4
+	dir = 4;
+	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/airless/asteroid,
 /area/outpost/mining/relay)
@@ -3186,8 +3181,8 @@
 	pixel_y = 0
 	},
 /obj/structure/bed/chair{
-	icon_state = "chair_preview";
-	dir = 8
+	dir = 8;
+	icon_state = "chair_preview"
 	},
 /obj/effect/floor_decal/industrial/warning/cee,
 /turf/simulated/floor/plating,
@@ -3297,8 +3292,8 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light/small/red{
-	icon_state = "bulb_map";
-	dir = 1
+	dir = 1;
+	icon_state = "bulb_map"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining/relay)
@@ -3330,8 +3325,8 @@
 "gL" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 5
+	dir = 5;
+	icon_state = "intact"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -3357,8 +3352,8 @@
 /area/outpost/mining/relay)
 "gN" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	icon_state = "map";
-	dir = 1
+	dir = 1;
+	icon_state = "map"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -3369,8 +3364,8 @@
 /area/outpost/mining/relay)
 "gO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	icon_state = "intact";
-	dir = 10
+	dir = 10;
+	icon_state = "intact"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -3405,8 +3400,8 @@
 	},
 /obj/structure/cable,
 /obj/structure/bed/chair{
-	icon_state = "chair_preview";
-	dir = 4
+	dir = 4;
+	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/plating,
 /area/outpost/mining/relay)
@@ -3421,8 +3416,8 @@
 	pixel_x = 23
 	},
 /obj/structure/bed/chair{
-	icon_state = "chair_preview";
-	dir = 8
+	dir = 8;
+	icon_state = "chair_preview"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/outpost/mining/relay)
@@ -3441,8 +3436,8 @@
 "gV" = (
 /obj/structure/catwalk,
 /obj/machinery/airlock_sensor{
-	master_tag = "mbaserelay_airlock";
 	id_tag = "mbaserelay_airlock_sensor";
+	master_tag = "mbaserelay_airlock";
 	pixel_x = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
@@ -3500,8 +3495,8 @@
 /area/outpost/mining/relay)
 "he" = (
 /obj/machinery/computer/modular/preset/civilian{
-	icon_state = "console";
-	dir = 1
+	dir = 1;
+	icon_state = "console"
 	},
 /obj/structure/cable,
 /obj/effect/floor_decal/corner/brown/half,
@@ -3571,12 +3566,12 @@
 	dir = 2
 	},
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 6
+	dir = 6;
+	icon_state = "techfloor_edges"
 	},
 /obj/machinery/light/small/emergency{
-	icon_state = "bulb_map";
-	dir = 8
+	dir = 8;
+	icon_state = "bulb_map"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/abadoned_data_capsule)
@@ -3585,8 +3580,8 @@
 	dir = 2
 	},
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
+	dir = 4;
+	icon_state = "techfloor_edges"
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -3601,8 +3596,8 @@
 	dir = 10
 	},
 /obj/machinery/light/small/emergency{
-	icon_state = "bulb_map";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb_map"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/abadoned_data_capsule)
@@ -3613,8 +3608,8 @@
 /area/shuttle/abadoned_data_capsule)
 "hs" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 1
+	dir = 1;
+	icon_state = "techfloor_edges"
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/machinery/power/terminal,
@@ -3636,12 +3631,12 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor/corner{
-	icon_state = "techfloor_corners";
-	dir = 4
+	dir = 4;
+	icon_state = "techfloor_corners"
 	},
 /obj/effect/floor_decal/techfloor/corner{
-	icon_state = "techfloor_corners";
-	dir = 8
+	dir = 8;
+	icon_state = "techfloor_corners"
 	},
 /obj/effect/floor_decal/techfloor/corner,
 /obj/structure/cable/yellow{
@@ -3654,8 +3649,8 @@
 "hv" = (
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 1
+	dir = 1;
+	icon_state = "techfloor_edges"
 	},
 /obj/machinery/power/apc/inactive{
 	dir = 4;
@@ -3721,8 +3716,8 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
+	dir = 4;
+	icon_state = "techfloor_edges"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -3782,8 +3777,8 @@
 	dir = 9
 	},
 /obj/machinery/light{
-	icon_state = "tube_map";
-	dir = 1
+	dir = 1;
+	icon_state = "tube_map"
 	},
 /turf/simulated/floor/greengrid,
 /area/shuttle/abadoned_data_capsule)
@@ -3813,15 +3808,15 @@
 	dir = 5
 	},
 /obj/machinery/light{
-	icon_state = "tube_map";
-	dir = 1
+	dir = 1;
+	icon_state = "tube_map"
 	},
 /turf/simulated/floor/greengrid,
 /area/shuttle/abadoned_data_capsule)
 "hH" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 8
+	dir = 8;
+	icon_state = "techfloor_edges"
 	},
 /obj/machinery/light/small/emergency{
 	dir = 8
@@ -3855,19 +3850,19 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor/corner{
-	icon_state = "techfloor_corners";
-	dir = 8
+	dir = 8;
+	icon_state = "techfloor_corners"
 	},
 /turf/simulated/floor/greengrid,
 /area/shuttle/abadoned_data_capsule)
 "hL" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
+	dir = 4;
+	icon_state = "techfloor_edges"
 	},
 /obj/machinery/light/small/emergency{
-	icon_state = "bulb_map";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb_map"
 	},
 /obj/structure/plushie/drone,
 /turf/simulated/floor/greengrid,
@@ -3884,8 +3879,8 @@
 /area/shuttle/abadoned_data_capsule)
 "hN" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 8
+	dir = 8;
+	icon_state = "techfloor_edges"
 	},
 /turf/simulated/floor/greengrid,
 /area/shuttle/abadoned_data_capsule)
@@ -3895,8 +3890,8 @@
 	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
+	dir = 4;
+	icon_state = "techfloor_edges"
 	},
 /turf/simulated/floor/greengrid,
 /area/shuttle/abadoned_data_capsule)
@@ -3925,8 +3920,8 @@
 /area/shuttle/abadoned_data_capsule)
 "hR" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
+	dir = 4;
+	icon_state = "techfloor_edges"
 	},
 /turf/simulated/floor/greengrid,
 /area/shuttle/abadoned_data_capsule)
@@ -3935,19 +3930,19 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor/corner{
-	icon_state = "techfloor_corners";
-	dir = 4
+	dir = 4;
+	icon_state = "techfloor_corners"
 	},
 /turf/simulated/floor/greengrid,
 /area/shuttle/abadoned_data_capsule)
 "hT" = (
 /obj/structure/railing/mapped{
-	icon_state = "railing0-1";
-	dir = 1
+	dir = 1;
+	icon_state = "railing0-1"
 	},
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 1
+	dir = 1;
+	icon_state = "techfloor_edges"
 	},
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -3972,12 +3967,12 @@
 /area/shuttle/abadoned_data_capsule)
 "hV" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
+	dir = 4;
+	icon_state = "techfloor_edges"
 	},
 /obj/machinery/light/small/emergency{
-	icon_state = "bulb_map";
-	dir = 4
+	dir = 4;
+	icon_state = "bulb_map"
 	},
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -4001,8 +3996,8 @@
 /area/shuttle/abadoned_data_capsule)
 "hW" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 10
+	dir = 10;
+	icon_state = "techfloor_edges"
 	},
 /obj/structure/backup_server,
 /obj/machinery/light,
@@ -4019,8 +4014,8 @@
 /area/shuttle/abadoned_data_capsule)
 "hZ" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 6
+	dir = 6;
+	icon_state = "techfloor_edges"
 	},
 /obj/structure/backup_server,
 /obj/machinery/light,
@@ -4052,8 +4047,8 @@
 /area/shuttle/abadoned_data_capsule)
 "if" = (
 /obj/effect/floor_decal/techfloor{
-	icon_state = "techfloor_edges";
-	dir = 4
+	dir = 4;
+	icon_state = "techfloor_edges"
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 8
@@ -4078,8 +4073,8 @@
 /obj/effect/paint/dark_gunmetal,
 /obj/effect/paint_stripe/turquoise,
 /obj/machinery/atmospherics/pipe/manifold/visible/black{
-	icon_state = "map";
-	dir = 1
+	dir = 1;
+	icon_state = "map"
 	},
 /turf/simulated/wall/ocp_wall,
 /area/shuttle/abadoned_data_capsule)

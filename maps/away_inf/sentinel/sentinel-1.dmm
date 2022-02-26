@@ -2852,7 +2852,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/bed/chair/office/dark{
+/obj/structure/bed/chair/comfy/black{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -2930,8 +2930,8 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/obj/structure/bed/sofa/black/right{
-	dir = 8
+/obj/structure/bed/sofa/l/black{
+	dir = 8;
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/bridge)
@@ -3097,7 +3097,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/bed/chair/office/dark,
+/obj/structure/bed/chair/comfy/black,
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/bridge)
 "fR" = (
@@ -3137,8 +3137,8 @@
 	pixel_x = 24;
 	req_access = list("ACCESS_CAVALRY")
 	},
-/obj/structure/bed/sofa/black/left{
-	dir = 8
+/obj/structure/bed/sofa/r/black{
+	dir = 8;
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/patrol/command/bridge)
@@ -5343,7 +5343,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/structure/bed/chair/office{
+/obj/structure/bed/chair/office/comfy/blue{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,

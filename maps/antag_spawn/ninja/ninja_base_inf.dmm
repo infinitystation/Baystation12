@@ -117,7 +117,6 @@
 /turf/simulated/floor/plating,
 /area/map_template/ninja_dojo/dojo)
 "au" = (
- /obj/machinery/tele_pad,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/map_template/ninja_dojo/dojo)
@@ -409,14 +408,14 @@
 "bu" = (
 /obj/effect/floor_decal/snow,
 /turf/unsimulated/floor{
-	icon_state = "freezerfloor";
-	dir = 2
+	dir = 2;
+	icon_state = "freezerfloor"
 	},
 /area/map_template/ninja_dojo/dojo)
 "bv" = (
 /turf/unsimulated/floor{
-	icon_state = "freezerfloor";
-	dir = 2
+	dir = 2;
+	icon_state = "freezerfloor"
 	},
 /area/map_template/ninja_dojo/dojo)
 "bw" = (
@@ -720,21 +719,21 @@
 /area/map_template/ninja_dojo/start)
 "cq" = (
 /obj/structure/shuttle/engine/propulsion{
-	icon_state = "propulsion";
-	dir = 1
+	dir = 1;
+	icon_state = "propulsion"
 	},
 /obj/effect/paint/dark_gunmetal,
 /turf/simulated/wall/r_titanium,
 /area/map_template/ninja_dojo/start)
 "cr" = (
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 4
+	dir = 4;
+	icon_state = "warning"
 	},
 /obj/structure/table/rack,
 /obj/machinery/light{
-	icon_state = "tube_map";
-	dir = 1
+	dir = 1;
+	icon_state = "tube_map"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/ninja_dojo/start)
@@ -747,7 +746,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/ninja_dojo/start)
 "cu" = (
- /obj/machinery/tele_pad,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/ninja_dojo/start)
@@ -756,20 +754,20 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 8
+	dir = 8;
+	icon_state = "warning"
 	},
 /obj/machinery/light{
-	icon_state = "tube_map";
-	dir = 1
+	dir = 1;
+	icon_state = "tube_map"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/ninja_dojo/start)
 "cw" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/bed/chair/shuttle/black{
-	icon_state = "shuttle_chair_preview";
-	dir = 4
+	dir = 4;
+	icon_state = "shuttle_chair_preview"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/ninja_dojo/start)
@@ -781,8 +779,8 @@
 /area/map_template/ninja_dojo/start)
 "cy" = (
 /obj/effect/floor_decal/industrial/warning/corner{
-	icon_state = "warningcorner";
-	dir = 4
+	dir = 4;
+	icon_state = "warningcorner"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/ninja_dojo/start)
@@ -808,8 +806,8 @@
 	req_access = list("ACCESS_SYNDICATE")
 	},
 /obj/machinery/light{
-	icon_state = "tube_map";
-	dir = 8
+	dir = 8;
+	icon_state = "tube_map"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/map_template/ninja_dojo/start)
@@ -918,8 +916,8 @@
 /obj/item/screwdriver,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light{
-	icon_state = "tube_map";
-	dir = 8
+	dir = 8;
+	icon_state = "tube_map"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/ninja_dojo/start)
@@ -946,8 +944,8 @@
 /obj/item/wrench,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light{
-	icon_state = "tube_map";
-	dir = 4
+	dir = 4;
+	icon_state = "tube_map"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/map_template/ninja_dojo/start)

@@ -9158,8 +9158,8 @@
 /turf/simulated/floor/wood/walnut,
 /area/bridge/adjutants)
 "apu" = (
-/obj/structure/bed/sofa/black{
-	dir = 4
+/obj/structure/bed/sofa/m/black{
+	dir = 4;
 	},
 /obj/machinery/alarm{
 	dir = 4;
@@ -9179,13 +9179,14 @@
 /turf/simulated/floor/wood/walnut,
 /area/bridge/adjutants)
 "apw" = (
-/obj/structure/bed/sofa/black/left{
-	dir = 6
+/obj/structure/bed/sofa/m/black{
+	dir = 6;
 	},
 /turf/simulated/floor/wood/walnut,
 /area/bridge/adjutants)
 "apx" = (
-/obj/structure/bed/sofa/black/right,
+/obj/structure/bed/sofa/r/black{
+	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -10707,8 +10708,8 @@
 /turf/space,
 /area/space)
 "asl" = (
-/obj/structure/bed/sofa/black{
-	dir = 5
+/obj/structure/bed/sofa/m/black{
+	dir = 5;
 	},
 /turf/simulated/floor/wood/walnut,
 /area/bridge/adjutants)
@@ -17739,8 +17740,8 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "aEc" = (
-/obj/structure/bed/sofa/black{
-	dir = 1
+/obj/structure/bed/sofa/m/black{
+	dir = 1;
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
@@ -20413,8 +20414,8 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/unused_office)
 "aIa" = (
-/obj/structure/bed/sofa/black/right{
-	dir = 1
+/obj/structure/bed/sofa/l/black{
+	dir = 1;
 	},
 /turf/simulated/floor/wood/walnut,
 /area/bridge/adjutants)
@@ -23549,22 +23550,24 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/sierra/breakroom)
 "aMj" = (
-/obj/structure/bed/sofa/black/left,
 /obj/machinery/camera/network/security{
 	c_tag = "Brig - Break Room"
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
+/obj/structure/bed/sofa/l/red{
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/sierra/breakroom)
 "aMk" = (
-/obj/structure/bed/sofa/black/right,
 /obj/item/device/radio/intercom{
 	pixel_y = 26
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
+	},
+/obj/structure/bed/sofa/r/red{
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/sierra/breakroom)
@@ -25003,13 +25006,13 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/hop)
 "aOe" = (
-/obj/structure/bed/chair/office/brown{
-	dir = 8
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/bed/chair/rounded/blue{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/tcommsat/computer)
@@ -32222,9 +32225,6 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
 "bax" = (
-/obj/structure/bed/sofa/black/left{
-	dir = 8
-	},
 /obj/structure/sign/poster{
 	pixel_y = -32
 	},
@@ -32232,6 +32232,9 @@
 	dir = 4
 	},
 /obj/random/date_based/christmas/xmaslights,
+/obj/structure/bed/sofa/r/black{
+	dir = 8;
+	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
 "bay" = (
@@ -33754,16 +33757,17 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
 "bdO" = (
-/obj/structure/bed/sofa/black/left,
+/obj/structure/bed/sofa/l/black{
+	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
 "bdP" = (
-/obj/structure/bed/sofa/black/left{
-	dir = 10
-	},
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 24
+	},
+/obj/structure/bed/sofa/m/black{
+	dir = 10;
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
@@ -38931,9 +38935,6 @@
 /area/turret_protected/ai_upload)
 "jGu" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/bed/chair/padded/blue{
-	dir = 8
-	},
 /obj/machinery/camera/network/medbay{
 	c_tag = "Infirmary - Hall - Waiting Room";
 	dir = 8
@@ -38941,6 +38942,9 @@
 /obj/structure/hygiene/sink{
 	dir = 4;
 	pixel_x = 22
+	},
+/obj/structure/bed/chair/rounded/blue{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/infirmary)
@@ -41704,12 +41708,12 @@
 /area/rnd/misc_lab)
 "svt" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/bed/chair/padded/blue{
-	dir = 8
-	},
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 20
+	},
+/obj/structure/bed/chair/rounded/blue{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/infirmary)
@@ -42083,11 +42087,11 @@
 /area/rnd/misc_lab)
 "tQx" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/bed/chair/padded/blue{
-	dir = 8
-	},
 /obj/machinery/light/xenon{
 	dir = 4
+	},
+/obj/structure/bed/chair/rounded/blue{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/hallway/infirmary)

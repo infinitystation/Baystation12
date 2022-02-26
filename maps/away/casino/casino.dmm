@@ -2981,10 +2981,10 @@
 /turf/simulated/floor/tiled,
 /area/casino/casino_kitchen)
 "ip" = (
-/obj/structure/bed/chair/comfy/red{
+/obj/item/material/knife/table,
+/obj/structure/bed/chair/rounded/red{
 	dir = 4
 	},
-/obj/item/material/knife/table,
 /turf/simulated/floor/carpet,
 /area/casino/casino_mainfloor)
 "iq" = (
@@ -4491,10 +4491,10 @@
 /turf/simulated/floor/plating,
 /area/casino/casino_bow)
 "lY" = (
-/obj/structure/bed/chair/comfy/red{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/bed/chair/rounded/red{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood,
 /area/casino/casino_private_vip)
 "lZ" = (
@@ -4511,7 +4511,7 @@
 /turf/simulated/floor/wood,
 /area/casino/casino_private_vip)
 "mb" = (
-/obj/structure/bed/chair/comfy/red{
+/obj/structure/bed/chair/rounded/red{
 	dir = 8
 	},
 /turf/simulated/floor/wood,
@@ -4524,8 +4524,8 @@
 /turf/simulated/floor/wood,
 /area/casino/casino_private_vip)
 "md" = (
-/obj/structure/bed/chair/comfy/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/bed/chair/rounded/red,
 /turf/simulated/floor/wood,
 /area/casino/casino_private1)
 "me" = (
@@ -4536,9 +4536,9 @@
 /turf/simulated/floor/wood,
 /area/casino/casino_private1)
 "mf" = (
-/obj/structure/bed/chair/comfy/red,
 /obj/item/flame/lighter/zippo/random,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/bed/chair/rounded/red,
 /turf/simulated/floor/wood,
 /area/casino/casino_private2)
 "mg" = (
@@ -4603,11 +4603,11 @@
 /turf/simulated/floor/plating,
 /area/casino/casino_bow)
 "mp" = (
-/obj/structure/bed/chair/comfy/red{
-	dir = 4
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
+	},
+/obj/structure/bed/chair/rounded/red{
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/casino/casino_private_vip)
@@ -4621,10 +4621,10 @@
 /turf/simulated/floor/wood,
 /area/casino/casino_private_vip)
 "ms" = (
-/obj/structure/bed/chair/comfy/red{
+/obj/item/storage/bag/cash,
+/obj/structure/bed/chair/rounded/red{
 	dir = 8
 	},
-/obj/item/storage/bag/cash,
 /turf/simulated/floor/wood,
 /area/casino/casino_private_vip)
 "mt" = (
@@ -4642,7 +4642,7 @@
 /turf/simulated/floor/wood,
 /area/casino/casino_private1)
 "mv" = (
-/obj/structure/bed/chair/comfy/red{
+/obj/structure/bed/chair/rounded/red{
 	dir = 8
 	},
 /turf/simulated/floor/wood,
@@ -4660,7 +4660,7 @@
 /turf/simulated/floor/wood,
 /area/casino/casino_private2)
 "my" = (
-/obj/structure/bed/chair/comfy/red{
+/obj/structure/bed/chair/rounded/red{
 	dir = 8
 	},
 /turf/simulated/floor/wood,
@@ -5634,6 +5634,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/casino/casino_crew_atmos)
+"Oq" = (
+/obj/structure/bed/chair/rounded/red{
+	dir = 8
+	},
+/turf/simulated/floor/carpet,
+/area/casino/casino_mainfloor)
+"Ou" = (
+/obj/structure/bed/chair/rounded/red{
+	dir = 4
+	},
+/turf/simulated/floor/carpet,
+/area/casino/casino_mainfloor)
 "OB" = (
 /obj/structure/window/basic{
 	dir = 4;
@@ -11729,16 +11741,16 @@ gX
 gt
 ge
 ge
-hZ
+Ou
 ip
 ge
-hZ
-hZ
+Ou
+Ou
 ge
-hZ
-hZ
+Ou
+Ou
 ge
-hZ
+Ou
 ge
 kJ
 kT
@@ -12035,16 +12047,16 @@ gt
 hg
 ge
 gJ
-ic
-ic
+Oq
+Oq
 ge
-ic
-ic
+Oq
+Oq
 ge
-ic
-ic
+Oq
+Oq
 ge
-ic
+Oq
 ge
 kJ
 kV

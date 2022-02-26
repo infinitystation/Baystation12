@@ -12634,13 +12634,13 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/center)
 "tt" = (
-/obj/structure/bed/chair/office/comfy/brown{
-	dir = 4
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 9
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/structure/bed/chair/rounded/brown{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -15134,13 +15134,13 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "xF" = (
-/obj/structure/bed/chair/office/brown{
-	dir = 4
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 10
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4,
+/obj/structure/bed/chair/rounded/brown{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "xG" = (
@@ -20180,12 +20180,12 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
 "Gi" = (
-/obj/structure/bed/chair/office/comfy/purple,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/bed/chair/rounded/purple,
 /turf/simulated/floor/tiled,
 /area/command/exploration_leader)
 "Gj" = (

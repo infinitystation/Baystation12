@@ -1223,12 +1223,6 @@
 /obj/machinery/portable_atmospherics/canister/empty,
 /turf/simulated/floor/plating,
 /area/lar_maria/atmos)
-"cY" = (
-/obj/structure/bed/chair/comfy/purple{
-	dir = 1
-	},
-/turf/simulated/floor/wood,
-/area/lar_maria/dorms)
 "cZ" = (
 /obj/effect/landmark/corpse/lar_maria/test_subject,
 /obj/effect/decal/cleanable/blood,
@@ -1236,13 +1230,6 @@
 /area/lar_maria/dorms)
 "da" = (
 /obj/structure/bookcase/manuals/medical,
-/turf/simulated/floor/wood,
-/area/lar_maria/dorms)
-"db" = (
-/obj/structure/bed/chair/comfy/black{
-	dir = 1;
-	icon_state = "comfychair_preview"
-	},
 /turf/simulated/floor/wood,
 /area/lar_maria/dorms)
 "dc" = (
@@ -1254,7 +1241,7 @@
 /turf/simulated/floor/wood,
 /area/lar_maria/dorms)
 "de" = (
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/bed/chair/rounded/beige{
 	dir = 1
 	},
 /turf/simulated/floor/wood,
@@ -1618,16 +1605,8 @@
 	},
 /turf/simulated/floor/tiled,
 /area/lar_maria/library)
-"ei" = (
-/obj/structure/bed/chair/comfy/beige,
-/turf/simulated/floor/wood,
-/area/lar_maria/dorms)
 "ej" = (
 /obj/machinery/botany,
-/turf/simulated/floor/wood,
-/area/lar_maria/dorms)
-"ek" = (
-/obj/structure/bed/chair/comfy/brown,
 /turf/simulated/floor/wood,
 /area/lar_maria/dorms)
 "el" = (
@@ -1647,7 +1626,7 @@
 /turf/simulated/floor/wood,
 /area/lar_maria/dorms)
 "eo" = (
-/obj/structure/bed/chair/comfy/green,
+/obj/structure/bed/chair/rounded/beige,
 /turf/simulated/floor/wood,
 /area/lar_maria/dorms)
 "ep" = (
@@ -25955,17 +25934,17 @@ bE
 bX
 co
 cD
-cY
+de
 dt
 co
 dX
-ei
+eo
 eF
 co
 fi
 co
 fF
-db
+de
 go
 gu
 gO
@@ -26763,17 +26742,17 @@ bE
 bV
 co
 cE
-db
+de
 dt
 co
 dt
-ek
+eo
 cD
 co
 bV
 co
 fG
-db
+de
 dt
 gu
 gO
@@ -27575,13 +27554,13 @@ de
 dt
 co
 dx
-ei
+eo
 cD
 co
 bV
 co
 cD
-db
+de
 dx
 gu
 gV
@@ -28379,7 +28358,7 @@ bE
 bV
 co
 cH
-cY
+de
 dx
 co
 dt
@@ -28389,7 +28368,7 @@ co
 bV
 co
 cD
-db
+de
 dt
 gu
 gZ

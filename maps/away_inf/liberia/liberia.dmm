@@ -1530,10 +1530,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/engineeringengines)
 "cG" = (
-/obj/structure/bed/chair/office/dark,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 9
 	},
+/obj/structure/bed/chair/rounded/black,
 /turf/simulated/floor/carpet/red,
 /area/liberia/traidingroom)
 "cI" = (
@@ -1620,13 +1620,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/liberia/mule)
 "cQ" = (
-/obj/structure/bed/chair/office/comfy/brown{
-	dir = 4
-	},
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/bed/chair/rounded/brown{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/liberia/mule)
@@ -3556,24 +3556,25 @@
 /turf/simulated/floor/carpet,
 /area/liberia/bar)
 "fP" = (
-/obj/structure/bed/sofa/black/left,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
+/obj/structure/bed/sofa/l/black{
+	},
 /turf/simulated/floor/carpet,
 /area/liberia/bar)
 "fQ" = (
-/obj/structure/bed/sofa/black/left{
-	dir = 10
-	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 5
 	},
 /obj/machinery/firealarm{
 	pixel_y = 24
+	},
+/obj/structure/bed/sofa/m/black{
+	dir = 10;
 	},
 /turf/simulated/floor/carpet,
 /area/liberia/bar)
@@ -3737,7 +3738,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/bed/chair/office/dark{
+/obj/structure/bed/chair/rounded/blue{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
@@ -3753,8 +3754,8 @@
 /turf/simulated/floor/tiled/monotile,
 /area/liberia/officeroom)
 "gf" = (
-/obj/structure/bed/sofa/black/left{
-	dir = 4
+/obj/structure/bed/sofa/r/black{
+	dir = 4;
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -3766,8 +3767,8 @@
 /turf/simulated/floor/carpet,
 /area/liberia/bar)
 "gh" = (
-/obj/structure/bed/sofa/black/left{
-	dir = 8
+/obj/structure/bed/sofa/r/black{
+	dir = 8;
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
@@ -3835,10 +3836,10 @@
 /turf/simulated/floor/tiled/monotile,
 /area/liberia/officeroom)
 "gp" = (
-/obj/structure/bed/chair/office/dark{
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/bed/chair/rounded/blue{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
 /area/liberia/officeroom)
 "gq" = (
@@ -3853,15 +3854,15 @@
 /turf/simulated/floor/tiled/monotile,
 /area/liberia/officeroom)
 "gr" = (
-/obj/structure/bed/sofa/black/right{
-	dir = 4
-	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 10
+	},
+/obj/structure/bed/sofa/l/black{
+	dir = 4;
 	},
 /turf/simulated/floor/carpet,
 /area/liberia/bar)
@@ -4421,7 +4422,7 @@
 /turf/simulated/floor/carpet/red,
 /area/liberia/captain)
 "hq" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/bed/chair/rounded/red{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/red,
@@ -5548,21 +5549,23 @@
 /turf/simulated/floor/carpet/magenta,
 /area/liberia/guestroom2)
 "jK" = (
-/obj/structure/bed/sofa/black/left{
-	dir = 6
-	},
 /obj/machinery/firealarm{
 	pixel_y = 24
+	},
+/obj/structure/bed/sofa/m/black{
+	dir = 6;
 	},
 /turf/simulated/floor/carpet,
 /area/liberia/library)
 "jL" = (
-/obj/structure/bed/sofa/black/right,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
 /obj/machinery/alarm/merchant{
 	pixel_y = 24
+	},
+/obj/structure/bed/sofa/r/black{
+	dir = 6;
 	},
 /turf/simulated/floor/carpet,
 /area/liberia/library)
@@ -5650,7 +5653,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/liberia/merchantstorage)
 "jW" = (
-/obj/structure/bed/sofa/black{
+/obj/structure/bed/sofa/m/black{
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
@@ -5719,11 +5722,11 @@
 /turf/simulated/floor/carpet/magenta,
 /area/liberia/guestroom2)
 "kb" = (
-/obj/structure/bed/sofa/black/right{
-	dir = 4
-	},
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/effect/submap_landmark/spawnpoint/liberia/doctor,
+/obj/structure/bed/sofa/l/black{
+	dir = 4;
+	},
 /turf/simulated/floor/carpet,
 /area/liberia/library)
 "kc" = (
@@ -5910,9 +5913,6 @@
 /turf/simulated/floor/carpet,
 /area/liberia/library)
 "kq" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 4
-	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
@@ -5920,6 +5920,9 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/structure/bed/chair/rounded/black{
+	dir = 4
 	},
 /turf/simulated/floor/carpet,
 /area/liberia/library)

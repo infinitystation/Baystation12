@@ -403,20 +403,20 @@
 /turf/simulated/floor/carpet/green,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "aR" = (
-/obj/structure/bed/chair/wood{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
+	},
+/obj/structure/bed/chair/rounded/brown{
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "aT" = (
-/obj/structure/bed/chair/wood{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/obj/structure/bed/chair/rounded/brown{
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
@@ -1501,14 +1501,16 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
-/obj/structure/bed/sofa/brown/left,
+/obj/structure/bed/sofa/l/brown{
+	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "cV" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
-/obj/structure/bed/sofa/brown/right,
+/obj/structure/bed/sofa/r/brown{
+	},
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "cW" = (
@@ -1671,8 +1673,8 @@
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
 "do" = (
-/obj/structure/bed/sofa/brown/left{
-	dir = 4
+/obj/structure/bed/sofa/r/brown{
+	dir = 4;
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -1880,8 +1882,8 @@
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/hallway/upper)
 "dO" = (
-/obj/structure/bed/sofa/brown/right{
-	dir = 4
+/obj/structure/bed/sofa/l/brown{
+	dir = 4;
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -1916,10 +1918,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
-/obj/structure/bed/chair/padded/blue{
+/obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
-/obj/effect/floor_decal/corner/blue/diagonal{
+/obj/structure/bed/chair/rounded/blue{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -2202,15 +2204,15 @@
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "eo" = (
-/obj/structure/bed/sofa/brown/left{
-	dir = 1
+/obj/structure/bed/sofa/r/brown{
+	dir = 1;
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "ep" = (
-/obj/structure/bed/sofa/brown/right{
-	dir = 1
+/obj/structure/bed/sofa/l/brown{
+	dir = 1;
 	},
 /obj/machinery/light,
 /obj/effect/floor_decal/spline/fancy/wood,

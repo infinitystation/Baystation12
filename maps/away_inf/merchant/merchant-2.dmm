@@ -13,8 +13,8 @@
 /area/space)
 "ae" = (
 /obj/machinery/computer/modular/preset/merchant{
-	icon_state = "console";
-	dir = 4
+	dir = 4;
+	icon_state = "console"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
@@ -42,10 +42,10 @@
 /area/space)
 "ak" = (
 /obj/structure/cable{
-	icon_state = "4-8";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -57,10 +57,10 @@
 /area/space)
 "am" = (
 /obj/structure/cable{
-	icon_state = "4-8";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor,
 /area/space)
@@ -68,8 +68,8 @@
 /obj/structure/lattice,
 /obj/structure/railing,
 /obj/structure/cable{
-	icon_state = "0-1";
-	dir = 1
+	dir = 1;
+	icon_state = "0-1"
 	},
 /obj/machinery/atmospherics/pipe/zpipe/down/supply,
 /obj/machinery/atmospherics/pipe/zpipe/down/scrubbers,
@@ -91,8 +91,8 @@
 /area/space)
 "as" = (
 /obj/machinery/cryopod/lifepod{
-	icon_state = "redpod0";
-	dir = 4
+	dir = 4;
+	icon_state = "redpod0"
 	},
 /turf/simulated/floor/wood,
 /area/space)
@@ -150,15 +150,15 @@
 /area/space)
 "az" = (
 /obj/structure/bed/chair/wood{
-	icon_state = "wooden_chair_preview";
-	dir = 4
+	dir = 4;
+	icon_state = "wooden_chair_preview"
 	},
 /turf/simulated/floor/lino,
 /area/space)
 "aA" = (
 /obj/structure/bed/chair/wood{
-	icon_state = "wooden_chair_preview";
-	dir = 8
+	dir = 8;
+	icon_state = "wooden_chair_preview"
 	},
 /turf/simulated/floor/lino,
 /area/space)
@@ -221,8 +221,8 @@
 /area/space)
 "aJ" = (
 /obj/structure/bed/chair/wood{
-	icon_state = "wooden_chair_preview";
-	dir = 8
+	dir = 8;
+	icon_state = "wooden_chair_preview"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -254,10 +254,10 @@
 /area/space)
 "aO" = (
 /obj/structure/cable{
-	icon_state = "0-1";
-	dir = 8;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 8;
+	icon_state = "0-1"
 	},
 /obj/machinery/power/apc{
 	dir = 2;
@@ -278,10 +278,10 @@
 /area/space)
 "aQ" = (
 /obj/structure/cable{
-	icon_state = "0-2";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "0-2"
 	},
 /obj/machinery/power/apc{
 	dir = 2;
@@ -294,10 +294,10 @@
 /area/space)
 "aR" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/wood,
 /area/space)
@@ -398,8 +398,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/extinguisher_cabinet{
-	icon_state = "extinguisher_closed";
 	dir = 8;
+	icon_state = "extinguisher_closed";
 	pixel_x = 31
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -414,16 +414,16 @@
 /area/space)
 "bk" = (
 /obj/structure/cable{
-	icon_state = "4-8";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	icon_state = "2-8";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -431,10 +431,10 @@
 /area/space)
 "bl" = (
 /obj/structure/cable{
-	icon_state = "0-1";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "0-1"
 	},
 /obj/machinery/power/apc{
 	dir = 1;
@@ -444,15 +444,15 @@
 	req_access = list("ACCESS_ZEPPELIN")
 	},
 /obj/machinery/power/terminal{
-	icon_state = "term";
-	dir = 1
+	dir = 1;
+	icon_state = "term"
 	},
 /turf/simulated/floor/lino,
 /area/space)
 "bm" = (
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 8
+	dir = 8;
+	icon_state = "tube1"
 	},
 /obj/structure/table/rack,
 /obj/random/ore_smug,
@@ -476,8 +476,8 @@
 /area/space)
 "bq" = (
 /obj/structure/cable{
-	icon_state = "0-1";
-	dir = 1
+	dir = 1;
+	icon_state = "0-1"
 	},
 /obj/machinery/power/apc{
 	dir = 1;
@@ -486,17 +486,17 @@
 	pixel_y = 24
 	},
 /obj/machinery/power/terminal{
-	icon_state = "term";
-	dir = 1
+	dir = 1;
+	icon_state = "term"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "br" = (
 /obj/structure/cable{
-	icon_state = "4-8";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
@@ -511,8 +511,8 @@
 /area/space)
 "bu" = (
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 8
+	dir = 8;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/white,
 /area/space)
@@ -530,16 +530,16 @@
 /area/space)
 "bx" = (
 /obj/structure/cable{
-	icon_state = "1-8";
-	dir = 8;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 8;
+	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	icon_state = "2-8";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -549,14 +549,14 @@
 /area/space)
 "by" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	dir = 8;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 8;
+	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	icon_state = "map-scrubbers";
-	dir = 1
+	dir = 1;
+	icon_state = "map-scrubbers"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -565,10 +565,10 @@
 /area/space)
 "bA" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	dir = 8;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 8;
+	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -613,10 +613,10 @@
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	icon_state = "2-8";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
@@ -624,10 +624,10 @@
 /area/space)
 "bF" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -639,10 +639,10 @@
 /area/space)
 "bH" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
 	},
 /obj/structure/cable{
 	d1 = 1;
@@ -697,10 +697,10 @@
 /area/space)
 "bM" = (
 /obj/structure/cable{
-	icon_state = "4-8";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -719,10 +719,10 @@
 /area/space)
 "bO" = (
 /obj/structure/cable{
-	icon_state = "0-2";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "0-2"
 	},
 /obj/machinery/power/apc{
 	dir = 8;
@@ -741,28 +741,28 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	icon_state = "1-2";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "bQ" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	dir = 8;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 8;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
 "bR" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	dir = 8;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 8;
+	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -770,10 +770,10 @@
 /area/space)
 "bS" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	dir = 8;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 8;
+	icon_state = "1-2"
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/steel_grid,
@@ -838,10 +838,10 @@
 /area/space)
 "cb" = (
 /obj/structure/cable{
-	icon_state = "0-2";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "0-2"
 	},
 /obj/machinery/power/apc{
 	dir = 1;
@@ -850,8 +850,8 @@
 	pixel_y = 24
 	},
 /obj/machinery/power/terminal{
-	icon_state = "term";
-	dir = 1
+	dir = 1;
+	icon_state = "term"
 	},
 /turf/simulated/floor/wood,
 /area/space)
@@ -898,8 +898,8 @@
 /area/space)
 "ci" = (
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
 	dir = 1;
@@ -908,8 +908,8 @@
 	pixel_y = 24
 	},
 /obj/machinery/power/terminal{
-	icon_state = "term";
-	dir = 1
+	dir = 1;
+	icon_state = "term"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/space)
@@ -965,10 +965,10 @@
 /area/space)
 "co" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	dir = 4;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 4;
+	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -993,10 +993,10 @@
 /area/space)
 "cr" = (
 /obj/structure/cable{
-	icon_state = "1-8";
-	dir = 8;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 8;
+	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -1025,10 +1025,10 @@
 /area/space)
 "cv" = (
 /obj/structure/cable{
-	icon_state = "0-1";
-	dir = 8;
 	d1 = 1;
-	d2 = 2
+	d2 = 2;
+	dir = 8;
+	icon_state = "0-1"
 	},
 /obj/machinery/power/apc{
 	dir = 1;
@@ -1037,8 +1037,8 @@
 	pixel_y = 24
 	},
 /obj/machinery/power/terminal{
-	icon_state = "term";
-	dir = 1
+	dir = 1;
+	icon_state = "term"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
