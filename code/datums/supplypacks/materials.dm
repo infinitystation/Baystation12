@@ -150,3 +150,63 @@
 	contains = list(/obj/item/stack/material/wood/yew/twentyfive)
 	cost = 10
 	containername = "yew planks crate"
+
+/decl/hierarchy/supply_pack/materials/cloth50
+	name = "50 rolls white cloth"
+	contains = list(/obj/item/stack/material/cloth/fifty)
+	cost = 10
+	containername = "white cloth crate"
+
+/decl/hierarchy/supply_pack/materials/red_cloth50
+	name = "50 rolls red cloth"
+	contains = list(/obj/item/stack/material/cloth/red/fifty)
+	cost = 10
+	containername = "red cloth crate"
+
+/decl/hierarchy/supply_pack/materials/yellow_cloth50
+	name = "50 rolls yellow cloth"
+	contains = list(/obj/item/stack/material/cloth/yellow/fifty)
+	cost = 10
+	containername = "yellow cloth crate"
+
+/decl/hierarchy/supply_pack/materials/teal_cloth50
+	name = "50 rolls teal cloth"
+	contains = list(/obj/item/stack/material/cloth/teal/fifty)
+	cost = 10
+	containername = "teal cloth crate"
+
+/decl/hierarchy/supply_pack/materials/black_cloth50
+	name = "50 rolls black cloth"
+	contains = list(/obj/item/stack/material/cloth/black/fifty)
+	cost = 10
+	containername = "black cloth crate"
+
+/decl/hierarchy/supply_pack/materials/green_cloth50
+	name = "50 rolls green cloth"
+	contains = list(/obj/item/stack/material/cloth/green/fifty)
+	cost = 10
+	containername = "green cloth crate"
+
+/decl/hierarchy/supply_pack/materials/purple_cloth50
+	name = "50 rolls purple cloth"
+	contains = list(/obj/item/stack/material/cloth/purple/fifty)
+	cost = 10
+	containername = "purple cloth crate"
+
+/decl/hierarchy/supply_pack/materials/blue_cloth50
+	name = "50 rolls blue cloth"
+	contains = list(/obj/item/stack/material/cloth/blue/fifty)
+	cost = 10
+	containername = "blue cloth crate"
+
+/decl/hierarchy/supply_pack/materials/beige_cloth50
+	name = "50 rolls beige cloth"
+	contains = list(/obj/item/stack/material/cloth/beige/fifty)
+	cost = 10
+	containername = "beige cloth crate"
+
+/decl/hierarchy/supply_pack/materials/lime_cloth50
+	name = "50 rolls lime cloth"
+	contains = list(/obj/item/stack/material/cloth/lime/fifty)
+	cost = 10
+	containername = "lime cloth crate"

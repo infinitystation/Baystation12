@@ -85,6 +85,27 @@ COMFY_CHAIR(green)
 COMFY_CHAIR(yellow)
 #undef COMFY_CHAIR
 
+/datum/stack_recipe/furniture/chair/rounded
+	title = "rounded chair"
+	req_amount = 3
+
+#define ROUNDED_CHAIR(color) /datum/stack_recipe/furniture/chair/rounded/##color{\
+	result_type = /obj/structure/bed/chair/rounded/##color;\
+	modifiers = list(#color, "rounded")\
+	}
+ROUNDED_CHAIR(beige)
+ROUNDED_CHAIR(black)
+ROUNDED_CHAIR(brown)
+ROUNDED_CHAIR(blue)
+ROUNDED_CHAIR(lime)
+ROUNDED_CHAIR(teal)
+ROUNDED_CHAIR(red)
+ROUNDED_CHAIR(purple)
+ROUNDED_CHAIR(green)
+ROUNDED_CHAIR(yellow)
+ROUNDED_CHAIR(light)
+#undef ROUNDED_CHAIR
+
 /datum/stack_recipe/furniture/chair/arm
 	title = "armchair"
 	req_amount = 4
@@ -96,14 +117,90 @@ COMFY_CHAIR(yellow)
 ARMCHAIR(beige)
 ARMCHAIR(black)
 ARMCHAIR(brown)
+ARMCHAIR(blue)
 ARMCHAIR(lime)
 ARMCHAIR(teal)
 ARMCHAIR(red)
 ARMCHAIR(purple)
 ARMCHAIR(green)
 ARMCHAIR(yellow)
+ARMCHAIR(light)
 #undef ARMCHAIR
 
+//SOFA
+/datum/stack_recipe/furniture/sofa
+	title = "sofa"
+	result_type = /obj/structure/bed/sofa
+	time = 10
+	var/list/modifiers
+
+/datum/stack_recipe/furniture/sofa/display_name()
+	return modifiers ? jointext(modifiers + ..(), " ") : ..()
+
+/datum/stack_recipe/furniture/sofa/m
+	title = "middle sofa"
+	req_amount = 3
+
+#define MIDDLE_SOFA(color) /datum/stack_recipe/furniture/sofa/m/##color{\
+	result_type = /obj/structure/bed/sofa/m/##color;\
+	modifiers = list(#color, "middle")\
+	}
+MIDDLE_SOFA(beige)
+MIDDLE_SOFA(black)
+MIDDLE_SOFA(brown)
+MIDDLE_SOFA(blue)
+MIDDLE_SOFA(lime)
+MIDDLE_SOFA(teal)
+MIDDLE_SOFA(red)
+MIDDLE_SOFA(purple)
+MIDDLE_SOFA(green)
+MIDDLE_SOFA(yellow)
+MIDDLE_SOFA(light)
+#undef MIDDLE_SOFA
+
+/datum/stack_recipe/furniture/sofa/l
+	title = "left sofa"
+	req_amount = 3
+
+#define LEFT_SOFA(color) /datum/stack_recipe/furniture/sofa/l/##color{\
+	result_type = /obj/structure/bed/sofa/l/##color;\
+	modifiers = list(#color, "left")\
+	}
+LEFT_SOFA(beige)
+LEFT_SOFA(black)
+LEFT_SOFA(brown)
+LEFT_SOFA(blue)
+LEFT_SOFA(lime)
+LEFT_SOFA(teal)
+LEFT_SOFA(red)
+LEFT_SOFA(purple)
+LEFT_SOFA(green)
+LEFT_SOFA(yellow)
+LEFT_SOFA(light)
+#undef LEFT_SOFA
+
+/datum/stack_recipe/furniture/sofa/r
+	title = "right sofa"
+	req_amount = 3
+
+#define RIGHT_SOFA(color) /datum/stack_recipe/furniture/sofa/r/##color{\
+	result_type = /obj/structure/bed/sofa/r/##color;\
+	modifiers = list(#color, "right")\
+	}
+RIGHT_SOFA(beige)
+RIGHT_SOFA(black)
+RIGHT_SOFA(brown)
+RIGHT_SOFA(blue)
+RIGHT_SOFA(lime)
+RIGHT_SOFA(teal)
+RIGHT_SOFA(red)
+RIGHT_SOFA(purple)
+RIGHT_SOFA(green)
+RIGHT_SOFA(yellow)
+RIGHT_SOFA(light)
+#undef RIGHT_SOFA
+
+//END SOFA
 /datum/stack_recipe/furniture/chair/wood
 	req_amount = 3
 

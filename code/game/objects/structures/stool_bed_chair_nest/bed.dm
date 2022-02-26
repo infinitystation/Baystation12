@@ -21,8 +21,9 @@
 	var/base_icon = "bed"
 	var/material_alteration = MATERIAL_ALTERATION_ALL
 	var/buckling_sound = 'sound/effects/buckle.ogg'
-
-	var/base_icon_file = 'icons/obj/furniture.dmi' //INF
+	var/base_icon_file = 'icons/obj/furniture.dmi'
+	var/cache_key
+	var/padding_cache_key
 
 /obj/structure/bed/New(newloc, new_material = DEFAULT_FURNITURE_MATERIAL, new_padding_material)
 	..(newloc)
@@ -44,7 +45,7 @@
 	icon_state = ""
 	overlays.Cut()
 	// Base icon.
-	var/cache_key = "[base_icon]-[material.name]"
+	cache_key = "[base_icon]-[material.name]"
 	if(isnull(stool_cache[cache_key]))
 //INF		var/image/I = image('icons/obj/furniture.dmi', base_icon)
 		var/image/I = image(base_icon_file, base_icon) //INF
@@ -54,7 +55,7 @@
 	overlays |= stool_cache[cache_key]
 	// Padding overlay.
 	if(padding_material)
-		var/padding_cache_key = "[base_icon]-padding-[padding_material.name]"
+		padding_cache_key = "[base_icon]-padding-[padding_material.name]"
 		if(isnull(stool_cache[padding_cache_key]))
 			var/image/I =  image(icon, "[base_icon]_padding")
 			if(material_alteration & MATERIAL_ALTERATION_COLOR)
@@ -91,8 +92,9 @@
 				return
 
 /obj/structure/bed/attackby(obj/item/W as obj, mob/user as mob)
-	if(isWrench(W))
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+	if(isScrewdriver(W))
+		playsound(src.loc, 'sound/items/Screwdriver.ogg', 50, 1)
+		to_chat(user, "You deconstruct \the [src]")
 		dismantle()
 		qdel(src)
 	else if(istype(W,/obj/item/stack))
@@ -116,6 +118,7 @@
 		C.use(1)
 		if(!istype(src.loc, /turf))
 			src.forceMove(get_turf(src))
+		playsound(src.loc, 'sound/effects/rustle5.ogg', 50, 1)
 		to_chat(user, "You add padding to \the [src].")
 		add_padding(padding_type)
 		return
@@ -135,6 +138,16 @@
 		if(do_after(user, 20, src))
 			if(user_buckle_mob(affecting, user))
 				qdel(W)
+
+	else if(isWrench(W))
+		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+		if(!anchored)
+			to_chat(user, "You anchored \the [src].")
+			anchored = TRUE
+		else
+			to_chat(user, "You disanchored \the [src].")
+			anchored = FALSE
+
 	else
 		..()
 

@@ -66,6 +66,7 @@
 		))
 	. += new/datum/stack_recipe_list("comfy office chairs", create_recipe_list(/datum/stack_recipe/furniture/chair/office/comfy))
 	. += new/datum/stack_recipe_list("comfy chairs", create_recipe_list(/datum/stack_recipe/furniture/chair/comfy))
+	. += new/datum/stack_recipe_list("rounded chairs", create_recipe_list(/datum/stack_recipe/furniture/chair/rounded))
 	. += new/datum/stack_recipe_list("armchairs", create_recipe_list(/datum/stack_recipe/furniture/chair/arm))
 	. += new/datum/stack_recipe_list("padded [display_name] chairs", create_recipe_list(/datum/stack_recipe/furniture/chair/padded))
 	. += new/datum/stack_recipe/key(src)
@@ -136,6 +137,9 @@
 	. += new/datum/stack_recipe/stick(src)
 	. += new/datum/stack_recipe/noticeboard(src)
 	. += new/datum/stack_recipe/furniture/table_frame(src)
+	. += new/datum/stack_recipe_list("middle sofa", create_recipe_list(/datum/stack_recipe/furniture/sofa/m))
+	. += new/datum/stack_recipe_list("left sofa", create_recipe_list(/datum/stack_recipe/furniture/sofa/l))
+	. += new/datum/stack_recipe_list("right sofa", create_recipe_list(/datum/stack_recipe/furniture/sofa/r))
 
 /material/wood/mahogany/generate_recipes(var/reinforce_material)
 	. = ..()
