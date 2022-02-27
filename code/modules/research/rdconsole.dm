@@ -67,7 +67,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	var/sync = 1		//If sync = 0, it doesn't show up on Server Control Console
 	var/can_analyze = TRUE //If the console is allowed to use destructive analyzers
 
-	req_access = list(access_research)	//Data and setting manipulation requires scientist access.
+	req_access = list(access_research, access_xenobiology)	//Data and setting manipulation requires scientist access.
 
 /obj/machinery/computer/rdconsole/proc/CallMaterialName(var/ID)
 	var/return_name = ID
