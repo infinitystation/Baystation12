@@ -18,7 +18,7 @@ jobs:
   DreamChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - name: Setup Cache
         uses: actions/cache@v2
         with:
@@ -42,7 +42,7 @@ jobs:
   Code:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - name: Setup Cache
         uses: actions/cache@v2
         with:
@@ -71,7 +71,7 @@ jobs:
       matrix:
         map_path: [example, sierra, torch, bearcat_inf, away_sites_testing, away_sites_testing_inf]
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - name: Setup Cache
         uses: actions/cache@v2
         with:
