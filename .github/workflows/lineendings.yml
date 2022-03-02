@@ -11,7 +11,7 @@ jobs:
     if: github.repository == 'infinitystation/Baystation12'
     steps:
       - name: Загрузка локальной среды
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           fetch-depth: 25
       - name: Настройка Python
