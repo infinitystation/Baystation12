@@ -18,6 +18,12 @@
 	slot_flags = SLOT_HEAD | SLOT_EARS
 	body_parts_covered = 0
 
+/obj/item/clothing/head/wig_longbraided
+	name = "black wig longbraided"
+	icon_state = "wig_longbraided"
+	desc = "Looks nice."
+	body_parts_covered = 0
+
 /obj/item/clothing/head/hairflower/blue
 	icon_state = "hairflower_blue"
 

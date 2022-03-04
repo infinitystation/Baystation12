@@ -185,6 +185,14 @@
 	cost = 0
 	price = 1
 
+/datum/gear/head/wig_longbraided
+	display_name = "wig longbraided, black"
+	description = "Looks nice."
+	path = /obj/item/clothing/head/wig_longbraided
+	required_donate_level = 1
+	cost = 1
+	price = 1
+
 /datum/gear/mre
 	display_name = "MRE"
 	path = /obj/item/storage/mre
