@@ -9159,7 +9159,7 @@
 /area/bridge/adjutants)
 "apu" = (
 /obj/structure/bed/sofa/m/black{
-	dir = 4;
+	dir = 4
 	},
 /obj/machinery/alarm{
 	dir = 4;
@@ -9180,13 +9180,12 @@
 /area/bridge/adjutants)
 "apw" = (
 /obj/structure/bed/sofa/m/black{
-	dir = 6;
+	dir = 6
 	},
 /turf/simulated/floor/wood/walnut,
 /area/bridge/adjutants)
 "apx" = (
-/obj/structure/bed/sofa/r/black{
-	},
+/obj/structure/bed/sofa/r/black,
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -10709,7 +10708,7 @@
 /area/space)
 "asl" = (
 /obj/structure/bed/sofa/m/black{
-	dir = 5;
+	dir = 5
 	},
 /turf/simulated/floor/wood/walnut,
 /area/bridge/adjutants)
@@ -17741,7 +17740,7 @@
 /area/hallway/primary/firstdeck/aft)
 "aEc" = (
 /obj/structure/bed/sofa/m/black{
-	dir = 1;
+	dir = 1
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
@@ -20415,7 +20414,7 @@
 /area/crew_quarters/unused_office)
 "aIa" = (
 /obj/structure/bed/sofa/l/black{
-	dir = 1;
+	dir = 1
 	},
 /turf/simulated/floor/wood/walnut,
 /area/bridge/adjutants)
@@ -23556,8 +23555,7 @@
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
-/obj/structure/bed/sofa/l/red{
-	},
+/obj/structure/bed/sofa/l/red,
 /turf/simulated/floor/tiled/dark,
 /area/security/sierra/breakroom)
 "aMk" = (
@@ -23567,8 +23565,7 @@
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
-/obj/structure/bed/sofa/r/red{
-	},
+/obj/structure/bed/sofa/r/red,
 /turf/simulated/floor/tiled/dark,
 /area/security/sierra/breakroom)
 "aMl" = (
@@ -32233,7 +32230,7 @@
 	},
 /obj/random/date_based/christmas/xmaslights,
 /obj/structure/bed/sofa/r/black{
-	dir = 8;
+	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
@@ -33757,8 +33754,7 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
 "bdO" = (
-/obj/structure/bed/sofa/l/black{
-	},
+/obj/structure/bed/sofa/l/black,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
 "bdP" = (
@@ -33767,7 +33763,7 @@
 	pixel_x = 24
 	},
 /obj/structure/bed/sofa/m/black{
-	dir = 10;
+	dir = 10
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/lounge/upper)
@@ -43053,7 +43049,7 @@
 	pixel_x = 24
 	},
 /obj/machinery/camera/all/command{
-	c_tag = "AI Core - Port";
+	c_tag = "AI Core - Hall";
 	dir = 8
 	},
 /obj/machinery/porta_turret,
