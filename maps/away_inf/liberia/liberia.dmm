@@ -3562,8 +3562,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
-/obj/structure/bed/sofa/l/black{
-	},
+/obj/structure/bed/sofa/l/black,
 /turf/simulated/floor/carpet,
 /area/liberia/bar)
 "fQ" = (
@@ -3574,7 +3573,7 @@
 	pixel_y = 24
 	},
 /obj/structure/bed/sofa/m/black{
-	dir = 10;
+	dir = 10
 	},
 /turf/simulated/floor/carpet,
 /area/liberia/bar)
@@ -3755,7 +3754,7 @@
 /area/liberia/officeroom)
 "gf" = (
 /obj/structure/bed/sofa/r/black{
-	dir = 4;
+	dir = 4
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -3768,7 +3767,7 @@
 /area/liberia/bar)
 "gh" = (
 /obj/structure/bed/sofa/r/black{
-	dir = 8;
+	dir = 8
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
@@ -3862,7 +3861,7 @@
 	dir = 10
 	},
 /obj/structure/bed/sofa/l/black{
-	dir = 4;
+	dir = 4
 	},
 /turf/simulated/floor/carpet,
 /area/liberia/bar)
@@ -5553,7 +5552,7 @@
 	pixel_y = 24
 	},
 /obj/structure/bed/sofa/m/black{
-	dir = 6;
+	dir = 6
 	},
 /turf/simulated/floor/carpet,
 /area/liberia/library)
@@ -5564,9 +5563,7 @@
 /obj/machinery/alarm/merchant{
 	pixel_y = 24
 	},
-/obj/structure/bed/sofa/r/black{
-	dir = 6;
-	},
+/obj/structure/bed/sofa/r/black,
 /turf/simulated/floor/carpet,
 /area/liberia/library)
 "jM" = (
@@ -5725,7 +5722,7 @@
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/effect/submap_landmark/spawnpoint/liberia/doctor,
 /obj/structure/bed/sofa/l/black{
-	dir = 4;
+	dir = 4
 	},
 /turf/simulated/floor/carpet,
 /area/liberia/library)
