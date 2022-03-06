@@ -79,6 +79,10 @@
 	set_dir(turn(dir, 90))
 	update_icon()
 
+/obj/structure/bed/sofa/m/hard/New(newloc, newmaterial = MATERIAL_WOOD)
+	..(newloc, newmaterial, padding_material)
+	anchored = FALSE
+
 /obj/structure/bed/sofa/m/red/New(newloc, newmaterial = MATERIAL_WOOD)
 	..(newloc, newmaterial, MATERIAL_RED_CLOTH)
 
@@ -118,6 +122,10 @@
 	icon_state = "sofa_r_preview"
 	base_icon = "sofa_r"
 
+/obj/structure/bed/sofa/r/hard/New(newloc, newmaterial = MATERIAL_WOOD)
+	..(newloc, newmaterial, padding_material)
+	anchored = FALSE
+
 /obj/structure/bed/sofa/r/red/New(newloc, newmaterial = MATERIAL_WOOD)
 	..(newloc, newmaterial, MATERIAL_RED_CLOTH)
 
@@ -156,6 +164,10 @@
 	desc = "A wide and comfy sofa - no one assistant was ate by it due production! It's made of wood and covered with synthetic leather."
 	icon_state = "sofa_l_preview"
 	base_icon = "sofa_l"
+
+/obj/structure/bed/sofa/l/hard/New(newloc, newmaterial = MATERIAL_WOOD)
+	..(newloc, newmaterial, padding_material)
+	anchored = FALSE
 
 /obj/structure/bed/sofa/l/red/New(newloc, newmaterial = MATERIAL_WOOD)
 	..(newloc, newmaterial, MATERIAL_RED_CLOTH)

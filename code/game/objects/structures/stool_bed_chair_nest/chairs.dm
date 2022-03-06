@@ -73,6 +73,9 @@
 	if(buckled_mob)
 		buckled_mob.set_dir(dir)
 
+/obj/structure/bed/chair/padded/hard/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
+	..(newloc, newmaterial, padding_material)
+
 /obj/structure/bed/chair/padded/red/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, MATERIAL_RED_CLOTH)
 
@@ -113,6 +116,9 @@
 	icon_state = "comfychair_preview"
 	base_icon = "comfychair"
 
+/obj/structure/bed/chair/comfy/hard/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
+	..(newloc, newmaterial, padding_material)
+
 /obj/structure/bed/chair/comfy/brown/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, MATERIAL_LEATHER_GENERIC)
 
@@ -150,6 +156,9 @@
 	desc = "It's a rounded chair. It looks comfy."
 	icon_state = "roundedchair_preview"
 	base_icon = "roundedchair"
+
+/obj/structure/bed/chair/rounded/hard/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
+	..(newloc, newmaterial, padding_material)
 
 /obj/structure/bed/chair/rounded/brown/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, MATERIAL_LEATHER_GENERIC)
@@ -196,7 +205,7 @@
 	overlays |= I
 
 /obj/structure/bed/chair/comfy/captain/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,MATERIAL_STEEL,MATERIAL_BLUE_CLOTH)
+	..(newloc, MATERIAL_STEEL, MATERIAL_BLUE_CLOTH)
 
 /obj/structure/bed/chair/armchair
 	name = "armchair"
@@ -204,6 +213,9 @@
 	icon_state = "armchair_preview"
 	base_icon = "armchair"
 	buckle_movable = FALSE
+
+/obj/structure/bed/chair/armchair/hard/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
+	..(newloc, newmaterial, padding_material)
 
 /obj/structure/bed/chair/armchair/brown/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, MATERIAL_LEATHER_GENERIC)
@@ -281,6 +293,10 @@
 			victim.apply_damage(10, BRUTE, def_zone)
 		occupant.visible_message("<span class='danger'>[occupant] crashed into \the [A]!</span>")
 
+
+/obj/structure/bed/chair/office/hard/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
+	..(newloc, newmaterial, padding_material)
+
 /obj/structure/bed/chair/office/brown/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, MATERIAL_LEATHER_GENERIC)
 
@@ -319,6 +335,9 @@
 	desc = "It's an office chair. It looks comfy."
 	icon_state = "comfyofficechair_preview"
 	base_icon = "comfyofficechair"
+
+/obj/structure/bed/chair/office/comfy/hard/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
+	..(newloc, newmaterial, padding_material)
 
 /obj/structure/bed/chair/office/comfy/brown/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, newmaterial, MATERIAL_LEATHER_GENERIC)
@@ -377,17 +396,20 @@
 			I.color = material.icon_colour
 		overlays |= I
 
+/obj/structure/bed/chair/shuttle/hard/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
+	..(newloc, MATERIAL_STEEL, padding_material)
+
 /obj/structure/bed/chair/shuttle/blue/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,MATERIAL_STEEL,MATERIAL_BLUE_CLOTH)
+	..(newloc, MATERIAL_STEEL, MATERIAL_BLUE_CLOTH)
 
 /obj/structure/bed/chair/shuttle/black/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,MATERIAL_STEEL,MATERIAL_BLACK_CLOTH)
+	..(newloc, MATERIAL_STEEL ,MATERIAL_BLACK_CLOTH)
 
 /obj/structure/bed/chair/shuttle/white/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc,MATERIAL_STEEL,MATERIAL_CLOTH)
+	..(newloc, MATERIAL_STEEL, MATERIAL_CLOTH)
 
 /obj/structure/bed/chair/shuttle/red/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
-	..(newloc, MATERIAL_STEEL, MATERIAL_CARPET)
+	..(newloc, MATERIAL_STEEL, MATERIAL_RED_CLOTH)
 
 /obj/structure/bed/chair/shuttle/green/New(newloc, newmaterial = DEFAULT_FURNITURE_MATERIAL)
 	..(newloc, MATERIAL_STEEL, MATERIAL_GREEN_CLOTH)
