@@ -58,6 +58,8 @@
 	ignition_point = T0C+232
 	melting_point = T0C+300
 	flags = MATERIAL_PADDING
+	hardness = MATERIAL_SOFT
+	weight = 1
 	brute_armor = 1
 	conductive = 0
 	stack_type = null

@@ -22,6 +22,19 @@
 	update_icon()
 	return ..()
 
+/obj/structure/bed/attackby(obj/item/W as obj, mob/user as mob)
+	. = ..()
+	if(.)
+		return
+	if(!isWrench(W))
+		return
+	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+	anchored = !anchored
+	if(anchored)
+		to_chat(user, "You disanchored \the [src].")
+	else
+		to_chat(user, "You anchored \the [src].")
+
 /obj/structure/bed/sofa/on_update_icon()
 	..()
 

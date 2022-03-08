@@ -139,15 +139,6 @@
 			if(user_buckle_mob(affecting, user))
 				qdel(W)
 
-	else if(isWrench(W))
-		playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
-		if(!anchored)
-			to_chat(user, "You anchored \the [src].")
-			anchored = TRUE
-		else
-			to_chat(user, "You disanchored \the [src].")
-			anchored = FALSE
-
 	else
 		..()
 
