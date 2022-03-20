@@ -27,7 +27,7 @@
 
 /obj/item/reagent_containers/food/drinks/glass2/fitnessflask/proteinshake/New()
 	..()
-	reagents.add_reagent(/datum/reagent/nutriment, 30)
+	reagents.add_reagent(/datum/reagent/nutriment, 10)
 	reagents.add_reagent(/datum/reagent/iron, 10)
-	reagents.add_reagent(/datum/reagent/nutriment/protein, 15)
+	reagents.add_reagent(/datum/reagent/nutriment/protein, 5)
 	reagents.add_reagent(/datum/reagent/water, 45)

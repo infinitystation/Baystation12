@@ -3457,13 +3457,13 @@
 	desc = "SwoleMAX brand protein bars, guaranteed to get you feeling perfectly overconfident."
 	icon_state = "proteinbar"
 	trash = /obj/item/trash/proteinbar
-	bitesize = 6
+	bitesize = 3
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER | ATOM_FLAG_NO_REACT
 
 /obj/item/reagent_containers/food/snacks/proteinbar/Initialize()
 	.=..()
-	reagents.add_reagent(/datum/reagent/nutriment, 9)
-	reagents.add_reagent(/datum/reagent/nutriment/protein, 4)
+	reagents.add_reagent(/datum/reagent/nutriment, 3)
+	reagents.add_reagent(/datum/reagent/nutriment/protein, 2)
 	var/flavor = pick(GLOB.proteinbar_flavors)
 	var/flavor_type = GLOB.proteinbar_flavors[flavor]
 	var/count = length(flavor_type)
