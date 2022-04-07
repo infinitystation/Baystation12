@@ -276,3 +276,8 @@
 	)
 	machine_name = "blender"
 	machine_desc = "Blends or juices food placed inside it - useful for things like flour. Can't process raw material sheets."
+
+/obj/machinery/reagentgrinder/juicer/New()
+    ..()
+    container = new /obj/item/reagent_containers/glass/beaker(src)
+    update_icon()
