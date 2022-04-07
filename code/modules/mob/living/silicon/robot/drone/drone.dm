@@ -89,6 +89,8 @@ var/list/mob_hat_cache = list()
 		var/datum/robot_component/C = components[V]
 		C.max_damage = 10
 
+	verbs += /mob/living/proc/ventcrawl // probably its should be here, not sure..
+	
 	verbs -= /mob/living/silicon/robot/verb/Namepick
 	update_icon()
 
