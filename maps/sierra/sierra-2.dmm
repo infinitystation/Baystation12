@@ -34585,7 +34585,7 @@
 	name = "Cafe Shutters"
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/cafe)
+/area/crew_quarters/galley)
 "egu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
