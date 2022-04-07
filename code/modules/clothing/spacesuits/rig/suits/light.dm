@@ -37,7 +37,7 @@
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_suit_resomi.dmi',
 		SPECIES_TAJARA = 'icons/mob/species/tajaran/suit.dmi'
 		)
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_RESOMI)
 
 /obj/item/clothing/gloves/rig/light
 	name = "gloves"
@@ -45,7 +45,7 @@
 
 /obj/item/clothing/shoes/magboots/rig/light
 	name = "shoes"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_RESOMI)
 
 	stealth_step = TRUE
 
@@ -55,7 +55,7 @@
 
 /obj/item/clothing/head/helmet/space/rig/light
 	name = "hood"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_RESOMI)
 
 	sprite_sheets = list(
 		SPECIES_RESOMI = 'infinity/icons/mob/species/resomi/onmob_head_resomi.dmi',
