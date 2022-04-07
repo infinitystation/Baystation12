@@ -1,3 +1,6 @@
+/mob/living/carbon
+	var/list/guards = list()
+
 /mob/living/carbon/New()
 	//setup reagent holders
 	bloodstr = new/datum/reagents/metabolism(120, src, CHEM_BLOOD)
@@ -91,12 +94,16 @@
 	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/external/temp = H.organs_by_name[BP_R_HAND]
+			
+		if(guards && !(M.a_intent == I_HELP))
+			for(var/mob/living/simple_animal/hostile/commanded/guard in (guards & hearers(src,10)))
+				guard.hunt_on(H)
+
 		if (H.hand)
 			temp = H.organs_by_name[BP_L_HAND]
 		if(temp && !temp.is_usable())
 			to_chat(H, "<span class='warning'>You can't use your [temp.name]</span>")
 			return
-
 	return
 
 /mob/living/carbon/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, var/def_zone = null)

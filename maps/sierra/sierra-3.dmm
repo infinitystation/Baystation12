@@ -24492,6 +24492,7 @@
 	dir = 1
 	},
 /obj/structure/dogbed,
+/mob/living/simple_animal/hostile/commanded/rex,
 /turf/simulated/floor/carpet,
 /area/security/sierra/hosbed)
 "aNB" = (
@@ -25495,15 +25496,6 @@
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
-	},
-/mob/living/simple_animal/hostile/retaliate/beast/shantak/lava{
-	a_intent = "help";
-	dir = 8;
-	faction = "neutral";
-	name = "Rex";
-	response_disarm = "bops";
-	response_harm = "kicks";
-	response_help = "pets"
 	},
 /turf/simulated/floor/carpet,
 /area/security/sierra/hosbed)
