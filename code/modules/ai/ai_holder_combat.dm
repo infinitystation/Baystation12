@@ -273,7 +273,7 @@
 			if (D.density && holder.Adjacent(D))
 
 				//Try to open the door if we're allowed too.
-				if (D.allowed(holder) && D.operable() && !istype(D, /obj/machinery/door/blast))
+				if (D.allowed(holder) && D.operable())
 					// First, try to open the door if possible without smashing it. We might have access.
 					ai_log("destroy_surroundings() : Opening closed door.", AI_LOG_INFO)
 					return D.open()
