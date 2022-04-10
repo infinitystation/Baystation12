@@ -41,7 +41,7 @@
 
 /obj/item/clothing/gloves/rig/light
 	name = "gloves"
-	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC)
+	species_restricted = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_RESOMI)
 
 /obj/item/clothing/shoes/magboots/rig/light
 	name = "shoes"
