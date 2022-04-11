@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: No priority
-      uses: actions/stale@v4
+      uses: actions/stale@v5
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         days-before-stale: 60
@@ -22,7 +22,7 @@ jobs:
         exempt-pr-labels: Low,Medium,High,Unclosable
 
     - name: Low priority
-      uses: actions/stale@v4
+      uses: actions/stale@v5
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         only-labels: Low
@@ -36,7 +36,7 @@ jobs:
         exempt-pr-labels: Unclosable
 
     - name: Medium priority
-      uses: actions/stale@v4
+      uses: actions/stale@v5
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         only-labels: Medium
@@ -50,7 +50,7 @@ jobs:
         exempt-pr-labels: Unclosable
 
     - name: High priority
-      uses: actions/stale@v4
+      uses: actions/stale@v5
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         only-labels: High
