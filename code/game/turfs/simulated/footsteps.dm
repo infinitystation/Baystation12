@@ -41,7 +41,7 @@
 
 	if(!has_organ(BP_L_FOOT) && !has_organ(BP_R_FOOT))
 		return //no feet no footsteps
-	
+
 	return TRUE
 
 /mob/living/carbon/human/proc/handle_footsteps()
@@ -51,7 +51,7 @@
 	 //every other turf makes a sound
 	if((step_count % 2) && MOVING_QUICKLY(src))
 		return
-	
+
 	// don't need to step as often when you hop around
 	if((step_count % 3) && !has_gravity(src))
 		return
@@ -72,3 +72,4 @@
 				volume -= 60
 				range -= 0.333
 			playsound(T, footsound, volume, 1, range)
+	visualize_sound()

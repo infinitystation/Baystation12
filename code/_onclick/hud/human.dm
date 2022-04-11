@@ -83,6 +83,19 @@
 		var/obj/screen/movement/M = using//inf
 		M.owner = mymob//inf
 
+	//[inf]
+	if(hud_data.has_fixeye)
+		using = new /obj/screen/fixeye()
+		using.SetName("fix eye")
+		using.icon = 'infinity/icons/mob/fixeye.dmi'
+		using.icon_state = "fixeye"
+		using.screen_loc = ui_fixeye
+		using.color = ui_color
+		using.alpha = ui_alpha
+		src.hotkeybuttons += using
+		target.fixeye = using
+	//[/inf]
+
 	if(hud_data.has_drop)
 		using = new /obj/screen()
 		using.SetName("drop")
@@ -305,6 +318,12 @@
 	mymob.radio_use_icon.color = ui_color
 	mymob.radio_use_icon.alpha = ui_alpha
 
+	// [inf]
+	if(ishuman(mymob))
+		target.fov = new /obj/screen/fov(null)
+		target.fov.icon_state = target.species ? target.species.standart_fov : FOV270
+		hud_elements |= target.fov
+	// [/inf]
 	mymob.client.screen = list()
 
 	mymob.client.screen += hud_elements
@@ -403,17 +422,6 @@
 			to_chat(usr, SPAN_NOTICE("You are breathing easy."))
 		else
 			to_chat(usr, SPAN_DANGER("You cannot breathe!"))
-//[INF]
-/obj/screen/movement/on_update_icon()
-	. = ..()
-	if(owner?.facing_dir && owner?.client && owner?.client?.prefs)
-		chached_fixeye = istype(chached_fixeye, /image) ? chached_fixeye : image('icons/mob/screen/infinity.dmi', "fixeye")
-		var/color_to_use = (owner.client.prefs.UI_style_color == "#ffffff") || !owner.client.prefs.UI_style_color  ? ui_style2additional_color(owner.client.prefs.UI_style) : owner.client.prefs.UI_style_color
-		chached_fixeye.color = color_to_use
-		overlays += chached_fixeye
-	else
-		overlays -= chached_fixeye
-//[/INF]
 
 /obj/screen/movement
 	var/image/chached_fixeye
@@ -421,11 +429,8 @@
 
 /obj/screen/movement/Click(var/location, var/control, var/params)
 	if(istype(usr))
-	//[INF]
-		var/list/p = params2list(params)
-		if(p["ctrl"])
-			usr.face_direction()
-			update_icon()
-			return
-	//[/INF]
 		usr.set_next_usable_move_intent()
+
+/obj/screen/fixeye/Click(var/location, var/control, var/params)
+	if(istype(usr))
+		usr.face_direction()

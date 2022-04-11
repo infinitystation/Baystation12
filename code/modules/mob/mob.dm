@@ -302,6 +302,7 @@
 			else
 				client.perspective = EYE_PERSPECTIVE
 				client.eye = loc
+		update_vision_cone()
 	return
 
 
@@ -765,10 +766,9 @@
 /mob/proc/facedir(var/ndir)
 	if(!canface() || moving || (buckled && !buckled.buckle_movable))
 		return 0
-	set_dir(ndir)
+	set_dir(ndir, FALSE)
 	if(buckled && buckled.buckle_movable)
-		buckled.set_dir(ndir)
-	SetMoveCooldown(movement_delay())
+		buckled.set_dir(ndir, FALSE)
 	return 1
 
 
@@ -981,7 +981,9 @@
 /mob/on_update_icon()
 	return update_icons()
 
-/mob/proc/face_direction()
+/mob/verb/face_direction()
+	set name = "set-face-direction"
+	if(!iscarbon(src)) return
 	set_face_dir()
 
 	if(!facing_dir)
@@ -1001,7 +1003,7 @@
 		set_dir(dir)
 		facing_dir = dir
 
-/mob/set_dir()
+/mob/set_dir(ndir, force)
 	if(facing_dir)
 		if(!canface() || lying || restrained())
 			facing_dir = null
@@ -1011,6 +1013,9 @@
 				return ..(facing_dir)
 			else
 				facing_dir = null
+		else if(!force && ndir != facing_dir)
+			facing_dir = ndir
+			return ..(ndir)
 		else if(dir != facing_dir)
 			return ..(facing_dir)
 	else
