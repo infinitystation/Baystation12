@@ -332,19 +332,22 @@
 /obj/item/stack/attack_hand(mob/user as mob)
 	if (user.get_inactive_hand() == src)
 		var/N = round(input("How many stacks of [src] would you like to split off?", "Split stacks", 1) as num|null)
-		if(N > src.amount || N <= 0)
+		if(user.get_inactive_hand() == src || user.get_active_hand() == src)
+			if(N > src.amount || N <= 0)
+				return
+			if(N > max_amount)
+				N = max_amount
+			if(N)
+				var/obj/item/stack/F = src.split(N)
+				if (F)
+					user.put_in_hands(F)
+					src.add_fingerprint(user)
+					F.add_fingerprint(user)
+					spawn(0)
+						if (src && usr.machine==src)
+							src.interact(usr)
+		else
 			return
-		if(N > max_amount)
-			N = max_amount
-		if(N)
-			var/obj/item/stack/F = src.split(N)
-			if (F)
-				user.put_in_hands(F)
-				src.add_fingerprint(user)
-				F.add_fingerprint(user)
-				spawn(0)
-					if (src && usr.machine==src)
-						src.interact(usr)
 	else
 		..()
 	return
