@@ -886,6 +886,7 @@
 #include "code\game\machinery\teleporter\projector.dm"
 #include "code\game\objects\alien_props.dm"
 #include "code\game\objects\buckling.dm"
+#include "code\game\objects\cart.dm"
 #include "code\game\objects\empulse.dm"
 #include "code\game\objects\explosion.dm"
 #include "code\game\objects\explosion_recursive.dm"

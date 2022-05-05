@@ -3,7 +3,6 @@
 	animate_movement = 2
 
 	var/obj_flags
-
 	var/list/matter //Used to store information about the contents of the object.
 	var/w_class // Size of the object.
 	var/unacidable = FALSE //universal "unacidabliness" var, here so you can use it in any obj.
@@ -195,3 +194,6 @@
  */
 /obj/proc/is_safe_to_step(mob/living/L)
 	return TRUE
+
+/obj/proc/get_additional_speed_decrease()
+	return between(0, src.w_class, ITEM_SIZE_GARGANTUAN) / 5
