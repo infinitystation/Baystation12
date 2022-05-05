@@ -1,9 +1,9 @@
 /datum/gear/augment/glare_dampeners
 	allowed_roles = TECHNICAL_ROLES
 
-/datum/gear/augment/integrated_health_hud
-	allowed_roles = MEDICAL_ROLES
-
+/datum/gear/augment/integrated_health_hud/New()
+  allowed_roles = MEDICAL_ROLES + /datum/job/explorer_medic
+  ..()
 /datum/gear/augment/integrated_security_hud
 	allowed_roles = SECURITY_ROLES
 

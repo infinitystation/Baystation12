@@ -82,7 +82,7 @@
 /datum/gear/eyes/meson
 	display_name = "Meson Goggles"
 	path = /obj/item/clothing/glasses/meson
-	allowed_roles = list(/datum/job/chief_engineer, /datum/job/engineer, /datum/job/mining, /datum/job/scientist, /datum/job/rd)
+	allowed_roles = list(/datum/job/chief_engineer, /datum/job/engineer, /datum/job/mining, /datum/job/scientist, /datum/job/rd, /datum/job/qm)
 	cost = 3
 
 /datum/gear/eyes/meson/prescription
