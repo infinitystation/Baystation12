@@ -198,7 +198,7 @@
 		if(15)
 			if(istype(W,/obj/item/stack/material) && W.get_material_name() == MATERIAL_GLASS)
 				var/obj/item/stack/material/M = W
-				if(M.use(40))
+				if(M.use(5))
 					to_chat(user, SPAN_NOTICE("You install lenses and scope."))
 					buildstate++
 				else
