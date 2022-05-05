@@ -3,7 +3,7 @@
 
 /datum/event/gravity/start()
 	var/obj/machinery/gravity_generator/main/GG = GLOB.station_gravity_generator
-	if(!GG)
+	if(!GG || !(GG.z in affecting_z))
 		log_debug("The gravity generator was not found while trying to start an event.")
 		return
 
