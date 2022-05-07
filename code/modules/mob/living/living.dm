@@ -607,7 +607,7 @@ default behaviour is:
 			if(istype(O, /obj/structure/closet) && !O.density)
 				return set_dir(get_dir(src, pulling))
 //[/INF]
-			if(O.w_class >= ITEM_SIZE_HUGE || O.density)
+			if((O.w_class >= ITEM_SIZE_HUGE || O.density) && !istype(O, /obj/structure/cart))
 				return set_dir(get_dir(src, pulling))
 		if(isliving(pulling))
 			var/mob/living/L = pulling

@@ -1,14 +1,15 @@
-/obj/cart
-	name = "Cargo cart."
-	desc = "Simple cart for heavy things.\n<font size=1px>(Ctrl+Alt+LMB to change wheels state)</font>"
+/obj/structure/cart
+	name = "Cargo cart"
+	desc = "Brand-new cart for heavy things. you can see little logo of NT on the back side."
 	icon = 'icons/obj/cart.dmi'
 	icon_state = "cart"
+	density = FALSE
 	w_class = ITEM_SIZE_LARGE
 	var/haswheels = FALSE
 	var/cargoweight = 0
 	var/atom/movable/load = null
 
-/obj/cart/Move()
+/obj/structure/cart/Move()
 	. = ..()
 	if(load && !istype(load, /datum/vehicle_dummy_load))
 		load.set_glide_size(src.glide_size)
@@ -35,20 +36,22 @@
 	playsound(src, sound, 50, 1, 10)
 
 
-/obj/cart/MouseDrop_T(var/atom/movable/cargo, mob/user as mob)
+/obj/structure/cart/MouseDrop_T(var/atom/movable/cargo, mob/user as mob)
 	if(!CanPhysicallyInteract(user) || !user.Adjacent(cargo) || !istype(cargo) || (user == cargo))
 		return
 
 	if(haswheels)
-		to_chat(user, SPAN_WARNING("You cant place somethink on cart before you has folded the wheels!"))
+		to_chat(user, SPAN_WARNING("You can't load the cart unless wheels are folded!"))
 		return
 
-	if(do_after(user, 5 SECONDS, src, DO_DEFAULT | DO_TARGET_UNIQUE_ACT | DO_PUBLIC_PROGRESS))
+	if(do_after(user, 2 SECONDS, src, DO_DEFAULT | DO_TARGET_UNIQUE_ACT | DO_PUBLIC_PROGRESS))
 		if(!load(cargo))
-			to_chat(user, "<span class='warning'>You were unable to load [cargo] on [src].</span>")
+			to_chat(user, SPAN_WARNING("You are unable to load [cargo] on [src]"))
 			return
+		density = TRUE
 
-/obj/cart/attack_hand(mob/user as mob)
+
+/obj/structure/cart/attack_hand(mob/user as mob)
 	if(user.stat || user.restrained() || !Adjacent(user))
 		return FALSE
 
@@ -56,26 +59,35 @@
 		return FALSE
 
 	if(haswheels)
-		to_chat(user, SPAN_WARNING("You take off cart somethink before you has folded the wheels!"))
+		to_chat(user, SPAN_WARNING("You must fold the wheels to unload the cart!"))
 		return
 
-	if(do_after(user, 5 SECONDS, src, DO_DEFAULT | DO_TARGET_UNIQUE_ACT | DO_PUBLIC_PROGRESS))
+	if(do_after(user, 2 SECONDS, src, DO_DEFAULT | DO_TARGET_UNIQUE_ACT | DO_PUBLIC_PROGRESS))
 		unload(user)
 
 	return ..()
 
-/obj/cart/verb/turn_wheels()
-	set src in view(1)
+/obj/structure/cart/verb/turn_wheels()
 	set name = "Release wheels"
 	set category = "Object"
-	usr.visible_message(SPAN_NOTICE("You have [haswheels ? "folded" : "released"] wheels."), SPAN_NOTICE("[usr] [haswheels ? "folded" : "released"] wheels on [src]"))
+	set src in view(1)
+
+	if(usr.stat || !Adjacent(usr)) return
+
+	if(!istype(usr,/mob/living/carbon))
+		return
+
+	var/wheelstat = haswheels ? "folded" : "released"
+	usr.visible_message(SPAN_NOTICE("[usr] [wheelstat] wheels on [src]"), SPAN_NOTICE("You have [wheelstat] wheels."))
+	desc = initial(desc)
+	desc += "\nNow the wheels are [wheelstat]."
 	haswheels = !haswheels
 
-/obj/cart/CtrlAltClick(mob/user)
+/obj/structure/cart/CtrlAltClick(mob/user)
 	. = ..()
 	turn_wheels()
 
-/obj/cart/proc/load(var/atom/movable/cargo)
+/obj/structure/cart/proc/load(var/atom/movable/cargo)
 	if(ismob(cargo))
 		return FALSE
 	if(!(istype(cargo,/obj/machinery) || istype(cargo,/obj/structure/closet) || istype(cargo,/obj/structure/largecrate) || istype(cargo,/obj/structure/ore_box)))
@@ -111,12 +123,15 @@
 			cargo.set_dir(turn(dir, 90))
 
 	if(load)
-		var/obj/O = load
-		cargoweight = between(0, O.w_class, ITEM_SIZE_GARGANTUAN)
+		var/obj/object_on_cart = load
+		if(istype(load, /datum/vehicle_dummy_load))
+			var/datum/vehicle_dummy_load/dummy = load
+			object_on_cart = dummy.actual_load
+		cargoweight = between(0, object_on_cart.w_class, ITEM_SIZE_GARGANTUAN)
 		return TRUE
 	return FALSE
 
-/obj/cart/proc/load_object(var/atom/movable/cargo)
+/obj/structure/cart/proc/load_object(var/atom/movable/cargo)
 	var/datum/vehicle_dummy_load/dummy_load = new()
 	load = dummy_load
 
@@ -135,7 +150,7 @@
 	cargo.pixel_y = initial(cargo.pixel_y)
 	cargo.reset_plane_and_layer()
 
-/obj/cart/proc/unload(var/mob/user, var/direction)
+/obj/structure/cart/proc/unload(var/mob/user, var/direction)
 	if(istype(load, /datum/vehicle_dummy_load))
 		var/datum/vehicle_dummy_load/dummy_load = load
 		load = dummy_load.actual_load
@@ -181,9 +196,16 @@
 
 	cargoweight = 0
 	load = null
+
+	density = FALSE
+
 	update_icon()
 
 	return TRUE
 
-/obj/cart/get_additional_speed_decrease()
+/obj/structure/cart/get_additional_speed_decrease()
 	return haswheels ? 0.1 : between(0, cargoweight + w_class, ITEM_SIZE_GARGANTUAN) / 5
+
+/datum/codex_entry/cargo_cart
+	associated_paths = list(/obj/structure/cart)
+	mechanics_text = "To change wheel state you need to press Alt+Ctrl+LMB."

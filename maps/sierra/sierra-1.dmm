@@ -16781,7 +16781,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/cart,
+/obj/structure/cart,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
 "Al" = (
@@ -30904,7 +30904,7 @@
 /turf/simulated/floor/tiled,
 /area/storage/primary)
 "Zi" = (
-/obj/cart,
+/obj/structure/cart,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
 "Zj" = (
