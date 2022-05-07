@@ -4,7 +4,11 @@
 	var/list/gas_needed	//list of gas=percentage needed in air to activate
 
 /datum/artifact_trigger/gas/New()
-	spawn(5 SECONDS) if(!gas_needed) gas_needed = list(pick(gas_data.gases) = rand(1,10)) //inf
+	spawn(5 SECONDS) 
+		if(!gas_needed) 
+			var/gas = pick(gas_data.gases)
+			name = "concentration of [lowertext(gas_data.name[gas])]"
+			gas_needed = list(gas = rand(1,10)) //inf
 /*inf	
 	if(!gas_needed)
 		gas_needed = list(pick(gas_data.gases) = rand(1,10))
@@ -18,16 +22,28 @@ inf*/
 
 /datum/artifact_trigger/gas/co2
 	name = "concentration of CO2"
-	gas_needed = list(GAS_CO2 = 5)
+	
+/datum/artifact_trigger/gas/co2/New()
+	spawn(5 SECONDS) 
+		gas_needed = list(GAS_CO2 = rand(1,10))
 
 /datum/artifact_trigger/gas/o2
 	name = "concentration of oxygen"
-	gas_needed = list(GAS_O2 = 5)
+
+/datum/artifact_trigger/gas/o2/New()
+	spawn(5 SECONDS) 
+		gas_needed = list(GAS_OXYGEN = rand(5,40))
 
 /datum/artifact_trigger/gas/n2
 	name = "concentration of nitrogen"
-	gas_needed = list(GAS_N2 = 5)
+
+/datum/artifact_trigger/gas/n2/New()
+	spawn(5 SECONDS) 
+		gas_needed = list(GAS_NITROGEN = rand(60,95))
 
 /datum/artifact_trigger/gas/phoron
 	name = "concentration of phoron"
-	gas_needed = list(GAS_PHORON = 5)
+
+/datum/artifact_trigger/gas/phoron/New()
+	spawn(5 SECONDS) 
+		gas_needed = list(GAS_PHORON = rand(1,95))
