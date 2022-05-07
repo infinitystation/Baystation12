@@ -179,9 +179,9 @@
 /datum/chemical_reaction/peridaxon
 	name = "Peridaxon"
 	result = /datum/reagent/peridaxon
-	required_reagents = list(/datum/reagent/bicaridine = 2, /datum/reagent/clonexadone = 2)
+	required_reagents = list(/datum/reagent/bicaridine = 2, /datum/reagent/cryoxadone = 2)
 	catalysts = list(/datum/reagent/toxin/phoron = 5)
-	result_amount = 2
+	result_amount = 4
 
 /datum/chemical_reaction/leporazine
 	name = "Leporazine"

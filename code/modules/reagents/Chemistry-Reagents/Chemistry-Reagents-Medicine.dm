@@ -573,9 +573,8 @@
 
 /datum/reagent/arithrazine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.radiation = max(M.radiation - 70 * removed, 0)
-	M.adjustToxLoss(-10 * removed)
 	if(prob(60))
-		M.take_organ_damage(4 * removed, 0, ORGAN_DAMAGE_FLESH_ONLY)
+		M.take_organ_damage(2 * removed, 0, ORGAN_DAMAGE_FLESH_ONLY)
 
 /datum/reagent/spaceacillin
 	name = "Spaceacillin"
