@@ -111,9 +111,16 @@
 
 /datum/uplink_item/item/ammo/flechette
 	name = "Flechette Rifle Magazine"
-	desc = "A  rifle magazine loaded with flechette rounds. Contains 9 rounds."
+	desc = "A rifle magazine loaded with flechette rounds. Contains 9 rounds."
 	item_cost = 10
 	path = /obj/item/magnetic_ammo
+	antag_roles = list(MODE_MERCENARY)
+
+/datum/uplink_item/item/ammo/heavy_bullpup
+	name = "Heavy Carbine Magazine"
+	desc = "A heavy bullpup magazine loaded with small antimaterial rounds. Contains 8 rounds."
+	item_cost = 10
+	path = /obj/item/ammo_magazine/c12755
 	antag_roles = list(MODE_MERCENARY)
 
 /datum/uplink_item/item/ammo/pistol_emp
