@@ -540,6 +540,7 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 	var/obj/item/device/mmi/M = tool
 	var/obj/item/organ/internal/mmi_holder/holder = new(target, 1)
 	target.internal_organs_by_name[BP_BRAIN] = holder
+	target.languages = M.brainmob.languages
 	tool.forceMove(holder)
 	holder.stored_mmi = tool
 	holder.update_from_mmi()
