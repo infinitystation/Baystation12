@@ -30,7 +30,7 @@
 	suffixes = list("yacht/yacht.dmm")
 	spawn_cost = 0.5
 	player_cost = 2 // Нынешнее значение основано на количестве игроков в авейке ~bear1ake
-	spawn_weight = 1 // было spawn_weight = 0.67
+	spawn_weight = 0.67
 	area_usage_test_exempted_root_areas = list(/area/yacht)
 
 /obj/effect/shuttle_landmark/nav_yacht/nav1
