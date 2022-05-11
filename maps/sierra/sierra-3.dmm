@@ -386,6 +386,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/red{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/wall/r_wall/hull,
 /area/thruster/d1starboard)
 "aaP" = (
@@ -35733,6 +35734,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/red{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/wall/r_wall/hull,
 /area/thruster/d1port)
 "bhK" = (
@@ -36538,6 +36541,12 @@
 "bmj" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/medical/office)
+"bnJ" = (
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d1starboard)
 "bvf" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -37564,6 +37573,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
+"fCg" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	controlled = 0;
+	internal_pressure_bound = 35000;
+	internal_pressure_bound_default = 35000;
+	use_power = 1;
+	pressure_checks = 2;
+	pressure_checks_default = 2
+	},
+/turf/simulated/floor/airless,
+/area/thruster/d1starboard)
 "fDL" = (
 /obj/effect/floor_decal/techfloor,
 /obj/effect/floor_decal/techfloor{
@@ -38521,6 +38541,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/office/hop/cobed)
+"ijb" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	controlled = 0;
+	internal_pressure_bound = 35000;
+	internal_pressure_bound_default = 35000;
+	use_power = 1;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	dir = 1
+	},
+/turf/simulated/floor/airless,
+/area/thruster/d1starboard)
 "ijg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -39269,6 +39301,10 @@
 /obj/machinery/atmospherics/unary/cryo_cell,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
+"kRH" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d1starboard)
 "kSY" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -39829,6 +39865,10 @@
 "mgp" = (
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore_stairwell)
+"mrL" = (
+/obj/structure/sign/warning/hot_exhaust,
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d1port)
 "msU" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -42634,6 +42674,10 @@
 "vvZ" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/hallway/primary/firstdeck/fore_stairwell)
+"vAy" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d1port)
 "vBv" = (
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/bluegrid,
@@ -71696,7 +71740,7 @@ aaa
 aaa
 aaa
 aaa
-aay
+bnJ
 aaN
 abj
 abT
@@ -71748,7 +71792,7 @@ bfq
 bhk
 bhx
 bhI
-aZW
+mrL
 aaa
 aaa
 aaa
@@ -71898,10 +71942,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
+fCg
 aaO
-aay
-abU
+kRH
+ady
 acM
 ady
 aem
@@ -71947,10 +71991,10 @@ bem
 bfr
 bem
 bdt
-bfk
-aZW
+bem
+vAy
 bhJ
-aaa
+ijb
 aaa
 aaa
 aaa

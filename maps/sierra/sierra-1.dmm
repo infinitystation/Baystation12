@@ -2526,6 +2526,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/red{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/wall/r_wall/hull,
 /area/thruster/d3starboard)
 "eN" = (
@@ -16897,6 +16898,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/red{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/wall/r_wall/hull,
 /area/thruster/d3port)
 "Az" = (
@@ -29228,6 +29230,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/shuttlefuel)
+"VC" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d3port)
+"VD" = (
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d3starboard)
 "VF" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -29521,6 +29533,17 @@
 /obj/random/hostile/xenobio,
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level2)
+"Wj" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	controlled = 0;
+	internal_pressure_bound = 35000;
+	internal_pressure_bound_default = 35000;
+	use_power = 1;
+	pressure_checks = 2;
+	pressure_checks_default = 2
+	},
+/turf/simulated/floor/airless,
+/area/thruster/d3starboard)
 "Wl" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -29751,6 +29774,18 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"WK" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	controlled = 0;
+	internal_pressure_bound = 35000;
+	internal_pressure_bound_default = 35000;
+	use_power = 1;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	dir = 1
+	},
+/turf/simulated/floor/airless,
+/area/thruster/d3starboard)
 "WL" = (
 /obj/effect/paint/red,
 /obj/effect/paint_stripe/white,
@@ -29948,6 +29983,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
+"Xe" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d3starboard)
 "Xg" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -59592,7 +59631,7 @@ Is
 Is
 Is
 Is
-cI
+VD
 eK
 Rt
 tU
@@ -59794,10 +59833,10 @@ Is
 Is
 Is
 Is
-Is
+Wj
 eM
-cI
-tV
+Xe
+vx
 gu
 vx
 wD
@@ -59839,10 +59878,10 @@ yl
 zq
 yl
 ER
-yL
-do
+yl
+VC
 Ay
-Is
+WK
 Is
 Is
 Is
