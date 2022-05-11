@@ -562,7 +562,7 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 	var/s = ""
 
 	if (config && config.server_name)
-		s += "<b>[config.server_name]</b>"
+		s += "SS13.SU\] <b>[config.server_name]</b>"
 
 //	s += "<b>[station_name()]</b>"
 	s += " ("
