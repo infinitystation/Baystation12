@@ -600,6 +600,7 @@ decl/surgery_step/robotics/get_skill_reqs(mob/living/user, mob/living/carbon/hum
 			SPAN_NOTICE("\The [user] removes \the [mmi] from \the [target]'s [affected.name] with \the [tool]."), \
 			SPAN_NOTICE("You  remove \the [mmi] from \the [target]'s [affected.name] with \the [tool]."))
 			target.remove_implant(mmi, TRUE, affected)
+			mmi.brainmob.languages = target.languages
 		else
 			user.visible_message( \
 			SPAN_NOTICE("\The [user] could not find anything inside [target]'s [affected.name]."), \
