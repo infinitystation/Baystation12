@@ -40277,21 +40277,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/rnd/xenobiology/level1)
-"tSI" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/catwalk,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/binary/pump/high_power/on{
-	dir = 8;
-	target_pressure = 15000
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/seconddeck/aftport)
 "tTH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -64291,7 +64276,7 @@ bgg
 aNk
 aQB
 tEy
-tSI
+exH
 uUy
 exH
 bgO
