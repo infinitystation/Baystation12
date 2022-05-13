@@ -192,3 +192,16 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 	var/time_string = time2text(world.realtime, "MM-DD")
 	var/time_list = splittext(time_string, "-")
 	return list(text2num(time_list[1]), text2num(time_list[2]))
+
+/**
+ * Returns "watch handle" (really just a timestamp :V)
+ */
+/proc/start_watch()
+	return REALTIMEOFDAY
+
+/**
+ * Returns number of seconds elapsed.
+ * @param wh number The "Watch Handle" from start_watch(). (timestamp)
+ */
+/proc/stop_watch(wh)
+	return round(0.1 * (REALTIMEOFDAY - wh), 0.1)

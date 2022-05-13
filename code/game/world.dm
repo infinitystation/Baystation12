@@ -704,6 +704,11 @@ var/failed_db_connections = 0
 var/failed_old_db_connections = 0
 
 /hook/startup/proc/connectDB()
+
+	// This check includes connection to DB. Works with brand new rust_g SQL.
+	SSdbcore.CheckSchemaVersion()
+
+	// TODO: Remove legacy DB interaction
 	if(!setup_database_connection())
 		to_world_log("Your server failed to establish a connection with the feedback database.")
 	else

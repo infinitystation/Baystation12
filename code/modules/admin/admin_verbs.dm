@@ -223,6 +223,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/watched_variables,
 	/client/proc/secrets,
 	/client/proc/debug_global_variables,
+	/client/proc/reestablish_db_connection_old,
 	/client/proc/reestablish_db_connection,
 	/client/proc/ping_webhook,
 	/client/proc/reload_webhooks,

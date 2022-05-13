@@ -1,4 +1,4 @@
-/client/proc/reestablish_db_connection()
+/client/proc/reestablish_db_connection_old()
 	set category = "Special Verbs"
 	set name = "Reestablish DB Connection"
 
