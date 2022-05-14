@@ -48,6 +48,29 @@ DBConnection
 	var/server = ""
 	var/port = 3306
 
+// Make sensitive variables immutable and invisible for VV
+DBConnection/may_edit_var(var/user, var/var_to_edit)
+	if(var_to_edit == NAMEOF(src, _db_con))
+		return FALSE
+	if(var_to_edit == NAMEOF(src, dbi))
+		return FALSE
+	if(var_to_edit == NAMEOF(src, user))
+		return FALSE
+	if(var_to_edit == NAMEOF(src, password))
+		return FALSE
+	if(var_to_edit == NAMEOF(src, default_cursor))
+		return FALSE
+	if(var_to_edit == NAMEOF(src, server))
+		return FALSE
+	if(var_to_edit == NAMEOF(src, port))
+		return FALSE
+	. = ..()
+
+DBConnection/VV_hidden()
+	return ..() + list(NAMEOF(src, _db_con), NAMEOF(src, dbi), NAMEOF(src, user),
+	 				   NAMEOF(src, password), NAMEOF(src, default_cursor),  NAMEOF(src, server),
+					   NAMEOF(src, port))
+
 DBConnection/New(dbi_handler,username,password_handler,cursor_handler)
 	src.dbi = dbi_handler
 	src.user = username
@@ -135,6 +158,10 @@ DBQuery/proc/Execute(sql_query=src.sql,cursor_handler=default_cursor)
 		log_admin("DBQuerry Execute() error: [err]. Query used : [src.sql]")
 		if(findtext(err, "MySQL server has gone away"))
 			establish_db_connection()
+
+// Don't allow to call any proc on DBQuery
+DBQuery/CanProcCall(procname)
+	return FALSE
 
 DBQuery/proc/NextRow()
 	return _dm_db_next_row(_db_query,item,conversions)

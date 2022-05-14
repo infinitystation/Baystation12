@@ -85,6 +85,11 @@
 	src.hastarget = hastarget
 
 	procname = input("Proc name", "Proc") as null|text
+
+	if(!target.CanProcCall(procname))
+		to_chat(usr, "Proc [procname] can't be called on [target]")
+		return
+
 	if(!procname)
 		clear()
 		return

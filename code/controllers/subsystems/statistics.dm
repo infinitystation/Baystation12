@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(statistics)
 		return
 
 	// Set 'announce' to TRUE, if want to notify players about their earnings :D
-	update_player_exp(announce = TRUE)
+	update_player_exp()
 
 /datum/controller/subsystem/statistics/Shutdown()
 

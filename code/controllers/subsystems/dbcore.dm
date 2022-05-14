@@ -42,6 +42,17 @@ SUBSYSTEM_DEF(dbcore)
 		if(MC_TICK_CHECK)
 			return
 
+// Make sensitive variables immutable and invisible for VV
+/datum/controller/subsystem/dbcore/may_edit_var(var/user, var/var_to_edit)
+	if(var_to_edit == NAMEOF(src, connection))
+		return FALSE
+	if(var_to_edit == NAMEOF(src, active_queries))
+		return FALSE
+	. = ..()
+
+/datum/controller/subsystem/dbcore/VV_hidden()
+	return ..() + list(NAMEOF(src, connection), NAMEOF(src, active_queries))
+
 /datum/controller/subsystem/dbcore/Recover()
 	connection = SSdbcore.connection
 
@@ -279,6 +290,10 @@ SUBSYSTEM_DEF(dbcore)
 	Close()
 	SSdbcore.active_queries -= src
 	return ..()
+
+// Don't allow to call any proc on db_query
+/datum/db_query/CanProcCall(procname)
+	return FALSE
 
 /**
   * Activity Update Handler

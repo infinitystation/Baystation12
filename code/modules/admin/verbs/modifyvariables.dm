@@ -353,6 +353,7 @@
 			return
 
 		if(!O.may_edit_var(usr, param_var_name))
+			to_chat(src, "A variable with this name ([param_var_name]) can't be edited in ([O])")
 			return
 
 		variable = param_var_name
