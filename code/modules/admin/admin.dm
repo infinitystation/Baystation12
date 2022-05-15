@@ -74,6 +74,7 @@ var/global/floorIsLava = 0
 		<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a> -
 		<a href='?src=\ref[src];narrateto=\ref[M]'>DN</a> -
 		<a href='?src=\ref[src];show_skills=\ref[M]'>SS</a> -
+		<a href='?src=\ref[src];playerexperience=\ref[M]'>EXP</a> -
 		[admin_jump_link(M, src)]\]
 	"}
 

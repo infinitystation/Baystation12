@@ -1364,6 +1364,20 @@
 			sleep(2)
 			G.start_following(M)
 
+	else if(href_list["playerexperience"])
+
+		// Only adminnistrator has rights to get this information
+		if(!check_rights(R_MOD|R_ADMIN))
+			return
+
+		var/mob/player_mob = locate(href_list["playerexperience"])
+
+		if (!player_mob)
+			to_chat(usr.client, SPAN_WARNING("Unable to locate mob"))
+			return
+
+		get_player_experience_page(usr.client, player_mob.ckey)
+
 	else if(href_list["check_antagonist"])
 		check_antagonists()
 
