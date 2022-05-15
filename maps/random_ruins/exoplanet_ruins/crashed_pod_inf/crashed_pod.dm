@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(crashed_pod_areas, new)
 	id = "crashed_pod"
 	description = "A crashed survival pod from a destroyed ship."
 	suffixes = list("crashed_pod_inf/crashed_pod.dmm")
-	spawn_cost = 2
+	spawn_cost = 1000
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
 
 /area/map_template/crashed_pod
