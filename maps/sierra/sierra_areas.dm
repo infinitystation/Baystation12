@@ -23,6 +23,12 @@
 /area/medical
 	icon_state = "medbay"
 
+/area/medical/psi_meter_room
+	name = "First Deck - Infirmary - Psi-meter"
+
+/area/medical/morgue/closed
+	name = "First Decl - Infirmary - Closed Morgue"
+
 /area/maintenance/substation
 	name = "Substation"
 	icon_state = "substation"
