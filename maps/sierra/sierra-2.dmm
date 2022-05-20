@@ -11080,7 +11080,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "aue" = (
-/obj/structure/holoplant,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -11098,6 +11097,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engineering_monitoring)
 "aug" = (
@@ -21325,12 +21325,12 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 23
 	},
-/obj/structure/holoplant,
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 6
 	},
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/lime/bordercorner2,
+/obj/structure/flora/pottedplant/stoutbush,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/fore)
 "aLW" = (
@@ -21447,9 +21447,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "aMi" = (
-/obj/structure/holoplant{
-	plant = "P-Alien Plant"
-	},
+/obj/structure/flora/pottedplant/orientaltree,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/sleep/bunk)
 "aMk" = (
@@ -35821,6 +35819,7 @@
 /obj/effect/floor_decal/corner/lightgrey/border,
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2,
+/obj/structure/flora/pottedplant/smelly,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "iah" = (
