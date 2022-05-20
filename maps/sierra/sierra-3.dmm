@@ -34624,6 +34624,23 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/locker)
+"eeO" = (
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "medbay_lockdown";
+	name = "Medical Bay lockdown shutters"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/wallframe_spawn/reinforced/polarized/prepainted{
+	id = "medbay_cmo_window"
+	},
+/obj/structure/cable/green,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/crew_quarters/heads/office/cmo)
 "ehv" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -36532,17 +36549,17 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "iWD" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
 /obj/structure/catwalk,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
@@ -41255,13 +41272,13 @@
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai_upload)
 "vDc" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
 /obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard)
 "vEj" = (
@@ -67639,7 +67656,7 @@ gtN
 rbs
 lRh
 nNB
-iJB
+eeO
 lps
 aDP
 aFE
