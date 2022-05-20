@@ -7178,16 +7178,13 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 23
 	},
-/obj/structure/holoplant{
-	plant = "P-Apple Bush";
-	plant_color = "#66ff66"
-	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2{
 	dir = 4
 	},
+/obj/structure/flora/pottedplant,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "lD" = (
@@ -14875,13 +14872,13 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 10
 	},
-/obj/structure/holoplant,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 8
 	},
+/obj/structure/flora/pottedplant/tropical,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "xs" = (
@@ -16872,13 +16869,13 @@
 	pixel_y = -6;
 	req_access = list("ACCESS_CARGO")
 	},
-/obj/structure/holoplant,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/blue/bordercorner2{
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/subterranean,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
 "AJ" = (

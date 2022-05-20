@@ -3465,6 +3465,7 @@
 #include "infinity\code\game\objects\structures\barrier.dm"
 #include "infinity\code\game\objects\structures\barsign.dm"
 #include "infinity\code\game\objects\structures\curtains.dm"
+#include "infinity\code\game\objects\structures\flora.dm"
 #include "infinity\code\game\objects\structures\holoplants.dm"
 #include "infinity\code\game\objects\structures\railing.dm"
 #include "infinity\code\game\objects\structures\signs.dm"

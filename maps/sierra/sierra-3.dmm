@@ -13046,6 +13046,7 @@
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 8
 	},
+/obj/structure/flora/pottedplant/thinbush,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore_stairwell)
 "axd" = (
@@ -13691,11 +13692,11 @@
 	dir = 4;
 	id = "iaaleft"
 	},
-/obj/structure/holoplant,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/black/border,
 /obj/effect/floor_decal/borderfloorblack/corner2,
 /obj/effect/floor_decal/corner/black/bordercorner2,
+/obj/structure/flora/pottedplant/tall,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/iaa)
 "ayx" = (
@@ -17769,7 +17770,6 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/obj/structure/holoplant,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8
 	},
@@ -17782,6 +17782,7 @@
 /obj/effect/floor_decal/corner/lime/bordercorner2{
 	dir = 8
 	},
+/obj/structure/flora/pottedplant/bamboo,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/dungeon_master_lounge)
 "aDX" = (
@@ -21685,7 +21686,6 @@
 	dir = 4;
 	pixel_x = -32
 	},
-/obj/structure/holoplant,
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8
 	},
