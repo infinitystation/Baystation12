@@ -150,7 +150,6 @@
 		"First Deck - Telecoms - Storage",
 		"First Deck - Telecoms - Monitoring",
 		"First Deck - Telecoms",
-		"First Deck - EVA",
 		"Security - Brig",
 		"Security - Prison Wing",
 		"Third Deck - Hangar",
