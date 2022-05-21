@@ -3030,19 +3030,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
-"agn" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 8
-	},
-/obj/structure/bed/chair/comfy/red{
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled/white,
-/area/medical/psi_meter_room)
 "ago" = (
 /turf/simulated/wall/r_wall/hull,
 /area/shield/firstdeck)
@@ -3131,43 +3118,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralstarboard)
-"agB" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/psi_meter_room)
-"agF" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/machinery/light_switch{
-	dir = 8;
-	pixel_x = 23
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/psi_meter_room)
 "agG" = (
 /obj/structure/morgue{
 	dir = 8
@@ -3237,32 +3187,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/infirmary)
-"agJ" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 4
-	},
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/medical{
-	name = "Psi meter"
-	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/white/monotile,
-/area/medical/psi_meter_room)
 "agL" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -3297,10 +3221,8 @@
 /obj/structure/sign/poster{
 	pixel_y = 32
 	},
-/obj/structure/table/woodentable/walnut,
-/obj/item/reagent_containers/food/drinks/glass2/coffeecup/teacup,
-/obj/item/reagent_containers/food/drinks/glass2/coffeecup/teacup,
-/obj/item/reagent_containers/food/drinks/teapot,
+/obj/machinery/psi_meter,
+/obj/structure/curtain/black,
 /turf/simulated/floor/wood/walnut,
 /area/medical/mentalhealth)
 "agN" = (
@@ -3327,7 +3249,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/flora/pottedplant/large,
 /turf/simulated/floor/carpet/blue,
 /area/medical/mentalhealth)
 "agQ" = (
@@ -3828,6 +3749,10 @@
 "ahS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
@@ -5696,10 +5621,10 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/sleeper)
 "ams" = (
-/obj/structure/bed/psych,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
+/obj/structure/bed/psych,
 /turf/simulated/floor/carpet/blue,
 /area/medical/mentalhealth)
 "amt" = (
@@ -5813,10 +5738,10 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery/second)
 "amF" = (
-/obj/structure/table/woodentable/walnut,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
+/obj/structure/table/woodentable/walnut,
 /turf/simulated/floor/carpet/blue,
 /area/medical/mentalhealth)
 "amG" = (
@@ -6165,10 +6090,6 @@
 "anj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -6178,6 +6099,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/walnut,
 /area/medical/mentalhealth)
 "ank" = (
@@ -6978,40 +6900,6 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/sleeper)
-"apc" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/psi_meter_room)
-"apj" = (
-/obj/effect/floor_decal/borderfloorwhite/corner,
-/obj/effect/floor_decal/borderfloorwhite/corner{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/purple/bordercorner,
-/obj/effect/floor_decal/corner/purple/bordercorner{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/psi_meter_room)
 "apk" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 9
@@ -34022,15 +33910,6 @@
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/space)
-"cnu" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/psi_meter_room)
 "cnG" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 1
@@ -34503,6 +34382,12 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmreception)
 "dPt" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/machinery/disposal/small{
+	dir = 4
+	},
 /turf/simulated/floor/wood/walnut,
 /area/medical/mentalhealth)
 "dSq" = (
@@ -35046,15 +34931,15 @@
 /turf/simulated/floor/tiled/white,
 /area/hallway/infirmary)
 "fvs" = (
-/obj/machinery/computer/modular/preset/medical{
-	dir = 8
-	},
 /obj/machinery/button/windowtint{
 	dir = 1;
 	id = "medbay_chapel_window";
 	pixel_x = -10;
 	pixel_y = -20;
 	range = 11
+	},
+/obj/machinery/computer/modular/preset/medical{
+	dir = 8
 	},
 /turf/simulated/floor/carpet/blue,
 /area/medical/mentalhealth)
@@ -35314,19 +35199,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/fore_stairwell)
-"gda" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 4
-	},
-/obj/structure/bed/chair/comfy/blue{
-	dir = 8
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/white,
-/area/medical/psi_meter_room)
 "gfW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -35447,6 +35319,9 @@
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
 	dir = 8
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
@@ -35756,6 +35631,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/forestarboard)
 "hkL" = (
+/obj/item/device/radio/intercom/department/medbay{
+	dir = 8;
+	pixel_x = 20
+	},
 /obj/structure/table/woodentable/walnut,
 /obj/item/paper_bin,
 /obj/item/pen,
@@ -36678,10 +36557,13 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmreception)
 "jmK" = (
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
+/obj/machinery/alarm{
+	pixel_y = 24
 	},
+/obj/structure/bed/chair/comfy/red{
+	dir = 4
+	},
+/obj/structure/curtain/black,
 /turf/simulated/floor/wood/walnut,
 /area/medical/mentalhealth)
 "joI" = (
@@ -38583,15 +38465,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
-"nXt" = (
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 5
-	},
-/obj/effect/floor_decal/corner/purple/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/psi_meter_room)
 "nXx" = (
 /obj/effect/floor_decal/borderfloorwhite/corner{
 	dir = 1
@@ -38792,6 +38665,7 @@
 	pixel_x = -24
 	},
 /obj/structure/cable/green,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/walnut,
 /area/medical/mentalhealth)
 "ouD" = (
@@ -39752,6 +39626,10 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -20
+	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
 "rkI" = (
@@ -40154,6 +40032,10 @@
 /obj/machinery/photocopier/faxmachine{
 	department = "CMO"
 	},
+/obj/item/device/radio/intercom/department/medbay{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
 "sBY" = (
@@ -40275,9 +40157,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/drone_fabrication)
-"sOe" = (
-/turf/simulated/wall/prepainted,
-/area/medical/psi_meter_room)
 "sPH" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
@@ -40350,11 +40229,11 @@
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "tdp" = (
-/obj/structure/table/woodentable/walnut,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/item/device/flashlight/lamp/green,
+/obj/structure/table/woodentable/walnut,
+/obj/item/device/flashlight/lamp/lava/cyan,
 /turf/simulated/floor/carpet/blue,
 /area/medical/mentalhealth)
 "tef" = (
@@ -40416,8 +40295,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "thZ" = (
-/obj/structure/table/woodentable/walnut,
-/obj/random/plushie,
+/obj/structure/bed/chair/comfy/brown{
+	dir = 8
+	},
+/obj/structure/curtain/black,
 /turf/simulated/floor/wood/walnut,
 /area/medical/mentalhealth)
 "tjr" = (
@@ -40583,10 +40464,8 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/aft)
 "tRN" = (
-/obj/machinery/psi_meter,
-/obj/effect/floor_decal/industrial/outline/grey,
-/turf/simulated/floor/tiled/white/monotile,
-/area/medical/psi_meter_room)
+/turf/simulated/floor/tiled/white,
+/area/hallway/infirmary)
 "tSe" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -40946,11 +40825,6 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/infirmary)
 "uRK" = (
@@ -41151,6 +41025,10 @@
 	pixel_x = -10;
 	pixel_y = -20;
 	range = 11
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/cmo)
@@ -41537,9 +41415,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/infirmreception)
-"wfp" = (
-/turf/simulated/wall/r_wall/prepainted,
-/area/medical/psi_meter_room)
 "whR" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -42063,6 +41938,11 @@
 /obj/machinery/camera/network/medbay{
 	c_tag = "Infirmary - Mental Health";
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
 	},
 /turf/simulated/floor/wood/walnut,
 /area/medical/mentalhealth)
@@ -61988,11 +61868,11 @@ amk
 enY
 enY
 enY
-wfp
-wfp
-wfp
-wfp
-wfp
+qtR
+qtR
+qtR
+qtR
+qtR
 qtR
 qtR
 rBR
@@ -62190,11 +62070,11 @@ afy
 enY
 ahS
 wLX
-sOe
-cnu
-agn
-agB
-sOe
+uag
+tRN
+tRN
+tRN
+tRN
 apk
 juW
 prc
@@ -62392,11 +62272,11 @@ afz
 enY
 cOZ
 wLX
-sOe
-apc
+uag
 tRN
-apj
-agJ
+tRN
+tRN
+tRN
 uQm
 gsE
 srY
@@ -62594,11 +62474,11 @@ amk
 enY
 bNW
 ajb
-sOe
-nXt
-gda
-agF
-sOe
+uag
+tRN
+tRN
+tRN
+tRN
 fok
 bkE
 prc
@@ -62796,11 +62676,11 @@ xLj
 enY
 ahT
 vkR
-sOe
-sOe
-sOe
-sOe
-sOe
+uag
+uag
+uag
+uag
+uag
 nIe
 fGA
 prc
