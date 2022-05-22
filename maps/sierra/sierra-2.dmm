@@ -527,36 +527,6 @@
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/hardstorage)
-"aaZ" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/table/rack,
-/obj/machinery/door/window/northright{
-	name = "RIG";
-	req_access = newlist()
-	},
-/obj/item/rig/medical/equipped,
-/obj/item/clothing/mask/gas/half,
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 6
-	},
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/effect/floor_decal/borderfloorwhite/corner2{
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/paleblue/bordercorner2{
-	dir = 6
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "aba" = (
 /turf/simulated/wall/r_wall/hull,
 /area/hydroponics)
@@ -575,17 +545,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/crew_quarters/heads/office/ce)
 "abd" = (
-/obj/machinery/door/airlock/medical{
-	name = "Medical Storage"
-	},
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 2;
-	icon_state = "shutter0";
-	id_tag = "infirmaryquar";
-	name = "Infirmary Emergency Quarantine Shutters";
-	opacity = 0
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -597,10 +556,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/airlock_brace{
-	req_access = list("ACCESS_MEDICAL")
-	},
-/turf/simulated/floor/tiled/white,
+/obj/item/taperoll/engineering/applied,
+/obj/machinery/door/airlock/maintenance,
+/turf/simulated/floor/plating,
 /area/medical/maintenance_equipstorage)
 "abe" = (
 /obj/structure/table/marble,
@@ -788,19 +746,6 @@
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/crew_quarters/heads/cobed)
-"abu" = (
-/obj/structure/table/rack,
-/obj/item/wheelchair_kit,
-/obj/item/wheelchair_kit,
-/obj/item/cane,
-/obj/item/cane,
-/obj/item/cane,
-/obj/machinery/light/spot,
-/obj/item/storage/box/rxglasses,
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/effect/floor_decal/corner/pink/border,
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "abw" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -1060,7 +1005,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/plating,
 /area/medical/maintenance_equipstorage)
 "aci" = (
 /obj/effect/wallframe_spawn/reinforced/hull,
@@ -1385,22 +1330,6 @@
 /obj/effect/floor_decal/snow,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/galley/backroom)
-"acV" = (
-/obj/item/stool/padded,
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 8
-	},
-/obj/effect/floor_decal/borderfloorwhite/corner2{
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/paleblue/bordercorner2{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "acW" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/maintenance/compactor)
@@ -1417,6 +1346,7 @@
 /area/maintenance/compactor)
 "acZ" = (
 /obj/effect/spider/spiderling/mundane/dormant,
+/obj/random/closet,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "adb" = (
@@ -5289,17 +5219,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/ce)
-"ajN" = (
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/effect/floor_decal/corner/paleblue/border,
-/obj/effect/floor_decal/borderfloorwhite/corner2,
-/obj/effect/floor_decal/corner/paleblue/bordercorner2,
-/obj/item/device/radio/intercom{
-	dir = 1;
-	pixel_y = -28
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "ajO" = (
 /obj/structure/table/marble,
 /obj/structure/cable/green{
@@ -6417,11 +6336,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/crew_quarters/cafe)
-"alW" = (
-/obj/structure/ladder/up,
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/seconddeck/aftstarboard)
 "alY" = (
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/actor)
@@ -8870,7 +8784,6 @@
 /area/maintenance/seconddeck/forestarboard)
 "apZ" = (
 /obj/structure/railing/mapped,
-/obj/random/obstruction,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "aqa" = (
@@ -9478,25 +9391,6 @@
 	},
 /turf/simulated/floor/carpet/orange,
 /area/crew_quarters/cafe)
-"arl" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24
-	},
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 4
-	},
-/obj/effect/floor_decal/borderfloorwhite/corner2{
-	dir = 5
-	},
-/obj/effect/floor_decal/corner/paleblue/bordercorner2{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "arm" = (
 /obj/structure/bed/sofa/black/left{
 	dir = 8
@@ -24084,10 +23978,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
-"aRf" = (
-/obj/item/stool/padded,
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "aRh" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -24570,7 +24460,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/plating,
 /area/medical/maintenance_equipstorage)
 "aSe" = (
 /obj/structure/cable/green{
@@ -27252,16 +27142,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
-"aWR" = (
-/obj/structure/closet/crate/freezer/nanoblood/small,
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/pink/border{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "aWS" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -27827,12 +27707,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
 "aXN" = (
-/obj/structure/railing/mapped{
-	dir = 8
-	},
-/obj/structure/railing/mapped,
-/obj/random/closet,
-/turf/simulated/floor/plating,
+/obj/structure/ladder/up,
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/seconddeck/aftstarboard)
 "aXO" = (
 /obj/structure/disposalpipe/segment,
@@ -28256,20 +28133,6 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/reinforced,
 /area/engineering/engine_room)
-"aYO" = (
-/obj/structure/table/rack,
-/obj/item/storage/box/syringegun,
-/obj/item/storage/box/syringes,
-/obj/item/storage/box/syringegun,
-/obj/item/gun/launcher/syringe,
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/pink/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "aYP" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
@@ -28277,9 +28140,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/tech)
-"aYQ" = (
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "aYR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -28385,18 +28245,6 @@
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/aquarium,
 /area/crew_quarters/lounge_big)
-"aYY" = (
-/obj/structure/table/rack,
-/obj/item/storage/box/bodybags,
-/obj/item/storage/box/freezer,
-/obj/item/storage/box/masks,
-/obj/item/storage/box/masks,
-/obj/item/storage/box/syringes,
-/obj/item/storage/box/syringes,
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/effect/floor_decal/corner/paleblue/border,
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "aYZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -28534,38 +28382,10 @@
 	dir = 4;
 	pixel_y = 29
 	},
-/obj/structure/table/rack,
-/obj/item/device/flashlight,
-/obj/item/device/flashlight,
-/obj/item/device/flashlight,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/crowbar/prybar,
-/obj/item/crowbar/prybar,
-/obj/item/crowbar/prybar,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 5
 	},
 /obj/effect/floor_decal/corner/pink/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
-"aZo" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/pink/border{
-	dir = 4
-	},
-/obj/effect/floor_decal/borderfloorwhite/corner2{
-	dir = 5
-	},
-/obj/effect/floor_decal/corner/pink/bordercorner2{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
@@ -28583,38 +28403,11 @@
 /turf/simulated/floor/wood/mahogany,
 /area/crew_quarters/lounge_big)
 "aZq" = (
-/obj/structure/closet/secure_closet/medical_sierra,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 9
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 9
-	},
-/obj/machinery/light/spot{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
-"aZr" = (
-/obj/structure/closet/secure_closet/medical_sierra,
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 1
-	},
-/obj/machinery/camera/network/medbay{
-	c_tag = "Maintenance Storage"
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
-"aZs" = (
-/obj/structure/closet/l3closet/general/multi,
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/maintenance_equipstorage)
@@ -28644,16 +28437,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/foreport)
-"aZv" = (
-/obj/structure/closet/radiation,
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 5
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "aZw" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -28745,24 +28528,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/maintenance/seconddeck/aftstarboard)
-"aZC" = (
-/obj/structure/closet/crate/medical,
-/obj/item/clothing/suit/straight_jacket,
-/obj/item/clothing/mask/muzzle,
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/pink/border{
-	dir = 8
-	},
-/obj/effect/floor_decal/borderfloorwhite/corner2{
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/pink/bordercorner2{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/maintenance_equipstorage)
 "aZD" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -28913,20 +28678,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/center)
 "aZM" = (
-/obj/structure/closet/secure_closet/medical2,
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 10
-	},
-/obj/effect/floor_decal/corner/pink/border{
-	dir = 10
-	},
-/obj/effect/floor_decal/borderfloorwhite/corner2{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/pink/bordercorner2{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/plating,
 /area/medical/maintenance_equipstorage)
 "aZN" = (
 /obj/structure/table/steel,
@@ -29076,16 +28828,7 @@
 	dir = 1;
 	pixel_y = -21
 	},
-/obj/structure/holoplant,
-/obj/effect/floor_decal/borderfloorwhite,
-/obj/effect/floor_decal/corner/pink/border,
-/obj/effect/floor_decal/borderfloorwhite/corner2{
-	dir = 9
-	},
-/obj/effect/floor_decal/corner/pink/bordercorner2{
-	dir = 9
-	},
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/plating,
 /area/medical/maintenance_equipstorage)
 "bag" = (
 /obj/machinery/door/firedoor,
@@ -61144,8 +60887,8 @@ mue
 mue
 mue
 aYV
-aWR
-aZC
+aZM
+aZM
 aZF
 aZM
 aYV
@@ -61346,10 +61089,10 @@ aaa
 aaa
 aaa
 aYV
-aYO
-aYQ
+aZM
+aZM
 ach
-abu
+aZM
 aYV
 adl
 aJR
@@ -61549,7 +61292,7 @@ dYM
 aaa
 aYV
 aZn
-aZo
+aZM
 fGt
 baf
 aYV
@@ -61751,7 +61494,7 @@ avs
 aaa
 aYV
 aZq
-acV
+aZM
 aSd
 aYT
 abd
@@ -61952,10 +61695,10 @@ eCV
 aYX
 aaa
 aYV
-aZr
-aRf
+aZM
+aZM
 euf
-ajN
+aZM
 aYV
 upd
 sRN
@@ -62154,10 +61897,10 @@ xgC
 baU
 aaa
 aYV
-aZs
-aYQ
-aYQ
-aYY
+aZM
+aZM
+aZM
+aZM
 aYV
 fnW
 aJR
@@ -62356,10 +62099,10 @@ xgC
 bcP
 aaa
 aYV
-aZv
-arl
-aYQ
-aaZ
+aZM
+aZM
+aZM
+aZM
 aYV
 tyE
 aJR
@@ -67007,7 +66750,7 @@ aQR
 aYM
 aty
 aGI
-alW
+aNS
 ako
 ahw
 ahX
