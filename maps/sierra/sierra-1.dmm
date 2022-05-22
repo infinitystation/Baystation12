@@ -3007,6 +3007,9 @@
 	dir = 4;
 	pixel_x = -32
 	},
+/obj/random/date_based/christmas/xmaslights{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
 "fy" = (
@@ -3017,6 +3020,9 @@
 /obj/structure/sign/warning/moving_parts{
 	dir = 4;
 	pixel_x = -32
+	},
+/obj/random/date_based/christmas/xmaslights{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/office)
@@ -17031,24 +17037,27 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
 "Bb" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/camera/network/supply{
 	c_tag = "Supply Office - Desk";
 	dir = 8
 	},
-/obj/machinery/fabricator,
 /obj/machinery/light/small{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 6
-	},
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
 	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/yellow/bordercorner2{
+	dir = 6
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/fabricator,
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/office)
 "Bc" = (
@@ -17486,6 +17495,9 @@
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
+/obj/random/date_based/christmas/xmaslights{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "BR" = (
@@ -18771,8 +18783,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/industrial/danger,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
 "DU" = (
@@ -19572,6 +19588,12 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/port)
@@ -23680,6 +23702,12 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/yellow/bordercorner2{
+	dir = 9
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
 "LQ" = (
@@ -23782,6 +23810,12 @@
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 23
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/suplocker_room)
@@ -24741,6 +24775,9 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/hatch/maintenance,
+/obj/random/date_based/christmas/doorwreath{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
 "NE" = (
@@ -28567,6 +28604,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "Ul" = (
@@ -28774,6 +28817,9 @@
 /obj/machinery/door/airlock/hatch/maintenance,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
+/obj/random/date_based/christmas/doorwreath{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/suplocker_room)
 "UN" = (
@@ -30423,6 +30469,12 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/random/date_based/christmas/doorwreath{
+	dir = 8
+	},
+/obj/random/date_based/christmas/doorwreath{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/storage)
 "Yq" = (
@@ -30619,6 +30671,9 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/random/date_based/christmas/doorwreath{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/suplocker_room)
