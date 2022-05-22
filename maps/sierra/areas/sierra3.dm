@@ -420,6 +420,7 @@
 	name = "First Deck - Infirmary - Operating Theatre"
 	icon_state = "surgery"
 	req_access = list(access_surgery)
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/medical/surgery/second
 	name = "First Deck - Infirmary - Operating Theatre 2"
