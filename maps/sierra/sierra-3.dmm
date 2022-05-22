@@ -18025,6 +18025,10 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
+/obj/structure/reagent_dispensers/acid{
+	dir = 2;
+	pixel_x = -29
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/development)
 "aIq" = (
@@ -20675,6 +20679,10 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 8
 	},
+/obj/structure/reagent_dispensers/acid{
+	dir = 2;
+	pixel_x = -29
+	},
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "aLK" = (
@@ -21643,15 +21651,6 @@
 	pixel_x = 24
 	},
 /obj/structure/table/rack,
-/obj/item/stack/material/steel{
-	amount = 25
-	},
-/obj/item/stack/material/steel{
-	amount = 25
-	},
-/obj/item/stack/material/steel{
-	amount = 25
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -21668,6 +21667,15 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/item/stack/material/steel{
+	amount = 30
+	},
+/obj/item/stack/material/steel{
+	amount = 30
+	},
+/obj/item/stack/material/steel{
+	amount = 30
+	},
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "aNk" = (
@@ -22603,6 +22611,12 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/random/date_based/christmas/xmaslights{
 	dir = 4
+	},
+/obj/item/stack/material/plasteel{
+	amount = 20
+	},
+/obj/item/stack/material/plasteel{
+	amount = 20
 	},
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
@@ -27719,6 +27733,9 @@
 /obj/item/stack/material/steel{
 	amount = 30
 	},
+/obj/item/stack/material/steel{
+	amount = 30
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
 "aVQ" = (
@@ -27739,6 +27756,9 @@
 	dir = 8
 	},
 /obj/structure/table/rack,
+/obj/item/stack/material/plasteel{
+	amount = 20
+	},
 /obj/item/stack/material/plasteel{
 	amount = 20
 	},
@@ -28345,6 +28365,9 @@
 /obj/structure/table/rack,
 /obj/structure/railing/mapped{
 	dir = 8
+	},
+/obj/item/stack/material/glass{
+	amount = 30
 	},
 /obj/item/stack/material/glass{
 	amount = 30
