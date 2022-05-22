@@ -19,3 +19,12 @@
 		/obj/item/clothing/gloves/latex/nitrile,
 		/obj/item/clothing/accessory/stethoscope
 	)
+
+/obj/structure/closet/secure_closet/personal/patient/sierra
+	name = "patient's closet"
+
+/obj/structure/closet/secure_closet/personal/patient/sierra/WillContain()
+	return list(
+		/obj/item/clothing/suit/hospital/green,
+		/obj/item/clothing/shoes/white
+	)
