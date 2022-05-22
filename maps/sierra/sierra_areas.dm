@@ -23,8 +23,15 @@
 /area/medical
 	icon_state = "medbay"
 
-/area/medical/morgue/closed
-	name = "First Decl - Infirmary - Closed Morgue"
+/area/medical/medical_ward
+	name = "Medical Ward"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/medical/medical_ward/first
+	name = "First Medical Ward"
+
+/area/medical/medical_ward/second
+	name = "Second Medical Ward"
 
 /area/maintenance/substation
 	name = "Substation"
