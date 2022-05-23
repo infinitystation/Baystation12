@@ -6,6 +6,10 @@
 	//Apply weapon damage
 	var/damage_flags = I.damage_flags()
 	var/datum/wound/created_wound = apply_damage(effective_force, I.damtype, hit_zone, damage_flags, used_weapon=I, armor_pen=I.armor_penetration)
+	
+	if(guards)
+		for(var/mob/living/simple_animal/hostile/commanded/guard in (guards & hearers(src,10)))
+			guard.hunt_on(user)
 
 	//Melee weapon embedded object code.
 	if(istype(created_wound) && I && I.can_embed() && I.damtype == BRUTE && !I.anchored && !is_robot_module(I))
