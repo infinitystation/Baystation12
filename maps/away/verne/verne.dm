@@ -37,7 +37,7 @@
 	id = "awaysite_verne"
 	description = "Active CTI research ship"
 	suffixes = list("verne/verne-1.dmm", "verne/verne-2.dmm", "verne/verne-3.dmm")
-	spawn_cost = 1
+	spawn_cost = 0.5
 	player_cost = 4
 	spawn_weight = 1
 	area_usage_test_exempted_root_areas = list(/area/verne)
