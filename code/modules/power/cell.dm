@@ -232,11 +232,25 @@
 /obj/item/cell/slime
 	name = "charged slime core"
 	desc = "A yellow slime core infused with phoron, it crackles with power."
-	origin_tech = list(TECH_POWER = 2, TECH_BIO = 4)
+	origin_tech = list(TECH_POWER = 4, TECH_BIO = 4)
 	icon = 'icons/mob/simple_animal/slimes.dmi' //'icons/obj/harvest.dmi'
 	icon_state = "yellow slime extract" //"potato_battery"
-	maxcharge = 200
+	maxcharge = 2500
 	matter = null
+	var/recharge_amount = 10
+
+
+/obj/item/cell/slime/Initialize()
+	START_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/item/cell/slime/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/item/cell/slime/Process()
+	if(charge < maxcharge)
+		give(recharge_amount)
 
 // Self-charging power cell.
 /obj/item/cell/mantid
