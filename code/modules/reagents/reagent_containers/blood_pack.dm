@@ -10,6 +10,7 @@
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "empty"
 	w_class = ITEM_SIZE_TINY
+	matter = list(MATERIAL_STEEL = 250, MATERIAL_PLASTIC = 700)
 	volume = 120
 	possible_transfer_amounts = "0.2;1;2"
 	amount_per_transfer_from_this = REM
