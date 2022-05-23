@@ -1,4 +1,4 @@
-#define DAMAGED_ASCENT_COLONY_SHIP_NAME "\improper Ascent's Colony Ship"
+#define DAMAGED_ASCENT_COLONY_SHIP_NAME "\improper Ascent Colony Ship"
 
 #include "ascent_areas.dm"
 #include "ascent_jobs.dm"
