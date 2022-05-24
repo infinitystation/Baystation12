@@ -19,21 +19,23 @@
 
 /datum/fabricator_recipe/medical/beaker
 	path = /obj/item/reagent_containers/glass/beaker
-	fabricator_types = list(FABRICATOR_CLASS_MICRO)
+	fabricator_types = list(FABRICATOR_CLASS_MICRO,FABRICATOR_CLASS_GENERAL)
 
 /datum/fabricator_recipe/medical/beaker_large
 	path = /obj/item/reagent_containers/glass/beaker/large
-	fabricator_types = list(FABRICATOR_CLASS_MICRO)
+	fabricator_types = list(FABRICATOR_CLASS_MICRO,FABRICATOR_CLASS_GENERAL)
 
 /datum/fabricator_recipe/medical/beaker_insul
 	path = /obj/item/reagent_containers/glass/beaker/insulated
-	fabricator_types = list(FABRICATOR_CLASS_MICRO)
+	fabricator_types = list(FABRICATOR_CLASS_MICRO,FABRICATOR_CLASS_GENERAL)
+  
 /datum/fabricator_recipe/medical/beaker_insul_large
 	path = /obj/item/reagent_containers/glass/beaker/insulated/large
-	fabricator_types = list(FABRICATOR_CLASS_MICRO)
+	fabricator_types = list(FABRICATOR_CLASS_MICRO,FABRICATOR_CLASS_GENERAL)
+  
 /datum/fabricator_recipe/medical/vial
 	path = /obj/item/reagent_containers/glass/beaker/vial
-	fabricator_types = list(FABRICATOR_CLASS_MICRO)
+	fabricator_types = list(FABRICATOR_CLASS_MICRO,FABRICATOR_CLASS_GENERAL)
 
 /datum/fabricator_recipe/medical/syringe
 	path = /obj/item/reagent_containers/syringe
