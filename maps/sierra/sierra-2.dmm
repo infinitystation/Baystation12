@@ -1906,6 +1906,12 @@
 /obj/effect/floor_decal/spline/fancy/black{
 	dir = 5
 	},
+/obj/item/hookah,
+/obj/item/hookah,
+/obj/item/storage/box/large/coal,
+/obj/item/storage/box/large/coal,
+/obj/item/storage/box/large/coal,
+/obj/item/storage/box/large/coal,
 /turf/simulated/floor/wood/ebony,
 /area/crew_quarters/bar)
 "adU" = (
@@ -8642,8 +8648,8 @@
 	id_tag = "engine_access_hatch";
 	name = "Engine Hatch Bolt Control";
 	pixel_x = -22;
-	req_access = list("ACCESS_ENGINE_EQUIP");
-	pixel_y = -8
+	pixel_y = -8;
+	req_access = list("ACCESS_ENGINE_EQUIP")
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -8653,13 +8659,13 @@
 	},
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/machinery/button/blast_door{
+	desc = "A switch designed to vent all gasses from the engine room into space. Press it if there is a fire in the engine room.";
 	dir = 4;
+	id_tag = "engineroomvent";
+	name = "Emergency Engine Room Vents";
 	pixel_x = -22;
 	pixel_y = 4;
-	desc = "A switch designed to vent all gasses from the engine room into space. Press it if there is a fire in the engine room.";
-	req_access = list("ACCESS_ENGINE_EQUIP");
-	name = "Emergency Engine Room Vents";
-	id_tag = "engineroomvent"
+	req_access = list("ACCESS_ENGINE_EQUIP")
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_monitoring)
@@ -9103,8 +9109,8 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular/open{
 	dir = 8;
-	name = "Engine Radiator Shutters";
-	id_tag = "EngineRadiatorViewport"
+	id_tag = "EngineRadiatorViewport";
+	name = "Engine Radiator Shutters"
 	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
@@ -17222,8 +17228,8 @@
 /obj/effect/wallframe_spawn/reinforced/hull,
 /obj/machinery/door/blast/regular/open{
 	dir = 8;
-	name = "Engine Radiator Shutters";
-	id_tag = "EngineRadiatorViewport"
+	id_tag = "EngineRadiatorViewport";
+	name = "Engine Radiator Shutters"
 	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
@@ -20472,8 +20478,8 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 4;
 	color = "#ff0000";
+	dir = 4;
 	name = "red"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -27124,6 +27130,10 @@
 	pixel_x = 20
 	},
 /obj/structure/closet/cabinet,
+/obj/item/hookah,
+/obj/item/coal,
+/obj/item/coal,
+/obj/item/coal,
 /turf/simulated/floor/wood/walnut,
 /area/vacant/gambling)
 "aWB" = (

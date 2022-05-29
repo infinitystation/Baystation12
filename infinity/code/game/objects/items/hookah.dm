@@ -1,8 +1,3 @@
-/*
- by hacso#9577
- bugs send in discord
-*/
-
 /obj/item/hookah
 	name = "Hookah"
 	icon = 'infinity/icons/obj/item/hookah.dmi'
@@ -10,14 +5,18 @@
 	w_class = ITEM_SIZE_LARGE
 	icon_state = "hookah"
 	item_state = "hookah"
+	randpixel = 0
+	health = 30
+	matter = list(MATERIAL_IRON = 65)
 	var/smoketime = 0
 	var/maxsmoketime = 5000
-	var/tobacco_lit = 0
+	var/tobacco_lit = FALSE
 	var/chem_volume = 50
 	var/icon_on = "hookah"
-	var/lit = 0 // litghted status
+	var/lit = FALSE
 	var/tubes_amount = 3
 	var/list/tubes = list()
+	var/list/tubes_archive = list()
 	var/genericmes = "<span class='info'>USER lights NAME with the FLAME.</span>"
 	var/matchmes = "<span class='info'>USER lights NAME with FLAME.</span>"
 	var/lightermes = "<span class='info'>USER manages to light NAME with FLAME.</span>"
@@ -26,20 +25,54 @@
 	var/ignitermes = "<span class='info'>USER fiddles with FLAME, and manages to light NAME with the power of science.</span>"
 	var/list/filling
 	var/gas_consumption = 0.04
+	var/list/coal_status_examine_msg = list("There is very little coal inside", "Here is a quarter of the full tobacco", "Half full of coal", "Almost full of coal", "Full of coal")
 
-/obj/item/hookah/New()
-	..()
-	desc = replacetext(desc, "AMOUNT", "[tubes_amount]")
+/obj/item/hookah/Initialize()
+	. = ..()
 	atom_flags |= ATOM_FLAG_NO_REACT // so it doesn't react until you light it
 	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 100
+	desc = replacetext(desc, "AMOUNT", "[tubes_amount]")
 
 	var/obj/item/tube/T
 	for(var/i in 1 to tubes_amount)
 		T = new(src)
 		tubes.Add(T)
+		tubes_archive.Add(T)
 
 	for(var/R in filling)
 		reagents.add_reagent(R, filling[R])
+
+/obj/item/hookah/Move()
+	. = ..()
+	for(var/obj/item/tube/T in tubes_archive)
+		T.check_exited()
+
+/obj/item/hookah/dropped(mob/user)
+	. = ..()
+	for(var/obj/item/tube/T in tubes_archive)
+		T.check_exited()
+
+/obj/item/hookah/throw_impact(atom/hit_atom)
+	if(QDELETED(src))
+		return
+
+	if(length(reagents.reagent_list) > 0)
+		reagents.splash(hit_atom, reagents.total_volume)
+	visible_message(
+		SPAN_DANGER("\The [src] shatters from the impact!"),
+		SPAN_DANGER("You hear the sound of glass shattering!")
+	)
+	playsound(src.loc, pick(GLOB.shatter_sound), 100)
+	new /obj/item/material/shard(src.loc)
+	qdel(src)
+
+/obj/item/hookah/examine(mob/user, distance)
+	. = ..()
+	to_chat(user, lit ? "It looks lit up" : "It looks unlit")
+	if(distance <= 1)
+		to_chat(user, smoketime < 500 ? "There is no coal inside" : coal_status_examine_msg[round(smoketime/(maxsmoketime/5), 1)])
+		to_chat(user, reagents.total_volume > 0 ? "There's tobacco here" : "There is no tobacco here")
+
 
 /obj/item/hookah/proc/extinguish(var/mob/user, var/no_message = FALSE)
 	if(!no_message && !user)
@@ -47,7 +80,9 @@
 	else if (!no_message)
 		user.visible_message(SPAN_INFO("[user] shut off the hookah"))
 
-	lit = 0
+	lit = FALSE
+	icon_state = initial(icon_state)
+	item_state = initial(item_state)
 	remove_extension(src, /datum/extension/scent)
 	STOP_PROCESSING(SSobj, src)
 
@@ -98,11 +133,10 @@
 	set name = "Empty the hookah from leaves"
 	set desc = "Empty the hookah with the loss of tobacco leaves"
 
-	tobacco_lit = 0
+	tobacco_lit = FALSE
 
 	reagents.clear_reagents()
 	usr.visible_message(SPAN_WARNING("[usr] empties the hookah from tobacco leaves!"), SPAN_WARNING("You have emptied the hookah!"))
-
 
 /obj/item/hookah/verb/removecoal()
 	set src in view(1)
@@ -113,7 +147,6 @@
 	smoketime = 0
 
 	usr.visible_message(SPAN_WARNING("[usr] empties the hookah from coal!"), SPAN_WARNING("You have emptied the hookah!"))
-
 
 /obj/item/hookah/verb/turnofff()
 	set src in view(1)
@@ -128,13 +161,10 @@
 	extinguish(usr)
 
 /obj/item/hookah/Process()
-	var/turf/location = get_turf(src)
-	if(submerged() || smoketime < 1)
+	if(smoketime < 1)
 		extinguish()
 		return
 	smoketime -= 1
-	if(location)
-		location.hotspot_expose(700, 5)
 
 /obj/item/hookah/attackby(obj/W, mob/user)
 	if(isflamesource(W) || is_hot(W))
@@ -157,12 +187,12 @@
 		light(text)
 	else if(istype(W, /obj/item/tube))
 		var/obj/item/tube/T = W
-		if(T.par != src)
+		if(T.parent != src)
 			to_chat(user, SPAN_WARNING("This tube not from this hookah!"))
 			return
 		tubes.Add(T)
 		user.unEquip(T, src)
-		STOP_PROCESSING(SSobj, T)
+		GLOB.moved_event.unregister(user, T, /obj/item/tube/proc/check_exited)
 		to_chat(user, SPAN_INFO("You put the tube in hookah."))
 	else if(istype(W, /obj/item/coal))
 		var/obj/item/coal/M = W
@@ -176,13 +206,24 @@
 	else if(istype(W, /obj/item/tobacco) || istype(W, /obj/item/reagent_containers/food/snacks/grown/dried_tobacco))
 		if(W.reagents)
 			if(reagents.total_volume == 0)
-				tobacco_lit = 0
+				tobacco_lit = FALSE
 			W.reagents.trans_to_obj(src, W.reagents.total_volume)
 			user.unEquip(W, src)
 			user.visible_message(SPAN_INFO("[user] put tobacco in hookah."), SPAN_INFO("You put tobacco in hookah."))
 			if(lit || tobacco_lit)
 				to_chat(usr, SPAN_WARNING("Immediately after you put the leave in the tray, it lit up."))
 				qdel(W)
+	else if(istype(W, /obj/item/storage/box/large/coal))
+		var/obj/item/storage/box/large/coal/box = W
+		var/coals = round((maxsmoketime-smoketime)/500)
+		if(!coals)
+			return
+		smoketime += 500*coals
+		for(var/i in 1 to coals)
+			qdel(box.contents[1])
+
+		src.visible_message(SPAN_INFO("[user] puts [coals] coal in hookah"), SPAN_INFO("You put [coals] coal in hookah"))
+
 	..()
 
 /obj/item/hookah/proc/light(var/flavor_text = "[usr] lights the [name].")
@@ -191,22 +232,24 @@
 			to_chat(usr, SPAN_WARNING("You cannot light \the [src] underwater."))
 			return
 
-		lit = 1
-		tobacco_lit = 1
+		lit = TRUE
+		tobacco_lit = TRUE
 		for(var/obj/item/tobacco/i in contents)
 			qdel(i)
 		damtype = "burn"
 		var/turf/T = get_turf(src)
 		T.visible_message(flavor_text)
+		icon_state = "hookah_work"
+		item_state = "hookah_work"
 		START_PROCESSING(SSobj, src)
 		set_scent_by_reagents(src)
-
 
 /obj/item/hookah/Destroy()
 	. = ..()
 	if(lit)
 		STOP_PROCESSING(SSobj, src)
-
+	for(var/obj/item/tube/T as anything in tubes_archive)
+		qdel(T)
 
 /obj/item/hookah/water_act(var/depth)
 	..()
@@ -225,7 +268,7 @@
 		to_chat(user, SPAN_WARNING("Your active hand must be empty!"))
 		return
 
-	START_PROCESSING(SSobj, T)
+	GLOB.moved_event.register(user, T, /obj/item/tube/proc/check_exited)
 	tubes.Remove(T)
 
 	to_chat(user, SPAN_INFO("You take's the smoking tube."))
@@ -245,6 +288,8 @@
 
 				to_chat(over, SPAN_INFO("You pick up the [src]."))
 				usr.put_in_hands(src)
+				for(var/obj/item/tube/T as anything in tubes_archive)
+					T.check_exited()
 	return
 
 /obj/effect/effect/smoke/hookah
@@ -256,7 +301,6 @@
 /datum/effect/effect/system/smoke_spread/hookah
 	smoke_type = /obj/effect/effect/smoke/hookah
 
-
 /obj/item/tube
 	name = "Hookah tube"
 	desc = "Large tube connected to the hookah"
@@ -267,12 +311,12 @@
 	w_class = ITEM_SIZE_NO_CONTAINER
 
 	throw_range = 0
-	var/obj/item/hookah/par
+	var/obj/item/hookah/parent
 	var/ready = TRUE
 	var/datum/effect/effect/system/smoke_spread/hookah/smoke_map
 
 /obj/item/tube/New(var/obj/item/hookah/W)
-	par = W
+	parent = W
 	smoke_map = new
 	smoke_map.attach(src)
 	smoke_map.set_up(1, 0)
@@ -282,30 +326,47 @@
 	ready = TRUE
 	return
 
-/obj/item/tube/Process()
-	var/turf/T0 = get_turf(par)
-	var/turf/T1 = get_turf(src)
-	if(T0 != T1 && get_dist(T1, T0) > 1)
+/obj/item/tube/proc/check_exited()
+	var/turf/hookah_pos = get_turf(parent)
+	var/turf/mover_pos = get_turf(src)
+	if(hookah_pos != mover_pos && get_dist(mover_pos, hookah_pos) > 1)
 		if(istype(loc, /mob/living/carbon))
 			var/mob/living/carbon/M = loc
 			visible_message(SPAN_WARNING("Tube placed back to hookah because [loc] go out"))
-			M.unEquip(src, par)
+			M.unEquip(src, parent)
+			GLOB.moved_event.unregister(loc, src, /obj/item/tube/proc/check_exited)
 		else
 			visible_message(SPAN_WARNING("The tube go back to hookah because it was too far away"))
-			par.contents.Add(src)
+			parent.contents.Add(src)
 
-		par.tubes.Add(src)
-		return PROCESS_KILL
+		parent.tubes.Add(src)
+		return TRUE
+	return FALSE
 
 /obj/item/tube/Destroy()
-	STOP_PROCESSING(SSobj,src)
+	if(istype(loc, /mob/living))
+		GLOB.moved_event.unregister(loc, src, /obj/item/tube/proc/check_exited)
 	. = ..()
 
+/obj/item/tube/dropped(mob/user)
+	GLOB.moved_event.unregister(user, src, /obj/item/tube/proc/check_exited)
+	. = ..()
+	check_exited(loc)
+
+/obj/item/tube/Move()
+	. = ..()
+	check_exited(loc)
+
+/obj/item/tube/attack_hand(mob/user)
+	. = ..()
+	if(!check_exited(loc))
+		GLOB.moved_event.register(user, src, /obj/item/tube/proc/check_exited)
+
 /obj/item/tube/attack(mob/living/carbon/human/H, mob/user, def_zone)
-	if (!par.lit)
+	if (!parent.lit)
 		to_chat(user, SPAN_WARNING("You try to drug the smoke, but feel only air from the room. Look's like hookah is'nt lighted."))
 		return
-	if(H == user && istype(H) && ready && ishuman(H))
+	if(H == user && istype(H) && ready && H.check_has_mouth())
 		var/obj/item/blocked = H.check_mouth_coverage()
 		if(blocked)
 			to_chat(H, SPAN_WARNING("\The [blocked] is in the way!"))
@@ -314,18 +375,19 @@
 
 		playsound(H, 'infinity/sound/effects/hookah.ogg', 50, 0, -1)
 		smoke(5)
-		add_trace_DNA(H)
 		ready = FALSE
 		addtimer(CALLBACK(src, .proc/set_ready), 4 SECONDS, TIMER_NO_HASH_WAIT)
 		return 1
 	return ..()
 
 /obj/item/tube/proc/smoke(amount)
-	par.smoketime -= amount
-	if(par.reagents && par.reagents.total_volume) // check if it has any reagents at all
-		var/mob/living/carbon/human/C = loc
-		par.reagents.trans_to_mob(C, 0.1, CHEM_INGEST, 0.2)
-		add_trace_DNA(C)
+	parent.smoketime -= amount
+	if(parent.reagents?.total_volume) // check if it has any reagents at all
+		if(ishuman(loc))
+			var/mob/living/carbon/human/C = loc
+			parent.reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2)
+		else
+			reagents.remove_any(REM)
 	else
 		to_chat(usr, SPAN_WARNING("You cant feel somethink inside of hookah smoke. Maybe tobacco is gone?"))
 		return
@@ -336,12 +398,12 @@
 			var/mob/living/carbon/human/C = loc
 			if (src == C.wear_mask && C.internal)
 				environment = C.internal.return_air()
-		if(environment.get_by_flag(XGM_GAS_OXIDIZER) < par.gas_consumption)
-			par.extinguish()
+		if(environment.get_by_flag(XGM_GAS_OXIDIZER) < parent.gas_consumption)
+			parent.extinguish()
 		else
 			var/datum/gas_mixture/produced = new
-			environment.remove_by_flag(XGM_GAS_OXIDIZER, par.gas_consumption)
-			produced.adjust_gas(GAS_CO2, 0.5*par.gas_consumption,0)
+			environment.remove_by_flag(XGM_GAS_OXIDIZER, parent.gas_consumption)
+			produced.adjust_gas(GAS_CO2, 0.5*parent.gas_consumption,0)
 			produced.adjust_gas(GAS_SMOKE, 1, 0)
 			produced.temperature = T20C+60
 			environment.merge(produced)
@@ -373,6 +435,7 @@
 	desc = "A box with coals for a hookah."
 	icon_state = "largebox"
 	startswith = list(/obj/item/coal = 10)
+	can_hold = list(/obj/item/coal)
 	w_class = ITEM_SIZE_LARGE
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
