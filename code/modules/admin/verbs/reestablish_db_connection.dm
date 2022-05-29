@@ -1,6 +1,6 @@
 /client/proc/reestablish_db_connection_old()
 	set category = "Special Verbs"
-	set name = "Reestablish DB Connection"
+	set name = "Reestablish DB Connection Old"
 
 	if(!config.sql_enabled)
 		to_chat(usr, "<span class='adminnotice'>The Database is not enabled!</span>")
