@@ -114,6 +114,7 @@ What is the naming convention for planes or layers?
 	#define TABLE_LAYER                 2.21
 	#define BELOW_OBJ_LAYER             2.22
 	#define STRUCTURE_LAYER             2.23
+	#define ABOVE_CART					2.24
 	// OBJ_LAYER                        3
 	#define ABOVE_OBJ_LAYER             3.01
 	#define CLOSED_DOOR_LAYER           3.02

@@ -3,6 +3,7 @@
 	desc = "Brand-new cart for heavy things. you can see little logo of NT on the back side."
 	icon = 'icons/obj/cart.dmi'
 	icon_state = "cart"
+	layer = STRUCTURE_LAYER
 	density = FALSE
 	w_class = ITEM_SIZE_LARGE
 	var/haswheels = FALSE
@@ -114,7 +115,7 @@
 		load = cargo
 
 		cargo.plane = plane
-		cargo.layer = VEHICLE_LOAD_LAYER		//so it sits above the vehicle
+		cargo.layer = ABOVE_CART
 
 		if(!istype(cargo, /obj/structure/closet/crate))
 			cargo.pixel_y += 6
@@ -142,7 +143,7 @@
 
 	cargo.pixel_y += 6
 	cargo.plane = plane
-	cargo.layer = VEHICLE_LOAD_LAYER
+	cargo.layer = ABOVE_CART
 
 	overlays += cargo
 
