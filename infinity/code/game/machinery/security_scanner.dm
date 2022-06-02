@@ -33,6 +33,7 @@
 	// Banned items
 	var/list/banned_items = list(/obj/item/gun, /obj/item/melee, /obj/item/grenade)
 	var/list/storage_types = list(/obj/item/storage, /obj/item/clothing/suit/storage, /obj/structure/closet)
+	var/list/whitelisted_items = list(/obj/item/grenade/chem_grenade/cleaner, /obj/item/rig_module/mounted/plasmacutter)
 
 	var/report_scans = FALSE
 
@@ -56,11 +57,10 @@
 /obj/machinery/security_scanner/power_change()
 	if(powered())
 		stat &= ~NOPOWER
-		update_icon()
 	else
 		on = FALSE
 		stat |= NOPOWER
-		update_icon()
+	update_icon()
 
 /obj/machinery/security_scanner/attackby(obj/item/W, mob/user)
 	if(emagged)
@@ -188,21 +188,20 @@
 				trigger(FALSE)
 	return ..()
 
-/obj/machinery/security_scanner/proc/trigger(num)
-	switch(num)
-		if(FALSE)
-			playsound(src, success_sound, 10, 1)
-			flick("scanner_green", src)
-		if(TRUE)
-			playsound(src, fail_sound, 10, 0)
-			flick("scanner_red", src)
+/obj/machinery/security_scanner/proc/trigger(var/flag)
+	if(flag)
+		playsound(src, fail_sound, 10, 0)
+		flick("scanner_red", src)
+		return
+	playsound(src, success_sound, 10, 1)
+	flick("scanner_green", src)
 
 /obj/machinery/security_scanner/proc/do_scan_item(obj/I)
 	var/list/ret = list()
 	if(icon_state != "scanner_on" && istype(I))
 		return
 
-	if(subtype_check(I, banned_items))
+	if(subtype_check(I, banned_items) && !subtype_check(I, whitelisted_items))
 		ret.Add(I)
 		return ret
 	else if(subtype_check(I, storage_types) && I.contents)
@@ -267,7 +266,7 @@
 			var/list/items_to_check = target.contents.Copy()
 			while(length(items_to_check))
 				var/obj/item/I = items_to_check[1]
-				if(subtype_check(I, banned_items))
+				if(subtype_check(I, banned_items) && !subtype_check(I, whitelisted_items))
 					.["level"] += 4
 					.["guns"] += I.name
 					break
