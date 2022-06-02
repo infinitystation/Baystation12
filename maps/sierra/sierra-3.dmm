@@ -11774,7 +11774,10 @@
 	dir = 4
 	},
 /obj/machinery/door/window/brigdoor/eastright{
-	req_access = newlist()
+	id_tag = null;
+	polarized = 1;
+	req_access = newlist();
+	tint_id = "iaaleft"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/iaa)
@@ -11789,7 +11792,10 @@
 	dir = 4
 	},
 /obj/machinery/door/window/brigdoor/westleft{
-	req_access = newlist()
+	id_tag = null;
+	polarized = 1;
+	req_access = newlist();
+	tint_id = "iaaright"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/office/iaa)
@@ -20259,7 +20265,9 @@
 /obj/machinery/door/window/northleft{
 	dir = 8;
 	name = "Security Sergeant's Desk";
-	req_access = newlist()
+	polarized = 1;
+	req_access = newlist();
+	tint_id = "bo_windows"
 	},
 /obj/machinery/door/blast/shutters{
 	dir = 4;
@@ -21723,7 +21731,9 @@
 "aJF" = (
 /obj/machinery/door/window/southleft{
 	name = "HoP's Desk";
-	req_access = newlist()
+	polarized = 1;
+	req_access = newlist();
+	tint_id = "hop_windows"
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/wall_frame/prepainted,
@@ -37578,9 +37588,9 @@
 	controlled = 0;
 	internal_pressure_bound = 35000;
 	internal_pressure_bound_default = 35000;
-	use_power = 1;
 	pressure_checks = 2;
-	pressure_checks_default = 2
+	pressure_checks_default = 2;
+	use_power = 1
 	},
 /turf/simulated/floor/airless,
 /area/thruster/d1starboard)
@@ -38544,12 +38554,12 @@
 "ijb" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	controlled = 0;
+	dir = 1;
 	internal_pressure_bound = 35000;
 	internal_pressure_bound_default = 35000;
-	use_power = 1;
 	pressure_checks = 2;
 	pressure_checks_default = 2;
-	dir = 1
+	use_power = 1
 	},
 /turf/simulated/floor/airless,
 /area/thruster/d1starboard)

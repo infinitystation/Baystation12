@@ -8919,7 +8919,9 @@
 /obj/machinery/door/window/brigdoor/northleft{
 	dir = 2;
 	name = "Quartermaster";
-	req_access = newlist()
+	polarized = 1;
+	req_access = newlist();
+	tint_id = "do_windows"
 	},
 /obj/machinery/door/blast/shutters{
 	dir = 2;
@@ -29538,9 +29540,9 @@
 	controlled = 0;
 	internal_pressure_bound = 35000;
 	internal_pressure_bound_default = 35000;
-	use_power = 1;
 	pressure_checks = 2;
-	pressure_checks_default = 2
+	pressure_checks_default = 2;
+	use_power = 1
 	},
 /turf/simulated/floor/airless,
 /area/thruster/d3starboard)
@@ -29777,12 +29779,12 @@
 "WK" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	controlled = 0;
+	dir = 1;
 	internal_pressure_bound = 35000;
 	internal_pressure_bound_default = 35000;
-	use_power = 1;
 	pressure_checks = 2;
 	pressure_checks_default = 2;
-	dir = 1
+	use_power = 1
 	},
 /turf/simulated/floor/airless,
 /area/thruster/d3starboard)

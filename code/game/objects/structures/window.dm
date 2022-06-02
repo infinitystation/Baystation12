@@ -770,9 +770,13 @@
 /obj/machinery/button/windowtint/activate()
 	if(operating)
 		return
-	for(var/obj/structure/window/W in range(src,range))
+	var/list/tinting_devices = range(src,range)
+	for(var/obj/structure/window/W in tinting_devices)
 		if(W.polarized && (W.id == src.id || !W.id))
 			W.toggle()
+	for(var/obj/machinery/door/window/W in tinting_devices)
+		if(W.polarized && (W.tint_id == src.id || !W.tint_id))
+			W.toggle_tint()
 	..()
 
 /obj/machinery/button/windowtint/power_change()
