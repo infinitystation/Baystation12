@@ -248,3 +248,10 @@
 	cost = 50
 	containertype = /obj/structure/largecrate
 	containername = "\improper Vending Machine"
+
+/decl/hierarchy/supply_pack/supply/crates
+	name = "Vendor - Crate-o-Mat - ODAO LCC"
+	contains = list(/obj/machinery/vending/crates{anchored = FALSE})
+	cost = 20
+	containertype = /obj/structure/largecrate
+	containername = "\improper Vending Machine"
