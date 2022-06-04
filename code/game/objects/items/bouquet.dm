@@ -14,8 +14,8 @@
 	var/filled = FALSE
 
 /obj/item/bouquet/update_icon()
-	for(var/obj/item/reagent_containers/food/snacks/grown/flower as anything in contentflovers)
-		switch (flower.plantname)
+	for(var/flower as anything in contentflovers)
+		switch (flower)
 			if ("harebells")	overlays += image(icon, "flower_1")
 			if ("poppies")		overlays += image(icon, "flower_2")
 			if ("lavender")		overlays += image(icon, "flower_3")
@@ -28,7 +28,7 @@
 
 	var/obj/item/reagent_containers/food/snacks/grown/flower = weapon
 
-	if(flower in contentflovers)
+	if(flower.plantname in contentflovers)
 		to_chat(user, SPAN_WARNING("There is already this flower here."))
 		return
 
@@ -36,7 +36,7 @@
 		to_chat(user, SPAN_WARNING("This flower will look to strange in bouquet..."))
 		return
 
-	contentflovers.Add(flower)
+	contentflovers.Add(flower.plantname)
 	qdel(flower)
 	update_icon()
 	visible_message(SPAN_INFO("[user] put's [flower.plantname] in the bouquet."))
@@ -73,5 +73,5 @@
 	qdel(flower)
 	var/obj/item/bouquet/B = new(get_turf(src))
 	qdel(src)
-	user.put_in_any_hand_if_possible(B)
+	user.put_in_hands(B)
 	to_chat(user, SPAN_INFO("You placed grass into the pitcher."))
