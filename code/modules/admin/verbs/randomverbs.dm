@@ -830,3 +830,63 @@ Ccomp's first proc.
 		to_chat(usr, "Random events disabled")
 		message_admins("Admin [key_name_admin(usr)] has disabled random events.", 1)
 	SSstatistics.add_field_details("admin_verb","TRE") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/client/proc/cmd_admin_simulate_distant_explosion()
+	set category = "Fun"
+	set name = "Simulate Distant Explosion"
+	set desc = "Plays distant explosion audio and optionally causes players to fall over"
+	var/client/user = resolve_client()
+	if (!check_rights(R_ADMIN, TRUE, user))
+		return
+	var/turf/turf = get_turf(mob)
+	if (!turf)
+		to_chat(user, SPAN_WARNING("You must be in the game world to use this command."))
+		return
+	var/list/levels = GetConnectedZlevels(turf.z)
+	if (!length(levels))
+		to_chat(user, SPAN_WARNING("No levels connected to this z-group."))
+		return
+	levels = sortList(levels)
+	var/mode
+	var/response = alert(user, "Players on levels [levels.Join(", ")] will be affected.\nShould they be knocked over?", "Simulate Distant Explosion", "Yes", "No", "Cancel")
+	if (!response || response == "Cancel")
+		return
+	if (response == "Yes")
+		response = alert(user, "Should all players be knocked down, or only unstable ones?", "Simulate Distant Explosion", "Unstable", "All", "Cancel")
+		if (!response || response == "Cancel")
+			return
+		if (response == "All")
+			mode = 2
+		else
+			mode = 1
+	var/affected = 0
+	var/floored = 0
+	for (var/mob/player as anything in GLOB.player_list)
+		var/living = isliving(player)
+		if (!living && !isobserver(player))
+			continue
+		turf = get_turf(player)
+		if (!(turf?.z in levels))
+			continue
+		++affected
+		player.playsound_local(player, 'sound/effects/explosionfar.ogg', 15)
+		if (!mode)
+			continue
+		if (!living || !player.can_be_floored())
+			continue
+		var/fall = mode
+		if (fall == 1)
+			var/since_move = world.time - player.l_move_time
+			if (since_move > 5 SECONDS)
+				fall = prob(20)
+			else if (since_move > 3 SECONDS)
+				fall = MOVING_QUICKLY(player) ? prob(75) : prob(20)
+			else
+				fall = MOVING_QUICKLY(player) ? prob(75) : prob(50)
+		if (fall)
+			to_chat(player, SPAN_DANGER("You stumble onto the floor from the shaking!"))
+			player.AdjustWeakened(2)
+			player.AdjustStunned(2)
+			shake_camera(player, rand(5,20), 1)
+			++floored
+	log_and_message_admins("[key_name_admin(user)] simulated a distant explosion, affecting [affected] players and flooring [floored] on levels [levels.Join(", ")].")
