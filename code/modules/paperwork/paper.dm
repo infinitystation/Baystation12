@@ -50,7 +50,7 @@
 	var/datum/language/language = LANGUAGE_HUMAN_EURO // Language the paper was written in. Editable by users up until something's actually written
 
 	var/const/deffont = "Verdana"
-	var/const/signfont = "Times New Roman"
+	var/const/signfont = "Monotype Corsiva"
 	var/const/crayonfont = "Comic Sans MS"
 	var/const/fancyfont = "Segoe Script"
 
