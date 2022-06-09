@@ -13,7 +13,7 @@
 	var/list/contentflovers = list()
 	var/filled = FALSE
 
-/obj/item/bouquet/update_icon()
+/obj/item/bouquet/on_update_icon()
 	for(var/flower as anything in contentflovers)
 		switch (flower)
 			if ("harebells")	overlays += image(icon, "flower_1")

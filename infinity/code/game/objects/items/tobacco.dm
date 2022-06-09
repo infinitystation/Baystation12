@@ -2,6 +2,7 @@
 	name = "Peace of tobacco"
 	desc = "Tobacco who used in hookah's for make smoke"
 	w_class = ITEM_SIZE_TINY
+	color = "#53240A"
 
 	icon = 'icons/obj/hydroponics_products.dmi'
 	icon_state = "tobacco-product"
