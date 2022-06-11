@@ -187,7 +187,7 @@
 			return SURGERY_SKILLS_ROBOTIC_ON_MEAT
 	else
 		return ..()
-	
+
 /decl/surgery_step/internal/remove_organ/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message("\The [user] starts removing [target]'s [LAZYACCESS(target.surgeries_in_progress, target_zone)] with \the [tool].", \
@@ -263,13 +263,18 @@
 		else
 			var/o_is = (O.gender == PLURAL) ? "are" : "is"
 			var/o_a =  (O.gender == PLURAL) ? "" : "a "
+			var/list/visible_implants = target.get_visible_implants()
+			for(var/obj/item/organ/implant as anything in visible_implants)
+				if(implant.organ_tag == O.organ_tag)
+					to_chat(user, SPAN_WARNING("\The [target] already has [o_a][O.name]."))
+					return
 			if(O.organ_tag == BP_POSIBRAIN && !target.species.has_organ[BP_POSIBRAIN])
 				to_chat(user, SPAN_WARNING("There's no place in [target] to fit \the [O.organ_tag]."))
 			else if(O.damage > (O.max_damage * 0.75))
 				to_chat(user, SPAN_WARNING("\The [O.name] [o_is] in no state to be transplanted."))
 			else if(O.w_class > affected.cavity_max_w_class)
 				to_chat(user, SPAN_WARNING("\The [O.name] [o_is] too big for [affected.cavity_name] cavity!"))
-			else 
+			else
 				var/obj/item/organ/internal/I = target.internal_organs_by_name[O.organ_tag]
 				if(I && (I.parent_organ == affected.organ_tag))
 					to_chat(user, SPAN_WARNING("\The [target] already has [o_a][O.name]."))
