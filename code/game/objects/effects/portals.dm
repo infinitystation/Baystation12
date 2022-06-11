@@ -38,6 +38,8 @@
 			dangerous = 1
 	playsound(src, 'sound/effects/phasein.ogg', 25, 1)
 	target = end
+	for(var/mob/living/M in src.loc)
+		src.teleport(M)
 
 	if(delete_after)
 		spawn(delete_after)
