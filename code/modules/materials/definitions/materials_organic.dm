@@ -47,7 +47,7 @@
 	conductive = 0
 	value = 0
 
-/material/cloth //todo
+/material/cloth
 	name = MATERIAL_CLOTH
 	display_name ="white"
 	use_name = "cloth roll"
@@ -62,6 +62,7 @@
 	weight = 1
 	brute_armor = 1
 	conductive = 0
+	sale_price = 0.5
 	stack_type = null
 	hidden_from_codex = TRUE
 	construction_difficulty = MATERIAL_NORMAL_DIY

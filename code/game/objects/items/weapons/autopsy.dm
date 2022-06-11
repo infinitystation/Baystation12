@@ -10,7 +10,7 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
-	matter = list(MATERIAL_STEEL = 2000, MATERIAL_GLASS = 350)
+	matter = list(MATERIAL_STEEL = 400, MATERIAL_GLASS = 200)
 	var/list/datum/autopsy_data_scanner/wdata = list()
 	var/list/chemtraces = list()
 	var/target_name = null

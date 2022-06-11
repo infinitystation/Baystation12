@@ -8150,7 +8150,6 @@
 /obj/item/bodybag/rescue/loaded{
 	pixel_y = 2
 	},
-/obj/item/bodybag/rescue/loaded,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 10
 	},
@@ -8170,6 +8169,15 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/item/bodybag/rescue/loaded{
+	pixel_y = 2
+	},
+/obj/item/bodybag/rescue/loaded{
+	pixel_y = 2
+	},
+/obj/item/bodybag/rescue/loaded{
+	pixel_y = 2
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/equipstorage)
 "anV" = (
@@ -10514,9 +10522,6 @@
 /area/medical/sleeper)
 "arT" = (
 /obj/structure/table/standard,
-/obj/item/bodybag/rescue/loaded,
-/obj/item/bodybag/rescue/loaded,
-/obj/item/bodybag/rescue/loaded,
 /obj/item/storage/box/freezer{
 	pixel_x = 5;
 	pixel_y = 9
@@ -10530,6 +10535,9 @@
 	},
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
+/obj/item/bodybag/cryobag,
+/obj/item/bodybag/cryobag,
+/obj/item/bodybag/cryobag,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "arU" = (

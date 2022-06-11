@@ -28,7 +28,7 @@
 				/datum/reagent/carbon = 10,
 				/datum/reagent/water = 5
 				)
-	sale_price = 1
+	sale_price = 0.2
 	value = 3
 
 /material/wood/holographic
@@ -47,7 +47,7 @@
 	adjective_name = MATERIAL_MAHOGANY
 	icon_colour = WOOD_COLOR_RICH
 	construction_difficulty = MATERIAL_HARD_DIY
-	sale_price = 3
+	sale_price = 1
 	value = 45
 
 /material/wood/maple
@@ -67,7 +67,7 @@
 	weight = 22
 	integrity = 100
 	construction_difficulty = MATERIAL_VERY_HARD_DIY
-	sale_price = 6
+	sale_price = 3
 	value = 85
 
 /material/wood/walnut
@@ -79,7 +79,7 @@
 	icon_colour = WOOD_COLOR_CHOCOLATE
 	weight = 20
 	construction_difficulty = MATERIAL_HARD_DIY
-	sale_price = 2
+	sale_price = 1
 	value = 21
 
 /material/wood/bamboo

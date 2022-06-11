@@ -202,6 +202,7 @@
 	door_icon_base = "metal"
 	icon_colour = "#d1e6e3"
 	icon_reinf = "reinf_metal"
+	sale_price = 0.5
 	construction_difficulty = MATERIAL_VERY_HARD_DIY
 	alloy_materials = null
 	alloy_product = FALSE

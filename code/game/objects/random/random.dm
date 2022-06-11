@@ -544,22 +544,29 @@ obj/random/closet //A couple of random closets to spice up maint
 	icon_state = "sheet"
 
 /obj/random/material/spawn_choices()
-	return list(/obj/item/stack/material/steel/ten,
-				/obj/item/stack/material/glass/ten,
-				/obj/item/stack/material/glass/reinforced/ten,
-				/obj/item/stack/material/plastic/ten,
-				/obj/item/stack/material/wood/ten,
-				/obj/item/stack/material/cardboard/ten,
-				/obj/item/stack/material/rods/ten,
-				/obj/item/stack/material/plasteel/ten,
-				/obj/item/stack/material/steel/fifty,
-				/obj/item/stack/material/glass/fifty,
-				/obj/item/stack/material/glass/reinforced/fifty,
-				/obj/item/stack/material/plastic/fifty,
-				/obj/item/stack/material/wood/fifty,
-				/obj/item/stack/material/cardboard/fifty,
-				/obj/item/stack/material/rods/fifty,
-				/obj/item/stack/material/plasteel/fifty)
+	return list(/obj/item/stack/material/steel/ten              = 20,
+				/obj/item/stack/material/glass/ten              = 20,
+				/obj/item/stack/material/glass/reinforced/ten   = 15,
+				/obj/item/stack/material/plastic/ten            = 20,
+				/obj/item/stack/material/wood/ten               = 20,
+				/obj/item/stack/material/cardboard/ten          = 20,
+				/obj/item/stack/material/rods/ten               = 20,
+				/obj/item/stack/material/plasteel/ten           = 10,
+				/obj/item/stack/material/phoron/ten             = 1,
+				/obj/item/stack/material/aluminium/ten          = 20,
+				/obj/item/stack/material/titanium/ten           = 40,
+				/obj/item/stack/material/diamond/ten            = 1,
+				/obj/item/stack/material/gold/ten               = 1,
+				/obj/item/stack/material/silver/ten             = 10,
+				/obj/item/stack/material/uranium/ten            = 10,
+				/obj/item/stack/material/wood/ebony/ten         = 5,
+				/obj/item/stack/material/wood/mahogany/ten      = 10,
+				/obj/item/stack/material/wood/walnut/ten        = 10,
+				/obj/item/stack/material/ocp/ten                = 5,
+				/obj/item/stack/material/osmium/ten             = 5,
+				/obj/item/stack/material/platinum/ten           = 1,
+				/obj/item/stack/material/phoron/ten             = 1,
+				/obj/item/stack/material/marble/ten             = 1)
 
 /obj/random/soap
 	name = "Random Cleaning Supplies"
@@ -1069,7 +1076,53 @@ something, make sure it's not in one of the other lists.*/
 				/obj/item/rig/light/hacker,
 				/obj/item/rig/light/stealth,
 				/obj/item/rig/light,
-				/obj/item/rig/unathi)
+				/obj/item/rig/unathi,
+				/obj/item/rig/unathi/fancy,
+				/obj/item/rig/zero,
+				/obj/item/rig/hazard)
+
+/obj/random/cargo
+	name = "cargo random item"
+	desc = "This is a random cargo loot spawn."
+	icon = 'icons/obj/shipping_crates.dmi'
+	icon_state = "mulecrate"
+
+/obj/random/cargo/spawn_choices()
+	return list(/obj/random/storage                = 100,
+				/obj/item/storage/box/lights/mixed = 10,
+				/obj/item/device/taperecorder      = 10,
+				/obj/item/storage/candle_box       = 10,
+				/obj/item/laserframe               = 10,
+				/obj/item/storage/box/donkpockets  = 20,
+				/obj/item/device/gps               = 10,
+				/obj/item/device/scanner/mining    = 40,
+				/obj/item/device/serial            = 10,
+				/obj/random/action_figure          = 20,
+				/obj/random/toolbox                = 80,
+				/obj/random/tool                   = 300,
+
+				/obj/item/bodybag/cryobag          = 20,
+				/obj/item/device/robotanalyzer     = 10,
+				/obj/item/device/scanner/health    = 10,
+				/obj/item/auto_cpr                 = 10,
+				/obj/item/roller                   = 10,
+				/obj/item/bodybag/rescue/loaded    = 10,
+				/obj/item/defibrillator            = 10,
+				/obj/random/medical                = 60,
+				/obj/random/medical/lite           = 60,
+				/obj/random/firstaid               = 60,
+
+				/obj/random/tech_supply            = 250,
+				/obj/random/advdevice              = 250,
+				/obj/random/material               = 400,
+
+				/obj/random/hardsuit               = 1,
+				/obj/random/loot                   = 6,
+				/obj/random/contraband             = 20,
+				/obj/random/ammo                   = 4,
+				/obj/random/handgun                = 1,
+				/obj/random/projectile             = 1,
+				/obj/random/energy                 = 1)
 
 /obj/random/hostile
 	name = "Random Hostile Mob"

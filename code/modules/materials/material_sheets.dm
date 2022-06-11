@@ -327,6 +327,9 @@
 /obj/item/stack/material/steel/ten
 	amount = 10
 
+/obj/item/stack/material/steel/twenty_five
+	amount = 25
+
 /obj/item/stack/material/steel/fifty
 	amount = 50
 
@@ -353,6 +356,9 @@
 /obj/item/stack/material/titanium/ten
 	amount = 10
 
+/obj/item/stack/material/titanium/twenty_five
+	amount = 25
+
 /obj/item/stack/material/titanium/fifty
 	amount = 50
 
@@ -366,6 +372,9 @@
 
 /obj/item/stack/material/plasteel/ten
 	amount = 10
+
+/obj/item/stack/material/plasteel/twenty_five
+	amount = 25
 
 /obj/item/stack/material/plasteel/fifty
 	amount = 50
@@ -597,6 +606,9 @@
 /obj/item/stack/material/glass/ten
 	amount = 10
 
+/obj/item/stack/material/glass/twenty_five
+	amount = 25
+
 /obj/item/stack/material/glass/fifty
 	amount = 50
 
@@ -610,6 +622,9 @@
 
 /obj/item/stack/material/glass/reinforced/ten
 	amount = 10
+
+/obj/item/stack/material/glass/reinforced/twenty_five
+	amount = 25
 
 /obj/item/stack/material/glass/reinforced/fifty
 	amount = 50
