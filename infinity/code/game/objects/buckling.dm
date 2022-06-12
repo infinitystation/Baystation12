@@ -8,6 +8,7 @@
 /obj/Move()
 	. = ..()
 	if(buckled_mob)
+		buckled_mob.set_glide_size(src.glide_size)
 		GLOB.moved_event.unregister(buckled_mob, src, /obj/proc/check_for_unbuckle)
 		buckled_mob.prepbucklemover = src
 		addtimer(CALLBACK(buckled_mob, /mob/proc/ResetPrepareBuckleMove), 0, TIMER_UNIQUE|TIMER_OVERRIDE)
