@@ -1063,7 +1063,7 @@
 /area/yacht/engine)
 "ci" = (
 /obj/machinery/power/solar_control{
-	id = yachtsolar;
+	id = "yachtsolar";
 	name = "Yacht Solar control";
 	track = 0
 	},
@@ -1787,6 +1787,11 @@
 /obj/effect/floor_decal/industrial/firstaid{
 	dir = 1;
 	icon_state = "stripe"
+	},
+/obj/structure/extinguisher_cabinet{
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
@@ -2685,10 +2690,6 @@
 /turf/simulated/floor/airless,
 /area/yacht/bridge)
 "xT" = (
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
-	},
 /obj/machinery/sleeper{
 	dir = 1;
 	icon_state = "sleeper_0"
@@ -2733,7 +2734,7 @@
 /area/yacht/living)
 "zJ" = (
 /obj/structure/bed/sofa/l/black{
-	dir = 8;
+	dir = 8
 	},
 /turf/simulated/floor/carpet/purple,
 /area/yacht/living)
@@ -2831,10 +2832,6 @@
 "GU" = (
 /obj/structure/table/marble,
 /obj/machinery/reagentgrinder/juicer,
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
-	},
 /obj/effect/floor_decal/corner/darkblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
@@ -2870,6 +2867,9 @@
 	},
 /obj/machinery/cooker/oven,
 /obj/effect/floor_decal/corner/darkblue/diagonal,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 28
+	},
 /turf/simulated/floor/tiled/white,
 /area/yacht/living)
 "Jh" = (
@@ -3075,7 +3075,7 @@
 	dir = 8
 	},
 /obj/structure/bed/sofa/r/black{
-	dir = 8;
+	dir = 8
 	},
 /turf/simulated/floor/carpet/purple,
 /area/yacht/living)
