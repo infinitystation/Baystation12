@@ -36,8 +36,9 @@
 	contains = list(/obj/item/storage/toolbox/electrical = 2,
 					/obj/item/clothing/gloves/insulated = 2,
 					/obj/item/cell/standard = 2,
-					/obj/item/cell/high = 2)
-	cost = 15
+					/obj/item/cell/high = 2,
+					/obj/item/device/multitool/multimeter = 2)
+	cost = 25
 	containername = "electrical maintenance crate"
 
 /decl/hierarchy/supply_pack/engineering/mechanical
