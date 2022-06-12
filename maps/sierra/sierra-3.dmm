@@ -423,7 +423,7 @@
 "aaS" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/plating,
@@ -1299,7 +1299,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/heads/captain/secret_room/level_two)
@@ -2241,7 +2241,7 @@
 "aey" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
@@ -2258,7 +2258,7 @@
 "aez" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
@@ -2275,7 +2275,7 @@
 "aeA" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 4;
@@ -3399,16 +3399,17 @@
 	},
 /obj/machinery/button/holosign{
 	id_tag = "sierra_surgery2";
-	pixel_x = 2;
-	pixel_y = 28
+	pixel_x = 1;
+	pixel_y = 29
 	},
 /obj/machinery/button/windowtint{
 	id = "sierra_surgery2";
-	pixel_x = -3;
-	pixel_y = 28
+	pixel_x = -5;
+	pixel_y = 28;
+	dir = 2
 	},
 /obj/machinery/light_switch{
-	pixel_x = 7;
+	pixel_x = 6;
 	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/white,
@@ -3438,7 +3439,7 @@
 /obj/machinery/organ_printer/robot/mapped,
 /obj/item/device/radio/intercom/department/medbay{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/white,
@@ -3783,7 +3784,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d1starboard)
@@ -5533,7 +5534,7 @@
 /obj/machinery/organ_printer/robot/mapped,
 /obj/item/device/radio/intercom/department/medbay{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
@@ -5685,7 +5686,7 @@
 /obj/item/storage/firstaid/regular,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/fire/special,
@@ -8036,7 +8037,7 @@
 "anN" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -9505,7 +9506,7 @@
 "apY" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -9552,7 +9553,8 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/drone_fabrication)
@@ -9766,7 +9768,7 @@
 "aqv" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -10256,7 +10258,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/structure/closet/secure_closet/guncabinet/sierra_armory/egun,
 /obj/structure/railing/mapped{
@@ -10442,7 +10444,7 @@
 /obj/structure/reagent_dispensers/watertank,
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/eva)
@@ -10758,7 +10760,7 @@
 "asq" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/hall/level_two)
@@ -10794,7 +10796,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10958,7 +10960,8 @@
 /area/security/sierra/forensic)
 "asG" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -12203,7 +12206,7 @@
 /obj/item/pen,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/item/device/flashlight/lamp{
 	pixel_x = 14;
@@ -12259,7 +12262,7 @@
 /obj/item/folder/red,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -12460,7 +12463,8 @@
 /obj/structure/table/steel_reinforced,
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_y = 29
+	pixel_y = 0;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/eva)
@@ -12705,7 +12709,7 @@
 /area/security/sierra/armory/lobby)
 "awQ" = (
 /obj/structure/extinguisher_cabinet{
-	dir = 8;
+	dir = 1;
 	pixel_y = -22
 	},
 /obj/machinery/recharger,
@@ -13114,7 +13118,7 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/eva)
@@ -13583,8 +13587,8 @@
 	pixel_y = -21
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+	dir = 4;
+	pixel_x = -24
 	},
 /obj/machinery/firealarm{
 	dir = 1;
@@ -13727,7 +13731,8 @@
 	pixel_y = -24
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6
@@ -13960,7 +13965,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 10
@@ -14007,7 +14012,7 @@
 /obj/structure/closet/emcloset,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/structure/cable{
 	d1 = 2;
@@ -14423,7 +14428,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/machinery/light{
 	dir = 1
@@ -16036,7 +16041,6 @@
 /area/hallway/primary/firstdeck/aft)
 "aCb" = (
 /obj/structure/extinguisher_cabinet{
-	dir = 4;
 	pixel_y = 29
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -16402,7 +16406,7 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 8;
+	dir = 1;
 	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -16415,7 +16419,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/hallway/aft)
@@ -17760,7 +17764,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/wood/walnut,
 /area/bridge/adjutants)
@@ -18286,7 +18290,7 @@
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/corner/green/bordercorner,
 /obj/structure/extinguisher_cabinet{
-	dir = 8;
+	dir = 1;
 	pixel_y = -22
 	},
 /turf/simulated/floor/tiled,
@@ -18317,7 +18321,7 @@
 /obj/effect/floor_decal/corner/green/border,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9
@@ -18618,7 +18622,7 @@
 /obj/machinery/navbeacon/sierra/FD_aftcentralhallway1,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
@@ -18641,7 +18645,7 @@
 /area/hallway/primary/firstdeck/aft)
 "aFw" = (
 /obj/structure/extinguisher_cabinet{
-	dir = 8;
+	dir = 1;
 	pixel_y = -22
 	},
 /obj/effect/floor_decal/borderfloor/corner2,
@@ -18672,7 +18676,7 @@
 /obj/effect/floor_decal/corner/purple/border,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9
@@ -18960,7 +18964,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
@@ -19186,8 +19190,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+	dir = 4;
+	pixel_x = -24
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -19248,7 +19252,6 @@
 	},
 /obj/item/device/serial,
 /obj/structure/extinguisher_cabinet{
-	dir = 4;
 	pixel_y = 29
 	},
 /obj/machinery/firealarm{
@@ -20339,7 +20342,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -21504,11 +21507,11 @@
 	},
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
-	dir = 8;
+	dir = 10;
 	id_tag = "wardoor";
 	name = "Office Door Control";
-	pixel_x = 24;
-	pixel_y = -21;
+	pixel_x = 25;
+	pixel_y = -18;
 	req_access = list("ACCESS_WARDEN")
 	},
 /obj/structure/bed/chair/office/comfy/red{
@@ -21584,16 +21587,16 @@
 	desc = "A remote control-switch for the office door.";
 	id_tag = "security_entry_airlock_exit";
 	name = "Security Exit Airlock";
-	pixel_x = -6;
-	pixel_y = 10;
+	pixel_x = -5;
+	pixel_y = 9;
 	req_access = list("ACCESS_WARDEN")
 	},
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
 	id_tag = "security_entry_airlock_enter";
 	name = "Security Entry Airlock";
-	pixel_x = 6;
-	pixel_y = 10;
+	pixel_x = 5;
+	pixel_y = 9;
 	req_access = list("ACCESS_WARDEN")
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2{
@@ -22220,7 +22223,7 @@
 /obj/item/pen,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
@@ -22485,7 +22488,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
@@ -22566,7 +22569,7 @@
 /obj/item/stamp/ward,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/sierra/sergeant)
@@ -23068,8 +23071,8 @@
 "aLs" = (
 /obj/machinery/r_n_d/destructive_analyzer,
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+	dir = 4;
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/techfloor/orange,
 /obj/effect/floor_decal/techfloor/corner{
@@ -23593,7 +23596,6 @@
 /obj/item/device/flashlight/lamp/green,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/extinguisher_cabinet{
-	dir = 4;
 	pixel_y = 29
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -23767,7 +23769,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/heads/office/hop)
@@ -23835,7 +23837,7 @@
 /obj/effect/floor_decal/techfloor,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo/upper)
@@ -23943,7 +23945,7 @@
 /obj/item/pen,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/machinery/newscaster{
 	pixel_x = 28
@@ -24210,7 +24212,7 @@
 /obj/effect/floor_decal/corner/purple/border,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/office/rd)
@@ -24557,7 +24559,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/sierra/equipment)
@@ -25340,7 +25342,6 @@
 	pixel_x = 24;
 	pixel_y = 4
 	},
-/obj/item/clothing/gloves/white,
 /obj/item/clothing/mask/surgical,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 5
@@ -25348,6 +25349,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
 	},
+/obj/item/clothing/gloves/latex,
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "aOD" = (
@@ -26389,7 +26391,6 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 4;
 	pixel_y = 29
 	},
 /obj/effect/floor_decal/borderfloorwhite/corner2{
@@ -26577,7 +26578,7 @@
 /obj/item/device/robotanalyzer,
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -26627,10 +26628,6 @@
 	pixel_x = -32
 	},
 /obj/item/barrier,
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -27060,7 +27057,7 @@
 "aQW" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
@@ -27747,13 +27744,14 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_y = 0;
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "aRN" = (
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
-	},
 /obj/item/storage/box/lights/mixed,
 /obj/random/maintenance,
 /obj/structure/table/rack,
@@ -29753,6 +29751,11 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_y = 0;
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/bridge)
 "aUX" = (
@@ -29978,7 +29981,7 @@
 /obj/structure/holoplant,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9
@@ -30879,7 +30882,7 @@
 /obj/machinery/telecomms/bus/preset_two,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/bluegrid,
 /area/tcommsat/chamber)
@@ -30944,10 +30947,6 @@
 /area/tcommsat/computer)
 "aXd" = (
 /obj/item/clothing/suit/storage/hooded/wintercoat/engineering,
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
-	},
 /obj/item/clothing/suit/storage/hooded/wintercoat/engineering,
 /obj/structure/table/rack/dark,
 /turf/simulated/floor/tiled/techfloor,
@@ -30971,6 +30970,11 @@
 	pixel_y = -7
 	},
 /obj/item/device/multitool,
+/obj/structure/extinguisher_cabinet{
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/computer)
 "aXg" = (
@@ -31088,7 +31092,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
@@ -31136,7 +31140,7 @@
 /obj/effect/floor_decal/corner/green/border,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/brig)
@@ -31554,7 +31558,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/rnd/storage)
@@ -31742,7 +31746,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/prison)
@@ -31949,7 +31953,8 @@
 /area/rnd/research)
 "aZx" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/structure/holoplant,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -34219,7 +34224,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralport)
@@ -35533,7 +35538,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/solar)
@@ -37078,19 +37083,19 @@
 /obj/machinery/button/windowtint{
 	dir = 1;
 	id = "sierra_surgery1";
-	pixel_x = -3;
-	pixel_y = -20
+	pixel_x = -5;
+	pixel_y = -21
 	},
 /obj/machinery/button/holosign{
 	dir = 1;
 	id_tag = "surgery1";
-	pixel_x = 2;
+	pixel_x = 1;
 	pixel_y = -20
 	},
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 6;
-	pixel_y = -20
+	pixel_y = -21
 	},
 /obj/effect/floor_decal/corner/blue{
 	dir = 1
@@ -37333,7 +37338,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/item/device/radio/intercom/locked/ai_private{
 	pixel_x = 5;
@@ -37862,7 +37867,6 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 4;
 	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/white,
@@ -38333,7 +38337,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/corner/lime/bordercorner,
@@ -39191,7 +39195,7 @@
 "kCl" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/machinery/message_server,
 /obj/structure/cable/yellow{
@@ -40407,6 +40411,11 @@
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/extinguisher_cabinet{
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/hop)
 "nEh" = (
@@ -40642,10 +40651,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)
 "osv" = (
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
-	},
 /obj/machinery/computer/account_database{
 	dir = 1
 	},
@@ -41757,7 +41762,7 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /obj/structure/bed/chair/rounded/blue{
 	dir = 8
@@ -41767,7 +41772,7 @@
 "syy" = (
 /obj/item/device/radio/intercom{
 	dir = 8;
-	pixel_x = 20
+	pixel_x = 24
 	},
 /turf/simulated/floor/carpet/green,
 /area/medical/mentalhealth)
@@ -42328,7 +42333,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/aft)

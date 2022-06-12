@@ -1046,7 +1046,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/shuttle/escape_pod/escape_pod2/station)
@@ -1205,8 +1205,8 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+	dir = 4;
+	pixel_x = -24
 	},
 /obj/structure/holoplant,
 /turf/simulated/floor/tiled,
@@ -1485,7 +1485,7 @@
 "cY" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -1525,16 +1525,16 @@
 /turf/simulated/floor/tiled,
 /area/command/bsa)
 "dd" = (
-/obj/structure/extinguisher_cabinet{
-	dir = 4;
-	pixel_y = 29
-	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "nuke_shuttle_dock_airlock_pump"
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 24;
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/thirddeck/fore)
@@ -1922,7 +1922,7 @@
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
@@ -2214,7 +2214,8 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod/escape_pod1/station)
@@ -2229,8 +2230,8 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod/escape_pod2/station)
@@ -2507,13 +2508,14 @@
 /area/quartermaster/hangar_atmos)
 "eI" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
-	},
 /obj/machinery/camera/network/exploration_shuttle{
 	c_tag = "Charon - Cargo Bay Left";
-	dir = 4
+	dir = 4;
+	pixel_y = -8
+	},
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/cargo_l)
@@ -2786,7 +2788,7 @@
 /obj/random/maintenance,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/item/defibrillator/loaded,
 /turf/simulated/floor/tiled/white,
@@ -3625,6 +3627,10 @@
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 6
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 24;
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/scan)
 "gq" = (
@@ -3732,7 +3738,6 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 4;
 	pixel_y = 29
 	},
 /obj/effect/floor_decal/corner/purple/border{
@@ -4172,7 +4177,7 @@
 "hm" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -4454,10 +4459,6 @@
 	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 6
-	},
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/scan)
@@ -4785,6 +4786,10 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/orange,
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/gas)
 "in" = (
@@ -4801,8 +4806,8 @@
 	icon_state = "4-8"
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
+	pixel_y = -22;
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
@@ -5813,10 +5818,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/orange,
-/obj/structure/extinguisher_cabinet{
-	dir = 8;
-	pixel_y = -22
-	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/gas)
 "jK" = (
@@ -6124,7 +6125,7 @@
 /obj/item/book/manual/nt_regs,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/borderfloorblack{
@@ -6348,7 +6349,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -7216,7 +7217,8 @@
 	pixel_y = 26
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/structure/holoplant{
 	plant = "P-Apple Bush";
@@ -8095,9 +8097,6 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -24
-	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
 "mL" = (
@@ -8115,7 +8114,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 8
@@ -9751,8 +9750,8 @@
 	desc = "A remote control-switch for shutters.";
 	id_tag = "hangar_ts_shutters";
 	name = "Secondary Hallway Shutters";
-	pixel_x = 6;
-	pixel_y = 7;
+	pixel_x = 5;
+	pixel_y = 2;
 	req_access = list("ACCESS_SECURITY")
 	},
 /obj/machinery/button/blast_door{
@@ -15541,7 +15540,7 @@
 /obj/structure/closet/emcloset,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -15659,7 +15658,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/blue/border,
@@ -16731,10 +16730,8 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exploration_shuttle/power)
 "Ag" = (
-/obj/machinery/light/spot{
-	dir = 8
-	},
 /obj/structure/extinguisher_cabinet{
+	dir = 4;
 	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/monotile,
@@ -16903,6 +16900,12 @@
 	},
 /turf/simulated/floor/airless,
 /area/thruster/d3port)
+"AA" = (
+/obj/machinery/light/spot{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "AB" = (
 /turf/simulated/wall/r_wall/hull,
 /area/storage/auxillary/port)
@@ -17189,7 +17192,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/reinforced,
 /area/thruster/d3starboard)
@@ -17225,22 +17228,24 @@
 "Bg" = (
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
-	dir = 4;
+	dir = 9;
 	id_tag = "qmdoor-hallway";
 	name = "hallway door control";
-	pixel_x = -6;
-	req_access = list("ACCESS_QUARTERMASTER")
+	pixel_x = 5;
+	req_access = list("ACCESS_QUARTERMASTER");
+	pixel_y = -2
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
 /obj/machinery/button/alternate/door{
 	desc = "A remote control-switch for the office door.";
-	dir = 4;
+	dir = 9;
 	id_tag = "qmdoor-supply";
 	name = "supply door control";
-	pixel_x = 6;
-	req_access = list("ACCESS_QUARTERMASTER")
+	pixel_x = 5;
+	req_access = list("ACCESS_QUARTERMASTER");
+	pixel_y = 8
 	},
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/grey/border{
@@ -17471,8 +17476,8 @@
 	pixel_y = 24
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/quartermaster/storage)
@@ -18066,7 +18071,8 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/center)
@@ -18448,7 +18454,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4,
 /obj/effect/floor_decal/steeldecal/steel_decals4{
@@ -18720,10 +18726,9 @@
 	name = "Rear Hatch"
 	},
 /obj/machinery/button/blast_door{
-	dir = 1;
 	id_tag = "guppy_hatch";
 	name = "Rear Hatch Control";
-	pixel_y = -24;
+	pixel_y = 24;
 	req_access = list("ACCESS_GUPPY")
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -19156,6 +19161,10 @@
 	dir = 10
 	},
 /obj/structure/table/steel,
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/seats_place)
 "Eq" = (
@@ -19773,10 +19782,6 @@
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
-	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -19790,6 +19795,10 @@
 	dir = 10
 	},
 /obj/effect/floor_decal/industrial/outline/blue,
+/obj/structure/extinguisher_cabinet{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled/white,
 /area/shuttle/petrov/gas)
 "Fw" = (
@@ -19977,7 +19986,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -20241,8 +20250,8 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/fore)
@@ -21006,7 +21015,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/shuttle/escape_pod/escape_pod4/station)
@@ -21174,20 +21183,6 @@
 /obj/machinery/computer/ship/sensors,
 /turf/simulated/floor/tiled,
 /area/guppy_hangar/start)
-"HD" = (
-/obj/structure/bed/chair/shuttle/green,
-/obj/effect/floor_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/b_green/border{
-	dir = 1
-	},
-/obj/structure/extinguisher_cabinet{
-	dir = 4;
-	pixel_y = 29
-	},
-/turf/simulated/floor/tiled,
-/area/exploration_shuttle/seats_place)
 "HE" = (
 /obj/machinery/camera/network/research{
 	c_tag = "Xenobio - level two - aqua chamber"
@@ -21807,7 +21802,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/expedition/eva)
@@ -21985,8 +21980,8 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/exploration_shuttle/airlock)
@@ -21998,7 +21993,7 @@
 /obj/machinery/light,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -23077,7 +23072,7 @@
 	},
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/structure/table/rack,
 /obj/item/barrier,
@@ -23114,7 +23109,6 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 4;
 	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
@@ -23899,7 +23893,7 @@
 "Me" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -23965,7 +23959,8 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/shuttle/escape_pod/escape_pod3/station)
@@ -24992,8 +24987,8 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+	dir = 4;
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -25178,7 +25173,7 @@
 /obj/item/stool/padded/red,
 /obj/item/device/radio/intercom{
 	dir = 1;
-	pixel_y = -28
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled,
 /area/vacant/cargo)
@@ -25199,7 +25194,7 @@
 /obj/structure/hygiene/sink,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/entry2)
@@ -25906,7 +25901,8 @@
 /area/maintenance/thirddeck/aft)
 "PA" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -26904,7 +26900,9 @@
 /area/maintenance/thirddeck/aft)
 "Rf" = (
 /obj/structure/sign/warning/nosmoking_1{
-	dir = 4
+	dir = 4;
+	pixel_x = -19;
+	pixel_y = 8
 	},
 /obj/effect/paint/nt_white,
 /obj/effect/paint_stripe/nt_red,
@@ -27843,10 +27841,11 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology/level2)
 "SK" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 23
-	},
 /obj/machinery/computer/ship/engines,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 24;
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/guppy_hangar/start)
 "SL" = (
@@ -28403,6 +28402,18 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/techfloor,
 /area/quartermaster/hangar_atmos)
+"TN" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/machinery/light/spot{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/quartermaster/hangar)
 "TO" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -28956,7 +28967,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/machinery/recharger,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -29194,8 +29205,8 @@
 /obj/effect/catwalk_plated,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_x = -22
+	dir = 4;
+	pixel_x = -24
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
@@ -29832,7 +29843,8 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/structure/cable/cyan{
 	d2 = 8;
@@ -30188,7 +30200,8 @@
 /area/exploration_shuttle/medical)
 "XK" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/quartermaster/hangar)
@@ -30713,7 +30726,7 @@
 "YT" = (
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
 /area/exploration_shuttle/cargo_r)
@@ -30731,11 +30744,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/catwalk_plated,
-/obj/machinery/light/spot{
-	dir = 4
-	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 23
+	pixel_x = 24;
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/hangar)
@@ -30828,7 +30839,7 @@
 /obj/machinery/recharger,
 /obj/item/device/radio/intercom{
 	dir = 4;
-	pixel_x = -20
+	pixel_x = -24
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -51491,7 +51502,7 @@ tS
 vl
 wp
 au
-au
+AA
 Ag
 AK
 au
@@ -51500,7 +51511,7 @@ Pc
 KH
 KH
 QT
-au
+Ag
 au
 mK
 OK
@@ -53493,7 +53504,7 @@ KO
 KO
 Hh
 Ho
-HD
+Hx
 GW
 HT
 IX
@@ -54909,7 +54920,7 @@ KH
 KH
 KH
 KH
-KH
+TN
 KH
 KH
 KH

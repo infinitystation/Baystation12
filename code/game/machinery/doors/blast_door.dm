@@ -233,10 +233,10 @@
 	)
 
 /obj/machinery/button/blast_door
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/obj/buttons.dmi'
 	name = "remote blast door-control"
 	desc = "It controls blast doors, remotely."
-	icon_state = "blastctrl"
+	icon_state = "blastctrl0"
 	stock_part_presets = list(/decl/stock_part_preset/radio/basic_transmitter/blast_door_button = 1)
 
 /decl/stock_part_preset/radio/basic_transmitter/blast_door_button
@@ -246,10 +246,25 @@
 	frequency = BLAST_DOORS_FREQ
 
 /obj/machinery/button/blast_door/on_update_icon()
-	if(operating)
-		icon_state = "blastctrl1"
+	if(!overlay)
+		overlay = image(icon, "blastctrl0-overlay")
+		overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
+		overlay.layer = ABOVE_LIGHTING_LAYER
+
+	overlays.Cut()
+	if(stat & (NOPOWER|BROKEN))
+		icon_state = "blastctrl-p"
+		overlay.icon_state = "blastctrl-p-overlay"
+		overlays += overlay
+		set_light(0.3, 0.1, 1, 2,"#C50022")
 	else
-		icon_state = "blastctrl"
+		icon_state = "blastctrl[operating]"
+		overlay.icon_state = "blastctrl[operating]-overlay"
+		overlays += overlay
+		switch(operating)
+			if(0) set_light(0.3, 0.1, 1, 2, "#F2FF00")
+			if(1) set_light(0.3, 0.1, 1, 2, "#a1FF00")
+			else set_light(0.3, 0.1, 1, 2,"#f86060")
 
 // SUBTYPE: Regular
 // Your classical blast door, found almost everywhere.

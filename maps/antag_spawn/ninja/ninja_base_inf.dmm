@@ -118,6 +118,7 @@
 /area/map_template/ninja_dojo/dojo)
 "au" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/tele_pad,
 /turf/simulated/floor/plating,
 /area/map_template/ninja_dojo/dojo)
 "av" = (

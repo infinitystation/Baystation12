@@ -438,7 +438,8 @@
 /area/bluespaceriver/ship/airlock)
 "aG" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -905,7 +906,6 @@
 	dir = 6
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 4;
 	icon_state = "extinguisher_closed";
 	pixel_y = 29
 	},
@@ -1565,7 +1565,8 @@
 	dir = 6
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 24;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/bluespaceriver/ship/airlock)

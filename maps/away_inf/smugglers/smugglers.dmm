@@ -129,11 +129,12 @@
 	frequency = 1502;
 	id_tag = "asteroid_base_dock_airlock";
 	name = "Dock Airlock Controller";
-	pixel_x = -25;
+	pixel_x = -24;
 	tag_airpump = "asteroid_base_dock_pump";
 	tag_chamber_sensor = "asteroid_base_dock_sensor";
 	tag_exterior_door = "ab_fore_dock_exter";
-	tag_interior_door = "ab_fore_dock_inter"
+	tag_interior_door = "ab_fore_dock_inter";
+	dir = 4
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
@@ -166,8 +167,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "Asteroid base main APC";
-	pixel_x = 0;
-	pixel_y = 24
+	pixel_y = 22
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 4

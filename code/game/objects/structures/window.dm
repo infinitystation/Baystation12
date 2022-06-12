@@ -739,7 +739,7 @@
 
 /obj/machinery/button/windowtint
 	name = "window tint control"
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/buttons.dmi'
 	icon_state = "light0"
 	desc = "A remote control switch for electrochromic windows."
 	var/id
@@ -785,7 +785,20 @@
 		activate()
 
 /obj/machinery/button/windowtint/on_update_icon()
-	icon_state = "light[active]"
+	if(!overlay)
+		overlay = image(icon, "light0-overlay")
+		overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
+		overlay.layer = ABOVE_LIGHTING_LAYER
+
+	overlays.Cut()
+	if(stat & (NOPOWER|BROKEN))
+		icon_state = "light-p"
+		set_light(0)
+	else
+		icon_state = "light[active]"
+		overlay.icon_state = "light[active]-overlay"
+		overlays += overlay
+		set_light(0.3, 0.1, 1, 2, active ? "#82ff4c" : "#f86060")
 
 //Centcomm windows
 /obj/structure/window/reinforced/crescent/attack_hand()

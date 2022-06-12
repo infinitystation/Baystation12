@@ -20,6 +20,7 @@
 	var/active = FALSE
 	var/operating = FALSE
 	var/cooldown = 1 SECOND
+	var/image/overlay
 
 /obj/machinery/button/Initialize()
 	. = ..()
@@ -30,6 +31,13 @@
 
 /obj/machinery/button/interface_interact(user)
 	if(!CanInteract(user, DefaultTopicState()))
+		if(!allowed(user))
+			operating = 2
+			playsound(src, "button", 60)
+			update_icon()
+			sleep(cooldown)
+			operating = FALSE
+			update_icon()
 		return FALSE
 	if(istype(user, /mob/living/carbon))
 		playsound(src, "button", 60)
@@ -44,7 +52,6 @@
 	set waitfor = FALSE
 	if(operating)
 		return
-
 	operating = TRUE
 	var/decl/public_access/public_variable/variable = decls_repository.get_decl(/decl/public_access/public_variable/button_active)
 	variable.write_var(src, !active)
@@ -82,22 +89,48 @@
 
 //alternate button with the same functionality, except has a lightswitch sprite instead
 /obj/machinery/button/switch
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/buttons.dmi'
 	icon_state = "light0"
 
 /obj/machinery/button/switch/on_update_icon()
-	icon_state = "light[operating]"
+	if(!overlay)
+		overlay = image(icon, "light0-overlay")
+		overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
+		overlay.layer = ABOVE_LIGHTING_LAYER
+
+	overlays.Cut()
+	if(stat & (NOPOWER|BROKEN))
+		icon_state = "light-p"
+		set_light(0)
+	else
+		icon_state = "light[operating]"
+		overlay.icon_state = "light[operating]-overlay"
+		overlays += overlay
+		set_light(0.3, 0.1, 1, 2, operating ? "#82ff4c" : "#f86060")
 
 //alternate button with the same functionality, except has a door control sprite instead
 /obj/machinery/button/alternate
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "doorctrl"
+	icon = 'icons/obj/buttons.dmi'
+	icon_state = "doorctrl0"
 
 /obj/machinery/button/alternate/on_update_icon()
-	if(operating)
-		icon_state = "doorctrl"
+	if(!overlay)
+		overlay = image(icon, "doorctrl0-overlay")
+		overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
+		overlay.layer = ABOVE_LIGHTING_LAYER
+
+	overlays.Cut()
+	if(stat & (NOPOWER|BROKEN))
+		icon_state = "doorctrl-p"
+		set_light(0)
 	else
-		icon_state = "doorctrl2"
+		icon_state = "doorctrl[operating]"
+		overlay.icon_state = "doorctrl[operating]-overlay"
+		overlays += overlay
+		switch(operating)
+			if(0) set_light(0.3, 0.1, 1, 2, "#F2FF00")
+			if(1) set_light(0.3, 0.1, 1, 2, "#a1FF00")
+			else set_light(0.3, 0.1, 1, 2,"#f86060")
 
 //Toggle button determines icon state from active, not operating
 /obj/machinery/button/toggle/on_update_icon()
@@ -108,24 +141,53 @@
 
 //alternate button with the same toggle functionality, except has a lightswitch sprite instead
 /obj/machinery/button/toggle/switch
-	icon = 'icons/obj/power.dmi'
+	icon = 'icons/obj/buttons.dmi'
 	icon_state = "light0"
 
 /obj/machinery/button/toggle/switch/on_update_icon()
-	icon_state = "light[active]"
+	if(!overlay)
+		overlay = image(icon, "light0-overlay")
+		overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
+		overlay.layer = ABOVE_LIGHTING_LAYER
+
+	overlays.Cut()
+	if(stat & (NOPOWER|BROKEN))
+		icon_state = "light-p"
+		set_light(0)
+	else
+		icon_state = "light[active]"
+		overlay.icon_state = "light[active]-overlay"
+		overlays += overlay
+		set_light(0.3, 0.1, 1, 2, active ? "#82ff4c" : "#f86060")
 
 
 
 //alternate button with the same toggle functionality, except has a door control sprite instead
 /obj/machinery/button/toggle/alternate
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "doorctrl"
+	icon = 'icons/obj/buttons.dmi'
+	icon_state = "blastctrl-nonactive"
 
 /obj/machinery/button/toggle/alternate/on_update_icon()
+	if(!overlay)
+		overlay = image(icon, "big-switch-red-ol")
+		overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
+		overlay.layer = ABOVE_LIGHTING_LAYER
+
+	overlays.Cut()
+	if(stat & (NOPOWER|BROKEN))
+		icon_state = "blastctrl-p"
+		set_light(0)
 	if(active)
-		icon_state = "doorctrl"
+		icon_state = "blastctrl-active"
+		overlay.icon_state = "big-switch-green-ol"
+		overlays += overlay
+		set_light(0.3, 0.1, 1, 2,"#a1FF00")
 	else
-		icon_state = "doorctrl2"
+		icon_state = "blastctrl-nonactive"
+		overlay.icon_state = "big-switch-red-ol"
+		overlays += overlay
+		set_light(0.3, 0.1, 1, 2,"#C50022")
+
 
 //-------------------------------
 // Mass Driver Button
@@ -139,15 +201,28 @@
 //-------------------------------
 
 /obj/machinery/button/alternate/door
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "doorctrl"
+	icon = 'icons/obj/buttons.dmi'
+	icon_state = "doorctrl0"
 	stock_part_presets = list(/decl/stock_part_preset/radio/basic_transmitter/button/door)
 
 /obj/machinery/button/alternate/door/on_update_icon()
-	if(operating)
-		icon_state = "[initial(icon_state)]1"
+	if(!overlay)
+		overlay = image(icon, "doorctrl0-overlay")
+		overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
+		overlay.layer = ABOVE_LIGHTING_LAYER
+
+	overlays.Cut()
+	if(stat & (NOPOWER|BROKEN))
+		icon_state = "doorctrl-p"
+		set_light(0)
 	else
-		icon_state = "[initial(icon_state)]"
+		icon_state = "doorctrl[operating]"
+		overlay.icon_state = "doorctrl[operating]-overlay"
+		overlays += overlay
+		switch(operating)
+			if(0) set_light(0.3, 0.1, 1, 2, "#F2FF00")
+			if(1) set_light(0.3, 0.1, 1, 2, "#a1FF00")
+			else set_light(0.3, 0.1, 1, 2,"#f86060")
 
 /decl/stock_part_preset/radio/basic_transmitter/button/door
 	frequency = AIRLOCK_FREQ

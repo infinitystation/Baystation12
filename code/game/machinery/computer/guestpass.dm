@@ -59,9 +59,26 @@
 	var/giv_name = "NOT SPECIFIED"
 	var/reason = "NOT SPECIFIED"
 	var/duration = 5
+	var/image/overlay
 
 	var/list/internal_log = list()
 	var/mode = 0  // 0 - making pass, 1 - viewing logs
+
+/obj/machinery/computer/guestpass/on_update_icon()
+	if(!overlay)
+		overlay = image(icon, "pass")
+		overlay.plane = EFFECTS_ABOVE_LIGHTING_PLANE
+		overlay.layer = ABOVE_LIGHTING_LAYER
+
+	overlays.Cut()
+	if(stat & (NOPOWER|BROKEN))
+		overlay.icon_state = "guest_broken"
+		overlays += overlay
+		set_light(0)
+	else
+		overlay.icon_state = "pass"
+		overlays += overlay
+		set_light(0.8, 0.1, 1, 2,"#0099FF")
 
 /obj/machinery/computer/guestpass/New()
 	..()
@@ -103,7 +120,7 @@
 				"selected" = (A in accesses))))
 
 		data["giver_access"] = giver_access
-		
+
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "guestpass.tmpl", "Guest Pass Terminal", 600, 800)

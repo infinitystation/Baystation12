@@ -1501,16 +1501,14 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
-/obj/structure/bed/sofa/l/brown{
-	},
+/obj/structure/bed/sofa/l/brown,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "cV" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
-/obj/structure/bed/sofa/r/brown{
-	},
+/obj/structure/bed/sofa/r/brown,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "cW" = (
@@ -1524,7 +1522,8 @@
 	dir = 5
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/structure/closet/crate/trashcart,
 /turf/simulated/floor/wood,
@@ -1674,7 +1673,7 @@
 /area/ship/patrol/crew/hallway/upper)
 "do" = (
 /obj/structure/bed/sofa/r/brown{
-	dir = 4;
+	dir = 4
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -1759,6 +1758,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
+	},
+/obj/machinery/light{
+	dir = 4;
+	pixel_y = -16
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
@@ -1883,7 +1886,7 @@
 /area/ship/patrol/crew/hallway/upper)
 "dO" = (
 /obj/structure/bed/sofa/l/brown{
-	dir = 4;
+	dir = 4
 	},
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
@@ -2063,6 +2066,11 @@
 /obj/item/clothing/accessory/ubac/blue,
 /obj/item/clothing/accessory/ubac/blue,
 /obj/item/clothing/accessory/ubac/blue,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 0;
+	pixel_x = 24;
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/ship/patrol/crew/brig/emergency_armory)
 "ec" = (
@@ -2205,14 +2213,14 @@
 /area/ship/patrol/crew/hallway/upper/starboard)
 "eo" = (
 /obj/structure/bed/sofa/r/brown{
-	dir = 1;
+	dir = 1
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/wood,
 /area/ship/patrol/crew/hallway/upper/starboard)
 "ep" = (
 /obj/structure/bed/sofa/l/brown{
-	dir = 1;
+	dir = 1
 	},
 /obj/machinery/light,
 /obj/effect/floor_decal/spline/fancy/wood,
@@ -2260,11 +2268,9 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 9
 	},
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -25
+	pixel_x = -24;
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/ship/patrol/crew/brig/office)
@@ -2387,7 +2393,8 @@
 	},
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -25
+	pixel_x = -24;
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/ship/patrol/crew/hallway/upper)
@@ -2444,9 +2451,6 @@
 /obj/item/device/flashlight/maglight,
 /obj/item/device/flashlight/maglight,
 /obj/item/device/flashlight/maglight,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -32
-	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
@@ -3380,7 +3384,8 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -25
+	pixel_x = -24;
+	dir = 4
 	},
 /obj/item/trash/popcorn,
 /obj/item/trash/liquidfood,
@@ -3464,6 +3469,11 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/cooker/cereal,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 0;
+	pixel_x = 24;
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
 "gE" = (
@@ -3938,9 +3948,6 @@
 	dir = 4
 	},
 /obj/structure/table/marble,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -32
-	},
 /obj/machinery/reagent_temperature/cooler,
 /turf/simulated/floor/tiled/white,
 /area/ship/patrol/crew/kitchen)
