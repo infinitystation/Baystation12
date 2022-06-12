@@ -32,12 +32,13 @@
 /obj/machinery/button/interface_interact(user)
 	if(!CanInteract(user, DefaultTopicState()))
 		if(!allowed(user))
-			operating = 2
-			playsound(src, "button", 60)
-			update_icon()
-			sleep(cooldown)
-			operating = FALSE
-			update_icon()
+			if(CanPhysicallyInteract(user))
+				operating = 2
+				playsound(src, "button", 60)
+				update_icon()
+				sleep(cooldown)
+				operating = FALSE
+				update_icon()
 		return FALSE
 	if(istype(user, /mob/living/carbon))
 		playsound(src, "button", 60)
