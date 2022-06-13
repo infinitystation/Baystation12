@@ -181,7 +181,7 @@
 	desc = "A large beaker."
 	icon_state = "beakerlarge"
 	center_of_mass = "x=16;y=10"
-	matter = list(MATERIAL_GLASS = 1500)
+	matter = list(MATERIAL_GLASS = 5000)
 	volume = 120
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = "5;10;15;25;30;60;120"
@@ -247,7 +247,7 @@
 	name = "large insulated beaker"
 	icon_state = "insulatedlarge"
 	center_of_mass = "x=16;y=10"
-	matter = list(MATERIAL_GLASS = 1500, MATERIAL_PLASTIC = 750)
+	matter = list(MATERIAL_GLASS = 5000, MATERIAL_PLASTIC = 2500)
 	volume = 120
 
 /obj/item/reagent_containers/glass/beaker/cryoxadone

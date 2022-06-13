@@ -16,7 +16,7 @@
 	desc = "Used to separate the edges of a surgical incision to get to the juicy organs inside."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "retractor"
-	matter = list(MATERIAL_STEEL = 1000, MATERIAL_GLASS = 500)
+	matter = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 5000)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
@@ -30,7 +30,7 @@
 	desc = "A type of forceps used to prevent an incision from bleeding, or to extract objects from the inside of the body."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "hemostat"
-	matter = list(MATERIAL_STEEL = 500, MATERIAL_GLASS = 250)
+	matter = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 2500)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
@@ -45,7 +45,7 @@
 	desc = "Uses chemicals to quickly cauterize incisions and other small cuts without causing further damage."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "cautery"
-	matter = list(MATERIAL_STEEL = 500, MATERIAL_GLASS = 250, MATERIAL_ALUMINIUM = 100)
+	matter = list(MATERIAL_STEEL = 5000, MATERIAL_GLASS = 2500, MATERIAL_ALUMINIUM = 1000)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	w_class = ITEM_SIZE_SMALL
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
@@ -61,7 +61,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "drill"
 	hitsound = 'sound/weapons/circsawhit.ogg'
-	matter = list(MATERIAL_STEEL = 1500, MATERIAL_GLASS = 1000)
+	matter = list(MATERIAL_STEEL = 15000, MATERIAL_GLASS = 10000)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	force = 15.0
 	w_class = ITEM_SIZE_NORMAL
@@ -87,7 +87,7 @@
 	throw_speed = 3
 	throw_range = 5
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
-	matter = list(MATERIAL_STEEL = 1000, MATERIAL_GLASS = 500)
+	matter = list(MATERIAL_STEEL = 10000, MATERIAL_GLASS = 5000)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	safely = 1
 
@@ -142,7 +142,7 @@
 	throw_speed = 3
 	throw_range = 5
 	origin_tech = list(TECH_MATERIAL = 1, TECH_BIO = 1)
-	matter = list(MATERIAL_STEEL = 2000,MATERIAL_GLASS = 1000)
+	matter = list(MATERIAL_STEEL = 20000,MATERIAL_GLASS = 10000)
 	attack_verb = list("attacked", "slashed", "sawed", "cut")
 	sharp = TRUE
 	edge = TRUE

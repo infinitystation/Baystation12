@@ -1886,6 +1886,7 @@
 /obj/machinery/vending/crates
 	name = "\improper Crate-o-Mat"
 	desc = "Vending machine that dispense crates for all your powerplay needs."
+	vend_delay = 3 SECONDS
 	req_access = list(access_cargo)
 	base_type = /obj/machinery/vending/crates
 	icon_state = "crates"
