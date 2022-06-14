@@ -131,7 +131,9 @@
 			SKILL_DEVICES		=	SKILL_ADEPT,
 			SKILL_EVA			=	SKILL_ADEPT,
 			SKILL_ANATOMY		=	SKILL_ADEPT,
-			SKILL_MECH			=	HAS_PERK
+			SKILL_MECH			=	HAS_PERK,
+			SKILL_MEDICAL		=	SKILL_BASIC,
+			SKILL_ELECTRICAL	=	SKILL_ADEPT
 		)
 
 	max_skill = list(
@@ -144,7 +146,7 @@
 			SKILL_ANATOMY		=	SKILL_EXPERT
 		)
 
-	skill_points = 20
+	skill_points = 22
 
 	access = list(
 			access_robotics,
