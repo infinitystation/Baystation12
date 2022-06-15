@@ -35,14 +35,18 @@ GLOBAL_LIST_EMPTY(donators_data)
 				rank = rank_and_points["rank"]
 			if(list_find(rank_and_points, "points"))
 				points = rank_and_points["points"]
-		if(rank)
-			var/list/levels = SSexdata.GetDataByKey(DATASTORE_DONATORS_RANKS, rank)
-			if(levels && islist(levels) && length(levels) && list_find(levels, "level"))
-				level = levels["level"]
+			if(rank)
+				var/list/levels = SSexdata.GetDataByKey(DATASTORE_DONATORS_RANKS, rank)
+				if(levels && islist(levels) && length(levels) && list_find(levels, "level"))
+					level = levels["level"]
 
-			var/list/rank_color = SSexdata.GetDataByKey(DATASTORE_RANKS_OOC_COLORS, rank)
-			if(length(rank_color))
-				ooc_color = rank_color
+				var/list/rank_color = SSexdata.GetDataByKey(DATASTORE_RANKS_OOC_COLORS, rank)
+				if(length(rank_color))
+					ooc_color = rank_color
+		else if(check_rights(R_ADMIN, FALSE))
+			rank = "Admin"
+			level = 5
+			points = 500
 
 /datum/donator_data/proc/GetAvailablePoints()
 	. = points
