@@ -42,6 +42,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/shields_monitor)
 	good_genome_prob = 25
+	need_exp_to_play = 2
 
 /datum/job/senior_engineer/get_description_blurb()
 	return "Старший Инженер выполняет распоряжения Главного Инженера и контролирует повседневную работу отдела.\

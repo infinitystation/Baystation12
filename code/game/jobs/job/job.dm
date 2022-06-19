@@ -42,6 +42,8 @@
 	var/skill_points = 16				  //The number of unassigned skill points the job comes with (on top of the minimum skills).
 	var/no_skill_buffs = FALSE			  //Whether skills can be buffed by age/species modifiers.
 	var/available_by_default = TRUE
+	var/need_exp_to_play				  //Time needed to play on the branch in hours
+	var/exp_track_branch				  //The branch on which you need to have exp
 
 	var/list/possible_goals
 	var/min_goals = 0
@@ -381,6 +383,8 @@
 		reasons["У Вас джоббан на роль полу-антагониста."] = TRUE
 	if(!player_old_enough(caller))
 		reasons["С Вашего первого захода прошло мало времени."] = TRUE
+	if(caller?.experience.check_exp_job(src))
+		reasons["Вы наиграли слишком мало времени для важных ролей."] = TRUE
 	if(!is_position_available())
 		reasons["Не осталось доступных ролей."] = TRUE
 	if(!isnull(allowed_branches) && (!caller.prefs.branches[title] || !is_branch_allowed(caller.prefs.branches[title])))
@@ -410,6 +414,8 @@
 	if(is_semi_antagonist && jobban_isbanned(caller, MODE_MISC_AGITATOR))
 		return FALSE
 	if(!player_old_enough(caller))
+		return FALSE
+	if(caller?.experience.check_exp_job(src))
 		return FALSE
 	return TRUE
 

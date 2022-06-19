@@ -36,6 +36,7 @@
 		/datum/computer_file/program/reports
 	)
 	good_genome_prob = 60
+	need_exp_to_play = 10
 
 /datum/job/captain/get_description_blurb()
 	return "Капитан ответственен за ИКН Сьерра и всё, что на нем находится.\
@@ -99,6 +100,8 @@
 		/datum/computer_file/program/reports
 	)
 	good_genome_prob = 60
+	need_exp_to_play = 5
+	exp_track_branch = COM
 
 /datum/job/hop/get_description_blurb()
 	return "В роли Главы Персонала, или ГП, как Вас иногда будут звать, Вы обязаны отвечать за то, чтобы все отделы были укомплектованы персоналом и работали ради прибыли своей корпорации.\
@@ -162,6 +165,8 @@
 		/datum/computer_file/program/reports
 	)
 	good_genome_prob = 75
+	need_exp_to_play = 5
+	exp_track_branch = SCI
 
 /datum/job/rd/get_description_blurb()
 	return "Директор Исследований несет ответственность за рабочую деятельность Научно-Исследовательского Отдела на борту объекта,\
@@ -221,6 +226,8 @@
 		/datum/computer_file/program/reports
 	)
 	good_genome_prob = 55
+	need_exp_to_play = 5
+	exp_track_branch = MED
 
 /datum/job/cmo/get_description_blurb()
 	return "Главный врач или CMO, является высшим авторитетом, когда речь заходит о сохранении здоровья экипажа.\
@@ -290,6 +297,8 @@
 		/datum/computer_file/program/reports
 	)
 	good_genome_prob = 65
+	need_exp_to_play = 5
+	exp_track_branch = ENG
 
 /datum/job/chief_engineer/get_description_blurb()
 	return "Главный инженер - руководитель и администратор инженерного отдела, \
@@ -346,6 +355,8 @@
 		/datum/computer_file/program/reports
 	)
 	good_genome_prob = 80
+	need_exp_to_play = 5
+	exp_track_branch = SEC
 
 /datum/job/hos/get_description_blurb()
 	return "Глава службы безопасности, или ГСБ, является главой правоохранительных органов и главным защитником членов экипажа на борту корабля.\
@@ -391,6 +402,7 @@
 		/datum/computer_file/program/reports
 	)
 	good_genome_prob = 85
+	need_exp_to_play = 2
 
 /datum/job/iaa/get_description_blurb()
 	return "Агент Внутренних Дел - уникальная роль для Вас на борту ИКН Сьерра. Он выступает от лица Центрального Командования NanoTrasen на борту корабля,\

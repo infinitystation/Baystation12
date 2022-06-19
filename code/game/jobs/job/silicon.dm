@@ -38,6 +38,7 @@
 		SKILL_ANATOMY       = SKILL_EXPERT,
 		SKILL_CHEMISTRY     = SKILL_EXPERT
 	)
+	need_exp_to_play = 5
 
 /datum/job/ai/equip(var/mob/living/carbon/human/H)
 	if(!H)	return 0

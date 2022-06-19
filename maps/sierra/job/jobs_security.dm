@@ -36,6 +36,7 @@
 	software_on_spawn = list(/datum/computer_file/program/digitalwarrant,
 							 /datum/computer_file/program/camera_monitor)
 	good_genome_prob = 40
+	need_exp_to_play = 2
 
 /datum/job/warden/get_description_blurb()
 	return "Надзиратель отвечает за наблюдение, допрос, уход и безопасность заключенных, арестованных охранниками.\

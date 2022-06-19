@@ -43,6 +43,7 @@
 	skill_points = 30
 	good_genome_prob = 40
 	possible_goals = list(/datum/goal/achievement/notslimefodder)
+	need_exp_to_play = 2
 
 /datum/job/senior_scientist/get_description_blurb()
 	return "Самый старший член исследовательской команды, старший научный сотрудник, отвечает за то,чтобы остальные сотрудники отдела знали, что они должны делать, и делать это быстро и профессионально.\

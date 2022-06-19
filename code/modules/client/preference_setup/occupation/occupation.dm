@@ -171,6 +171,9 @@
 				else if(!job.is_required_roles_filled())
 					bad_message = "<b>\[HEAD NEEDED]</b>"
 //[/INF]
+				else if(user?.client?.experience.check_exp_job(job))
+					var/dep = user.client.experience.dep2arg(job.exp_track_branch ? job.exp_track_branch : job.department_flag)
+					bad_message = "<b>\[IN [job.need_exp_to_play] HOURS OF [dep]]</b>"
 				var/current_level = JOB_LEVEL_NEVER
 				if(pref.job_high == job.title)
 					current_level = JOB_LEVEL_HIGH
