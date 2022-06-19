@@ -100,4 +100,4 @@
 	. = ..()
 	if(src && !src.experience)
 		src.experience = new()
-		src.experience.update(src.key)
+		src.experience.update(src.ckey)
