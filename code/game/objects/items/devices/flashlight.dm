@@ -122,7 +122,7 @@
 
 	if(!BP_IS_ROBOTIC(vision))
 
-		if(vision.owner.stat == DEAD || H.blinded)	//mob is dead or fully blind
+		if(vision.owner.stat == DEAD || H.blinded || H.status_flags & FAKEDEATH) //mob is dead or fully blind
 			to_chat(user, "<span class='warning'>\The [H]'s pupils do not react to the light!</span>")
 			return
 		if(MUTATION_XRAY in H.mutations)
