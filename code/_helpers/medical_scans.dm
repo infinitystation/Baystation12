@@ -86,6 +86,14 @@
 		O["is_bruised"] = I.is_bruised()
 		O["is_damaged"] = I.is_damaged()
 		O["scan_results"] = I.get_scan_results(tag)
+
+		if(istype(I, /obj/item/organ/internal/brain) && (H.status_flags & FAKEDEATH)) //for fakedeath brain
+			O["name"] = I.name
+			O["is_broken"] = 1
+			O["is_bruised"] = 1
+			O["is_damaged"] = 1
+			O["scan_results"] = list("[tag ? "<span style='color:#999999'>Necrotic</span>" : "Necrotic"]")
+
 		if (istype(I, /obj/item/organ/internal/appendix))
 			var/obj/item/organ/internal/appendix/A = I
 			O["inflamed"] = A.inflamed
