@@ -109,6 +109,7 @@
 		/obj/item/device/scanner/reagent/adv,
 		/obj/item/robot_rack/body_bag,
 		/obj/item/reagent_containers/borghypo/crisis,
+		/obj/item/robot_rack/bottle,
 		/obj/item/shockpaddles/robot,
 		/obj/item/reagent_containers/dropper/industrial,
 		/obj/item/reagent_containers/syringe,
@@ -116,8 +117,8 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/taperoll/medical,
 		/obj/item/inflatable_dispenser/robot,
-		/obj/item/stack/medical/ointment,
-		/obj/item/stack/medical/bruise_pack,
+		/obj/item/stack/medical/advanced/ointment,
+		/obj/item/stack/medical/advanced/bruise_pack,
 		/obj/item/stack/medical/splint
 	)
 	synths = list(
@@ -135,8 +136,8 @@
 /obj/item/robot_module/medical/crisis/finalize_equipment()
 	. = ..()
 	for(var/thing in list(
-		 /obj/item/stack/medical/ointment,
-		 /obj/item/stack/medical/bruise_pack,
+		 /obj/item/stack/medical/advanced/ointment,
+		 /obj/item/stack/medical/advanced/bruise_pack,
 		 /obj/item/stack/medical/splint
 		))
 		var/obj/item/stack/medical/stack = locate(thing) in equipment
@@ -152,8 +153,8 @@
 	. = ..()
 	var/datum/matter_synth/medicine/medicine = locate() in synths
 	for(var/thing in list(
-		 /obj/item/stack/medical/ointment,
-		 /obj/item/stack/medical/bruise_pack,
+		 /obj/item/stack/medical/advanced/ointment,
+		 /obj/item/stack/medical/advanced/bruise_pack,
 		 /obj/item/stack/medical/splint
 		))
 		var/obj/item/stack/medical/stack = locate(thing) in equipment
