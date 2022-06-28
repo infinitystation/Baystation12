@@ -210,7 +210,6 @@
 #define HUD_SECURITY 0x2
 #define HUD_MEDICAL 0x4
 #define HUD_JANITOR 0x8
-#define HUD_IT 0x10
 
 // Storage
 

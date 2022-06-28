@@ -1481,8 +1481,6 @@ About the new airlock wires panel:
 		to_chat(user, "\The [brace] is installed on \the [src], preventing it from opening.")
 		to_chat(user, brace.examine_health())
 
-	if(hasHUD(user, HUD_IT) && arePowerSystemsOn())
-		to_chat(user, SPAN_INFO(SPAN_ITALIC("You may notice a small hologram that says: [t_ntnet_id]")))
 /obj/machinery/door/airlock/autoname
 
 /obj/machinery/door/airlock/autoname/New()
