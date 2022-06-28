@@ -32,6 +32,7 @@
 /obj/item/shield
 	name = "shield"
 	var/base_block_chance = 60
+	var/twohand_block_chance = 90
 
 /obj/item/shield/handle_shield(mob/user, var/damage, atom/damage_source = null, mob/attacker = null, var/def_zone = null, var/attack_text = "the attack")
 	if(user.incapacitated())
@@ -46,7 +47,8 @@
 	return 0
 
 /obj/item/shield/proc/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
-	return base_block_chance
+	var/mob/living/M = loc
+	return (istype(M) && M.can_wield_item(src) && is_held_twohanded(M)) ? twohand_block_chance : base_block_chance
 
 /obj/item/shield/riot
 	name = "riot shield"
@@ -79,7 +81,7 @@
 			return 0
 		if(istype(P, /obj/item/projectile/beam) && (!can_block_lasers || (P.armor_penetration >= max_block)))
 			return 0
-	return base_block_chance
+	return ..()
 
 /obj/item/shield/riot/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/melee/baton))
@@ -128,7 +130,7 @@
 /obj/item/shield/buckler/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
 	if(istype(damage_source, /obj/item/projectile/bullet))
 		return 0 //No blocking bullets, I'm afraid.
-	return base_block_chance
+	return ..()
 
 /*
  * Energy Shield
@@ -161,11 +163,12 @@
 		playsound(user.loc, 'sound/weapons/blade1.ogg', 50, 1)
 
 /obj/item/shield/energy/get_block_chance(mob/user, var/damage, atom/damage_source = null, mob/attacker = null)
+	. = ..()
 	if(istype(damage_source, /obj/item/projectile))
 		var/obj/item/projectile/P = damage_source
 		if((is_sharp(P) && damage > 10) || istype(P, /obj/item/projectile/beam))
-			return (base_block_chance - round(damage / 2.5)) //block bullets and beams using the old block chance
-	return base_block_chance
+			return (. - round(damage / 2.5)) //block bullets and beams using the old block chance
+	return .
 
 /obj/item/shield/energy/attack_self(mob/living/user as mob)
 	if ((MUTATION_CLUMSY in user.mutations) && prob(50))

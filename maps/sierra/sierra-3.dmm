@@ -9370,6 +9370,8 @@
 /obj/item/shield/riot,
 /obj/item/shield/riot,
 /obj/item/shield/riot,
+/obj/item/shield/riot/metal,
+/obj/item/shield/riot/metal,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/sierra/armory)
 "apQ" = (
