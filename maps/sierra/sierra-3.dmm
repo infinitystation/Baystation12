@@ -3403,10 +3403,10 @@
 	pixel_y = 29
 	},
 /obj/machinery/button/windowtint{
+	dir = 2;
 	id = "sierra_surgery2";
 	pixel_x = -5;
-	pixel_y = 28;
-	dir = 2
+	pixel_y = 28
 	},
 /obj/machinery/light_switch{
 	pixel_x = 6;
@@ -9545,8 +9545,8 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 24;
-	dir = 8
+	dir = 8;
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/drone_fabrication)
@@ -10952,8 +10952,8 @@
 /area/security/sierra/forensic)
 "asG" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 24;
-	dir = 8
+	dir = 8;
+	pixel_x = 24
 	},
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -12455,8 +12455,8 @@
 /obj/structure/table/steel_reinforced,
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_y = 0;
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/storage/eva)
@@ -13723,8 +13723,8 @@
 	pixel_y = -24
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 24;
-	dir = 8
+	dir = 8;
+	pixel_x = 24
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6
@@ -27738,8 +27738,8 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_y = 0;
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
@@ -29745,8 +29745,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_y = 0;
-	pixel_x = -24
+	pixel_x = -24;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/storage/bridge)
@@ -30964,9 +30964,10 @@
 /obj/item/device/multitool,
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_y = 0;
-	pixel_x = 24
+	pixel_x = 24;
+	pixel_y = 0
 	},
+/obj/item/clothing/glasses/hud/it,
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/computer)
 "aXg" = (
@@ -31945,8 +31946,8 @@
 /area/rnd/research)
 "aZx" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 24;
-	dir = 8
+	dir = 8;
+	pixel_x = 24
 	},
 /obj/structure/holoplant,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -40405,8 +40406,8 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_y = 0;
-	pixel_x = 24
+	pixel_x = 24;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/crew_quarters/heads/office/hop)

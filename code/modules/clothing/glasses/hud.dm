@@ -118,3 +118,11 @@
 	item_state = "scihudpresc"
 	desc = "A science HUD integrated with a set of prescription glasses."
 	prescription = 7
+
+/obj/item/clothing/glasses/hud/it
+	name = "IT special HUD"
+	desc = "A device that outputs holograms containing door IDs directly into your brain. Cool?"
+	icon_state = "ithud"
+	off_state = "ithud_off"
+	hud_type = HUD_IT
+	body_parts_covered = 0

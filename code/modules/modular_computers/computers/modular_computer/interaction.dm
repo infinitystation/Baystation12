@@ -135,7 +135,7 @@
 		if(card_slot.insert_id(I, user))
 			update_verbs()
 		return
-		
+
 	if(istype(W, /obj/item/pen) && stores_pen)
 		if(istype(stored_pen))
 			to_chat(user, "<span class='notice'>There is already a pen in [src].</span>")
@@ -252,3 +252,9 @@
 	..()
 	if(LAZYLEN(interact_sounds) && CanPhysicallyInteract(user))
 		playsound(src, pick(interact_sounds), interact_sound_volume)
+
+/obj/item/modular_computer/examine(mob/user)
+	. = ..()
+	if(hasHUD(user, HUD_IT))
+		if(network_card && network_card.check_functionality() && enabled)
+			to_chat(user, SPAN_INFO(SPAN_ITALIC("You may notice a small hologram that says: [network_card.get_network_tag()].")))
