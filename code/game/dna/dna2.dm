@@ -5,10 +5,10 @@
 */
 
 // What each index means:
-#define DNA_OFF_LOWERBOUND 0
-#define DNA_OFF_UPPERBOUND 1
-#define DNA_ON_LOWERBOUND  2
-#define DNA_ON_UPPERBOUND  3
+#define DNA_OFF_LOWERBOUND 1
+#define DNA_OFF_UPPERBOUND 2
+#define DNA_ON_LOWERBOUND  3
+#define DNA_ON_UPPERBOUND  4
 
 // Define block bounds (off-low,off-high,on-low,on-high)
 // Used in setupgame.dm
@@ -293,7 +293,7 @@ var/global/list/datum/dna/gene/dna_genes[0]
 	if(on)
 		val=rand(BOUNDS[DNA_ON_LOWERBOUND],BOUNDS[DNA_ON_UPPERBOUND])
 	else
-		val=rand(1,BOUNDS[DNA_OFF_UPPERBOUND])
+		val=rand(BOUNDS[DNA_OFF_LOWERBOUND],BOUNDS[DNA_OFF_UPPERBOUND])
 	SetSEValue(block,val,defer)
 
 // Get hex-encoded SE block.
