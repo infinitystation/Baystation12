@@ -80,7 +80,7 @@
 	contains = list(/obj/item/grenade/light = 8)
 	cost = 20
 	containername = "illumination grenade crate"
-	
+
 /decl/hierarchy/supply_pack/science/space_bike
 	name = "Exploration - Space-bike"
 	contains = list(/obj/vehicle/bike/thermal)
@@ -94,3 +94,9 @@
 	contains = list(/obj/structure/anomaly_container)
 	containertype = /obj/structure/largecrate
 	containername = "anomaly container crate"
+
+/decl/hierarchy/supply_pack/science/jetpack_crate
+	name = "Equipment - Jetpacks"
+	contains = list(/obj/item/tank/jetpack/oxygen,/obj/item/tank/jetpack/carbondioxide,/obj/item/tank/jetpack/carbondioxide)
+	cost = 75
+	containername = "Jetpacks crate"
