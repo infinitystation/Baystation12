@@ -92,7 +92,7 @@
 	minimal_player_age = 0
 	create_record = 0
 	whitelisted_species = null
-	blacklisted_species = list(SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_XENO)
+	blacklisted_species = list(SPECIES_VOX, SPECIES_ALIEN, SPECIES_GOLEM, SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_MONARCH_WORKER, SPECIES_MONARCH_QUEEN, SPECIES_XENO)
 	alt_titles = list(
 		"Merchant Security" = /decl/hierarchy/outfit/job/liberia/merchant/security,
 		"Merchant Engineer" = /decl/hierarchy/outfit/job/liberia/merchant/engineer,
