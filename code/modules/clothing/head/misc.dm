@@ -330,6 +330,14 @@
 	body_parts_covered = 0
 	flags_inv = BLOCKHEADHAIR //Shows beards!
 
+/obj/item/clothing/head/cap/sec
+	name = "Big Security Cap"
+	desc = "A security cap. This one pretty big."
+	icon_state = "unathi_seccap"
+	item_state = "unathi_seccap"
+	species_restricted = list(SPECIES_UNATHI)
+	flags_inv = BLOCKHEADHAIR
+
 /obj/item/clothing/head/cowboy_hat
 	name = "cowboy hat"
 	desc = "A wide-brimmed hat, in the prevalent style of America's frontier period. By SolGov law, you are required to wear this hat while watching True Grit."

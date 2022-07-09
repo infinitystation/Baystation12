@@ -21,11 +21,11 @@
 	icon_state = "swat"
 	force = 3
 	armor = list(
-		melee = ARMOR_MELEE_VERY_HIGH, 
-		bullet = ARMOR_BALLISTIC_RIFLE, 
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_RIFLE,
 		laser = ARMOR_LASER_HANDGUNS,
-		energy = ARMOR_ENERGY_SMALL, 
-		bomb = ARMOR_BOMB_RESISTANT, 
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_MINOR
 		)
 	item_flags = ITEM_FLAG_NOSLIP
@@ -37,11 +37,11 @@
 	icon_state = "jungle"
 	force = 5
 	armor = list(
-		melee = ARMOR_MELEE_VERY_HIGH, 
-		bullet = ARMOR_BALLISTIC_RIFLE, 
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_RIFLE,
 		laser = ARMOR_LASER_HANDGUNS,
-		energy = ARMOR_ENERGY_SMALL, 
-		bomb = ARMOR_BOMB_RESISTANT, 
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_RESISTANT,
 		bio = ARMOR_BIO_MINOR
 		)
 	item_flags = ITEM_FLAG_NOSLIP
@@ -58,11 +58,11 @@
 	icon_state = "jungle"
 	force = 3
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
-		laser = ARMOR_LASER_MINOR, 
-		energy = ARMOR_ENERGY_MINOR, 
-		bomb = ARMOR_BOMB_PADDED, 
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_MINOR,
+		energy = ARMOR_ENERGY_MINOR,
+		bomb = ARMOR_BOMB_PADDED,
 		bio = ARMOR_BIO_MINOR
 		)
 	siemens_coefficient = 0.7
@@ -73,11 +73,11 @@
 	icon_state = "desert"
 	force = 3
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
-		bullet = ARMOR_BALLISTIC_MINOR, 
-		laser = ARMOR_LASER_MINOR, 
-		energy = ARMOR_ENERGY_MINOR, 
-		bomb = ARMOR_BOMB_PADDED, 
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_MINOR,
+		energy = ARMOR_ENERGY_MINOR,
+		bomb = ARMOR_BOMB_PADDED,
 		bio = ARMOR_BIO_MINOR
 		)
 	siemens_coefficient = 0.7
@@ -87,9 +87,9 @@
 	desc = "A pair of steel-toed synthleather boots with a mirror shine."
 	icon_state = "duty"
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
-		energy = ARMOR_ENERGY_MINOR, 
-		bomb = ARMOR_BOMB_PADDED, 
+		melee = ARMOR_MELEE_RESISTANT,
+		energy = ARMOR_ENERGY_MINOR,
+		bomb = ARMOR_BOMB_PADDED,
 		rad = ARMOR_RAD_MINOR
 		)
 	siemens_coefficient = 0.7
@@ -106,10 +106,10 @@
 	icon_state = "desert"
 	force = 3
 	armor = list(
-		melee = ARMOR_MELEE_RESISTANT, 
-		bullet = ARMOR_BALLISTIC_PISTOL, 
-		laser = ARMOR_LASER_HANDGUNS, 
-		energy = ARMOR_ENERGY_SMALL, 
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_RESISTANT)
 	siemens_coefficient = 0.7
 
@@ -119,6 +119,31 @@
 	icon_state = "laceups"
 	can_add_hidden_item = FALSE
 	can_add_cuffs = FALSE
+
+/obj/item/clothing/shoes/security
+    desc = "A pair of black shoes."
+    name = "Black shoes"
+    //icon = 'icons/mob/onmob/unathi/feet.dmi'
+    //item_icons = list(
+    //    slot_head_str = 'icons/mob/onmob/unathi/feet.dmi'
+    //)
+    icon_state = "unjackboots"
+    item_state = "unjackboots"
+    species_restricted  = list(SPECIES_UNATHI)
+
+/obj/item/clothing/shoes/desert
+    desc = "A pair of camo shoes."
+    name = "camo shoes"
+    //icon = 'icons/mob/onmob/unathi/feet.dmi'
+    //item_icons = list(
+    //    slot_head_str = 'icons/mob/onmob/unathi/feet.dmi'
+    //)
+    icon_state = "undesertboots"
+    item_state = "undesertboots"
+    species_restricted  = list(SPECIES_UNATHI)
+    //sprite_sheets = list(
+    //   SPECIES_UNATHI = 'icons/mob/onmob/unathi/feet.dmi'
+    //    )
 
 /obj/item/clothing/shoes/dress/white
 	name = "white dress shoes"

@@ -14,6 +14,45 @@
 	display_name = "(Unathi) roughspun robe"
 	path = /obj/item/clothing/suit/unathi/robe
 
+/datum/gear/suit/unathi/officer_uniform
+	display_name = "(Unathi) security uniform"
+	path = /obj/item/clothing/under/security/officer
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/officer, /datum/job/detective, /datum/job/security_assistant)
+	cost = 1
+
+/datum/gear/suit/unathi/desert_uniform
+	display_name = "(Unathi) desert uniform"
+	path = /obj/item/clothing/under/security/desert
+	cost = 1
+
+/datum/gear/suit/unathi/security_cap
+	display_name = "(Unathi) security cap"
+	path = /obj/item/clothing/head/cap/sec
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/officer, /datum/job/detective, /datum/job/security_assistant)
+	cost = 1
+
+/datum/gear/suit/unathi/desert_cap
+	display_name = "(Unathi) desert cap"
+	path = /obj/item/clothing/head/cap/desert
+	cost = 1
+
+
+/datum/gear/suit/unathi/desert_shoes
+	display_name = "(Unathi) desert shoes"
+	path = /obj/item/clothing/shoes/desert
+	cost = 1
+
+/datum/gear/suit/unathi/security_shoes
+	display_name = "(Unathi) security shoes"
+	path = /obj/item/clothing/shoes/security
+	cost = 1
+
+/datum/gear/suit/unathi/security_jacket
+	display_name = "(Unathi) security jacket"
+	path = /obj/item/clothing/suit/storage/security
+	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/officer, /datum/job/detective, /datum/job/security_assistant)
+	cost = 1
+
 /datum/gear/suit/unathi/knifeharness
 	display_name = "(Unathi) decorated knife harness"
 	path = /obj/item/clothing/accessory/storage/knifeharness

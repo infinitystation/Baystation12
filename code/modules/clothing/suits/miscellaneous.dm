@@ -54,6 +54,28 @@
 	siemens_coefficient = 0.9
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
+/obj/item/clothing/suit/storage/security
+	name = "security jacket"
+	desc = "security jacket."
+	icon = 'icons/obj/clothing/obj_suit.dmi'
+	icon_state = "unathi_secjacket"
+	item_state = "unsecjacket"
+
+	species_restricted = list(SPECIES_UNATHI)
+	//sprite_sheets = list(
+    //    SPECIES_UNATHI = 'icons/mob/species/unathi/generated/onmob_suit_unathi.dmi'
+    //    )
+	w_class = ITEM_SIZE_NORMAL
+	allowed = list(
+    	/obj/item/gun,
+    	/obj/item/ammo_magazine,
+    	/obj/item/ammo_casing,
+    	/obj/item/melee/baton,
+    	/obj/item/handcuffs,
+    	/obj/item/tank/emergency
+	)
+	siemens_coefficient = 0.9
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/suit/hgpirate
 	name = "pirate captain coat"
