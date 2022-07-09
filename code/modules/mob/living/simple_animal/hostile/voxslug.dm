@@ -29,9 +29,8 @@ Small, little HP, poisonous.
 
 /datum/ai_holder/hostile/melee/voxslug/list_targets()
 	. = ..()
-
 	var/list/L = list()
-	for(var/a in hearers(src, vision_range))
+	for(var/a in hearers(vision_range, holder))
 		if(istype(a,/mob/living/carbon/human))
 			var/mob/living/carbon/human/H = a
 			if(H.species.get_bodytype() == SPECIES_VOX)
