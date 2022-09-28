@@ -419,7 +419,7 @@
 				dat += "<li>[B.name]: [job.get_ranks(B.name)]"
 		dat += "<hr style='clear:left;'>"
 		if(config.wikiurl)
-			dat += "<a href='?src=\ref[src];job_wiki=[rank]'>Open wiki page in browser</a>"
+			dat += "<a href='?src=\ref[src];job_wiki=[job.wikiname ? job.wikiname : rank]'>Open wiki page in browser</a>"
 
 		var/description = job.get_description_blurb()
 		if(description)
@@ -556,6 +556,11 @@ datum/category_item/player_setup_item/proc/prune_occupation_prefs()
 
 /datum/preferences/proc/GetPlayerAltTitle(datum/job/job)
 	return (job.title in player_alt_titles) ? player_alt_titles[job.title] : job.title
+
+//[INF]
+/datum/job
+	var/wikiname = ""
+//[/INF]
 
 #undef JOB_LEVEL_NEVER
 #undef JOB_LEVEL_LOW

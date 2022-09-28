@@ -1,6 +1,7 @@
 /datum/job/senior_scientist
 	title = "Senior Researcher"
 	department = "Научный"
+	wikiname = "Старший научный сотрудник"
 	department_flag = SCI
 
 	total_positions = 1
@@ -51,6 +52,7 @@
 /datum/job/scientist
 	title = "Scientist"
 	department = "Научный"
+	wikiname = "Научный сотрудник"
 	department_flag = SCI
 	total_positions = 6
 	spawn_positions = 6
@@ -105,6 +107,7 @@
 /datum/job/roboticist
 	title = "Roboticist"
 	department = "Научный"
+	wikiname = "Робототехник"
 	department_flag = SCI
 
 	total_positions = 2
@@ -162,6 +165,7 @@
 /datum/job/scientist_assistant
 	title = "Research Assistant"
 	department = "Научный"
+	wikiname = "Научный ассистент"
 	department_flag = SCI
 
 	total_positions = 4
