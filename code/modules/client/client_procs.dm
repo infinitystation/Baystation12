@@ -254,6 +254,9 @@
 		prefs?.apply_post_login_preferences()
 //[/INF]
 
+	if(SSinput.initialized)
+		set_macros()
+
 	//////////////
 	//DISCONNECT//
 	//////////////

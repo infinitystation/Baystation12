@@ -240,6 +240,7 @@
 
 // Finally.. the last of the mob movement junk
 /datum/movement_handler/mob/movement/DoMove(var/direction, var/mob/mover)
+	set waitfor = FALSE
 	. = MOVEMENT_HANDLED
 
 	if(mob.moving)

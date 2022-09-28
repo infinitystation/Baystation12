@@ -3,10 +3,12 @@ Add fingerprints to items when we put them in our hands.
 This saves us from having to call add_fingerprint() any time something is put in a human's hands programmatically.
 */
 
-/mob/living/carbon/human/verb/quick_equip()
+/mob/verb/quick_equip()
 	set name = "quick-equip"
 	set hidden = 1
+	return
 
+/mob/living/carbon/human/quick_equip()
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 		var/obj/item/I = H.get_active_hand()
